@@ -462,10 +462,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.bashrc
-args ~/.bashrc
+badd +0 ~/.profile
+args ~/.profile
 set lines=32 columns=116
-edit ~/.bashrc
+edit ~/.profile
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -698,12 +698,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 172 - ((22 * winheight(0) + 14) / 29)
+let s:l = 79 - ((24 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-172
-normal! 051l
+79
+normal! 022l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
