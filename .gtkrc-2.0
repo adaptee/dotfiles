@@ -1,0 +1,39 @@
+gtk-menu-popup-delay = 0
+
+style "default"
+{
+  
+  bg[NORMAL] = { 0.831, 0.816, 0.784 }
+  bg[SELECTED] = { 0.000, 0.141, 0.408 }
+  bg[INSENSITIVE] = { 0.831, 0.816, 0.784 }
+  bg[ACTIVE] = { 0.690, 0.678, 0.651 }
+  bg[PRELIGHT] = { 0.831, 0.816, 0.784 }
+
+  base[NORMAL] = { 0.745, 0.784, 0.824 }
+  base[SELECTED] = { 0.000, 0.141, 0.408 }
+  base[INSENSITIVE] = { 0.831, 0.816, 0.784 }
+  base[ACTIVE] = { 0.000, 0.141, 0.408 }
+  base[PRELIGHT] = { 0.000, 0.141, 0.408 }
+
+  text[NORMAL] = { 0.000, 0.000, 0.000 }
+  text[SELECTED] = { 1.000, 1.000, 1.000 }
+  text[INSENSITIVE] = { 0.690, 0.678, 0.651 }
+  text[ACTIVE] = { 1.000, 1.000, 1.000 }
+  text[PRELIGHT] = { 1.000, 1.000, 1.000 }
+
+  fg[NORMAL] = { 0.000, 0.000, 0.000 }
+  fg[SELECTED] = { 1.000, 1.000, 1.000 }
+  fg[INSENSITIVE] = { 0.690, 0.678, 0.651 }
+  fg[ACTIVE] = { 0.000, 0.000, 0.000 }
+  fg[PRELIGHT] = { 0.000, 0.000, 0.000 }
+}
+
+class "*" style "default"
+
+style "ToolTip"
+{
+  bg[NORMAL] = { 1.000, 1.000, 0.863 }
+  base[NORMAL] = { 1.000, 1.000, 0.863 }
+  text[NORMAL] = { 0.000, 0.000, 0.000 }
+  fg[NORMAL] = { 0.000, 0.000, 0.000 }
+}

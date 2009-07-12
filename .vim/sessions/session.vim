@@ -12,7 +12,6 @@ inoremap <silent> <F3> :NERDTreeToggle %:p:h
 imap <F1> :exec "help ".expand("<cword>")
 imap <Up> gka
 imap <Down> gja
-map! <S-Insert> <MiddleMouse>
 nmap d :cs find d =expand("<cword>")
 nmap i :cs find i ^=expand("<cfile>")$
 nmap f :cs find f =expand("<cfile>")
@@ -21,10 +20,11 @@ nmap t :cs find t =expand("<cword>")
 nmap c :cs find c =expand("<cword>")
 nmap g :cs find g =expand("<cword>")
 nmap s :cs find s =expand("<cword>")
-nnoremap  <Nop>
+nmap  <Nop>
 nnoremap  3
 nnoremap  ^
-vmap 	 >
+snoremap <silent> 	 i<Right>=TriggerSnippet()
+xmap 	 >
 vnoremap <NL> 3j
 nnoremap <NL> 3j
 vnoremap  3k
@@ -47,8 +47,6 @@ nmap ,cal <Plug>CalendarV
 nmap <silent> ,bv :VSBufExplorer
 nmap <silent> ,bs :HSBufExplorer
 nmap <silent> ,be :BufExplorer
-nmap <silent> ,ubs :call BASH_RemoveGuiMenus()
-nmap <silent> ,lbs :call BASH_CreateGuiMenus()
 nmap ,ihn :IHN
 nmap ,is :IHS:A
 nmap ,ih :IHS
@@ -182,7 +180,6 @@ nmap <silent> <F12> :call DoWordComplete()
 nnoremap <silent> <F2> :TlistToggle
 nnoremap <silent> <F3> :NERDTreeToggle .
 nmap <silent> <F4> :A
-map <silent> <M-F1> :call Togglemenu()
 nmap <silent> <Right> :cnext
 nmap <silent> <Left> :cprevious
 nmap <C-Left> :bp
@@ -192,7 +189,6 @@ nmap <F1> :exec "help ".expand("<cword>")
 nmap <Up> gk
 nmap <Down> gj
 nnoremap <S-Space> 
-map <S-Insert> <MiddleMouse>
 cnoremap  <Home>
 inoremap  <Home>
 cnoremap  <End>
@@ -242,13 +238,10 @@ iabbr scr src
 iabbr teh the
 let &cpo=s:cpo_save
 unlet s:cpo_save
-set ambiwidth=double
 set autochdir
 set autoread
-set background=dark
 set backspace=indent,eol,start
-set balloondelay=800
-set balloonexpr=FoldSpellBalloon()
+set balloonexpr=BalloonDeclaration()
 set browsedir=buffer
 set cindent
 set clipboard=unnamed
@@ -263,9 +256,6 @@ set fileencodings=utf-8,chinese,ucs-bom,taiwan,japan
 set fileformats=unix,dos,mac
 set fillchars=vert:\ ,stl:\ ,stlnc:\\
 set formatoptions=tcqmM
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
-set guioptions=egiLtal
-set guitabtooltip=%!InfoGuiTooltip()
 set helplang=en
 set history=1000
 set hlsearch
@@ -286,7 +276,6 @@ set ruler
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set scrolloff=5
 set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages,unix,slash
-set shellredir=>
 set shiftwidth=4
 set showcmd
 set showmatch
@@ -298,7 +287,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set switchbuf=usetab
 set tabline=%!ShortTabLine()
 set tags=tags;
-set termencoding=utf-8
 set tildeop
 set timeoutlen=2000
 set ttimeout
@@ -309,7 +297,6 @@ set visualbell
 set whichwrap=b,s,<,>,[,]
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 set wildmenu
-set window=30
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 let NERDTreeMapPreviewSplit = "gi"
@@ -353,6 +340,7 @@ let OmniCpp_MayCompleteScope =  1
 let NERDTreeMapPreview = "go"
 let Tlist_Use_SingleClick =  0 
 let MRU_Max_Entries =  20 
+let CSApprox_verbose_level =  1 
 let NERDTreeNotificationThreshold = "100"
 let NERDTreeMapActivateNode = "o"
 let LookupFile_DisableDefaultMap =  0 
@@ -443,7 +431,6 @@ let BASH_AuthorName = "adaptee"
 let MRU_Auto_Close =  1 
 let NERDBlockComIgnoreEmpty = "0"
 let LookupFile_Bufs_BufListExpr = ""
-let NERDTreeMapUpdirKeepOpen = "U"
 let NERDTreeMapJumpNextSibling = "<C-j>"
 let Tlist_File_Fold_Auto_Close =  1 
 let Tlist_Auto_Open =  0 
@@ -464,7 +451,9 @@ let BASH_Dictionary_File = "/home/whodare/.vim/bash-support/wordlists/bash.list"
 let NERDTreeMapJumpFirstChild = "K"
 let NERDTreeMapOpenRecursively = "O"
 let NERDTreeMapToggleBookmarks = "B"
+let CSApprox_redirfallback =  0 
 let SuperTabMappingBackward = "<s-tab>"
+let NERDTreeMapUpdirKeepOpen = "U"
 let NERDTreeQuitOnOpen = "0"
 let Tlist_Show_Menu =  0 
 let Tlist_Use_Right_Window =  0 
@@ -473,34 +462,143 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.vimrc
-badd +0 /usr/share/vim/vim72/delmenu.vim
-silent! argdel *
-set lines=31 columns=114
-winpos 0 26
-edit ~/.vimrc
+badd +0 ~/.bashrc
+args ~/.bashrc
+set lines=32 columns=116
+edit ~/.bashrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <silent> <F9> :call BASH_Debugger():redraw!
+nnoremap <buffer> "" ciW""P
+nnoremap <buffer> '' ciW''P
 inoremap <buffer> <silent> ­ =EchoFuncP()
 inoremap <buffer> <silent> ½ =EchoFuncN()
-vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
-nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
-vnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "bW")
-nnoremap <buffer> <silent> [] m':call search('^\s*endf*\%[unction]\>', "bW")
-vnoremap <buffer> <silent> [[ m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "bW")
-nnoremap <buffer> <silent> [[ m':call search('^\s*fu\%[nction]\>', "bW")
-vnoremap <buffer> <silent> ]" :exe "normal! gv"|call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
-nnoremap <buffer> <silent> ]" :call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
-vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "W")
-nnoremap <buffer> <silent> ][ m':call search('^\s*endf*\%[unction]\>', "W")
-vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
-nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
+map <buffer> <silent> \ro :call BASH_Toggle_Gvim_Xterm()
+map <buffer> <silent> \rs :call BASH_Settings()
+vmap <buffer> <silent> \rh :call BASH_Hardcopy("v")
+nmap <buffer> <silent> \rh :call BASH_Hardcopy("n")
+omap <buffer> <silent> \rh :call BASH_Hardcopy("n")
+vmap <buffer> <silent> \rr :call BASH_Run("v")
+map <buffer> <silent> \rd :call BASH_Debugger():redraw!
+map <buffer> <silent> \rc :call BASH_SyntaxCheck()
+map <buffer> <silent> \ra :call BASH_CmdLineArguments()
+nmap <buffer> <silent> \rr :call BASH_Run("n")
+omap <buffer> <silent> \rr :call BASH_Run("n")
+map <buffer> <silent> \re :call BASH_MakeScriptExecutable()
+noremap <buffer> <silent> \ne :call BASH_CodeSnippets("e")
+vnoremap <buffer> <silent> \nw :call BASH_CodeSnippets("wv")
+nnoremap <buffer> <silent> \nw :call BASH_CodeSnippets("w")
+onoremap <buffer> <silent> \nw :call BASH_CodeSnippets("w")
+noremap <buffer> <silent> \nr :call BASH_CodeSnippets("r")
+vnoremap <buffer> <silent> \sp sprintf "%s\n"2hP
+nnoremap <buffer> <silent> \sp ^iprintf "%s\n"2hi
+onoremap <buffer> <silent> \sp ^iprintf "%s\n"2hi
+vnoremap <buffer> <silent> \se secho -e "\n"2hP
+nnoremap <buffer> <silent> \se ^iecho -e "\n"2hi
+onoremap <buffer> <silent> \se ^iecho -e "\n"2hi
+vnoremap <buffer> <silent> \sfu :call BASH_CodeFunction("v")
+nnoremap <buffer> <silent> \sfu :call BASH_CodeFunction("a")O
+onoremap <buffer> <silent> \sfu :call BASH_CodeFunction("a")O
+vnoremap <buffer> <silent> \sw :call BASH_FlowControl( "while _ ",     "do",   "done",     "v" )
+nnoremap <buffer> <silent> \sw :call BASH_FlowControl( "while _ ",     "do",   "done",     "a" )i
+onoremap <buffer> <silent> \sw :call BASH_FlowControl( "while _ ",     "do",   "done",     "a" )i
+vnoremap <buffer> <silent> \st :call BASH_FlowControl( "until _ ",     "do",   "done",     "v" )
+nnoremap <buffer> <silent> \st :call BASH_FlowControl( "until _ ",     "do",   "done",     "a" )i
+onoremap <buffer> <silent> \st :call BASH_FlowControl( "until _ ",     "do",   "done",     "a" )i
+vnoremap <buffer> <silent> \ss :call BASH_FlowControl( "select _ in ", "do",   "done",     "v" )
+nnoremap <buffer> <silent> \ss :call BASH_FlowControl( "select _ in ", "do",   "done",     "a" )i
+onoremap <buffer> <silent> \ss :call BASH_FlowControl( "select _ in ", "do",   "done",     "a" )i
+vnoremap <buffer> <silent> \sie :call BASH_FlowControl( "if _ ",        "then", "else\nfi", "v" )
+nnoremap <buffer> <silent> \sie :call BASH_FlowControl( "if _ ",        "then", "else\nfi", "a" )i
+onoremap <buffer> <silent> \sie :call BASH_FlowControl( "if _ ",        "then", "else\nfi", "a" )i
+vnoremap <buffer> <silent> \si :call BASH_FlowControl( "if _ ",        "then", "fi",       "v" )
+nnoremap <buffer> <silent> \si :call BASH_FlowControl( "if _ ",        "then", "fi",       "a" )i
+onoremap <buffer> <silent> \si :call BASH_FlowControl( "if _ ",        "then", "fi",       "a" )i
+vnoremap <buffer> <silent> \sfo :call BASH_FlowControl( "for (( COUNTER=0; COUNTER<_0; COUNTER++ ))",    "do",   "done",     "v" )
+nnoremap <buffer> <silent> \sfo :call BASH_FlowControl( "for (( COUNTER=0; COUNTER<_0; COUNTER++ ))",    "do",   "done",     "a" )
+onoremap <buffer> <silent> \sfo :call BASH_FlowControl( "for (( COUNTER=0; COUNTER<_0; COUNTER++ ))",    "do",   "done",     "a" )
+vnoremap <buffer> <silent> \sf :call BASH_FlowControl( "for _ in ",    "do",   "done",     "v" )
+nnoremap <buffer> <silent> \sf :call BASH_FlowControl( "for _ in ",    "do",   "done",     "a" )i
+onoremap <buffer> <silent> \sf :call BASH_FlowControl( "for _ in ",    "do",   "done",     "a" )i
+noremap <buffer> <silent> \sl :call BASH_FlowControl( "elif _ ",      "then",   "",       "a" )i
+noremap <buffer> <silent> \sc ocase  in);;);;*);;esac    # --- end of case ---11kf a
+noremap <buffer> <silent> \cv :call BASH_CommentVimModeline()
+noremap <buffer> <silent> \cr 0:s/^\s*echo\s\+\"// | s/\s*\"\s*$// | :normal ==j'
+noremap <buffer> <silent> \ce ^iecho "<End>"j'
+noremap <buffer> <silent> \ckn $:call BASH_CommentClassified("")        kJf:a
+noremap <buffer> <silent> \ckw $:call BASH_CommentClassified("WARNING") kJA
+noremap <buffer> <silent> \ckr $:call BASH_CommentClassified("TRICKY")  kJA
+noremap <buffer> <silent> \ckt $:call BASH_CommentClassified("TODO")    kJA
+noremap <buffer> <silent> \ckb $:call BASH_CommentClassified("BUG")     kJA
+noremap <buffer> <silent> \ct a=BASH_InsertDateAndTime('dt')
+noremap <buffer> <silent> \cd a=BASH_InsertDateAndTime('d')
+vnoremap <buffer> <silent> \cc :'<,'>call BASH_CommentToggle()j
+nnoremap <buffer> <silent> \cc :call BASH_CommentToggle()j
+onoremap <buffer> <silent> \cc :call BASH_CommentToggle()j
+noremap <buffer> <silent> \ch :call BASH_CommentTemplates('header')
+noremap <buffer> <silent> \cfu :call BASH_CommentTemplates('function')
+noremap <buffer> <silent> \cfr :call BASH_CommentTemplates('frame')
+noremap <buffer> <silent> \cs :call BASH_GetLineEndCommCol()
+vnoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm("v")
+nnoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm("a")
+onoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm("a")
+vnoremap <buffer> <silent> \cl :call BASH_MultiLineEndComments()A
+nnoremap <buffer> <silent> \cl :call BASH_LineEndComment()A
+onoremap <buffer> <silent> \cl :call BASH_LineEndComment()A
+noremap <buffer> <silent> \hp :call BASH_HelpBASHsupport()
+noremap <buffer> <silent> \hm :call BASH_help('m')
+noremap <buffer> <silent> \hh :call BASH_help('h')
+map <buffer> <silent> <F9> :call BASH_Debugger():redraw!
 inoremap <buffer> <silent> ( (=EchoFunc()
 inoremap <buffer> <silent> ) :echo)
+imap <buffer> <silent> \ro :call BASH_Toggle_Gvim_Xterm()
+imap <buffer> <silent> \rs :call BASH_Settings()
+imap <buffer> <silent> \rh :call BASH_Hardcopy("n")
+imap <buffer> <silent> \rd :call BASH_Debugger():redraw!
+imap <buffer> <silent> \rc :call BASH_SyntaxCheck()
+imap <buffer> <silent> \ra :call BASH_CmdLineArguments()
+imap <buffer> <silent> \rr :call BASH_Run("n")
+imap <buffer> <silent> \re :call BASH_MakeScriptExecutable()
+inoremap <buffer> <silent> \sp printf "%s\n"2hi
+inoremap <buffer> <silent> \se echo -e "\n"2hi
+inoremap <buffer> <silent> \sfu :call BASH_CodeFunction("a")O
+inoremap <buffer> <silent> \sw :call BASH_FlowControl( "while _ ",     "do",   "done",     "a" )i
+inoremap <buffer> <silent> \st :call BASH_FlowControl( "until _ ",     "do",   "done",     "a" )i
+inoremap <buffer> <silent> \ss :call BASH_FlowControl( "select _ in ", "do",   "done",     "a" )i
+inoremap <buffer> <silent> \sie :call BASH_FlowControl( "if _ ",        "then", "else\nfi", "a" )i
+inoremap <buffer> <silent> \si :call BASH_FlowControl( "if _ ",        "then", "fi",       "a" )i
+inoremap <buffer> <silent> \sfo :call BASH_FlowControl( "for (( COUNTER=0; COUNTER<_0; COUNTER++ ))",    "do",   "done",     "a" )
+inoremap <buffer> <silent> \sf :call BASH_FlowControl( "for _ in ",    "do",   "done",     "a" )i
+inoremap <buffer> <silent> \sl :call BASH_FlowControl( "elif _ ",      "then",   "",       "a" )i
+inoremap <buffer> <silent> \sc ocase  in);;);;*);;esac    # --- end of case ---11kf a
+inoremap <buffer> <silent> \cv :call BASH_CommentVimModeline()
+inoremap <buffer> <silent> \cr 0:s/^\s*echo\s\+\"// | s/\s*\"\s*$// | :normal ==j'
+inoremap <buffer> <silent> \ce ^iecho "<End>"j'
+inoremap <buffer> <silent> \ckn $:call BASH_CommentClassified("")        kJf:a
+inoremap <buffer> <silent> \ckw $:call BASH_CommentClassified("WARNING") kJA
+inoremap <buffer> <silent> \ckr $:call BASH_CommentClassified("TRICKY")  kJA
+inoremap <buffer> <silent> \ckt $:call BASH_CommentClassified("TODO")    kJA
+inoremap <buffer> <silent> \ckb $:call BASH_CommentClassified("BUG")     kJA
+inoremap <buffer> <silent> \ct =BASH_InsertDateAndTime('dt')
+inoremap <buffer> <silent> \cd =BASH_InsertDateAndTime('d')
+inoremap <buffer> <silent> \cc :call BASH_CommentToggle()j
+inoremap <buffer> <silent> \ch :call BASH_CommentTemplates('header')
+inoremap <buffer> <silent> \cfu :call BASH_CommentTemplates('function')
+inoremap <buffer> <silent> \cfr :call BASH_CommentTemplates('frame')
+inoremap <buffer> <silent> \cs :call BASH_GetLineEndCommCol()
+inoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm("a")
+inoremap <buffer> <silent> \cl :call BASH_LineEndComment()A
+inoremap <buffer> <silent> \hp :call BASH_HelpBASHsupport()
+inoremap <buffer> <silent> \hm :call BASH_help('m')
+inoremap <buffer> <silent> \hh :call BASH_help('h')
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -513,8 +611,8 @@ setlocal cindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
-setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
-setlocal commentstring=\"%s
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
 setlocal complete=.,w,b,u,t,i
 setlocal completefunc=b:VimIM
 setlocal nocopyindent
@@ -522,13 +620,13 @@ setlocal nocursorcolumn
 set cursorline
 setlocal cursorline
 setlocal define=
-setlocal dictionary=
+setlocal dictionary=~/.vim/bash-support/wordlists/bash.list
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'vim'
-setlocal filetype=vim
+if &filetype != 'sh'
+setlocal filetype=sh
 endif
 set foldcolumn=2
 setlocal foldcolumn=2
@@ -547,12 +645,12 @@ setlocal formatexpr=
 setlocal formatoptions=tcqmM
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=0
+setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetVimIndent()
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\
+setlocal indentexpr=GetShIndent()
+setlocal indentkeys=0{,0},!^F,o,O,e,=then,=do,=else,=elif,=esac,=fi,=fin,=fil,=done
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -589,8 +687,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'vim'
-setlocal syntax=vim
+if &syntax != 'sh'
+setlocal syntax=sh
 endif
 setlocal tabstop=8
 setlocal tags=
@@ -600,12 +698,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 172 - ((22 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+172
+normal! 051l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

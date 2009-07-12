@@ -1,0 +1,10 @@
+debug 3
+
+set ftp:charset "gbk"
+set file:charset "UTF-8"
+
+#set net:limit-rate 30000:0
+
+alias up "cd ..;ls"
+alias upp "cd ../..;ls"
+alias l  "ls"

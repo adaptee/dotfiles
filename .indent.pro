@@ -1,0 +1,37 @@
+--blank-lines-after-declarations     /* -good    变量声明后加空行*/
+--blank-lines-after-procedures       /* -bap    函数结束后加空行*/
+--blank-lines-before-block-comments  /* -bbb    块注释前加空行*/
+--break-before-boolean-operator      /* -bbo    较长的行，在逻辑运算符前分行*/
+--blank-lines-after-commas           /* -nbc    变量声明中，逗号分隔的变量不分行*/
+--braces-after-if-line               /* -bl     "if"和"{"分做两行*/
+--brace-indent0                      /* -bli0   "{"不继续缩进*/
+--braces-after-struct-decl-line      /* -bls    定义结构，"struct"和"{"分行*/
+--comment-indentation33              /* -c33    语句后注释开始于行33*/
+--declaration-comment-column33       /* -cd33   变量声明后注释开始于行33*/
+--comment-delimiters-on-blank-lines  /* -ncdb   不将单行注释变为块注释*/
+--cuddle-do-while                    /* -ncdw   "do while"的"while"和其前面的"}"另起一行*/
+--cuddle-else                        /* -nce    "else"和其前面的"}"另起一行*/
+--case-indentation0                  /* -cli0   switch中的case语句所进0个空格*/
+--else-endif-column33                /* -cp33   #else,#endif后面的注释开始于行33*/
+--space-after-cast                   /* -cs     在类型转换后面加空格*/
+--line-comments-indentation0         /* -d0     单行注释（不从1列开始的），不向左缩进*/
+--break-function-decl-args           /* -nbfda  关闭：函数的参数一个一行*/
+--declaration-indentation2           /* -di2    变量声明，变量开始于2行，即不必对齐*/
+--format-first-column-comments       /* -nfc1   不格式化起于第一行的注释*/
+--format-all-comments                /* -nfca   不开启全部格式化注释的开关*/
+--honour-newlines                    /* -hnl    Prefer break long  lines  at  the  position  of  newlines  in  the  input.*/
+--indent-level4                      /* -i4    设置缩进多少字符，如果为tab的整数倍，用tab来缩进，否则用空格*/
+--parameter-indentation5             /* -ip5    旧风格的函数定义中参数说明缩进5个空格*/
+--line-length75                      /* -l75    非注释行最长75*/
+--continue-at-parentheses            /* -lp     续行从上一行出现的括号开始*/
+--space-after-procedure-calls        /* -pcs    函数和"("之间插入一个空格*/
+--space-after-parentheses            /* -nprs   在"（"后"）"前不插入空格*/
+--procnames-start-lines              /* -psl    将函数名和返回类型放在两行定义*/
+--space-after-for                    /* -saf    for后面有空格*/
+--space-after-if                     /* -sai    if后面有空格*/
+--space-after-while                  /* -saw    while后面有空格*/
+--start-left-side-of-comments        /* -nsc    不在生成的块注释中加**/
+--swallow-optional-blank-lines       /* -nsob   不去掉可添加的空行*/
+--space-special-semicolon            /* -nss    一行的for或while语句，在";"前不加空。*/
+--tab-size4                          /* -ts4    一个tab为4个空格（要能整除"-in"）*/
+-nut    /*不使用tab来缩进*/
