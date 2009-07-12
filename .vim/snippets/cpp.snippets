@@ -1,0 +1,223 @@
+###------------------------------1.General--------------------------------###
+
+# #include <...>
+snippet inc # include c++ header
+	#include <${1:iostream}>
+	${2}
+
+snippet Once
+	#ifndef ${1:`toupper(Filename('', 'UNTITLED').'_GUARD')`}
+	#define $1
+
+	#include <cppunit/TestCase.h>
+	#include <cppunit/extensions/HelperMacros.h>
+
+	class ${2:`Filename('', 'UNTITLED')`}: public CppUnit::TestCase
+	{
+	    CPPUNIT_TEST_SUITE($2);
+	    //CPPUNIT_TEST();
+	    CPPUNIT_TEST_SUITE_END();
+
+	    public:
+	    $2 ();
+	    ~$2 ();
+
+	    void setUp();
+	    void tearDown();
+	};
+
+	${3}
+
+	#endif /* end of include guard: $1 */
+# ---------------------------------------------------------------------------
+
+snippet INC
+	#include "${1:`Filename("$1.h")`}"
+	using namespace FIXFAST;
+
+	CPPUNIT_TEST_SUITE_REGISTRATION (${2:`Filename('', 'UNTITLED')`});
+
+	$2::$2 () { }
+	$2::~$2() { }
+
+	void $2::setUp()
+	{
+
+	}
+
+	void $2::tearDown()
+	{
+
+	}
+	
+	${3}
+# ---------------------------------------------------------------------------
+	
+
+###------------------------------2.Class----------------------------------###
+
+# Class
+snippet cl
+	class ${1:`Filename('$1_t', 'name')`} 
+	{
+	    public:
+		$1 (${2:parameters});
+		virtual ~$1 ();
+
+	    private:
+		${3:/* data */}
+	}; // end of class $1
+	${4}
+# ---------------------------------------------------------------------------
+
+# member method
+snippet method
+	${1:ret_type} ${2:class_name}::${3:method_name} (${4:parameters)})
+	{
+	    ${5:/* code */}
+	}
+	${6}
+# ---------------------------------------------------------------------------
+
+# operator overloading
+snippet ope
+	${1:ret_type} ${2:class_name}::operator${3:=} (${4:parameters)})
+	{
+	    ${5:/* code */}
+	}
+	${6}
+# ---------------------------------------------------------------------------
+
+
+###------------------------------3.Exception------------------------------###
+
+# try statement
+snippet try
+	try
+	{
+	    ${1:/* suspicious code */}
+	}
+	catch ( ${2:excption} & e )
+	{
+	    ${3:/* what to do? */}
+	}
+	${4}
+# ---------------------------------------------------------------------------
+
+# catch statement
+snippet cat
+	catch ( ${1:exception} & e)
+	{
+	    ${2:/* what to do? */}
+	}
+	${3}
+# ---------------------------------------------------------------------------
+
+
+###------------------------------4.NameSpace-------------------------------###
+
+# Namespace
+snippet ns
+	namespace ${1:`Filename('', 'my')`}
+	{
+	    ${2:/* members */}
+	} // end of namespace $1 
+	${3}
+# ---------------------------------------------------------------------------
+
+# using  namespace::member;
+snippet us
+	using ${1:std}::${2:string};
+	${3}
+# ---------------------------------------------------------------------------
+
+# using namespace;
+snippet usn
+	using namespace ${1:std};
+	${2}
+# ---------------------------------------------------------------------------
+
+###------------------------------5.TypeCast-------------------------------###
+
+# const_cast
+snippet cca
+	const_cast<${1:char} *> ( ${2:expression} )${3}
+# ---------------------------------------------------------------------------
+	
+# static_cast
+snippet sca
+	static_cast<${1:type}> ( ${2:expression} )${3}
+# ---------------------------------------------------------------------------
+
+# dynamic_cast
+snippet dca
+	dynamic_cast<${1:type}> ( ${2:expression} )${3}
+# ---------------------------------------------------------------------------
+
+# reinterpret_cast
+snippet rca
+	reinterpret_cast<${1:type}> ( ${2:expression} )${3}
+# ---------------------------------------------------------------------------
+
+
+###------------------------------6.STL------------------------------------###
+
+# std::map
+snippet map
+	std::map<${1:key}, ${2:value}> ${3:var};
+	${4}
+# ---------------------------------------------------------------------------
+
+# std::vector
+snippet vector
+	std::vector<${1:type}> ${2:var};
+	${3}
+# ---------------------------------------------------------------------------
+
+# std::list
+snippet list
+	std::list<${1:type}> ${2:var};
+	${3}
+# ---------------------------------------------------------------------------
+
+# iteration
+snippet fori
+	for ( ${2:type}::iterator iter = ${1:container}.begin(), end = $1.end(); iter != end ; ++iter )
+	{
+	    ${3:/* code */}
+	}
+# ---------------------------------------------------------------------------
+
+# Read File Into Vector
+snippet readfile
+	std::vector<char> v;
+	if (FILE *${2:fp} = fopen(${1:"filename"}, "r"))
+	{
+		char buf[1024];
+		while (size_t len = fread(buf, 1, sizeof(buf), $2))
+		{
+			v.insert(v.end(), buf, buf + len);
+		}
+		fclose($2);
+	}
+	${3}
+# ---------------------------------------------------------------------------
+
+###------------------------------7.Template-------------------------------###
+
+# specialized class
+snippet scl
+	template <>
+	class ${1:class_name}<${2:type_name}>
+	{
+	    ${3:/* code */}
+	}
+# ---------------------------------------------------------------------------
+
+# specialized method
+snippet sme
+	template <>
+	${1:ret_type} ${2:class_name}<${3:type_name}>::${4:method_name}(${5:parameters})
+	{
+	    ${6:/* code */}
+	}

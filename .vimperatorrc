@@ -1,0 +1,527 @@
+" 2.0 (created: 2008/08/16 18:51:52)
+
+"---------------------------------------------------------------------------------------------
+" Global variables
+"---------------------------------------------------------------------------------------------
+let mapleader = ","
+
+" For the sake of char-hint-mode2.js; use lower-case letter for identifing links.
+let hintsio   = 'io'
+
+"---------------------------------------------------------------------------------------------
+" Mappings
+"---------------------------------------------------------------------------------------------
+
+" override default keybinding, in order to prevent adding bookmark accidently
+"noremap a <Nop>
+noremap A <Nop>
+noremap <Leader>a :addon<CR>
+
+noremap <Leader>q :qa<CR>
+noremap <Leader>x :xa<CR>
+noremap <Leader>t :tabopen<CR><CR>
+
+" Show metainfo for current page
+noremap <Leader>i g<C-g>
+
+" Save curent page
+noremap <Leader>s :sav
+
+" restart firefox quickly
+noremap <Leader>r  :restart<CR>
+
+" make tab-switching more easy
+noremap h gT
+noremap l gt
+noremap < g0
+noremap > g$
+
+" scroll more
+noremap j  3j
+noremap k  3k
+noremap J <C-d>
+noremap K <C-u>
+
+" Noscript mapping
+noremap <Leader>ni :noscript info<CR>
+noremap <Leader>no :noscript popup<CR>
+noremap <Leader>nt :noscript toggletemp<CR>
+noremap <Leader>np :noscript toggleperm<CR>
+
+" 's' map to :search proviede by plugin
+noremap s :search<Space>
+
+" 'S' stands for 'Stop'
+noremap S <C-c>
+
+" Access Ubiquity features!
+noremap <Leader>u :ubiquity<Space>
+
+" Go to the website's root point
+noremap U gU<CR>
+
+" 'V' stands for 'View Source Code'
+noremap V gf
+
+" re-enable ctrl-l to move focus on location bar
+noremap <C-l> <C-v><C-l>
+
+" re-enabl ctrl-k to move focus to search bar
+noremap <C-k> <C-v><A-d><Tab>
+
+" disbale highlight for the moment
+" Note, in order to map '\',we have to escape it with itself...:(
+" So, '\' won't work, '\\' is required here.
+noremap <Silent> \\ :nohlsearch<CR>
+
+" For the sake of FoxTabe, damn it!
+noremap <C-tab> :
+
+" go up quickly
+noremap <BS> gu
+noremap <S-Up> gu
+
+" switch focus between frames
+noremap { [f
+noremap } ]f
+
+" prev/next is more easy now!
+noremap  [ [[
+noremap  ] ]]
+
+" open/close the delicious sidbar
+noremap  <C-b> <C-z><C-b><Esc>
+inoremap <C-b> <C-z><C-b><Esc>
+
+" Make common Select All/Copy/Cut/Paste/Undo keybindings useable under vimperator
+noremap <C-V> <C-v>
+noremap <C-Z> <C-z>
+noremap <C-c> <C-v><C-c>
+noremap <C-a> <C-v><C-a>
+
+cnoremap <C-c> <C-v><C-c>
+cnoremap <C-v> <C-v><C-v>
+cnoremap <C-x> <C-v><C-x>
+
+inoremap <C-a> <C-v><C-a>
+inoremap <C-c> <C-v><C-c>
+inoremap <C-v> <C-v><C-v>
+inoremap <C-x> <C-v><C-x>
+inoremap <C-z> <C-v><C-z>
+inoremap <C-y> <C-v><C-y>
+
+" restore some useful default keybindings offered by origial firefox
+" Note, the second character in C-x is case-sensitive
+noremap <Silent> <C-d> :dialog<Space>addbookmark<CR>
+noremap <Silent> <C-o> :dialog<Space>openfile<CR>
+" lower  case of p
+noremap <Silent> <C-p> :dialog<Space>preferences<CR>
+" upper  case of p
+noremap <Silent> <C-P> :dialog<Space>print<CR>
+noremap <Silent> <C-i> :dialog<Space>pageinfo<CR>
+
+
+"---------------------------------------------------------------------------------------------
+" Vimperator Options
+"---------------------------------------------------------------------------------------------
+
+" Show standard toolbar
+"set guioptions+=T
+
+" Show Bookmark toolbar
+set guioptions+=B
+
+" Number the tab
+set guioptions+=n
+
+" better searching experience
+set incsearch
+set ignorecase
+set smartcase
+
+" always show status-line
+set laststatus=2
+" show mode in the command-line
+set showmode
+
+" Try to stay in Normal mode after loading a web page
+set focuscontent
+
+" use gVIm as external editor
+set editor="gvim -f"
+
+" always sort the auto-completion candidates
+set wildoptions="sort"
+set wildmode="list:full"
+"set complete=l
+
+set nextpattern=\s*下一页|下一张|下页\s*,\b[Nn]ext\b,^>$,^(>>|››|»)$,^(>|»),(>|»)$,\bmore\b
+set previouspattern=\s*上一页|上一张|上页\s*,\bprev|Prev|previous\b,^<$,^(<<|‹‹|«)$,^(<|«),(<|«)$
+
+" wait 800ms before automatically following a non-unique numerical hint
+set hinttimeout=800
+
+"---------------------------------------------------------------------------------------------
+" Firefox preferences
+"---------------------------------------------------------------------------------------------
+set! browser.tabs.tabMinWidth=100
+set! browser.tabs.tabMaxWidth=160
+" Always startup firefox with blank page
+set! browser.startup.page=0
+
+"---------------------------------------------------------------------------------------------
+" Auto-Commands
+"---------------------------------------------------------------------------------------------
+
+" PassThrough gmail and greader
+:autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
+
+" Use gVim to edit gmail content
+autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
+
+"autocmd LocationChange newsmth\.net\/frames\.html :normal  6]f
+
+
+"---------------------------------------------------------------------------------------------
+" Abbreviations
+"---------------------------------------------------------------------------------------------
+
+
+""---------------------------------------------------------------------------------------------
+"" Js scripts
+""---------------------------------------------------------------------------------------------
+
+" Toggle specified item 
+js<<EOF
+toggle_element = function (name)
+{
+    document.getElementById(name).collapsed ^= 1;
+}
+EOF
+
+" toggle 3 important bars.
+js<<EOF
+// flag is for judging, and magic_char is for controling.
+create_toggling_method = function ( flag, magic_char )
+{
+    var inner_function = function ()
+    {
+        var operator = ( flag ^=1 ) ? '+' : '-';
+        var commands = "set " + "guioptions" + operator + "=" + magic_char ;
+        //alert(commands);
+        liberator.execute( commands);    
+    }
+    return inner_function;
+}
+
+menubar_is_visible     = 0;   // invisibel by default
+toolbar_is_visible     = 0;   // invisibel by default
+bookmarkbar_is_visible = 1;   // visible by default
+
+toggle_menubar         = create_toggling_method ( menubar_is_visible,'m');
+toggle_navbar          = create_toggling_method ( toolbar_is_visible,'T');
+toggle_bookmarkbar     = create_toggling_method ( bookmarkbar_is_visible,'B');
+
+EOF
+
+" Because vimperator put all keywords into one single argument, we first split it.
+js<<EOF
+split_and_rejoin_args = function ( args)
+{
+    // split by space 
+    var keywords     = args.split(' ');
+    var query_string = '';
+    var length       = keywords.length;
+
+    // Now we rejoin those keywords with '+'
+    for( var i = 0; i< length - 1 ; ++i)
+    {
+        query_string +=  keywords[i] ; 
+        query_string +=  '+' ;
+    }
+    // Don't forget the last keyword!
+    query_string +=  keywords[length-1] ;
+
+    // this query string should be encoded, becase it may contain special charatctr(e.g,chinese word)
+    query_string = encodeURIComponent(query_string);
+
+    return query_string;
+}
+EOF
+
+" Wiki Selected Text
+js<<EOF
+wiki_selected_text = function () 
+{
+    str = buffer.getCurrentWord();
+    liberator.execute('tabopen wikipedia ' + str);
+}
+EOF
+
+
+"Show the feed-button, even if the address-bar is not displayed"
+js<<EOF
+var show_feed_button = function()
+{
+    var feedPanel = document.createElement("statusbarpanel");
+    feedPanel.setAttribute("id", "feed-panel-clone");
+    feedPanel.appendChild(document.getElementById("feed-button"));
+    feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    document.getElementById("status-bar")
+        .insertBefore(feedPanel, document.getElementById("security-button"));
+}
+show_feed_button();
+EOF
+
+
+
+" UserAgent Switch
+js<<EOF
+liberator.globalVariables['sx_uas'] = 0;
+switch_useragent = function () {
+    pre_useragents_list = [
+    //name, ua, appname, appversion, platform,
+        ['(Firefox) default', '', '', '', ''],
+ 
+        ['M$ IE7', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)',
+                 'Microsoft Internet Explorer',,
+                 '4.0 (compatible; MSIE 7.0; Windows NT 6.0)',
+                 'Win32',
+            ],
+ 
+        ['Google Bot', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', '', '', ''
+            ],
+        ['link2', 'Links (2.1pre15; FreeBSD 5.3-RELEASE i386; 196x84)', '', '', 
+    ''],
+        ['Safari', 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.2 (KHTML, like Gecko) Safari/125.8','','',''],
+        ['Chrome', 'Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.1.1.1 Safari/525.13.','','',''],
+        ['Opera', 'Opera/9.20 (X11, Linux i686; U; en)', 'Opera', '9.20 (Linux i686; U; en)', 'Linux'],
+        ['Safari(iPhone)', 'Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3', '','',''],
+        ['BlackBerry', 'BlackBerry8300/4.5.0Profile/MIDP-2.0 Configuration/CLDC-1.1', '', '', ''], 
+        ['T-Mobile G1', 'Mozilla/5.0 (Linux; U; Android 1.0; en-us; dream) AppleWebKit/5.25.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2', '','',''],
+ 
+    ];
+ 
+    if (liberator.globalVariables['sx_uas'] == pre_useragents_list.length-1)
+        liberator.globalVariables['sx_uas'] = 0;
+    else
+        liberator.globalVariables['sx_uas'] += 1;
+ 
+    var key = liberator.globalVariables['sx_uas'];
+    var name = pre_useragents_list[key][0];
+    liberator.execute('set! general.useragent.override=\'' + pre_useragents_list[key][1] + '\'');
+    //`echo` doesn't work? wtf
+    //liberator.execute('echo \'Use UA: '+ name + '\'');
+    document.getElementById('liberator-message').value='Use UserAgent: '+ name; 
+ 
+}
+EOF
+
+" Fuck GFW; use proxy to access the specified URL
+js<<EOF
+fuck_gfw = function (url)
+{
+    liberator.execute('tabopen https://soproxy.appspot.com/' + url);
+}
+EOF
+
+" Search specified keyword in wikipedia
+js<<EOF
+search_in_wikipedia = function (keyword)
+{
+    liberator.execute('tabopen wikipedia ' + keyword);
+}
+EOF
+
+js<<EOF
+search_in_douban = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://www.douban.com/subject_search?search_text=';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+js<<EOF
+search_in_mp3 = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://mp3.sogou.com/music.so?query=';
+    var suffix       = '&as=&st=&ac=1&pf=mp3';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+
+js<<EOF
+search_in_netyi = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://netyi.net/Search.aspx?query=';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+js<<EOF
+search_in_gigapedia = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://gigapedia.info/1/';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+" search in Amazon.com
+js<<EOF
+search_in_amazon = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://www.amazon.com/s/ref=nb_ss_gw?url=search-alias%3Dstripbooks&field-keywords=';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+js<<EOF
+search_in_firefox_addon = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'https://addons.mozilla.org/zh-CN/firefox/search?q=';
+    var suffix       = '&cat=all';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+
+" Lookup online dictionary of youdao.com
+js<<EOF
+lookup_youdao_dictionary= function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://dict.yodao.com/search?q=';
+    var suffix       = '&btnindex=&ue=utf8&keyfrom=dict.index';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+
+}
+EOF
+
+"Lookup specified *nix commands in online manpages
+js<<EOF
+lookup_manpage = function (keyword)
+{
+    //var prefix   = 'http://www.die.net/search/?q=';
+    var prefix   = 'http://www.google.com/cse?q=';
+    var suffix   = '&sa=Search&ie=ISO-8859-1&cx=partner-pub-5823754184406795%3A54htp1rtx5u&cof=FORID%3A9#927';
+    var full_url = prefix + keyword + suffix ;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+" Reload vimperatorrc 
+js<<EOF
+load_vimperatorrc= function ()
+{
+    var platform = navigator.platform;
+    if (platform.indexOf("Linux") != -1 ) // under linux
+    {
+        liberator.execute( 'source ~/.vimperatorrc' );    
+    }
+    else if ( platform.indexOf("Win") != -1 ) // under windows
+    {
+        liberator.execute( 'source ~/_vimperatorrc' );    
+    }
+}
+EOF
+
+
+""---------------------------------------------------------------------------------------------
+"" Map to js functions
+""---------------------------------------------------------------------------------------------
+
+" toggle Firefox menu-bar
+noremap <Silent> <F1> :js toggle_element('toolbar-menubar')<CR>
+"noremap <Silent> <F1> :js toggle_menubar()<CR> 
+
+" toggle Firefox nav-bar
+noremap <Silent> <F2> :js toggle_element('nav-bar')<CR>
+"noremap <Silent> <F2> :js toggle_navbar()<CR> 
+
+" toggle Firefox bookmark-bar
+"noremap <Silent> <F3> :js toggle_bookmarkbar()<CR> 
+noremap <Silent> <F3> :js toggle_element('PersonalToolbar')<CR>
+
+" toggle status-bar
+noremap <Silent> <F4> :js toggle_element('status-bar')<CR>
+
+" toggle diigo-toolbar
+noremap <Silent> <F5> :js toggle_element('diigotb-toolbar')<CR>
+
+" toggle google-toolbar
+noremap <Silent> <F6> :js toggle_element('gtbToolbar')<CR>
+
+" search firefox addons
+command! -nargs=* Addon :js search_in_firefox_addon("<args>")
+noremap a :Addon<Space>
+
+" search Amazon.com
+command! -nargs=* Amazon :js search_in_amazon("<args>")
+noremap A :Amazon<Space>
+
+" lookup word in yodao dictionary
+command! -nargs=* Dict :js lookup_youdao_dictionary("<args>")
+noremap c :Dict<Space>
+
+" Search in douban.com
+command! -nargs=* Douban :js search_in_douban("<args>")
+noremap <Leader>d :Douban<Space>
+
+command! -nargs=* Music :js search_in_mp3("<args>")
+noremap m :Music<Space>
+
+" lookup online manpages; Note, we override the default 'm' key utility
+command! -nargs=* Man :js lookup_manpage("<args>")
+noremap <Leader>m :Man<Space>
+
+" Search in gigapedia.com
+command! -nargs=* Gigapedia :js search_in_gigapedia("<args>")
+noremap <Leader>g :Gigapedia<Space>
+
+" Search in netyi.net
+command! -nargs=* Netyi :js search_in_netyi("<args>")
+"noremap <Leader>n  :Netyi<Space>
+
+" search in wikipedia
+command! -nargs=* Wiki :js search_in_wikipedia("<args>")
+noremap w :Wiki<Space>
+
+" Fuck GFW!
+command! -nargs=* GFW :js fuck_gfw("<args>")
+noremap W :GFW<Space>
+
+" reload vimperatorrc
+command! Source :js load_vimperatorrc()
+noremap <Leader>v  :Source<CR>
+
+" Switch user-agent 
+map <Silent> <F9> :js switch_useragent()<CR>
+
+"" vim: set ft=vimperator:
