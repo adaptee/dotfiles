@@ -6,7 +6,7 @@
 snippet main
 	int main(int argc, char const* argv[])
 	{
-		${1:/* code */}
+		${1:}
 		return 0;
 	}
 # ---------------------------------------------------------------------------
@@ -54,7 +54,7 @@ snippet Def
 # ifdef
 snippet ifd
 	#ifdef ${1:Symbol}
-	    ${2:/* whatever */}
+	    ${2:}
 	#endif
 	${3}
 #----------------------------------------------------------------------------
@@ -85,9 +85,9 @@ snippet once
 
 # if statement
 snippet if
-	if (${1:/* condition */})
+	if (${1:})
 	{
-		${2:/* code */}
+		${2:}
 	}
 	${3}
 #----------------------------------------------------------------------------
@@ -96,50 +96,50 @@ snippet if
 snippet el
 	else
 	{
-		${1:/* code */}
+		${1:}
 	}
 	${2}
 #----------------------------------------------------------------------------
 
 snippet ifel
-	if (${1:/* condition */})
+	if (${1:})
 	{
-		${2:/* code */}
+		${2:}
 	}
 	else
 	{
-		${3:/* code */}
+		${3:}
 	}
 	${4}
 #----------------------------------------------------------------------------
 
 # 2-way branching
 snippet tri
-	${1:/* condition */} ? ${2:a} : ${3:b}
+	${1:x} ? ${2:a} : ${3:b}
 #----------------------------------------------------------------------------
 
 # switch statement
 snippet swi
-	switch (${1:/* flag */})
+	switch (${1:})
 	{
-	    case ${2:/* condition 1 */} :
+	    case ${2:} :
 		{
-		    ${3:/* processing code */}
+		    ${3:}
 		    break;
 		}
-	    case ${4:/* condition 1 */} :
+	    case ${4:} :
 		{
-		    ${5:/* processing code */}
+		    ${5:}
 		    break;
 		}
-	    case ${6:/* condition 1 */} :
+	    case ${6:} :
 		{
-		    ${7:/* processing code */}
+		    ${7:}
 		    break;
 		}
 	    default :
 		{
-		    ${8:/* unexpected case */}
+		    ${8:}
 		    break;
 		}
 	}
@@ -148,9 +148,9 @@ snippet swi
 
 # case statement
 snippet cas
-	case ${1:/* condition */} :
+	case ${1:} :
 	{
-	    ${2:/* processing code */}
+	    ${2:}
 	    break;
 	}
 	${3}
@@ -160,7 +160,7 @@ snippet cas
 snippet for
 	for (unsigned ${2:i} = 0; $2 < ${1:count}; $2${3:++})
 	{
-		${4:/* code */}
+		${4:}
 	}
 	${5}
 #----------------------------------------------------------------------------
@@ -169,16 +169,16 @@ snippet for
 snippet forr
 	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
 	{
-		${5:/* code */}
+		${5:}
 	}
 	${6}
 #----------------------------------------------------------------------------
 
 # while loop
 snippet wh
-	while (${1:/* condition */})
+	while (${1:})
 	{
-		${2:/* code */}
+		${2:}
 	}
 	${3}
 #----------------------------------------------------------------------------
@@ -187,8 +187,8 @@ snippet wh
 snippet do
 	do
 	{
-		${2:/* code */}
-	} while (${1:/* condition */});
+		${2:}
+	} while (${1:});
 	${3}
 #----------------------------------------------------------------------------
 
@@ -200,7 +200,7 @@ snippet do
 snippet fun
 	${1:bool} ${2:function_name}(${3:argument})
 	{
-		${4:/* code */}
+		${4:}
 		return true;
 	}
 	${5}
@@ -216,7 +216,7 @@ snippet typ
 snippet st
 	struct ${1:`Filename('$1_t', 'name')`}
 	{
-		${2:/* data */}
+		${2:}
 	};
 	${3}
 #----------------------------------------------------------------------------
@@ -225,7 +225,7 @@ snippet st
 snippet typs
 	typedef struct ${2:$1 }
 	{
-		${3:/* data */}
+		${3:}
 	} ${1:`Filename('$1_t', 'name')`};
 #----------------------------------------------------------------------------
 

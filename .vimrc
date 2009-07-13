@@ -436,21 +436,21 @@ endif
 " allows us to write to files even when we forget to use sudo to launch vim
 command! -bar -nargs=0 Sudow :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
-" edit & apply vimrc quickly
+" edit & load vimrc quickly
 if has('unix')
     "Fast reading of .vimrc
-    nmap <silent> <leader>r :call SwitchToBuf("~/.vimrc")<CR>
+    nmap <silent> <leader>r :call SwitchToBuf("$HOME/.vimrc")<CR>
     "Fast loading of the .vimrc
-    nmap <silent> <leader>u :source ~/.vimrc<CR>
-    "When .vimrc is edited, reload it
-    autocmd! bufwritepost .vimrc source ~/.vimrc
+    nmap <silent> <leader>u :source $HOME/.vimrc<CR>
+    "When .vimrc is edited and saved, reload it automaticaly
+    autocmd! bufwritepost .vimrc source $HOME/.vimrc
 elseif has('win32')
     "Fast reading of _vimrc
-    nmap <silent> <leader>r :call SwitchToBuf("~/_vimrc")<CR>
+    nmap <silent> <leader>r :call SwitchToBuf("$VIM/_vimrc")<CR>
     "Fast loading of the _vimrc
-    nmap <silent> <leader>u :source ~/_vimrc<CR>
-    "When .vimrc is edited, reload it
-    autocmd! bufwritepost _vimrc source ~/_vimrc
+    nmap <silent> <leader>u :source $VIM/_vimrc<CR>
+    "When _vimrc is edited and saved, reload it automaticaly
+    autocmd! bufwritepost _vimrc source $VIM/_vimrc
 endif
 
 "------------------------------------------------------------------------------------------------------

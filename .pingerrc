@@ -1,0 +1,62 @@
+# Pinger configuration file
+# <IP or domain name>=<Description>[,arp][,[no]log][,ok_delay,noreply_delay,long_delay]
+#
+# ok_delay - when ping successful, wait this time before sending next ping request.
+# noreply_delay - when ping failed, wait this time before sending next ping request.
+#               - Also when reply exceeds this interval, host is marked as offline.
+# long_delay - delay of reply after which is host marked as delayed.
+# arp - Indicate that host will be pinged using ARP request instead of ICMP ECHO.
+# log - Indicate that host will be logged in the host log.
+# nolog - Indicate that host will not be logged in the host log.
+
+# Logging - if host log specified, every hosts is logged.
+#           If any of them is marked as nolog, it won't be logged.
+#           If there are only 'log' at some hosts, these will be logged
+#           while the rest won't. See README for more.
+
+OPTIONS SECTION:
+
+# Display refresh interval.
+#refresh_interval_ms=1000
+
+# Successful pings' next request interval.
+#delay_between_pings_ms=3000
+
+# Interval, in which if there is no reply,
+# host is marked as offline and new request is sent.
+#host_timeout_ms=10000
+
+# Delay of reply after which is host marked as delayed, if not specified in IP line.
+#long_delay_ms=5000
+
+# Hosts specified only by domain names are resolved every 10 minutes.
+# Specify other interval in seconds here if required. -1 = disable.
+#dns_check_s=600
+
+# Filename where to log errors.
+#err_log=filename
+
+# Filename where to log host status changes.
+#host_log=filename
+
+# Minimum duration of the host status to log the change (in seconds).
+# -1 = disable logging, 0 = log all changes.
+#log_if_status_last_s=5
+
+# ICMP packet size (see 'man ping' for details).
+#icmp_packet_size=0
+
+# Title of this set of hosts. Character % is not allowed here!
+title=standard set
+
+HOSTS SECTION:
+#212.80.76.18=seznam
+#66.249.93.99=google,3000,10000,2000
+##123.45.67.89=somehost,arp,nolog,3000
+#www.gnu.org=GNU web
+#147.32.119.96=MyBox
+192.168.1.1=Gateway
+google.com=Google
+newsmth.net=Smth
+youtube.com=Youtube
+wikipedia.org=Wiki
