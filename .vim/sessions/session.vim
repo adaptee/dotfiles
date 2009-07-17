@@ -12,6 +12,7 @@ inoremap <silent> <F3> :NERDTreeToggle %:p:h
 imap <F1> :exec "help ".expand("<cword>")
 imap <Up> gka
 imap <Down> gja
+map! <S-Insert> <MiddleMouse>
 nmap d :cs find d =expand("<cword>")
 nmap i :cs find i ^=expand("<cfile>")$
 nmap f :cs find f =expand("<cfile>")
@@ -20,11 +21,10 @@ nmap t :cs find t =expand("<cword>")
 nmap c :cs find c =expand("<cword>")
 nmap g :cs find g =expand("<cword>")
 nmap s :cs find s =expand("<cword>")
-nmap  <Nop>
+nnoremap  <Nop>
 nnoremap  3
 nnoremap  ^
-snoremap <silent> 	 i<Right>=TriggerSnippet()
-xmap 	 >
+vmap 	 >
 vnoremap <NL> 3j
 nnoremap <NL> 3j
 vnoremap  3k
@@ -47,6 +47,8 @@ nmap ,cal <Plug>CalendarV
 nmap <silent> ,bv :VSBufExplorer
 nmap <silent> ,bs :HSBufExplorer
 nmap <silent> ,be :BufExplorer
+nmap <silent> ,ubs :call BASH_RemoveGuiMenus()
+nmap <silent> ,lbs :call BASH_CreateGuiMenus()
 nmap ,ihn :IHN
 nmap ,is :IHS:A
 nmap ,ih :IHS
@@ -131,7 +133,7 @@ nmap ds <Plug>Dsurround
 nmap gx <Plug>NetrwBrowseX
 map gf :tabnew <cfile>
 map <silent> mm <Plug>Vm_toggle_sign
-vnoremap p :let current_reg = @"gvs=current_reg
+vnoremap p :let current_reg = @"gvs=current_reg:let @"=current_reg
 nnoremap q? <Nop>
 nnoremap q/ <Nop>
 nnoremap q: <Nop>
@@ -180,6 +182,7 @@ nmap <silent> <F12> :call DoWordComplete()
 nnoremap <silent> <F2> :TlistToggle
 nnoremap <silent> <F3> :NERDTreeToggle .
 nmap <silent> <F4> :A
+map <silent> <M-F1> :call Togglemenu()
 nmap <silent> <Right> :cnext
 nmap <silent> <Left> :cprevious
 nmap <C-Left> :bp
@@ -189,6 +192,7 @@ nmap <F1> :exec "help ".expand("<cword>")
 nmap <Up> gk
 nmap <Down> gj
 nnoremap <S-Space> 
+map <S-Insert> <MiddleMouse>
 cnoremap  <Home>
 inoremap  <Home>
 cnoremap  <End>
@@ -201,19 +205,17 @@ cmap <silent>  <Plug>CmdlineCompleteBackward
 inoremap <silent> 	 =ShowAvailableSnips()
 imap  <Plug>Isurround
 inoremap  :set pastemua*:set nopastea
-inoremap <expr>  omni#cpp#maycomplete#Complete()
 imap  =CtrlXPP()
 inoremap " ""i
-inoremap <expr> . omni#cpp#maycomplete#Dot()
-inoremap <expr> : omni#cpp#maycomplete#Scope()
 inoremap < <>i
-inoremap <expr> > omni#cpp#maycomplete#Arrow()
+inoremap > =ClosePair('>')
 vmap ë :m'<-2`>my`<mzgv`yo`z
 vmap ê :m'>+`<my`>mzgv`yo`z
 nmap ë mz:m-2`z
 nmap ê mz:m+`z
 inoremap [ []i
 inoremap ] =ClosePair(']')
+inoremap jj 
 inoremap { {}i
 inoremap } =ClosePair('}')
 iabbr attri attributes
@@ -243,8 +245,10 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set autochdir
 set autoread
+set background=dark
 set backspace=indent,eol,start
-set balloonexpr=BalloonDeclaration()
+set balloondelay=800
+set balloonexpr=FoldSpellBalloon()
 set browsedir=buffer
 set cindent
 set clipboard=unnamed
@@ -259,6 +263,9 @@ set fileencodings=utf-8,chinese,ucs-bom,taiwan,japan
 set fileformats=unix,dos,mac
 set fillchars=vert:\ ,stl:\ ,stlnc:\\
 set formatoptions=tcqmM
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
+set guioptions=egiLtal
+set guitabtooltip=%!InfoGuiTooltip()
 set helplang=en
 set history=1000
 set hlsearch
@@ -271,7 +278,6 @@ set listchars=tab:>-,eol:$,trail:~
 set modelines=20
 set mouse=a
 set mousefocus
-set omnifunc=omni#cpp#complete#Main
 set pastetoggle=<F8>
 set path=.,/usr/include,,,/usr/include/c++/4.3,/usr/include/linux
 set printoptions=paper:letter
@@ -291,6 +297,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set switchbuf=usetab
 set tabline=%!ShortTabLine()
 set tags=tags;
+set termencoding=utf-8
 set tildeop
 set timeoutlen=2000
 set ttimeout
@@ -301,6 +308,7 @@ set visualbell
 set whichwrap=b,s,<,>,[,]
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 set wildmenu
+set window=30
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 let NERDTreeMapPreviewSplit = "gi"
@@ -323,7 +331,7 @@ let NERDTreeShowLineNumbers =  1
 let LookupFile_EnableRemapCmd =  0 
 let Tlist_Compact_Format =  0 
 let LookupFile_DefaultCmd = ":LUTags"
-let MRU_Use_Current_Window =  0 
+let LookupFile_AllowNewFiles =  0 
 let Tlist_Sort_Type = "name"
 let Tlist_Use_Horiz_Window =  0 
 let LookupFile_PreserveLastPattern =  0 
@@ -344,7 +352,6 @@ let OmniCpp_MayCompleteScope =  1
 let NERDTreeMapPreview = "go"
 let Tlist_Use_SingleClick =  0 
 let MRU_Max_Entries =  20 
-let CSApprox_verbose_level =  1 
 let NERDTreeNotificationThreshold = "100"
 let NERDTreeMapActivateNode = "o"
 let LookupFile_DisableDefaultMap =  0 
@@ -358,7 +365,6 @@ let OmniCpp_GlobalScopeSearch =  1
 let NERDTreeStatusline = "%{b:NERDTreeRoot.path.strForOS(0)}"
 let Tlist_Display_Tag_Scope =  1 
 let NERDTreeMapOpenInTabSilent = "T"
-let OmniCpp_SelectFirstItem =  0 
 let NERDTreeMapHelp = "?"
 let NERDTreeMapJumpParent = "p"
 let NERDTreeMapToggleFilters = "f"
@@ -384,7 +390,6 @@ let NERDTreeAutoCenterThreshold = "3"
 let NERDTreeShowFiles = "1"
 let OmniCpp_ShowScopeInAbbr =  0 
 let NERDTreeMapOpenSplit = "i"
-let OmniCpp_LocalSearchDecl =  0 
 let LookupFile_MinPatLength =  3 
 let NERDTreeCaseSensitiveSort =  1 
 let NERDTreeHijackNetrw = "1"
@@ -446,7 +451,7 @@ let BASH_Version = "2.10"
 let NERDTreeMapQuit = "q"
 let NERDTreeMapChangeRoot = "C"
 let NERDCompactSexyComs = "0"
-let LookupFile_AllowNewFiles =  0 
+let MRU_Use_Current_Window =  0 
 let NERDTreeSortDirs = "1"
 let NERDTreeMapToggleFiles = "F"
 let NERDAllowAnyVisualDelims = "1"
@@ -457,7 +462,6 @@ let BASH_Dictionary_File = "/home/whodare/.vim/bash-support/wordlists/bash.list"
 let NERDTreeMapJumpFirstChild = "K"
 let NERDTreeMapOpenRecursively = "O"
 let NERDTreeMapToggleBookmarks = "B"
-let CSApprox_redirfallback =  0 
 let SuperTabMappingBackward = "<s-tab>"
 let NERDTreeMapUpdirKeepOpen = "U"
 let NERDTreeQuitOnOpen = "0"
@@ -468,12 +472,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +141 ~/bin/code/cme/FIX_FAST/linux/Utility.cpp
-badd +58 ~/bin/code/cme/FIX_FAST/linux/UIntField.cpp
-badd +65 ~/bin/code/cme/FIX_FAST/linux/UIntField.h
-badd +23 ~/bin/code/cme/FIX_FAST/linux/Field.h
-args ~/bin/code/cme/FIX_FAST/linux/Utility.cpp
-set lines=31 columns=116
+badd +56 ~/.vimrc
+silent! argdel *
+set lines=31 columns=114
+winpos 0 26
 set splitbelow splitright
 set nosplitbelow
 set nosplitright

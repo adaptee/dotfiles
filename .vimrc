@@ -1,3 +1,6 @@
+
+
+
 "------------------------------------------------------------------------------------------------------
 " general
 "------------------------------------------------------------------------------------------------------
@@ -49,6 +52,9 @@ set backspace=indent,eol,start
 filetype on                 " run $VIMRUNTIME/filetype.vim and $VIMRUNTIME/scripts.vim(conditionl)
 filetype plugin on          " run $VIMRUNTIME/fyplugin.vim
 filetype indent on          " run $VIMRUNTIME/indent.vim
+
+" since 'jj' nearly never occur in input mode, use it to return to normal mode.
+inoremap jj <Esc>
 
 "-----------------------------------------------------------------------------------------------------
 " colors
@@ -185,8 +191,8 @@ vmap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR
 vmap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 "Note: the 'g' in substitute() means gloabl for substitute(), not for command 's'
 
-" Make p in Visual mode to replace the selected text with the contents of "" register.
-vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
+" Make p in Visual mode to replace selected text with previous yanked content.
+vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
 
 " disable annoying window
 nnoremap q: <Nop>
