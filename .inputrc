@@ -35,6 +35,10 @@ set show-all-if-ambiguous on    # list all candidates instead of ring the bell, 
 set bell-style none             # never ring the bell!
 set visible-stats on            # append  single type character to each completion candidates.
 
+#set meta-flag on
+set input-meta on
+set convert-meta on
+set output-meta on
 
 
 

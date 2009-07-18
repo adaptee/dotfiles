@@ -12,7 +12,6 @@ inoremap <silent> <F3> :NERDTreeToggle %:p:h
 imap <F1> :exec "help ".expand("<cword>")
 imap <Up> gka
 imap <Down> gja
-map! <S-Insert> <MiddleMouse>
 nmap d :cs find d =expand("<cword>")
 nmap i :cs find i ^=expand("<cfile>")$
 nmap f :cs find f =expand("<cfile>")
@@ -21,10 +20,11 @@ nmap t :cs find t =expand("<cword>")
 nmap c :cs find c =expand("<cword>")
 nmap g :cs find g =expand("<cword>")
 nmap s :cs find s =expand("<cword>")
-nnoremap  <Nop>
+nmap  <Nop>
 nnoremap  3
 nnoremap  ^
-vmap 	 >
+snoremap <silent> 	 i<Right>=TriggerSnippet()
+xmap 	 >
 vnoremap <NL> 3j
 nnoremap <NL> 3j
 vnoremap  3k
@@ -47,8 +47,6 @@ nmap ,cal <Plug>CalendarV
 nmap <silent> ,bv :VSBufExplorer
 nmap <silent> ,bs :HSBufExplorer
 nmap <silent> ,be :BufExplorer
-nmap <silent> ,ubs :call BASH_RemoveGuiMenus()
-nmap <silent> ,lbs :call BASH_CreateGuiMenus()
 nmap ,ihn :IHN
 nmap ,is :IHS:A
 nmap ,ih :IHS
@@ -116,13 +114,15 @@ vmap ,s y:%s/=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')/
 vnoremap < <gv
 vnoremap > >gv
 nnoremap F gg=G''
+nnoremap H ^
 nmap K <Plug>ManPageView
+noremap L $
 map Q gq
 xmap S <Plug>VSurround
 nmap T :ToggleWord
 nnoremap Y y$
 vmap [% [%m'gv``
-nmap <silent> \ :nohlsearch
+nmap <silent> \ :set invhlsearch
 nnoremap ][ ]]
 nnoremap ]] ][
 vmap ]% ]%m'gv``
@@ -182,7 +182,6 @@ nmap <silent> <F12> :call DoWordComplete()
 nnoremap <silent> <F2> :TlistToggle
 nnoremap <silent> <F3> :NERDTreeToggle .
 nmap <silent> <F4> :A
-map <silent> <M-F1> :call Togglemenu()
 nmap <silent> <Right> :cnext
 nmap <silent> <Left> :cprevious
 nmap <C-Left> :bp
@@ -192,7 +191,6 @@ nmap <F1> :exec "help ".expand("<cword>")
 nmap <Up> gk
 nmap <Down> gj
 nnoremap <S-Space> 
-map <S-Insert> <MiddleMouse>
 cnoremap  <Home>
 inoremap  <Home>
 cnoremap  <End>
@@ -209,6 +207,11 @@ imap  =CtrlXPP()
 inoremap " ""i
 inoremap < <>i
 inoremap > =ClosePair('>')
+nnoremap <silent> µ :tablast
+nnoremap <silent> ´ :tabfirst
+nnoremap ³ :set invpaste:set paste?
+nnoremap <silent> ± :set invhlsearch
+nnoremap <silent> ² :set invlist
 vmap ë :m'<-2`>my`<mzgv`yo`z
 vmap ê :m'>+`<my`>mzgv`yo`z
 nmap ë mz:m-2`z
@@ -245,10 +248,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set autochdir
 set autoread
-set background=dark
 set backspace=indent,eol,start
-set balloondelay=800
-set balloonexpr=FoldSpellBalloon()
 set browsedir=buffer
 set cindent
 set clipboard=unnamed
@@ -263,9 +263,6 @@ set fileencodings=utf-8,chinese,ucs-bom,taiwan,japan
 set fileformats=unix,dos,mac
 set fillchars=vert:\ ,stl:\ ,stlnc:\\
 set formatoptions=tcqmM
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
-set guioptions=egiLtal
-set guitabtooltip=%!InfoGuiTooltip()
 set helplang=en
 set history=1000
 set hlsearch
@@ -297,7 +294,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set switchbuf=usetab
 set tabline=%!ShortTabLine()
 set tags=tags;
-set termencoding=utf-8
 set tildeop
 set timeoutlen=2000
 set ttimeout
@@ -308,7 +304,6 @@ set visualbell
 set whichwrap=b,s,<,>,[,]
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 set wildmenu
-set window=30
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 let NERDTreeMapPreviewSplit = "gi"
@@ -331,7 +326,7 @@ let NERDTreeShowLineNumbers =  1
 let LookupFile_EnableRemapCmd =  0 
 let Tlist_Compact_Format =  0 
 let LookupFile_DefaultCmd = ":LUTags"
-let LookupFile_AllowNewFiles =  0 
+let MRU_Use_Current_Window =  0 
 let Tlist_Sort_Type = "name"
 let Tlist_Use_Horiz_Window =  0 
 let LookupFile_PreserveLastPattern =  0 
@@ -352,6 +347,7 @@ let OmniCpp_MayCompleteScope =  1
 let NERDTreeMapPreview = "go"
 let Tlist_Use_SingleClick =  0 
 let MRU_Max_Entries =  20 
+let CSApprox_verbose_level =  1 
 let NERDTreeNotificationThreshold = "100"
 let NERDTreeMapActivateNode = "o"
 let LookupFile_DisableDefaultMap =  0 
@@ -451,7 +447,7 @@ let BASH_Version = "2.10"
 let NERDTreeMapQuit = "q"
 let NERDTreeMapChangeRoot = "C"
 let NERDCompactSexyComs = "0"
-let MRU_Use_Current_Window =  0 
+let LookupFile_AllowNewFiles =  0 
 let NERDTreeSortDirs = "1"
 let NERDTreeMapToggleFiles = "F"
 let NERDAllowAnyVisualDelims = "1"
@@ -462,6 +458,7 @@ let BASH_Dictionary_File = "/home/whodare/.vim/bash-support/wordlists/bash.list"
 let NERDTreeMapJumpFirstChild = "K"
 let NERDTreeMapOpenRecursively = "O"
 let NERDTreeMapToggleBookmarks = "B"
+let CSApprox_redirfallback =  0 
 let SuperTabMappingBackward = "<s-tab>"
 let NERDTreeMapUpdirKeepOpen = "U"
 let NERDTreeQuitOnOpen = "0"
@@ -472,15 +469,121 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +56 ~/.vimrc
-silent! argdel *
-set lines=31 columns=114
-winpos 0 26
+badd +0 ~/.inputrc
+args ~/.inputrc
+set lines=31 columns=116
+edit ~/.inputrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
+argglobal
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=b:VimIM
+setlocal nocopyindent
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'readline'
+setlocal filetype=readline
+endif
+set foldcolumn=2
+setlocal foldcolumn=2
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+set foldlevel=10
+setlocal foldlevel=10
+setlocal foldmarker={{{,}}}
+set foldmethod=indent
+setlocal foldmethod=indent
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=mMcroql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetReadlineIndent()
+setlocal indentkeys=!^F,o,O,=$else,=$endif
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+set linebreak
+setlocal linebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'readline'
+setlocal syntax=readline
+endif
+setlocal tabstop=8
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 23 - ((8 * winheight(0) + 14) / 28)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+23
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

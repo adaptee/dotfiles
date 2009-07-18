@@ -1,9 +1,7 @@
-
-
-
 "------------------------------------------------------------------------------------------------------
 " general
 "------------------------------------------------------------------------------------------------------
+
 "disable vi-compatible mode
 set nocompatible
 
@@ -119,6 +117,10 @@ set report=0
 " differ options
 set diffopt=filler,iwhite
 
+" togggle the showing of TAB, trailing ws.
+set <M-2>=2
+nnoremap <silent><M-2> <Esc>:set invlist<CR>
+
 "------------------------------------------------------------------------------------------------------
 " encodings & language
 "------------------------------------------------------------------------------------------------------
@@ -170,8 +172,12 @@ set smartcase
 
 "hello world"
 
-" toggle search highlighting; now the unused key '\' finally can do something now....
-nmap <silent> \      :nohlsearch<CR>
+" toggle search result highlighting; now the unused key '\' finally can do something now....
+nmap <silent> \      :set invhlsearch<CR>
+
+" toggle search result highlight, too
+set <M-1>=1
+nnoremap <silent><M-1> <Esc>:set invhlsearch<CR>
 
 "search visually-selected text
 "vmap <silent> * y/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<CR><CR>
@@ -211,6 +217,11 @@ inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 
 " switch the paste option on/off
 set pastetoggle=<F8>
+
+" toggle and show current pasting status
+set <M-3>=3
+nnoremap <M-3> <Esc>:set invpaste<CR>:set paste?<CR>
+
 
 "Y's default unctionality is duplicated with 'yy' and conter-intuitive; Let's correct it
 "Now 'C','D','Y' work the same way: from current position to the end of line
@@ -267,7 +278,11 @@ imap <UP> <ESC>gka
 nmap <Leader>d <ESC><C-]>
 nmap <Leader>x <ESC><C-T>
 
-"under insert mode, move cursor to beginning/end quickly
+" In normal mode, move cursor to beginning/end quickly
+nnoremap H ^
+noremap  L $
+
+" In insert mode, move cursor to beginning/end quickly
 inoremap <C-A>   <Home>
 inoremap <C-E>   <End>
 
@@ -276,12 +291,15 @@ cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
 
 "Move current line of text up and down(crossing other text)
-nmap <A-j> mz:m+<CR>`z
-nmap <A-k> mz:m-2<CR>`z
+set <M-j>=j
+set <M-k>=k
+
+nmap <M-j> mz:m+<CR>`z
+nmap <M-k> mz:m-2<CR>`z
 
 "Move visually-selected text up and down(crossing other text)
-vmap <A-j> :m'>+<CR>`<my`>mzgv`yo`z
-vmap <A-k> :m'<-2<CR>`>my`<mzgv`yo`z
+vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
 "------------------------------------------------------------------------------------------------------
 " help & manpage
@@ -424,6 +442,13 @@ set autochdir
 "use Ctrl+Left/Right arrow to cycle the buffer list
 nmap <C-right>    <ESC>:bn<CR>
 nmap <C-left>     <ESC>:bp<CR>
+
+
+"fast switch to first & last tab
+set <M-4>=4
+nnoremap <silent><M-4> <Esc>:tabfirst<CR>
+set <M-5>=5
+nnoremap <silent><M-5> <Esc>:tablast<CR>
 
 "make writing and quiting more easy
 nmap <Leader>w mz:w<CR>'z
