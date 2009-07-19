@@ -197,16 +197,20 @@ cnoremap  <End>
 inoremap  <End>
 imap S <Plug>ISurround
 imap s <Plug>Isurround
+inoremap  
 inoremap <silent> 	 =TriggerSnippet()
 cmap <silent>  <Plug>CmdlineCompleteForward
 cmap <silent>  <Plug>CmdlineCompleteBackward
 inoremap <silent> 	 =ShowAvailableSnips()
 imap  <Plug>Isurround
 inoremap  :set pastemua*:set nopastea
+inoremap <expr>  omni#cpp#maycomplete#Complete()
 imap  =CtrlXPP()
 inoremap " ""i
+inoremap <expr> . omni#cpp#maycomplete#Dot()
+inoremap <expr> : omni#cpp#maycomplete#Scope()
 inoremap < <>i
-inoremap > =ClosePair('>')
+inoremap <expr> > omni#cpp#maycomplete#Arrow()
 nnoremap <silent> µ :tablast
 nnoremap <silent> ´ :tabfirst
 nnoremap ³ :set invpaste:set paste?
@@ -221,7 +225,10 @@ inoremap ] =ClosePair(']')
 inoremap jj 
 inoremap { {}i
 inoremap } =ClosePair('}')
-iabbr attri attributes
+iabbr #l /*----------------------------------------------*/
+iabbr #e ************************************************/
+iabbr #b /************************************************
+iabbr attri attribute
 iabbr kath Katherine
 iabbr autom automaticaly
 iabbr xtime =strftime("%Y-%m-%d %H:%M:%S")
@@ -249,16 +256,16 @@ unlet s:cpo_save
 set autochdir
 set autoread
 set backspace=indent,eol,start
+set balloonexpr=BalloonDeclaration()
 set browsedir=buffer
 set cindent
 set clipboard=unnamed
 set completefunc=b:VimIM
-set completeopt=menu
+set completeopt=menuone
 set cscopetag
 set cscopeverbose
 set diffopt=filler,iwhite
 set directory=.,/var/tmp,/tmp
-set expandtab
 set fileencodings=utf-8,chinese,ucs-bom,taiwan,japan
 set fileformats=unix,dos,mac
 set fillchars=vert:\ ,stl:\ ,stlnc:\\
@@ -275,6 +282,8 @@ set listchars=tab:>-,eol:$,trail:~
 set modelines=20
 set mouse=a
 set mousefocus
+set nrformats=alpha,hex
+set omnifunc=omni#cpp#complete#Main
 set pastetoggle=<F8>
 set path=.,/usr/include,,,/usr/include/c++/4.3,/usr/include/linux
 set printoptions=paper:letter
@@ -361,6 +370,7 @@ let OmniCpp_GlobalScopeSearch =  1
 let NERDTreeStatusline = "%{b:NERDTreeRoot.path.strForOS(0)}"
 let Tlist_Display_Tag_Scope =  1 
 let NERDTreeMapOpenInTabSilent = "T"
+let OmniCpp_SelectFirstItem =  0 
 let NERDTreeMapHelp = "?"
 let NERDTreeMapJumpParent = "p"
 let NERDTreeMapToggleFilters = "f"
@@ -386,6 +396,7 @@ let NERDTreeAutoCenterThreshold = "3"
 let NERDTreeShowFiles = "1"
 let OmniCpp_ShowScopeInAbbr =  0 
 let NERDTreeMapOpenSplit = "i"
+let OmniCpp_LocalSearchDecl =  0 
 let LookupFile_MinPatLength =  3 
 let NERDTreeCaseSensitiveSort =  1 
 let NERDTreeHijackNetrw = "1"
@@ -442,6 +453,7 @@ let NERDTreeMapJumpNextSibling = "<C-j>"
 let Tlist_File_Fold_Auto_Close =  1 
 let Tlist_Auto_Open =  0 
 let LookupFile_TagsExpandCamelCase =  1 
+let Align_xstrlen =  1 
 let NERDTreeCopyCmd = "cp -r "
 let BASH_Version = "2.10"
 let NERDTreeMapQuit = "q"
@@ -469,16 +481,21 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.inputrc
-args ~/.inputrc
+badd +239 ~/bin/code/cme/fixfast/linux/ut/XMLParserTest.cpp
+badd +32 ~/bin/code/cme/fixfast/linux/ut/XMLParserTest.h
+args ~/bin/code/cme/fixfast/linux/ut/XMLParserTest.cpp
 set lines=31 columns=116
-edit ~/.inputrc
+edit ~/bin/code/cme/fixfast/linux/ut/XMLParserTest.cpp
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+inoremap <buffer> <silent> ­ =EchoFuncP()
+inoremap <buffer> <silent> ½ =EchoFuncN()
+inoremap <buffer> <silent> ( (=EchoFunc()
+inoremap <buffer> <silent> ) :echo)
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -491,8 +508,8 @@ setlocal cindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
-setlocal comments=:#
-setlocal commentstring=#\ %s
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal completefunc=b:VimIM
 setlocal nocopyindent
@@ -505,8 +522,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'readline'
-setlocal filetype=readline
+if &filetype != 'cpp'
+setlocal filetype=cpp
 endif
 set foldcolumn=2
 setlocal foldcolumn=2
@@ -529,10 +546,10 @@ setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetReadlineIndent()
-setlocal indentkeys=!^F,o,O,=$else,=$endif
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 set linebreak
 setlocal linebreak
@@ -542,11 +559,11 @@ setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
 setlocal modifiable
-setlocal nrformats=octal,hex
+setlocal nrformats=alpha,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=omni#cpp#complete#Main
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -567,8 +584,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'readline'
-setlocal syntax=readline
+if &syntax != 'cpp'
+setlocal syntax=cpp
 endif
 setlocal tabstop=8
 setlocal tags=
@@ -578,12 +595,30 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 23 - ((8 * winheight(0) + 14) / 28)
+9
+normal zo
+12
+normal zo
+29
+normal zo
+129
+normal zo
+138
+normal zo
+147
+normal zo
+205
+normal zo
+227
+normal zo
+9
+normal zo
+let s:l = 237 - ((14 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 0
+237
+normal! 056l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

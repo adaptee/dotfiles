@@ -70,7 +70,7 @@ colo darkZ
 "colo desert
 
 "------------------------------------------------------------------------------------------------------
-" visual cues
+" visual clues
 "------------------------------------------------------------------------------------------------------
 
 "show line-number
@@ -493,6 +493,11 @@ nmap <Leader>s :split<CR><C-W><C-W>
 nmap <Leader>v :vsplit<CR><C-W><C-w>
 nmap <Leader>f <C-w><C-w>
 
+" put new window below the original one.
+"set splitbelow
+" put new window on right side of the original one.
+"set splitright
+
 " smart way to switch between windows
 "nmap <C-j> <C-W>j
 "nmap <C-k> <C-W>k
@@ -554,11 +559,14 @@ iab posix   POSIX
 iab fst     first
 iab scd     second
 iab misc    miscellaneous
-iab xdate   <c-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
-iab xtime   <c-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+iab xdate   <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
+iab xtime   <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 iab autom   automaticaly
 iab kath    Katherine
-iab attri   attributes
+iab attri   attribute
+iab #b /************************************************
+iab #e ************************************************/
+iab #l /*----------------------------------------------*/
 
 "cab s   set
 
@@ -710,13 +718,20 @@ function! LoadSession()
     endif
 endfunction
 
+" since origanl <C-h>'s utility is seldom used, let make good use of it.
+" since <C-e> is customed to moving to EoL, I will map <C-h> to original <C-e>
+" now <C-y> and <C-h> is very to remember:
+" 1).y(upper) mean inserting character in corresponding positiong of upper line
+" 2).h(lower) mean repeating character in corresponding positiong of lower line
+inoremap <C-h> <C-e>
+
 "------------------------------------------------------------------------------------------------------
 " Misc
 "------------------------------------------------------------------------------------------------------
 " set <C-C> as no ops
 nnoremap <C-C> <NOP>
 
-" For vimperator 's sake
+" For firefox 's vimperator 's sake
 let g:netrw_http_cmd = "wget -q -O"
 
 " setup necessary environment variables
@@ -725,6 +740,11 @@ if has('unix')
 elseif has ('win32')
     let $VIMDATA=$VIM.'/vimfiles/vimdata'
 endif
+
+" defines what bases Vim will consider for numbers when using the
+" CTRL-A and CTRL-X commands for adding to and subtracting
+" note, alpha mean (a,b,c,d,...z); besides, decimal is always implied.
+set nrformats=alpha,hex
 
 "------------------------------------------------------------------------------------------------------
 " plugins----A.vim
@@ -864,8 +884,8 @@ nmap <silent><C-F12> :call EndWordComplete()<CR>
 "------------------------------------------------------------------------------------------------------
 " plugins----Zoomwin.vim
 "------------------------------------------------------------------------------------------------------
-"Press <c-w>o :         the current window zooms into a full screen
-"Press <c-w>o again:    the previous set of windows is restored
+"Press <C-w>o :         the current window zooms into a full screen
+"Press <C-w>o again:    the previous set of windows is restored
 
 "------------------------------------------------------------------------------------------------------
 " utility functions
