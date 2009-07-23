@@ -16,6 +16,7 @@ export PS4='line $LINENO: '
 # fix-me
 
 # Define Colors
+# tput can provide better portability for these colors, so recommended.
 if  which tput &> /dev/null ;then
 
     #---- use tput to imporve portability-----
@@ -69,13 +70,14 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 PS1_CHROOT=${debian_chroot:+($debian_chroot)}
-PS1_EXITCODE='\['${BRIGHTYELLOW}'\]''[$?]'
-PS1_HISTNUMER='\['${BRIGHTCYAN}'\]''(\!)'
+#PS1_EXITCODE='\['${BRIGHTYELLOW}'\]''[$?]'
+PS1_EXITCODE='`a=$?;if [ $a -ne 0 ]; then echo -n -e "\['${BRIGHTRED}'\][$a]\['${NOCOLOR}'\]"; fi`'
+#PS1_HISTNUMER='\['${BRIGHTCYAN}'\]''(\!)'
 
 if [ "$UID"!="0" ]
 then
-    PS1_USER='\['${BRIGHTGREEN}'\]''\u'
     PS1_SYMBOL='\['${NOCOLOR}'\]''$ '
+    PS1_USER='\['${BRIGHTGREEN}'\]''\u'
 else
     PS1_USER='\['${BRIGHTRED}'\]''\u'
     PS1_SYMBOL='\['${NOCOLOR}'\]''# '
@@ -93,7 +95,9 @@ fi
 PS1_COLON='\['${BRIGHTGREEN}'\]'':'
 PS1_PWD='\['${BRIGHTBLUE}'\]''\W'
 
-PS1="${PS1_CHROOT}${PS1_EXITCODE}${PS1_HISTNUMER}${PS1_USER}${PS1_AT}${PS1_HOST}${PS1_COLON}${PS1_PWD}${PS1_SYMBOL}" 
+PS1_GIT_BRANCH='`b=$(parse_git_branch); if [ x"$b" != "x" ]; then echo -n -e "\['${BRIGHTYELLOW}'\]($b)\['${NOCOLOR}'\]"; fi`'
+
+PS1="${PS1_CHROOT}${PS1_EXITCODE}${PS1_HISTNUMER}${PS1_USER}${PS1_AT}${PS1_HOST}${PS1_COLON}${PS1_PWD}${PS1_GIT_BRANCH}${PS1_SYMBOL}" 
 
 # show dynamic window title, reflecting "who is in where now?"
 case "$TERM" in
@@ -682,6 +686,12 @@ function glog()
     git log --pretty=oneline --topo-order --graph --abbrev-commit $@
 }
 
+# show current folder's git branch info
+parse_git_branch() 
+{
+    # tell 'cut' to use SPACE as delimiter
+    git branch 2> /dev/null | sed -e '/^[^*]/d' | cut --delimiter=\  --fields=2
+}
 
 ###**********************************************************************###
 ###                             auto completion                          ###

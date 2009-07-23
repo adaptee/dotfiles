@@ -15,10 +15,13 @@ let hintsio   = 'io'
 " override default keybinding, in order to prevent adding bookmark accidently
 "noremap a <Nop>
 noremap A <Nop>
-noremap <Leader>a :addon<CR>
+noremap <Leader>a <Esc>:tabnew<CR>:addon<CR>
 
 noremap <Leader>q :qa<CR>
 noremap <Leader>x :xa<CR>
+
+
+" create a new tab is just 2 key stroke!
 noremap <Leader>t :tabopen<CR><CR>
 
 " Show metainfo for current page
@@ -35,6 +38,10 @@ noremap h gT
 noremap l gt
 noremap < g0
 noremap > g$
+
+" swap these two key-bindings, since open homepage in new tab is used more oftenlly.
+noremap gh gH
+noremap gH gh
 
 " scroll more
 noremap j  3j
