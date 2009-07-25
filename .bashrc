@@ -266,7 +266,7 @@ alias 755='chmod 755'
 # Apt-get customization
 #---------------------------------------------------------------------------------------------
 alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade -y'
+alias upgrade='sudo apt-get upgrade -y --force-yes'
 # short name for'sudo apt-get install'
 inst()
 {
@@ -339,7 +339,7 @@ alias mrsync='rsync -r -t -v --progress'
 
 #alias ps='ps -o stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm'
 
-# Note: [\1]  is used to exclude grep from the final result
+# Tip: [\1]  is used to exclude grep from the final result
 psg()
 {
     target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
@@ -477,6 +477,14 @@ e()
 # Open specified files in apporiate programs
 # Usage: go FILES...
 go ()
+{
+    local item
+    for item in "$@";do
+        echo ${item}
+        gnome-open ${item}
+    done
+}
+xx ()
 {
     local item
     for item in "$@";do
@@ -704,6 +712,10 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+### chsdir start ###
+. $HOME/bin/chs_completion
+### chsdir finish. ###
+
 complete -c sudo
 complete -c s
 
@@ -742,6 +754,4 @@ complete -o filenames -F _longopt g
 if [ -f ~/bin/cdargs-bash.sh ];then
     source ~/bin/cdargs-bash.sh
 fi
-
-
 

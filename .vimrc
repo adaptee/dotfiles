@@ -693,8 +693,6 @@ autocmd BufReadPost *
 "Insert header automatically
 "autocmd BufNewFile *.c,*.h,*.sh,*.javai,*.cppi,*.py,*.pl   call SetTitle()
 
-"automatically set completion-method
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 autocmd VimEnter * call LoadSession()
 autocmd VimLeave * call SaveSession()
@@ -730,6 +728,13 @@ inoremap <C-h> <C-e>
 "------------------------------------------------------------------------------------------------------
 " set <C-C> as no ops
 nnoremap <C-C> <NOP>
+
+" Since Jx is more useful than only J....
+nnoremap J Jx
+
+" for those who has the obsession of saving changes.....
+" save automatically after pressing <Enter>
+":inoremap <cr> <c-o>:w<cr><cr>
 
 " For firefox 's vimperator 's sake
 let g:netrw_http_cmd = "wget -q -O"
@@ -979,6 +984,7 @@ endfunc
 " programming features
 "------------------------------------------------------------------------------------------------------
 
+" for c/c++ programer under *nix
 set path+=/usr/include/c++/4.3
 set path+=/usr/include/linux
 
@@ -986,8 +992,35 @@ set path+=/usr/include/linux
 autocmd BufEnter /usr/include/c++/*    setfiletype cpp
 autocmd BufEnter /usr/include/g++-3/*  setfiletype cpp
 
-" In C/C++ file, press ';' to append ';' to the end of the line, when it is missing.
+" In C/C++ file, press ',;' to append ';' to the end of the line, when it is missing.
 autocm FileType *.c,*.cpp  noremap <leader>; :s/\([^;]\)$/\1;/<CR>:let @/=""<CR><esc>
+
+"automatically set completion-method
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" require plugin pythoncomplete.vim, which should be installed as default
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" Remove trailing spaces for C/C++ and Vim files when writing to disk
+au BufWritePre *                  call DeleteTrailingWS()
+function! DeleteTrailingWS()
+    if $VIM_HATE_SPACE_ERRORS != '0' &&
+                \(&filetype == 'c' || &filetype == 'cpp' || &filetype == 'vim'|| &filetype == 'python')
+        normal m`
+        silent! :%s/\s\+$//e
+        normal ``
+    endif
+endfunction
+
+au BufWritePre *                  call AdjustCommaPosition()
+function! AdjustCommaPosition()
+    if ( &filetype == 'c' || &filetype == 'cpp')
+        normal m`
+        "silent! :%s/\s\+$//e
+        "silent! :%s/\>\s\+,\s+/, /e
+        normal ``
+    endif
+endfunction
+
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
 if $VIM_HATE_SPACE_ERRORS != '0'
@@ -1003,7 +1036,6 @@ map gf :tabnew <cfile><CR>
 set tags=tags;
 "set tags=./tags,tags;
 "set tags=./tags,./../tags,./**/tags
-"set tags+=/home/whodare/prog/software/linux/System/linux/tags
 
 " make tag jumping for user-frindly
 nnoremap <CR> g<C-]>
@@ -1015,22 +1047,10 @@ nnoremap <BS> <C-T>
 " first search tag file, then search cscope database
 "set cscopetagorder=1
 
-" require plugin pythoncomplete.vim, which should be installed as default
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "Force VIM to update diff result on-the-fly when user edit the compared files
 diffupdate
 
-" Remove trailing spaces for C/C++ and Vim files when writing to disk
-au BufWritePre *                  call DeleteTrailingWS()
-function! DeleteTrailingWS()
-    if $VIM_HATE_SPACE_ERRORS != '0' &&
-                \(&filetype == 'c' || &filetype == 'cpp' || &filetype == 'vim'|| &filetype == 'python')
-        normal m`
-        silent! :%s/\s\+$//e
-        normal ``
-    endif
-endfunction
 
 "make VIM auto-complete the brackets!
 "inoremap ( ()<ESC>i
