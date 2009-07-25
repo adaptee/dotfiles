@@ -268,7 +268,7 @@ nnoremap ` '
 nnoremap ]] ][
 nnoremap ][ ]]
 
-"map UP/DOWN to move one visual line ,not one physical line
+"map UP/DOWN to move one visual line,not one physical line
 nmap <DOWN> gj
 imap <DOWN> <ESC>gja
 nmap <UP> gk
@@ -647,7 +647,7 @@ if has("gui_running")
         return bufname($)."\n windows: ".wincount." " .bufferlist. " "
     endfunction
 
-    "enable edit area tooltip,after cursor staying for 800ms;for example , on a folded area
+    "enable edit area tooltip,after cursor staying for 800ms;for example, on a folded area
     set ballooneval
     set balloondelay=800
     set balloonexpr=FoldSpellBalloon()
@@ -761,7 +761,7 @@ nmap <silent><F4> :A<CR>
 " plugins----AlignPlugin.vim
 "------------------------------------------------------------------------------------------------------
 vmap <silent> <Leader>a= <ESC>:AlignPush<CR>:AlignCtrl lp1P1<CR>:'<,'>Align =<CR>:AlignPop<CR>
-vmap <silent> <Leader>a, <ESC>:AlignPush<CR>:AlignCtrl lp0P1<CR>:'<,'>Align ,<CR>:AlignPop<CR>
+vmap <silent> <Leader>a, <ESC>:AlignPush<CR>:AlignCtrl lp0P1<CR>:'<,'>Align,<CR>:AlignPop<CR>
 vmap <silent> <Leader>a( <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align (<CR>:AlignPop<CR>
 
 "------------------------------------------------------------------------------------------------------
@@ -827,7 +827,7 @@ let NERDTreeIgnore            = ['\.swp$', '\~$','\.vcproj$','\.ncb$','\.sln$','
 set completeopt=menu
 
 let OmniCpp_GlobalScopeSearch   = 1  " 0 or 1
-let OmniCpp_NamespaceSearch     = 1   " 0 ,  1 or 2
+let OmniCpp_NamespaceSearch     = 1   " 0, 1 or 2
 let OmniCpp_DisplayMode         = 1
 let OmniCpp_ShowScopeInAbbr     = 0
 let OmniCpp_ShowPrototypeInAbbr = 1
@@ -844,7 +844,7 @@ nnoremap <silent> <F2> :TlistToggle<CR>
 inoremap <silent> <F2> <C-O>:TlistToggle<CR><Esc>
 set updatetime=2000    " update showing every 2 seconds. May cause problem.
 
-let Tlist_Sort_Type               = "name"  " sort tags by name ,not appearing order
+let Tlist_Sort_Type               = "name"  " sort tags by name,not appearing order
 let Tlist_GainFocus_On_ToggleOpen = 1       " when opening taglist window, switch the focus to it
 let Tlist_Process_File_Always     = 1       " keep processing even when taglist window is closed.
 let Tlist_File_Fold_Auto_Close    = 1       " automaticlly close folding for in-active files
@@ -1000,6 +1000,11 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " require plugin pythoncomplete.vim, which should be installed as default
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
+" Highlight space errors in C/C++ source files (Vim tip #935)
+if $VIM_HATE_SPACE_ERRORS != '0'
+    let c_space_errors=1
+endif
+
 " Remove trailing spaces for C/C++ and Vim files when writing to disk
 au BufWritePre *                  call DeleteTrailingWS()
 function! DeleteTrailingWS()
@@ -1012,22 +1017,51 @@ function! DeleteTrailingWS()
 endfunction
 
 au BufWritePre *                  call AdjustCommaPosition()
+
+"Generally, this function can be safely appied to source code file, too.
+"Because in most programming language, as in natural language, comma's indention
+"is not critical, just a good style.
+
 function! AdjustCommaPosition()
-    if ( &filetype == 'c' || &filetype == 'cpp')
+        "memory current positiong
         normal m`
-        "silent! :%s/\s\+$//e
-        "silent! :%s/\>\s\+,\s+/, /e
+
+        "remove extra whitespaces between comma and its previous word.
+        silent! :%s/\>\s\+,/,/ge
+        "remove extra whitespaces between comma and its next word.
+        silent! :%s/,\s\+\</, /ge
+        "if comma is directly followed by a word, insert one space
+        silent! :$s/,\</, /ge
+
+        "return to memorize position
+        normal ``
+endfunction
+
+au BufWritePre *                  call AdjustPeriodPosition()
+
+" However, In most modern proglanuage, "." has special meaning
+" So, better only apply this functioin to regulal text file.
+function! AdjustPeriodPosition()
+    " '' means regular text file.
+    if ( &filetype == '')
+
+        "memory current positiong
+        normal m`
+
+        "remove extra whitespaces between period and its previous word.
+        silent! :%s/\>\s\+\././ge
+        "remove extra whitespaces between period and its next word.
+        silent! :%s/\.\s\+\</. /ge
+        "if period is directly followed by a word, insert one space
+        silent! :$s/\.\</. /ge
+
+        "return to memorize position
         normal ``
     endif
 endfunction
 
 
-" Highlight space errors in C/C++ source files (Vim tip #935)
-if $VIM_HATE_SPACE_ERRORS != '0'
-    let c_space_errors=1
-endif
-
-"open included file in new buffer ,making gf(goto included file) more convenient
+"open included file in new buffer,making gf(goto included file) more convenient
 map gf :tabnew <cfile><CR>
 
 " improve tag's utility
