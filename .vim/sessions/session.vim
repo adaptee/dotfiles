@@ -77,7 +77,7 @@ vmap ,cc <Plug>NERDCommenterComment
 nmap ,cc <Plug>NERDCommenterComment
 nmap <silent> ,l <Plug>LookupFile
 vmap <silent> ,a( :AlignPush:AlignCtrl lp0P0:'<,'>Align (:AlignPop
-vmap <silent> ,a, :AlignPush:AlignCtrl lp0P1:'<,'>Align ,:AlignPop
+vmap <silent> ,a, :AlignPush:AlignCtrl lp0P1:'<,'>Align,:AlignPop
 vmap <silent> ,a= :AlignPush:AlignCtrl lp1P1:'<,'>Align =:AlignPop
 nnoremap <silent> ,9 9gt
 nnoremap <silent> ,8 8gt
@@ -475,10 +475,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/1
-args ~/1
-set lines=31 columns=116
-edit ~/1
+badd +0 ~/.vimperatorrc
+args ~/.vimperatorrc
+set lines=32 columns=116
+edit ~/.vimperatorrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -511,8 +511,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != ''
-setlocal filetype=
+if &filetype != 'vimperator'
+setlocal filetype=vimperator
 endif
 set foldcolumn=2
 setlocal foldcolumn=2
@@ -573,8 +573,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != ''
-setlocal syntax=
+if &syntax != 'vimperator'
+setlocal syntax=vimperator
 endif
 setlocal tabstop=8
 setlocal tags=
@@ -584,12 +584,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 14) / 28)
+338
+normal zo
+358
+normal zo
+let s:l = 340 - ((14 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 017l
+340
+normal! 014l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

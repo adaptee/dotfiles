@@ -332,6 +332,18 @@ fuck_gfw = function (url)
 }
 EOF
 
+js<<EOF
+search_in_verycd = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://www.verycd.com/search/folders?field=title+s+contents&kw=';
+    var suffix       = '&rev=true&q=&from=&c2=0&range=&catalog=&status=all&sort=';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
 " Search specified keyword in wikipedia
 js<<EOF
 search_in_wikipedia = function (keyword)
@@ -515,6 +527,10 @@ noremap <Leader>g :Gigapedia<Space>
 " Search in netyi.net
 command! -nargs=* Netyi :js search_in_netyi("<args>")
 "noremap <Leader>n  :Netyi<Space>
+
+
+command! -nargs=* VeryCD :js search_in_verycd("<args>")
+noremap v :VeryCD<Space>
 
 " search in wikipedia
 command! -nargs=* Wiki :js search_in_wikipedia("<args>")
