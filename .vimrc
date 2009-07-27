@@ -33,7 +33,7 @@ set mouse=a
 "make the window where mouse pointer on become current ; enumerate X-window style
 set mousefocus
 
-"make '~' a full-featured operator, such as 'd','c',which can be combined with motion and text-object
+"make '~' a full-featured operator, such as 'd','c', which can be combined with motion and text-object
 set tildeop
 
 " behaves well under both linux/windows/mac
@@ -79,7 +79,7 @@ set number
 "highlight current line
 set cursorline
 
-"show TAB as '>-------',NEWLINE as '$', trailing whitespace as '~' when executing ":set list"
+"show TAB as '>-------', NEWLINE as '$', trailing whitespace as '~' when executing ":set list"
 set listchars=tab:>-,eol:$,trail:~
 
 "use advanced commandline auto-completion feature
@@ -209,7 +209,7 @@ nnoremap q? <Nop>
 " cut & copy & paste
 "------------------------------------------------------------------------------------------------------
 
-"use OS clipboard as unnamed register; for win32,this option solves both copy/paste
+"use OS clipboard as unnamed register; for win32, this option solves both copy/paste
 set clipboard=unnamed
 
 "super paste; now in insert mode, you can use <C-v> to do pasting
@@ -264,11 +264,11 @@ nnoremap ' `
 nnoremap ` '
 
 " swap ]] and ][
-" now the rule is simple and instinct: first letter for direction,second letter for type: open or close?
+" now the rule is simple and instinct: first letter for direction, second letter for type: open or close?
 nnoremap ]] ][
 nnoremap ][ ]]
 
-"map UP/DOWN to move one visual line,not one physical line
+"map UP/DOWN to move one visual line, not one physical line
 nmap <DOWN> gj
 imap <DOWN> <ESC>gja
 nmap <UP> gk
@@ -320,10 +320,10 @@ function! ActLikeWeb()
     nmap <buffer> S ?\|\S\+\|<CR>
 endfunction
 
-"improve the user-experince of man pages;press "\K",instead of "K"
+"improve the user-experince of man pages;press "\K", instead of "K"
 source $VIMRUNTIME/ftplugin/man.vim
 
-"Now 'K' invokes external cmd 'manall' ,which will man all iterm with the same name
+"Now 'K' invokes external cmd 'manall' , which will man all iterm with the same name
 if has("unix")
     "set keywordprg=manall
     "set keywordprg=myman
@@ -422,7 +422,7 @@ set foldlevel=10         "when started, unzip(fold) all!
 "when switching buffer, also condider other tab
 set switchbuf=usetab
 
-"when detecting file is modified outside of Vim,reload the file automatically
+"when detecting file is modified outside of Vim, reload the file automatically
 set autoread
 
 "do not create backup when editing
@@ -471,15 +471,11 @@ command! -bar -nargs=0 Sudow :silent exe "w !sudo tee % > /dev/null" | silent ed
 if has('unix')
     "Fast reading of .vimrc
     nmap <silent> <leader>r :call SwitchToBuf("$HOME/.vimrc")<CR>
-    "Fast loading of the .vimrc
-    nmap <silent> <leader>u :source $HOME/.vimrc<CR>
     "When .vimrc is edited and saved, reload it automaticaly
     autocmd! bufwritepost .vimrc source $HOME/.vimrc
 elseif has('win32')
     "Fast reading of _vimrc
     nmap <silent> <leader>r :call SwitchToBuf("$VIM/_vimrc")<CR>
-    "Fast loading of the _vimrc
-    nmap <silent> <leader>u :source $VIM/_vimrc<CR>
     "When _vimrc is edited and saved, reload it automaticaly
     autocmd! bufwritepost _vimrc source $VIM/_vimrc
 endif
@@ -504,7 +500,7 @@ nmap <Leader>f <C-w><C-w>
 "nmap <C-h> <C-W>h
 "nmap <C-l> <C-W>l
 
-" make splitters between windows be blank,with no boring dashes
+" make splitters between windows be blank, with no boring dashes
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
 "------------------------------------------------------------------------------------------------------
@@ -592,7 +588,7 @@ if has("gui_running")
         set guifont=Bitstream_Vera_Sans_Mono:h11:cANSI
     endif
 
-    "remove the toolbar,menubar
+    "remove the toolbar, menubar
     set guioptions-=T       "No toolbar
     set guioptions-=m       "No menu
     set guioptions+=a       "make highlighted text yanked into global selection automatically
@@ -647,7 +643,7 @@ if has("gui_running")
         return bufname($)."\n windows: ".wincount." " .bufferlist. " "
     endfunction
 
-    "enable edit area tooltip,after cursor staying for 800ms;for example, on a folded area
+    "enable edit area tooltip, after cursor staying for 800ms;for example, on a folded area
     set ballooneval
     set balloondelay=800
     set balloonexpr=FoldSpellBalloon()
@@ -697,9 +693,9 @@ autocmd BufReadPost *
 autocmd VimEnter * call LoadSession()
 autocmd VimLeave * call SaveSession()
 function! SaveSession()
-    set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages
+    set sessionoptions=buffers, folds, globals, options, resize, winpos, tabpages
     "make unix & win can understand each other's session file.
-    set sessionoptions+=unix,slash
+    set sessionoptions+=unix, slash
     if has ("unix")
         execute 'mksession! $HOME/.vim/sessions/session.vim'
     elseif has ("win32")
@@ -748,7 +744,7 @@ endif
 
 " defines what bases Vim will consider for numbers when using the
 " CTRL-A and CTRL-X commands for adding to and subtracting
-" note, alpha mean (a,b,c,d,...z); besides, decimal is always implied.
+" note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
 
 "------------------------------------------------------------------------------------------------------
@@ -805,6 +801,7 @@ let g:LookupFile_FileFilter             = '\.class$\|\.o$\|\.obj$\|\.exe$\|\.jar
 let MRU_File = $VIMDATA.'/vim_mru_files'
 let MRU_Max_Entries = 20
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
+nnoremap <Leader>u :MRU<CR>
 
 "------------------------------------------------------------------------------------------------------
 " plugins----NERD_Tree.vim
@@ -844,7 +841,7 @@ nnoremap <silent> <F2> :TlistToggle<CR>
 inoremap <silent> <F2> <C-O>:TlistToggle<CR><Esc>
 set updatetime=2000    " update showing every 2 seconds. May cause problem.
 
-let Tlist_Sort_Type               = "name"  " sort tags by name,not appearing order
+let Tlist_Sort_Type               = "name"  " sort tags by name, not appearing order
 let Tlist_GainFocus_On_ToggleOpen = 1       " when opening taglist window, switch the focus to it
 let Tlist_Process_File_Always     = 1       " keep processing even when taglist window is closed.
 let Tlist_File_Fold_Auto_Close    = 1       " automaticlly close folding for in-active files
@@ -861,7 +858,7 @@ nmap T :ToggleWord<CR>
 "------------------------------------------------------------------------------------------------------
 " plugins----vimim.vim
 "------------------------------------------------------------------------------------------------------
-"In insert mode, input pinyin for the word,and presss C-x C-u"
+"In insert mode, input pinyin for the word, and presss C-x C-u"
 "Or press C-\ to switch input method on/off"
 let g:vimim_enable_smart_space  = 1
 let g:vimim_enable_dynamic_menu = 1
@@ -1023,6 +1020,8 @@ au BufWritePre *                  call AdjustCommaPosition()
 "is not critical, just a good style.
 
 function! AdjustCommaPosition()
+
+    if ( &filetype == 'c' || &filetype == 'cpp' )
         "memory current positiong
         normal m`
 
@@ -1031,10 +1030,11 @@ function! AdjustCommaPosition()
         "remove extra whitespaces between comma and its next word.
         silent! :%s/,\s\+\</, /ge
         "if comma is directly followed by a word, insert one space
-        silent! :$s/,\</, /ge
+        silent! :%s/,\</, /ge
 
         "return to memorize position
         normal ``
+    endif
 endfunction
 
 au BufWritePre *                  call AdjustPeriodPosition()
@@ -1053,7 +1053,7 @@ function! AdjustPeriodPosition()
         "remove extra whitespaces between period and its next word.
         silent! :%s/\.\s\+\</. /ge
         "if period is directly followed by a word, insert one space
-        silent! :$s/\.\</. /ge
+        "silent! :$s/\.\</. /ge
 
         "return to memorize position
         normal ``
@@ -1061,14 +1061,14 @@ function! AdjustPeriodPosition()
 endfunction
 
 
-"open included file in new buffer,making gf(goto included file) more convenient
+"open included file in new buffer, making gf(goto included file) more convenient
 map gf :tabnew <cfile><CR>
 
 " improve tag's utility
-" Note: the final ';' is very import,which cause vim to loop up tag file upward recursily
+" Note: the final ';' is very import, which cause vim to loop up tag file upward recursily
 " prerequisite: set autochdir
 set tags=tags;
-"set tags=./tags,tags;
+"set tags=./tags, tags;
 "set tags=./tags,./../tags,./**/tags
 
 " make tag jumping for user-frindly

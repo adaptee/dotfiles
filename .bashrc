@@ -169,7 +169,7 @@ export LESS_TERMCAP_us=$'\e[01;35m'
 which lesspipe &>/dev/null && [ -x lesspipe ] && eval "$(lesspipe)" 
 which lesspipe.sh &>/dev/null && [ -x lesspipe.sh ] && eval "$(lesspipe.sh)" 
 
-# press "v" to call-out VIM , even when less is used together with pipeline.
+# press "v" to call-out VIM, even when less is used together with pipeline.
 echo "v pipe $ vim - \n" > "/tmp/lesskey-${USER}"
 lesskey -o ~/.less "/tmp/lesskey-${USER}"
 
@@ -229,6 +229,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias up='cd ..'
 alias upp='cd ../..'
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../..'
 alias df='LANG=en df -hT -x tmpfs | grep -vE "(gvfs|procbususb|rootfs)"'
 alias du='du -h'
 alias du1='du -h --max-depth=1'
@@ -366,6 +369,7 @@ alias b='cd ~/bin'
 alias c='cd'
 #alias d='sdcv'
 alias D='cd ~/Desktop'
+alias D2='cd ~/Desktop/Dropbox'
 alias f='find'
 alias fl='file'
 alias g='grep'
