@@ -368,14 +368,13 @@ js<<EOF
 search_in_mp3 = function (args)
 {
     var query_string = split_and_rejoin_args(args);
-    var prefix       = 'http://mp3.sogou.com/music.so?query=';
-    var suffix       = '&as=&st=&ac=1&pf=mp3';
-    var full_url     = prefix + query_string + suffix;
+    var prefix       = 'http://mp3.sogou.com/music.so?pf=mp3&as=&st=&ac=1&query=';
+    var suffix       = '&class=1';
+    var full_url     = prefix + query_string;
 
     liberator.execute('tabopen ' + full_url );
 }
 EOF
-
 
 
 js<<EOF

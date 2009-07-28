@@ -799,7 +799,7 @@ let g:LookupFile_FileFilter             = '\.class$\|\.o$\|\.obj$\|\.exe$\|\.jar
 " plugins----mru.vim
 "------------------------------------------------------------------------------------------------------
 let MRU_File = $VIMDATA.'/vim_mru_files'
-let MRU_Max_Entries = 20
+let MRU_Max_Entries = 40
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 nnoremap <Leader>u :MRU<CR>
 

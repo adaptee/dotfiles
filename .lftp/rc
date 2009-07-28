@@ -2,6 +2,7 @@ debug 3
 
 set ftp:charset "gbk"
 set file:charset "UTF-8"
+set bmk:save-passwords true
 
 #set net:limit-rate 30000:0
 

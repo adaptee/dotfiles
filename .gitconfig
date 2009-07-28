@@ -1,3 +1,34 @@
+[core]
+        #fileMode = false
+        #symlinks = false
+    #logallrefupdates = true
+
 [user]
-	name = Adaptee
-	email = adaptee@gmail.com
+    name = Adaptee
+    email = adaptee@gmail.com
+
+
+[rerere]
+    #enabled = true
+
+[color]
+    ui = auto
+
+[diff]
+    #renames = copy
+
+[status]
+    #relativePath = true
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    desc = describe
+    wtf = whatchanged
+
+[i18n]
+    commitEncoding = utf-8
+    #logOutputEncoding = utf-8
+
+
