@@ -3,4 +3,7 @@
 .vimperator/info/default/history-command
 .vimperator/info/default/history-search
 .vimperator/info/default/local-marks
-. vimperator/info/default/quickmarks
+.vimperator/info/default/quickmarks
+
+# ignore all archive files.
+*.a 

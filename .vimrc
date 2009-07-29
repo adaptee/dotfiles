@@ -693,9 +693,9 @@ autocmd BufReadPost *
 autocmd VimEnter * call LoadSession()
 autocmd VimLeave * call SaveSession()
 function! SaveSession()
-    set sessionoptions=buffers, folds, globals, options, resize, winpos, tabpages
+    set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages
     "make unix & win can understand each other's session file.
-    set sessionoptions+=unix, slash
+    set sessionoptions+=unix,slash
     if has ("unix")
         execute 'mksession! $HOME/.vim/sessions/session.vim'
     elseif has ("win32")
@@ -1160,4 +1160,7 @@ function! DiffWithFileFromDisk()
     exec 'edit '.filename
     diffthis
 endfunction
+
+
+
 
