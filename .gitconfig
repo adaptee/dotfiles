@@ -26,11 +26,14 @@
     relativePath = true
 
 [alias]
-    st = status
     ci = commit
     co = checkout
     desc = describe
+    st = status
     wtf = whatchanged
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = gitk
 
 [i18n]
     commitEncoding = utf-8
