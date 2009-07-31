@@ -175,7 +175,22 @@ lesskey -o ~/.less "/tmp/lesskey-${USER}"
 
 #---------------------------------------------------------------------------------------------------
 
-hg(){ history | grep -i $* | sort -k 2 | uniq -s 7 | sort -g | more; }
+
+if [ -f ~/.bash.d/alias.sh ];then
+    source ~/.bash.d/alias.sh
+fi
+
+#---------------------------------------------------------------------------#
+#                               shell functions                             #
+#---------------------------------------------------------------------------#
+
+# grep your history!
+# Usage: hg KEY_WORD
+hg()
+{ 
+    history | grep -i $* | sort -k 2 | uniq -s 7 | sort -g | more;
+}
+
 hi()
 { 
     if [ "$1" -lt "30"  ];then    
@@ -184,7 +199,12 @@ hi()
         history $1 | less
     fi
 }
-hh(){ history 10; }
+
+hh()
+{ 
+    history 10;
+}
+
 topN() { history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20; }
 
 
@@ -193,11 +213,6 @@ cd2iso()
     isofile=$1;
     readom dev=/dev/cdrom f=$isofile
 }
-
-#---------------------------------------------------------------------------#
-#                               shell functions                             #
-#---------------------------------------------------------------------------#
-
 
 # Often the next command after 'cd' is 'ls', so why not combine them into one? 
 # Usage: cd PATH
@@ -252,8 +267,8 @@ go ()
     done
 }
 
-#Simplify the usage of nautilus
-#Usage naut [start-path]
+# Simplify the usage of nautilus
+# Usage naut [start-path]
 naut()
 {
     nautilus "${@:-$PWD}"
@@ -264,13 +279,14 @@ naut()
 # APT utilily
 #---------------------------------------------------------------
 
+# add new GPG key for apt-repo.
 # Usage: addkey 0x5017d4931d0acade295b68adfc6d7d9d009ed615
 addkey()
 {
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com $1
 }
 
-# View or append new entry into the apt-get sources.list
+# View or append new entry into sources.list
 # Usage: addscr [source-entry]
 addsrc()
 {
@@ -283,25 +299,6 @@ addsrc()
         ;;
     esac
 }
-
-#View or append new entry automatically into the apt-get sources.list
-#Usage: repo [ADDR-STR]
-repo()
-{
-    case "$#" in
-        0)
-        sudo vim /etc/apt/sources.list
-        ;;
-        1)
-        vimaction=$(mktemp -u).vimscript
-        #Note, "\e\e" will be intepreted as <ESC> by VIM
-        echo -ne "G2o\e\eGi$1\e\e:wq\n" >$vimaction
-        sudo vim + -s $vimaction /etc/apt/sources.list >/dev/null 2>&1
-        rm $vimaction
-        ;;
-    esac
-}
-
 
 #---------------------------------------------------------------
 # Converting utilily
@@ -369,9 +366,6 @@ convmv_utf8 ()
     convmv -f gbk -t utf-8 --notest "$@"
 }
 
-#---------------------------------------------------------------
-#  miscellaneous utilily
-#---------------------------------------------------------------
 
 # Empty specified files
 # Usage: null file1 file2 ... fileN
@@ -478,9 +472,6 @@ if [ -f ~/.bash.d/cdargs-bash.sh ];then
     source ~/.bash.d/cdargs-bash.sh
 fi
 
-if [ -f ~/.bash.d/alias.sh ];then
-    source ~/.bash.d/alias.sh
-fi
 
 complete -c sudo
 complete -c s
