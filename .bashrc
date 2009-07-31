@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything
+# If not running interactively, do nothing
 [ -z "$PS1" ] && return
 
 #---------------------------------------------------------------------------------------------
@@ -12,8 +12,7 @@
 # for debugging's purpose
 export PS4='line $LINENO: '
 
-# Note: if PS1 is defined & exported in .profile, things just don't work
-# fix-me
+# fix-me:if PS1 is defined & exported in .profile, things just don't work
 
 # Define Colors
 # tput can provide better portability for these colors, so recommended.
@@ -74,10 +73,10 @@ PS1_CHROOT=${debian_chroot:+($debian_chroot)}
 PS1_EXITCODE='`a=$?;if [ $a -ne 0 ]; then echo -n -e "\['${BRIGHTRED}'\][$a]\['${NOCOLOR}'\]"; fi`'
 #PS1_HISTNUMER='\['${BRIGHTCYAN}'\]''(\!)'
 
-if [ "$UID"!="0" ]
+if [[ "$UID" != "0" ]]
 then
-    PS1_SYMBOL='\['${NOCOLOR}'\]''$ '
     PS1_USER='\['${BRIGHTGREEN}'\]''\u'
+    PS1_SYMBOL='\['${NOCOLOR}'\]''$ '
 else
     PS1_USER='\['${BRIGHTRED}'\]''\u'
     PS1_SYMBOL='\['${NOCOLOR}'\]''# '
@@ -187,71 +186,63 @@ hi()
 hh(){ history 10; }
 topN() { history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20; }
 
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-#---------------------------------------------------------------------------------------------
-# ls customization 
-#---------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------#
+#                             ls customization                              #
+#---------------------------------------------------------------------------#
 
 # enable color support of ls(LS_COLORS) and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
+if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"
     alias ls='ls --color=auto -F'
 fi
 
-# some more ls alias
-alias l='ls -F'
-alias ll='ls -hlF'
-alias la='ls -AhF'
-alias lla='ls -hlAF'
-alias newest='ls -lht * |head -1'
-alias bigfile='ls -l -sSh'
-alias num='expr $(ls -l | wc -l) - 1'
-alias dir="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
-
+alias l='ls'
+alias ll='ls -hl'
+alias la='ls -A'
+alias lla='ll -A'
 #In case you type it incorrectly...
 alias sl='ls'
 
+# find most-recently modified file under current folder; sub-folder not considered.
+alias newest='ll -t * | head -1'
+
+# list file by size in descending order; sub-folder not considered.
+alias bigfile='ll -S'
+
+# count item under current foleder; 
+alias num='expr $(ll | wc -l) - 1'
+
 #show hierarchy in tree-view
+# list size in human-friednly way, also apply nice ASCII line graph.
 alias tree='tree -h -A'
+# only list folder.
 alias treed='tree -d'
 
-# dir related alias
+# move around quickly.
 alias ..='cd ..'
 alias ...='cd ../..'
-alias up='cd ..'
-alias upp='cd ../..'
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
-alias df='LANG=en df -hT -x tmpfs | grep -vE "(gvfs|procbususb|rootfs)"'
+
+# df improved: show FS type, human-friendly size and ignore pseudo FS. 
+alias df='LANG=en df -h -T -x tmpfs | grep -vE "(gvfs|procbususb|rootfs)"'
+
+# show size in human-friednly way.
 alias du='du -h'
+
+# only show the total size.
+alias dus='du -s'
+
+# only show sub-folders of depth one.
 alias du1='du -h --max-depth=1'
-alias du2='du -s ./* | sort -rn'
-# when with no argument, deal with current folder
-du3( )
-{
-    builtin cd "${@:-$PWD}" >/dev/null
-    du -sh ./*
-    du -sh .
-    builtin cd - >/dev/null
-}
 
-#sort by size
-du4( )
+#sort by size; only consider sub-folders.
+du2( )
 {
-    du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e'
+    du -b --max-depth=1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e'
 
 }
-alias dirsz='du -sh'
 
 #chmod related alias
 alias cw='chmod u+w'
@@ -264,12 +255,26 @@ alias 000='chmod 000'
 alias 644='chmod 644'
 alias 755='chmod 755'
 
+#---------------------------------------------------------------------------#
+#                         apt-get customization                             #
+#---------------------------------------------------------------------------#
 
-#---------------------------------------------------------------------------------------------
-# Apt-get customization
-#---------------------------------------------------------------------------------------------
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade -y --force-yes'
+
+
+alias purge='sudo apt-get purge -y'
+alias remove='sudo apt-get remove -y'
+alias clean='sudo apt-get autoremove autoclean clean'
+alias ssyn='sudo synaptic'
+
+alias dpi='sudo dpkg -i' # install pkg
+alias dpp='sudo dpkg -P' # purge pkg
+alias dps='dpkg -s'      # search pkg name
+alias dpS='dpkg -S'      # search file name
+alias dpl='dpkg -l'      # list pkg summary
+alias dpL='dpkg -L'      # list pkg details
+
 # short name for'sudo apt-get install'
 inst()
 {
@@ -277,16 +282,6 @@ inst()
     pkgname=$(echo $1|tr '[A-Z]' '[a-x]')
     sudo apt-get install -y $pkgname
 }
-alias purge='sudo apt-get purge -y'
-alias remove='sudo apt-get remove -y'
-alias clean='sudo apt-get autoremove autoclean clean'
-alias ssyn='sudo synaptic'
-alias dpi='sudo dpkg -i' #install
-alias dpp='sudo dpkg -P' #purge
-alias dps='dpkg -s'
-alias dpS='dpkg -S'
-alias dpl='dpkg -l'
-alias dpL='dpkg -L'
 
 #---------------------------------------------------------------------------------------------
 # building customization 
@@ -716,9 +711,23 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-### chsdir start ###
-. $HOME/bin/chs_completion
-### chsdir finish. ###
+if [ -f ~/.bash.d/chs_completion.sh ]; then
+    . ~/.bash.d/chs_completion.sh
+fi
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+#utility of cdargs
+if [ -f ~/.bash.d/cdargs-bash.sh ];then
+    source ~/.bash.d/cdargs-bash.sh
+fi
 
 complete -c sudo
 complete -c s
@@ -754,8 +763,4 @@ complete -o filenames -F _longopt g
 #complete -o filenames -F _dpkg dpl
 #complete -o filenames -F _dpkg dpL
 
-#utility of cdargs
-if [ -f ~/bin/cdargs-bash.sh ];then
-    source ~/bin/cdargs-bash.sh
-fi
 

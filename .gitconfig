@@ -2,6 +2,8 @@
     editor = vim
     # executable bit are ignored, useful for FAT.
     fileMode = false
+    # convert CR/LF to LF only when fetching from remote repo
+    autocrlf = input
 
     #symlinks = false
     #logallrefupdates = true
@@ -39,3 +41,5 @@
     commitEncoding = utf-8
     logOutputEncoding = utf-8
 
+[help]
+    autocorrect = true
