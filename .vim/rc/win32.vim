@@ -22,3 +22,15 @@ endfunction
 
 "open files under current folder.
 nmap <Leader>e :e <C-R>=expand("%:p:h") . "\\" <CR>
+
+" In windows, we generally only use gvim.
+" So,<A-1> will work fine. NO dirty hakcing is needed.
+"
+" toggle search result highlight, too
+nnoremap <silent><A-1> <Esc>:set invhlsearch<CR>
+
+" togggle the showing of TAB, trailing ws.
+nnoremap <silent><A-2> <Esc>:set invlist<CR>
+
+" toggle and show current pasting status
+nnoremap <A-3> <Esc>:set invpaste<CR>:set paste?<CR>

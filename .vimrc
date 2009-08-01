@@ -8,7 +8,11 @@ endif
 source $VIMLOCAL/rc/basic.vim
 source $VIMLOCAL/rc/plugin.vim
 
-source $VIMLOCAL/rc/linux.vim
+if has('unix')
+    source $VIMLOCAL/rc/linux.vim
+elseif has ('win32')
+    source $VIMLOCAL/rc/win32.vim
+endif
 
 if has("gui_running")
     source $VIMLOCAL/rc/gui.vim

@@ -1,6 +1,6 @@
-"------------------------------------------------------------------------------------------------------
-" general
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   general                                "
+"--------------------------------------------------------------------------"
 
 "disable vi-compatible mode
 set nocompatible
@@ -27,7 +27,7 @@ set timeoutlen=2000
 set ttimeout
 set ttimeoutlen=100
 
-"enable mouse support anywhere(even in console mdoe)
+"enable mouse support anywhere(even in the console !)
 set mouse=a
 
 "make the window where mouse pointer on become current ; enumerate X-window style
@@ -39,8 +39,9 @@ set tildeop
 " behaves well under both linux/windows/mac
 set ffs=unix,dos,mac
 
-"enable modeline feature;check the first and last 20 lines of files for vim-related setting
+"enable modeline feature
 set modeline
+"check the first and last 20 lines of files for vim-related setting
 set modelines=20
 
 "make Backspace behave as expected anywhere and any time
@@ -54,9 +55,9 @@ filetype indent on          " run $VIMRUNTIME/indent.vim
 " since 'jj' nearly never occur in input mode, use it to return to normal mode.
 inoremap jj <Esc>
 
-"-----------------------------------------------------------------------------------------------------
-" colors
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   colors                                 "
+"--------------------------------------------------------------------------"
 
 "enable syntax highlighting
 syntax on
@@ -69,9 +70,9 @@ colo darkZ
 "colo torte
 "colo desert
 
-"------------------------------------------------------------------------------------------------------
-" visual clues
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   visual clues                           "
+"--------------------------------------------------------------------------"
 
 "show line-number
 set number
@@ -117,13 +118,9 @@ set report=0
 " differ options
 set diffopt=filler,iwhite
 
-" togggle the showing of TAB, trailing ws.
-set <M-2>=2
-nnoremap <silent><M-2> <Esc>:set invlist<CR>
-
-"------------------------------------------------------------------------------------------------------
-" encodings & language
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                           encodings & language                           "
+"--------------------------------------------------------------------------"
 
 " use utf-8 as VIM's internal encoding scheme
 set encoding=utf-8
@@ -151,9 +148,9 @@ if ( has('multi_byte') && v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)' )
     set ambiwidth=double
 endif
 
-"------------------------------------------------------------------------------------------------------
-" search & replace
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                               search & replace                           "
+"--------------------------------------------------------------------------"
 
 "highlight searching result
 set hlsearch
@@ -170,18 +167,10 @@ set ignorecase
 "resume case-sensitive if the pattern contain upper-case letter
 set smartcase
 
-"hello world"
-
 " toggle search result highlighting; now the unused key '\' finally can do something now....
 nmap <silent> \      :set invhlsearch<CR>
 
-" toggle search result highlight, too
-set <M-1>=1
-nnoremap <silent><M-1> <Esc>:set invhlsearch<CR>
-
 "search visually-selected text
-"vmap <silent> * y/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<CR><CR>
-"vmap <silent> # y?<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<CR><CR>
 vmap  * :call VisualSearch('f')<CR>
 vmap  # :call VisualSearch('b')<CR>
 
@@ -205,9 +194,9 @@ nnoremap q: <Nop>
 nnoremap q/ <Nop>
 nnoremap q? <Nop>
 
-"------------------------------------------------------------------------------------------------------
-" cut & copy & paste
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                             cut & copy & paste                           "
+"--------------------------------------------------------------------------"
 
 "use OS clipboard as unnamed register; for windows, this option solves both copy/paste
 set clipboard=unnamed
@@ -218,10 +207,6 @@ inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 " switch the paste option on/off
 set pastetoggle=<F8>
 
-" toggle and show current pasting status
-set <M-3>=3
-nnoremap <M-3> <Esc>:set invpaste<CR>:set paste?<CR>
-
 
 "Y's default unctionality is duplicated with 'yy' and conter-intuitive; Let's correct it
 "Now 'C','D','Y' work the same way: from current position to the end of line
@@ -231,10 +216,10 @@ nnoremap Y y$
 "nnoremap <ECS>p p'[v']=
 "nnoremap <ECS>P P'[v']=
 
+"--------------------------------------------------------------------------"
+"                           moving around quickly                          "
+"--------------------------------------------------------------------------"
 
-""------------------------------------------------------------------------------------------------------
-" moving around
-"------------------------------------------------------------------------------------------------------
 
 "Allow virtual editing in Insert mode.
 set virtualedit=insert
@@ -301,9 +286,9 @@ nmap <M-k> mz:m-2<CR>`z
 vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
-"------------------------------------------------------------------------------------------------------
-" help & manpage
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                               help & manpage                             "
+"--------------------------------------------------------------------------"
 
 "invoke help system more smart
 nmap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
@@ -329,10 +314,10 @@ helptags $VIMLOCAL/doc
 "lookup current word in the dictionary
 nmap <Leader>k :!clear;sdcv "<cword>"<CR>
 
+"--------------------------------------------------------------------------"
+"                         text formatting/layout                           "
+"--------------------------------------------------------------------------"
 
-"------------------------------------------------------------------------------------------------------
-" text formatting/layout
-"------------------------------------------------------------------------------------------------------
 set tabstop=8
 set shiftwidth=4
 set expandtab
@@ -380,9 +365,9 @@ vnoremap < <gv
 vmap <Tab>   >
 vmap <S-Tab> <
 
-"------------------------------------------------------------------------------------------------------
-" folding
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   folding                                "
+"--------------------------------------------------------------------------"
 
 "Enable folding
 set foldenable
@@ -406,9 +391,9 @@ set foldlevel=10         "when started, unzip(fold) all!
 "use space to open/close fold
 "nnoremap <SPACE> za
 
-"------------------------------------------------------------------------------------------------------
-" buffer & file
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   buffer & file                          "
+"--------------------------------------------------------------------------"
 
 "when switching buffer, also condider other tab
 set switchbuf=usetab
@@ -452,9 +437,9 @@ nmap <Leader>A :qa!<CR>
 " allows us to write to files even when we forget to use sudo to launch vim
 command! -bar -nargs=0 Sudow :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
-"------------------------------------------------------------------------------------------------------
-" window
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   window                                 "
+"--------------------------------------------------------------------------"
 
 "make window manipulating more easy
 nmap <Leader>s :split<CR><C-W><C-W>
@@ -475,9 +460,9 @@ nmap <Leader>f <C-w><C-w>
 " make splitters between windows be blank, with no boring dashes
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
-"------------------------------------------------------------------------------------------------------
-" tab-page
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                   tab page                               "
+"--------------------------------------------------------------------------"
 
 "always show tabline, even when only one tab is opened
 set showtabline=2
@@ -502,9 +487,9 @@ nnoremap <silent><leader>7 7gt<ESC>
 nnoremap <silent><leader>8 8gt<ESC>
 nnoremap <silent><leader>9 9gt<ESC>
 
-"------------------------------------------------------------------------------------------------------
-" abbrevation
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                                abbrevation                               "
+"--------------------------------------------------------------------------"
 
 "use abbrevation to auto-correct the typo
 iab teh     the
@@ -538,18 +523,17 @@ iab #l /*----------------------------------------------*/
 
 "cab s   set
 
-"------------------------------------------------------------------------------------------------------
-" quick-fix mode
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                               quick-fix mode                             "
+"--------------------------------------------------------------------------"
 
 "Ease the operation of quick-fix
 nmap <silent><Left>  :cprevious<CR>
 nmap <silent><Right> :cnext<CR>
 
-
-"------------------------------------------------------------------------------------------------------
-" auto-commands
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                               auto-commands                              "
+"--------------------------------------------------------------------------"
 
 "resume the cursor where the it was when the file was closed last time
 autocmd BufReadPost *
@@ -567,120 +551,10 @@ autocmd BufReadPost *
 " 2).h(lower) mean repeating character in corresponding positiong of lower line
 inoremap <C-h> <C-e>
 
-"------------------------------------------------------------------------------------------------------
-" Misc
-"------------------------------------------------------------------------------------------------------
-" set <C-C> as no ops
-nnoremap <C-C> <NOP>
+"--------------------------------------------------------------------------"
+"                         programming features                             "
+"--------------------------------------------------------------------------"
 
-" Since Jx is more useful than only J....
-nnoremap J Jx
-
-" for those who has the obsession of saving changes.....
-" save automatically after pressing <Enter>
-":inoremap <cr> <c-o>:w<cr><cr>
-
-" For firefox 's vimperator 's sake
-let g:netrw_http_cmd = "wget -q -O"
-
-
-" defines what bases Vim will consider for numbers when using the
-" CTRL-A and CTRL-X commands for adding to and subtracting
-" note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
-set nrformats=alpha,hex
-
-
-"------------------------------------------------------------------------------------------------------
-" utility functions
-"------------------------------------------------------------------------------------------------------
-function! Cwd()
-    let cwd = getcwd()
-    return "e " . cwd
-endfunc
-
-function! CurDir()
-    let curdir = tolower(substitute(getcwd(), '$HOME', "~/", "g"))
-    return curdir
-endf
-
-function! SwitchToBuf(filename)
-    "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
-    " find in current tab
-    let bufwinnr = bufwinnr(a:filename)
-    if bufwinnr != -1
-        exec bufwinnr . "wincmd w"
-        return
-    else
-        " find in each tab
-        tabfirst
-        let tab = 1
-        while tab <= tabpagenr("$")
-            let bufwinnr = bufwinnr(a:filename)
-            if bufwinnr != -1
-                exec "normal " . tab . "gt"
-                exec bufwinnr . "wincmd w"
-                return
-            endif
-            tabnext
-            let tab = tab + 1
-        endwhile
-        " not exist, new tab
-        exec "tabnew " . a:filename
-    endif
-endfunction
-
-function! ShortTabLine()
-    let ret = ''
-    for i in range(tabpagenr('$'))
-        " select the color group for highlighting active tab
-        if i + 1 == tabpagenr()
-            let ret .= '%#errorMsg#'
-        else
-            let ret .= '%#TabLine#'
-        endif
-
-        " find the buffername for the tablabel
-        let buflist = tabpagebuflist(i+1)
-        let winnr = tabpagewinnr(i+1)
-        let buffername = bufname(buflist[winnr-1])
-        let filename = fnamemodify(buffername,':t')
-        " check if there is no name
-        if filename == ''
-            let filename = 'noname'
-        endif
-        " only show the first 6 letters of the name and
-        " .. if the filename is more than 8 letters long
-        if strlen(filename) >=8
-            let ret .= '['. filename[0:5].'..]'
-        else
-            let ret .= '['.filename.']'
-        endif
-    endfor
-
-    " after the last tab fill with TabLineFill and reset tab page #
-    let ret .= '%#TabLineFill#%T'
-    return ret
-endfunction
-
-function! VisualSearch(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    else
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunc
-
-"------------------------------------------------------------------------------------------------------
-" programming features
-"------------------------------------------------------------------------------------------------------
 
 " for c/c++ programer under *nix
 set path+=/usr/include/c++/4.3
@@ -846,9 +720,119 @@ function! SetTitle()
     endif
 endfunction
 
-"------------------------------------------------------------------------------------------------------
-" garabge
-"------------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------"
+"                            utility functions                             "
+"--------------------------------------------------------------------------"
+
+function! Cwd()
+    let cwd = getcwd()
+    return "e " . cwd
+endfunc
+
+function! CurDir()
+    let curdir = tolower(substitute(getcwd(), '$HOME', "~/", "g"))
+    return curdir
+endf
+
+function! SwitchToBuf(filename)
+    "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
+    " find in current tab
+    let bufwinnr = bufwinnr(a:filename)
+    if bufwinnr != -1
+        exec bufwinnr . "wincmd w"
+        return
+    else
+        " find in each tab
+        tabfirst
+        let tab = 1
+        while tab <= tabpagenr("$")
+            let bufwinnr = bufwinnr(a:filename)
+            if bufwinnr != -1
+                exec "normal " . tab . "gt"
+                exec bufwinnr . "wincmd w"
+                return
+            endif
+            tabnext
+            let tab = tab + 1
+        endwhile
+        " not exist, new tab
+        exec "tabnew " . a:filename
+    endif
+endfunction
+
+function! ShortTabLine()
+    let ret = ''
+    for i in range(tabpagenr('$'))
+        " select the color group for highlighting active tab
+        if i + 1 == tabpagenr()
+            let ret .= '%#errorMsg#'
+        else
+            let ret .= '%#TabLine#'
+        endif
+
+        " find the buffername for the tablabel
+        let buflist = tabpagebuflist(i+1)
+        let winnr = tabpagewinnr(i+1)
+        let buffername = bufname(buflist[winnr-1])
+        let filename = fnamemodify(buffername,':t')
+        " check if there is no name
+        if filename == ''
+            let filename = 'noname'
+        endif
+        " only show the first 6 letters of the name and
+        " .. if the filename is more than 8 letters long
+        if strlen(filename) >=8
+            let ret .= '['. filename[0:5].'..]'
+        else
+            let ret .= '['.filename.']'
+        endif
+    endfor
+
+    " after the last tab fill with TabLineFill and reset tab page #
+    let ret .= '%#TabLineFill#%T'
+    return ret
+endfunction
+
+function! VisualSearch(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    else
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunc
+
+"--------------------------------------------------------------------------"
+"                                miscellaneous                             "
+"--------------------------------------------------------------------------"
+" set <C-C> as no ops
+nnoremap <C-C> <NOP>
+
+" Since Jx is more useful than only J....
+nnoremap J Jx
+
+" for those who has the obsession of saving changes.....
+" save automatically after pressing <Enter>
+":inoremap <cr> <c-o>:w<cr><cr>
+
+" For firefox 's vimperator 's sake
+let g:netrw_http_cmd = "wget -q -O"
+
+" defines what bases Vim will consider for numbers when using the
+" CTRL-A and CTRL-X commands for adding to and subtracting
+" note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
+set nrformats=alpha,hex
+
+"--------------------------------------------------------------------------"
+"                                   garabge                                "
+"--------------------------------------------------------------------------"
 
 "Map F7 to show the change since last time save
 nmap <F7> :call DiffWithFileFromDisk()<CR>

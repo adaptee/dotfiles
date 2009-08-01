@@ -25,3 +25,25 @@ nmap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "Now 'K' invokes external cmd 'manall' , which will man all iterm with the same name
 "set keywordprg = manall
 "set keywordprg = myman
+
+"lookup current word in the dictionary
+nmap <Leader>k :!clear;sdcv "<cword>"<CR>
+
+
+" Note, if we only use gvim, then <A-1> will be ok.
+" However, terminal support is necessary.
+" So, here we make some dirty hacking.
+"
+" toggle search result highlight, too
+set <M-1>=1
+nnoremap <silent><M-1> <Esc>:set invhlsearch<CR>
+
+" togggle the showing of TAB, trailing ws.
+set <M-2>=2
+nnoremap <silent><M-2> <Esc>:set invlist<CR>
+
+" toggle and show current pasting status
+set <M-3>=3
+nnoremap <M-3> <Esc>:set invpaste<CR>:set paste?<CR>
+
+
