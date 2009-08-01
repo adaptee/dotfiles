@@ -175,7 +175,6 @@ lesskey -o ~/.less "/tmp/lesskey-${USER}"
 
 #---------------------------------------------------------------------------------------------------
 
-
 if [ -f ~/.bash.d/alias.sh ];then
     source ~/.bash.d/alias.sh
 fi

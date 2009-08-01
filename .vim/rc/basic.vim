@@ -419,12 +419,9 @@ set autochdir
 nmap <C-right>    <ESC>:bn<CR>
 nmap <C-left>     <ESC>:bp<CR>
 
-
 "fast switch to first & last tab
-set <M-4>=4
-nnoremap <silent><M-4> <Esc>:tabfirst<CR>
-set <M-5>=5
-nnoremap <silent><M-5> <Esc>:tablast<CR>
+nnoremap <  :tabfirst<CR>
+nnoremap >  :tablast<CR>
 
 "make writing and quiting more easy
 nmap <Leader>w mz:w<CR>'z
@@ -434,7 +431,7 @@ nmap <Leader>Q :q!<CR>
 nmap <Leader>a :qa<CR>
 nmap <Leader>A :qa!<CR>
 
-" allows us to write to files even when we forget to use sudo to launch vim
+" allows us to write to files even when we forget to use sudo when launching vim
 command! -bar -nargs=0 Sudow :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 "--------------------------------------------------------------------------"

@@ -1,8 +1,9 @@
 "Fast reading of .vimrc
 nmap <silent> <leader>r :call SwitchToBuf("$HOME/.vimrc")<CR>
 
-"When .vimrc is edited and saved, reload it automaticaly
+"When .vimrc or sub-vimrc is edited and saved, reload vimrc automaticaly
 autocmd! bufwritepost .vimrc source $HOME/.vimrc
+autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
 
 
 autocmd VimEnter * call LoadSession()
@@ -45,5 +46,9 @@ nnoremap <silent><M-2> <Esc>:set invlist<CR>
 " toggle and show current pasting status
 set <M-3>=3
 nnoremap <M-3> <Esc>:set invpaste<CR>:set paste?<CR>
+
+" open previsous file.
+set <M-4>=4
+nnoremap <M-4> <Esc>:e #<CR>
 
 

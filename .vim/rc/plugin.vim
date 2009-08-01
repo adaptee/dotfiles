@@ -19,6 +19,11 @@ let g:BASH_Email      = 'adaptee@gmail.com'
 let g:BASH_Company    = 'Open Source Corporation'
 
 "------------------------------------------------------------------------------------------------------
+" plugins----bufexplorer.vim
+"------------------------------------------------------------------------------------------------------
+nnoremap <Leader>g :BufExplorer<CR>
+
+"------------------------------------------------------------------------------------------------------
 " plugins----FavMenu.vim
 "------------------------------------------------------------------------------------------------------
 "let $FAVOURITES=$HOME.'/.vim_favourites'
@@ -128,15 +133,6 @@ let g:vimim_enable_menu_label   = 1
 nmap <silent><F12> :call DoWordComplete()<CR>
 nmap <silent><C-F12> :call EndWordComplete()<CR>
 
-"------------------------------------------------------------------------------------------------------
-" plugins----winmanager.vim
-"------------------------------------------------------------------------------------------------------
-"nmap <silent><F4> :WMToggle<CR>
-"let g:winManagerWindowLayout  = "BufExplorer|TagList"
-"let g:winManagerWidth         = 30
-"let g:defaultExplorer         = 0
-"nmap <C-W><C-F> :FirstExplorerWindow<CR>
-"nmap <C-W><C-B> :BottomExplorerWindow<CR>
 
 "------------------------------------------------------------------------------------------------------
 " plugins----Zoomwin.vim
