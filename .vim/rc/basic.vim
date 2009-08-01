@@ -33,7 +33,7 @@ set mouse=a
 "make the window where mouse pointer on become current ; enumerate X-window style
 set mousefocus
 
-"make '~' a full-featured operator, such as 'd','c', which can be combined with motion and text-object
+"make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
 
 " behaves well under both linux/windows/mac
