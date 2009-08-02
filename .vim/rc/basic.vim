@@ -122,18 +122,21 @@ set diffopt=filler,iwhite
 "                           encodings & language                           "
 "--------------------------------------------------------------------------"
 
+"use english everywhere, because I don't need chinese prompt when using vim.
+language en_US.utf-8
+
 " use utf-8 as VIM's internal encoding scheme
 set encoding=utf-8
 
 " Make VIM understand following  kinds of encoding for external files.
-set fileencodings=utf-8,chinese,ucs-bom,taiwan,japan
+set fileencodings=ucs-bom,utf-8,chinese,taiwan,japan,latin1
 
 " language used for showing menu items.
 set langmenu=en_US.utf-8
 "set langmenu=zh_CN.utf-8
 
 " language used for showing prompt message.
-language messages en_US.utf-8
+"language messages en_US.utf-8
 "language messages zh_CN.utf-8
 
 source $VIMRUNTIME/delmenu.vim
