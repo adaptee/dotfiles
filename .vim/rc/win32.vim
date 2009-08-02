@@ -1,3 +1,9 @@
+"Sad fact,*nix only accept formal locale name such as 'en_US.utf-8'
+"But, Windows only accept short locale name such as 'en'
+"use english UI, because I don't need chinese prompt when using vim.
+"language en
+language messages en
+
 "Fast reading of _vimrc
 nmap <silent> <leader>r :call SwitchToBuf("$VIM/_vimrc")<CR>
 
