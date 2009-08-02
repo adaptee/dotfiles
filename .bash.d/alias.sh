@@ -267,7 +267,7 @@ alias h='help'
 alias m='man'
 alias ma='man -a'
 alias mm='man man'
-alias 0='popd'
+alias o='popd'
 alias p='pushd'
 alias s='sudo'
 #switch to specified user's environment, making su safer.
