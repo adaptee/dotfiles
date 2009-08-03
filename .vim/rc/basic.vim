@@ -5,6 +5,9 @@
 "disable vi-compatible mode
 set nocompatible
 
+"use english UI, because I don't need chinese prompt when using vim.
+language messages en_US.utf-8
+
 "now <Leader> means ','
 let g:mapleader =","
 
@@ -808,7 +811,7 @@ endfunc
 nnoremap <C-C> <NOP>
 
 " Since Jx is more useful than only J....
-nnoremap J Jx
+"nnoremap J Jx
 
 " for those who has the obsession of saving changes.....
 " save automatically after pressing <Enter>
