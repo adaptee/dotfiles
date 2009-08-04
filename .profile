@@ -42,7 +42,7 @@ export GREP_OPTIONS="--binary-files=without-match --directories=recurse --color=
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 
 #------bash related-------#
-export CDPATH=".:..:~:~/prog/EBook/:~/down/:~/Desktop/:~/video/:~/audio/"
+export CDPATH=".:..:~:~/prog/EBook/:~/Desktop/:~/video/"
 export EDITOR=$(which vim)
 export FCEDIT=$(which vim)
 # ignore file with those suffix when perforaming filename-auto-completion
