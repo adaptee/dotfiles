@@ -67,6 +67,7 @@
 :LUTags	lookupfile.txt	/*:LUTags*
 :LUWalk	lookupfile.txt	/*:LUWalk*
 :LookupFile	lookupfile.txt	/*:LookupFile*
+:Mark	mark.txt	/*:Mark*
 :MkVimball	pi_vimball.txt	/*:MkVimball*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
@@ -1721,6 +1722,19 @@ manpageview-php	manpageview.txt	/*manpageview-php*
 manpageview-usage	manpageview.txt	/*manpageview-usage*
 manpageview.txt	manpageview.txt	/*manpageview.txt*
 manpageview_extend	manpageview.txt	/*manpageview_extend*
+mark-configuration	mark.txt	/*mark-configuration*
+mark-dependencies	mark.txt	/*mark-dependencies*
+mark-description	mark.txt	/*mark-description*
+mark-history	mark.txt	/*mark-history*
+mark-ideas	mark.txt	/*mark-ideas*
+mark-installation	mark.txt	/*mark-installation*
+mark-integration	mark.txt	/*mark-integration*
+mark-known-problems	mark.txt	/*mark-known-problems*
+mark-limitations	mark.txt	/*mark-limitations*
+mark-todo	mark.txt	/*mark-todo*
+mark-usage	mark.txt	/*mark-usage*
+mark.txt	mark.txt	/*mark.txt*
+mark.vim	mark.txt	/*mark.vim*
 multi_snip	snipMate.txt	/*multi_snip*
 omnicpp-download	omnicppcomplete.txt	/*omnicpp-download*
 omnicpp-faq	omnicppcomplete.txt	/*omnicpp-faq*
@@ -1740,6 +1754,7 @@ opAsBitAnd	crefvim.txt	/*opAsBitAnd*
 opAsBitOr	crefvim.txt	/*opAsBitOr*
 opAsBitXor	crefvim.txt	/*opAsBitXor*
 pi_vimball.txt	pi_vimball.txt	/*pi_vimball.txt*
+regexpref	regexpref.txt	/*regexpref*
 snipMate	snipMate.txt	/*snipMate*
 snipMate-$#	snipMate.txt	/*snipMate-$#*
 snipMate-${#:}	snipMate.txt	/*snipMate-${#:}*

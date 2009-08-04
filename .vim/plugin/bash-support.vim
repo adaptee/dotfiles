@@ -730,7 +730,7 @@ function!	BASH_InitMenu ()
 	"-------------------------------------------------------------------------------
 	"----- menu I/O redirection   {{{2
 	"-------------------------------------------------------------------------------
-	"      
+	"
 	exe "	menu ".s:BASH_Root.'&I/O-Redir.take\ STDIN\ from\ file<Tab><												a<Space><<Space>'
 	exe "	menu ".s:BASH_Root.'&I/O-Redir.direct\ STDOUT\ to\ file<Tab>>												a<Space>><Space>'
 	exe "	menu ".s:BASH_Root.'&I/O-Redir.direct\ STDOUT\ to\ file;\ append<Tab>>>							a<Space>>><Space>'
@@ -1455,7 +1455,7 @@ function! BASH_help( type )
 	"
 	" UTILITIES
 	"
-	if a:type == 'm' 
+	if a:type == 'm'
 		"
 		" Is there more than one manual ?
 		"
@@ -1471,7 +1471,7 @@ function! BASH_help( type )
 		" Select manuals where the name exactly matches
 		"
 		for line in catalogs
-			if line =~ '^'.item.'\s\+(' 
+			if line =~ '^'.item.'\s\+('
 				let	itempart	= split( line, '\s\+' )
 				let	catalog		= itempart[1][1:-2]
 				let	manual[catalog]	= catalog
@@ -2192,8 +2192,8 @@ if has("gui_running")
 		call BASH_CreateGuiMenus()
 	endif
 	"
-	nmap    <silent>  <Leader>lbs             :call BASH_CreateGuiMenus()<CR>
-	nmap    <silent>  <Leader>ubs             :call BASH_RemoveGuiMenus()<CR>
+	"nmap    <silent>  <Leader>lbs             :call BASH_CreateGuiMenus()<CR>
+	"nmap    <silent>  <Leader>ubs             :call BASH_RemoveGuiMenus()<CR>
 	"
 endif
 "
