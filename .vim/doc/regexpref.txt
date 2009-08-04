@@ -1,0 +1,53 @@
+                                                                   *regexpref*
+
+                        Overview Regular-Expressions~
+                        ============================
+
+
+ +------------+------------+-----------------------------------------------+
+ |    GREP    |    VIM     |              DESCRIPTION                      |
+ +------------+------------+-----------------------------------------------+
+ Single-Character~
+ +------------+------------+-----------------------------------------------+
+ |            |            |                                               |
+ |  .         |  .         | matches any character                         |
+ |  [ ]       |  [ ]       | matches any characters listet                 |
+ |  [^ ]      |  [^ ]      | matches any characters except those listet    |
+ |  \char     |  \char     | escapes "char" if it is a metacharacter       |
+ |            |            |                                               |
+ +------------+------------+-----------------------------------------------+
+ Quantifiers~
+ +------------+------------+-----------------------------------------------+
+ |            |            |                                               |
+ |   ?        | \?         | matches any character zero or one times       |
+ |   *        | *          | matches the preceding item zero or more times |
+ |   +        | \+         | matches the preceding item one or more times  |
+ |  {num}     | \{num}     | matches the preceding item exactly num times  |
+ |  {min,}    | \{min,}    | matches the preceding item min times          |
+ |  {min,max} | \{min,max} | matches the preceding item min times, but not |
+ |            |            | more than max times                           |
+ |            |            |                                               |
+ +------------+------------+-----------------------------------------------+
+ Anchors~
+ +------------+------------+-----------------------------------------------+
+ |            |            |                                               |
+ |    ^       |    ^       | matches start of line                         |
+ |    $       |    $       | matches end of line                           |
+ |    \<      |    \<      | matches beginning of a word                   |
+ |    \>      |    \>      | matches end of a word                         |
+ |            |            |                                               |
+ +------------+------------+-----------------------------------------------+
+ Others~
+ +------------+------------+-----------------------------------------------+
+ |            |            |                                               |
+ |     |      |   \|       | alternation (logical OR)                      |
+ |    ( )     |   \( \)    | - sets range for alternation                  |
+ |            |            | - groups for qualifiers                       |
+ |            |            | - defines text for backreferences             |
+ |            |            |                                               |
+ |  \1 \2...  | \1 \2...   | matches text in first, second ...             |
+ |            |            | pair of parenthesis ( )                       |
+ |            |            |                                               |
+ +------------+------------+-----------------------------------------------+
+
+vim:tw=78:ts=4:ft=help:norl:
