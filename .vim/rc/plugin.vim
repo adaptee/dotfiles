@@ -53,7 +53,7 @@ nnoremap <Leader>g :BufExplorer<CR>
 " vmap <Leader>cr <Plug>CRV_CRefVimVisual ---- query selected word
 
 "------------------------------------------------------------------------------------------------------
-" cscope_mappings.vim( basic cscope settings and key mappings)
+" cscope_macros.vim( basic cscope settings and key mappings)
 "------------------------------------------------------------------------------------------------------
 " Use <C-C>s to query current word
 
@@ -62,7 +62,7 @@ nnoremap <Leader>g :BufExplorer<CR>
 "------------------------------------------------------------------------------------------------------
 
 "------------------------------------------------------------------------------------------------------
-" fencview.vim
+" fencview.vim( Autodetect multiple encodings )
 "------------------------------------------------------------------------------------------------------
 "Always detect the encoding automaticlly
 "However, this require iconv feature is enabled and iconv.dll available in $PATH
