@@ -1,7 +1,7 @@
 " AlignPlugin: tool to align multiple fields based on one or more separators
 "   Author:	 Charles E. Campbell, Jr.
 "   Date:    Nov 02, 2008
-" GetLatestVimScripts: 294 1 :AutoInstall: Align.vim
+" GetLatestVimScripts: 294 1 :AutoInstall: Align.vba.gz
 " GetLatestVimScripts: 1066 1 :AutoInstall: cecutil.vim
 " Copyright:    Copyright (C) 1999-2007 Charles E. Campbell, Jr. {{{1
 "               Permission is hereby granted to use and distribute this code,

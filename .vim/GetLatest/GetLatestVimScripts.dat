@@ -1,8 +1,10 @@
 ScriptID SourceID Filename
 --------------------------
-294 1:AutoInstall: Align.vim
-508 9865 :AutoInstall: ZoomWin.vim
-52 8279 :AutoInstall: calendar.vim
-642 8136 :AutoInstall: getscript.vim
-1697 8283 :AutoInstall: surround.vim
-1502 8743 :AutoInstall: vimball.vim
+294     10110   :AutoInstall:   Align.vba.gz
+2390    10336   :AutoInstall:   CSApprox.zip
+1218 10318 :AutoInstall:   NERD_commenter.zip
+508     9865    :AutoInstall:   ZoomWin.vim
+52      8279    :AutoInstall:   calendar.vim
+642     8136    :AutoInstall:   getscript.vim
+1697    8283    :AutoInstall:   surround.vim
+1502    8743    :AutoInstall:   vimball.vim
