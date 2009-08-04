@@ -5,7 +5,6 @@ nmap <silent> <leader>r :call SwitchToBuf("$HOME/.vimrc")<CR>
 autocmd! bufwritepost .vimrc source $HOME/.vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
 
-
 autocmd VimEnter * call LoadSession()
 autocmd VimLeave * call SaveSession()
 
@@ -30,6 +29,8 @@ nmap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "lookup current word in the dictionary
 nmap <Leader>k :!clear;sdcv "<cword>"<CR>
 
+" Use ':W'" to write to files even when we forget to use sudo when launching vim
+command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 " Note, if we only use gvim, then <A-1> will be ok.
 " However, terminal support is necessary.

@@ -119,7 +119,7 @@ inoremap <C-y> <C-v><C-y>
 
 " restore some useful default keybindings offered by origial firefox
 " Note, the second character in C-x is case-sensitive
-noremap <Silent> <C-d> :dialog<Space>addbookmark<CR>
+noremap <Silent> <C-d> :dialog<Space>addbookmark<CR><Esc>
 noremap <Silent> <C-o> :dialog<Space>openfile<CR>
 " lower  case of p
 noremap <Silent> <C-p> :dialog<Space>preferences<CR>
