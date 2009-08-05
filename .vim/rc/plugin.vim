@@ -96,7 +96,7 @@ let g:LookupFile_FileFilter             = '\.class$\|\.o$\|\.obj$\|\.exe$\|\.jar
 "------------------------------------------------------------------------------------------------------
 " manpaveviewPlugin.vim ( Viewer for manpages, gnu info, perldoc, and php)
 "------------------------------------------------------------------------------------------------------
-" you can use the universal interface 'K' to view varioius docuemnt.
+" you can use the universal interface 'K' to view various documents.
 
 
 "------------------------------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ let g:LookupFile_FileFilter             = '\.class$\|\.o$\|\.obj$\|\.exe$\|\.jar
 
 
 "------------------------------------------------------------------------------------------------------
-" matrix.vim ( Matrix screensaver for VIM)
+" matrix.vim ( Matrix screen-saver for VIM)
 "------------------------------------------------------------------------------------------------------
 " Use command ':Matrix'
 
@@ -127,7 +127,7 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 "------------------------------------------------------------------------------------------------------
 
 "------------------------------------------------------------------------------------------------------
-" NERD_Tree.vim( A tree explorer plugin for navigating the filesystem)
+" NERD_Tree.vim( A tree explorer plugin for navigating the file-system)
 "------------------------------------------------------------------------------------------------------
 " use <F3> to start NERD_Tree; using current file's location as root node
 nnoremap <silent> <F3> :NERDTreeToggle .<CR>
@@ -171,7 +171,7 @@ let OmniCpp_MayCompleteScope    = 1
 "------------------------------------------------------------------------------------------------------
 " cs   change surrounding symbol
 " ds   delete surrounding symbol
-" ys   create surrongding symbol
+" ys   create surrounding symbol
 " vmap s ---- create surrounding symbol for selected text
 
 "------------------------------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ set updatetime=2000    " update showing every 2 seconds. May cause problem.
 let Tlist_Sort_Type               = "name"  " sort tags by name, not appearing order
 let Tlist_GainFocus_On_ToggleOpen = 1       " when opening taglist window, switch the focus to it
 let Tlist_Process_File_Always     = 1       " keep processing even when taglist window is closed.
-let Tlist_File_Fold_Auto_Close    = 1       " automaticlly close folding for in-active files
+let Tlist_File_Fold_Auto_Close    = 1       " automatically close folding for in-active files
 let Tlist_Show_One_File           = 1       " only show current file's tags
 "let Tlist_Auto_Open              = 1       " open taglist on vim start-up
 "autocmd FileType taglist map <buffer> <Leader>t t
@@ -197,7 +197,7 @@ let Tlist_Show_One_File           = 1       " only show current file's tags
 nmap T :ToggleWord<CR>
 
 "------------------------------------------------------------------------------------------------------
-" vimim.vim ( chinese input method embeded within VIM )
+" vimim.vim ( Chinese input method embedded within VIM )
 "------------------------------------------------------------------------------------------------------
 "In insert mode, press C-\ to switch input method on/off
 let g:vimim_enable_smart_space  = 1
@@ -212,14 +212,14 @@ let g:vimim_enable_menu_label   = 1
 
 
 "------------------------------------------------------------------------------------------------------
-" vimballPlugin.vim ( vim-based archiver: builds, extracts, and previe )
+" vimballPlugin.vim ( vim-based archiver: builds, extracts, and preview )
 "------------------------------------------------------------------------------------------------------
 " Just run ':so %'
 
 "------------------------------------------------------------------------------------------------------
 " word_complete.vim ( automatically offers word completion as you type )
 "------------------------------------------------------------------------------------------------------
-" enable/disbale word-complete
+" enable/disable word-complete
 nmap <silent><F12> :call DoWordComplete()<CR>
 nmap <silent><C-F12> :call EndWordComplete()<CR>
 

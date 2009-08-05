@@ -1,7 +1,7 @@
 "Fast reading of _vimrc
 nmap <silent> <leader>r :call SwitchToBuf("$VIM/_vimrc")<CR>
 
-"When vimrc or sub-vimrc is edited and saved, reload vimrc automaticaly
+"When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $VIM/_vimrc
 
@@ -10,7 +10,7 @@ autocmd VimLeave * call SaveSession()
 
 function! SaveSession()
     set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages
-    "make unix & win can understand each other's session file.
+    "make Unix & Win can understand each other's session file.
     set sessionoptions+=unix,slash
     "execute 'mksession! $VIMLOCAL/sessions/session.vim'
     "execute 'mkview     $VIMLOCAL/sessions/view.vim'
@@ -25,12 +25,12 @@ endfunction
 nmap <Leader>e :e <C-R>=expand("%:p:h") . "\\" <CR>
 
 " In windows, we generally only use gvim.
-" So,<A-1> will work fine. NO dirty hakcing is needed.
+" So,<A-1> will work fine. NO dirty hacking is needed.
 
 " toggle search result highlight, too
 nnoremap <silent><A-1> <Esc>:set invhlsearch<CR>
 
-" togggle the showing of TAB, trailing ws.
+" toggle the showing of TAB and trailing white-spaces.
 nnoremap <silent><A-2> <Esc>:set invlist<CR>
 
 " toggle and show current pasting status

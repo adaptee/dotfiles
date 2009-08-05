@@ -5,19 +5,22 @@
 "disable vi-compatible mode
 set nocompatible
 
-"use english UI, because I don't need chinese prompt when using vim.
+"use English UI, because I don't need Chinese prompt when using vim.
 language messages en_US.utf-8
 
 "now <Leader> means ','
 let g:mapleader =","
 
-"cmdline history limitation
+"command-line history limitation
 set history=1000
 
-"enable spell checking feature;English default;limit the suggestion as 5
-"set spell
-"set spelllang=en
-"set spellsuggest=5
+"enable spell checking feature only for plain text
+if ( &filetype == '')
+    set spell
+    set spelllang=en
+    set spellsuggest=5
+endif
+
 
 " none of these should be word dividers
 "set isk+=$,%,#
@@ -39,10 +42,10 @@ set mousefocus
 "make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
 
-" behaves well under both linux/windows/mac
+" behaves well under both Linux/Windows/Mac
 set fileformats=unix,dos,mac
 
-"enable modeline feature
+"enable mode-line feature
 set modeline
 "check the first and last 20 lines of files for vim-related setting
 set modelines=20
@@ -69,9 +72,9 @@ syntax on
 set t_Co=256
 
 "choose color scheme
-colo darkZ
-"colo torte
-"colo desert
+colorscheme darkZ
+"colorscheme torte
+"colorscheme desert
 
 "--------------------------------------------------------------------------"
 "                                   visual clues                           "
@@ -86,10 +89,10 @@ set cursorline
 "show TAB as '>-------', NEWLINE as '$', trailing whitespace as '~' when executing ":set list"
 set listchars=tab:>-,eol:$,trail:~
 
-"use advanced commandline auto-completion feature
+"use advanced command-line auto-completion feature
 set wildmenu
 
-"files to be ingored in wildmenu
+"files to be ignored in wild-menu
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 
 "set wildmode=list:full
@@ -97,7 +100,7 @@ set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 "always show status line
 set laststatus=2
 
-"customize the statusline
+"customize the status-line
 set statusline=%2*[%-1.3n]%0*\ %F%m%r%h%w\ [FMT=%{&ff}]\ [TYPE=%Y]\ [ENC=%{&fenc}]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [LEN=%L]\ [%p%%]
 
 "show normal-mode command in the end of last line.
@@ -115,7 +118,7 @@ set lazyredraw
 "keep cursor stay away from the first and last 5 lines of the screen
 set scrolloff=5
 
-" alway infor us whenever anything is changed via Ex command;default threashhold value is 2
+" alway info us whenever anything is changed via Ex command;default threshold value is 2
 set report=0
 
 " differ options
@@ -141,7 +144,7 @@ autocmd EncodingChanged * if &encoding == "utf-8" | nmap <M-Space> :simalt ~<CR>
 
 autocmd EncodingChanged * if &encoding == "cp936" | nmap <M-Space> :simalt ~<CR> | so $VIMRUNTIME/delmenu.vim | so $VIMRUNTIME/menu.vim | language message zh_CN | endif
 
-" show amigurous character in two column width
+" show ambiguous character in two column width
 if ( has('multi_byte') && v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)' )
     set ambiwidth=double
 endif
@@ -179,10 +182,10 @@ vnoremap <SPACE> "*y<Esc>mzqqq:silent<SPACE>g/<C-R>*/y<SPACE>Q<CR>'z:tabnew<CR>"
 "Make good use of <BAR>:search lines containing current word------A simple grep!
 nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> exec "normal " . temp_nr . "[\t"<CR>
 
-"Substitute visually-selcted text, interactively and globally
+"Substitute visually-selected text, interactively and globally
 vmap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 vmap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
-"Note: the 'g' in substitute() means gloabl for substitute(), not for command 's'
+"Note: the 'g' in substitute() means global for substitute(), not for command 's'
 
 " Make p in Visual mode to replace selected text with previous yanked content.
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
@@ -206,7 +209,7 @@ inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 set pastetoggle=<F8>
 
 
-"Y's default unctionality is duplicated with 'yy' and conter-intuitive; Let's correct it
+"Y's default functionality is duplicated with 'yy' and counter-intuitive; Let's correct it
 "Now 'C','D','Y' work the same way: from current position to the end of line
 nnoremap Y y$
 
@@ -235,7 +238,7 @@ vnoremap <C-k> 3k
 nnoremap <SPACE> <C-F>
 nnoremap <S-SPACE> <C-B>
 
-"echance the function of '%' and '#'
+"enhance the function of '%' and '#'
 source $VIMRUNTIME/macros/matchit.vim
 
 "speed up the viewer scrolling 3 times
@@ -585,15 +588,15 @@ endfunction
 
 au BufWritePre *                  call AdjustCommaPosition()
 
-"Generally, this function can be safely appied to source code file, too.
+"Generally, this function can be safely applied to source code file, too.
 "Because in most programming language, as in natural language, comma's indention
 "is not critical, just a good style.
 
 function! AdjustCommaPosition()
 
-    if ( &filetype == 'c' || &filetype == 'cpp' )
-        "memory current positiong
-        normal m`
+    if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
+        "memory current position
+        "normal m`
 
         "remove extra whitespaces between comma and its previous word.
         silent! :%s/\>\s\+,/,/ge
@@ -603,19 +606,19 @@ function! AdjustCommaPosition()
         silent! :%s/,\</, /ge
 
         "return to memorize position
-        normal ``
+        "normal ``
     endif
 endfunction
 
 au BufWritePre *                  call AdjustPeriodPosition()
 
-" However, In most modern proglanuage, "." has special meaning
-" So, better only apply this functioin to regulal text file.
+" However, In most modern programming languages, "." has special meaning
+" So, better only apply this function to regular text file.
 function! AdjustPeriodPosition()
     " '' means regular text file.
     if ( &filetype == '')
 
-        "memory current positiong
+        "memory current position
         normal m`
 
         "remove extra whitespaces between period and its previous word.
@@ -641,11 +644,11 @@ set tags=tags;
 "set tags=./tags, tags;
 "set tags=./tags,./../tags,./**/tags
 
-" make tag jumping for user-frindly
+" make tag jumping for user-friendly
 nnoremap <CR> g<C-]>
 nnoremap <BS> <C-T>
 
-" :tag will be repalced by :cstag ; the latter will search both tagfile and cscope database
+" :tag will be replaced by :cstag ; the latter will search both tagfile and cscope database
 "set cscopetag
 
 " first search tag file, then search cscope database
@@ -817,7 +820,7 @@ nnoremap <C-C> <NOP>
 " save automatically after pressing <Enter>
 ":inoremap <cr> <c-o>:w<cr><cr>
 
-" For firefox 's vimperator 's sake
+" For vimperator's sake
 let g:netrw_http_cmd = "wget -q -O"
 
 " defines what bases Vim will consider for numbers when using the
@@ -826,7 +829,7 @@ let g:netrw_http_cmd = "wget -q -O"
 set nrformats=alpha,hex
 
 "--------------------------------------------------------------------------"
-"                                   garabge                                "
+"                                   garbage                                "
 "--------------------------------------------------------------------------"
 
 "Map F7 to show the change since last time save
