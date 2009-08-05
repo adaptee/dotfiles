@@ -1,7 +1,7 @@
 "Fast reading of .vimrc
 nmap <silent> <leader>r :call SwitchToBuf("$HOME/.vimrc")<CR>
 
-"When .vimrc or sub-vimrc is edited and saved, reload vimrc automaticaly
+"When vimrc or sub-vimrc is edited and saved, reload vimrc automaticaly
 autocmd! bufwritepost .vimrc source $HOME/.vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
 
@@ -21,16 +21,6 @@ endfunction
 
 "open files under current folder.
 nmap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-"Now 'K' invokes external cmd 'manall' , which will man all iterm with the same name
-"set keywordprg = manall
-"set keywordprg = myman
-
-"lookup current word in the dictionary
-nmap <Leader>k :!clear;sdcv "<cword>"<CR>
-
-" Use ':W'" to write to files even when we forget to use sudo when launching vim
-command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 " Note, if we only use gvim, then <A-1> will be ok.
 " However, terminal support is necessary.
@@ -53,3 +43,13 @@ set <M-4>=4
 nnoremap <M-4> <Esc>:e #<CR>
 
 
+
+"Now 'K' invokes external cmd 'manall' , which will man all iterm with the same name
+"set keywordprg = manall
+"set keywordprg = myman
+
+"lookup current word in the dictionary
+nmap <Leader>k :!clear;sdcv "<cword>"<CR>
+
+" Use ':W'" to write to files even when we forget to use sudo when launching vim
+command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!

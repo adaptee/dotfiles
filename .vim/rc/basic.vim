@@ -40,7 +40,7 @@ set mousefocus
 set tildeop
 
 " behaves well under both linux/windows/mac
-set ffs=unix,dos,mac
+set fileformats=unix,dos,mac
 
 "enable modeline feature
 set modeline

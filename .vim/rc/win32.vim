@@ -1,7 +1,7 @@
 "Fast reading of _vimrc
 nmap <silent> <leader>r :call SwitchToBuf("$VIM/_vimrc")<CR>
 
-"When _vimrc is edited and saved, reload it automaticaly
+"When vimrc or sub-vimrc is edited and saved, reload vimrc automaticaly
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $VIM/_vimrc
 

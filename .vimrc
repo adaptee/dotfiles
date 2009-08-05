@@ -16,4 +16,5 @@ endif
 
 if has("gui_running")
     source $VIMLOCAL/rc/gui.vim
+
 endif
