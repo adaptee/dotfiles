@@ -14,6 +14,8 @@ let g:mapleader =","
 "command-line history limitation
 set history=1000
 
+set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
+
 
 " none of these should be word dividers
 "set isk+=$,%,#
@@ -46,10 +48,10 @@ set modelines=20
 "make Backspace behave as expected anywhere and any time
 set backspace=indent,eol,start
 
-"Enable "filetype" "plugin" "indent"
-filetype on                 " run $VIMRUNTIME/filetype.vim and $VIMRUNTIME/scripts.vim(conditionl)
-filetype plugin on          " run $VIMRUNTIME/fyplugin.vim
-filetype indent on          " run $VIMRUNTIME/indent.vim
+"Enable filetype plugin indent
+filetype on
+filetype plugin on
+filetype indent on
 
 " since 'jj' nearly never occur in input mode, use it to return to normal mode.
 inoremap jj <Esc>
@@ -127,7 +129,7 @@ set encoding=utf-8
 " Make VIM understand following  kinds of encoding for external files.
 set fileencodings=ucs-bom,utf-8,chinese,taiwan,japan,latin1
 
-" language used for showing menu items.(deprecated by :languang cmd)
+" language used for showing menu items.(deprecated by :language command)
 "set langmenu=en_US.utf-8
 
 source $VIMRUNTIME/delmenu.vim
@@ -207,8 +209,8 @@ set pastetoggle=<F8>
 nnoremap Y y$
 
 "auto-indent after pasting
-"nnoremap <ECS>p p'[v']=
-"nnoremap <ECS>P P'[v']=
+"nnoremap <Esc>p p'[v']=
+"nnoremap <Esc>P P'[v']=
 
 "--------------------------------------------------------------------------"
 "                           moving around quickly                          "
@@ -265,7 +267,7 @@ noremap  L $
 inoremap <C-A>   <Home>
 inoremap <C-E>   <End>
 
-"make cmdline operation more bash-style
+"make command-line operation more bash-style
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
 
@@ -281,7 +283,7 @@ vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
 "--------------------------------------------------------------------------"
-"                               help & manpage                             "
+"                               help & man-pages                             "
 "--------------------------------------------------------------------------"
 
 "invoke help system more smart
@@ -321,34 +323,34 @@ set softtabstop=4
 "set the length limitation of physical line; 0 mean unlimited
 set textwidth=0
 
-"show long line in auto-wrapping style----visually multiline, but physically still one line
+"show long line in auto-wrapping style----visually multi-line, but physically still one line
 set wrap
 
 "make these operator multi-linable
 set whichwrap=b,s,<,>,[,]
 
-"make the wrapping more ingelegent----DO NOT break up a word!
+"make the wrapping more intelligent----DO NOT break up a word!
 set linebreak
 
-"set the space between two successive lines; effective only under gVIM
+"set the space between two successive lines; effective only under gVim
 set linespace=0
 
 "choose C-style indentation
 set cindent
 
-" Now vim can reformat multibyte text (e.g. Chinese)
+" Now vim can reformat multi-byte text (e.g. Chinese)
 set formatoptions+=mM
 
 " do not use Ex-mode, use Q for formatting
 map Q gq
 
-" autoformat the whole file
+" format the whole file
 nnoremap <S-F> gg=G''
 
-"make delelting annoying windows ^M more easy
+"make deleting annoying windows ^M more easy
 nnoremap <Leader>m :%s/\r//g<CR>
 
-"remove white space on empty line(which has no visuable character)
+"remove white space on empty line(which has no visable character)
 nnoremap <Leader>z :%s/\s*$//g<CR>:noh<CR>''
 
 "after indentation adjustment, re-select previously highlighted text
@@ -366,7 +368,7 @@ vmap <S-Tab> <
 "Enable folding
 set foldenable
 
-"folding sigature occupies 2 column on the left side
+"folding signature occupies 2 column on the left side
 set foldcolumn=2
 
 "set foldcolumn's color scheme
@@ -378,7 +380,7 @@ set foldmethod=indent
 "folds whose level is greater than 'foldlevel' are closed automatically
 set foldlevel=10         "when started, unzip(fold) all!
 
-"make fold opening/closing purely automaticlly
+"make fold opening/closing purely automatically
 "set foldopen=all
 "set foldclose=all
 
@@ -389,7 +391,7 @@ set foldlevel=10         "when started, unzip(fold) all!
 "                                   buffer & file                          "
 "--------------------------------------------------------------------------"
 
-"when switching buffer, also condider other tab
+"when switching buffer, also consider other tab
 set switchbuf=usetab
 
 "when detecting file is modified outside of Vim, reload the file automatically
@@ -397,7 +399,7 @@ set autoread
 
 "do not create backup when editing
 set nobackup
-"but for the sake of acciendent....
+"but for the sake of accident....
 set writebackup
 
 "set where .swp file is putted
@@ -406,7 +408,7 @@ set directory=.,/var/tmp,/tmp
 " use directory df the related buffer as the start-point for file browser
 set browsedir=buffer
 
-" automaticaly change $cwd to where the file is located
+" automatically change $CWD to where the file is located
 set autochdir
 
 "use Ctrl+Left/Right arrow to cycle the buffer list
@@ -479,10 +481,10 @@ nnoremap <silent><leader>8 8gt<ESC>
 nnoremap <silent><leader>9 9gt<ESC>
 
 "--------------------------------------------------------------------------"
-"                                abbrevation                               "
+"                                abbreviation                               "
 "--------------------------------------------------------------------------"
 
-"use abbrevation to auto-correct the typo
+"use abbreviation to auto-correct the typo
 iab teh     the
 iab scr     src
 iab taht    that
@@ -497,6 +499,8 @@ iab envir   environment
 iab partion partition
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
+iab abbr    abbreviation
+iab autom   automatically
 iab i18     Internationalization
 iab l10n    Localization
 iab posix   POSIX
@@ -505,7 +509,6 @@ iab scd     second
 iab misc    miscellaneous
 iab xdate   <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
 iab xtime   <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
-iab autom   automaticaly
 iab kath    Katherine
 iab attri   attribute
 iab chinese Chinese
@@ -599,9 +602,9 @@ function! AdjustCommaPosition()
         "memory current position
         "normal m`
 
-        "remove extra whitespaces between comma and its previous word.
+        "remove extra white-spaces between comma and its previous word.
         silent! :%s/\>\s\+,/,/ge
-        "remove extra whitespaces between comma and its next word.
+        "remove extra white-spaces between comma and its next word.
         silent! :%s/,\s\+\</, /ge
         "if comma is directly followed by a word, insert one space
         silent! :%s/,\</, /ge
@@ -622,9 +625,9 @@ function! AdjustPeriodPosition()
         "memory current position
         normal m`
 
-        "remove extra whitespaces between period and its previous word.
+        "remove extra white-spaces between period and its previous word.
         silent! :%s/\>\s\+\././ge
-        "remove extra whitespaces between period and its next word.
+        "remove extra white-spaces between period and its next word.
         silent! :%s/\.\s\+\</. /ge
         "if period is directly followed by a word, insert one space
         "silent! :$s/\.\</. /ge
@@ -639,7 +642,7 @@ endfunction
 map gf :tabnew <cfile><CR>
 
 " improve tag's utility
-" Note: the final ';' is very import, which cause vim to loop up tag file upward recursily
+" Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
 " prerequisite: set autochdir
 set tags=tags;
 "set tags=./tags, tags;
@@ -853,5 +856,15 @@ function! DiffWithFileFromDisk()
     exec 'edit '.filename
     diffthis
 endfunction
+
+":highlight clear SpellBad
+":highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+":highlight clear SpellCap
+":highlight SpellCap term=underline cterm=underline
+":highlight clear SpellRare
+":highlight SpellRare term=underline cterm=underline
+":highlight clear SpellLocal
+":highlight SpellLocal term=underline cterm=underline
+
 
 
