@@ -14,8 +14,8 @@ let g:mapleader =","
 "command-line history limitation
 set history=1000
 
+"setup where to store the good word(zg) and bad word(zw)
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
-
 
 " none of these should be word dividers
 "set isk+=$,%,#
@@ -540,7 +540,9 @@ autocmd BufReadPost *
 
 
 "enable spell checking feature only for plain text
-autocmd BufReadPost *  call CheckSpell()
+"Note, Here we use BufWinEnter instead of BufReadPost because we have to
+"consider the existense of modeline.
+autocmd BufWinEnter *  call CheckSpell()
 function! CheckSpell()
     if ( &filetype == '')
         setlocal spell
