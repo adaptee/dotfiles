@@ -10,6 +10,11 @@ nmap <silent><F4> :A<CR>
 vmap <silent> <Leader>a= <ESC>:AlignPush<CR>:AlignCtrl lp1P1<CR>:'<,'>Align =<CR>:AlignPop<CR>
 vmap <silent> <Leader>a, <ESC>:AlignPush<CR>:AlignCtrl lp0P1<CR>:'<,'>Align ,<CR>:AlignPop<CR>
 vmap <silent> <Leader>a( <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align (<CR>:AlignPop<CR>
+vmap <silent> <Leader>a) <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align )<CR>:AlignPop<CR>
+vmap <silent> <Leader>a* <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align *<CR>:AlignPop<CR>
+vmap <silent> <Leader>a' <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align '<CR>:AlignPop<CR>
+vmap <silent> <Leader>a" <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align "<CR>:AlignPop<CR>
+vmap <silent> <Leader>a/ <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align //<CR>:AlignPop<CR>
 
 "------------------------------------------------------------------------------------------------------
 " bash-support.vim( BASH IDE -- Write and run BASH-scripts using menus and hotkeys. )
@@ -142,13 +147,17 @@ let NERDTreeIgnore            = ['\.swp$', '\~$','\.vcproj$','\.ncb$','\.sln$','
 "------------------------------------------------------------------------------------------------------
 " omniCPPComplete.vim
 "------------------------------------------------------------------------------------------------------
-
 " No annoying preview window!
 set completeopt=menu
 
+" auto close options when exiting insert mode
+autocmd InsertLeave  * if pumvisible() == 0|pclose|endif
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+
 let OmniCpp_GlobalScopeSearch   = 1  " 0 or 1
-let OmniCpp_NamespaceSearch     = 1   " 0, 1 or 2
+let OmniCpp_NamespaceSearch     = 2  "search namespaces in this and included files
 let OmniCpp_DisplayMode         = 1
+let OmniCpp_SelectFirstItem     = 2  "select first item (but don't insert)
 let OmniCpp_ShowScopeInAbbr     = 0
 let OmniCpp_ShowPrototypeInAbbr = 1
 let OmniCpp_ShowAccess          = 1
