@@ -42,6 +42,9 @@ nnoremap <M-3> <Esc>:set invpaste<CR>:set paste?<CR>
 set <M-4>=4
 nnoremap <M-4> <Esc>:e #<CR>
 
+" enable/disable spell checking
+set <M-5>=5
+nnoremap <M-5> <Esc>:setlocal invspell<CR>:setlocal spell?<CR>
 
 "Now 'K' invokes external cmd 'manall' , which will man all items with the same name
 "set keywordprg = manall

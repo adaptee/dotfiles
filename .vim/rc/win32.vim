@@ -39,3 +39,6 @@ nnoremap <A-3> <Esc>:set invpaste<CR>:set paste?<CR>
 " open previous file.
 nnoremap <silent><A-4> <Esc>:e #<CR>
 
+" enable/disable spell checking
+nnoremap <A-5> <Esc>:setlocal invspell<CR>:setlocal spell?<CR>
+
