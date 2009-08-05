@@ -14,13 +14,6 @@ let g:mapleader =","
 "command-line history limitation
 set history=1000
 
-"enable spell checking feature only for plain text
-if ( &filetype == '')
-    set spell
-    set spelllang=en
-    set spellsuggest=5
-endif
-
 
 " none of these should be word dividers
 "set isk+=$,%,#
@@ -306,7 +299,7 @@ function! ActLikeWeb()
     nmap <buffer> S ?\|\S\+\|<CR>
 endfunction
 
-"improve the user-experince of man pages;press "\K", instead of "K"
+"improve the user-experience of man pages;press "\K", instead of "K"
 source $VIMRUNTIME/ftplugin/man.vim
 
 "re-generate tags for help docs on start-up"
@@ -503,7 +496,7 @@ iab toogle  toggle
 iab envir   environment
 iab partion partition
 
-"use abbrevation to reduce key-typing;come on, lasy boy!
+"use abbreviation to reduce key-typing;come on, lazy boy!
 iab i18     Internationalization
 iab l10n    Localization
 iab posix   POSIX
@@ -515,6 +508,9 @@ iab xtime   <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 iab autom   automaticaly
 iab kath    Katherine
 iab attri   attribute
+iab chinese Chinese
+iab english English
+iab america America
 iab #b /************************************************
 iab #e ************************************************/
 iab #l /*----------------------------------------------*/
@@ -539,22 +535,27 @@ autocmd BufReadPost *
             \ exe "normal g`\"" |
             \ endif
 
+
+"enable spell checking feature only for plain text
+autocmd BufReadPost *  call CheckSpell()
+function! CheckSpell()
+    if ( &filetype == '')
+        setlocal spell
+        setlocal spelllang=en
+        setlocal spellsuggest=5
+    endif
+endfunction
+
 "Insert header automatically
 "autocmd BufNewFile *.c,*.h,*.sh,*.javai,*.cppi,*.py,*.pl   call SetTitle()
 
-" since origanl <C-h>'s utility is seldom used, let make good use of it.
-" since <C-e> is customed to moving to EoL, I will map <C-h> to original <C-e>
-" now <C-y> and <C-h> is very to remember:
-" 1).y(upper) mean inserting character in corresponding positiong of upper line
-" 2).h(lower) mean repeating character in corresponding positiong of lower line
-inoremap <C-h> <C-e>
 
 "--------------------------------------------------------------------------"
 "                         programming features                             "
 "--------------------------------------------------------------------------"
 
 
-" for c/c++ programer under *nix
+" for c/c++ programmer under *nix
 set path+=/usr/include/c++/4.3
 set path+=/usr/include/linux
 
@@ -813,6 +814,13 @@ endfunc
 " set <C-C> as no ops
 nnoremap <C-C> <NOP>
 
+" since original <C-h>'s utility is seldom used, let make good use of it.
+" since <C-e> is customized to moving to EOL, I will map <C-h> to original <C-e>
+" now <C-y> and <C-h> is very to remember:
+" 1).y(upper) mean inserting character in corresponding position of upper line
+" 2).h(lower) mean repeating character in corresponding position of lower line
+inoremap <C-h> <C-e>
+
 " Since Jx is more useful than only J....
 "nnoremap J Jx
 
@@ -827,6 +835,8 @@ let g:netrw_http_cmd = "wget -q -O"
 " CTRL-A and CTRL-X commands for adding to and subtracting
 " note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
+
+
 
 "--------------------------------------------------------------------------"
 "                                   garbage                                "
