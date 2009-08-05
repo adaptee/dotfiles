@@ -542,7 +542,8 @@ autocmd BufReadPost *
 "enable spell checking feature only for plain text
 "Note, Here we use BufWinEnter instead of BufReadPost because we have to
 "consider the existense of modeline.
-autocmd BufWinEnter *  call CheckSpell()
+"autocmd BufWinEnter *  call CheckSpell()
+autocmd BufEnter *  call CheckSpell()
 function! CheckSpell()
     if ( &filetype == '')
         setlocal spell
