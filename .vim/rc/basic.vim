@@ -560,30 +560,22 @@ function! CheckSpell()
     endif
 endfunction
 
-"Insert header automatically
-"autocmd BufNewFile *.c,*.h,*.sh,*.javai,*.cppi,*.py,*.pl   call SetTitle()
 
 
 "--------------------------------------------------------------------------"
 "                         programming features                             "
 "--------------------------------------------------------------------------"
 
-
-" for c/c++ programmer under *nix
-set path+=/usr/include/c++/4.3
-set path+=/usr/include/linux
-
-" Recognize standard C++ headers
-autocmd BufEnter /usr/include/c++/*    setfiletype cpp
-autocmd BufEnter /usr/include/g++-3/*  setfiletype cpp
-
-" In C/C++ file, press ',;' to append ';' to the end of the line, when it is missing.
-autocmd FileType *.c,*.cpp  noremap <leader>; :s/\([^;]\)$/\1;/<CR>:let @/=""<CR><esc>
+"open included file in new buffer, making gf(goto included file) more convenient
+map gf :tabnew <cfile><CR>
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
 if $VIM_HATE_SPACE_ERRORS != '0'
     let c_space_errors=1
 endif
+
+"Insert header automatically
+"autocmd BufNewFile *.c,*.h,*.sh,*.java,*.cpp,*.py,*.pl   call SetTitle()
 
 " Remove trailing spaces for C/C++ and Vim files when writing to disk
 au BufWritePre *                  call DeleteTrailingWS()
@@ -597,11 +589,9 @@ function! DeleteTrailingWS()
 endfunction
 
 au BufWritePre *                  call AdjustCommaPosition()
-
 "Generally, this function can be safely applied to source code file, too.
 "Because in most programming language, as in natural language, comma's indention
 "is not critical, just a good style.
-
 function! AdjustCommaPosition()
 
     if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
@@ -629,7 +619,7 @@ function! AdjustPeriodPosition()
     if ( &filetype == '')
 
         "memory current position
-        normal m`
+        "normal m`
 
         "remove extra white-spaces between period and its previous word.
         silent! :%s/\>\s\+\././ge
@@ -639,19 +629,17 @@ function! AdjustPeriodPosition()
         "silent! :$s/\.\</. /ge
 
         "return to memorize position
-        normal ``
+        "normal ``
     endif
 endfunction
 
 
-"open included file in new buffer, making gf(goto included file) more convenient
-map gf :tabnew <cfile><CR>
 
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
 " prerequisite: set autochdir
 set tags=tags;
-"set tags=./tags, tags;
+"set tags=./tags,tags;
 "set tags=./tags,./../tags,./**/tags
 
 " make tag jumping for user-friendly
@@ -663,7 +651,6 @@ nnoremap <BS> <C-T>
 
 " first search tag file, then search cscope database
 "set cscopetagorder=1
-
 
 "Force VIM to update diff result on-the-fly when user edit the compared files
 diffupdate
