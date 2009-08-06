@@ -9,7 +9,7 @@
     #logallrefupdates = true
 
 [user]
-    name = Adaptee
+    name  = Adaptee
     email = adaptee@gmail.com
 
 [rerere]
@@ -28,17 +28,18 @@
     relativePath = true
 
 [alias]
-    ci = commit
-    co = checkout
-    desc = describe
-    st = status
-    wtf = whatchanged
+    ci      = commit
+    cia     = commit -a
+    co      = checkout
+    desc    = describe
+    st      = status
+    wtf     = whatchanged
     unstage = reset HEAD --
-    last = log -1 HEAD
-    visual = gitk
+    last    = log -1 HEAD
+    visual  = gitk
 
 [i18n]
-    commitEncoding = utf-8
+    commitEncoding    = utf-8
     logOutputEncoding = utf-8
 
 [help]
