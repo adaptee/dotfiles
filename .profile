@@ -27,8 +27,8 @@ export HISTCONTROL=ignoreboth
 #print the time stamp associated with each history entry 
 export HISTTIMEFORMAT="%F %T "
 
-export HISTFILESIZE=1000
-export HISTSIZE=1000
+export HISTFILESIZE=50000
+export HISTSIZE=50000
 
 #Do not record these commands
 export HISTIGNORE="pwd:l:ls:ls -ltr"
