@@ -247,8 +247,7 @@ alias myip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g' "
 # start vpn quickly.
 alias vpn='sudo openvpn --config ~/.openvpn/alonweb.conf --ca ~/.openvpn/alonweb.crt'
 
-alias mrsync='rsync -r -t -v --progress'
-
+alias booksync='rsync -r -t -v --progress --delete ~/prog/EBook /media/backup/'
 
 #---------------------------------------------------------------------------#
 #                             top useful alias                              #
