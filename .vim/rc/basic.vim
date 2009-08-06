@@ -278,6 +278,7 @@ inoremap <C-E>   <End>
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
 
+"stealed from VimTip 646
 "Move current line of text up and down(crossing other text)
 set <M-j>=j
 set <M-k>=k
@@ -849,6 +850,12 @@ let g:netrw_http_cmd = "wget -q -O"
 " note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
 
+"stealed from VimTip 1540
+" set 'updatetime' to 10 seconds when in insert mode
+au InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
+au InsertLeave * let &updatetime=updatetimerestore
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+au CursorHoldI * stopinsert
 
 
 "--------------------------------------------------------------------------"
