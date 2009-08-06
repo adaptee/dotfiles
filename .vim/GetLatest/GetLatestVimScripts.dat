@@ -30,5 +30,6 @@ ScriptID SourceID Filename
 1502    8743    :AutoInstall:   vimball.vim
 1026    4700    :AutoInstall:   visualmark.vim
 73      6504    :AutoInstall:   word_complete.vim
+#301    10362   :AutoInstall:   xml.vim
 
 # vim:ft=sh
