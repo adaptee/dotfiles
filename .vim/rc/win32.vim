@@ -22,7 +22,7 @@ function! LoadSession()
 endfunction
 
 "open files under current folder.
-nmap <Leader>E :e <C-R>=expand("%:p:h") . "\\" <CR>
+nmap <Leader>o :e <C-R>=expand("%:p:h") . "\\" <CR>
 
 " In windows, we generally only use gvim.
 " So,<A-1> will work fine. NO dirty hacking is needed.
