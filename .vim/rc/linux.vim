@@ -20,7 +20,7 @@ function! LoadSession()
 endfunction
 
 "open files under current folder.
-nmap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <Leader>e :E <C-R>=expand("%:p:h") . "/" <CR>
 
 " Note, if we only use gvim, then <A-1> will be OK.
 " However, terminal support is necessary.
