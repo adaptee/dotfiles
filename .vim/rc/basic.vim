@@ -130,9 +130,6 @@ set encoding=utf-8
 " Make VIM understand following  kinds of encoding for external files.
 set fileencodings=ucs-bom,utf-8,chinese,taiwan,japan,latin1
 
-" language used for showing menu items.(deprecated by :language command)
-"set langmenu=en_US.utf-8
-
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
@@ -215,14 +212,9 @@ nnoremap <Leader>E mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>
 "Now 'C','D','Y' work the same way: from current position to the end of line
 nnoremap Y y$
 
-"auto-indent after pasting
-"nnoremap <Esc>p p'[v']=
-"nnoremap <Esc>P P'[v']=
-
 "--------------------------------------------------------------------------"
 "                           moving around quickly                          "
 "--------------------------------------------------------------------------"
-
 
 "Allow virtual editing in Insert mode.
 set virtualedit=insert
@@ -326,7 +318,6 @@ set tabstop=8
 set shiftwidth=4
 set expandtab
 set softtabstop=4
-"set smarttab
 
 "set the length limitation of physical line; 0 mean unlimited
 set textwidth=0
@@ -855,15 +846,4 @@ function! DiffWithFileFromDisk()
     exec 'edit '.filename
     diffthis
 endfunction
-
-":highlight clear SpellBad
-":highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-":highlight clear SpellCap
-":highlight SpellCap term=underline cterm=underline
-":highlight clear SpellRare
-":highlight SpellRare term=underline cterm=underline
-":highlight clear SpellLocal
-":highlight SpellLocal term=underline cterm=underline
-
-
 
