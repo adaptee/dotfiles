@@ -580,11 +580,6 @@ autocmd BufEnter /usr/include/g++-3/*  setfiletype cpp
 " In C/C++ file, press ',;' to append ';' to the end of the line, when it is missing.
 autocmd FileType *.c,*.cpp  noremap <leader>; :s/\([^;]\)$/\1;/<CR>:let @/=""<CR><esc>
 
-"automatically set completion-method
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-" require plugin pythoncomplete.vim, which should be installed as default
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-
 " Highlight space errors in C/C++ source files (Vim tip #935)
 if $VIM_HATE_SPACE_ERRORS != '0'
     let c_space_errors=1

@@ -55,3 +55,8 @@ nmap <Leader>k :!clear;sdcv "<cword>"<CR>
 
 " Use ':W'" to write to files even when we forget to use sudo when launching vim
 command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
+
+" Recognize standard C++ headers
+autocmd BufEnter /usr/include/c++/*    setfiletype cpp
+autocmd BufEnter /usr/include/g++-3/*  setfiletype cpp
+
