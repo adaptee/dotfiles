@@ -15,6 +15,7 @@ let g:mapleader =","
 set history=1000
 
 "setup where to store the good word(zg) and bad word(zw)
+" tips: ]s jumps to next spell error, ]s jumps to previous spell error.
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
 
 " none of these should be word dividers
@@ -405,7 +406,7 @@ set writebackup
 "set where .swp file is putted
 set directory=.,/var/tmp,/tmp
 
-" use directory df the related buffer as the start-point for file browser
+" use directory of the related buffer as the start-point for file browser
 set browsedir=buffer
 
 " automatically change $CWD to where the file is located
