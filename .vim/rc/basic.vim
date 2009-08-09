@@ -494,7 +494,6 @@ iab prot    port
 iab serach  search
 iab cosnt   const
 iab toogle  toggle
-iab envir   environment
 iab partion partition
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
@@ -503,6 +502,7 @@ iab autom   automatically
 iab i18     Internationalization
 iab l10n    Localization
 iab posix   POSIX
+iab envir   environment
 iab fst     first
 iab scd     second
 iab misc    miscellaneous
@@ -617,7 +617,7 @@ function! AdjustPeriodPosition()
         "remove extra white-spaces between period and its next word.
         silent! :%s/\.\s\+\</. /ge
         "if period is directly followed by a word, insert one space
-        "silent! :$s/\.\</. /ge
+        silent! :$s/\.\</. /ge
 
         "return to memorize position
         "normal ``
