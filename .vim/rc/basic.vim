@@ -427,7 +427,7 @@ nmap <Leader>a :qa<CR>
 nmap <Leader>A :qa!<CR>
 
 " allows us to write to files even when we forget to use sudo when launching vim
-command! -bar -nargs=0 Sudow :silent exe "w !sudo tee % > /dev/null" | silent edit!
+command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 "--------------------------------------------------------------------------"
 "                                   window                                 "
@@ -497,6 +497,7 @@ iab toogle  toggle
 iab partion partition
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
+iab ok      OK
 iab abbr    abbreviation
 iab autom   automatically
 iab i18     Internationalization
@@ -513,6 +514,7 @@ iab attri   attribute
 iab chinese Chinese
 iab english English
 iab america America
+iab spec    specification
 iab #b /************************************************
 iab #e ************************************************/
 iab #l /*----------------------------------------------*/
