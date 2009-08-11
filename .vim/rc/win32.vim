@@ -28,7 +28,8 @@ nmap <Leader>o :e <C-R>=expand("%:p:h") . "\\" <CR>
 " So,<A-1> will work fine. NO dirty hacking is needed.
 
 " toggle search result highlight, too
-nnoremap <silent><A-1> <Esc>:set invhlsearch<CR>
+"nnoremap <silent><A-1> <Esc>:set invhlsearch<CR>
+nnoremap <silent><A-1> <Esc>:nohlsearch<CR>
 
 " toggle the showing of TAB and trailing white-spaces.
 nnoremap <silent><A-2> <Esc>:set invlist<CR>

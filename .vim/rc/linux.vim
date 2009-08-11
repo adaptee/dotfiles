@@ -28,7 +28,8 @@ nmap <Leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 "
 " toggle search result highlight, too
 set <M-1>=1
-nnoremap <silent><M-1> <Esc>:set invhlsearch<CR>
+"nnoremap <silent><M-1> <Esc>:set invhlsearch<CR>
+nnoremap <silent><M-1> <Esc>:nohlsearch<CR>
 
 " toggle the showing of TAB and trailing white-spaces.
 set <M-2>=2
