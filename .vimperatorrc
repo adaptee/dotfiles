@@ -470,6 +470,17 @@ load_vimperatorrc= function ()
 }
 EOF
 
+" Highlight the vimperator command line with yellow background when you're in it
+javascript <<EOF
+    (function() {
+        var inputElement = document.getElementById('liberator-commandline-command');
+        function swapBGColor(event) {
+            inputElement.style.backgroundColor = event.type == "focus" ? "yellow" : "";
+        }
+        inputElement.addEventListener('focus', swapBGColor, false);
+        inputElement.addEventListener('blur', swapBGColor, false);
+    })();
+EOF
 
 ""---------------------------------------------------------------------------------------------
 "" Map to js functions
