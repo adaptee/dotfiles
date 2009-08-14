@@ -444,7 +444,6 @@ EOF
 js<<EOF
 lookup_manpage = function (keyword)
 {
-    //var prefix   = 'http://www.die.net/search/?q=';
     var prefix   = 'http://www.google.com/cse?q=';
     var suffix   = '&sa=Search&ie=ISO-8859-1&cx=partner-pub-5823754184406795%3A54htp1rtx5u&cof=FORID%3A9#927';
     var full_url = prefix + keyword + suffix ;
@@ -475,7 +474,8 @@ javascript <<EOF
     (function() {
         var inputElement = document.getElementById('liberator-commandline-command');
         function swapBGColor(event) {
-            inputElement.style.backgroundColor = event.type == "focus" ? "yellow" : "";
+            //inputElement.style.backgroundColor = event.type == "focus" ? "yellow" : "";
+            inputElement.style.backgroundColor = event.type == "focus" ? "GreenYellow ": "";
         }
         inputElement.addEventListener('focus', swapBGColor, false);
         inputElement.addEventListener('blur', swapBGColor, false);
