@@ -57,6 +57,11 @@ filetype indent on
 " since 'jj' nearly never occur in input mode, use it to return to normal mode.
 inoremap jj <Esc>
 
+" since ';' is not quite useful in normal mode, we can use it to enter
+" Ex mode quickly
+nnoremap ; :
+
+
 "--------------------------------------------------------------------------"
 "                                   colors                                 "
 "--------------------------------------------------------------------------"
