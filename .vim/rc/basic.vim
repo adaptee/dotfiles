@@ -209,9 +209,9 @@ set pastetoggle=<F8>
 
 " stealed from VimTip 1539; added the creation of mark before making changes.
 " exchange the word under cursor with next word
-nnoremap <Leader>e mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>
+nnoremap <Leader>e mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 " exchange the word under cursor with previous word
-nnoremap <Leader>E mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>
+nnoremap <Leader>E mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
 
 "Y's default functionality is duplicated with 'yy' and counter-intuitive; Let's correct it
