@@ -70,6 +70,9 @@ noremap U gU<CR>
 " 'V' stands for 'View Source Code'
 noremap V gf
 
+" since : is more often used than ;
+noremap ; :
+
 " re-enable ctrl-l to move focus on location bar
 noremap <C-l> <C-v><C-l>
 
