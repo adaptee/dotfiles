@@ -278,6 +278,12 @@ naut()
 # APT utilily
 #---------------------------------------------------------------
 
+purge()
+{
+    dpkg -l|grep '^rc' | awk '{print $2}' | xargs sudo aptitude -y purge 
+}
+
+
 # add new GPG key for apt-repo.
 # Usage: addkey 0x5017d4931d0acade295b68adfc6d7d9d009ed615
 addkey()
