@@ -278,9 +278,9 @@ naut()
 # APT utilily
 #---------------------------------------------------------------
 
-purge()
+purge2()
 {
-    dpkg -l|grep '^rc' | awk '{print $2}' | xargs sudo aptitude -y purge 
+    dpkg -l|grep '^rc' | awk '{print $2}' | xargs sudo apt-get -y purge
 }
 
 
@@ -446,7 +446,7 @@ clearmail ()
 }
 
 # shows the git history as ASCII graph
-function glog() 
+glog() 
 {
     git log --pretty=oneline --topo-order --graph --abbrev-commit $@
 }
