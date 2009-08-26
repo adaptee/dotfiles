@@ -14,9 +14,9 @@ set guioptions-=m       "No menu
 "make highlighted text yanked into global selection automatically
 set guioptions+=a
 
-"set scrollbar on the left side
+"don't show boring scrollbar
 set guioptions-=r
-set guioptions+=l
+set guioptions-=l
 
 "maxmize the window when started
 if has ("win32")
