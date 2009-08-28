@@ -29,15 +29,15 @@ nmap <Leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 " toggle search result highlight, too
 set <M-1>=1
 "nnoremap <silent><M-1> <Esc>:set invhlsearch<CR>
-nnoremap <silent><M-1> <Esc>:nohlsearch<CR>
+nnoremap <silent><M-1> <Esc>:nohlsearch<CR>:echo<Space>'nohlsearh'<CR>
 
 " toggle the showing of TAB and trailing white-spaces.
 set <M-2>=2
-nnoremap <silent><M-2> <Esc>:set invlist<CR>
+nnoremap <silent><M-2> <Esc>:set<Space>invlist<CR>:set<Space>list?<CR>
 
 " toggle and show current pasting status
 set <M-3>=3
-nnoremap <M-3> <Esc>:set invpaste<CR>:set paste?<CR>
+nnoremap <M-3> <Esc>:set<Space>invpaste<CR>:set<Space>paste?<CR>
 
 " open previous file.
 set <M-4>=4
@@ -45,7 +45,7 @@ nnoremap <M-4> <Esc>:e #<CR>
 
 " enable/disable spell checking
 set <M-5>=5
-nnoremap <M-5> <Esc>:setlocal invspell<CR>:setlocal spell?<CR>
+nnoremap <M-5> <Esc>:setlocal<Space>invspell<CR>:setlocal<Space>spell?<CR>
 
 "Now 'K' invokes external cmd 'manall' , which will man all items with the same name
 "set keywordprg = manall

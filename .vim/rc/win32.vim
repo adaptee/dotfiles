@@ -29,17 +29,17 @@ nmap <Leader>o :e <C-R>=expand("%:p:h") . "\\" <CR>
 
 " toggle search result highlight, too
 "nnoremap <silent><A-1> <Esc>:set invhlsearch<CR>
-nnoremap <silent><A-1> <Esc>:nohlsearch<CR>
+nnoremap <silent><A-1> <Esc>:nohlsearch<CR>:echo<Space>'nohlsearch'<CR>
 
 " toggle the showing of TAB and trailing white-spaces.
-nnoremap <silent><A-2> <Esc>:set invlist<CR>
+nnoremap <silent><A-2> <Esc>:set<Space>invlist<CR>:set<Space>list?<CR>
 
 " toggle and show current pasting status
-nnoremap <A-3> <Esc>:set invpaste<CR>:set paste?<CR>
+nnoremap <A-3> <Esc>:set<Space>invpaste<CR>:set<Space>paste?<CR>
 
 " open previous file.
 nnoremap <silent><A-4> <Esc>:e #<CR>
 
 " enable/disable spell checking
-nnoremap <A-5> <Esc>:setlocal invspell<CR>:setlocal spell?<CR>
+nnoremap <A-5> <Esc>:setlocal<Space>invspell<CR>:setlocal<Space>spell?<CR>
 
