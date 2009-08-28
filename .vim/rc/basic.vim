@@ -264,7 +264,6 @@ imap <UP> <ESC>gka
 imap <C-h> <Left>
 imap <C-l> <Right>
 imap <C-j> <Down>
-imap <C-k> <Up>
 
 
 "make tag jumping more easy"
@@ -445,20 +444,18 @@ command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 "--------------------------------------------------------------------------"
 
 "make window manipulating more easy
-nmap <Leader>s :split<CR><C-W><C-W>
-nmap <Leader>v :vsplit<CR><C-W><C-w>
-nmap <Leader>f <C-w><C-w>
+nmap <Leader>s :split<CR><C-W>W
+nmap <Leader>v :vsplit<CR><C-W>w
+
+" move to next window
+nmap <Leader>f <C-w>w
+" move to previouse window
+nmap <Leader>F <C-w>W
 
 " put new window below the original one.
 "set splitbelow
 " put new window on right side of the original one.
 "set splitright
-
-" smart way to switch between windows
-"nmap <C-j> <C-W>j
-"nmap <C-k> <C-W>k
-"nmap <C-h> <C-W>h
-"nmap <C-l> <C-W>l
 
 " make splitters between windows be blank, with no boring dashes
 set fillchars=vert:\ ,stl:\ ,stlnc:\
