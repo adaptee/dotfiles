@@ -280,10 +280,8 @@ cnoremap <C-E>  <End>
 "Move current line of text up and down(crossing other text)
 set <M-j>=j
 set <M-k>=k
-
 nmap <M-j> mz:m+<CR>`z
 nmap <M-k> mz:m-2<CR>`z
-
 "Move visually-selected text up and down(crossing other text)
 vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
