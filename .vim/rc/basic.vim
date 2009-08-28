@@ -260,6 +260,13 @@ imap <DOWN> <ESC>gja
 nmap <UP> gk
 imap <UP> <ESC>gka
 
+" make moving under insert mode more easy.
+imap <C-h> <Left>
+imap <C-l> <Right>
+imap <C-j> <Down>
+imap <C-k> <Up>
+
+
 "make tag jumping more easy"
 nmap <Leader>d <ESC><C-]>
 nmap <Leader>x <ESC><C-T>
@@ -807,12 +814,11 @@ endfunc
 " set <C-C> as no ops
 nnoremap <C-C> <NOP>
 
-" since original <C-h>'s utility is seldom used, let make good use of it.
-" since <C-e> is customized to moving to EOL, I will map <C-h> to original <C-e>
-" now <C-y> and <C-h> is very to remember:
+" since <C-e> is customized to moving to EOL, I will map <C-b> to original <C-e>
+" now <C-y> and <C-b> is very to remember:
 " 1).y(upper) mean inserting character in corresponding position of upper line
 " 2).h(lower) mean repeating character in corresponding position of lower line
-inoremap <C-h> <C-e>
+inoremap <C-b> <C-e>
 
 " Since Jx is more useful than only J....
 "nnoremap J Jx
