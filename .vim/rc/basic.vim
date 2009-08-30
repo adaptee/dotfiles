@@ -174,9 +174,9 @@ nmap <silent> \      :nohlsearch<CR>
 vmap  * :call VisualSearch('f')<CR>
 vmap  # :call VisualSearch('b')<CR>
 
-"Since SPACE is not used under visual mode, Let's make good use of it!
+"Since Space is not used under visual mode, Let's make good use of it!
 "Search visual-selected text and put the matching lines in a new tab
-vnoremap <SPACE> "*y<Esc>mzqqq:silent<SPACE>g/<C-R>*/y<SPACE>Q<CR>'z:tabnew<CR>"Qpdgg
+vnoremap <Space> "*y<Esc>mzqqq:silent<Space>g/<C-R>*/y<Space>Q<CR>'z:tabnew<CR>"Qpdgg
 
 "Make good use of <BAR>:search lines containing current word------A simple grep!
 nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> exec "normal " . temp_nr . "[\t"<CR>
@@ -235,8 +235,8 @@ vnoremap <C-J> 3j
 nnoremap <C-k> 3k
 vnoremap <C-k> 3k
 
-nnoremap <SPACE> <C-F>
-nnoremap <S-SPACE> <C-B>
+nnoremap <Space> <C-F>
+nnoremap <S-Space> <C-B>
 
 "enhance the function of '%' and '#'
 source $VIMRUNTIME/macros/matchit.vim
@@ -394,7 +394,7 @@ set foldlevel=10         "when started, unzip(fold) all!
 "set foldclose=all
 
 "use space to open/close fold
-"nnoremap <SPACE> za
+"nnoremap <Space> za
 
 "--------------------------------------------------------------------------"
 "                                   buffer & file                          "
@@ -571,7 +571,7 @@ endfunction
 map gf :tabnew <cfile><CR>
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
-if $VIM_HATE_SPACE_ERRORS != '0'
+if $VIM_HATE_Space_ERRORS != '0'
     let c_space_errors=1
 endif
 
@@ -581,7 +581,7 @@ endif
 " Remove trailing spaces for C/C++ and Vim files when writing to disk
 au BufWritePre *                  call DeleteTrailingWS()
 function! DeleteTrailingWS()
-    if $VIM_HATE_SPACE_ERRORS != '0' &&
+    if $VIM_HATE_Space_ERRORS != '0' &&
                 \(&filetype == 'c' || &filetype == 'cpp' || &filetype == 'vim'|| &filetype == 'python')
         normal m`
         silent! :%s/\s\+$//e
