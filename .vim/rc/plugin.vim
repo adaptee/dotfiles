@@ -78,9 +78,9 @@ endif
 " grep.vim ( integration with external tools: grep, egrep, fgrep, find, xargs.)
 "------------------------------------------------------------------------------------------------------
 
-nmap <F5> :Grep
-nmap <S-F5> :Rgrep
-nmap <C-F5> :Bgrep
+nmap <F5> :Grep<Space>
+nmap <S-F5> :Rgrep<Space>
+nmap <C-F5> :Bgrep<Space>
 
 " set the location of grep
 "let Grep_Path = 'd:\tools\grep.exe'
