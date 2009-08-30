@@ -167,7 +167,6 @@ set ignorecase
 set smartcase
 
 " toggle search result highlighting; now the unused key '\' finally can do something now....
-"nmap <silent> \      :set invhlsearch<CR>
 nmap <silent> \      :nohlsearch<CR>
 
 "search visually-selected text
