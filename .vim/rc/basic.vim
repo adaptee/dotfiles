@@ -133,7 +133,8 @@ set diffopt=filler,iwhite
 set encoding=utf-8
 
 " Make VIM understand following  kinds of encoding for external files.
-set fileencodings=ucs-bom,utf-8,chinese,taiwan,japan,latin1
+"set fileencodings=ucs-bom,utf-8,chinese,taiwan,japan,latin1
+set fileencodings=ucs-bom,utf-8,sjis,cp936,big5,euc-jp,euc-kr,ucs-2le
 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
