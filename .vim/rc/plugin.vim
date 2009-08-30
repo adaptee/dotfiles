@@ -80,6 +80,27 @@ endif
 "------------------------------------------------------------------------------------------------------
 
 "------------------------------------------------------------------------------------------------------
+" grep.vim ( integration with external tools: grep, egrep, fgrep, find, xargs.)
+"------------------------------------------------------------------------------------------------------
+" set the location of grep
+"let Grep_Path = 'd:\tools\grep.exe'
+
+" set the default grep options
+"let Grep_Default_Options = '-i'
+
+"disable opening the quickfix window by default
+let Grep_OpenQuickfixWindow = 0
+
+" set which folders should always be skipped
+let Grep_Skip_Dirs = '.svn .git'
+
+" set which files should always be skipped
+let Grep_Skip_Files = '*.bak *.o *.obj *.pdb *.exe *.dll'
+
+" should be set when using the find provided by cygwin
+"let Grep_Cygwin_Find = 1
+
+"------------------------------------------------------------------------------------------------------
 " lookupfile.vim ( locate file by various means, and providing auto-completion feature )
 "------------------------------------------------------------------------------------------------------
 " orverrid the default mapping of <F5>
