@@ -644,10 +644,6 @@ set tags=tags;
 "set tags=./tags,tags;
 "set tags=./tags,./../tags,./**/tags
 
-" make tag jumping for user-friendly
-nnoremap <CR> g<C-]>
-nnoremap <BS> <C-T>
-
 " :tag will be replaced by :cstag ; the latter will search both tagfile and cscope database
 "set cscopetag
 
