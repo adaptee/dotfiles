@@ -31,11 +31,6 @@ nnoremap <Leader>g :BufExplorer<CR>
 " use <Shift-Enter> to open specified buffer in new tab
 
 "------------------------------------------------------------------------------------------------------
-" bufgrep.vim( grep all your current buffers )
-"------------------------------------------------------------------------------------------------------
-" Use command ':Bgrep pattern'
-
-"------------------------------------------------------------------------------------------------------
 " calendar.vim( record your living within vim)
 "------------------------------------------------------------------------------------------------------
 " <Leader>caL <Plug>CalendarH  ---- show horizontally
@@ -82,6 +77,11 @@ endif
 "------------------------------------------------------------------------------------------------------
 " grep.vim ( integration with external tools: grep, egrep, fgrep, find, xargs.)
 "------------------------------------------------------------------------------------------------------
+
+nmap <F5> :Grep
+nmap <S-F5> :Rgrep
+nmap <C-F5> :Bgrep
+
 " set the location of grep
 "let Grep_Path = 'd:\tools\grep.exe'
 
@@ -189,7 +189,10 @@ let OmniCpp_MayCompleteDot      = 1
 let OmniCpp_MayCompleteArrow    = 1
 let OmniCpp_MayCompleteScope    = 1
 
-
+"------------------------------------------------------------------------------------------------------
+" qfixtoggle.vim( toggle the quickfix window)
+"------------------------------------------------------------------------------------------------------
+nmap <F6> :QFix<CR>
 
 "------------------------------------------------------------------------------------------------------
 " snipmate.vim ( TextMate-style snippets for Vim )
