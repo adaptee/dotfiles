@@ -173,9 +173,8 @@ nmap <silent> \      :nohlsearch<CR>
 vmap  * :call VisualSearch('f')<CR>
 vmap  # :call VisualSearch('b')<CR>
 
-"Since Space is not used under visual mode, Let's make good use of it!
 "Search visual-selected text and put the matching lines in a new tab
-vnoremap <Space> "*y<Esc>mzqqq:silent<Space>g/<C-R>*/y<Space>Q<CR>'z:tabnew<CR>"Qpdgg
+vnoremap <Leader>g "*y<Esc>mzqqq:silent<Space>g/<C-R>*/y<Space>Q<CR>'z:tabnew<CR>"Qpdgg
 
 "Make good use of <BAR>:search lines containing current word------A simple grep!
 nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> exec "normal " . temp_nr . "[\t"<CR>
