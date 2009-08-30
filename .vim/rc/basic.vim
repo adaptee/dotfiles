@@ -425,9 +425,6 @@ set autochdir
 nmap <C-right>    <ESC>:bn<CR>
 nmap <C-left>     <ESC>:bp<CR>
 
-"fast switch to first & last tab
-nnoremap <  :tabfirst<CR>
-nnoremap >  :tablast<CR>
 
 "make writing and quiting more easy
 nmap <Leader>w mz:w<CR>'z
@@ -477,8 +474,11 @@ nmap <Leader>T :tabedit %:p:h<CR>
 nmap <silent> <Leader>n :tabnext<CR>
 nmap <silent> <Leader>p :tabprevious<CR>
 
+"fast switch to first & last tab
+nnoremap <silent><leader>1 :tabfirst<CR>
+nnoremap <silent><leader>0 :tablast<CR>
+
 "Switch to tab<N>
-nnoremap <silent><leader>1 1gt<ESC>
 nnoremap <silent><leader>2 2gt<ESC>
 nnoremap <silent><leader>3 3gt<ESC>
 nnoremap <silent><leader>4 4gt<ESC>
