@@ -234,7 +234,10 @@ nnoremap <C-k> 3k
 vnoremap <C-k> 3k
 
 nnoremap <Space> <C-F>
-nnoremap <S-Space> <C-B>
+nnoremap <Leader><Space> <C-B>
+
+vnoremap <Space> <C-F>
+vnoremap <Leader><Space> <C-B>
 
 "enhance the function of '%' and '#'
 source $VIMRUNTIME/macros/matchit.vim
