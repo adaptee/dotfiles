@@ -56,7 +56,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-#eval $(ssh-agent)
+eval $(ssh-agent)
 SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS="-s"
 
