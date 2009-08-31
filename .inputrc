@@ -1,44 +1,59 @@
-#------------Key Bindings----------------------
+#---------------------------Key Bindings--------------------------------
 
-# this one  works only in Emacs mode
-"\C-n": menu-complete           # like TAB; only complete the first candidate, do not show others.
+# up           => {search/move} backward in the history entries
+"\e[A": history-search-backward 
+# down         => {search/move} forward in the history entried
+"\e[B": history-search-forward  
+# right        => move forward by one character
+"\e[C": forward-char            
+# left         => move backward by one character
+"\e[D": backward-char           
 
-"\e[A": history-search-backward # up           => {search/move} backward in the history entries
-"\e[B": history-search-forward  # down         => {search/move} forward in the history entried
+# Ctrl + right => move forward by one word
+"\e[1;5C": forward-word         
+# Ctrl + left  => move backward by one word
+"\e[1;5D": backward-word        
 
-"\e[C": forward-char            # right        => move forward by one character
-"\e[D": backward-char           # left         => move backward by one character
+# 'HOME'       => move to the beginning of the line
+"\e[1~": beginning-of-line      
+# 'END'        => move to the end of the line
+"\e[4~": end-of-line            
 
-"\e[1;5C": forward-word         # Ctrl + right => move forward by one word
-"\e[1;5D": backward-word        # Ctrl + left  => move backward by one word
+# 'INS'        => insert next typed key literally
+"\e[2~": quoted-insert          
+# 'DEL'        => delete current char under the cursor
+"\e[3~": delete-char            
 
-"\e[1~": beginning-of-line      # 'HOME'       => move to the beginning of the line
-"\e[4~": end-of-line            # 'END'        => move to the end of the line
+# 'PageUp'
+"\e[5~": beginning-of-history   
+# 'PageDown'
+"\e[6~": end-of-history         
 
-"\e[2~": quoted-insert          # 'INS'        => insert next typed key literally
-"\e[3~": delete-char            # 'DEL'        => delete current char under the cursor
+# Ctrl + p     => move to previous history entry
+"\C-p": previous-history        
+# Ctrl + n     => move to next history entry
+"\C-n": next-history            
 
-"\e[5~": beginning-of-history   # 'PageUp'
-"\e[6~": end-of-history         # 'PageDown'
-
-"\C-p": previous-history        # Ctrl + p     => move to previous history entry
-"\C-n": next-history            # Ctrl + n     => move to next history entry
-                                                
-"\M-l": insert-last-argument    # inseat the last argument to previous command
-#"\C-.": insert-last-argument   # inseat the last argument to previous command
-
-
-# ------------Readline Variables------------------
-
-#set editing-mode vi            # use the key-bindings of emacs style
-set show-all-if-ambiguous on    # list all candidates instead of ring the bell, when completing
-set bell-style none             # never ring the bell!
-set visible-stats on            # append  single type character to each completion candidates.
-
-#set meta-flag on
-set input-meta on
-set convert-meta on
-set output-meta on
+# inseat the last argument to previous command                
+"\M-l": insert-last-argument    
 
 
+#---------------------------Readline Options--------------------------------
 
+# use the key-bindings of emacs style
+#set editing-mode vi            
+
+
+# list all candidates instead of ring the bell, when completing
+set show-all-if-ambiguous on    
+# never ring the bell!
+set bell-style none             
+# append  single type character to each completion candidates.
+set visible-stats on            
+
+# allow eight-bit input, do not strip the high bit 
+set input-meta on               
+# do not strip the eighth bit 
+set convert-meta off            
+# display characters with the eighth bit set directly 
+set output-meta on              
