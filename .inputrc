@@ -50,6 +50,8 @@ set show-all-if-ambiguous on
 set bell-style none             
 # append  single type character to each completion candidates.
 set visible-stats on            
+# perform name completion in case-insensitive way.
+#set completion-ignore-case on
 
 # allow eight-bit input, do not strip the high bit 
 set input-meta on               
