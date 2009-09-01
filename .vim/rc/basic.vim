@@ -14,6 +14,9 @@ let g:mapleader =","
 "command-line history limitation
 set history=1000
 
+"spell checking configureation
+set spelllang=en
+set spellsuggest=5
 "setup where to store the good word(zg) and bad word(zw)
 " tips: ]s jumps to next spell error, ]s jumps to previous spell error.
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
@@ -545,21 +548,6 @@ autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \ exe "normal g`\"" |
             \ endif
-
-
-"enable spell checking feature only for plain text
-"Note, Here we use BufWinEnter instead of BufReadPost because we have to
-"consider the existense of modeline.
-"autocmd BufWinEnter *  call CheckSpell()
-autocmd BufEnter *  call CheckSpell()
-function! CheckSpell()
-    if ( &filetype == '')
-        setlocal spell
-        setlocal spelllang=en
-        setlocal spellsuggest=5
-    endif
-endfunction
-
 
 
 "--------------------------------------------------------------------------"
