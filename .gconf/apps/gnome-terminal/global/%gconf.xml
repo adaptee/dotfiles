@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="use_menu_accelerators" mtime="1238910225" type="bool" value="false">
+        </entry>
+        <entry name="use_mnemonics" mtime="1238910224" type="bool" value="false">
+        </entry>
+        <entry name="confirm_window_close" mtime="1235188092" type="bool" value="false">
+        </entry>
+</gconf>

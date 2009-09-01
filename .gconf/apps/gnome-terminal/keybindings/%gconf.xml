@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="zoom_out" mtime="1240328945" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="zoom_normal" mtime="1240328940" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="zoom_in" mtime="1240328938" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_8" mtime="1240328933" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_7" mtime="1240328932" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_6" mtime="1240328929" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_5" mtime="1240328926" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_4" mtime="1240328924" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_3" mtime="1240328921" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_2" mtime="1240328919" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_1" mtime="1240328917" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="switch_to_tab_9" mtime="1240328908" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="toggle_menubar" mtime="1238780755" type="string">
+                <stringvalue>F12</stringvalue>
+        </entry>
+        <entry name="new_window" mtime="1238780767" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="help" mtime="1228546668" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="new_tab" mtime="1251719250" type="string">
+                <stringvalue>&lt;Alt&gt;n</stringvalue>
+        </entry>
+        <entry name="paste" mtime="1247970459" type="string">
+                <stringvalue>&lt;Control&gt;v</stringvalue>
+        </entry>
+        <entry name="copy" mtime="1228546623" type="string">
+                <stringvalue>&lt;Control&gt;c</stringvalue>
+        </entry>
+</gconf>
