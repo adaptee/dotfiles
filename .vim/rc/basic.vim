@@ -38,9 +38,6 @@ set mousefocus
 "make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
 
-" behaves well under both Linux/Windows/Mac
-set fileformats=unix,dos,mac
-
 "enable mode-line feature
 set modeline
 "check the first and last 20 lines of files for vim-related setting

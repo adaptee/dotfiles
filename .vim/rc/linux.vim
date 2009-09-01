@@ -1,3 +1,6 @@
+" behaves well under both Linux/Windows/Mac
+set fileformats=unix,dos,mac
+
 "Fast reading of .vimrc
 nmap <silent> <leader>r :call SwitchToBuf("$HOME/.vimrc")<CR>
 
