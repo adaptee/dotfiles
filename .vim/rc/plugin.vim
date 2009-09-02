@@ -66,9 +66,9 @@ nnoremap <Leader>g :BufExplorer<CR>
 "------------------------------------------------------------------------------------------------------
 "Always detect the encoding automaticlly
 "However, this require iconv feature is enabled and iconv.dll available in $PATH
-if has("iconv")
-    autocmd BufReadPost * :FencAutoDetect
-endif
+"if has("iconv")
+    "autocmd BufReadPost * :FencAutoDetect
+"endif
 
 "------------------------------------------------------------------------------------------------------
 " genutils.vim ( Useful buffer, file and window related functions, mainly used  by other plugins.

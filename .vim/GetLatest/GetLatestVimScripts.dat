@@ -12,7 +12,6 @@ ScriptID SourceID Filename
 614     3666    :AutoInstall:   crefvim.zip
 #51     171     :AutoInstall:   cscope_macros.vim
 1735    10501   :AutoInstall:   echofunc.vim
-1708    9649    :AutoInstall:   fencview.vim
 197     7231    :AutoInstall:   genutils-2.4.zip
 642     8136    :AutoInstall:   getscript.vim
 311     1       :AutoInstall:   grep.vim
