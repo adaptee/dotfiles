@@ -12,9 +12,8 @@
 # PS4 is for debugging's purpose
 export PS4='line $LINENO: '
 
-# fix-me:if PS1 is defined & exported in .profile, things just don't work
 
-# color defintions, for better readability
+# color defintions for better readability
 
 # tput can provide better portability for these colors definitions.
 if  which tput &> /dev/null ;then
@@ -97,6 +96,7 @@ PS1_PWD='\['${BRIGHTBLUE}'\]''\W'
 
 PS1_GIT_BRANCH='`b=$(parse_git_branch); if [ x"$b" != "x" ]; then echo -n -e "\['${BRIGHTYELLOW}'\]($b)\['${NOCOLOR}'\]"; fi`'
 
+# fix-me:if PS1 is defined & exported in .profile, things just don't work
 PS1="${PS1_CHROOT}${PS1_EXITCODE}${PS1_HISTNUMER}${PS1_USER}${PS1_AT}${PS1_HOST}${PS1_COLON}${PS1_PWD}${PS1_GIT_BRANCH}${PS1_SYMBOL}" 
 
 # show dynamic window title, reflecting "who is in where now?"
