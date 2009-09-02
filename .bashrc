@@ -12,10 +12,9 @@
 # PS4 is for debugging's purpose
 export PS4='line $LINENO: '
 
-
 # color defintions for better readability
 
-# tput can provide better portability for these colors definitions.
+# tput provides better portability for these colors definitions.
 if  which tput &> /dev/null ;then
 
     BLACK=$(tput setaf 0)
@@ -40,7 +39,7 @@ if  which tput &> /dev/null ;then
 
 else
 
-    # if tput is unavailabe,fall back to hard-coded definition.
+    # when tput is unavailabe,fall back to hard-coded definition.
     BLACK='\e[0;30m'
     RED='\e[0;31m'
     GREEN='\e[0;32m'
