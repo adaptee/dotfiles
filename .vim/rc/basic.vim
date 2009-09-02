@@ -413,9 +413,6 @@ set nobackup
 "but for the sake of accident....
 set writebackup
 
-"set where .swp file is putted
-set directory=.,/var/tmp,/tmp
-
 " use directory of the related buffer as the start-point for file browser
 set browsedir=buffer
 
