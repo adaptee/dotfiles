@@ -66,7 +66,7 @@ fi
 ssh-add
 
 # restore firefox profile.
-if [ -f "${HOME}/bin/package.sh"]
+if [ -x "${HOME}/bin/package.sh"]
     ${HOME}/bin/pack_firefox.sh &
 fi
 
