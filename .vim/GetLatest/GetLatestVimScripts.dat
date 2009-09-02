@@ -12,7 +12,7 @@ ScriptID SourceID Filename
 614     3666    :AutoInstall:   crefvim.zip
 #51     171     :AutoInstall:   cscope_macros.vim
 1735    10501   :AutoInstall:   echofunc.vim
-#1708    0       :AutoInstall:   fencview.vim
+#1708    1       :AutoInstall:   fencview.vim
 197     7231    :AutoInstall:   genutils-2.4.zip
 642     8136    :AutoInstall:   getscript.vim
 311     1       :AutoInstall:   grep.vim
@@ -22,6 +22,7 @@ ScriptID SourceID Filename
 1189    8687    :AutoInstall:   matrix.vim
 521     9274    :AutoInstall:   mru.vim
 #1520    1      :AutoInstall:   omnicppcomplete-0.41.zip
+1375    1       :AutoInstall:   qfixtoggle.zip
 #2540   1       :AutoInstall:   snipMate.zip
 1643    10998   :AutoInstall:   supertab.vim
 1697    8283    :AutoInstall:   surround.vim
