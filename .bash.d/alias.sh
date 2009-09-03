@@ -249,6 +249,8 @@ alias vpn='sudo openvpn --config ~/.openvpn/alonweb.conf --ca ~/.openvpn/alonweb
 
 alias booksync='rsync -r -t -v --progress --delete ~/prog/EBook /media/backup/'
 
+# solve the encoding problem seamlessly.
+alias smth='luit -encoding gbk telnet bbs.newsmth.net'
 #---------------------------------------------------------------------------#
 #                             top useful alias                              #
 #---------------------------------------------------------------------------#
