@@ -332,26 +332,42 @@ gb2u8()
 {
     local item
     for item in "$@";do
-        if echo $(enca ${item} ) | grep -i "GB2312" ; then
+        if  enca "${item}" | grep -i 'GB2312\|Unrecognize' >/dev/null  ; then
             iconv -f gb18030  -t utf8 -c "${item}" > "${item}.new"  &&  mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"    
+            echo "${item} is converted into utf-8 encoding"
         fi
     done
 }
 
 # Tranform text from utf-8 encoding to gb*; old file is automatically renamed
-# Usage: gb2u8  gbk-encoded.txt...
+# Usage: u82gb  gbk-encoded.txt...
 u82gb()
 {
     local item
 
     for item in "$@";do
-        if echo $(enca ${item} ) | grep -i "UTF-8" ; then
+        if echo $(enca "${item}" ) | grep -i "UTF-8" >/dev/null ; then
             iconv -f utf8 -t gb18030  -c "${item}" > "${item}.new"  &&  mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"    
+            echo "${item} is converted into gbk encoding."
         fi
     done
 
 }
 
+# Tranform text from utf-16 encoding to utf-8; old file is automatically renamed
+# Usage: u162u8  gbk-encoded.txt...
+u162u8()
+{
+    local item
+
+    for item in "$@";do
+        if echo $(enca "${item}" ) | grep -i "UCS-2" >/dev/null ; then
+            iconv -f utf16 -t utf8  -c "${item}" > "${item}.new"  &&  mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"    
+            echo "${item} is converted into utf-16 encoding."
+        fi
+    done
+
+}
 # Adjust the indentation of xml files in place 
 # Usage: indentxml xml_file_1 xml_file_2 ... xml_file_N
 indentxml ()
