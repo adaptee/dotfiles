@@ -182,6 +182,20 @@ fi
 #                               shell functions                             #
 #---------------------------------------------------------------------------#
 
+# source specified file, only when it really exist.
+Source ()
+{
+    local item
+
+    for item in "$@" ; do
+        if [ -f "${item}" ] ; then
+            source "${item}"
+        else
+            bcho "[error] file '${item}' does not exist."
+        fi
+    done
+}
+
 # grep your history!
 # Usage: hg KEY_WORD
 hg()
