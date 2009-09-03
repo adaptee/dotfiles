@@ -4,40 +4,40 @@
         </entry>
         <entry name="scroll_on_keystroke" mtime="1238841681" type="bool" value="true">
         </entry>
-        <entry name="scrollbar_position" mtime="1251819871" type="string">
+        <entry name="scrollbar_position" mtime="1251977049" type="string">
                 <stringvalue>hidden</stringvalue>
         </entry>
-        <entry name="default_show_menubar" mtime="1251819871" type="bool" value="false">
+        <entry name="default_show_menubar" mtime="1251977049" type="bool" value="false">
         </entry>
         <entry name="title_mode" mtime="1238862590" type="string">
                 <stringvalue>replace</stringvalue>
         </entry>
         <entry name="login_shell" mtime="1239002101" type="bool" value="false">
         </entry>
-        <entry name="title" mtime="1251819871" type="string">
+        <entry name="title" mtime="1251977049" type="string">
                 <stringvalue>淡兰色的回忆</stringvalue>
         </entry>
-        <entry name="silent_bell" mtime="1251819871" type="bool" value="true">
+        <entry name="silent_bell" mtime="1251977049" type="bool" value="true">
         </entry>
-        <entry name="font" mtime="1251819871" type="string">
+        <entry name="font" mtime="1251977049" type="string">
                 <stringvalue>Bitstream Vera Sans Mono 14</stringvalue>
         </entry>
-        <entry name="use_system_font" mtime="1251819871" type="bool" value="false">
+        <entry name="use_system_font" mtime="1251977049" type="bool" value="false">
         </entry>
-        <entry name="palette" mtime="1251819871" type="string">
+        <entry name="palette" mtime="1251977049" type="string">
                 <stringvalue>#000000000000:#AAAA00000000:#0000AAAA0000:#AAAA55550000:#00000000AAAA:#AAAA0000AAAA:#0000AAAAAAAA:#AAAAAAAAAAAA:#555555555555:#FFFF55555555:#5555FFFF5555:#FFFFFFFF5555:#55555555FFFF:#FFFF5555FFFF:#5555FFFFFFFF:#FFFFFFFFFFFF</stringvalue>
         </entry>
-        <entry name="use_theme_colors" mtime="1251819871" type="bool" value="false">
+        <entry name="use_theme_colors" mtime="1251977049" type="bool" value="false">
         </entry>
-        <entry name="visible_name" mtime="1251819871" type="string">
+        <entry name="visible_name" mtime="1251977049" type="string">
                 <stringvalue>Default</stringvalue>
         </entry>
-        <entry name="foreground_color" mtime="1251819871" type="string">
+        <entry name="foreground_color" mtime="1251977049" type="string">
                 <stringvalue>#FFFFFFFFFFFF</stringvalue>
         </entry>
-        <entry name="alternate_screen_scroll" mtime="1251819871" type="bool" value="true">
+        <entry name="alternate_screen_scroll" mtime="1251977049" type="bool" value="true">
         </entry>
-        <entry name="background_color" mtime="1251819871" type="string">
+        <entry name="background_color" mtime="1251977049" type="string">
                 <stringvalue>#000000000000</stringvalue>
         </entry>
 </gconf>
