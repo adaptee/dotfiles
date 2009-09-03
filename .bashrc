@@ -14,6 +14,7 @@ Source ()
         if [ -f "${item}" ] ; then
             source "${item}"
         else
+            :
             #echo "[error] file '${item}' does not exist."
         fi
     done
