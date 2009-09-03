@@ -330,7 +330,7 @@ pdf2png()
 }
 
 # transform manual to pure text file
-# Usage: man2txt command... 
+#Usage: man2txt command1, command2, command3
 man2txt()
 {
     local item
