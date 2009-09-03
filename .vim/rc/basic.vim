@@ -611,7 +611,7 @@ function! AdjustPeriodPosition()
         "remove extra white-spaces between period and its next word.
         silent! :%s/\.\s\+\</. /ge
         "if period is directly followed by a word, insert one space
-        silent! :$s/\.\</. /ge
+        "silent! :$s/\.\</. /ge
 
         "return to memorize position
         "normal ``
