@@ -14,21 +14,23 @@ Source ()
         if [ -f "${item}" ] ; then
             source "${item}"
         else
-            echo "[error] file '${item}' does not exist."
+            #echo "[error] file '${item}' does not exist."
         fi
     done
 }
 
-PRIVATE_BASH_DIR="${HOME}/.bash.d"
+PRIVATE_BASH_DIR=$HOME/.bash.d
 
-Source "${PRIVATE_BASH_DIR}/alias.sh"
-Source "${PRIVATE_BASH_DIR}/function.sh"
+Source ~/.bash.d/alias.sh
+Source "$PRIVATE_BASH_DIR/alias.sh"
+Source "$PRIVATE_BASH_DIR/function.sh"
 
-Source "${PRIVATE_BASH_DIR}/bash-common.sh"
+Source "$PRIVATE_BASH_DIR/bash-common.sh"
 if [[ $(uname) =~ 'Linux'  ]] ; then
-    Source "${PRIVATE_BASH_DIR}/bash-linux.sh"
+    Source "$PRIVATE_BASH_DIR/bash-linux.sh"
 fi
 if [[ $(uname) =~ 'Cygwin' ]] ; then
-    Source "${PRIVATE_BASH_DIR}/bash-cygwin.sh"
+    Source "$PRIVATE_BASH_DIR/bash-cygwin.sh"
 fi
+
 
