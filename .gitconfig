@@ -8,6 +8,8 @@
     #symlinks = false
     #logallrefupdates = true
 
+    ;gitproxy=""
+
 [user]
     name  = Adaptee
     email = adaptee@gmail.com
