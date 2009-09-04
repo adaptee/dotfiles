@@ -114,22 +114,22 @@ esac
 #                               Bash options                                #
 #---------------------------------------------------------------------------#
 
-# check the window size after each command and update  LINES and COLUMNS if necessary
+# check window size after each command and update LINES & COLUMNS if necessary
 shopt -s checkwinsize
 
-#enable spelling-auto-correction for the name in cmd of 'cd';
+# enable auto-spelling-correction for argument given-to 'cd';
 shopt -s cdspell
 
-# enable cd use variable as its argument
+# allow 'cd' to use variable's value as its argument
 shopt -s cdable_vars
 
-# for safety's sake
+# check a command found in hash-table does exist in system before executing 
 shopt -s checkhash
 
 # when it is the only candidate, do not ignore it
 shopt -u force_fignore
 
-#append,not overwrite
+# append history list , but not overwrite
 shopt -s histappend
 
 # Include dot (.) files in the results of expansion
@@ -144,7 +144,6 @@ shopt -s nocaseglob
 #return empty string if no matching is found
 shopt -s nullglob
 
-
 # use emacs-style in terminal-input
 set -o emacs on
 
@@ -154,7 +153,7 @@ set -o emacs on
 #---------------------------------------------------------------------------#
 
 # colorful man page
-# fix-me: if this fraction is put in .profile, man & less will not work as expected
+# fix-me: if put in .profile, man & less will not work as expected
 # that's weired and should not happen
 
 export PAGER="$(which less) -s -M " #-M "
