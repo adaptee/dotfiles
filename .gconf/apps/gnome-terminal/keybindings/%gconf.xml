@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <gconf>
+        <entry name="next_tab" mtime="1252092118" type="string">
+                <stringvalue>&lt;Shift&gt;Right</stringvalue>
+        </entry>
+        <entry name="prev_tab" mtime="1252092113" type="string">
+                <stringvalue>&lt;Shift&gt;Left</stringvalue>
+        </entry>
         <entry name="zoom_out" mtime="1240328945" type="string">
                 <stringvalue>disabled</stringvalue>
         </entry>
