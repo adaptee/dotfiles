@@ -30,8 +30,9 @@
     relativePath = true
 
 [alias]
-    cm      = commit
-    cma     = commit -a
+    br      = branch
+    cm      = commit -m 
+    cma     = commit -a -m
     co      = checkout
     desc    = describe
     st      = status
