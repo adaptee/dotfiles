@@ -4,10 +4,10 @@
 #                               Shell prompt                                #
 #---------------------------------------------------------------------------#
 
-# PS4 is for debugging's purpose
+# PS4 wiil be used when 'set -x' is executed, for tracing purpose.
 export PS4='line $LINENO: '
 
-# color defintions for better readability
+# color name defintions ,which provide for better readability
 
 # tput provides better portability for these colors definitions.
 if  which tput &> /dev/null ;then
@@ -62,10 +62,14 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 PS1_CHROOT=${debian_chroot:+($debian_chroot)}
+
+# when last command failed, show its exit code with highlight
 PS1_EXITCODE='`a=$?;if [ $a -ne 0 ]; then echo -n -e "\['${BRIGHTRED}'\][$a]\['${NOCOLOR}'\]"; fi`'
+
+# show history number for current command
 #PS1_HISTNUMER='\['${BRIGHTCYAN}'\]''(\!)'
 
-# hint for root user.
+# highlight the uses name for root, so that they/you are more cautious.
 if [[ "$UID" != "0" ]]
 then
     PS1_USER='\['${BRIGHTGREEN}'\]''\u'
@@ -77,7 +81,7 @@ fi
 
 PS1_AT='\['${NOCOLOR}'\]''@'
 
-# hint for ssh session.
+# highlight the host part for ssh session.
 if [ -z "$SSH_TTY" ]
 then
     PS1_HOST='\['${BRIGHTGREEN}'\]''\h'
@@ -86,8 +90,11 @@ else
 fi
 
 PS1_COLON='\['${BRIGHTGREEN}'\]'':'
+
+# show current folder; only the last part, not full path 
 PS1_PWD='\['${BRIGHTBLUE}'\]''\W'
 
+# show which git branch we are on
 PS1_GIT_BRANCH='`b=$(parse_git_branch); if [ x"$b" != "x" ]; then echo -n -e "\['${BRIGHTYELLOW}'\]($b)\['${NOCOLOR}'\]"; fi`'
 
 # fix-me:if PS1 is defined & exported in .profile, things just don't work
