@@ -294,6 +294,15 @@ parse_git_branch()
     git branch 2> /dev/null | sed -e '/^[^*]/d' | cut --delimiter=\  --fields=2
 }
 
+# set specifiles as 'assume unchanged', i.e, not tracking the modification in
+# the workding tree;
+# usage:git_set_assume_unchanged
+git_set_assume_unchanged ()
+{
+    git update-index --assume-unchanged ~/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
+}
+
+
 # generate random string with specified length
 # usage: randomstr N
 randomstr()
