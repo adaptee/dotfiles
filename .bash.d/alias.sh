@@ -257,7 +257,7 @@ alias smth='luit -encoding gbk telnet bbs.newsmth.net'
 
 alias a='alias'
 alias b='cd ~/bin'
-alias c='cd'
+# note, c is defined in function.sh
 alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
 alias f='find'
@@ -287,7 +287,7 @@ alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
 
 
 #---------------------------------------------------------------------------#
-#                                  misc alias                              #
+#                                  misc alias                               #
 #---------------------------------------------------------------------------#
 
 alias svn-versionalize="svn status |grep '\?' |awk '{print $2}'| xargs svn add"
