@@ -159,8 +159,8 @@ addsrc ()
 }
 
 # clean already-removed package's etc files.
-# usage: purge2
-purge2 ()
+# usage: purgecfg
+purgecfg ()
 {
     dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get -y purge
 }
