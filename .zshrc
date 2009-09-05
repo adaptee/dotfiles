@@ -60,3 +60,9 @@ set_prompt()
 
     PS1=$'$C_L_BLUE%(1j.[$myjobs]% $C_OFF .$C_OFF)%m.%B%n%b$C_OFF$C_L_RED%#$C_OFF'
 
+
+    # use vi-mode for input
+    bindkey -v
+
+    # add the feature of showing current vi mode: insert? normal?
+    source ~/vi-mode-prompt.zsh
