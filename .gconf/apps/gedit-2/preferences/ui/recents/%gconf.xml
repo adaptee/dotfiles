@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="max_recents" mtime="1228670262" type="int" value="10">
+        </entry>
+</gconf>

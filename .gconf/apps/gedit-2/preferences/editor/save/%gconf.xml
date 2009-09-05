@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="create_backup_copy" mtime="1228621654" type="bool" value="false">
+        </entry>
+</gconf>
