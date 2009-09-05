@@ -207,9 +207,9 @@ set pastetoggle=<F8>
 
 " stealed from VimTip 1539; added the creation of mark before making changes.
 " exchange the word under cursor with next word
-nnoremap <Leader>e mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
+nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 " exchange the word under cursor with previous word
-nnoremap <Leader>E mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
+nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
 
 "Y's default functionality is duplicated with 'yy' and counter-intuitive; Let's correct it
@@ -269,7 +269,7 @@ imap <C-j> <Down>
 
 "make tag jumping more easy"
 nmap <Leader>d <ESC><C-]>
-nmap <Leader>x <ESC><C-T>
+nmap <Leader>z <ESC><C-T>
 
 " In normal mode, move cursor to beginning/end quickly
 nnoremap H ^
@@ -361,7 +361,7 @@ nnoremap <S-F> gg=G''
 nnoremap <Leader>m :%s/\r//g<CR>
 
 "remove white space on empty line(which has no visable character)
-nnoremap <Leader>z :%s/\s*$//g<CR>:noh<CR>''
+nnoremap <Leader>Z :%s/\s*$//g<CR>:noh<CR>''
 
 "after indentation adjustment, re-select previously highlighted text
 vnoremap > >gv
@@ -424,7 +424,7 @@ nmap <C-left>     <ESC>:bp<CR>
 
 
 "make writing and quiting more easy
-nmap <Leader>w mz:w<CR>'z
+nmap <Leader>s mz:w<CR>'z
 nmap <Leader>W :w!<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>Q :q!<CR>
@@ -439,8 +439,8 @@ command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 "--------------------------------------------------------------------------"
 
 "make window manipulating more easy
-nmap <Leader>s :split<CR><C-W>W
-nmap <Leader>v :vsplit<CR><C-W>w
+nmap <Leader>S :split<CR><C-W>W
+nmap <Leader>V :vsplit<CR><C-W>w
 
 " move to next window
 nmap <Leader>f <C-w>w
