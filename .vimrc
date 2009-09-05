@@ -14,6 +14,6 @@ elseif has ('win32')
     source $VIMLOCAL/rc/win32.vim
 endif
 
-if has("gui_running")
+if has('gui_running')
     source $VIMLOCAL/rc/gui.vim
 endif
