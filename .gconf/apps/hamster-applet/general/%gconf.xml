@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="stop_on_shutdown" mtime="1229014844" type="bool" value="true">
+        </entry>
+        <entry name="enable_timeout" mtime="1229014843" type="bool" value="false">
+        </entry>
+</gconf>
