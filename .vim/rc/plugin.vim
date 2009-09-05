@@ -38,8 +38,10 @@ nnoremap <Leader>g :BufExplorer<CR>
 
 
 "------------------------------------------------------------------------------------------------------
-" csapprox.vim( Make gvim-only colorschemes work transparently in terminal vim )
+" csapprox.vim( simulate gvim-only colorschemes work transparently in terminal mode )
 "------------------------------------------------------------------------------------------------------
+" suprres the warning messages outputed when vim is compile without 'gui' support.
+let CSApprox_verbose_level=0
 
 "------------------------------------------------------------------------------------------------------
 " cmdline-complete.vim( press Ctrl-P or Ctrl-N to complete the word within command-line )
