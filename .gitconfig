@@ -30,6 +30,7 @@
     relativePath = true
 
 [alias]
+    ai      = add -i
     br      = branch
     cm      = commit -m 
     cma     = commit -a -m
