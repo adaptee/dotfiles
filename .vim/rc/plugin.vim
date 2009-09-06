@@ -243,7 +243,6 @@ nmap <F6> :QFix<CR>
 "------------------------------------------------------------------------------------------------------
 " open taglist;
 nnoremap <silent> <F2> :TlistToggle<CR>
-inoremap <silent> <F2> <C-O>:TlistToggle<CR><Esc>
 set updatetime=2000    " update showing every 2 seconds. May cause problem.
 
 let Tlist_Sort_Type               = "name"  " sort tags by name, not appearing order
