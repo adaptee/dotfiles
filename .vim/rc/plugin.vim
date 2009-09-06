@@ -34,13 +34,6 @@ nnoremap <Leader>u :BufExplorer<CR>
 " use <Shift-Enter> to open specified buffer in new tab
 
 "------------------------------------------------------------------------------------------------------
-" calendar.vim( record your living within vim)
-"------------------------------------------------------------------------------------------------------
-" <Leader>caL <Plug>CalendarH  ---- show horizontally
-" <Leader>cal <Plug>CalendarV  ---- show vertically
-
-
-"------------------------------------------------------------------------------------------------------
 " csapprox.vim( simulate gvim-only colorschemes work transparently in terminal mode )
 "------------------------------------------------------------------------------------------------------
 " suprres the warning messages outputed when vim is compile without 'gui' support.
