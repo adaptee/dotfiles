@@ -2,7 +2,7 @@
 " A.vim( switch quickly between .cpp and .h )
 "------------------------------------------------------------------------------------------------------
 "
-nmap <silent><F4> :A<CR>
+nnoremap <silent><F4> :A<CR>
 
 "------------------------------------------------------------------------------------------------------
 " AlignPlugin.vim( align sentences with specified separator)
