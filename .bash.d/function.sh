@@ -86,8 +86,8 @@ fm ()
 #---------------------------------------------------------------------------#
 
 # often the next command after 'cd' is 'ls', so why not combine into one? 
-# usage: c PATH
-c() { builtin cd "${@:-$HOME}" && ls; }
+# usage: cl PATH
+cl() { builtin cd "${@:-$HOME}" && ls; }
 
 # echo bash variables more easily
 # here we use indirect refence format: ${!env_var}
