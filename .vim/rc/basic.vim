@@ -18,8 +18,11 @@ set history=1000
 set spelllang=en
 set spellsuggest=5
 "setup where to store the good word(zg) and bad word(zw)
-" tips: ]s jumps to next spell error, ]s jumps to previous spell error.
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
+" tips:
+" ]s : jumps to next spell error
+" ]s : jumps to previous spell error.
+" z= : show candicate corrections.
 
 " none of these should be word dividers
 "set isk+=$,%,#
@@ -57,8 +60,7 @@ filetype indent on
 " since 'jj' nearly never occur in input mode, use it to return to normal mode.
 inoremap jj <Esc>
 
-" since ';' is not quite useful in normal mode, we can use it to enter
-" Ex mode quickly
+" since ';' is not quite useful in normal mode, use it to enter Ex mode quickly
 nnoremap ; :
 
 
@@ -182,7 +184,7 @@ nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> exec "normal " . temp_nr . 
 "Substitute visually-selected text, interactively and globally
 vmap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 vmap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
-"Note: the 'g' in substitute() means global for substitute(), not for command 's'
+"Note: the 'g' in substitute() belong to substitute(), not for command 's'
 
 " Make p in Visual mode to replace selected text with previous yanked content.
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
@@ -205,15 +207,15 @@ inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 " switch the paste option on/off
 set pastetoggle=<F8>
 
-" stealed from VimTip 1539; added the creation of mark before making changes.
+" stealed from VimTip 1539; added creating mark before making changes.
 " exchange the word under cursor with next word
 nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 " exchange the word under cursor with previous word
 nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
 
-"Y's default functionality is duplicated with 'yy' and counter-intuitive; Let's correct it
-"Now 'C','D','Y' work the same way: from current position to the end of line
+"Y's default functionality is duplicated with 'yy' and counter-intuitive
+"Now 'C','D','Y' work the same way: from current position to EoF
 nnoremap Y y$
 
 "--------------------------------------------------------------------------"
@@ -247,7 +249,8 @@ nnoremap ' `
 nnoremap ` '
 
 " swap ]] and ][
-" now the rule is simple and instinct: first letter for direction, second letter for type: open or close?
+" now the rule is simple and instinct:
+" first letter for forward or back, second letter for open or close
 nnoremap ]] ][
 nnoremap ][ ]]
 
