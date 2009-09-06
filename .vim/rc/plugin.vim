@@ -150,7 +150,7 @@ if has('unix')
 elseif has ('win32')
     let MRU_File = $VIM.'/_vim_mru'
 endif
-let MRU_Max_Entries = 200
+let MRU_Max_Entries = 80
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 
 "------------------------------------------------------------------------------------------------------
