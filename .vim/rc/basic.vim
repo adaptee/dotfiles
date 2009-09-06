@@ -794,7 +794,7 @@ endfunc
 "                                miscellaneous                             "
 "--------------------------------------------------------------------------"
 " set <C-C> as no ops
-nnoremap <C-C> <NOP>
+"nnoremap <C-C> <NOP>
 
 " since <C-e> is customized to moving to EOL, I will map <C-b> to original <C-e>
 " now <C-y> and <C-b> is very to remember:
