@@ -26,7 +26,10 @@ let g:BASH_Company    = 'Open Source Corporation'
 "------------------------------------------------------------------------------------------------------
 " bufexplorer.vim( Buffer Explorer / Browser )
 "------------------------------------------------------------------------------------------------------
-nnoremap <Leader>g :BufExplorer<CR>
+nnoremap <Leader>u :BufExplorer<CR>
+"nnoremap <Leader>u :HSBufExplorer<CR>
+"nnoremap <Leader>u :HSBufExplorer<CR>
+"
 " use <ENTER> to open specified buffer in current window
 " use <Shift-Enter> to open specified buffer in new tab
 
@@ -141,7 +144,7 @@ let g:LookupFile_FileFilter             = '\.class$\|\.o$\|\.obj$\|\.exe$\|\.jar
 "-------------------------------------------------------------------------------------------------------
 " mru.vim ( show most-recent-used files )
 "------------------------------------------------------------------------------------------------------
-nnoremap <Leader>u :MRU<CR>
+nnoremap <Leader>r :MRU<CR>
 if has('unix')
     let MRU_File = $HOME.'/.vim_mru'
 elseif has ('win32')

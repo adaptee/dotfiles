@@ -47,9 +47,9 @@ if v:version < 700
 endif
 
 " Public Interface {{{1
-nmap <silent> <unique> <Leader>be :BufExplorer<CR>
-nmap <silent> <unique> <Leader>bs :HSBufExplorer<CR>
-nmap <silent> <unique> <Leader>bv :VSBufExplorer<CR>
+"nmap <silent> <unique> <Leader>be :BufExplorer<CR>
+"nmap <silent> <unique> <Leader>bs :HSBufExplorer<CR>
+"nmap <silent> <unique> <Leader>bv :VSBufExplorer<CR>
 
 " Create commands {{{1
 command BufExplorer :call StartBufExplorer(has ("gui") ? "drop" : "hide edit")
@@ -541,7 +541,7 @@ function s:SelectBuffer(...)
     else
       call WinManagerFileEdit(bufname, 0)
     endif
- 
+
     return
   end
 
