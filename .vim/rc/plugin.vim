@@ -179,7 +179,6 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 "------------------------------------------------------------------------------------------------------
 " use <F3> to start NERD_Tree; using current file's location as root node
 nnoremap <silent> <F3> :NERDTreeToggle .<CR>
-inoremap <silent> <F3> <C-O>:NERDTreeToggle %:p:h<CR><Esc>
 
 let NERDTreeCaseSensitiveSort = 1           " make name case-sensitive
 let NERDTreeIgnore            = ['\~$']     " innore auto-backup file
