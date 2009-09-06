@@ -34,6 +34,13 @@ nnoremap <Leader>u :BufExplorer<CR>
 " use <Shift-Enter> to open specified buffer in new tab
 
 "------------------------------------------------------------------------------------------------------
+" camelcasemotion.vim(move cursor , using camel style word as unit)
+"------------------------------------------------------------------------------------------------------
+" usage :   <Leader>w
+"           <Leader>e
+"           <Leader>b
+
+"------------------------------------------------------------------------------------------------------
 " csapprox.vim( simulate gvim-only colorschemes work transparently in terminal mode )
 "------------------------------------------------------------------------------------------------------
 " suprres the warning messages outputed when vim is compile without 'gui' support.
