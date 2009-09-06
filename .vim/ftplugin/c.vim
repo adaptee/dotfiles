@@ -13,9 +13,3 @@ nnoremap <CR> g<C-]>
 nnoremap <BS> <C-T>
 
 
-" In C/C++ file, press ',;' to append ';' to the end of the line, when it is missing.
-"autocmd FileType *.c,*.cpp  nnoremap <leader>; :s/\([^;]\)$/\1;/<CR>:let @/=""<CR><esc>
-nnoremap <leader>; :s/\([^;]\)$/\1;/<CR>:let @/=""<CR><esc>
-
-
-
