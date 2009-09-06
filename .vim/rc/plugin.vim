@@ -190,7 +190,7 @@ let NERDTreeIgnore            = ['\.swp$', '\~$','\.vcproj$','\.ncb$','\.sln$','
 " omniCPPComplete.vim
 "------------------------------------------------------------------------------------------------------
 " generate ctags for current folder:
-map <F11> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F7> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
 " No annoying preview window!
 set completeopt=menu
