@@ -217,7 +217,10 @@ lesskey -o ~/.less "/tmp/lesskey-${USER}"
 
 Source "/etc/bash_completion"
 
-Source "${PRIVATE_BASH_DIR}/chs_completion.sh"
+if [ -x "$HOME/bin/chsdir" ] ; then
+    Source "${PRIVATE_BASH_DIR}/chs_completion.sh"
+fi
+
 Source "${PRIVATE_BASH_DIR}/cdargs-bash.sh"
 
 complete -c sudo
