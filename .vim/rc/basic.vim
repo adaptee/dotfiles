@@ -353,7 +353,7 @@ map Q gq
 nnoremap <S-F> gg=G''
 
 "make deleting annoying windows ^M more easy
-nnoremap <Leader>m :%s/\r//g<CR>
+nnoremap <Leader>M :%s/\r//g<CR>
 
 "remove white space on empty line(which has no visable character)
 nnoremap <Leader>Z :%s/\s*$//g<CR>:noh<CR>''
