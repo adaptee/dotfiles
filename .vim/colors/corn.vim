@@ -57,7 +57,7 @@ hi! link Special            Keyword
 hi! link Ignore             Normal
 hi! link Todo               Error
 
-hi! link Title              Normal 
+hi! link Title              Normal
 
 
 hi! link phpDefine          StatementU
