@@ -156,8 +156,8 @@ set -o emacs on
 export HISTCONTROL=ignoreboth
 
 # print the time stamp associated with each history entry 
-export HISTTIMEFORMAT="%F %T "
-
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+ 
 export HISTFILESIZE=50000
 export HISTSIZE=50000
 
