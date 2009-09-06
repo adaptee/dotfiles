@@ -41,6 +41,7 @@ endfunction
 
 "customize tab label
 "set guitablabel=%{ShortTabLabel()}
+set guitablabel=%N.%t\ %m
 
 "only show filename in the tab label; path is not included
 function! ShortTabLabel ()
