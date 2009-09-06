@@ -125,6 +125,12 @@ let g:LookupFile_FileFilter             = '\.class$\|\.o$\|\.obj$\|\.exe$\|\.jar
 
 
 "------------------------------------------------------------------------------------------------------
+" LargeFile.vim ( automatically disable some vim feature when opening large files) "------------------------------------------------------------------------------------------------------
+
+" file bigger than 50MB will be seen as large file.
+let g:LargeFild = 50
+
+"------------------------------------------------------------------------------------------------------
 " manpaveviewPlugin.vim ( Viewer for manpages, gnu info, perldoc, and php)
 "------------------------------------------------------------------------------------------------------
 " you can use the universal interface 'K' to view various documents.
