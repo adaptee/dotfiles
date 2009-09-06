@@ -22,11 +22,10 @@ Source ()
 
 PRIVATE_BASH_DIR=$HOME/.bash.d
 
-Source "~/.bash.d/alias.sh"
 Source "$PRIVATE_BASH_DIR/alias.sh"
 Source "$PRIVATE_BASH_DIR/function.sh"
-
 Source "$PRIVATE_BASH_DIR/bash-common.sh"
+
 if [[ $(uname) =~ 'Linux'  ]] ; then
     Source "$PRIVATE_BASH_DIR/bash-linux.sh"
 fi
