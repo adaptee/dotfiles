@@ -631,9 +631,8 @@ endfunction
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
 " prerequisite: set autochdir
-set tags=tags;
-"set tags=./tags,tags;
-"set tags=./tags,./../tags,./**/tags
+"set tags=tags;
+set tags=./tags,tags;
 
 " :tag will be replaced by :cstag ; the latter will search both tagfile and cscope database
 "set cscopetag
