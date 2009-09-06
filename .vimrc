@@ -17,3 +17,7 @@ endif
 if has('gui_running')
     source $VIMLOCAL/rc/gui.vim
 endif
+
+" for testing un-confirmed setting
+source $VIMLOCAL/rc/test.vim
+
