@@ -223,10 +223,6 @@ nnoremap Y y$
 "Allow virtual editing in Insert mode.
 set virtualedit=insert
 
-" press <C-H>H and <C-L> to first and last character of line
-nnoremap <C-H> ^
-nnoremap <C-L> $
-
 " move faster
 nnoremap <C-J> 3j
 vnoremap <C-J> 3j
@@ -535,7 +531,11 @@ iab #l /*----------------------------------------------*/
 "                               quick-fix mode                             "
 "--------------------------------------------------------------------------"
 
-"Ease the operation of quick-fix
+" jump to next/previous entry in quickfix list
+nnoremap <silent><C-H> :cprevious<CR>
+nnoremap <silent><C-L> :cnext<CR>
+
+" jump to next/previous entry in quickfix list
 nmap <silent><Left>  :cprevious<CR>
 nmap <silent><Right> :cnext<CR>
 
