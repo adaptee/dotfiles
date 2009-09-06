@@ -533,7 +533,7 @@ iab #l /*----------------------------------------------*/
 "cab s   set
 
 "--------------------------------------------------------------------------"
-"                               quick-fix mode                             "
+"                               quickfix mode                              "
 "--------------------------------------------------------------------------"
 
 " jump to next/previous entry in quickfix list
@@ -543,6 +543,10 @@ nnoremap <silent><C-L> :cnext<CR>
 " jump to next/previous entry in quickfix list
 nmap <silent><Left>  :cprevious<CR>
 nmap <silent><Right> :cnext<CR>
+
+"press v in quickfix window to preview while holding focus in quickfix window
+au FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
+
 
 "--------------------------------------------------------------------------"
 "                               auto-commands                              "
