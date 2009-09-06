@@ -465,10 +465,14 @@ set showtabline=2
 "make tabline(tab pager) compact and more distinguishing
 set tabline=%!ShortTabLine()
 
-"make tab operation more easy
+"create empty new tab
 nmap <silent> <Leader>t :tabnew<CR>
-nmap <Leader>T :tabedit %:p:h<CR>
+"show all buffers in separate tabs
+nmap <silent> <Leader>T :tab sball<CR>
+
+"switch to next tab
 nmap <silent> <Leader>n :tabnext<CR>
+"switch to previos tab
 nmap <silent> <Leader>p :tabprevious<CR>
 
 "fast switch to first & last tab
