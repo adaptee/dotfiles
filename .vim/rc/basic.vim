@@ -831,7 +831,7 @@ au CursorHoldI * stopinsert
 "--------------------------------------------------------------------------"
 
 "Map F7 to show the change since last time save
-nmap <F7> :call DiffWithFileFromDisk()<CR>
+"nmap <F7> :call DiffWithFileFromDisk()<CR>
 function! DiffWithFileFromDisk()
     let filename=expand('%')
     let diffname = filename.'.fileFromBuffer'
