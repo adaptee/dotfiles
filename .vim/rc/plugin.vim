@@ -48,7 +48,7 @@ nnoremap <Leader>u :BufExplorer<CR>
 
 "below are some candicate hotkeys.
 let g:completekey = "<Leader><tab>"
-"let g:completekey = "<F6>"
+"let g:completekey = "<F8>"
 
 
 "------------------------------------------------------------------------------------------------------
