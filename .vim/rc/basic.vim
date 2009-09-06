@@ -204,9 +204,6 @@ set clipboard=unnamed
 "super paste; now in insert mode, you can use <C-v> to do pasting
 inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 
-" switch the paste option on/off
-set pastetoggle=<F8>
-
 " stealed from VimTip 1539; added creating mark before making changes.
 " exchange the word under cursor with next word
 nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
