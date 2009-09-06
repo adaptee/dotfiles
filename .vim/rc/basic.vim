@@ -437,10 +437,10 @@ command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 nmap <Leader>S :split<CR><C-W>W
 nmap <Leader>V :vsplit<CR><C-W>w
 
-" move to next window
-nmap <Leader>f <C-w>w
-" move to previouse window
-nmap <Leader>F <C-w>W
+" iterate to next window
+nmap <Leader>i <C-w>w
+" reverse iterate to previouse window
+nmap <Leader>I <C-w>W
 
 " put new window below the original one.
 "set splitbelow
