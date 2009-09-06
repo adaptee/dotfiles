@@ -462,14 +462,16 @@ set showtabline=2
 set tabline=%!ShortTabLine()
 
 "create empty new tab
-nmap <silent> <Leader>t :tabnew<CR>
+nnoremap <silent><Leader>t :tabnew<CR>
 "show all buffers in separate tabs
-nmap <silent> <Leader>T :tab sball<CR>
+nnoremap <silent><Leader>T :tab sball<CR>
 
 "switch to next tab
-nmap <silent> <Leader>n :tabnext<CR>
+nnoremap <silent><Leader>n :tabnext<CR>
+nnoremap <silent><TAB>     :tabnext<CR>
 "switch to previos tab
-nmap <silent> <Leader>p :tabprevious<CR>
+nnoremap <silent><Leader>p :tabprevious<CR>
+nnoremap <S-TAB>           :tabnext<CR>
 
 "fast switch to first & last tab
 nnoremap <silent><leader>1 :tabfirst<CR>
