@@ -41,6 +41,17 @@ nnoremap <Leader>u :BufExplorer<CR>
 "           <Leader>b
 
 "------------------------------------------------------------------------------------------------------
+" code_complete.vim( prompt function prototype in the fly)
+"------------------------------------------------------------------------------------------------------
+"the defaut hotkey <tab> will make plugin supertab does not work.
+"let g:completekey = "<tab>"   "hotkey
+
+"below are some candicate hotkeys.
+let g:completekey = "<Leader><tab>"
+"let g:completekey = "<F6>"
+
+
+"------------------------------------------------------------------------------------------------------
 " csapprox.vim( simulate gvim-only colorschemes work transparently in terminal mode )
 "------------------------------------------------------------------------------------------------------
 " suprres the warning messages outputed when vim is compile without 'gui' support.
