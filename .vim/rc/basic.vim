@@ -641,10 +641,6 @@ set tags=tags;
 " first search tag file, then search cscope database
 "set cscopetagorder=1
 
-"Force VIM to update diff result on-the-fly when user edit the compared files
-diffupdate
-
-
 "make VIM auto-complete the brackets!
 "inoremap ( ()<ESC>i
 "inoremap ) <C-R>=ClosePair(')')<CR>
@@ -796,8 +792,6 @@ endfunc
 "--------------------------------------------------------------------------"
 "                                miscellaneous                             "
 "--------------------------------------------------------------------------"
-" set <C-C> as no ops
-"nnoremap <C-C> <NOP>
 
 " since <C-e> is customized to moving to EOL, I will map <C-b> to original <C-e>
 " now <C-y> and <C-b> is very to remember:
@@ -815,8 +809,8 @@ inoremap <C-b> <C-e>
 " For vimperator's sake
 let g:netrw_http_cmd = "wget -q -O"
 
-" defines what bases Vim will consider for numbers when using the
-" CTRL-A and CTRL-X commands for adding to and subtracting
+" defines what Vim will consider for numbers when using
+" CTRL-A and CTRL-X commands for adding to and subtracting.
 " note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
 
