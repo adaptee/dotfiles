@@ -297,8 +297,7 @@ vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 "--------------------------------------------------------------------------"
 
 "invoke help system more smart
-nmap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
-imap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
+nnoremap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 
 ""make help system more like Web pages
 autocmd FileType help call ActLikeWeb()
