@@ -6,5 +6,7 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
-~/bin/pack_firefox.sh
+if [ -x "${HOME}/bin/pack_firefox.sh" ];then
+    ${HOME}/bin/pack_firefox.sh backup
+fi
 

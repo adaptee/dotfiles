@@ -38,7 +38,7 @@ fi
 #------------------------------------------------------------------------------
 # 
 if [ -x "${HOME}/bin/pack_firefox.sh" ];then
-    ${HOME}/bin/pack_firefox.sh &
+    ${HOME}/bin/pack_firefox.sh restore &
 fi
 
 
