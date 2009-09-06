@@ -1,13 +1,12 @@
 ScriptID SourceID Filename
 --------------------------
-294     10110   :AutoInstall:   Align.vba.gz
+#294     10110   :AutoInstall:   Align.vba.gz
 2390    10336   :AutoInstall:   CSApprox.zip
 1218    10318   :AutoInstall:   NERD_commenter.zip
 1658    10767   :AutoInstall:   NERD_tree.zip
 508     9865    :AutoInstall:   ZoomWin.vim
 31      7218    :AutoInstall:   a.vim
 #365     11059   :AutoInstall:   bash-support.zip
-52      8279    :AutoInstall:   calendar.vim
 2222    8969    :AutoInstall:   cmdline-complete.vim
 614     3666    :AutoInstall:   crefvim.zip
 #51     171     :AutoInstall:   cscope_macros.vim
