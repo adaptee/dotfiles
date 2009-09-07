@@ -166,7 +166,7 @@ alias upgrade='sudo apt-get upgrade -y --force-yes'
 
 alias purge='sudo apt-get purge -y'
 alias clean='sudo apt-get autoremove autoclean clean'
-alias ssyn='sudo synaptic'
+alias syn='sudo synaptic'
 
 alias dpi='sudo dpkg -i' # install pkg
 alias dpp='sudo dpkg -P' # purge pkg
