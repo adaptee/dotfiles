@@ -87,8 +87,13 @@ let CSApprox_verbose_level=0
 "endif
 
 "------------------------------------------------------------------------------------------------------
-" genutils.vim ( Useful buffer, file and window related functions, mainly used  by other plugins.
+" genutils.vim ( Useful buffer, file and window related functions, mainly used  by other plugins)
 "------------------------------------------------------------------------------------------------------
+
+"------------------------------------------------------------------------------------------------------
+" git.vim ( execute git command from within vim)
+"------------------------------------------------------------------------------------------------------
+"all default keymappings is in the form of <Leader>g?
 
 "------------------------------------------------------------------------------------------------------
 " grep.vim ( integration with external tools: grep, egrep, fgrep, find, xargs.)
