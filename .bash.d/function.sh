@@ -204,6 +204,17 @@ man2txt()
     done
 }
 
+# convert manpages to pdf file
+# usage: man2pdf command...
+man2pdf()
+{
+    local item
+    for item in "$@";do
+        man -t ${item} | ps2pdf - >"${item}.pdf" 
+    done
+}
+
+
 #---------------------------------------------------------------------------#
 #                               encoding utilily                            #
 #---------------------------------------------------------------------------#
