@@ -583,7 +583,7 @@ endfunction
 
 au BufWritePre *                  call AdjustCommaPosition()
 "Generally, this function can be safely applied to source code file, too.
-"Because in most programming language, as in natural language, comma's indention
+"Because in most programming language, as in natural language, comma's position
 "is not critical, just a good style.
 function! AdjustCommaPosition()
 
