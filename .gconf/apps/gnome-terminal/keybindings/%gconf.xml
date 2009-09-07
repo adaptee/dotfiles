@@ -57,10 +57,10 @@
         <entry name="new_tab" mtime="1251719250" type="string">
                 <stringvalue>&lt;Alt&gt;n</stringvalue>
         </entry>
-        <entry name="paste" mtime="1247970459" type="string">
-                <stringvalue>&lt;Control&gt;v</stringvalue>
+        <entry name="paste" mtime="1252354428" type="string">
+                <stringvalue>&lt;Alt&gt;v</stringvalue>
         </entry>
-        <entry name="copy" mtime="1228546623" type="string">
-                <stringvalue>&lt;Control&gt;c</stringvalue>
+        <entry name="copy" mtime="1252354425" type="string">
+                <stringvalue>&lt;Alt&gt;c</stringvalue>
         </entry>
 </gconf>
