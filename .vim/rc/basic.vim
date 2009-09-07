@@ -603,30 +603,6 @@ function! AdjustCommaPosition()
     endif
 endfunction
 
-au BufWritePre *                  call AdjustPeriodPosition()
-
-" However, In most modern programming languages, "." has special meaning
-" So, better only apply this function to regular text file.
-function! AdjustPeriodPosition()
-    " '' means regular text file.
-    if ( &filetype == '')
-
-        "memory current position
-        "normal m`
-
-        "remove extra white-spaces between period and its previous word.
-        silent! :%s/\>\s\+\././ge
-        "remove extra white-spaces between period and its next word.
-        silent! :%s/\.\s\+\</. /ge
-        "if period is directly followed by a word, insert one space
-        "silent! :$s/\.\</. /ge
-
-        "return to memorize position
-        "normal ``
-    endif
-endfunction
-
-
 
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
