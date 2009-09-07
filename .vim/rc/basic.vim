@@ -63,7 +63,6 @@ inoremap jj <Esc>
 " since ';' is not quite useful in normal mode, use it to enter Ex mode quickly
 nnoremap ; :
 
-
 "--------------------------------------------------------------------------"
 "                                   colors                                 "
 "--------------------------------------------------------------------------"
@@ -210,7 +209,6 @@ nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:no
 " exchange the word under cursor with previous word
 nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
-
 "Y's default functionality is duplicated with 'yy' and counter-intuitive
 "Now 'C','D','Y' work the same way: from current position to EoF
 nnoremap Y y$
@@ -261,7 +259,6 @@ imap <UP> <ESC>gka
 imap <C-h> <Left>
 imap <C-l> <Right>
 imap <C-j> <Down>
-
 
 "make tag jumping more easy"
 nmap <Leader>d <ESC><C-]>
@@ -355,9 +352,6 @@ nnoremap <S-F> gg=G''
 "make deleting annoying windows ^M more easy
 nnoremap <Leader>M :%s/\r//g<CR>
 
-"remove white space on empty line(which has no visable character)
-nnoremap <Leader>Z :%s/\s*$//g<CR>:noh<CR>''
-
 "after indentation adjustment, re-select previously highlighted text
 vnoremap > >gv
 vnoremap < <gv
@@ -365,6 +359,31 @@ vnoremap < <gv
 "use TAB to do indentation
 vmap <Tab>   >
 vmap <S-Tab> <
+
+nnoremap <silent><Leader>Z :call SqueezeWhiteSpace()<CR>
+
+" delete trailing white spaces and merge mulitiple empty lines.
+function! SqueezeWhiteSpace()
+
+    " remember current position
+    normal mt
+
+    " first, delete all trailing white spaces in each line
+    silent! :%s/\s\+$//e
+
+    " second, empty lines containing only white spaces.
+    silent! :%s/^\s*$//g
+
+    " finally, squeeze contiguous blank lines into single line
+    silent! :%s/^\s*\n\{2,}/\r/
+
+    " retrun to original position
+    silent! normal 't
+
+    " disable highlighting search result temporarily.
+    nohlsearch
+
+endfunc
 
 "--------------------------------------------------------------------------"
 "                                   folding                                "
@@ -416,7 +435,6 @@ set autochdir
 "use Ctrl+Left/Right arrow to cycle the buffer list
 nmap <C-right>    <ESC>:bn<CR>
 nmap <C-left>     <ESC>:bp<CR>
-
 
 "make writing and quiting more easy
 nmap <Leader>s mz:w<CR>'z
@@ -543,7 +561,6 @@ nmap <silent><Right> :cnext<CR>
 "press v in quickfix window to preview while holding focus in quickfix window
 au FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
 
-
 "--------------------------------------------------------------------------"
 "                               auto-commands                              "
 "--------------------------------------------------------------------------"
@@ -553,7 +570,6 @@ autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \ exe "normal g`\"" |
             \ endif
-
 
 "--------------------------------------------------------------------------"
 "                         programming features                             "
@@ -602,7 +618,6 @@ function! AdjustCommaPosition()
         "normal ``
     endif
 endfunction
-
 
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
@@ -796,7 +811,6 @@ au InsertLeave * let &updatetime=updatetimerestore
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 au CursorHoldI * stopinsert
 
-
 "--------------------------------------------------------------------------"
 "                                   garbage                                "
 "--------------------------------------------------------------------------"
@@ -812,4 +826,5 @@ function! DiffWithFileFromDisk()
     exec 'edit '.filename
     diffthis
 endfunction
+
 
