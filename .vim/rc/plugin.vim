@@ -221,6 +221,30 @@ let OmniCpp_MayCompleteScope    = 1
 "------------------------------------------------------------------------------------------------------
 nmap <F6> :QFix<CR>
 
+
+"------------------------------------------------------------------------------------------------------
+" quickfixsigns.vim( highlight the quickfix entries and marks)
+"------------------------------------------------------------------------------------------------------
+
+" set initial state to off
+let g:quickfixsigns_on = 0
+" toggle between on/off
+nnoremap <silent><F10> :call ToggleQuickfixSigns()<CR>
+
+function! ToggleQuickfixSigns()
+    " change to its complement value
+    let g:quickfixsigns_on = 1 - g:quickfixsigns_on
+
+    call QuickfixsignsMarks(g:quickfixsigns_on)
+
+    if g:quickfixsigns_on == 0
+        echo "quickfixsigns is off now"
+    else
+        echo "quickfixsigns is on now"
+    endif
+
+endfunc
+
 "------------------------------------------------------------------------------------------------------
 " snipmate.vim ( TextMate-style snippets for Vim )
 "------------------------------------------------------------------------------------------------------
