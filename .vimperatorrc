@@ -12,14 +12,12 @@ let hintsio   = 'io'
 " Mappings
 "---------------------------------------------------------------------------------------------
 
-" override default keybinding, in order to prevent adding bookmark accidently
-"noremap a <Nop>
-noremap A <Nop>
+" open addon configuration page in new tab
 noremap <Leader>a <Esc>:tabnew<CR>:addon<CR>
 
+"close all tabs
 noremap <Leader>q :qa<CR>
 noremap <Leader>x :xa<CR>
-
 
 " create a new tab is just 2 key stroke!
 noremap <Leader>t :tabopen<CR><CR>
@@ -188,8 +186,6 @@ set! browser.startup.page=0
 
 " Use gVim to edit gmail content
 autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
-
-"autocmd LocationChange newsmth\.net\/frames\.html :normal  6]f
 
 
 "---------------------------------------------------------------------------------------------
