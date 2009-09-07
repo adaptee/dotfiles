@@ -18,7 +18,7 @@ ScriptID SourceID Filename
 1581    7671    :AutoInstall:   lookupfile-1.8.zip
 1506    1       :AutoInstall:   LargeFile.vba.gz
 489     9573    :AutoInstall:   manpageview.vba.gz
-#1238   8603    :AutoInstall:   mark.vim
+#2666    8603    :AutoInstall:   mark.vim
 1189    8687    :AutoInstall:   matrix.vim
 521     9274    :AutoInstall:   mru.vim
 #1520    1      :AutoInstall:   omnicppcomplete-0.41.zip
