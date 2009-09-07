@@ -337,6 +337,17 @@ augroup QuickFixSigns
     unlet s:ev_set s:ev s:def
 augroup END
 
+"------------------startd of addition by adaptee----------------------"
+if !exists('g:quickfixsigns_on')
+    " disable by default
+    let g:quickfixsigns_on = 0
+else
+    let g:quickfixsigns_on = 1
+endif
+
+call QuickfixsignsMarks(g:quickfixsigns_on)
+
+"------------------end of addition by adaptee-------------------------"
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
