@@ -341,8 +341,6 @@ augroup END
 if !exists('g:quickfixsigns_on')
     " disable by default
     let g:quickfixsigns_on = 0
-else
-    let g:quickfixsigns_on = 1
 endif
 
 call QuickfixsignsMarks(g:quickfixsigns_on)
