@@ -20,7 +20,7 @@ Source ()
     done
 }
 
-PRIVATE_BASH_DIR=$HOME/.bash.d
+export PRIVATE_BASH_DIR=$HOME/.bash.d
 
 Source "$PRIVATE_BASH_DIR/alias.sh"
 Source "$PRIVATE_BASH_DIR/function.sh"
