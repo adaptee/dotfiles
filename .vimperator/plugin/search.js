@@ -60,7 +60,8 @@ commands.add(["search"],
 
     var site = engine.domainFilter ? engin.domainFilter(domain) : 'site:' + domain;
     events.feedkeys(
-      ':open ' + defsearch + ' ' + site + ' ' + args.string + '<cr>');
+      //':open ' + defsearch + ' ' + site + ' ' + args.string + '<cr>');
+      ':tabopen ' + defsearch + ' ' + site + ' ' + args.string + '<cr>');
   }
 );
 
