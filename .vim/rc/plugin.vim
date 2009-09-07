@@ -155,7 +155,8 @@ let g:LargeFild = 50
 "------------------------------------------------------------------------------------------------------
 " mark.vim ( highlight several words in different colors simultaneously )
 "------------------------------------------------------------------------------------------------------
-" <Leader>j   highlight current word
+" <Leader>m   highlight current word
+" <Leader>C   cleal all/current highlight
 
 
 "------------------------------------------------------------------------------------------------------
