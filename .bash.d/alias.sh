@@ -280,6 +280,8 @@ alias tp='type'
 alias tpa='type -a'
 alias v='vim'
 alias wh='which'
+alias x='xargs'
+alias x0='xargs -0'
 
 # convert id3 tag's encoding.
 alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
