@@ -37,7 +37,7 @@ fi
 #                           restore firefox profile.                          #
 #------------------------------------------------------------------------------
 # 
-if [ -x "${HOME}/bin/pack_firefox.sh" ];then
+if [ -x "${HOME}/bin/pack-firefox.sh" ];then
     ${HOME}/bin/pack-firefox.sh restore &
 fi
 
