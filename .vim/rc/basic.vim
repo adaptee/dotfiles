@@ -447,6 +447,17 @@ nmap <Leader>A :qa!<CR>
 " allows us to write to files even when we forget to use sudo when launching vim
 command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
+" add more functionality to existing <C-g>
+" first , show the fullpath
+" then, yank the full path into 3 main registers.
+nnoremap <silent><C-g> 1<C-g>:call YankFileName()<CR>
+
+function! YankFileName()
+    let @+ = expand('%:p')
+    let @* = expand('%:p')
+    let @" = expand('%:p')
+endfunc
+
 "--------------------------------------------------------------------------"
 "                                   window                                 "
 "--------------------------------------------------------------------------"
