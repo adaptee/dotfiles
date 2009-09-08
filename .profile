@@ -46,16 +46,19 @@ fi
 #                                   SSH keyring                               #
 #------------------------------------------------------------------------------
 
-eval $(ssh-agent)
-
 SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS="-s"
 
-if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-    eval `$SSHAGENT $SSHAGENTARGS`
-    trap "kill $SSH_AGENT_PID" 0
+if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
+    # now, all application within this session know how to communicate with 
+    # ssh-agent by enviroment variable $SSH_AGENT_PID
+    eval `${SSHAGENT} ${SSHAGENTARGS}`
+
+    # kill this session's ssh-agent before shell exits.
+    trap " kill ${SSH_AGENT_PID} " 0
 fi
 
+# prompt user to add private key
 ssh-add
 
 
