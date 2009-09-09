@@ -89,6 +89,10 @@ fm ()
 # usage: cl PATH
 cl() { builtin cd "${@:-$HOME}" && ls; }
 
+# create new folder and enter into it
+# this function hide the useless command dir
+dir(){ mkdir "$1" && cd "$1"}
+
 # echo bash variables more easily
 # here we use indirect refence format: ${!env_var}
 # usage: e shell_var_name...
