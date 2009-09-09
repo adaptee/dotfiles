@@ -41,6 +41,23 @@ if [ -x "${HOME}/bin/pack-firefox.sh" ];then
     ${HOME}/bin/pack-firefox.sh restore &
 fi
 
+#------------------------------------------------------------------------------
+#                               start gappproxy client                        #
+#------------------------------------------------------------------------------
+
+gappproxy="${HOME}/bin/gae/localproxy/proxy.py"
+gappproxy_lock="${HOME}/.gappproxy.lock"
+
+if [ -f "${gappproxy}" ] ; then
+
+    # make sure only one instance exist.
+    if  [ -f "${gappproxy_lock}" ] ; then
+        ;
+    else
+        python "${gappproxy}" && touch "${gappproxy_lock}"
+    fi
+
+fi
 
 #------------------------------------------------------------------------------
 #                                   SSH keyring                               #
