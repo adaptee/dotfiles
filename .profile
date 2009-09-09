@@ -54,7 +54,8 @@ if [ -f "${gappproxy}" ] ; then
     if  [ -f "${gappproxy_lock}" ] ; then
         :
     else
-        python "${gappproxy}" && touch "${gappproxy_lock}" &
+        python "${gappproxy}" &
+        touch "${gappproxy_lock}"
         trap "rm ${gappproxy_lock} " 0
     fi
 
