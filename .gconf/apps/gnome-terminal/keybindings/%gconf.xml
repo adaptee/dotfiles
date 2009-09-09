@@ -1,21 +1,33 @@
 <?xml version="1.0"?>
 <gconf>
+        <entry name="close_window" mtime="1252507485" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="close_tab" mtime="1252507475" type="string">
+                <stringvalue>disabled</stringvalue>
+        </entry>
+        <entry name="move_tab_right" mtime="1252507283" type="string">
+                <stringvalue>&lt;Shift&gt;Right</stringvalue>
+        </entry>
+        <entry name="move_tab_left" mtime="1252507279" type="string">
+                <stringvalue>&lt;Shift&gt;Left</stringvalue>
+        </entry>
         <entry name="full_screen" mtime="1252254376" type="string">
                 <stringvalue>F12</stringvalue>
         </entry>
-        <entry name="next_tab" mtime="1252092118" type="string">
-                <stringvalue>&lt;Shift&gt;Right</stringvalue>
+        <entry name="next_tab" mtime="1252507253" type="string">
+                <stringvalue>&lt;Alt&gt;Right</stringvalue>
         </entry>
-        <entry name="prev_tab" mtime="1252092113" type="string">
-                <stringvalue>&lt;Shift&gt;Left</stringvalue>
+        <entry name="prev_tab" mtime="1252507235" type="string">
+                <stringvalue>&lt;Alt&gt;Left</stringvalue>
         </entry>
-        <entry name="zoom_out" mtime="1240328945" type="string">
+        <entry name="zoom_out" mtime="1252507393" type="string">
                 <stringvalue>disabled</stringvalue>
         </entry>
         <entry name="zoom_normal" mtime="1240328940" type="string">
                 <stringvalue>disabled</stringvalue>
         </entry>
-        <entry name="zoom_in" mtime="1240328938" type="string">
+        <entry name="zoom_in" mtime="1252507395" type="string">
                 <stringvalue>disabled</stringvalue>
         </entry>
         <entry name="switch_to_tab_8" mtime="1240328933" type="string">
