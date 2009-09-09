@@ -251,6 +251,10 @@ alias booksync='rsync -r -t -v --progress --delete ~/prog/EBook /media/backup/'
 
 # solve the encoding problem seamlessly.
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
+
+# start gappproxy local client
+alias proxy='python ~/bin/gae/localproxy/proxy.py'
+
 #---------------------------------------------------------------------------#
 #                             top useful alias                              #
 #---------------------------------------------------------------------------#
