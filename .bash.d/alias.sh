@@ -261,7 +261,7 @@ alias proxy='python ~/bin/gae/localproxy/proxy.py'
 
 alias a='alias'
 alias b='cd ~/bin'
-# note, c is defined in function.sh
+alias c='cl'
 alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
 alias f='find'
