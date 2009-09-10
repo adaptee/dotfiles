@@ -142,8 +142,11 @@ alias k9='kill -9'
 alias ka='killall'
 alias ka9='killall -9'
 
+alias kaa='killall -9 amule'
+alias kaf='killall -9 firefox'
 #kill all mplayer, useful when playing broken video.
 alias kag='killall -9 gmplayer'
+
 
 #kail all backgound jobs
 alias kajobs='kill "$@" $(jobs -p)'
@@ -261,6 +264,7 @@ alias proxy='python ~/bin/gae/localproxy/proxy.py'
 
 alias a='alias'
 alias b='cd ~/bin'
+alias ba='cd ~/.bash.d'
 alias c='cl'
 alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
