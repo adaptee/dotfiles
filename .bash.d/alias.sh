@@ -168,7 +168,7 @@ alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade -y --force-yes'
 
 alias purge='sudo apt-get purge -y'
-alias clean='sudo apt-get autoremove autoclean clean'
+alias clean='sudo apt-get autoremove autoclean clean -y '
 alias syn='sudo synaptic'
 
 alias dpi='sudo dpkg -i' # install pkg
