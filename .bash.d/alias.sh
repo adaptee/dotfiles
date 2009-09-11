@@ -144,6 +144,7 @@ alias ka9='killall -9'
 
 alias kaa='killall -9 amule'
 alias kaf='killall -9 firefox'
+alias kad='killall -9 gnome-do'
 #kill all mplayer, useful when playing broken video.
 alias kag='killall -9 gmplayer'
 
@@ -270,6 +271,7 @@ alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
 alias f='find'
 alias fl='file'
+alias ff='cd ~/.mozilla/firefox/r2nisspk.default'
 alias g='grep'
 alias gi='grep -i'
 alias gl='grep -l'
