@@ -317,6 +317,7 @@ git_set_assume_unchanged ()
     git update-index --assume-unchanged ~/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
     git update-index --assume-unchanged ~/.gconf/apps/gedit-2/plugins/filebrowser/on_load/%gconf.xml
     git update-index --assume-unchanged ~/.gconf/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
+    git update-index --assume-unchanged ~/.aMule/amule.conf
 }
 
 
