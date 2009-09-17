@@ -554,6 +554,6 @@ command! Source :js load_vimperatorrc()
 noremap <Leader>v  :Source<CR>
 
 " Switch user-agent 
-map <Silent> <F9> :js switch_useragent()<CR>
+"map <Silent> <F9> :js switch_useragent()<CR>
 
 "" vim: set ft=vimperator:
