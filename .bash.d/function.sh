@@ -93,6 +93,12 @@ cl() { builtin cd "${@:-$HOME}" && ls; }
 # this function hide the useless command dir
 md(){ mkdir -p "$1" && cd "$1"; }
 
+# canonicalize path (including resolving symlinks) 
+realpath()
+{
+    readlink -f "$1"
+}
+
 # echo bash variables more easily
 # here we use indirect refence format: ${!env_var}
 # usage: e shell_var_name...
