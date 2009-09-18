@@ -558,7 +558,16 @@ iab #b /************************************************
 iab #e ************************************************/
 iab #l /*----------------------------------------------*/
 
-"cab s   set
+" make entering the most frequently used command more easily
+cab E   echo
+cab G   grep
+cab H   help
+cab M   map
+cab IM  imap
+cab UM  unmap
+cab R   registers
+cab S   set
+cab V   vimgrep
 
 "--------------------------------------------------------------------------"
 "                               quickfix mode                              "
