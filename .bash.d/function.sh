@@ -96,7 +96,12 @@ md(){ mkdir -p "$1" && cd "$1"; }
 # canonicalize path (including resolving symlinks) 
 realpath()
 {
-    readlink -f "$1"
+    # first consider accessable commnands
+    if which "$1" > /dev/null ; then 
+        readlink -f $(which "$1")
+    else
+        readlink -f "$1"
+    fi
 }
 
 # echo bash variables more easily
