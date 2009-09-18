@@ -502,7 +502,7 @@ nnoremap <silent><Leader>n :tabnext<CR>
 nnoremap <silent><TAB>     :tabnext<CR>
 "switch to previos tab
 nnoremap <silent><Leader>p :tabprevious<CR>
-nnoremap <S-TAB>           :tabnext<CR>
+nnoremap <S-TAB>           :tabprevious<CR>
 
 "fast switch to first & last tab
 nnoremap <silent><leader>1 :tabfirst<CR>
