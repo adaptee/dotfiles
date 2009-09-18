@@ -145,9 +145,11 @@ shopt -s nullglob
 # use emacs-style in terminal-input
 set -o emacs on
 
-#---------------------------------------------------------------------------#
-#                               environment variables                       #
-#---------------------------------------------------------------------------#
+# Let me have core dumps
+ulimit -c unlimited
+
+# I hate noise
+set bell-style none
 
 
 #------------------------------history related------------------------------#
