@@ -27,21 +27,25 @@
 #                                   ls alias                                #
 #---------------------------------------------------------------------------#
 
-# enable color support of ls(LS_COLORS) and also add handy trailing hint
+# enable color support of ls(LS_COLORS) 
 if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"
-    alias ls='ls --color=auto -F'
+    alias ls='ls --color=auto '
 fi
 
-alias l='ls'
-alias ll='ls -hl'
+# 'F' means show trailing handy hints of the entry type
+alias l='ls -F'
+# 'A' means show hidden items. but not including . and ..
+alias la='l -A'  
 
-# A means show hidden items. but not including . and ..
-alias la='ls -A'  
+# show detailed info
+alias ll='l -hl'
 alias lla='ll -A'
 
+# only list sub-directory under current directory
+alias ld='ls -hl -d */'
 
-#In case you type 'ls' as 'sl'....
+# In case you type 'ls' as 'sl'....
 alias sl='ls'
 
 # find most-recently modified file under current folder; sub-folder not considered.
