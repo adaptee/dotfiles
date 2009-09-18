@@ -151,6 +151,9 @@ ulimit -c unlimited
 # I hate noise
 set bell-style none
 
+#---------------------------------------------------------------------------#
+#                       Environment Variables                               #
+#---------------------------------------------------------------------------#
 
 #------------------------------history related------------------------------#
 
@@ -178,6 +181,16 @@ export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 export CDPATH=".:..:~:~/prog/EBook/:~/Desktop/:~/video/"
 # ignore file with those suffix when perforaming filename-auto-completion
 export FIGNORE='.o:.bak:.tmp:.orig'
+
+#-----------------------------------development-------------------------------#
+
+# for reference: 
+# http://udrepper.livejournal.com/11429.html
+# http://www.pixelbeat.org/settings/.bashrc
+# enbale the auto init & clear feature of malloc() and free() in glibc
+#export MALLOC_CHECK_=3
+#export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
+                                                                                  
 
 
 #-----------------------------------vim related-------------------------------#
