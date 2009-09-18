@@ -296,10 +296,13 @@ nnoremap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 ""make help system more like Web pages
 autocmd FileType help call ActLikeWeb()
 function! ActLikeWeb()
+    " jump and jump back, like surfing web
     nmap <buffer> <CR> <C-]>
     nmap <buffer> <BS> <C-T>
-    nmap <buffer> o /''[a-z]\{2,\}''<CR>
-    nmap <buffer> O ?''[a-z]\{2,\}''<CR>
+    " jump to next/previous option item
+    nmap <buffer> o /'[a-z]\{2,\}'<CR>
+    nmap <buffer> O ?'[a-z]\{2,\}'<CR>
+    " jump to next/previous subject item
     nmap <buffer> s /\|\S\+\|<CR>
     nmap <buffer> S ?\|\S\+\|<CR>
 endfunction
