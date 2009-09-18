@@ -539,7 +539,7 @@ iab partion partition
 iab ok      OK
 iab abbr    abbreviation
 iab autom   automatically
-iab i18     Internationalization
+iab i18n    Internationalization
 iab l10n    Localization
 iab posix   POSIX
 iab envir   environment
@@ -549,7 +549,7 @@ iab misc    miscellaneous
 iab xdate   <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
 iab xtime   <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 iab kath    Katherine
-iab attri   attribute
+iab attr    attribute
 iab chinese Chinese
 iab english English
 iab america America
