@@ -27,7 +27,7 @@
 #                                   ls alias                                #
 #---------------------------------------------------------------------------#
 
-# enable color support of ls(LS_COLORS) and also add handy aliases
+# enable color support of ls(LS_COLORS) and also add handy trailing hint
 if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"
     alias ls='ls --color=auto -F'
@@ -39,6 +39,7 @@ alias ll='ls -hl'
 # A means show hidden items. but not including . and ..
 alias la='ls -A'  
 alias lla='ll -A'
+
 
 #In case you type 'ls' as 'sl'....
 alias sl='ls'
