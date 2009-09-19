@@ -3,8 +3,10 @@
 "choose font
 if has("unix")
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
+    set guifontwide=Vera\ Sans\ YuanTi\ Mono\ 14
 elseif has("win32")
     set guifont=Bitstream_Vera_Sans_Mono:h11:cANSI
+    set guifontwide=Vera_Sans_YuanTi_Mono:h11:cGB2312
 endif
 
 "remove the toolbar, menubar
