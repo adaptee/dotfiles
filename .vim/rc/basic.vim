@@ -359,8 +359,8 @@ vnoremap > >gv
 vnoremap < <gv
 
 "use TAB to do indentation
-vmap <Tab>   >
-vmap <S-Tab> <
+vnoremap <Tab>   >gv
+vnoremap <S-Tab> <gv
 
 nnoremap <silent><Leader>Z :call SqueezeWhiteSpace()<CR>
 
@@ -498,10 +498,10 @@ nnoremap <silent><Leader>T :tab sball<CR>
 
 "switch to next tab
 nnoremap <silent><Leader>n :tabnext<CR>
-nnoremap <silent><TAB>     :tabnext<CR>
+nnoremap <silent><Tab>     :tabnext<CR>
 "switch to previos tab
 nnoremap <silent><Leader>p :tabprevious<CR>
-nnoremap <S-TAB>           :tabprevious<CR>
+nnoremap <S-Tab>           :tabprevious<CR>
 
 "fast switch to first & last tab
 nnoremap <silent><leader>1 :tabfirst<CR>
