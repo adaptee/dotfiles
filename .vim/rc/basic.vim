@@ -258,7 +258,6 @@ imap <UP> <ESC>gka
 " make moving under insert mode more easy.
 imap <C-h> <Left>
 imap <C-l> <Right>
-imap <C-j> <Down>
 
 "make tag jumping more easy"
 nmap <Leader>d <ESC><C-]>
