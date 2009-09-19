@@ -16,6 +16,13 @@ vmap <silent> <Leader>a' <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align '<CR
 vmap <silent> <Leader>a" <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align "<CR>:AlignPop<CR>
 vmap <silent> <Leader>a/ <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align //<CR>:AlignPop<CR>
 
+
+"------------------------------------------------------------------------------------------------------
+" autocorrect.vim( Correct common typos and misspellings as you type, through iab  )
+"------------------------------------------------------------------------------------------------------
+
+
+
 "------------------------------------------------------------------------------------------------------
 " bash-support.vim( BASH IDE -- Write and run BASH-scripts using menus and hotkeys. )
 "------------------------------------------------------------------------------------------------------
