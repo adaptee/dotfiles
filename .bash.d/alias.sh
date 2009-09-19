@@ -43,7 +43,7 @@ alias ll='l -hl'
 alias lla='ll -A'
 
 # only list sub-directory under current directory
-alias ld='ls -hl -d */'
+alias lf='ls -hl -d */'
 
 # In case you type 'ls' as 'sl'....
 alias sl='ls'
