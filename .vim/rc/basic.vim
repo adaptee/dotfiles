@@ -349,7 +349,7 @@ set formatoptions+=mM
 map Q gq
 
 " format the whole file
-nnoremap <S-F> gg=G''
+nnoremap <Leader>F gg=G''
 
 "make deleting annoying windows ^M more easy
 nnoremap <Leader>M :%s/\r//g<CR>
@@ -423,10 +423,10 @@ set switchbuf=usetab
 "when detecting file is modified outside of Vim, reload the file automatically
 set autoread
 
-"do not create backup when editing
-set nobackup
-"but for the sake of accident....
+" make a backup before overwritting a file, for the sake of safety.
 set writebackup
+" but delete the backup after the file is overwritten succussfully.
+set nobackup
 
 " use directory of the related buffer as the start-point for file browser
 set browsedir=buffer
