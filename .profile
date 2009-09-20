@@ -80,6 +80,3 @@ fi
 # prompt user to add private key
 ssh-add
 
-
-
-
