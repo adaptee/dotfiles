@@ -203,7 +203,7 @@ export CTAGS='--c-kinds=+x --c++-kinds=+x --fields=+aiSt --extra=+q'
 
 # colorful man page
 
-export PAGER="$(which less) --squeeze-blank-lines -LONG-PROMPT " 
+export PAGER="$(which less) --squeeze-blank-lines --LONG-PROMPT " 
 export LESS=' -ignore-case --RAQ-CONTROL-CHARS ' 
 export BROWSER="$PAGER"
 export LESS_TERMCAP_mb=$'\e[01;31m'
