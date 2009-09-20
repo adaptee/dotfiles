@@ -12,7 +12,7 @@
 #------------------------------------------------------------------------------
 
 # set PATH to include user's private bin ,if it exists
-if [ -d "${HOME}/bin" ] ; then
+if [[ -d "${HOME}/bin" ]] ; then
     PATH="${HOME}/bin:${PATH}"
 fi
 
@@ -26,9 +26,9 @@ export XMODIFIERS=@im=ibus
 #------------------------------------------------------------------------------
 
 # if running bash
-if [ -n "${BASH_VERSION}" ]; then
+if [[ -n "${BASH_VERSION}" ]]; then
     # include .bashrc if it exists
-    if [ -f "${HOME}/.bashrc" ]; then
+    if [[ -f "${HOME}/.bashrc" ]]; then
         . "${HOME}/.bashrc"
     fi
 fi
@@ -37,7 +37,7 @@ fi
 #                           restore firefox profile.                          #
 #------------------------------------------------------------------------------
 # 
-if [ -x "${HOME}/bin/pack-firefox.sh" ];then
+if [[ -x "${HOME}/bin/pack-firefox.sh" ]];then
     ${HOME}/bin/pack-firefox.sh restore &
 fi
 
@@ -48,10 +48,10 @@ fi
 gappproxy="${HOME}/bin/gae/localproxy/proxy.py"
 gappproxy_lock="${HOME}/.gappproxy.lock"
 
-if [ -f "${gappproxy}" ] ; then
+if [[ -f "${gappproxy}" ]] ; then
 
     # make sure only one instance exist.
-    if  [ -f "${gappproxy_lock}" ] ; then
+    if  [[ -f "${gappproxy_lock}" ]] ; then
         :
     else
         python "${gappproxy}" &
@@ -68,7 +68,7 @@ fi
 SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS="-s"
 
-if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
+if [[ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]]; then
     # now, all application within this session know how to communicate with 
     # ssh-agent by enviroment variable $SSH_AGENT_PID
     eval `${SSHAGENT} ${SSHAGENTARGS}`
