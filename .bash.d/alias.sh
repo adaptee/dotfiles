@@ -38,6 +38,9 @@ alias l='ls -F'
 # 'A' means show hidden items. but not including . and ..
 alias la='l -A'  
 
+# '-1' means one file per line
+alias l1='l -1'
+
 # show detailed info
 alias ll='l -hl'
 alias lla='ll -A'
