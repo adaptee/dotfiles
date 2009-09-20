@@ -59,3 +59,6 @@ set input-meta on
 set convert-meta off            
 # display characters with the eighth bit set directly 
 set output-meta on              
+
+# use <S-Tab> to do menu-complete, like in cmd.exe of windows.
+"\e[Z": menu-complete
