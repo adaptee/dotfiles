@@ -68,7 +68,7 @@ fi
 SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS="-s"
 
-if [[ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]]; then
+if [[ -z "${SSH_AUTH_SOCK}" && -x "${SSHAGENT}" ]]; then
     # now, all application within this session know how to communicate with 
     # ssh-agent by enviroment variable $SSH_AGENT_PID
     eval `${SSHAGENT} ${SSHAGENTARGS}`
