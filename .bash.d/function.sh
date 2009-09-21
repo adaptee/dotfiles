@@ -110,6 +110,13 @@ function md ()
     builtin cd "$newdir" 
 }
 
+# always run man with English locale, because I do not like
+# translated version
+function man ()
+{
+    LANG=en_US.utf-8 command man $* 
+}
+
 # canonicalize path (including resolving symlinks) 
 function realpath()
 {
