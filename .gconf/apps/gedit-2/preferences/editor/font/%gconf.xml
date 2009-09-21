@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gconf>
-        <entry name="editor_font" mtime="1253357402" type="string">
+        <entry name="editor_font" mtime="1253555282" type="string">
                 <stringvalue>Vera Sans YuanTi Mono 14</stringvalue>
         </entry>
         <entry name="use_default_font" mtime="1228553456" type="bool" value="false">
