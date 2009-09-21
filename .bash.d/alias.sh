@@ -277,7 +277,7 @@ alias proxy='python ~/bin/gae/localproxy/proxy.py'
 
 alias a='alias'
 alias b='cd ~/bin'
-alias ba='cd ~/.bash.d'
+alias bd='cd ~/.bash.d'
 alias c='cl'
 alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
