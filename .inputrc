@@ -42,21 +42,29 @@
 # inseat the last argument to previous command                
 "\M-l": insert-last-argument    
 
+# use <S-Tab> to do menu-complete, like in cmd.exe of windows.
+"\e[Z": menu-complete
 
 #---------------------------Readline Options--------------------------------
 
 # use the key-bindings of emacs style
 #set editing-mode vi            
 
-
 # list all candidates instead of ring the bell, when completing
 set show-all-if-ambiguous on    
-# never ring the bell!
-set bell-style none             
 # append  single type character to each completion candidates.
 set visible-stats on            
 # perform name completion in case-insensitive way.
 #set completion-ignore-case on
+
+# Completed dir names have a slash appended
+set mark-directories on
+# Completed names which are symlinks to dirs have a slash appended
+set mark-symlinked-directories on
+
+
+# never ring the bell!
+set bell-style none             
 
 # allow eight-bit input, do not strip the high bit 
 set input-meta on               
@@ -65,5 +73,3 @@ set convert-meta off
 # display characters with the eighth bit set directly 
 set output-meta on              
 
-# use <S-Tab> to do menu-complete, like in cmd.exe of windows.
-"\e[Z": menu-complete
