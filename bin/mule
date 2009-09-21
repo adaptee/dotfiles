@@ -1,0 +1,25 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  mule.sh
+# 
+#         USAGE:  ./mule.sh 
+# 
+#   DESCRIPTION:  simple wrapper for amule.
+# 
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  adaptee (), adaptee@gmail.com
+#       COMPANY:  Open Source Corporation
+#       VERSION:  1.0
+#       CREATED:  2009年08月26日 21时36分10秒 CST
+#      REVISION:  ---
+#===============================================================================
+
+for iter in $(seq 9); do
+    echo "round ${iter} is started."
+    $(which amule)
+    echo "round ${iter} is done"
+done
