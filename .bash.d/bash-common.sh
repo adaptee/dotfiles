@@ -174,7 +174,7 @@ export HISTFILESIZE=50000
 export HISTSIZE=50000
 
 # do not record these commands
-export HISTIGNORE="pwd:l:ls:ls -ltr"
+export HISTIGNORE="pwd:l:ls:ll:la:history"
 
 #--------------------------------grep related-------------------------------#
 
