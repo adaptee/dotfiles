@@ -90,8 +90,25 @@ function fm ()
 function cl() { builtin cd "${@:-$HOME}" && ls; }
 
 # create new folder and enter into it
-# this function hide the useless command dir
-function md(){ mkdir -p "$1" && cd "$1"; }
+# usage: md [mode] DIR
+function md ()
+{
+    local newdir='_md_command_failed_'
+    if [ -d "$1" ]; then # Dir exists, mention that...
+        echo "$1 already exists..."
+        newdir="$1"
+    else
+        # if mode is specified , use that
+        if [ -n "$2" ]; then 
+            command mkdir -p -m $1 "$2" && newdir="$2"
+        else 
+            command mkdir -p "$1" && newdir="$1"
+        fi
+    fi
+
+    # No matter what, cd into it
+    builtin cd "$newdir" 
+}
 
 # canonicalize path (including resolving symlinks) 
 function realpath()
