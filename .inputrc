@@ -45,9 +45,20 @@
 # use <S-Tab> to do menu-complete, like in cmd.exe of windows.
 "\e[Z": menu-complete
 
+# edit the PATH env
+"\C-xp": "PATH=${PATH}"
+
+# insert a pair of double quotes and move cursor between
+"\C-x\"": "\"\"\C-b"
+# insert a pair of single quotes and move cursor between
+"\C-x'": "''\C-b"
+
+# Quote current or previous word with double quotes
+"\C-xq": "\eb\"\ef\""
+
 #---------------------------Readline Options--------------------------------
 
-# use the key-bindings of emacs style
+# use the key-bindings of vim style
 #set editing-mode vi            
 
 # list all candidates instead of ring the bell, when completing
@@ -72,4 +83,5 @@ set input-meta on
 set convert-meta off            
 # display characters with the eighth bit set directly 
 set output-meta on              
+
 
