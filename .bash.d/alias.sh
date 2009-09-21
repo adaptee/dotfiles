@@ -320,9 +320,13 @@ alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
 #                                  misc alias                               #
 #---------------------------------------------------------------------------#
 
+# generated unified  result
+alias diff='diff -u'
+
+alias cdiff='colordiff'
+
 alias svn-versionalize="svn status |grep '\?' |awk '{print $2}'| xargs svn add"
 alias svndiff='svn diff -diff-cmd=colordiff'
-alias diff='colordiff'
 
 alias recordscreen='/usr/bin/byzanz-record ~/screen_record.gif'
 
