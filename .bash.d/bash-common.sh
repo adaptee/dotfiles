@@ -272,6 +272,9 @@ complete -e ee
 complete -o filenames -F _find f
 complete -o filenames -F _longopt g
 
+# only provide .Z .gz and .tgz file to gunzip
+complete -A file -X '!*.@(Z|gz|tgz)' gunzip
+
 #complete -o filenames -F _dpkg dpi
 #complete -o filenames -F _dpkg dpp
 #complete -o filenames -F _dpkg dps
