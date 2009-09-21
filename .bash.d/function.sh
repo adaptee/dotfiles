@@ -25,7 +25,7 @@
 
 # grep your history!
 # usage: hgrep KEY_WORD
-hgrep ()
+function hgrep ()
 { 
     # sorted and uniqed.
     history | grep -i "$*" | sort -k 2 | uniq -s 7 | sort -g | grep -i "$*"
@@ -36,7 +36,7 @@ hgrep ()
 
 # list your history
 # usage: hlist [recent-number]
-hlist ()
+function hlist ()
 { 
     if [ "$1" -lt "30"  ];then    
         history "$1"
@@ -47,12 +47,12 @@ hlist ()
 
 # list last ten commands
 # usage: hh
-hh ()
+function hh ()
 { 
     history 10;
 }
 
-topN () 
+function topN () 
 {
     history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20; 
 
@@ -64,7 +64,7 @@ topN ()
 
 # open specified files with apporiate programs
 # usage: go FILES...
-go ()
+function go ()
 {
     local item
     for item in "$@";do
@@ -76,7 +76,7 @@ go ()
 
 # open specified location( defalut pwd) with file-manager nautilus.
 # usage: fm [location]
-fm ()
+function fm ()
 {
     nautilus "${@:-$PWD}"
 }
@@ -87,14 +87,14 @@ fm ()
 
 # often the next command after 'cd' is 'ls', so why not combine into one? 
 # usage: cl PATH
-cl() { builtin cd "${@:-$HOME}" && ls; }
+function cl() { builtin cd "${@:-$HOME}" && ls; }
 
 # create new folder and enter into it
 # this function hide the useless command dir
-md(){ mkdir -p "$1" && cd "$1"; }
+function md(){ mkdir -p "$1" && cd "$1"; }
 
 # canonicalize path (including resolving symlinks) 
-realpath()
+function realpath()
 {
     # first consider accessable commnands
     if which "$1" > /dev/null ; then 
@@ -107,7 +107,7 @@ realpath()
 # echo bash variables more easily
 # here we use indirect refence format: ${!env_var}
 # usage: e shell_var_name...
-e () 
+function e () 
 {
     local item
 
@@ -120,7 +120,7 @@ e ()
 # echo environment variables more easily(lower-case input is ok)
 # here we use indirect refence format: ${!env_var}
 # usage: ee env_var_name...
-ee () 
+function ee () 
 {
     local item
 
@@ -132,7 +132,7 @@ ee ()
 
 # empty specified files
 # usage: null files...
-null ()
+function null ()
 {
     local item
     for item in "$@";do
@@ -142,8 +142,8 @@ null ()
 
 # Colorize follwoing text
 # usage: green TEXT
-green () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
-red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
+function green () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
+function red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
 
 
 #---------------------------------------------------------------------------#
@@ -152,14 +152,14 @@ red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
 
 # add GPG key for debian-repo
 # usage: addkey 0x5017d4931d0acade295b68adfc6d7d9d009ed615
-addkey ()
+function addkey ()
 {
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com "$1"
 }
 
 # view sources.list, or append new entry 
 # usage: addscr [source-entry]
-addsrc ()
+function addsrc ()
 {
     case "$#" in
         # when no argument is provided, view sources.list
@@ -175,7 +175,7 @@ addsrc ()
 
 # clean already-removed package's etc files.
 # usage: purgecfg
-purgecfg ()
+function purgecfg ()
 {
     dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get -y purge
 }
@@ -187,7 +187,7 @@ purgecfg ()
 
 # convert single pdf file to png files, one png file per one page
 # usage: pdf2png xxxx.pdf
-pdf2png()
+function pdf2png()
 {
     convert -quality 100 -antialias -density 96 -transparent white -trim $1 \
     $( basename $1 '.pdf')".png"
@@ -196,7 +196,7 @@ pdf2png()
 
 # burn cdrom's content's into iso image.
 # usage: cd2iso iso-name
-cd2iso()
+function cd2iso()
 {
     case "$#" in
         0)
@@ -211,7 +211,7 @@ cd2iso()
 
 # convert manpages to plain text file
 # usage: man2txt command...
-man2txt()
+function man2txt()
 {
     local item
     for item in "$@";do
@@ -221,7 +221,7 @@ man2txt()
 
 # convert manpages to pdf file
 # usage: man2pdf command...
-man2pdf()
+function man2pdf()
 {
     local item
     for item in "$@";do
@@ -236,14 +236,14 @@ man2pdf()
 
 # convert filename to UTF-8 encoding
 # usage convmv_utf8 FILES....
-convmv_utf8 ()
+function convmv_utf8 ()
 {
     convmv -f gbk -t utf-8 --notest "$@"
 }
 
 # tranform from gb* encoding to utf-8; old file is automatically renamed
 # usage: gb2u8 files...
-gb2u8()
+function gb2u8()
 {
     local item
     for item in "$@";do
@@ -259,7 +259,7 @@ gb2u8()
 
 # tranform from utf-8 encoding to gb*; old file is automatically renamed
 # usage: u82gb files...
-u82gb()
+function u82gb()
 {
     local item
 
@@ -277,7 +277,7 @@ u82gb()
 
 # tranform from utf-16 encoding into utf-8; old file is automatically renamed
 # usage: u162u8 files...
-u162u8()
+function u162u8()
 {
     local item
 
@@ -298,7 +298,7 @@ u162u8()
 
 # adjust the indentation of xml files in place 
 # usage: indentxml xmlfiles...
-indentxml ()
+function indentxml ()
 {
     local item
     for item in "$@";do
@@ -308,13 +308,13 @@ indentxml ()
 
 # shows  git history as ASCII graph
 # usage: glog
-glog() 
+function glog() 
 {
     git log --pretty=oneline --topo-order --graph --abbrev-commit $@
 }
 
 # show current folder's git branch info
-parse_git_branch() 
+function parse_git_branch() 
 {
     # tell 'cut' to use SPACE as delimiter
     git branch 2> /dev/null | sed -e '/^[^*]/d' | cut --delimiter=\  --fields=2
@@ -323,7 +323,7 @@ parse_git_branch()
 # set specifiles as 'assume unchanged', i.e, not tracking the modification in
 # the workding tree;
 # usage:git_set_assume_unchanged
-git_set_assume_unchanged ()
+function git_set_assume_unchanged ()
 {
     git update-index --assume-unchanged ~/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
     git update-index --assume-unchanged ~/.gconf/apps/gedit-2/plugins/filebrowser/on_load/%gconf.xml
@@ -334,7 +334,7 @@ git_set_assume_unchanged ()
 
 # generate random string with specified length
 # usage: randomstr N
-randomstr()
+function randomstr()
 {
     strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n';
 }
@@ -346,14 +346,14 @@ randomstr()
 
 # delelte all mails in the mailbox
 # usage: clearmail
-clearmail ()
+function clearmail ()
 {
     echo 'd *' | mail -N
 }
 
 # share folder throuth http://localhost:8000 
 # usage: share folder-path
-share()
+function share()
 {
     builtin cd "${@:-$PWD}"
     python -m SimpleHTTPServer &
@@ -362,7 +362,7 @@ share()
 # get blacklist from authority and generator the commmads 
 # for blocking these suspicious ip
 # usage: blacklist
-blacklist()
+function blacklist()
 {
     wget -qO - http://infiltrated.net/blacklisted|awk '!/#|[a-z]/&&/./{print "iptables -A INPUT -s "$1" -j DROP"}'
 }
@@ -374,7 +374,7 @@ blacklist()
 # example:
 #   greps include txt
 
-greps() 
+function greps() 
 {
     local content=$1
 
