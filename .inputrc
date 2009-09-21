@@ -11,8 +11,13 @@
 
 # Ctrl + right => move forward by one word
 "\e[1;5C": forward-word         
+"\e[5C": forward-word
+"\e\e[C": forward-word
 # Ctrl + left  => move backward by one word
 "\e[1;5D": backward-word        
+"\e[5D": backward-word
+"\e\e[D": backward-word
+
 
 # 'HOME'       => move to the beginning of the line
 "\e[1~": beginning-of-line      
