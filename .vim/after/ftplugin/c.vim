@@ -1,4 +1,4 @@
-" added and modifyed by adaptee manually, not by any plugin.
+" added and modified by adaptee manually, not by any plugin.
 
 " OmniCppComplete initialization
 call omni#cpp#complete#Init()
