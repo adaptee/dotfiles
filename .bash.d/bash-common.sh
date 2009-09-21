@@ -97,10 +97,11 @@ PS1_GIT_BRANCH='`b=$(parse_git_branch); if [ x"$b" != "x" ]; then echo -n -e "\[
 
 PS1="${PS1_CHROOT}${PS1_EXITCODE}${PS1_HISTNUMER}${PS1_USER}${PS1_AT}${PS1_HOST}${PS1_COLON}${PS1_PWD}${PS1_GIT_BRANCH}${PS1_SYMBOL}" 
 
-# show dynamic window title, reflecting "who is in where now?"
 case "$TERM" in
     xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\e]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007";history -a'
+    # 1).show dynamic window title, reflecting "who is in where now?"
+    # 2).synchronize history between multiple shell sessions.
+    PROMPT_COMMAND='echo -ne "\e]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"; history -a; history -n'
     ;;
     *)
     ;;
