@@ -32,9 +32,11 @@
 [alias]
     ai      = add -i
     br      = branch
+    brd     = branch -d
     cm      = commit -m 
     cma     = commit -a -m
     co      = checkout
+    cob     = checkout -b
     desc    = describe
     st      = status
     wtf     = whatchanged
