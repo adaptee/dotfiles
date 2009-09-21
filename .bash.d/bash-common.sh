@@ -4,8 +4,6 @@
 #                               Shell prompt                                #
 #---------------------------------------------------------------------------#
 
-# PS4 wiil be used when 'set -x' is executed, for tracing purpose.
-export PS4='line $LINENO: '
 
 # color name defintions ,which provide for better readability
 
@@ -107,6 +105,14 @@ case "$TERM" in
     *)
     ;;
 esac
+
+
+# PS3 is used when encounting select statement.
+export PS3='Choose one option by number: '
+
+# PS4 wiil be used when 'set -x' is setted, for tracing purpose.
+export PS4='line $LINENO: '
+
 
 #---------------------------------------------------------------------------#
 #                               Bash options                                #
