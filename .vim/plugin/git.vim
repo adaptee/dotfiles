@@ -1,3 +1,7 @@
+" Author:  motemen <motemen@gmail.com>
+" License: The MIT License
+" URL:     http://github.com/motemen/git-vim/
+
 if !exists('g:git_command_edit')
     let g:git_command_edit = 'new'
 endif
@@ -45,8 +49,8 @@ endfunction
 function! GitBranch()
     let git_dir = <SID>GetGitDir()
 
-    if strlen(git_dir) && filereadable(git_dir . 'HEAD')
-        let lines = readfile(git_dir . 'HEAD')
+    if strlen(git_dir) && filereadable(git_dir . '/HEAD')
+        let lines = readfile(git_dir . '/HEAD')
         if !len(lines)
             return ''
         else
