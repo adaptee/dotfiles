@@ -137,6 +137,8 @@ alias 755='chmod 755'
 
 #alias ps='ps -o stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm'
 
+# '-n' means sort sibling processes by numeric pid, not by name
+alias pstree='pstree -n'
 
 alias pgrep='pgrep -l'
 
