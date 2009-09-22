@@ -201,6 +201,7 @@ alias mkc='make clean'
 
 # edit config file
 alias rc=' vim ~/.bashrc'
+alias irc='vim ~/.inputrc'
 alias vrc='vim ~/.vimrc'
 alias src='vim ~/.screenrc'
 alias vprc='vim ~/.vimperatorrc'
