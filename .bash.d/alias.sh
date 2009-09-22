@@ -75,6 +75,9 @@ alias uuu='cd ../../..'
 # use single '-' to jump to previous folder.
 alias -- -='cd -'
 
+# list one item per line , with prepending index.
+alias dir='dirs -v'
+
 #---------------------------------------------------------------------------#
 #                                 tree alias                                #
 #---------------------------------------------------------------------------#
