@@ -145,7 +145,8 @@ function psg()
     target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
     command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
     #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
-    ps auxw | grep -i -E "$target|$command"
+    #ps auxw | grep -i -E "$target|$command"
+    ps | grep -i -E "$target|$command"
 }
 
 
