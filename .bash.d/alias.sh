@@ -301,6 +301,9 @@ alias tpa='type -a'
 alias v='vim'
 alias vi='vim'
 alias wh='which'
+# '-w' means supporting wildcards
+alias what='whatis -w'
+alias where='whereis'
 alias x='xargs'
 alias x0='xargs -0'
 
