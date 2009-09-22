@@ -135,7 +135,8 @@ alias 755='chmod 755'
 #                                process alias                              #
 #---------------------------------------------------------------------------#
 
-#alias ps='ps -o stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm'
+# customize the displaying layout for command ps.
+alias ps='ps axw -o user,pid,ppid,%cpu,%mem,rss,tname,stat,policy,wchan,start_time,bsdtime,cmd'
 
 # '-n' means sort sibling processes by numeric pid, not by name
 alias pstree='pstree -n'
