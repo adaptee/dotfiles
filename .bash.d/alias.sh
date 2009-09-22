@@ -137,14 +137,6 @@ alias 755='chmod 755'
 
 #alias ps='ps -o stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm'
 
-# Tip: [\1]  is used to exclude grep from the final result
-psg()
-{
-    target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
-    command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
-    #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
-    ps auxw | grep -E "$target|$command"
-}
 
 alias pgrep='pgrep -l'
 
@@ -190,13 +182,6 @@ alias dpS='dpkg -S'      # search file name
 alias dpl='dpkg -l'      # list pkg summary
 alias dpL='dpkg -L'      # list pkg details
 
-# short name for 'sudo apt-get install'
-inst()
-{
-    local pkgname
-    pkgname=$(echo $1|tr '[A-Z]' '[a-x]')
-    sudo apt-get install -y $pkgname
-}
 
 #---------------------------------------------------------------------------#
 #                                   make alias                              #
