@@ -89,6 +89,26 @@ function fm ()
 # usage: cl PATH
 function cl() { builtin cd "${@:-$HOME}" && ls; }
 
+# insert thousand separator into number, for better readability
+# usage: commify NUMBER
+function commify ()
+{
+    typeset text=${1}
+
+    typeset bdot=${text%%.*}
+    typeset adot=${text#${bdot}}
+
+    typeset i commified
+    (( i = ${#bdot} - 1 ))
+
+    while (( i>=3 )) && [[ ${bdot:i-3:1} == [0-9] ]]; do
+        commified=",${bdot:i-2:3}${commified}"
+        (( i -= 3 ))
+    done
+
+    echo "${bdot:0:i+1}${commified}${adot}"
+}
+
 # create new folder and enter into it
 # usage: md [mode] DIR
 function md ()
