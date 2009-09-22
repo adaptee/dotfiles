@@ -117,6 +117,18 @@ function man ()
     LANG=en_US.utf-8 command man $* 
 }
 
+# grep the result of ps
+# Usage: psg [CMD-NAME]
+# Tip: [\1]  is used to exclude grep from the final result
+function psg()
+{
+    target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
+    command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
+    #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
+    ps auxw | grep -i -E "$target|$command"
+}
+
+
 # canonicalize path (including resolving symlinks) 
 function realpath()
 {
@@ -173,6 +185,15 @@ function red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
 #---------------------------------------------------------------------------#
 #                                 APT  utility                              #
 #---------------------------------------------------------------------------#
+
+
+# short name for 'sudo apt-get install'
+function inst()
+{
+    local pkgname
+    pkgname=$(echo $1|tr '[A-Z]' '[a-x]')
+    sudo apt-get install -y $pkgname
+}
 
 # add GPG key for debian-repo
 # usage: addkey 0x5017d4931d0acade295b68adfc6d7d9d009ed615
