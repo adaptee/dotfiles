@@ -202,7 +202,7 @@ autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\'
 
 " generic utility for toggle ui elements
 js<<EOF
-toggle_element = function (name)
+toggle_ui_element = function (name)
 {
     document.getElementById(name).collapsed ^= 1;
 }
@@ -489,25 +489,25 @@ EOF
 ""---------------------------------------------------------------------------------------------
 
 " toggle Firefox menu-bar
-noremap <Silent> <F1> :js toggle_element('toolbar-menubar')<CR>
+noremap <Silent> <F1> :js toggle_ui_element('toolbar-menubar')<CR>
 "noremap <Silent> <F1> :js toggle_menubar()<CR> 
 
 " toggle Firefox nav-bar
-noremap <Silent> <F2> :js toggle_element('nav-bar')<CR>
+noremap <Silent> <F2> :js toggle_ui_element('nav-bar')<CR>
 "noremap <Silent> <F2> :js toggle_navbar()<CR> 
 
 " toggle Firefox bookmark-bar
 "noremap <Silent> <F3> :js toggle_bookmarkbar()<CR> 
-noremap <Silent> <F3> :js toggle_element('PersonalToolbar')<CR>
+noremap <Silent> <F3> :js toggle_ui_element('PersonalToolbar')<CR>
 
 " toggle status-bar
-noremap <Silent> <F4> :js toggle_element('status-bar')<CR>
+noremap <Silent> <F4> :js toggle_ui_element('status-bar')<CR>
 
 " toggle diigo-toolbar
-noremap <Silent> <F5> :js toggle_element('diigotb-toolbar')<CR>
+noremap <Silent> <F5> :js toggle_ui_element('diigotb-toolbar')<CR>
 
 " toggle google-toolbar
-noremap <Silent> <F6> :js toggle_element('gtbToolbar')<CR>
+noremap <Silent> <F6> :js toggle_ui_element('gtbToolbar')<CR>
 
 " search firefox addons
 command! -nargs=* Addon :js search_in_firefox_addon("<args>")
