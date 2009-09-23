@@ -536,6 +536,16 @@ iab serach  search
 iab cosnt   const
 iab toogle  toggle
 iab partion partition
+iab htis     this
+iab tihs     this
+iab funciton function
+iab fucntion function
+iab funtion  function
+iab retunr   return
+iab reutrn   return
+iab sefl     self
+iab eslf     self
+
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
 iab ok      OK
