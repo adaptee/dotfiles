@@ -234,7 +234,6 @@ alias netsu='netstat -anpu'     # only show udp ports
 alias listening='netstat -tlnp' # list all listening ports;root previlige would be better
 
 alias ax='axel'
-alias get='wget -c'
 
 # download whole site.
 alias mirror='wget --random-wait -c -r -p -e robots=off -U mozilla'

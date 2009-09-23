@@ -409,6 +409,13 @@ function randomstr()
 #                               network related                             #
 #---------------------------------------------------------------------------#
 
+# download file. use "*'" to protect  weird charater within URL
+function get ()
+{
+    wget -c "$*"
+}
+
+
 # delelte all mails in the mailbox
 # usage: clearmail
 function clearmail ()
