@@ -38,9 +38,6 @@ set ttimeoutlen=100
 "enable mouse support anywhere(even in the console !)
 set mouse=a
 
-"make the window where mouse pointer on become current ; enumerate X-window style
-set mousefocus
-
 "make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
 

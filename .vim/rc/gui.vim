@@ -20,6 +20,9 @@ set guioptions+=a
 set guioptions-=r
 set guioptions-=l
 
+"make the window where mouse pointer on become current ; enumerate X-window style
+set mousefocus
+
 "maxmize the window when started
 if has ("win32")
     autocmd GUIEnter * simalt ~x
