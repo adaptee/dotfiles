@@ -227,7 +227,6 @@ alias mtr='mtr -t'
 
 alias rnet='sudo /etc/init.d/networking restart'
 alias rsmb='sudo /etc/init.d/samba restart'
-alias center='ssh jekyll@t1000-edu.unix-center.net'
 
 alias nets='netstat -anp'
 alias netst='netstat -anpt'     # only show tcp ports
