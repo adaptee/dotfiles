@@ -167,6 +167,9 @@ set smartcase
 "make vim more smart with upper/lower case when doing completion
 set infercase
 
+"When on, the ":substitute" flag 'g' is default on.
+set gdefault
+
 " toggle search result highlighting; now the unused key '\' finally can do something now....
 nmap <silent> \      :nohlsearch<CR>
 
