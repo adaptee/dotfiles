@@ -417,6 +417,13 @@ function get ()
 }
 
 
+# show my actually ip .
+function  myip () 
+{
+    curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g' 
+}
+
+
 # delelte all mails in the mailbox
 # usage: clearmail
 function clearmail ()

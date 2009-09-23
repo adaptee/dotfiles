@@ -244,8 +244,6 @@ alias you='youtube-dl -t'
 # dial-up quickly
 alias po='sudo pon dsl-provider'
 
-# show my actually ip .
-alias myip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g' "
 
 # start vpn quickly.
 alias vpn='sudo openvpn --config ~/.openvpn/alonweb.conf --ca ~/.openvpn/alonweb.crt'
