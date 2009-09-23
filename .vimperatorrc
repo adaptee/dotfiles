@@ -176,6 +176,9 @@ set! browser.tabs.tabMinWidth=100
 set! browser.tabs.tabMaxWidth=160
 " Always startup firefox with blank page
 set! browser.startup.page=0
+" Do not use font specified in HTML pages; use system defaults.
+set! browser.display.use_document_fonts=0
+
 
 "---------------------------------------------------------------------------------------------
 " Auto-Commands
@@ -197,7 +200,7 @@ autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\'
 "" Js scripts
 ""---------------------------------------------------------------------------------------------
 
-" Toggle specified item 
+" generic utility for toggle ui elements
 js<<EOF
 toggle_element = function (name)
 {
