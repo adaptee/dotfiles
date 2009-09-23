@@ -409,10 +409,11 @@ function randomstr()
 #                               network related                             #
 #---------------------------------------------------------------------------#
 
-# download file. use "*'" to protect  weird charater within URL
+# download file. use "$*" to protect  weird charater within URL
 function get ()
 {
-    wget -c "$*"
+    local URL=$1
+    echo "wget -c $URL"
 }
 
 
