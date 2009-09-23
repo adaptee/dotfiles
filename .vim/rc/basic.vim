@@ -164,6 +164,9 @@ set ignorecase
 "resume case-sensitive if the pattern contain upper-case letter
 set smartcase
 
+"make vim more smart with upper/lower case when doing completion
+set infercase
+
 " toggle search result highlighting; now the unused key '\' finally can do something now....
 nmap <silent> \      :nohlsearch<CR>
 
