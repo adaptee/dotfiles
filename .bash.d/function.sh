@@ -413,7 +413,7 @@ function randomstr()
 function get ()
 {
     local URL=$1
-    wget -c $URL
+    eval "wget -c '$URL'"
 }
 
 
