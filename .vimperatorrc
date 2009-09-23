@@ -233,6 +233,27 @@ toggle_bookmarkbar     = create_toggling_method ( bookmarkbar_is_visible,'B');
 
 EOF
 
+js<<EOF
+
+prefs_entry_toggler = function (entry_name, entry_init_value)
+{
+    var entry_curr_value = entry_init_value;
+
+    var inner_function = function ()
+    {
+        entry_curr_value ^= 1; 
+        var commands = "set! " + entry_name + "=" + entry_curr_value;
+        //alert(commands);
+        liberator.execute( commands);    
+    }
+    return inner_function;
+}
+
+custom_font_toggler = prefs_entry_toggler("browser.display.use_document_fonts", 0 );
+
+EOF
+
+
 " Because vimperator put all keywords into one single argument, we first split it.
 js<<EOF
 split_and_rejoin_args = function ( args)
@@ -555,6 +576,9 @@ noremap W :GFW<Space>
 " reload vimperatorrc
 command! Source :js load_vimperatorrc()
 noremap <Leader>v  :Source<CR>
+
+command! Font :js custom_font_toggler()
+noremap <Leader>f  :Font<CR>
 
 " Switch user-agent 
 "map <Silent> <F9> :js switch_useragent()<CR>
