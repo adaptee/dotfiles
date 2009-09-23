@@ -208,33 +208,8 @@ toggle_ui_element = function (name)
 }
 EOF
 
-" toggle 3 important bars.
+" toggle entry in prefs.js( about:config)
 js<<EOF
-// flag is for judging, and magic_char is for controling.
-create_toggling_method = function ( flag, magic_char )
-{
-    var inner_function = function ()
-    {
-        var operator = ( flag ^=1 ) ? '+' : '-';
-        var commands = "set " + "guioptions" + operator + "=" + magic_char ;
-        //alert(commands);
-        liberator.execute( commands);    
-    }
-    return inner_function;
-}
-
-menubar_is_visible     = 0;   // invisibel by default
-toolbar_is_visible     = 0;   // invisibel by default
-bookmarkbar_is_visible = 1;   // visible by default
-
-toggle_menubar         = create_toggling_method ( menubar_is_visible,'m');
-toggle_navbar          = create_toggling_method ( toolbar_is_visible,'T');
-toggle_bookmarkbar     = create_toggling_method ( bookmarkbar_is_visible,'B');
-
-EOF
-
-js<<EOF
-
 prefs_entry_toggler = function (entry_name, entry_init_value)
 {
     var entry_curr_value = entry_init_value;
@@ -511,14 +486,11 @@ EOF
 
 " toggle Firefox menu-bar
 noremap <Silent> <F1> :js toggle_ui_element('toolbar-menubar')<CR>
-"noremap <Silent> <F1> :js toggle_menubar()<CR> 
 
 " toggle Firefox nav-bar
 noremap <Silent> <F2> :js toggle_ui_element('nav-bar')<CR>
-"noremap <Silent> <F2> :js toggle_navbar()<CR> 
 
 " toggle Firefox bookmark-bar
-"noremap <Silent> <F3> :js toggle_bookmarkbar()<CR> 
 noremap <Silent> <F3> :js toggle_ui_element('PersonalToolbar')<CR>
 
 " toggle status-bar
