@@ -196,6 +196,10 @@ nnoremap q: <Nop>
 nnoremap q/ <Nop>
 nnoremap q? <Nop>
 
+" put next item in the center of screen, automatically
+nnoremap n nzz
+nnoremap N Nzz
+
 "--------------------------------------------------------------------------"
 "                             cut & copy & paste                           "
 "--------------------------------------------------------------------------"
@@ -277,6 +281,10 @@ inoremap <C-E>   <End>
 "make command-line operation more bash-style
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
+
+"after jumping, move that position to the center, automatically
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
 
 "stealed from VimTip 646
 "Move current line of text up and down(crossing other text)
