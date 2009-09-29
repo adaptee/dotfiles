@@ -56,8 +56,10 @@ if [ -f "${gappproxy}" ] ; then
     else
         python "${gappproxy}" &
         touch "${gappproxy_lock}"
-        trap "rm ${gappproxy_lock} " 0
     fi
+
+    # always remove the lock when session is ended.
+    trap "rm ${gappproxy_lock} " 0
 
 fi
 
