@@ -16,7 +16,7 @@ set history=1000
 
 "spell checking configureation
 set spelllang=en
-set spellsuggest=5
+set spellsuggest=best,5
 "setup where to store the good word(zg) and bad word(zw)
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
 " tips:
