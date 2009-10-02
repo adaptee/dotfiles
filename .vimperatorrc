@@ -550,7 +550,7 @@ command! Source :js load_vimperatorrc()
 noremap <Leader>v  :Source<CR>
 
 command! Font :js custom_font_toggler()
-noremap <Leader>f  :Font<CR>
+noremap <Leader>c  :Font<CR>
 
 " Switch user-agent 
 "map <Silent> <F9> :js switch_useragent()<CR>
