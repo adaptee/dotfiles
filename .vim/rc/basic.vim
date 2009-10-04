@@ -25,7 +25,7 @@ set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
 " z= : show candicate corrections.
 
 " none of these should be word dividers
-"set isk+=$,%,#
+"set isk+=_,$,@,%,#,-
 
 " Time to wait for a key mapping (default value causes an annoying delay)
 set timeout
