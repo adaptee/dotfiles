@@ -8,3 +8,9 @@ call omni#cpp#complete#Init()
 "setlocal comments-=://
 
 setlocal equalprg=indent
+
+" use iab to simplify inputting
+iab rt return true;
+iab rf return false;
+iab rn return NULL;
+iab r0 return 0;
