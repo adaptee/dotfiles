@@ -264,6 +264,8 @@ alias bd='cd ~/.bash.d'
 alias c='cl'
 alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
+# show date in pretty format.
+alias dt='date "+%Y-%m-%d %A    %T %Z"'
 alias f='find'
 alias fl='file'
 alias ff='cd ~/.mozilla/firefox/r2nisspk.default'
@@ -321,8 +323,6 @@ alias svndiff='svn diff -diff-cmd=colordiff'
 
 alias recordscreen='/usr/bin/byzanz-record ~/screen_record.gif'
 
-# show date in pretty format.
-alias date='date "+%Y-%m-%d %A    %T %Z"'
 
 # Do not print the introductory and copyright messages
 alias gdb='gdb --quiet' 
