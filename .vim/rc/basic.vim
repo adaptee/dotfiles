@@ -117,6 +117,9 @@ set lazyredraw
 "keep cursor stay away from the first and last 5 lines of the screen
 set scrolloff=5
 
+" leading indicator for wrapped lines
+"set showbreak=>>
+
 " alway info us whenever anything is changed via Ex command;default threshold value is 2
 set report=0
 
