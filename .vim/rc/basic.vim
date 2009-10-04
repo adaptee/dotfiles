@@ -108,6 +108,9 @@ set showcmd
 "Show matching brackets in insert mode
 set showmatch
 
+"make % apply to '<' and '>'
+set matchpairs+=<:>
+
 "no noisy beeping, just flipping the window
 set visualbell
 
