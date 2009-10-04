@@ -85,6 +85,34 @@ function fm ()
 #                              terminal  utility                            #
 #---------------------------------------------------------------------------#
 
+# create a backup for sepcified file/folder
+# usage: bak [file/folder]
+function bak()
+{
+    if [[ $# != 1  ]] ; then
+        echo "Usage: bak [file/folder] "
+        return 1
+    fi
+
+    local orig_name="$1"
+    # put timestamp in to the bakcup name
+    local backup_name="${1}.$(LANG=en date '+%Y-%m-%d').bak"
+
+    # make sure the specified file exist
+    if [[ ! -a "${orig_name}" ]] ; then
+        echo "Error: ${orig_name} does not exist!"
+        return 2 
+    fi
+
+    # processs folder a bit differently
+    if [[ -d "${orig_name}" ]] ; then
+        cp -v -r "${orig_name}" "${backup_name}"
+    else
+        cp -v  "${orig_name}" "${backup_name}"
+    fi
+}
+
+
 # often the next command after 'cd' is 'ls', so why not combine into one? 
 # usage: cl PATH
 function cl() { builtin cd "${@:-$HOME}" && ls; }
