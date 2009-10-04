@@ -205,7 +205,7 @@ nnoremap N Nzz
 "--------------------------------------------------------------------------"
 
 "use OS clipboard as unnamed register; for windows, this option solves both copy/paste
-set clipboard=unnamed
+set clipboard+=unnamed
 
 "super paste; now in insert mode, you can use <C-v> to do pasting
 inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
