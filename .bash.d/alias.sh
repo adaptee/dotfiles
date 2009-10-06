@@ -295,6 +295,7 @@ alias t='htop'
 alias tp='type'
 alias tpa='type -a'
 alias v='vim -p'
+alias vd='vimdiff'
 alias vi='vim -p'
 alias wh='which'
 # '-w' means supporting wildcards
