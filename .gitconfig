@@ -37,6 +37,8 @@
     co      = checkout
     cob     = checkout -b
     desc    = describe
+    df      = diff
+    dfc     = diff --cached
     st      = status
     wtf     = whatchanged
     unstage = reset HEAD --
