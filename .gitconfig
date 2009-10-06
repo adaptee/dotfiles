@@ -8,7 +8,7 @@
     #symlinks = false
     #logallrefupdates = true
 
-    ;gitproxy=""
+    #gitproxy=""
 
 [user]
     name  = Adaptee
@@ -21,10 +21,9 @@
     ui = auto
 
 [diff]
-    #renames = copy
-
-[merge]
-    tool = vimdiff
+    ;external = gitDiff
+[pager]
+    diff =
 
 [status]
     relativePath = true
@@ -50,3 +49,4 @@
 
 [help]
     autocorrect = true
+
