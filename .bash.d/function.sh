@@ -413,6 +413,12 @@ function parse_git_branch()
     git branch 2> /dev/null | sed -e '/^[^*]/d' | cut --delimiter=\  --fields=2
 }
 
+#access the default git diff behavior
+function git_diff() 
+{
+    git diff --no-ext-diff -w "$@" | vim -R -
+}
+
 # set specifiles as 'assume unchanged', i.e, not tracking the modification in
 # the workding tree;
 # usage:git_set_assume_unchanged
