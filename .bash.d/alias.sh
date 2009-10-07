@@ -287,6 +287,8 @@ alias mm='man man'
 alias ms='man ls'
 alias o='popd'
 alias p='pushd'
+alias py='python'
+alias ipy='ipython'
 alias s='sudo'
 #switch to specified user's environment, making su safer.
 alias su='su -l'
