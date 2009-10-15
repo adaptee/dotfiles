@@ -12,6 +12,12 @@ function! MakeHelpSystemNavigationWebStyle()
     nmap <buffer> S ?\|\S\+\|<CR>
 endfunction
 
+function! CopyCurrentFileName()
+    let @+ = expand('%:p')
+    let @* = expand('%:p')
+    let @" = expand('%:p')
+endfunc
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
