@@ -7,6 +7,9 @@ call omni#cpp#complete#Init()
 " current comment line.
 "setlocal comments-=://
 
+"highlight trailing white space and spaces before a <Tab> in C/C++ files.
+let c_space_errors=1
+
 setlocal equalprg=indent
 
 " use iab to simplify inputting

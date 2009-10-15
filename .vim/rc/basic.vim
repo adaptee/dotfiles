@@ -609,11 +609,6 @@ autocmd BufReadPost *
 "open included file in new tab, making gf(goto included file) more convenient
 map gf :tabnew <cfile><CR>
 
-" Highlight space errors in C/C++ source files (Vim tip #935)
-if $VIM_HATE_Space_ERRORS != '0'
-    let c_space_errors=1
-endif
-
 "Insert header automatically
 "autocmd BufNewFile *.c,*.h,*.sh,*.java,*.cpp,*.py,*.pl   call SetTitle()
 
