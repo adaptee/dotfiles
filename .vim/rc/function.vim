@@ -18,6 +18,24 @@ function! CopyCurrentFileName()
     let @" = expand('%:p')
 endfunc
 
+
+function! AdjustCommaRelatedSpacing()
+    if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
+        "memory current position
+        "normal m`
+
+        "remove extra white-spaces between comma and its previous word.
+        silent! :%s/\>\s\+,/,/ge
+        "remove extra white-spaces between comma and its next word.
+        silent! :%s/,\s\+\</, /ge
+        "if comma is directly followed by a word, insert one space
+        silent! :%s/,\</, /ge
+
+        "return to memorize position
+        "normal ``
+    endif
+endfunction
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------

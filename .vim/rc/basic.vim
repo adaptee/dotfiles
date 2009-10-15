@@ -592,7 +592,7 @@ nmap <silent><Left>  :cprevious<CR>
 nmap <silent><Right> :cnext<CR>
 
 "press v in quickfix window to preview while holding focus in quickfix window
-au FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
+autocmd FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
 
 "--------------------------------------------------------------------------"
 "                               auto-commands                              "
@@ -620,7 +620,7 @@ endif
 "autocmd BufNewFile *.c,*.h,*.sh,*.java,*.cpp,*.py,*.pl   call SetTitle()
 
 " Remove trailing spaces for C/C++ and Vim files when writing to disk
-au BufWritePre *                  call DeleteTrailingWS()
+autocmd BufWritePre *                  call DeleteTrailingWS()
 function! DeleteTrailingWS()
     if $VIM_HATE_Space_ERRORS != '0' &&
                 \(&filetype == 'c' || &filetype == 'cpp' || &filetype == 'vim'|| &filetype == 'python')
@@ -630,27 +630,8 @@ function! DeleteTrailingWS()
     endif
 endfunction
 
-au BufWritePre *                  call AdjustCommaPosition()
-"Generally, this function can be safely applied to source code file, too.
-"Because in most programming language, as in natural language, comma's position
-"is not critical, just a good style.
-function! AdjustCommaPosition()
-
-    if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
-        "memory current position
-        "normal m`
-
-        "remove extra white-spaces between comma and its previous word.
-        silent! :%s/\>\s\+,/,/ge
-        "remove extra white-spaces between comma and its next word.
-        silent! :%s/,\s\+\</, /ge
-        "if comma is directly followed by a word, insert one space
-        silent! :%s/,\</, /ge
-
-        "return to memorize position
-        "normal ``
-    endif
-endfunction
+" automatically adjust wrongly spaced commas when saving changes
+autocmd BufWritePre *                  call AdjustCommaRelatedSpacing()
 
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
@@ -839,10 +820,10 @@ set nrformats=alpha,hex
 
 "stealed from VimTip 1540
 " set 'updatetime' to 10 seconds when in insert mode
-au InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
-au InsertLeave * let &updatetime=updatetimerestore
+autocmd InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
+autocmd InsertLeave * let &updatetime=updatetimerestore
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
-au CursorHoldI * stopinsert
+autocmd CursorHoldI * stopinsert
 
 "--------------------------------------------------------------------------"
 "                                   garbage                                "
