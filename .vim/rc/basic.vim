@@ -180,8 +180,8 @@ set gdefault
 nmap <silent> \      :nohlsearch<CR>
 
 "search visually-selected text
-vmap  * :call VisualSearch('f')<CR>
-vmap  # :call VisualSearch('b')<CR>
+vmap  * :call SearchVisualSelectedText('f')<CR>
+vmap  # :call SearchVisualSelectedText('b')<CR>
 
 "Search visual-selected text and put the matching lines in a new tab
 vnoremap <Leader>g "*y<Esc>mzqqq:silent<Space>g/<C-R>*/y<Space>Q<CR>'z:tabnew<CR>"Qpdgg
@@ -765,7 +765,7 @@ function! ShortTabLine()
     return ret
 endfunction
 
-function! VisualSearch(direction) range
+function! SearchVisualSelectedText(direction) range
     let l:saved_reg = @"
     execute "normal! vgvy"
     let l:pattern = escape(@", '\\/.*$^~[]')
