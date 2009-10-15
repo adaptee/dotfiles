@@ -606,7 +606,7 @@ autocmd BufReadPost *
 "                         programming features                             "
 "--------------------------------------------------------------------------"
 
-"open included file in new buffer, making gf(goto included file) more convenient
+"open included file in new tab, making gf(goto included file) more convenient
 map gf :tabnew <cfile><CR>
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
