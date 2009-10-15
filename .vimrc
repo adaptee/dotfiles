@@ -5,6 +5,7 @@ elseif has ('win32')
     let $VIMLOCAL=$VIM.'/vimfiles'
 endif
 
+source $VIMLOCAL/rc/function.vim
 source $VIMLOCAL/rc/basic.vim
 source $VIMLOCAL/rc/plugin.vim
 
