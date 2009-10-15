@@ -19,7 +19,7 @@ endfunction
 " toggle off search result highlighting only once.
 let g:hlsearch_toggle_off_temporarily=0
 
-function! TogglehlsearchTemporarily()
+function! TogglehlsearchOffOnlyOnce()
     if g:hlsearch_toggle_off_temporarily == 0
         let g:hlsearch_toggle_off_temporarily = 1
         exec "nohlsearch"
