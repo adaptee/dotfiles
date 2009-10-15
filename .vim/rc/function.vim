@@ -59,6 +59,14 @@ function! DeleteTrailingWhiteSpaces()
         normal ``
 endfunction
 
+function! ToggleGUIMenuBar()
+    if &guioptions =~# 'm'
+        set guioptions-=m
+    else
+        set guioptions+=m
+    endif
+endfunction
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------

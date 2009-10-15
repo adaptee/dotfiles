@@ -34,15 +34,7 @@ endif
 "Alt+xxx is not used for menu shortcut
 "set winaltkeys=no
 
-"use <C-F2> to show/hide the GVIM menu
-map <silent> <A-F1> :call Togglemenu()<CR>
-function!Togglemenu()
-    if &guioptions =~# 'm'
-        set guioptions-=m
-    else
-        set guioptions+=m
-    endif
-endfunction
+map <silent> <A-F1> :call ToggleGUIMenuBar()<CR>
 
 "customize tab label
 "set guitablabel=%{ShortTabLabel()}
