@@ -1,6 +1,10 @@
 " Note, this file serves as a centralized location for defining vim functions.
 
 
+"-----------------------------------------------------------------------------
+"                                problematic part
+"-----------------------------------------------------------------------------
+
 " toggle off search result highlighting only once.
 let g:hlsearch_toggle_off_temporarily=0
 
