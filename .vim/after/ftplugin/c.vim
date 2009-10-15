@@ -8,7 +8,7 @@ call omni#cpp#complete#Init()
 "setlocal comments-=://
 
 "highlight trailing white space and spaces before a <Tab> in C/C++ files.
-let c_space_errors=1
+let c_space_errors = 1
 
 setlocal equalprg=indent
 
