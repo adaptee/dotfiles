@@ -309,9 +309,9 @@ vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 "invoke help system more smart
 nnoremap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 
-""make help system more like Web pages
-autocmd FileType help call ActLikeWeb()
-function! ActLikeWeb()
+""make help system navigation more like Web pages
+autocmd FileType help call MakeHelpSystemMoreWebStyle()
+function! MakeHelpSystemMoreWebStyle()
     " jump and jump back, like surfing web
     nmap <buffer> <CR> <C-]>
     nmap <buffer> <BS> <C-T>
