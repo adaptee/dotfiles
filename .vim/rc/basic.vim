@@ -765,6 +765,7 @@ function! ShortTabLine()
     return ret
 endfunction
 
+" for parameter direction, 'b' means backword, 'f' means forward
 function! SearchVisualSelectedText(direction) range
     let l:saved_reg = @"
     execute "normal! vgvy"
