@@ -460,7 +460,6 @@ command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 " then, copy the full path into 3 main registers: *, +, "
 nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 
-
 "--------------------------------------------------------------------------"
 "                                   window                                 "
 "--------------------------------------------------------------------------"
@@ -543,7 +542,6 @@ iab retunr   return
 iab reutrn   return
 iab sefl     self
 iab eslf     self
-
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
 iab ok      OK
