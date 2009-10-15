@@ -310,18 +310,7 @@ vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 nnoremap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 
 ""make help system navigation more like Web pages
-autocmd FileType help call MakeHelpSystemMoreWebStyle()
-function! MakeHelpSystemMoreWebStyle()
-    " jump and jump back, like surfing web
-    nmap <buffer> <CR> <C-]>
-    nmap <buffer> <BS> <C-T>
-    " jump to next/previous option item
-    nmap <buffer> o /'[a-z]\{2,\}'<CR>
-    nmap <buffer> O ?'[a-z]\{2,\}'<CR>
-    " jump to next/previous subject item
-    nmap <buffer> s /\|\S\+\|<CR>
-    nmap <buffer> S ?\|\S\+\|<CR>
-endfunction
+autocmd FileType help call MakeHelpSystemNavigationWebStyle()
 
 "improve the user-experience of man pages;press "\K", instead of "K"
 source $VIMRUNTIME/ftplugin/man.vim
