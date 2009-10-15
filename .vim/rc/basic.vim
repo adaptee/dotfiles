@@ -618,8 +618,8 @@ endif
 "autocmd BufNewFile *.c,*.h,*.sh,*.java,*.cpp,*.py,*.pl   call SetTitle()
 
 " Remove trailing spaces for C/C++ and Vim files when writing to disk
-autocmd BufWritePre *                  call DeleteTrailingWS()
-function! DeleteTrailingWS()
+autocmd BufWritePre *                  call DeleteTrailingWhiteSpaces()
+function! DeleteTrailingWhiteSpaces()
     if $VIM_HATE_Space_ERRORS != '0' &&
                 \(&filetype == 'c' || &filetype == 'cpp' || &filetype == 'vim'|| &filetype == 'python')
         normal m`
