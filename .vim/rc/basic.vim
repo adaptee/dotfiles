@@ -612,18 +612,10 @@ map gf :tabnew <cfile><CR>
 "Insert header automatically
 "autocmd BufNewFile *.c,*.h,*.sh,*.java,*.cpp,*.py,*.pl   call SetTitle()
 
-" Remove trailing spaces for C/C++ and Vim files when writing to disk
+" Remove trailing white spaces when saving files
 autocmd BufWritePre *                  call DeleteTrailingWhiteSpaces()
-function! DeleteTrailingWhiteSpaces()
-    if $VIM_HATE_Space_ERRORS != '0' &&
-                \(&filetype == 'c' || &filetype == 'cpp' || &filetype == 'vim'|| &filetype == 'python')
-        normal m`
-        silent! :%s/\s\+$//e
-        normal ``
-    endif
-endfunction
 
-" automatically adjust wrongly spaced commas when saving changes
+" Adjust wrongly spaced commas when saving changes
 autocmd BufWritePre *                  call AdjustCommaRelatedSpacing()
 
 " improve tag's utility

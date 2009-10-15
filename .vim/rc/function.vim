@@ -53,6 +53,12 @@ function! SearchVisualSelectedText(direction) range
     let @" = l:saved_reg
 endfunc
 
+function! DeleteTrailingWhiteSpaces()
+        normal m`
+        silent! :%s/\s\+$//e
+        normal ``
+endfunction
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
