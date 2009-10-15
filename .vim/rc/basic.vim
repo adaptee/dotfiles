@@ -456,7 +456,7 @@ nmap <Leader>A :qa!<CR>
 command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 " add more functionality to existing <C-g>
-" first , show the full path
+" first, show the full path
 " then, copy the full path into 3 main registers: *, +, "
 nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 
