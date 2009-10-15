@@ -706,16 +706,6 @@ endfunction
 "                            utility functions                             "
 "--------------------------------------------------------------------------"
 
-function! Cwd()
-    let cwd = getcwd()
-    return "e " . cwd
-endfunc
-
-function! CurDir()
-    let curdir = tolower(substitute(getcwd(), '$HOME', "~/", "g"))
-    return curdir
-endf
-
 function! SwitchToBuf(filename)
     "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
     " find in current tab
