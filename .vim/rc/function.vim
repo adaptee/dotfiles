@@ -101,7 +101,7 @@ function! CompileCurrentFile()
     endif
 endfunction
 
-function! Debug()
+function! DebugCurrentFile()
     exec "w"
     if &filetype == 'c'
         exec "!gcc % -g -o %<"

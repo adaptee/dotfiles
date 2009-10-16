@@ -628,7 +628,7 @@ function! ClosePair(char)
 endf
 
 "map <F5> :call CompileCurrentFile()<CR>
-"map <C-F5> :call Debug()<CR>
+"map <C-F5> :call DebugCurrentFile()<CR>
 
 
 function! SetTitle()
