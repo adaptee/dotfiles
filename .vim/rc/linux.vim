@@ -2,7 +2,7 @@
 set fileformats=unix,dos,mac
 
 "Fast reading of .vimrc
-nmap <silent> <leader>v :call SwitchToBuf("$HOME/.vimrc")<CR>
+nmap <silent> <leader>v :call SwitchToBuffer("$HOME/.vimrc")<CR>
 
 "When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! bufwritepost .vimrc source $HOME/.vimrc

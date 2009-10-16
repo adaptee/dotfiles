@@ -143,7 +143,7 @@ function! ShowDiffSinceLastSave()
     diffthis
 endfunction
 
-function! SwitchToBuf(filename)
+function! SwitchToBuffer(filename)
     "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
     " find in current tab
     let bufwinnr = bufwinnr(a:filename)
