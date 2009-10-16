@@ -203,11 +203,22 @@ function! ShortTabLine()
 endfunction
 
 "only show filename in the tab label; path is not included
-function! ShortTabLabel ()
+function! ShortGuiTabLabel ()
     let bufnrlist = tabpagebuflist (v:lnum)
     let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
     let filename = fnamemodify (label, ':t')
     return filename
+endfunction
+
+function! InfoGuiTooltip()
+    "get window count
+    let wincount = tabpagewinnr(tabpagenr(),"$")
+    let bufferlist=""
+    "get name of active buffers in windows
+    for i in tabpagebuflist()
+        let bufferlist .= "[".fnamemodify(bufname(i),":t")."] "
+    endfor
+    return bufname($)."\n windows: ".wincount." " .bufferlist. " "
 endfunction
 
 "-----------------------------------------------------------------------------

@@ -37,23 +37,13 @@ endif
 map <silent> <A-F1> :call ToggleGUIMenuBar()<CR>
 
 "customize tab label
-"set guitablabel=%{ShortTabLabel()}
+"set guitablabel=%{ShortGuiTabLabel()}
 set guitablabel=%N.%t\ %m
 
 
 "customize tab's tooltip
 set guitabtooltip=%!InfoGuiTooltip()
 
-function! InfoGuiTooltip()
-    "get window count
-    let wincount = tabpagewinnr(tabpagenr(),"$")
-    let bufferlist=""
-    "get name of active buffers in windows
-    for i in tabpagebuflist()
-        let bufferlist .= "[".fnamemodify(bufname(i),":t")."] "
-    endfor
-    return bufname($)."\n windows: ".wincount." " .bufferlist. " "
-endfunction
 
 "enable edit area tooltip, after cursor staying for 800ms;for example, on a folded area
 set ballooneval
