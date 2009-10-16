@@ -210,7 +210,7 @@ function! ShortGuiTabLabel ()
     return filename
 endfunction
 
-function! InfoGuiTooltip()
+function! GuiTabToolTip()
     "get window count
     let wincount = tabpagewinnr(tabpagenr(),"$")
     let bufferlist=""

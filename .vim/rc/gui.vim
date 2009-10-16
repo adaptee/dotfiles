@@ -42,7 +42,7 @@ set guitablabel=%N.%t\ %m
 
 
 "customize tab's tooltip
-set guitabtooltip=%!InfoGuiTooltip()
+set guitabtooltip=%!GuiTabToolTip()
 
 
 "enable edit area tooltip, after cursor staying for 800ms;for example, on a folded area
