@@ -40,13 +40,6 @@ map <silent> <A-F1> :call ToggleGUIMenuBar()<CR>
 "set guitablabel=%{ShortTabLabel()}
 set guitablabel=%N.%t\ %m
 
-"only show filename in the tab label; path is not included
-function! ShortTabLabel ()
-    let bufnrlist = tabpagebuflist (v:lnum)
-    let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
-    let filename = fnamemodify (label, ':t')
-    return filename
-endfunction
 
 "customize tab's tooltip
 set guitabtooltip=%!InfoGuiTooltip()
