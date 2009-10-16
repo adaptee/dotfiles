@@ -724,7 +724,7 @@ autocmd CursorHoldI * stopinsert
 "                                   garbage                                "
 "--------------------------------------------------------------------------"
 
-"Map F7 to show the change since last time save
+"show the change since last save
 "nmap <F7> :call ShowDiffSinceLastSave()<CR>
 
 
