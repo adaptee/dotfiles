@@ -629,17 +629,6 @@ endf
 
 "map <F5> :call CompileRun()<CR>
 "map <C-F5> :call Debug()<CR>
-function! CompileRun()
-    exec "w"
-    exec "!clear"
-    if &filetype == 'c'
-        exec "!gcc % -g -o %<"
-        exec "!./%<"
-    elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!java %<"
-    endif
-endfunction
 
 function! Debug()
     exec "w"

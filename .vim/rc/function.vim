@@ -87,6 +87,20 @@ function! MergeBlankLinesIntoSingleLine()
     nohlsearch
 
 endfunc
+
+
+function! CompileRun()
+    exec "w"
+    exec "!clear"
+    if &filetype == 'c'
+        exec "!gcc % -g -o %<"
+        exec "!./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!java %<"
+    endif
+endfunction
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
