@@ -631,20 +631,6 @@ endf
 "map <C-F5> :call DebugCurrentFile()<CR>
 
 
-function! SetTitle()
-    if &filetype == 'sh'
-        call setline(1, "#!/bin/bash")
-        call setline(2, "")
-    else
-        call setline(1, "/*************************************************************************")
-        call append(line("."), " Author: Jekyll.Wu")
-        call append(line(".")+1, " Created Time: ".strftime("%c"))
-        call append(line(".")+2, " File Name: ".expand("%"))
-        call append(line(".")+3, " Description: ")
-        call append(line(".")+4, " ************************************************************************/")
-        call append(line(".")+5, "")
-    endif
-endfunction
 
 "--------------------------------------------------------------------------"
 "                            utility functions                             "
