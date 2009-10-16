@@ -89,7 +89,7 @@ function! MergeBlankLinesIntoSingleLine()
 endfunc
 
 
-function! CompileRun()
+function! CompileCurrentFile()
     exec "w"
     exec "!clear"
     if &filetype == 'c'

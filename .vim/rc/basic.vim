@@ -627,7 +627,7 @@ function! ClosePair(char)
     endif
 endf
 
-"map <F5> :call CompileRun()<CR>
+"map <F5> :call CompileCurrentFile()<CR>
 "map <C-F5> :call Debug()<CR>
 
 function! Debug()
