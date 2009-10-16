@@ -133,7 +133,7 @@ function! InsertClosingPair(char)
     endif
 endf
 
-function! DiffWithFileFromDisk()
+function! ShowDiffSinceLastSave()
     let filename=expand('%')
     let diffname = filename.'.fileFromBuffer'
     exec 'saveas! '.diffname
