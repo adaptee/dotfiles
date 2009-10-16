@@ -112,7 +112,7 @@ function! DebugCurrentFile()
     endif
 endfunction
 
-function! SetTitle()
+function! InsertHeaderForBashScript()
     if &filetype == 'sh'
         call setline(1, "#!/bin/bash")
         call setline(2, "")

@@ -588,7 +588,7 @@ autocmd BufReadPost *
 map gf :tabnew <cfile><CR>
 
 "Insert header automatically
-"autocmd BufNewFile *.c,*.h,*.sh,*.java,*.cpp,*.py,*.pl   call SetTitle()
+"autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
 
 " Remove trailing white spaces when saving files
 autocmd BufWritePre *                  call DeleteTrailingWhiteSpaces()
