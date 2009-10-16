@@ -113,10 +113,8 @@ function! DebugCurrentFile()
 endfunction
 
 function! InsertHeaderForBashScript()
-    if &filetype == 'sh'
         call setline(1, "#!/bin/bash")
         call setline(2, "")
-    else
         call setline(1, "/*************************************************************************")
         call append(line("."), " Author: Jekyll.Wu")
         call append(line(".")+1, " Created Time: ".strftime("%c"))
