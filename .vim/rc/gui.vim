@@ -48,7 +48,7 @@ set guitabtooltip=%!GuiTabToolTip()
 "enable edit area tooltip, after cursor staying for 800ms;for example, on a folded area
 set ballooneval
 set balloondelay=800
-set balloonexpr=FoldSpellBalloon()
+set balloonexpr=MyBalloonExpr()
 
 
 

@@ -221,7 +221,7 @@ function! GuiTabToolTip()
     return bufname($)."\n windows: ".wincount." " .bufferlist. " "
 endfunction
 
-function! FoldSpellBalloon()
+function! MyBalloonExpr()
     let foldStart = foldclosed(v:beval_lnum )
     let foldEnd = foldclosedend(v:beval_lnum)
     let lines = []
