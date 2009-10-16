@@ -125,7 +125,7 @@ function! InsertHeaderForBashScript()
     endif
 endfunction
 
-function! ClosePair(char)
+function! InsertClosingPair(char)
     if getline('.')[col('.') - 1] == a:char
         return "\<Right>"
     else

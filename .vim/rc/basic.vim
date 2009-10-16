@@ -610,13 +610,13 @@ set tags=./tags,tags;
 
 "make VIM auto-complete the brackets!
 "inoremap ( ()<ESC>i
-"inoremap ) <C-R>=ClosePair(')')<CR>
+"inoremap ) <C-R>=InsertClosingPair(')')<CR>
 inoremap { {}<ESC>i
-inoremap } <C-R>=ClosePair('}')<CR>
+inoremap } <C-R>=InsertClosingPair('}')<CR>
 inoremap [ []<ESC>i
-inoremap ] <C-R>=ClosePair(']')<CR>
+inoremap ] <C-R>=InsertClosingPair(']')<CR>
 inoremap < <><ESC>i
-inoremap > <C-R>=ClosePair('>')<CR>
+inoremap > <C-R>=InsertClosingPair('>')<CR>
 inoremap " ""<ESC>i
 
 
