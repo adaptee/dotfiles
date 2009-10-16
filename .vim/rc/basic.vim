@@ -371,27 +371,6 @@ vnoremap <S-Tab> <gv
 nnoremap <silent><Leader>Z :call SqueezeWhiteSpace()<CR>
 
 " delete trailing white spaces and merge mulitiple empty lines.
-function! SqueezeWhiteSpace()
-
-    " remember current position
-    normal mt
-
-    " first, delete all trailing white spaces in each line
-    silent! :%s/\s\+$//e
-
-    " second, empty lines containing only white spaces.
-    silent! :%s/^\s*$//g
-
-    " finally, squeeze contiguous blank lines into single line
-    silent! :%s/^\s*\n\{2,}/\r/
-
-    " retrun to original position
-    silent! normal 't
-
-    " disable highlighting search result temporarily.
-    nohlsearch
-
-endfunc
 
 "--------------------------------------------------------------------------"
 "                                   folding                                "
