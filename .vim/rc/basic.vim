@@ -619,13 +619,6 @@ inoremap < <><ESC>i
 inoremap > <C-R>=ClosePair('>')<CR>
 inoremap " ""<ESC>i
 
-function! ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endf
 
 "map <F5> :call CompileCurrentFile()<CR>
 "map <C-F5> :call DebugCurrentFile()<CR>

@@ -125,6 +125,13 @@ function! InsertHeaderForBashScript()
     endif
 endfunction
 
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
