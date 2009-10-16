@@ -132,6 +132,17 @@ function! InsertClosingPair(char)
         return a:char
     endif
 endf
+
+function! DiffWithFileFromDisk()
+    let filename=expand('%')
+    let diffname = filename.'.fileFromBuffer'
+    exec 'saveas! '.diffname
+    diffthis
+    vsplit
+    exec 'edit '.filename
+    diffthis
+endfunction
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
