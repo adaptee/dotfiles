@@ -630,16 +630,6 @@ endf
 "map <F5> :call CompileCurrentFile()<CR>
 "map <C-F5> :call Debug()<CR>
 
-function! Debug()
-    exec "w"
-    if &filetype == 'c'
-        exec "!gcc % -g -o %<"
-        exec "!gdb %<"
-    elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!jdb %<"
-    endif
-endfunction
 
 function! SetTitle()
     if &filetype == 'sh'

@@ -101,6 +101,17 @@ function! CompileCurrentFile()
     endif
 endfunction
 
+function! Debug()
+    exec "w"
+    if &filetype == 'c'
+        exec "!gcc % -g -o %<"
+        exec "!gdb %<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!jdb %<"
+    endif
+endfunction
+
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
