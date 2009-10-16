@@ -368,9 +368,8 @@ vnoremap < <gv
 vnoremap <Tab>   >gv
 vnoremap <S-Tab> <gv
 
-nnoremap <silent><Leader>Z :call SqueezeWhiteSpace()<CR>
-
-" delete trailing white spaces and merge mulitiple empty lines.
+" merge multiple continurous blank lines into single one.
+nnoremap <silent><Leader>Z :call MergeBlankLinesIntoSingleLine()<CR>
 
 "--------------------------------------------------------------------------"
 "                                   folding                                "

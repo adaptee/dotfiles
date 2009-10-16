@@ -18,7 +18,6 @@ function! CopyCurrentFileName()
     let @" = expand('%:p')
 endfunc
 
-
 function! AdjustCommaRelatedSpacing()
     if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
         "memory current position
@@ -67,7 +66,7 @@ function! ToggleGUIMenuBar()
     endif
 endfunction
 
-function! SqueezeWhiteSpace()
+function! MergeBlankLinesIntoSingleLine()
 
     " remember current position
     normal mt
