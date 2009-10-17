@@ -2,11 +2,11 @@
 #===============================================================================
 #
 #          FILE:  alias.sh
-# 
-#         USAGE:  ./alias.sh 
-# 
-#   DESCRIPTION:  where alias is placed toghether. 
-# 
+#
+#         USAGE:  ./alias.sh
+#
+#   DESCRIPTION:  where alias is placed toghether.
+#
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
 #          BUGS:  ---
@@ -27,7 +27,7 @@
 #                                   ls alias                                #
 #---------------------------------------------------------------------------#
 
-# enable color support of ls(LS_COLORS) 
+# enable color support of ls(LS_COLORS)
 if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"
     alias ls='ls --color=auto '
@@ -36,7 +36,7 @@ fi
 # 'F' means show trailing handy hints of the entry type
 alias l='ls -F'
 # 'A' means show hidden items. but not including . and ..
-alias la='l -A'  
+alias la='l -A'
 
 # '-1' means one file per line
 alias l1='l -1'
@@ -57,7 +57,7 @@ alias newest='ll -t * | head -1'
 # list file by size in descending order; sub-folder not considered.
 alias bigfile='ll -S'
 
-# count item under current foleder; 
+# count item under current foleder;
 alias num='expr $(ll | wc -l) - 1'
 
 
@@ -93,7 +93,7 @@ alias treed='tree -d'
 #                         df & du & mount alias                             #
 #---------------------------------------------------------------------------#
 
-# df improved: show FS type, human-friendly size and ignore pseudo FS. 
+# df improved: show FS type, human-friendly size and ignore pseudo FS.
 alias df='LANG=en df -h -T -x tmpfs | grep -vE "(gvfs|procbususb|rootfs)"'
 
 # show size in human-friednly way.
@@ -136,7 +136,7 @@ alias 755='chmod 755'
 #---------------------------------------------------------------------------#
 
 # customize the displaying layout for command ps.
-alias ps='ps w -o user,pid,ppid,%cpu,%mem,rss,tname,stat,policy,wchan,start_time,bsdtime,args'
+alias ps='ps w -o user,pid,ppid,%cpu,%mem,vsz,rss,tname,stat,policy,wchan,start_time,bsdtime,args'
 
 # '-n' means sort sibling processes by numeric pid, not by name
 alias pstree='pstree -n'
@@ -328,7 +328,7 @@ alias recordscreen='/usr/bin/byzanz-record ~/screen_record.gif'
 
 
 # Do not print the introductory and copyright messages
-alias gdb='gdb --quiet' 
+alias gdb='gdb --quiet'
 
 #sort dot-formatted ip address in numericly-ascending way
 alias sortip='sort -nt . -k 1,1 -k 2,2 -k 3,3 -k 4,4'
