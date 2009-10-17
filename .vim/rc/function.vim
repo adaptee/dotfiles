@@ -92,25 +92,25 @@ endfunc
 
 
 function! CompileCurrentFile()
-    exec "w"
-    exec "!clear"
+    execute "w"
+    execute "!clear"
     if &filetype == 'c'
-        exec "!gcc % -g -o %<"
-        exec "!./%<"
+        execute "!gcc % -g -o %<"
+        execute "!./%<"
     elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!java %<"
+        execute "!javac %"
+        execute "!java %<"
     endif
 endfunction
 
 function! DebugCurrentFile()
-    exec "w"
+    execute "w"
     if &filetype == 'c'
-        exec "!gcc % -g -o %<"
-        exec "!gdb %<"
+        execute "!gcc % -g -o %<"
+        execute "!gdb %<"
     elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!jdb %<"
+        execute "!javac %"
+        execute "!jdb %<"
     endif
 endfunction
 
@@ -138,10 +138,10 @@ endf
 function! ShowDiffSinceLastSave()
     let filename=expand('%')
     let diffname = filename.'.fileFromBuffer'
-    exec 'saveas! '.diffname
+    execute 'saveas! '.diffname
     diffthis
     vsplit
-    exec 'edit '.filename
+    execute 'edit '.filename
     diffthis
 endfunction
 
@@ -150,7 +150,7 @@ function! SwitchToBuffer(filename)
     " find in current tab
     let bufwinnr = bufwinnr(a:filename)
     if bufwinnr != -1
-        exec bufwinnr . "wincmd w"
+        execute bufwinnr . "wincmd w"
         return
     else
         " find in each tab
@@ -159,15 +159,15 @@ function! SwitchToBuffer(filename)
         while tab <= tabpagenr("$")
             let bufwinnr = bufwinnr(a:filename)
             if bufwinnr != -1
-                exec "normal " . tab . "gt"
-                exec bufwinnr . "wincmd w"
+                execute "normal " . tab . "gt"
+                execute bufwinnr . "wincmd w"
                 return
             endif
             tabnext
             let tab = tab + 1
         endwhile
         " not exist, new tab
-        exec "tabnew " . a:filename
+        execute "tabnew " . a:filename
     endif
 endfunction
 
@@ -259,7 +259,7 @@ let g:hlsearch_toggle_off_temporarily=0
 function! TogglehlsearchOffOnlyOnce()
     if g:hlsearch_toggle_off_temporarily == 0
         let g:hlsearch_toggle_off_temporarily = 1
-        exec "nohlsearch"
+        execute "nohlsearch"
         " this forcing redrawing should not be omitted here.
         echo " hlsearch is disabled temporarily."
         redraw
