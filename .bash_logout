@@ -1,5 +1,8 @@
 # ~/.bash_logout: executed by bash(1) when login shell exits.
 
+# remove the lock for google app proxy
+rm ~/.gappproxy.lock
+
 # backup firefox profile
 if [ -x "${HOME}/bin/pack_firefox.sh" ];then
     ${HOME}/bin/pack_firefox.sh backup

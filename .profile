@@ -36,7 +36,7 @@ fi
 #------------------------------------------------------------------------------
 #                           restore firefox profile.                          #
 #------------------------------------------------------------------------------
-# 
+#
 if [ -x "${HOME}/bin/pack-firefox.sh" ];then
     ${HOME}/bin/pack-firefox.sh restore &
 fi
@@ -58,9 +58,6 @@ if [ -f "${gappproxy}" ] ; then
         touch "${gappproxy_lock}"
     fi
 
-    # always remove the lock when session is ended.
-    trap "rm ${gappproxy_lock} " 0
-
 fi
 
 #------------------------------------------------------------------------------
@@ -71,7 +68,7 @@ SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS="-s"
 
 if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
-    # now, all application within this session know how to communicate with 
+    # now, all application within this session know how to communicate with
     # ssh-agent by enviroment variable $SSH_AGENT_PID
     eval `${SSHAGENT} ${SSHAGENTARGS}`
 
