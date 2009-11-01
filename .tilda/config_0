@@ -1,7 +1,7 @@
 tilda_config_version = "0.9.6"
 # image = ""
 # command = ""
-font = "Bitstream Vera Sans Mono 13"
+font = "DejaVu Sans Mono 13"
 key = "Pause"
 title = "Tilda"
 background_color = "white"
