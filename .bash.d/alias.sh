@@ -222,6 +222,8 @@ alias pi='pinger'
 alias pingl='ping 127.0.0.1'
 alias pingg='ping 192.168.1.1'
 
+alias dns='cat /etc/resolv.conf'
+
 alias trace='tracepath'
 alias mtr='mtr -t'
 
