@@ -51,7 +51,7 @@ else
     BRIGHTCYAN='\e[01;36m'
     WHITE='\e[01;37m'
 
-    NOCOLOR='\e[00m'              
+    NOCOLOR='\e[00m'
 fi
 
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -89,13 +89,13 @@ fi
 
 PS1_COLON='\['${BRIGHTGREEN}'\]'':'
 
-# show current folder; only the last part, not full path 
+# show current folder; only the last part, not full path
 PS1_PWD='\['${BRIGHTBLUE}'\]''\W'
 
 # show which git branch we are on
 PS1_GIT_BRANCH='`b=$(parse_git_branch); if [ x"$b" != "x" ]; then echo -n -e "\['${BRIGHTYELLOW}'\]($b)\['${NOCOLOR}'\]"; fi`'
 
-PS1="${PS1_CHROOT}${PS1_EXITCODE}${PS1_HISTNUMER}${PS1_USER}${PS1_AT}${PS1_HOST}${PS1_COLON}${PS1_PWD}${PS1_GIT_BRANCH}${PS1_SYMBOL}" 
+PS1="${PS1_CHROOT}${PS1_EXITCODE}${PS1_HISTNUMER}${PS1_USER}${PS1_AT}${PS1_HOST}${PS1_COLON}${PS1_PWD}${PS1_GIT_BRANCH}${PS1_SYMBOL}"
 
 case "$TERM" in
     xterm*|rxvt*)
@@ -128,7 +128,7 @@ shopt -s cdspell
 # allow 'cd' to use variable's value as its argument
 shopt -s cdable_vars
 
-# check a command found in hash-table does exist in system before executing 
+# check a command found in hash-table does exist in system before executing
 shopt -s checkhash
 
 # when it is the only candidate, do not ignore it
@@ -167,9 +167,9 @@ set bell-style none
 # enables both ignorespace and ignoredups
 export HISTCONTROL=ignoreboth
 
-# print the time stamp associated with each history entry 
+# print the time stamp associated with each history entry
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
- 
+
 export HISTFILESIZE=50000
 export HISTSIZE=50000
 
@@ -191,13 +191,13 @@ export FIGNORE='.o:.bak:.tmp:.orig'
 
 #-----------------------------------development-------------------------------#
 
-# for reference: 
+# for reference:
 # http://udrepper.livejournal.com/11429.html
 # http://www.pixelbeat.org/settings/.bashrc
 # enbale the auto init & clear feature of malloc() and free() in glibc
 #export MALLOC_CHECK_=3
 #export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
-                                                                                  
+
 
 
 #-----------------------------------vim related-------------------------------#
@@ -210,8 +210,8 @@ export CTAGS='--c-kinds=+x --c++-kinds=+x --fields=+aiSt --extra=+q'
 
 # colorful man page
 
-export PAGER="less" 
-export LESS='--ignore-case --squeeze-blank-lines --LONG-PROMPT --RAW-CONTROL-CHARS ' 
+export PAGER="less"
+export LESS='--ignore-case --squeeze-blank-lines --LONG-PROMPT --RAW-CONTROL-CHARS '
 export BROWSER="$PAGER"
 export LESS_TERMCAP_mb=$'\e[01;31m'
 export LESS_TERMCAP_md=$'\e[01;32m'
@@ -222,8 +222,8 @@ export LESS_TERMCAP_ue=$'\e[01;34m'
 export LESS_TERMCAP_us=$'\e[01;35m'
 
 # make less more friendly for non-text input files, see lesspipe(1)
-which lesspipe &>/dev/null && eval "$(lesspipe)" 
-which lesspipe.sh &>/dev/null && eval "$(lesspipe.sh)" 
+which lesspipe &>/dev/null && eval "$(lesspipe)"
+which lesspipe.sh &>/dev/null && eval "$(lesspipe.sh)"
 
 # press "v" to call-out VIM, even when less is used together with pipeline.
 echo "v pipe $ vim - \n" > "/tmp/lesskey-${USER}"
@@ -245,10 +245,7 @@ fi
 
 Source "${PRIVATE_BASH_DIR}/cdargs-bash.sh"
 
-complete -c sudo
-complete -c s
-
-complete -o filenames -F _man m 
+complete -o filenames -F _man m
 complete -o filenames -F _man ma
 complete -o filenames -F _man man2txt
 
@@ -274,11 +271,4 @@ complete -o filenames -F _longopt g
 
 # only provide .Z .gz and .tgz file to gunzip
 complete -A file -X '!*.@(Z|gz|tgz)' gunzip
-
-#complete -o filenames -F _dpkg dpi
-#complete -o filenames -F _dpkg dpp
-#complete -o filenames -F _dpkg dps
-#complete -o filenames -F _dpkg dpS
-#complete -o filenames -F _dpkg dpl
-#complete -o filenames -F _dpkg dpL
 
