@@ -2,11 +2,11 @@
 #===============================================================================
 #
 #          FILE:  function.sh
-# 
-#         USAGE:  ./function.sh 
-# 
+#
+#         USAGE:  ./function.sh
+#
 #   DESCRIPTION:  Varisous bash functions
-# 
+#
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
 #          BUGS:  ---
@@ -26,7 +26,7 @@
 # grep your history!
 # usage: hgrep KEY_WORD
 function hgrep ()
-{ 
+{
     # sorted and uniqed.
     history | grep -i "$*" | sort -k 2 | uniq -s 7 | sort -g | grep -i "$*"
 
@@ -37,8 +37,8 @@ function hgrep ()
 # list your history
 # usage: hlist [recent-number]
 function hlist ()
-{ 
-    if [ "$1" -lt "30"  ];then    
+{
+    if [ "$1" -lt "30"  ];then
         history "$1"
     else
         history "$1" | less
@@ -48,13 +48,13 @@ function hlist ()
 # list last ten commands
 # usage: hh
 function hh ()
-{ 
+{
     history 10;
 }
 
-function topN () 
+function topN ()
 {
-    history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20; 
+    history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20;
 
 }
 
@@ -69,8 +69,8 @@ function go ()
     local item
     for item in "$@";do
         #echo "${item}"
-        #gnome-open "${item}" 
-        xdg-open "${item}"  
+        #gnome-open "${item}"
+        xdg-open "${item}"
     done
 }
 
@@ -101,7 +101,7 @@ function bak()
     # make sure the specified file exist
     if [[ ! -a "${orig_name}" ]] ; then
         echo "Error: ${orig_name} does not exist!"
-        return 2 
+        return 2
     fi
 
     # processs folder a bit differently
@@ -113,7 +113,7 @@ function bak()
 }
 
 
-# often the next command after 'cd' is 'ls', so why not combine into one? 
+# often the next command after 'cd' is 'ls', so why not combine into one?
 # usage: cl PATH
 function cl() { builtin cd "${@:-$HOME}" && ls; }
 
@@ -147,22 +147,22 @@ function md ()
         newdir="$1"
     else
         # if mode is specified , use that
-        if [ -n "$2" ]; then 
+        if [ -n "$2" ]; then
             command mkdir -p -m $1 "$2" && newdir="$2"
-        else 
+        else
             command mkdir -p "$1" && newdir="$1"
         fi
     fi
 
     # No matter what, cd into it
-    builtin cd "$newdir" 
+    builtin cd "$newdir"
 }
 
 # always run man with English locale, because I do not like
 # translated version
 function man ()
 {
-    LANG=en_US.utf-8 command man $* 
+    LANG=en_US.utf-8 command man $*
 }
 
 # grep the result of ps
@@ -177,11 +177,11 @@ function psg()
 }
 
 
-# canonicalize path (including resolving symlinks) 
+# canonicalize path (including resolving symlinks)
 function realpath()
 {
     # first consider accessable commnands
-    if which "$1" > /dev/null ; then 
+    if which "$1" > /dev/null ; then
         readlink -f $(which "$1")
     else
         readlink -f "$1"
@@ -191,28 +191,28 @@ function realpath()
 # echo bash variables more easily
 # here we use indirect refence format: ${!env_var}
 # usage: e shell_var_name...
-function e () 
+function e ()
 {
     local item
 
     for item in "$@";do
         builtin echo "${!item}";
     done
-}  
+}
 
 
 # echo environment variables more easily(lower-case input is ok)
 # here we use indirect refence format: ${!env_var}
 # usage: ee env_var_name...
-function ee () 
+function ee ()
 {
     local item
 
     for item in "$@";do
-        env_var=$(echo "${item}" |tr '[a-z]' '[A-Z]'); 
+        env_var=$(echo "${item}" |tr '[a-z]' '[A-Z]');
         builtin echo "${!env_var}";
     done
-}  
+}
 
 # empty specified files
 # usage: null files...
@@ -250,7 +250,7 @@ function addkey ()
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com "$1"
 }
 
-# view sources.list, or append new entry 
+# view sources.list, or append new entry
 # usage: addscr [source-entry]
 function addsrc ()
 {
@@ -308,7 +308,7 @@ function man2txt()
 {
     local item
     for item in "$@";do
-        man ${item} | col -b >"${item}.txt" 
+        man ${item} | col -b >"${item}.txt"
     done
 }
 
@@ -318,7 +318,7 @@ function man2pdf()
 {
     local item
     for item in "$@";do
-        man -t ${item} | ps2pdf - >"${item}.pdf" 
+        man -t ${item} | ps2pdf - >"${item}.pdf"
     done
 }
 
@@ -343,7 +343,7 @@ function gb2u8()
         if  enca "${item}" | grep -i 'GB2312\|Unrecognize' >/dev/null  ; then
 
             iconv -f gb18030  -t utf8 -c "${item}" > "${item}.new"  &&  \
-            mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"    
+            mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"
 
             echo "${item} is converted into utf-8 encoding"
         fi
@@ -360,7 +360,7 @@ function u82gb()
         if echo $(enca "${item}" ) | grep -i "UTF-8" >/dev/null ; then
 
             iconv -f utf8 -t gb18030  -c "${item}" > "${item}.new"  &&  \
-            mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"    
+            mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"
 
             echo "${item} is converted into gbk encoding."
         fi
@@ -377,8 +377,8 @@ function u162u8()
     for item in "$@";do
         if echo $(enca "${item}" ) | grep -i "UCS-2" >/dev/null ; then
 
-            iconv -f utf16 -t utf8  -c "${item}" > "${item}.new"  &&  
-            \mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"    
+            iconv -f utf16 -t utf8  -c "${item}" > "${item}.new"  &&
+            \mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"
 
             echo "${item} is converted into utf-16 encoding."
         fi
@@ -389,9 +389,9 @@ function u162u8()
 #                           programming related                             #
 #---------------------------------------------------------------------------#
 
-# adjust the indentation of xml files in place 
-# usage: indentxml xmlfiles...
-function indentxml ()
+# adjust the indentation of xml files in place
+# usage: tidyxml xmlfiles...
+function tidyxml ()
 {
     local item
     for item in "$@";do
@@ -401,20 +401,20 @@ function indentxml ()
 
 # shows  git history as ASCII graph
 # usage: glog
-function glog() 
+function glog()
 {
     git log --pretty=oneline --topo-order --graph --abbrev-commit $@
 }
 
 # show current folder's git branch info
-function parse_git_branch() 
+function parse_git_branch()
 {
     # tell 'cut' to use SPACE as delimiter
     git branch 2> /dev/null | sed -e '/^[^*]/d' | cut --delimiter=\  --fields=2
 }
 
 #access the default git diff behavior
-function git_diff() 
+function git_diff()
 {
     git diff --no-ext-diff -w "$@" | vim -R -
 }
@@ -452,9 +452,9 @@ function get ()
 
 
 # show my actually ip .
-function  myip () 
+function  myip ()
 {
-    curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g' 
+    curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'
 }
 
 
@@ -465,7 +465,7 @@ function clearmail ()
     echo 'd *' | mail -N
 }
 
-# share folder throuth http://localhost:8000 
+# share folder throuth http://localhost:8000
 # usage: share folder-path
 function share()
 {
@@ -473,7 +473,7 @@ function share()
     python -m SimpleHTTPServer &
 }
 
-# get blacklist from authority and generator the commmads 
+# get blacklist from authority and generator the commmads
 # for blocking these suspicious ip
 # usage: blacklist
 function blacklist()
@@ -481,14 +481,14 @@ function blacklist()
     wget -qO - http://infiltrated.net/blacklisted|awk '!/#|[a-z]/&&/./{print "iptables -A INPUT -s "$1" -j DROP"}'
 }
 
-# grep files with specified suffix recursively, starting from current folder 
+# grep files with specified suffix recursively, starting from current folder
 # usage:
-#   greps  [pattern] 
+#   greps  [pattern]
 #   greps  [pattern] [suffix_filter]
 # example:
 #   greps include txt
 
-function greps() 
+function greps()
 {
     local content=$1
 
@@ -504,14 +504,14 @@ function greps()
             local filter=$2
             shift
             shift
-        fi  
-    fi  
+        fi
+    fi
 
     if [ -z "$filter" ]
     then
         find -print0 | grep -zv '\.svn' | xargs -0 grep --color $content $@
     else
         find -print0 | grep -zv '\.svn' | grep -z $filter | xargs -0 grep --color $content $@
-    fi  
-} 
+    fi
+}
 
