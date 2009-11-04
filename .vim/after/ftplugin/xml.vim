@@ -6,4 +6,4 @@
 setlocal equalprg=XMLLINT_INDENT\=\"\ \ \ \"\ xmllint\ --format\ -
 
 " It's really a pity that tidy does not support the customization of indentation margin.
-setlocal equalprg=tidy\ -indent\ -xml\ -quiet\ --indent-spaces\ 4\ --wrap\ 80
+setlocal equalprg=tidy\ -indent\ -xml\ -quiet\ --indent-spaces\ 2\ --wrap\ 80
