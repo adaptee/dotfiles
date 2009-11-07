@@ -81,6 +81,19 @@ function fm ()
     nautilus "${@:-$PWD}"
 }
 
+# enable touchpad
+function padon ()
+{
+    synclient touchpadoff=0
+}
+
+# disable touchpad
+function padoff ()
+{
+    synclient touchpadoff=1
+}
+
+
 #---------------------------------------------------------------------------#
 #                              terminal  utility                            #
 #---------------------------------------------------------------------------#
