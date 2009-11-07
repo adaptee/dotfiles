@@ -42,7 +42,7 @@ function! SearchVisualSelectedText(direction) range
     let l:pattern = escape(@", '\\/.*$^~[]')
     let l:pattern = substitute(l:pattern, "\n$", "", "")
     "make sure it have like in normal mode, I.e, matching exactly the word.
-    let l:pattern = '\<' . l:pattern . '\>'
+    "let l:pattern = '\<' . l:pattern . '\>'
 
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
