@@ -23,7 +23,7 @@
 [diff]
     ;external = gitDiff
 [pager]
-    diff =
+    ;diff =
 
 [status]
     relativePath = true
@@ -32,7 +32,7 @@
     ai      = add -i
     br      = branch
     brd     = branch -d
-    cm      = commit -m 
+    cm      = commit -m
     cma     = commit -a -m
     co      = checkout
     cob     = checkout -b
