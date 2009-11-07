@@ -84,13 +84,13 @@ function fm ()
 # enable touchpad
 function padon ()
 {
-    synclient touchpadoff=0
+    synclient TouchpadOff=0
 }
 
 # disable touchpad
 function padoff ()
 {
-    synclient touchpadoff=1
+    synclient TouchpadOff=1
 }
 
 
