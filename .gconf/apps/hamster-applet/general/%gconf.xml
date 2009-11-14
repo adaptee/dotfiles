@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <gconf>
-        <entry name="stop_on_shutdown" mtime="1252514818" type="bool" value="true">
-        </entry>
-        <entry name="enable_timeout" mtime="1229014843" type="bool" value="false">
-        </entry>
+	<entry name="notify_interval" mtime="1258138678" type="int" value="121"/>
+	<entry name="stop_on_shutdown" mtime="1252514818" type="bool" value="true"/>
+	<entry name="enable_timeout" mtime="1229014843" type="bool" value="false"/>
 </gconf>
