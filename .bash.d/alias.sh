@@ -279,6 +279,7 @@ alias gr='grep -r'
 alias gv='grep -v'
 alias gconf='gconf-editor'
 alias h='help'
+alias io='iotop -o'
 alias m='man'
 alias ma='man -a'
 alias mb='man bash'
@@ -337,7 +338,6 @@ alias sortip='sort -nt . -k 1,1 -k 2,2 -k 3,3 -k 4,4'
 
 alias matrix='cmatrix -b ' #random bold character in matrix
 alias terminator='terminator -m -b'
-alias iotop='iotop -o'
 
 alias clip='mencoder -oac mp3lame -ovc lavc -o temp.avi'
 alias clip2='mencoder -oac mp3lame -ovc lavc -o temp.avi -ovc xvid -xvidencopts fixed_quant=6'
