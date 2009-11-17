@@ -1,0 +1,5 @@
+# configure the color style
+Layout Statusbar yellow black
+Layout header cyan black
+Layout List green black
+Layout Selected red black
