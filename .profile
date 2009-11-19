@@ -77,5 +77,5 @@ if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
 fi
 
 # prompt user to add private key
-ssh-add
+#ssh-add
 
