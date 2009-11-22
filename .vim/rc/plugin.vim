@@ -299,11 +299,11 @@ nmap T :ToggleWord<CR>
 " vimim.vim ( Chinese input method embedded within VIM )
 "------------------------------------------------------------------------------------------------------
 "In insert mode, press C-\ to switch input method on/off
-let g:vimim_enable_smart_space  = 1
-let g:vimim_enable_dynamic_menu = 1
-let g:vimim_enable_fuzzy_search = 1
-let g:vimim_enable_fuzzy_pinyin = 1
-let g:vimim_enable_menu_label   = 1
+"let g:vimim_enable_smart_space  = 1
+"let g:vimim_enable_dynamic_menu = 1
+"let g:vimim_enable_fuzzy_search = 1
+"let g:vimim_enable_fuzzy_pinyin = 1
+"let g:vimim_enable_menu_label   = 1
 
 "------------------------------------------------------------------------------------------------------
 " visualmark.vim ( Visual mark, similar to UltraEdit's bookmark )
