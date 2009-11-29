@@ -1,7 +1,11 @@
-.vimperator/info/default/history-command
-.vimperator/info/default/history-search
-.vimperator/info/default/local-marks
-.vimperator/info/default/quickmarks
+# ingore those dynamic content
+.vimperator/info/default/*
 
 # ignore all archive files.
 *.a
+
+# ignore all object files
+*.o
+
+# ignore all dlls
+*.dll
