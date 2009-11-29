@@ -8,8 +8,8 @@ nmap <silent> <leader>v :call SwitchToBuffer("$HOME/.vimrc")<CR>
 autocmd! bufwritepost .vimrc source $HOME/.vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
 
-autocmd VimEnter * call LoadSession()
-autocmd VimLeave * call SaveSession()
+"autocmd VimEnter * call LoadSession()
+"autocmd VimLeave * call SaveSession()
 
 function! SaveSession()
     set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages
