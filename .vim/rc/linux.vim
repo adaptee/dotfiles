@@ -15,11 +15,11 @@ function! SaveSession()
     set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages
     "make Unix & Win can understand each other's session file.
     set sessionoptions+=unix,slash
-        execute 'mksession! $VIMLOCAL/sessions/session.vim'
+    execute 'mksession! ~/.vim_session.vim'
 endfunction
 
 function! LoadSession()
-        "execute 'source $VIMLOCAL/sessions/session.vim'
+    execute 'source ~/.vim_session.vim'
 endfunction
 
 "open files under current folder.
