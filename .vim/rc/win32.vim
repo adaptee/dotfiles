@@ -8,20 +8,20 @@ nmap <silent> <leader>v :call SwitchToBuffer("$VIM/_vimrc")<CR>
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $VIM/_vimrc
 
-autocmd VimEnter * call LoadSession()
-autocmd VimLeave * call SaveSession()
+"autocmd VimEnter * call LoadSession()
+"autocmd VimLeave * call SaveSession()
 
 function! SaveSession()
     set sessionoptions=buffers,folds,globals,options,resize,winpos,tabpages
     "make Unix & Win can understand each other's session file.
     set sessionoptions+=unix,slash
-    "execute 'mksession! $VIM/vim_session.vim'
-    "execute 'mkview     $VIM/vim_view.vim'
+    execute 'mksession! $VIM/vim_session.vim'
+    execute 'mkview     $VIM/vim_view.vim'
 endfunction
 
 function! LoadSession()
-    "execute 'source   $VIM/vim_session.vim'
-    "execute 'loadview $VIM/vim_view.vim'
+    execute 'source   $vim/vim_session.vim'
+    execute 'loadview $vim/vim_view.vim'
 endfunction
 
 "open files under current folder.
