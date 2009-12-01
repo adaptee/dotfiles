@@ -1,46 +1,45 @@
 #---------------------------Key Bindings--------------------------------
 
 # up           => {search/move} backward in the history entries
-"\e[A": history-search-backward 
+"\e[A": history-search-backward
 # down         => {search/move} forward in the history entried
-"\e[B": history-search-forward  
+"\e[B": history-search-forward
 # right        => move forward by one character
-"\e[C": forward-char            
+"\e[C": forward-char
 # left         => move backward by one character
-"\e[D": backward-char           
+"\e[D": backward-char
 
 # Ctrl + right => move forward by one word
-"\e[1;5C": forward-word         
-"\e[5C": forward-word
-"\e\e[C": forward-word
+"\e[1;5C":  forward-word
+"\e[5C":    forward-word
+"\e\e[C":   forward-word
 # Ctrl + left  => move backward by one word
-"\e[1;5D": backward-word        
-"\e[5D": backward-word
-"\e\e[D": backward-word
-
+"\e[1;5D":  backward-word
+"\e[5D":    backward-word
+"\e\e[D":   backward-word
 
 # 'HOME'       => move to the beginning of the line
-"\e[1~": beginning-of-line      
+"\e[1~": beginning-of-line
 # 'END'        => move to the end of the line
-"\e[4~": end-of-line            
+"\e[4~": end-of-line
 
 # 'INS'        => insert next typed key literally
-"\e[2~": quoted-insert          
+"\e[2~": quoted-insert
 # 'DEL'        => delete current char under the cursor
-"\e[3~": delete-char            
+"\e[3~": delete-char
 
 # 'PageUp'
-"\e[5~": beginning-of-history   
+"\e[5~": beginning-of-history
 # 'PageDown'
-"\e[6~": end-of-history         
+"\e[6~": end-of-history
 
 # Ctrl + p     => move to previous history entry
-"\C-p": previous-history        
+"\C-p": previous-history
 # Ctrl + n     => move to next history entry
-"\C-n": next-history            
+"\C-n": next-history
 
-# inseat the last argument to previous command                
-"\M-l": insert-last-argument    
+# inseat the last argument to previous command
+"\M-l": insert-last-argument
 
 # use <S-Tab> to do menu-complete, like in cmd.exe of windows.
 "\e[Z": menu-complete
@@ -59,12 +58,12 @@
 #---------------------------Readline Options--------------------------------
 
 # use the key-bindings of vim style
-#set editing-mode vi            
+#set editing-mode vi
 
 # list all candidates instead of ring the bell, when completing
-set show-all-if-ambiguous on    
+set show-all-if-ambiguous on
 # append  single type character to each completion candidates.
-set visible-stats on            
+set visible-stats on
 # perform name completion in case-insensitive way.
 #set completion-ignore-case on
 
@@ -75,13 +74,13 @@ set mark-symlinked-directories on
 
 
 # never ring the bell!
-set bell-style none             
+set bell-style none
 
-# allow eight-bit input, do not strip the high bit 
-set input-meta on               
-# do not strip the eighth bit 
-set convert-meta off            
-# display characters with the eighth bit set directly 
-set output-meta on              
+# allow eight-bit input, do not strip the high bit
+set input-meta on
+# do not strip the eighth bit
+set convert-meta off
+# display characters with the eighth bit set directly
+set output-meta on
 
 
