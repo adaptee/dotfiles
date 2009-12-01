@@ -23,9 +23,9 @@
 [diff]
     external = gitDiff
 [merge]
-    tool = extMerge
+    tool = gitMerge
 
-[mergetool "extMerge"]
+[mergetool "gitMerge"]
     cmd = gitMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
     trustExitCode = false
 
