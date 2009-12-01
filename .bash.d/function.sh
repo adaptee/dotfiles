@@ -398,6 +398,22 @@ function u162u8()
     done
 }
 
+# tranform from utf-16 encoding into gbk; old file is automatically renamed
+# usage: u162gb files...
+function u162gb()
+{
+    local item
+
+    for item in "$@";do
+        if echo $(enca "${item}" ) | grep -i "UCS-2" >/dev/null ; then
+
+            iconv -f utf16 -t gb18030  -c "${item}" > "${item}.new"  &&
+            \mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"
+
+            echo "${item} is converted into utf-16 encoding."
+        fi
+    done
+}
 #---------------------------------------------------------------------------#
 #                           programming related                             #
 #---------------------------------------------------------------------------#
