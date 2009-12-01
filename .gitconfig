@@ -21,7 +21,14 @@
     ui = auto
 
 [diff]
-    ;external = gitDiff
+    external = gitDiff
+[merge]
+    tool = extMerge
+
+[mergetool "extMerge"]
+    cmd = gitMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = false
+
 [pager]
     ;diff =
 
