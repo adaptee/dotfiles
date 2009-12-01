@@ -463,6 +463,7 @@ function get ()
 {
     local URL=$1
     eval "wget -c '$URL'"
+    notify-send "Download finished!"
 }
 
 
