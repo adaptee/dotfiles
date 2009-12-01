@@ -22,11 +22,13 @@
 
 [diff]
     external = gitDiff
+
 [merge]
     tool = gitMerge
 
 [mergetool "gitMerge"]
-    cmd = gitMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    ;cmd = gitMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = gitMerge  "$LOCAL" "$REMOTE" "$MERGED"
     trustExitCode = false
 
 [pager]
