@@ -33,4 +33,3 @@ if [[ $(uname) =~ 'Cygwin' ]] ; then
     Source "$PRIVATE_BASH_DIR/bash-cygwin.sh"
 fi
 
-
