@@ -479,7 +479,7 @@ function get ()
 {
     local URL=$1
     eval "wget -c '$URL'"
-    notify-send "Download finished!"
+    notify-send -i ~/.icons/Mac4Lin/scalable/apps/gdebi.png  "Download finished!"
 }
 
 
