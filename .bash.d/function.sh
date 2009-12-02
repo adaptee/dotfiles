@@ -300,21 +300,6 @@ function pdf2png()
 }
 
 
-# burn cdrom's content's into iso image.
-# usage: cd2iso iso-name
-function cd2iso()
-{
-    case "$#" in
-        0)
-        echo "buddy, please provide a name for the target iso image"
-        ;;
-        1)
-        isofile="$1";
-        readom dev=/dev/cdrom f="${isofile}"
-        ;;
-    esac
-}
-
 # convert manpages to plain text file
 # usage: man2txt command...
 function man2txt()
