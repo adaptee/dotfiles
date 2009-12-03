@@ -11,8 +11,8 @@
     #gitproxy=""
 
 [user]
-    name  = Adaptee
-    email = adaptee@gmail.com
+	name = Adaptee
+	email = adaptee@gmail.com
 
 [rerere]
     #enabled = true
