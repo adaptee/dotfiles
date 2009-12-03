@@ -1,0 +1,15 @@
+font                = Vera Sans YuanTi Mono 14
+allow_bold          = true
+
+force_no_bell       = true
+
+scrollbar_position  = disabled
+scrollback_lines    = 5000
+borderless          = true
+close_button_on_tab = false
+
+maximise            = true
+#fullscreen         = true
+
+copy_on_selection   = true
+
