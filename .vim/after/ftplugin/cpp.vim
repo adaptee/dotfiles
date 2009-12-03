@@ -1,5 +1,8 @@
 " added and modified by adaptee manually, not by any plugin.
 
+" indent the public/private keywords more conventionally
+set cino=g0
+
 " OmniCppComplete initialization
 call omni#cpp#complete#Init()
 
