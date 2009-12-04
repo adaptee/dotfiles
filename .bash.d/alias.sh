@@ -338,7 +338,7 @@ alias gdb='gdb --quiet'
 #sort dot-formatted ip address in numericly-ascending way
 alias sortip='sort -nt . -k 1,1 -k 2,2 -k 3,3 -k 4,4'
 
-alias matrix='cmatrix -b ' #random bold character in matrix
+alias matrix='cmatrix -a -b -x'
 alias terminator='terminator -m -b'
 
 alias clip='mencoder -oac mp3lame -ovc lavc -o temp.avi'
