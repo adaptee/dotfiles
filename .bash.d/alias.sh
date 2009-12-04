@@ -174,8 +174,7 @@ alias release='fuser -k'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade -y --force-yes'
 
-alias purge='sudo apt-get purge -y'
-alias clean='sudo apt-get autoremove autoclean clean -y '
+alias purge='sudo apt-get purge -y --force-yes'
 alias syn='sudo synaptic'
 
 alias dpi='sudo dpkg -i' # install pkg
