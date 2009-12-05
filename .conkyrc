@@ -9,6 +9,7 @@ double_buffer yes
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
+own_window_class Conky
 # enable pseudo-transparency
 #own_window_transparent yes
 #own_window_type normal
@@ -24,12 +25,9 @@ uppercase no
 override_utf8_locale yes
 
 default_color white
+#default_color cccccc
 #own_window_colour white
 
-# Predefine  a  color for later use inside TEXT segments
-#color1 #123456
-# Predefine  a template for later use inside TEXT segments
-#templateN hello
 #maximum_width 250
 alignment top_right
 #default_bar_size 0 10
@@ -56,9 +54,6 @@ net_avg_samples 2
 format_human_readable yes
 # Shortens units to a single character (kiB->k, GiB->G, etc.)
 short_units yes
-
-show_graph_range yes
-show_graph_scale yes
 
 
 ####################################################################
