@@ -1,0 +1,113 @@
+# .conkyrc
+
+update_interval 2.0
+# zere makes conky to run forever
+total_run_times 0
+
+# to prevent flicking
+double_buffer yes
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+# enable pseudo-transparency
+#own_window_transparent yes
+#own_window_type normal
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# use anti-aliased fonts
+use_xft yes
+xftalpha 0.8
+xftfont Vera Sans YuanTi:size=11
+# don't show text in UGLY UPPER-CASE
+uppercase no
+# force utf-8 ; xftfont is required
+override_utf8_locale yes
+
+default_color white
+#own_window_colour white
+
+# Predefine  a  color for later use inside TEXT segments
+#color1 #123456
+# Predefine  a template for later use inside TEXT segments
+#templateN hello
+maximum_width 320
+alignment top_right
+#default_bar_size 0 10
+
+# Draw shades?
+draw_shades no
+# Draw outlines?
+draw_outline no
+# Draw borders around text
+draw_borders no
+# Stippled borders?
+stippled_borders 0
+# border width
+border_width 1
+
+# number of cpu samples to average ;set to 1 to disable averaging
+cpu_avg_samples 2
+# number of samples to average for disk I/O monitoring
+diskio_avg_samples 2
+# number of net samples to average ;set to 1 to disable averaging
+net_avg_samples 2
+
+# values which are in bytes will be printed in human readable format(i.e., KiB,  MiB, etc).
+format_human_readable yes
+# Shortens units to a single character (kiB->k, GiB->G, etc.)
+short_units yes
+
+show_graph_range yes
+show_graph_scale yes
+
+color5 3B3B3B
+
+####################################################################
+TEXT
+${font Radio Space:size=30}${alignc}${color5}WhoDare's PC${font}${color}
+
+Kernel ${tab} ${alignr}${color} ${kernel}
+#${kernel}/${sysname}@${nodename}
+${color }Uptime $color ${alignr}$uptime_short
+
+# CPU info
+${color }CPU 0 ${tab} $color${cpu cpu0}% ${cpubar cpu0}
+${color }CPU 1 ${tab} $color${cpu cpu1}% ${cpubar cpu1}
+${color }CPU temperature: ${alignr}$color${acpitemp}°C
+
+# battery info
+${color }Battery ${alignr}${color} ${battery_time} ${tab} ${battery_percent}%
+${battery_bar}
+
+# memory and disk
+${color }RAM ${alignr}$color $mem/$memmax ${tab} $memperc%
+${membar}
+#Memory Buffered:$alignr$buffers
+#Memory Cached:$alignr$cached
+${color }SWAP ${alignr}$color $swap/$swapmax ${tab} $swapperc%
+${membar}
+${color }Home ${alignr}$color${fs_used /home}/${fs_size /home} ${tab} ${fs_used_perc /home}%
+${fs_bar /home}
+
+# Network info
+${color #ffcb48}Wi-Fi ${hr 1}
+#${color }Wireless signal: $color${wireless_link_qual wlan0}%
+${color }Local IP ${alignr}${color}${addr wlan0}
+${color }DNS ${alignr}${color}${nameserver 0}
+${color }Speed ${alignr}${color}${downspeedf wlan0} KB/sec
+
+
+Processes${alignr}${processes}
+${hr 2}
+NAME $alignr CPU% ${tab} MEM%
+${color } ${top name 1} $alignr ${top cpu 1} ${tab} ${top mem 1}
+${color } ${top name 2} $alignr ${top cpu 2} ${tab} ${top mem 2}
+${color } ${top name 3} $alignr ${top cpu 3} ${tab} ${top mem 3}
+${color } ${top name 4} $alignr ${top cpu 4} ${tab} ${top mem 4}
+
+${stippled_hr}
+
+#${voffset -20}${color1}$hr
+#${voffset -20}${font Radio Space:size=14}${color1}${time %A %d %Y}
+
+
