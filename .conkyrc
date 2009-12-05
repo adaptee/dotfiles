@@ -64,16 +64,16 @@ color5 3B3B3B
 
 ####################################################################
 TEXT
-${font Radio Space:size=30}${alignc}${color5}WhoDare's PC${font}${color}
+${font Radio Space:size=30}${alignc}${color5}WhoDare's Laptop${font}${color}
 
-Kernel ${tab} ${alignr}${color} ${kernel}
-#${kernel}/${sysname}@${nodename}
-${color }Uptime $color ${alignr}$uptime_short
+${font OpenLogos:size=30}T ${font}
+${font StyleBats:size=12}Q ${font}${color slate grey}Kernel ${alignr}${color}${kernel}
+${font StyleBats:size=12}O ${font}${color slate grey}UpTime ${alignr}${color}${uptime_short}
 
 # CPU info
-${color }CPU 0 ${tab} $color${cpu cpu0}% ${cpubar cpu0}
-${color }CPU 1 ${tab} $color${cpu cpu1}% ${cpubar cpu1}
-${color }CPU temperature: ${alignr}$color${acpitemp}°C
+${font}${color}CPU 0 ${tab} $color${cpu cpu0}% ${cpubar cpu0}
+${font}${color}CPU 1 ${tab} $color${cpu cpu1}% ${cpubar cpu1}
+${font}${color}CPU temperature ${alignr}$color${acpitemp}°C
 
 # battery info
 ${color }Battery ${alignr}${color} ${battery_time} ${tab} ${battery_percent}%
@@ -92,18 +92,17 @@ ${fs_bar /home}
 # Network info
 ${color #ffcb48}Wi-Fi ${hr 1}
 #${color }Wireless signal: $color${wireless_link_qual wlan0}%
-${color }Local IP ${alignr}${color}${addr wlan0}
-${color }DNS ${alignr}${color}${nameserver 0}
-${color }Speed ${alignr}${color}${downspeedf wlan0} KB/sec
-
+${color}Local IP ${alignr}${color}${addr wlan0}
+${color}DNS ${alignr}${color}${nameserver 0}
+${color}${font PizzaDude Bullets:size=12}r ${font}Speed ${alignr}${downspeedf wlan0} KB/sec${font}${color}
 
 Processes${alignr}${processes}
 ${hr 2}
-NAME $alignr CPU% ${tab} MEM%
-${color } ${top name 1} $alignr ${top cpu 1} ${tab} ${top mem 1}
-${color } ${top name 2} $alignr ${top cpu 2} ${tab} ${top mem 2}
-${color } ${top name 3} $alignr ${top cpu 3} ${tab} ${top mem 3}
-${color } ${top name 4} $alignr ${top cpu 4} ${tab} ${top mem 4}
+${color}${font Webdings:size=12}i${font}${color slate grey}   Highest CPU${font}${color}
+${color #ddaa00}${top name 1} ${tab}${tab} ${top cpu 1}%
+
+${color}${font Webdings:size=12}i${font}${color slate grey}   Highest MEM${font}${color}
+${color #ddaa00}${top name 1} ${tab}${tab} ${top mem 1}%
 
 ${stippled_hr}
 
