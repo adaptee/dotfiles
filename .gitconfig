@@ -35,7 +35,9 @@
     ;diff =
 
 [status]
-    relativePath = true
+    relativePath       = true
+    # do not show untracked files & folders in git-status
+    showUntrackedFiles = no
 
 [alias]
     ai      = add -i
@@ -60,4 +62,3 @@
 
 [help]
     autocorrect = true
-
