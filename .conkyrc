@@ -1,6 +1,6 @@
 # .conkyrc
 
-update_interval 2.0
+update_interval 4.0
 # zere makes conky to run forever
 total_run_times 0
 
