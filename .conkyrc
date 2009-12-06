@@ -77,16 +77,18 @@ ${battery_bar}
 RAM ${alignr}$mem/$memmax ${tab} $memperc%
 ${membar}
 SWAP ${alignr}$swap/$swapmax ${tab} $swapperc%
-${membar}
+${swapbar}
 Home ${alignr}${fs_used /home}/${fs_size /home} ${tab} ${fs_used_perc /home}%
 ${fs_bar /home}
 
+# Gpu info
+${font PizzaDude Bullets:size=12}V ${font}${execi 10800 ~/.conky.d/nvidia-gpu-version} ${alignr}${execi 10800 ~/.conky.d/nvidia-driver-version}
 # Network info
 ${font PizzaDude Bullets:size=12}V ${font}Local IP ${alignr}${addr wlan0}
 ${font PizzaDude Bullets:size=12}V ${font}DNS ${alignr}${nameserver 0}
 ${font PizzaDude Bullets:size=12}S ${font}Speed ${alignr}${downspeedf wlan0} KB/sec${font}
 
-${execi 10800 ~/.conky.d/conkyPhoto}${alignc}${image ~/.conky.d/photo.png -s 150x150 -p 100,480}${voffset 120}
+${execi 10800 ~/.conky.d/conkyPhoto}${alignc}${image ~/.conky.d/photo.png -s 150x150 -p 75,500}${voffset 120}
 
 Processes${alignr}${processes}
 ${hr 2}
