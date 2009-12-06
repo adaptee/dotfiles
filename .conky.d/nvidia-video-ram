@@ -1,0 +1,22 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  nvidia-video-ram.sh
+#
+#         USAGE:  ./nvidia-video-ram.sh
+#
+#   DESCRIPTION:
+#
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  adaptee (), adaptee@gmail.com
+#       COMPANY:  Open Source Corporation
+#       VERSION:  1.0
+#       CREATED:  2009年12月06日 20时14分11秒 CST
+#      REVISION:  ---
+#===============================================================================
+
+ram_in_kb=$(nvidia-settings -q videoram | grep Attribute | cut -d ' ' -f 6 | cut -c 1-6)
+echo $(( $ram_in_kb / 1024))MB

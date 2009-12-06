@@ -1,0 +1,22 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  nvidia-driver-version.sh
+#
+#         USAGE:  ./nvidia-driver-version.sh
+#
+#   DESCRIPTION:
+#
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  adaptee (), adaptee@gmail.com
+#       COMPANY:  Open Source Corporation
+#       VERSION:  1.0
+#       CREATED:  2009年12月06日 20时12分57秒 CST
+#      REVISION:  ---
+#===============================================================================
+
+# output example : 190.42
+nvidia-settings -q NvidiaDriverVersion | grep Attribute | cut -d ' ' -f 6

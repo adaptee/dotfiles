@@ -1,0 +1,23 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  nvidia-gpu-version.sh
+#
+#         USAGE:  ./nvidia-gpu-version.sh
+#
+#   DESCRIPTION:
+#
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  adaptee (), adaptee@gmail.com
+#       COMPANY:  Open Source Corporation
+#       VERSION:  1.0
+#       CREATED:  2009年12月06日 20时45分32秒 CST
+#      REVISION:  ---
+#===============================================================================
+
+gpu_version="$(nvidia-settings -q gpus | grep gpu)"
+
+echo $gpu_version | tr '[()]' [##] | cut -d '#' -f 2

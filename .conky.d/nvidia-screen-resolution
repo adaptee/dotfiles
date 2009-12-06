@@ -1,0 +1,22 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  nvidia-screen-resolution.sh
+#
+#         USAGE:  ./nvidia-screen-resolution.sh
+#
+#   DESCRIPTION:
+#
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  adaptee (), adaptee@gmail.com
+#       COMPANY:  Open Source Corporation
+#       VERSION:  1.0
+#       CREATED:  2009年12月06日 20时20分35秒 CST
+#      REVISION:  ---
+#===============================================================================
+
+resolution=$(nvidia-settings -q FrontendResolution | grep Attribute | cut -d ':' -f 4)
+echo $resolution | tr --delete [.] | tr [,] [X]
