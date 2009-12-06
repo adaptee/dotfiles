@@ -86,7 +86,7 @@ ${font PizzaDude Bullets:size=12}V ${font}Local IP ${alignr}${addr wlan0}
 ${font PizzaDude Bullets:size=12}V ${font}DNS ${alignr}${nameserver 0}
 ${font PizzaDude Bullets:size=12}S ${font}Speed ${alignr}${downspeedf wlan0} KB/sec${font}
 
-${execi 10800 ~/.conkycolors/bin/conkyPhoto}${alignc}${image /tmp/conkyPhoto.png -s 150x150 -p 100,480}${voffset 120}
+${execi 10800 ~/.conky.d/conkyPhoto}${alignc}${image ~/.conky.d/photo.png -s 150x150 -p 100,480}${voffset 120}
 
 Processes${alignr}${processes}
 ${hr 2}
