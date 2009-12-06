@@ -76,8 +76,6 @@ ${battery_bar}
 # memory and disk
 RAM ${alignr}$mem/$memmax ${tab} $memperc%
 ${membar}
-#Memory Buffered:$alignr$buffers
-#Memory Cached:$alignr$cached
 SWAP ${alignr}$swap/$swapmax ${tab} $swapperc%
 ${membar}
 Home ${alignr}${fs_used /home}/${fs_size /home} ${tab} ${fs_used_perc /home}%
@@ -92,9 +90,5 @@ ${execi 10800 ~/.conkycolors/bin/conkyPhoto}${alignc}${image /tmp/conkyPhoto.png
 
 Processes${alignr}${processes}
 ${hr 2}
-#${color}${font Webdings:size=12}i${font}${color slate grey}   Highest CPU${font}${color}
-#${color #ddaa00}${top name 1} ${tab}${tab} ${top cpu 1}%
-#${color}${font Webdings:size=12}i${font}${color slate grey}   Highest MEM${font}${color}
-#${color #ddaa00}${top name 1} ${tab}${tab} ${top mem 1}%
 ${color}${font Webdings:size=12}i${font}${color slate grey}   Highest CPU${color #ddaa00}${tab}    ${top name 1}  ${top cpu 1}%
 ${color}${font Webdings:size=12}i${font}${color slate grey}   Highest MEM${color #ddaa00}${tab}    ${top name 1}  ${top mem 1}%
