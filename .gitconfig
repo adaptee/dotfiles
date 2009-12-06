@@ -51,7 +51,7 @@
     df      = diff
     dfc     = diff --cached
     st      = status
-    wtf     = whatchanged
+    wtf     = !git-wtf
     unstage = reset HEAD --
     last    = log -1 HEAD
     visual  = gitk
