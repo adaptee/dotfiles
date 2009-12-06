@@ -8,12 +8,11 @@ total_run_times 0
 double_buffer yes
 
 # Create own window instead of using desktop (required in nautilus)
-own_window yes
 own_window_class Conky
-# enable pseudo-transparency
-#own_window_transparent yes
-#own_window_type normal
-#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window yes
+own_window_type overridea
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 # use anti-aliased fonts
 use_xft yes
@@ -28,9 +27,10 @@ default_color white
 #default_color cccccc
 #own_window_colour white
 
-#maximum_width 250
-alignment top_right
-#default_bar_size 0 10
+maximum_width 300
+minimum_size 300
+#alignment top_right
+alignment top_left
 
 # Draw shades?
 draw_shades no
@@ -41,7 +41,7 @@ draw_borders no
 # Stippled borders?
 stippled_borders 0
 # border width
-border_width 1
+border_width 0
 
 # number of cpu samples to average ;set to 1 to disable averaging
 cpu_avg_samples 2
@@ -58,21 +58,21 @@ short_units yes
 
 ####################################################################
 TEXT
-${font Radio Space:size=30}${alignc}WhoDare's Laptop${font}
+${font URW Chancery L:size=30}${alignc}WhoDare's Laptop${font}
 
-${font OpenLogos:size=30}   _T ${font}
+${font OpenLogos:size=30}${alignc}tUSu ${font}
+
 ${font StyleBats:size=12}Q ${font}${color slate grey}Kernel ${alignr}${color}${kernel}
 ${font StyleBats:size=12}O ${font}${color slate grey}UpTime ${alignr}${color}${uptime_short}
 
 # CPU info
+${alignr}${acpitemp}°C
 CPU 0 ${tab} ${cpu cpu0}% ${cpubar cpu0}
 CPU 1 ${tab} ${cpu cpu1}% ${cpubar cpu1}
-CPU temperature ${alignr}{acpitemp}°C
 
 # battery info
 Battery ${alignr}${battery_time} ${tab} ${battery_percent}%
 ${battery_bar}
-
 # memory and disk
 RAM ${alignr}$mem/$memmax ${tab} $memperc%
 ${membar}
@@ -84,18 +84,17 @@ Home ${alignr}${fs_used /home}/${fs_size /home} ${tab} ${fs_used_perc /home}%
 ${fs_bar /home}
 
 # Network info
-${color #ffcb48}Wi-Fi ${hr 1}${color}
-${font PizzaDude Bullets:size=12}S ${font}Local IP ${alignr}${addr wlan0}
-${font PizzaDude Bullets:size=12}S ${font}DNS ${alignr}${nameserver 0}
+${font PizzaDude Bullets:size=12}V ${font}Local IP ${alignr}${addr wlan0}
+${font PizzaDude Bullets:size=12}V ${font}DNS ${alignr}${nameserver 0}
 ${font PizzaDude Bullets:size=12}S ${font}Speed ${alignr}${downspeedf wlan0} KB/sec${font}
+
+${execi 10800 ~/.conkycolors/bin/conkyPhoto}${alignc}${image /tmp/conkyPhoto.png -s 150x150 -p 100,480}${voffset 120}
 
 Processes${alignr}${processes}
 ${hr 2}
-${color}${font Webdings:size=12}i${font}${color slate grey}   Highest CPU${font}${color}
-${color #ddaa00}${top name 1} ${tab}${tab} ${top cpu 1}%
-
-${color}${font Webdings:size=12}i${font}${color slate grey}   Highest MEM${font}${color}
-${color #ddaa00}${top name 1} ${tab}${tab} ${top mem 1}%
-
-Internet${hr 2}
-#${stippled_hr}
+#${color}${font Webdings:size=12}i${font}${color slate grey}   Highest CPU${font}${color}
+#${color #ddaa00}${top name 1} ${tab}${tab} ${top cpu 1}%
+#${color}${font Webdings:size=12}i${font}${color slate grey}   Highest MEM${font}${color}
+#${color #ddaa00}${top name 1} ${tab}${tab} ${top mem 1}%
+${color}${font Webdings:size=12}i${font}${color slate grey}   Highest CPU${color #ddaa00}${tab}    ${top name 1}  ${top cpu 1}%
+${color}${font Webdings:size=12}i${font}${color slate grey}   Highest MEM${color #ddaa00}${tab}    ${top name 1}  ${top mem 1}%
