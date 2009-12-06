@@ -13,7 +13,7 @@
 
 # set PATH to include user's private bin ,if it exists
 if [ -d "${HOME}/bin" ] ; then
-    PATH="${HOME}/bin:${PATH}"
+    PATH="${PATH}:${HOME}/bin"
 fi
 
 # input method
