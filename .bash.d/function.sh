@@ -81,6 +81,18 @@ function fm ()
     nautilus "${@:-$PWD}"
 }
 
+# empty the trash box
+function trashempty()
+{
+    rm ~/.local/share/Trash -rf && notify-send -i ~/.icons/trash.png "Trash is emptied."
+}
+
+# open the trash box
+function trashopen()
+{
+   xgd-open ~/.local/share/Trash
+}
+
 # enable touchpad
 function padon ()
 {
