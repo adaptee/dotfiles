@@ -90,7 +90,7 @@ function trashempty()
 # open the trash box
 function trashopen()
 {
-   xgd-open ~/.local/share/Trash
+   xdg-open ~/.local/share/Trash
 }
 
 # enable touchpad
