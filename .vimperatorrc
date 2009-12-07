@@ -178,6 +178,8 @@ set! browser.tabs.tabMaxWidth=160
 set! browser.startup.page=0
 " Do not use font specified in HTML pages; use system defaults.
 set! browser.display.use_document_fonts=0
+" Do not use proxy, by decault
+set! network.proxy.type=0
 
 
 "---------------------------------------------------------------------------------------------
@@ -225,9 +227,14 @@ prefs_entry_toggler = function (entry_name, entry_init_value)
 }
 
 custom_font_toggler = prefs_entry_toggler("browser.display.use_document_fonts", 0 );
+proxy_toggler       = prefs_entry_toggler("network.proxy.type", 0 );
 
 EOF
 
+" toggle entry in prefs.js( about:config)
+js<<EOF
+
+EOF
 
 " Because vimperator put all keywords into one single argument, we first split it.
 js<<EOF
@@ -551,6 +558,9 @@ noremap <Leader>v  :Source<CR>
 
 command! Font :js custom_font_toggler()
 noremap <Leader>c  :Font<CR>
+
+command! Proxy :js proxy_toggler()
+noremap <Leader>p  :Proxy<CR>
 
 " Switch user-agent
 "map <Silent> <F9> :js switch_useragent()<CR>
