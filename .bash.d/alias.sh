@@ -152,7 +152,7 @@ alias kaa='killall -9 amule'
 alias kaf='killall -9 firefox'
 alias kad='killall -9 gnome-do'
 #kill all mplayer, useful when playing broken video.
-alias kag='killall -9 gmplayer'
+alias kag='killall -9 mplayer'
 
 
 #kail all backgound jobs
