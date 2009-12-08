@@ -55,6 +55,7 @@
     unstage = reset HEAD --
     last    = log -1 HEAD
     visual  = gitk
+    lg      = log --graph --pretty = format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date = relative
 
 [i18n]
     commitEncoding    = utf-8
