@@ -56,6 +56,7 @@
     unstage = reset HEAD --
     last    = log -1 HEAD
     lg      = log --graph --pretty=format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lgs     = log --stat
     assume  = !git-show-assume-unchanged
     contain = !git-show-what-is-contained
 
