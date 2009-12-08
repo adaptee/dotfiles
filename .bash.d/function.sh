@@ -438,13 +438,6 @@ function tidyxml ()
     done
 }
 
-# shows  git history as ASCII graph
-# usage: glog
-function glog()
-{
-    git log --pretty=oneline --topo-order --graph --abbrev-commit $@
-}
-
 # show current folder's git branch info
 function parse_git_branch()
 {
