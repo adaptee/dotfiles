@@ -43,6 +43,7 @@
     ai      = add -i
     br      = branch
     brd     = branch -d
+    brD     = branch -D
     cm      = commit -m
     cma     = commit -a -m
     co      = checkout
