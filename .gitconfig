@@ -64,5 +64,7 @@
     commitEncoding    = utf-8
     logOutputEncoding = utf-8
 
+[gc]
+    auto = 1
 [help]
     autocorrect = true
