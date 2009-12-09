@@ -69,4 +69,4 @@
 [gc]
     auto = 1
 [help]
-    autocorrect = true
+    autocorrect = 1
