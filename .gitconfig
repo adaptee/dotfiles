@@ -54,6 +54,7 @@
     st      = status
     wtf     = !git-wtf
     unstage = reset HEAD --
+    recover = checkout HEAD --
     last    = log -1 HEAD
     lg      = log --graph --pretty=format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lgs     = log --stat
