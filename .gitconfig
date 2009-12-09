@@ -60,6 +60,7 @@
     lgs     = log --stat
     assume  = !git-show-assume-unchanged
     contain = !git-show-what-is-contained
+    rmt     = remote -v
 
 [i18n]
     commitEncoding    = utf-8
