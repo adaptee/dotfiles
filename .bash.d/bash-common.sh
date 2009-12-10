@@ -225,8 +225,8 @@ export LESS_TERMCAP_us=$'\e[01;35m'
 which lesspipe &>/dev/null && eval "$(lesspipe)"
 which lesspipe.sh &>/dev/null && eval "$(lesspipe.sh)"
 
-# press "v" to call-out VIM, even when less is used together with pipeline.
-echo "v pipe $ vim - \n" > "/tmp/lesskey-${USER}"
+# press 'V' to call-out VIM, even when less is used together with pipeline.
+echo "V pipe $ vim - \n" > "/tmp/lesskey-${USER}"
 # press 'S' to search the head of each section in the manpage
 echo "S forw-search \^[A-Z]+$\r" >> "/tmp/lesskey-${USER}"
 lesskey -o ~/.less "/tmp/lesskey-${USER}"
