@@ -489,7 +489,7 @@ function get ()
 # show my actually ip .
 function  myip ()
 {
-    curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'
+    echo $(curl -s http://whatismyip.org)
 }
 
 
