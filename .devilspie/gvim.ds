@@ -1,6 +1,6 @@
 ; always start gvim with window maximized
 (if
-  (contains (window_name) "gVim")
+  (contains (window_class) "Gvim")
   (begin
     (maximize)
     )
