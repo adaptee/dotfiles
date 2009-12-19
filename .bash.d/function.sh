@@ -480,9 +480,19 @@ function randomstr()
 # download file. use "$*" to protect  weird charater within args
 function get ()
 {
-    local args="$*"
-    eval "wget -c '$args'"
-    notify-send -i ~/.icons/gdebi.png  "Download finished!"
+    # url is the last argument; here we make use the indirect expansion feature
+    local url="${!#}"
+
+    # option is all the other argument except the last
+    local options=""
+    local args_num=$#
+    local args=("$@")
+    for (( i = 0; i < ${args_num} - 1; i++ )); do
+       options="${options} ${args[$i]}"
+    done
+
+    # note, we enclose the url with single-quote in order to protect special character
+    eval "wget -c ${options} '${url}' " || notify-send -i ~/.icons/gdebi.png  "Download finished!"
 }
 
 
