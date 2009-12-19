@@ -477,11 +477,11 @@ function randomstr()
 #                               network related                             #
 #---------------------------------------------------------------------------#
 
-# download file. use "$*" to protect  weird charater within URL
+# download file. use "$*" to protect  weird charater within args
 function get ()
 {
-    local URL=$1
-    eval "wget -c '$URL'"
+    local args="$*"
+    eval "wget -c '$args'"
     notify-send -i ~/.icons/gdebi.png  "Download finished!"
 }
 
