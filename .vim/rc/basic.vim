@@ -67,13 +67,16 @@ nnoremap ; :
 "enable syntax highlighting
 syntax on
 
-"the terminal support 256 colors
-set t_Co=256
 
 "choose color scheme
-colorscheme darkZ
-"colorscheme torte
-"colorscheme desert
+" text console provide poor support for colors....
+if $TERM == "linux"
+    exec "colo torte"
+else
+    "the terminal support 256 colors
+    set t_Co=256
+    exec "colo darkZ"
+endif
 
 "--------------------------------------------------------------------------"
 "                                   visual clues                           "

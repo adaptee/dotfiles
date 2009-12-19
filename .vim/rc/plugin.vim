@@ -64,6 +64,10 @@ let g:completekey = "<Leader><tab>"
 " suprres the warning messages outputed when vim is compile without 'gui' support.
 let CSApprox_verbose_level=0
 
+" do not load this plugin under text console
+if $TERM == "linux"
+   let g:CSApprox_loaded=1
+endif
 "------------------------------------------------------------------------------------------------------
 " cmdline-complete.vim( press Ctrl-P or Ctrl-N to complete the word within command-line )
 "------------------------------------------------------------------------------------------------------
