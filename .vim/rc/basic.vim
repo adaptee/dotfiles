@@ -177,7 +177,7 @@ set smartcase
 set infercase
 
 "When on, the ":substitute" flag 'g' is default on.
-set gdefault
+"set gdefault
 
 " toggle search result highlighting; now the unused key '\' finally can do something now....
 nmap <silent> \      :nohlsearch<CR>
