@@ -492,7 +492,8 @@ function get ()
     done
 
     # note, we enclose the url with single-quote in order to protect special character
-    eval "wget -c ${options} '${url}' " || notify-send -i ~/.icons/gdebi.png  "Download finished!"
+    echo "wget -c ${options} '${url}' "
+    eval " wget -c ${options} '${url}' "  || notify-send -i ~/.icons/gdebi.png  "Download finished!"
 }
 
 
