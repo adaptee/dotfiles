@@ -13,8 +13,12 @@ function! MakeHelpSystemNavigationWebStyle()
 endfunction
 
 function! CopyCurrentFileName()
-    let @+ = expand('%:p')
-    let @* = expand('%:p')
+    " Without the clipboard feature, these 2 operation is invalid
+    if has('clipboard')
+        let @+ = expand('%:p')
+        let @* = expand('%:p')
+    endif
+    " this operation is always safe
     let @" = expand('%:p')
 endfunc
 
