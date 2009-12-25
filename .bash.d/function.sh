@@ -442,7 +442,7 @@ function tidyxml ()
 function parse_git_branch()
 {
     # tell 'cut' to use SPACE as delimiter
-    git branch 2> /dev/null | sed -e '/^[^*]/d' | cut --delimiter=\  --fields=2
+    git branch 2> /dev/null | sed -e '/^[^*]/d' | cut -f 2 -d ' '
 }
 
 #access the default git diff behavior
