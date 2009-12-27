@@ -84,7 +84,7 @@ function fm ()
 # empty the trash box
 function trashempty()
 {
-    rm ~/.local/share/Trash/* -rf && notify-send -i ~/.icons/trash.png "Trash is emptied."
+    empty-trash && notify-send -i ~/.icons/trash.png "Trash is emptied."
 }
 
 # open the trash box
