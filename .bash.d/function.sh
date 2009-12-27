@@ -162,6 +162,24 @@ function commify ()
     echo "${bdot:0:i+1}${commified}${adot}"
 }
 
+# return the extension part of a filename
+# input:  hello.world.I.love.linux.iso
+# output: iso
+function extension()
+{
+    local filename="$1"
+    echo ${filename##*.}
+}
+
+# remove the extension part of a filename
+# input:  hello.world.I.love.linux.iso
+# output: hello.world.I.love.linux
+function trimextension()
+{
+    local filename="$1"
+    echo ${filename%.*}
+}
+
 # create new folder and enter into it
 # usage: md [mode] DIR
 function md ()
