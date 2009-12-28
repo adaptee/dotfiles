@@ -450,9 +450,13 @@ nmap <Leader>S :split<CR><C-W>W
 nmap <Leader>V :vsplit<CR><C-W>w
 
 " iterate to next window
-nmap <Leader>i <C-w>w
+"nmap <Leader>i <C-w>w
 " reverse iterate to previouse window
-nmap <Leader>I <C-w>W
+"nmap <Leader>I <C-w>W
+
+" iterate window quickly
+nnoremap <C-N>      <C-W>w
+nnoremap <C-P>      <C-W>W
 
 " put new window below the original one.
 "set splitbelow
