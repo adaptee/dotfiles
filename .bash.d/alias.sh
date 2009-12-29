@@ -84,7 +84,7 @@ alias dir='dirs -v'
 
 #show folder hierarchy in tree-view
 # list size in human-friednly way, also apply nice ASCII line graph.
-alias tree='tree -h -A'
+alias tree='tree -h -A -N '
 # only list folder.
 alias treed='tree -d'
 
