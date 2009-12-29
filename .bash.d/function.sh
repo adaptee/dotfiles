@@ -282,7 +282,7 @@ function red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
 function inst()
 {
     local pkgname
-    pkgname=$(echo $1|tr '[A-Z]' '[a-x]')
+    pkgname=$(echo $@ | tr '[A-Z]' '[a-x]')
     sudo apt-get install -y $pkgname
 }
 
