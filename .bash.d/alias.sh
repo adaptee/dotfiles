@@ -208,9 +208,9 @@ alias vrc='vim ~/.vimrc'
 alias src='vim ~/.screenrc'
 alias vprc='vim ~/.vimperatorrc'
 alias grc='vim ~/.gitconfig'
-alias menu='sudo vim /boot/grub/menu.lst'
-alias fstab='sudo vim /etc/fstab'
-alias smb='sudo vim /etc/samba/smb.conf'
+alias menu='vim /boot/grub/menu.lst'
+alias fstab='vim /etc/fstab'
+alias smb='vim /etc/samba/smb.conf'
 
 
 #---------------------------------------------------------------------------#
