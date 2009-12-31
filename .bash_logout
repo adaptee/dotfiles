@@ -4,9 +4,9 @@
 rm ~/.gappproxy.lock
 
 # backup firefox profile
-if [ -x "${HOME}/bin/pack_firefox.sh" ];then
-    ${HOME}/bin/pack_firefox.sh backup
-fi
+#if [ -x "${HOME}/bin/pack_firefox.sh" ];then
+    #${HOME}/bin/pack_firefox.sh backup
+#fi
 
 # when leaving the console clear the screen to increase privacy
 if [ "$SHLVL" = 1 ]; then
