@@ -4,7 +4,7 @@ ScriptID SourceID Filename
 #2429   1        :AutoInstall:   autocorrect.tar
 2390    10336   :AutoInstall:   CSApprox.zip
 1218    10318   :AutoInstall:   NERD_commenter.zip
-1658    10767   :AutoInstall:   NERD_tree.zip
+1658 11834 :AutoInstall:   NERD_tree.zip
 508     9865    :AutoInstall:   ZoomWin.vim
 31      7218    :AutoInstall:   a.vim
 #365     11059   :AutoInstall:   bash-support.zip
@@ -13,11 +13,11 @@ ScriptID SourceID Filename
 #51     171     :AutoInstall:   cscope_macros.vim
 1735    10501   :AutoInstall:   echofunc.vim
 #1708    1       :AutoInstall:   fencview.vim
-197     7231    :AutoInstall:   genutils-2.4.zip
+197 11399 :AutoInstall:   genutils-2.4.zip
 642     8136    :AutoInstall:   getscript.vim
-311     1       :AutoInstall:   grep.vim
+311 7645 :AutoInstall:   grep.vim
 1581    7671    :AutoInstall:   lookupfile-1.8.zip
-1506    1       :AutoInstall:   LargeFile.vba.gz
+1506 9277 :AutoInstall:   LargeFile.vba.gz
 489     9573    :AutoInstall:   manpageview.vba.gz
 #2666    8603    :AutoInstall:   mark.vim
 1189    8687    :AutoInstall:   matrix.vim
@@ -35,3 +35,7 @@ ScriptID SourceID Filename
 #301    10362   :AutoInstall:   xml.vim
 
 # vim:ft=sh
+1506 1 :AutoInstall: LargeFile.vim
+1066 1 :AutoInstall: cecutil.vim
+2584 1 :AutoInstall: quickfixsigns.vim
+1502 1 :AutoInstall: vimball.vim
