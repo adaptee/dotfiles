@@ -131,6 +131,15 @@ function! InsertHeaderForBashScript()
     endif
 endfunction
 
+function! InsertHeaderForPythonScript()
+        call setline(1, "#!/usr/bin/env python")
+        call setline(2, "")
+        call setline(3, "")
+        normal G
+endfunction
+
+
+
 function! InsertClosingPair(char)
     if getline('.')[col('.') - 1] == a:char
         return "\<Right>"

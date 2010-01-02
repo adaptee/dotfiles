@@ -597,6 +597,9 @@ map gf :tabnew <cfile><CR>
 "Insert header automatically
 "autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
 
+"Insert python header automatically
+autocmd BufNewFile *.py  call InsertHeaderForPythonScript ()
+
 " Remove trailing white spaces when saving files
 autocmd BufWritePre *                  call DeleteTrailingWhiteSpaces()
 
