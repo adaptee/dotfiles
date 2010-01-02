@@ -21,21 +21,21 @@ ScriptID SourceID Filename
 489     9573    :AutoInstall:   manpageview.vba.gz
 #2666    8603    :AutoInstall:   mark.vim
 1189    8687    :AutoInstall:   matrix.vim
-521     9274    :AutoInstall:   mru.vim
+521 11919 :AutoInstall:   mru.vim
 #1520    1      :AutoInstall:   omnicppcomplete-0.41.zip
-1375    1       :AutoInstall:   qfixtoggle.zip
+1375 4651 :AutoInstall:   qfixtoggle.zip
 #2540   1       :AutoInstall:   snipMate.zip
-1643    10998   :AutoInstall:   supertab.vim
+1643 11853 :AutoInstall:   supertab.vim
 1697    8283    :AutoInstall:   surround.vim
 273     7701    :AutoInstall:   taglist_45.zip
 #1502    8743    :AutoInstall:   vimball.tar.gz
-2506    11008   :AutoInstall:   vimim.vim
+2506 11949 :AutoInstall:   vimim.vim
 1026    4700    :AutoInstall:   visualmark.vim
 73      6504    :AutoInstall:   word_complete.vim
 #301    10362   :AutoInstall:   xml.vim
 
 # vim:ft=sh
-1506 1 :AutoInstall: LargeFile.vim
+1506 9277 :AutoInstall: LargeFile.vim
 1066 1 :AutoInstall: cecutil.vim
 2584 1 :AutoInstall: quickfixsigns.vim
 1502 1 :AutoInstall: vimball.vim
