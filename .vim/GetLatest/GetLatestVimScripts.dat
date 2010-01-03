@@ -36,6 +36,6 @@ ScriptID SourceID Filename
 
 # vim:ft=sh
 1506 9277 :AutoInstall: LargeFile.vim
-1066 1 :AutoInstall: cecutil.vim
+1066 7618 :AutoInstall: cecutil.vim
 2584 1 :AutoInstall: quickfixsigns.vim
 1502 1 :AutoInstall: vimball.vim
