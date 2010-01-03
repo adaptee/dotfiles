@@ -1,4 +1,6 @@
-" added and modified by adaptee manually, not by any plugin.
+"--------------------------------------------------------------------------"
+"                    created by adaptee@gmail.com                          "
+"--------------------------------------------------------------------------"
 
 " indent the public/private keywords more conventionally
 set cino=g0
