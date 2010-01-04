@@ -14,7 +14,7 @@ let g:mapleader =","
 "command-line history limitation
 set history=1000
 
-"spell checking configureation
+"spell checking configuration
 set spelllang=en
 set spellsuggest=best,5
 "setup where to store the good word(zg) and bad word(zw)
@@ -22,7 +22,7 @@ set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
 " tips:
 " ]s : jumps to next spell error
 " ]s : jumps to previous spell error.
-" z= : show candicate corrections.
+" z= : show candidate corrections.
 
 " none of these should be word dividers
 "set isk+=_,$,@,%,#,-
@@ -219,7 +219,7 @@ set clipboard=unnamed
 "super paste; now in insert mode, you can use <C-v> to do pasting
 inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 
-" stealed from VimTip 1539; added creating mark before making changes.
+" stolen from VimTip 1539; added creating mark before making changes.
 " exchange the word under cursor with next word
 nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 " exchange the word under cursor with previous word
@@ -295,7 +295,7 @@ cnoremap <C-E>  <End>
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 
-"stealed from VimTip 646
+"stolen from VimTip 646
 "Move current line of text up and down(crossing other text)
 set <M-j>=j
 set <M-k>=k
@@ -371,7 +371,7 @@ vnoremap < <gv
 vnoremap <Tab>   >gv
 vnoremap <S-Tab> <gv
 
-" merge multiple continurous blank lines into single one.
+" merge multiple contiguous blank lines into single one.
 nnoremap <silent><Leader>Z :call MergeBlankLinesIntoSingleLine()<CR>
 
 "--------------------------------------------------------------------------"
@@ -410,9 +410,9 @@ set switchbuf=usetab
 "when detecting file is modified outside of Vim, reload the file automatically
 set autoread
 
-" make a backup before overwritting a file, for the sake of safety.
+" make a backup before overwriting a file, for the sake of safety.
 set writebackup
-" but delete the backup after the file is overwritten succussfully.
+" but delete the backup after the file is overwritten successfully.
 set nobackup
 
 " use directory of the related buffer as the start-point for file browser
@@ -438,7 +438,7 @@ command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 " add more functionality to existing <C-g>
 " first, show the full path
-" then, copy the full path into 3 main registers: *, +, "
+" then, copy the full path into 3 main registers: *, +,
 nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 
 "--------------------------------------------------------------------------"
@@ -451,7 +451,7 @@ nmap <Leader>V :vsplit<CR><C-W>w
 
 " iterate to next window
 "nmap <Leader>i <C-w>w
-" reverse iterate to previouse window
+" reverse iterate to previous window
 "nmap <Leader>I <C-w>W
 
 " iterate window quickly
@@ -484,7 +484,7 @@ nnoremap <silent><Leader>T :tab sball<CR>
 "switch to next tab
 nnoremap <silent><Leader>n :tabnext<CR>
 nnoremap <silent><Tab>     :tabnext<CR>
-"switch to previos tab
+"switch to previous tab
 nnoremap <silent><Leader>p :tabprevious<CR>
 nnoremap <S-Tab>           :tabprevious<CR>
 
@@ -659,7 +659,7 @@ let g:netrw_http_cmd = "wget -q -O"
 " note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
 
-"stealed from VimTip 1540
+"stolen from VimTip 1540
 " set 'updatetime' to 10 seconds when in insert mode
 autocmd InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
 autocmd InsertLeave * let &updatetime=updatetimerestore
