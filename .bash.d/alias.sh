@@ -324,7 +324,7 @@ alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
 alias ack=ack-grep
 
 # generated unified  result
-alias diff='diff -u'
+alias diff='diff -aruN'
 
 alias cdiff='colordiff'
 
