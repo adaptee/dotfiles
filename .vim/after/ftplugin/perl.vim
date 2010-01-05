@@ -1,3 +1,6 @@
-" added and modified by adaptee manually, not by any plugin.
+"--------------------------------------------------------------------------"
+"                    created by adaptee@gmail.com                          "
+"--------------------------------------------------------------------------"
+
 
 setlocal equalprg=perltidy

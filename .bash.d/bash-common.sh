@@ -271,6 +271,8 @@ complete -e ee
 complete -o filenames -F _find f
 complete -o filenames -F _longopt g
 
+complete -c sudo
+
 # only provide .Z .gz and .tgz file to gunzip
 complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 
