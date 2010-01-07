@@ -12,10 +12,10 @@
 	<entry name="show_desktop" mtime="1262856969" type="string">
 		<stringvalue>&lt;Mod4&gt;d</stringvalue>
 	</entry>
-	<entry name="run_command_window_screenshot" mtime="1260098655" type="string">
+	<entry name="run_command_window_screenshot" mtime="1262860323" type="string">
 		<stringvalue>&lt;Alt&gt;Print</stringvalue>
 	</entry>
-	<entry name="run_command_screenshot" mtime="1260098655" type="string">
+	<entry name="run_command_screenshot" mtime="1262860323" type="string">
 		<stringvalue>Print</stringvalue>
 	</entry>
 	<entry name="panel_run_dialog" mtime="1262855937" type="string">
