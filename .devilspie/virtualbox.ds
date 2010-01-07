@@ -1,0 +1,10 @@
+; always start gvim with window maximized
+(if
+  (contains (window_class) "VirtualBox")
+  (begin
+    (set_workspace 1)
+    ;(maximize)
+    )
+  )
+
+/* vim: set ft=lisp: */
