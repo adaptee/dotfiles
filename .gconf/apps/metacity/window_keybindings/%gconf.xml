@@ -24,8 +24,8 @@
 	<entry name="move_to_workspace_1" mtime="1242044703" type="string">
 		<stringvalue></stringvalue>
 	</entry>
-	<entry name="maximize" mtime="1262858784" type="string">
-		<stringvalue></stringvalue>
+	<entry name="maximize" mtime="1262859012" type="string">
+		<stringvalue>&lt;Alt&gt;F5</stringvalue>
 	</entry>
 	<entry name="unmaximize" mtime="1257135804" type="string">
 		<stringvalue>disabled</stringvalue>
