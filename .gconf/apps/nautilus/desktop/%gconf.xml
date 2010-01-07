@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="trash_icon_visible" mtime="1228556766" type="bool" value="false">
+        </entry>
+        <entry name="volumes_visible" mtime="1228556688" type="bool" value="false">
+        </entry>
+</gconf>
