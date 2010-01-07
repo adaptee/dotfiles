@@ -1,0 +1,8 @@
+; always start gconf-editor with window maximized
+(if
+  (contains (window_class) "Gconf-editor")
+  (begin
+    (maximize)
+    )
+  )
+/* vim: set ft=lisp: */
