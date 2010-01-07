@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="suppress_logout_restart_shutdown" mtime="1259416315" type="bool" value="true"/>
+</gconf>
