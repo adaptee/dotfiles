@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="exec_arg" mtime="1238909644" type="string">
+                <stringvalue>-x</stringvalue>
+        </entry>
+        <entry name="exec" mtime="1238953629" type="string">
+                <stringvalue>gnome-terminal --maximize</stringvalue>
+        </entry>
+</gconf>
