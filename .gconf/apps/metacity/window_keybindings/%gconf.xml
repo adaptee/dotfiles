@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="close" mtime="1262856032" type="string">
+		<stringvalue>&lt;Alt&gt;F4</stringvalue>
+	</entry>
+	<entry name="begin_move" mtime="1262710562" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="begin_resize" mtime="1262710557" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="toggle_maximized" mtime="1262856026" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="activate_window_menu" mtime="1262710434" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="move_to_workspace_3" mtime="1242044705" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="move_to_workspace_2" mtime="1242044704" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="move_to_workspace_1" mtime="1242044703" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="maximize" mtime="1262856027" type="string">
+		<stringvalue>&lt;Alt&gt;F5</stringvalue>
+	</entry>
+	<entry name="unmaximize" mtime="1257135804" type="string">
+		<stringvalue>disabled</stringvalue>
+	</entry>
+	<entry name="minimize" mtime="1262856035" type="string">
+		<stringvalue>&lt;Alt&gt;F3</stringvalue>
+	</entry>
+	<entry name="toggle_above" mtime="1244104874" type="string">
+		<stringvalue>&lt;Control&gt;&lt;Alt&gt;Z</stringvalue>
+	</entry>
+</gconf>

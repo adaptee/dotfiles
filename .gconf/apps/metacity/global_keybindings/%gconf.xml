@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="cycle_group" mtime="1262710523" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="switch_windows_backward" mtime="1257149661" type="string">
+		<stringvalue>&lt;Shift&gt;&lt;Alt&gt;Tab</stringvalue>
+	</entry>
+	<entry name="switch_to_workspace_left" mtime="1247139026" type="string">
+		<stringvalue>&lt;Control&gt;&lt;Alt&gt;Left</stringvalue>
+	</entry>
+	<entry name="show_desktop" mtime="1262856969" type="string">
+		<stringvalue>&lt;Mod4&gt;d</stringvalue>
+	</entry>
+	<entry name="run_command_window_screenshot" mtime="1260098655" type="string">
+		<stringvalue>&lt;Alt&gt;Print</stringvalue>
+	</entry>
+	<entry name="run_command_screenshot" mtime="1260098655" type="string">
+		<stringvalue>Print</stringvalue>
+	</entry>
+	<entry name="panel_run_dialog" mtime="1262855937" type="string">
+		<stringvalue>&lt;Alt&gt;F2</stringvalue>
+	</entry>
+	<entry name="panel_main_menu" mtime="1262856773" type="string">
+		<stringvalue>&lt;Shift&gt;F1</stringvalue>
+	</entry>
+	<entry name="run_command_terminal" mtime="1262855952" type="string">
+		<stringvalue>&lt;Alt&gt;apostrophe</stringvalue>
+	</entry>
+</gconf>
