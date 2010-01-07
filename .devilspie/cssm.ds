@@ -1,0 +1,9 @@
+; always start gvim with window maximized
+(if
+  (contains (window_class) "Ccsm")
+  (begin
+    (maximize)
+    )
+  )
+
+/* vim: set ft=lisp: */
