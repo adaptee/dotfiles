@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="enabled" mtime="1257153677" type="bool" value="true"/>
+	<entry name="needs_terminal" mtime="1258201972" type="bool" value="false"/>
+	<entry name="command" mtime="1257153661" type="string">
+		<stringvalue>/usr/bin/ed2k %s</stringvalue>
+	</entry>
+</gconf>
