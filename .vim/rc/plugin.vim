@@ -228,6 +228,17 @@ let OmniCpp_MayCompleteArrow    = 1
 let OmniCpp_MayCompleteScope    = 1
 
 "------------------------------------------------------------------------------------------------------
+" pylint.vim
+"------------------------------------------------------------------------------------------------------
+
+" integrate pylint into vim
+autocmd FileType python compiler pylint
+
+" disable calling Pylint every time a buffer is saved
+let g:pylint_onwrite = 0
+
+
+"------------------------------------------------------------------------------------------------------
 " qfixtoggle.vim( toggle the quickfix window)
 "------------------------------------------------------------------------------------------------------
 nmap <F6> :QFix<CR>
