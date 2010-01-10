@@ -88,7 +88,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=442,0,374,32
+geometry=442,0,400,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -119,7 +119,7 @@ plugin=notifier
 zvalue=47
 
 [Containments][16][Applets][28]
-geometry=820,0,226,32
+geometry=846,0,200,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -146,7 +146,7 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=12
+DialogHeight=6
 DialogWidth=0
 
 [Containments][16][Applets][33]
@@ -189,7 +189,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=54
+zvalue=50
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18
@@ -203,7 +203,7 @@ temps=acpi/thermal_zone/THRM/temperature
 geometry=983,319,277,180
 immutability=1
 plugin=sm_net
-zvalue=17
+zvalue=16
 
 [Containments][38][Applets][15][Configuration]
 inColor=210,210,0
