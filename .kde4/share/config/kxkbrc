@@ -1,0 +1,11 @@
+[Layout]
+DisplayNames=us
+IndicatorOnly=false
+LayoutList=us
+Model=asus_laptop
+Options=caps:swapescape
+ResetOldOptions=true
+ShowFlag=true
+ShowSingle=false
+SwitchMode=Global
+Use=true
