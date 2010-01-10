@@ -1,0 +1,21 @@
+[Animation]
+Frames=1
+
+[Appearance]
+BackgroundColorOpacity=0
+TerminalHighlightOnManualActivation=true
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Dialogs]
+ConfirmQuit=false
+FirstRun=false
+ShowPopup=false
+
+[Favorite Profiles]
+Favorites=/home/whodare/.kde4/share/apps/konsole/Shell.profile
+
+[Window]
+DynamicTabTitles=true
+Width=100
