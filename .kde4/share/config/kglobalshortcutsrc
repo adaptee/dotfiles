@@ -216,5 +216,5 @@ activate widget 92=,Shift+F1,Activate Application Launcher Menu Widget
 activate widget 94=,Meta+D,Activate Show Desktop Widget
 
 [yakuake]
-_k_friendly_name=
+_k_friendly_name=Yakuake
 toggle-window-state=Pause,F12,打开/缩回 Yakuake
