@@ -32,8 +32,8 @@ sourceAppletId=17
 sourceAppletPluginName=battery
 
 [Containments][16][Applets][17][PopupApplet]
-DialogHeight=347
-DialogWidth=320
+DialogHeight=370
+DialogWidth=316
 
 [Containments][16][Applets][19]
 geometry=1086,0,32,32
@@ -57,8 +57,8 @@ sourceAppletId=20
 sourceAppletPluginName=digital-clock
 
 [Containments][16][Applets][20][PopupApplet]
-DialogHeight=270
-DialogWidth=327
+DialogHeight=276
+DialogWidth=330
 
 [Containments][16][Applets][21]
 geometry=1190,0,32,32
@@ -146,7 +146,7 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=6
+DialogHeight=12
 DialogWidth=0
 
 [Containments][16][Applets][33]
@@ -189,7 +189,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=50
+zvalue=47
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18
