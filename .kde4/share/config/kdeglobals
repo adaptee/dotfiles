@@ -1,0 +1,253 @@
+[$Version]
+update_info=mouse_cursor_theme.upd:kde3.4.99,kaccel.upd:kde3.3/r1,kwin.upd:kde3.2Xinerama,kded.upd:kde3.0
+
+[ColorEffects:Disabled]
+Color=112,111,110
+ColorAmount=0.2
+ColorEffect=1
+ContrastAmount=0.25
+ContrastEffect=2
+IntensityAmount=0.1
+IntensityEffect=3
+
+[ColorEffects:Inactive]
+Color=152,152,152
+ColorAmount=0.05
+ColorEffect=-2
+ContrastAmount=0.25
+ContrastEffect=-2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=139,152,123
+BackgroundNormal=131,144,117
+DecorationFocus=72,120,144
+DecorationHover=177,209,224
+ForegroundActive=240,255,128
+ForegroundInactive=131,144,117
+ForegroundLink=0,87,174
+ForegroundNegative=191,3,97
+ForegroundNeutral=176,132,0
+ForegroundNormal=0,0,0
+ForegroundPositive=0,110,40
+ForegroundVisited=125,108,144
+
+[Colors:Selection]
+BackgroundAlternate=115,157,168
+BackgroundNormal=121,164,176
+DecorationFocus=72,120,144
+DecorationHover=177,209,224
+ForegroundActive=240,255,128
+ForegroundInactive=168,206,224
+ForegroundLink=0,87,174
+ForegroundNegative=191,3,97
+ForegroundNeutral=176,132,0
+ForegroundNormal=255,255,255
+ForegroundPositive=0,110,40
+ForegroundVisited=125,108,144
+
+[Colors:Tooltip]
+BackgroundAlternate=156,189,204
+BackgroundNormal=149,180,195
+DecorationFocus=72,120,144
+DecorationHover=177,209,224
+ForegroundActive=240,255,128
+ForegroundInactive=131,144,117
+ForegroundLink=0,87,174
+ForegroundNegative=191,3,97
+ForegroundNeutral=176,132,0
+ForegroundNormal=0,0,0
+ForegroundPositive=0,110,40
+ForegroundVisited=125,108,144
+
+[Colors:View]
+BackgroundAlternate=208,220,194
+BackgroundNormal=200,212,186
+DecorationFocus=72,120,144
+DecorationHover=177,209,224
+ForegroundActive=240,255,128
+ForegroundInactive=131,144,117
+ForegroundLink=0,87,174
+ForegroundNegative=191,3,97
+ForegroundNeutral=176,132,0
+ForegroundNormal=0,0,0
+ForegroundPositive=0,110,40
+ForegroundVisited=125,108,144
+
+[Colors:Window]
+BackgroundAlternate=171,184,156
+BackgroundNormal=162,175,148
+DecorationFocus=72,120,144
+DecorationHover=177,209,224
+ForegroundActive=240,255,128
+ForegroundInactive=131,144,117
+ForegroundLink=0,87,174
+ForegroundNegative=191,3,97
+ForegroundNeutral=176,132,0
+ForegroundNormal=0,0,0
+ForegroundPositive=0,110,40
+ForegroundVisited=125,108,144
+
+[DesktopIcons]
+ActiveColor=169,156,255
+ActiveColor2=0,0,0
+ActiveEffect=togamma
+ActiveSemiTransparent=false
+ActiveValue=0.7
+Animated=true
+DefaultColor=144,128,248
+DefaultColor2=0,0,0
+DefaultEffect=none
+DefaultSemiTransparent=false
+DefaultValue=1
+DisabledColor=34,202,0
+DisabledColor2=0,0,0
+DisabledEffect=togray
+DisabledSemiTransparent=true
+DisabledValue=1
+Size=48
+
+[General]
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=rgb
+desktopFont=Monaco,11,-1,5,50,0,0,0,0,0
+fixed=DejaVu Sans Mono,10,-1,5,50,0,0,0,0,0
+font=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
+menuFont=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
+shadeSortColumn=true
+smallestReadableFont=Vera Sans YuanTi,9,-1,5,50,0,0,0,0,0
+taskbarFont=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
+toolBarFont=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
+widgetStyle=oxygen
+
+[Icons]
+Theme=oxygen
+
+[KDE]
+AutoSelectDelay=-1
+ChangeCursor=true
+DoubleClickInterval=400
+ShowDeleteCommand=false
+ShowIconsOnPushButtons=true
+SingleClick=true
+StartDragDist=4
+StartDragTime=500
+WheelScrollLines=3
+contrast=7
+
+[KDE-Global GUI Settings]
+GraphicEffectsLevel=6
+
+[KFileDialog Settings]
+Automatically select filename extension=true
+Breadcrumb Navigation=false
+Decoration position=0
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Previews=false
+Recent URLs[$e]=$HOME/.kde4/share/config,$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物
+Show Bookmarks=false
+Show Full Path=false
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort reversed=false
+Speedbar Width=100
+View Style=Simple
+
+[KShortcutsDialog Settings]
+Dialog Size=1280,715
+
+[MainToolbarIcons]
+ActiveColor=169,156,255
+ActiveColor2=0,0,0
+ActiveEffect=none
+ActiveSemiTransparent=false
+ActiveValue=1
+Animated=false
+DefaultColor=144,128,248
+DefaultColor2=0,0,0
+DefaultEffect=none
+DefaultSemiTransparent=false
+DefaultValue=1
+DisabledColor=34,202,0
+DisabledColor2=0,0,0
+DisabledEffect=togray
+DisabledSemiTransparent=true
+DisabledValue=1
+Size=22
+
+[PanelIcons]
+ActiveColor=169,156,255
+ActiveColor2=0,0,0
+ActiveEffect=togamma
+ActiveSemiTransparent=false
+ActiveValue=0.7
+Animated=false
+DefaultColor=144,128,248
+DefaultColor2=0,0,0
+DefaultEffect=none
+DefaultSemiTransparent=false
+DefaultValue=1
+DisabledColor=34,202,0
+DisabledColor2=0,0,0
+DisabledEffect=togray
+DisabledSemiTransparent=true
+DisabledValue=1
+Size=32
+
+[PreviewSettings]
+MaximumSize=5242880
+UseFileThumbnails=true
+
+[SmallIcons]
+ActiveColor=169,156,255
+ActiveColor2=0,0,0
+ActiveEffect=none
+ActiveSemiTransparent=false
+ActiveValue=1
+Animated=false
+DefaultColor=144,128,248
+DefaultColor2=0,0,0
+DefaultEffect=none
+DefaultSemiTransparent=false
+DefaultValue=1
+DisabledColor=34,202,0
+DisabledColor2=0,0,0
+DisabledEffect=togray
+DisabledSemiTransparent=true
+DisabledValue=1
+Size=22
+
+[Toolbar style]
+ToolButtonStyle=TextOnly
+
+[ToolbarIcons]
+ActiveColor=169,156,255
+ActiveColor2=0,0,0
+ActiveEffect=none
+ActiveSemiTransparent=false
+ActiveValue=1
+Animated=false
+DefaultColor=144,128,248
+DefaultColor2=0,0,0
+DefaultEffect=none
+DefaultSemiTransparent=false
+DefaultValue=1
+DisabledColor=34,202,0
+DisabledColor2=0,0,0
+DisabledEffect=togray
+DisabledSemiTransparent=true
+DisabledValue=1
+Size=22
+
+[WM]
+activeBackground=128,192,224
+activeFont=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
+activeForeground=255,255,255
+inactiveBackground=111,122,99
+inactiveForeground=255,255,255
