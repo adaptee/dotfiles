@@ -109,6 +109,9 @@ DisabledSemiTransparent=true
 DisabledValue=1
 Size=48
 
+[Emoticons]
+emoticonsTheme=kde4
+
 [General]
 XftAntialias=true
 XftHintStyle=hintslight
@@ -121,7 +124,7 @@ shadeSortColumn=true
 smallestReadableFont=Vera Sans YuanTi,9,-1,5,50,0,0,0,0,0
 taskbarFont=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
 toolBarFont=Vera Sans YuanTi,10,-1,5,50,0,0,0,0,0
-widgetStyle=oxygen
+widgetStyle=qtcurve
 
 [Icons]
 Theme=oxygen
