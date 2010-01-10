@@ -58,7 +58,7 @@ sourceAppletPluginName=digital-clock
 
 [Containments][16][Applets][20][PopupApplet]
 DialogHeight=276
-DialogWidth=330
+DialogWidth=327
 
 [Containments][16][Applets][21]
 geometry=1190,0,32,32
@@ -189,7 +189,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=47
+zvalue=31
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18
@@ -203,7 +203,7 @@ temps=acpi/thermal_zone/THRM/temperature
 geometry=983,319,277,180
 immutability=1
 plugin=sm_net
-zvalue=16
+zvalue=15
 
 [Containments][38][Applets][15][Configuration]
 inColor=210,210,0
