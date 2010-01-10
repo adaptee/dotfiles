@@ -16,6 +16,13 @@ ShowPopup=false
 [Favorite Profiles]
 Favorites=/home/whodare/.kde4/share/apps/konsole/Shell.profile
 
+[Shortcuts]
+help_whats_this=none
+move-session-left=Shift+Left
+new-session=Alt+N
+next-session=Alt+Right
+previous-session=Alt+Left
+
 [Window]
 DynamicTabTitles=true
 Width=100
