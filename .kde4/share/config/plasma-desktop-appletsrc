@@ -88,7 +88,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=442,0,400,32
+geometry=442,0,348,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -119,7 +119,7 @@ plugin=notifier
 zvalue=47
 
 [Containments][16][Applets][28]
-geometry=846,0,200,32
+geometry=794,0,252,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -146,8 +146,8 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=98
-DialogWidth=424
+DialogHeight=6
+DialogWidth=0
 
 [Containments][16][Applets][33]
 geometry=0,0,32,32
