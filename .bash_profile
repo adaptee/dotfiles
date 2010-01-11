@@ -21,6 +21,10 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
+# If under X window environment, grant root the access to X server
+[ "prefix" !=  "prefix$DISPLAY" ]  && xhost +local:root
+
+
 #------------------------------------------------------------------------------
 #                                 load bashrc                                 #
 #------------------------------------------------------------------------------
