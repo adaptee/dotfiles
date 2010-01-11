@@ -9,5 +9,8 @@ Height 800=801
 State=AAAA/wAAAAD9AAAAAAAABQAAAALOAAAABAAAAAQAAAAIAAAACPwAAAAA
 Width 1280=1281
 
+[Notification Messages]
+CloseAllTabs=false
+
 [Shortcut Schemes]
 Current Scheme=Default

@@ -33,8 +33,8 @@ ViewPropsTimestamp=2010,1,9,9,40,15
 FontWeight=50
 
 [KPropertiesDialog]
-Height 800=409
-Width 1280=289
+Height 800=426
+Width 1280=302
 
 [MainWindow]
 Height 800=742
@@ -44,11 +44,15 @@ Width 1280=1280
 [Notification Messages]
 ConfirmTrash=true
 
+[Open-with settings]
+CompletionMode=5
+History=smplayer
+
 [PreviewSettings]
 Plugins=directorythumbnail,imagethumbnail,jpegthumbnail
 
 [SettingsDialog]
-Height 800=487
+Height 800=502
 Width 1280=537
 
 [ViewPropertiesDialog]

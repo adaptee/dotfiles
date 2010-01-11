@@ -1,6 +1,19 @@
 [$Version]
 update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
 
+[juk]
+_k_friendly_name=JuK
+back=,Ctrl+Alt+Left,Previous
+forward=,Ctrl+Alt+Right,&Next
+forwardAlbum=Ctrl+Alt+Up,Ctrl+Alt+Up,Play Next Album
+mute=Ctrl+Alt+M,Ctrl+Alt+M,Mute
+playPause=Ctrl+Alt+P,Ctrl+Alt+P,Play / Pause
+seekBack=,Ctrl+Alt+Shift+Left,Seek Back
+seekForward=,Ctrl+Alt+Shift+Right,Seek Forward
+stop=Ctrl+Alt+S,Ctrl+Alt+S,&Stop
+volumeDown=Ctrl+Alt+Shift+Down,Ctrl+Alt+Shift+Down,Volume Down
+volumeUp=Ctrl+Alt+Shift+Up,Ctrl+Alt+Shift+Up,Volume Up
+
 [khotkeys]
 _k_friendly_name=
 {961384ae-d1d7-4da4-848c-605c2639e927}=Print,none,PrintScreen

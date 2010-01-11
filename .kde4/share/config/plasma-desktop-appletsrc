@@ -128,7 +128,7 @@ zvalue=48
 extenderIconName=
 extenderItemName=jobGroup
 extenderItemPosition=0
-extenderTitle=
+extenderTitle=no running jobs
 isCollapsed=false
 isGroup=true
 sourceAppletId=28
@@ -146,8 +146,8 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=12
-DialogWidth=0
+DialogHeight=98
+DialogWidth=424
 
 [Containments][16][Applets][33]
 geometry=0,0,32,32
@@ -189,7 +189,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=31
+zvalue=28
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18

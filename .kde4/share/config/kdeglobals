@@ -135,7 +135,7 @@ ChangeCursor=true
 DoubleClickInterval=400
 ShowDeleteCommand=false
 ShowIconsOnPushButtons=true
-SingleClick=true
+SingleClick=false
 StartDragDist=4
 StartDragTime=500
 WheelScrollLines=3
@@ -151,7 +151,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/.kde4/share/config,$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物
+Recent URLs[$e]=$HOME/.kde4/share/config,$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物,$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
@@ -159,7 +159,7 @@ Show Speedbar=true
 Show hidden files=false
 Sort by=Name
 Sort reversed=false
-Speedbar Width=100
+Speedbar Width=105
 View Style=Simple
 
 [KShortcutsDialog Settings]
