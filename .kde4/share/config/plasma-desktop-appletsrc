@@ -88,7 +88,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=442,0,452,32
+geometry=442,0,400,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -119,7 +119,7 @@ plugin=notifier
 zvalue=47
 
 [Containments][16][Applets][28]
-geometry=898,0,148,32
+geometry=846,0,200,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -127,7 +127,7 @@ zvalue=48
 [Containments][16][Applets][28][Configuration][ExtenderItems][7]
 extenderIconName=
 extenderItemName=jobGroup
-extenderItemPosition=114
+extenderItemPosition=0
 extenderTitle=
 isCollapsed=false
 isGroup=true
@@ -137,7 +137,7 @@ sourceAppletPluginName=systemtray
 [Containments][16][Applets][28][Configuration][ExtenderItems][8]
 extenderIconName=
 extenderItemName=completedJobsGroup
-extenderItemPosition=64
+extenderItemPosition=0
 extenderTitle=0 Recently Completed Jobs:
 groupCollapsed=false
 isCollapsed=false
@@ -146,8 +146,8 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=6
-DialogWidth=0
+DialogHeight=98
+DialogWidth=424
 
 [Containments][16][Applets][33]
 geometry=0,0,32,32
@@ -189,7 +189,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=22
+zvalue=19
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18
