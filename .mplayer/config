@@ -1,8 +1,10 @@
 # Write your default config options here!
+
 #added by whodare
 
 # audio driver
 ao = alsa
+
 # use xv as video driver ; low resource usage
 vo = xv
 
@@ -37,10 +39,15 @@ subfont-osd-scale=6
 #subtitle text autoscale coefficient as percentage of the screen size
 subfont-text-scale = 6
 
+# show subtitle under the scene, not interferin the movie
+vf="expand=0:-50:0:0"
+
 # font file
 font = "subfont.ttf"
 #font = "Vera Sans YuanTi"
 #font = "WenQuanYi Micro Hei"
+
+ffactor = 1
 
 # encoding of font file
 subfont-encoding = "unicode"
@@ -50,38 +57,11 @@ ass = "on"
 
 # font hinting type; 1 means light
 ass-hinting = 1
+ass-use-margins = "yes"
 
 # never apply software scaling
 zoom = "no"
 
 # speed up playbacking
-
 #speed = "1.1"
-#
-framedrop=yes
-subcp=cp936
-subfont-autoscale=2
-subfont-text-scale=3
-subfont-osd-scale=3
-overlapsub=yes
-ao=win32
-af=volnorm,volume=4
-fs=no
-cache=20480
-#ontop=yes
-#这一行是置顶.
-quiet=no
-autoq=6
-#vf="pp=hb:y/vb:y/ha:y:128:7/va:y/dr:y/al/,expand=0:-50:0:0"
-#上面一行里面, PP是postprocess的意思,如果你的CPU足够好,那就打开这个功能,据说能提高画质.不过我没怎么看出来. Expand是在画面的下面搞出来黑条,用来放字幕,这样字幕就不会挡在画面里面了
-priority=abovenormal
-#设置MPlayer的CPU优先级,高一点的话能保证不卡
-#really-quiet=y
-benchmark=y
-ass=y
-ass-font-scale=2
-ass-use-margins=y
-ffactor=1
-#osdlevel=0
-spuaa=3
-dr=y
+
