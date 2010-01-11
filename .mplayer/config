@@ -1,19 +1,67 @@
 # Write your default config options here!
 
-
 #added by whodare
 
+# audio driver
+ao = alsa
 
-sub_auto_load = "yes"
-sub_unicode = "no"
-sub_pos = "100"
-sub_overlap = "no"
-sub_cp = "cp936"
-font_factor = "0.450000"
-font_encoding = "unicode"
+# use xv as video driver ; low resource usage
+vo = xv
 
+# disble screenserver when movie is being played
+stop-xscreensaver = "yes"
+
+# solve the sync problem when playing .flv file
+autosync = 0
+mc = 0
+
+#aspect  ratio  of your monitor
+monitoraspect = "16:10"
+
+# load all subtitiles in the current folder
+sub-fuzziness = 2
+
+# allow showing multiple subtitle at the same time
+overlapsub = "yes"
+
+# encoding of subtitile file
+subcp = cp936
+
+# scaling subtitle proportionally to :
+#  1 : movie height
+#  2 : movie width
+#  3 : movie diagonal(default)
+subfont-autoscale=2
+
+#autoscale coefficient of the OSD element
+subfont-osd-scale=6
+
+#subtitle text autoscale coefficient as percentage of the screen size
+subfont-text-scale = 6
+
+# show subtitle under the scene, not interferin the movie
+vf="expand=0:-50:0:0"
+
+# font file
+font = "subfont.ttf"
+#font = "Vera Sans YuanTi"
+#font = "WenQuanYi Micro Hei"
+
+ffactor = 1
+
+# encoding of font file
+subfont-encoding = "unicode"
+
+# Turn on SSA/ASS subtitle rendering
+ass = "on"
+
+# font hinting type; 1 means light
+ass-hinting = 1
+ass-use-margins = "yes"
+
+# never apply software scaling
 zoom = "no"
-ass=yes
 
 # speed up playbacking
 #speed = "1.1"
+
