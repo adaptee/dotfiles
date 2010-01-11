@@ -31,6 +31,24 @@ MaxVSpeed=2
 MinFlakes=10
 Number=200
 
+[MouseBindings]
+CommandActiveTitlebar1=Raise
+CommandActiveTitlebar2=Lower
+CommandActiveTitlebar3=Operations menu
+CommandAll1=Move
+CommandAll2=Toggle raise and lower
+CommandAll3=Resize
+CommandAllKey=Alt
+CommandAllWheel=Nothing
+CommandInactiveTitlebar1=Activate and raise
+CommandInactiveTitlebar2=Activate and lower
+CommandInactiveTitlebar3=Operations menu
+CommandTitlebarWheel=Nothing
+CommandWindow1=Activate, raise and pass click
+CommandWindow2=Activate and pass click
+CommandWindow3=Activate and pass click
+CommandWindowWheel=Scroll
+
 [Plugins]
 kwin4_effect_boxswitchEnabled=false
 kwin4_effect_coverswitchEnabled=false
@@ -72,6 +90,9 @@ kwin4_effect_translucencyEnabled=true
 kwin4_effect_wobblywindowsEnabled=false
 kwin4_effect_zoomEnabled=true
 
+[PopupInfo]
+ShowPopup=false
+
 [Style]
 BorderSize=1
 ButtonsOnLeft=M
@@ -79,3 +100,35 @@ ButtonsOnRight=HIA__X
 CustomButtonPositions=false
 PluginLib=kwin3_oxygen
 ShowToolTips=true
+
+[TabBox]
+TraverseAll=false
+
+[Windows]
+ActiveMouseScreen=false
+AltTabStyle=KDE
+AutoRaise=false
+AutoRaiseInterval=750
+BorderSnapZone=10
+CenterSnapZone=0
+ClickRaise=true
+DelayFocus=false
+DelayFocusInterval=750
+FocusPolicy=ClickToFocus
+FocusStealingPreventionLevel=1
+GeometryTip=false
+HideUtilityWindowsForInactive=true
+MaximizeButtonLeftClickCommand=Maximize
+MaximizeButtonMiddleClickCommand=Maximize (vertical only)
+MaximizeButtonRightClickCommand=Maximize (horizontal only)
+MoveMode=Opaque
+MoveResizeMaximizedWindows=true
+Placement=Smart
+ResizeMode=Opaque
+RollOverDesktops=true
+SeparateScreenFocus=false
+ShadeHover=false
+ShadeHoverInterval=250
+SnapOnlyWhenOverlapping=false
+TitlebarDoubleClickCommand=Maximize
+WindowSnapZone=10
