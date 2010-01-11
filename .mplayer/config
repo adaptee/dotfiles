@@ -2,6 +2,8 @@
 
 #added by whodare
 
+#--------------------audio & video------------------------------#
+
 # audio driver
 ao = alsa
 
@@ -15,8 +17,19 @@ stop-xscreensaver = "yes"
 autosync = 0
 mc = 0
 
+# never apply software scaling
+zoom = "no"
+
+# speed up playbacking
+#speed = "1.1"
+
+#--------------------display------------------------------#
+
 #aspect  ratio  of your monitor
 monitoraspect = "16:10"
+
+
+#---------------------subtitle----------------------------#
 
 # load all subtitiles in the current folder
 sub-fuzziness = 2
@@ -42,12 +55,12 @@ subfont-text-scale = 6
 # show subtitle under the scene, not interferin the movie
 vf="expand=0:-50:0:0"
 
+#-----------------------font----------------------------#
+
 # font file
 font = "subfont.ttf"
 #font = "Vera Sans YuanTi"
 #font = "WenQuanYi Micro Hei"
-
-ffactor = 1
 
 # encoding of font file
 subfont-encoding = "unicode"
@@ -59,9 +72,12 @@ ass = "on"
 ass-hinting = 1
 ass-use-margins = "yes"
 
-# never apply software scaling
-zoom = "no"
+#Resample the font alphamap ; 1 means narrow black outline
+ffactor = 1
 
-# speed up playbacking
-#speed = "1.1"
+
+#-----------------------others----------------------------#
+
+# enable colorful output on terminals supporting ANSI color
+msgcolor = "yes"
 
