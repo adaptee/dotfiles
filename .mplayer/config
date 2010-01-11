@@ -47,7 +47,7 @@ subcp = cp936
 subfont-autoscale=2
 
 #autoscale coefficient of the OSD element
-subfont-osd-scale=6
+subfont-osd-scale=3
 
 #subtitle text autoscale coefficient as percentage of the screen size
 subfont-text-scale = 6
@@ -58,9 +58,7 @@ vf="expand=0:-50:0:0"
 #-----------------------font----------------------------#
 
 # font file
-font = "subfont.ttf"
-#font = "Vera Sans YuanTi"
-#font = "WenQuanYi Micro Hei"
+font = "Vera Sans YuanTi Mono"
 
 # encoding of font file
 subfont-encoding = "unicode"
@@ -71,6 +69,9 @@ ass = "on"
 # font hinting type; 1 means light
 ass-hinting = 1
 ass-use-margins = "yes"
+
+# display subtitle in color of bright yellow
+ass-color = F4F40000
 
 #Resample the font alphamap ; 1 means narrow black outline
 ffactor = 1
