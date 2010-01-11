@@ -12,7 +12,7 @@
 "go back and forward, just like editing normal text.
 
 "If you want to use the script and pydoc is not in your PATH, just put a
-"line like  
+"line like
 
 " let g:pydoc_cmd = \"/usr/bin/pydoc" (without the backslash!!)
 
@@ -21,7 +21,7 @@
 
 "pydoc.vim is free software, you can redistribute or modify
 "it under the terms of the GNU General Public License Version 2 or any
-"later Version (see http://www.gnu.org/copyleft/gpl.html for details). 
+"later Version (see http://www.gnu.org/copyleft/gpl.html for details).
 
 "Please feel free to contact me.
 
@@ -42,10 +42,10 @@ function! ShowPyDoc(name, type)
 	normal ggdG
 	let s:name2 = substitute(a:name, '(.*', '', 'g' )
 	if a:type==1
-		execute  "silent read ! " g:pydoc_cmd . " " . s:name2 
-	else 
-		execute  "silent read ! ".g:pydoc_cmd. " -k " . s:name2 
-	endif	
+		execute  "silent read ! " g:pydoc_cmd . " " . s:name2
+	else
+		execute  "silent read ! ".g:pydoc_cmd. " -k " . s:name2
+	endif
 	setlocal nomodified
 	set filetype=man
 	normal 1G
@@ -54,7 +54,7 @@ function! ShowPyDoc(name, type)
 	endif
   if g:pydoc_highlight ==1
 		call Highlight(s:name2)
-	endif	
+	endif
 endfunction
 
 
@@ -71,8 +71,8 @@ endfunction
 
 
 "mappings
-map  <leader>pw :call ShowPyDoc('<C-R><C-W>', 1)<CR> 
-map  <leader>pW :call ShowPyDoc('<C-R><C-A>', 1)<CR> 
+map  <leader>pw :call ShowPyDoc('<C-R><C-W>', 1)<CR>
+map  <leader>pW :call ShowPyDoc('<C-R><C-A>', 1)<CR>
 "commands
 command -nargs=1 Pydoc :call ShowPyDoc('<args>', 1)
 command -nargs=*  PydocSearch :call ShowPyDoc('<args>', 0)
