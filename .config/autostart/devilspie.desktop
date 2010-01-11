@@ -1,0 +1,8 @@
+
+[Desktop Entry]
+Name=DevilsPie
+Comment=Perform predefined actions on windows when they are created
+Type=Utility
+Exec=devilspie
+Hidden=false
+Terminal=false
