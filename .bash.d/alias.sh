@@ -320,8 +320,9 @@ alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
 #                                  misc alias                               #
 #---------------------------------------------------------------------------#
 
-# a better grep!
-alias ack=ack-grep
+# ack-grep is a better grep!
+# alias it to ack  only if it is installed as ack-grep
+which ack-grep >& /dev/null &&  alias ack=ack-grep
 
 # generated unified  result
 alias diff='diff -aruN'

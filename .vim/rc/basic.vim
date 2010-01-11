@@ -321,9 +321,6 @@ source $VIMRUNTIME/ftplugin/man.vim
 "re-generate tags for help docs on start-up"
 helptags $VIMLOCAL/doc
 
-"lookup current word in the dictionary
-nmap <Leader>k :!clear;sdcv "<cword>"<CR>
-
 "--------------------------------------------------------------------------"
 "                         text formatting/layout                           "
 "--------------------------------------------------------------------------"
@@ -591,8 +588,8 @@ autocmd BufReadPost *
 "                         programming features                             "
 "--------------------------------------------------------------------------"
 
-"open included file in new tab, making gf(goto included file) more convenient
-map gf :tabnew <cfile><CR>
+"open file in new tab, making gf(goto included file) more convenient
+nnoremap gf <C-W>gf
 
 "Insert header automatically
 "autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
