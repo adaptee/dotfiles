@@ -53,7 +53,7 @@ subfont-osd-scale=3
 subfont-text-scale = 6
 
 # show subtitle under the scene, not interferin the movie
-vf="expand=0:-50:0:0"
+#vf="expand=0:-50:0:0"
 
 #-----------------------font----------------------------#
 
