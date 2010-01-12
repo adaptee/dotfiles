@@ -85,6 +85,10 @@ endif
 " Use <C-C>s to query current word
 
 "------------------------------------------------------------------------------------------------------
+" delimitMate.vim ( insert and complete open-closing paires cleverly)
+"------------------------------------------------------------------------------------------------------
+"
+"------------------------------------------------------------------------------------------------------
 " echofunc.vim( Echo the function declaration in the command line for C/C++ )
 "------------------------------------------------------------------------------------------------------
 
@@ -228,8 +232,24 @@ let OmniCpp_MayCompleteArrow    = 1
 let OmniCpp_MayCompleteScope    = 1
 
 "------------------------------------------------------------------------------------------------------
-" pylint.vim
+" pydiction ( A nice python code completion plugin)
 "------------------------------------------------------------------------------------------------------
+let g:pydiction_location = $VIMLOCAL.'/ftplugin/python/pydiction/complete-dict'
+
+"------------------------------------------------------------------------------------------------------
+" pydoc.vim ( view the docuemnt of python module within vim)
+"------------------------------------------------------------------------------------------------------
+" use :Pydoc xxx
+
+"------------------------------------------------------------------------------------------------------
+" pyflakes ( detect and highlight python code problem on the fly)
+"------------------------------------------------------------------------------------------------------
+
+"------------------------------------------------------------------------------------------------------
+" pylint.vim (check the style and common error in python code)
+"------------------------------------------------------------------------------------------------------
+" use :Pylint ; the result will be presented in a quicifix list
+
 
 " integrate pylint into vim
 autocmd FileType python compiler pylint
@@ -266,6 +286,12 @@ function! ToggleQuickfixSigns()
     endif
 
 endfunc
+
+"------------------------------------------------------------------------------------------------------
+" renamer.vim( renamed large amount of files quickly with the powerful editing feature of vim )
+"------------------------------------------------------------------------------------------------------
+" :Renamer to start editing file names
+" :Ren to apply renaming
 
 "------------------------------------------------------------------------------------------------------
 " snipmate.vim ( TextMate-style snippets for Vim )
