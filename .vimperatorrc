@@ -459,7 +459,7 @@ EOF
 
 
 " Reload vimperatorrc
-js<<EOF
+js <<EOF
 load_vimperatorrc= function ()
 {
     var platform = navigator.platform;
@@ -474,7 +474,11 @@ load_vimperatorrc= function ()
 }
 EOF
 
-" Highlight the vimperator command line with yellow background when you're in it
+
+" set commandline' bgcolor as dark silver grey
+hi CmdLine                color: black; background: #828282 ; border-bottom: thin solid rgb(200,200,100); border-width: 1px; font-weight: normal;
+
+" Highlight the vimperator command line with grennyello background when you're in it
 javascript <<EOF
     (function() {
         var inputElement = document.getElementById('liberator-commandline-command');
