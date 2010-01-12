@@ -615,18 +615,6 @@ set tags=./tags,tags;
 " first search tag file, then search cscope database
 "set cscopetagorder=1
 
-"make VIM auto-complete the brackets!
-"inoremap ( ()<ESC>i
-"inoremap ) <C-R>=InsertClosingPair(')')<CR>
-inoremap { {}<ESC>i
-inoremap } <C-R>=InsertClosingPair('}')<CR>
-inoremap [ []<ESC>i
-inoremap ] <C-R>=InsertClosingPair(']')<CR>
-inoremap < <><ESC>i
-inoremap > <C-R>=InsertClosingPair('>')<CR>
-inoremap " ""<ESC>i
-
-
 "map <F5> :call CompileCurrentFile()<CR>
 "map <C-F5> :call DebugCurrentFile()<CR>
 
