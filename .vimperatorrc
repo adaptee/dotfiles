@@ -476,7 +476,7 @@ EOF
 
 
 " set commandline' bgcolor as dark silver grey
-hi CmdLine                color: black; background: #828282 ; border-bottom: thin solid rgb(200,200,100); border-width: 1px; font-weight: normal;
+hi CmdLine                background: #828282 ; font-family: monospace; padding: 1px;
 
 " Highlight the vimperator command line with grennyello background when you're in it
 javascript <<EOF
