@@ -113,6 +113,7 @@ Size=48
 emoticonsTheme=kde4
 
 [General]
+BrowserApplication[$e]=!/usr/bin/firefox
 XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
@@ -159,7 +160,7 @@ Show Speedbar=true
 Show hidden files=false
 Sort by=Name
 Sort reversed=false
-Speedbar Width=106
+Speedbar Width=108
 View Style=Simple
 
 [KShortcutsDialog Settings]

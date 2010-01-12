@@ -1,8 +1,31 @@
 [$Version]
 update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
 
+[amarok]
+_k_friendly_name=Amarok
+decreaseVolume=,Meta+-,降低音量
+increaseVolume=Meta++,Meta++,增加音量
+loveTrack=Meta+L,Meta+L,Last.fm：最爱当前音轨
+mute=Meta+M,Meta+M,静音
+next=Meta+B,Meta+B,
+play_pause=Meta+C,Meta+C,播放/暂停
+playlist_add=,Meta+A,添加媒体(&A)...
+prev=Meta+Z,Meta+Z,上一音轨
+rate1=Meta+1,Meta+1,对当前音轨评分：1
+rate2=Meta+2,Meta+2,对当前音轨评分：2
+rate3=Meta+3,Meta+3,对当前音轨评分：3
+rate4=Meta+4,Meta+4,对当前音轨评分：4
+rate5=Meta+5,Meta+5,对当前音轨评分：5
+seek_backward=Meta+Shift+-,Meta+Shift+-,快退(&S)
+seek_forward=Meta+Shift++,Meta+Shift++,快进(&S)
+showOsd=Meta+O,Meta+O,显示屏幕显示
+skipTrack=Meta+S,Meta+S,Last.fm：跳过当前音轨
+stop=Meta+V,Meta+V,停止
+stop_after_current=Meta+Shift+V,Meta+Shift+V,在当前音轨后停止
+toggleMainWindow=Meta+P,Meta+P,切换主窗口
+
 [juk]
-_k_friendly_name=
+_k_friendly_name=JuK
 back=,Ctrl+Alt+Left,Previous
 forward=,Ctrl+Alt+Right,&Next
 forwardAlbum=Ctrl+Alt+Up,Ctrl+Alt+Up,Play Next Album
