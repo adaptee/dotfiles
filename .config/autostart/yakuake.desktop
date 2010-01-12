@@ -10,6 +10,7 @@ Icon=yakuake
 MimeType=
 Name[en_US]=Yakuake
 Name=Yakuake
+OnlyShowIn=KDE;
 Path=
 StartupNotify=false
 Terminal=false
