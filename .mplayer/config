@@ -31,8 +31,8 @@ monitoraspect = "16:10"
 
 #---------------------subtitle----------------------------#
 
-# load all subtitiles in the current folder
-sub-fuzziness = 2
+# load all subtitiles containg the movie name
+sub-fuzziness = 1
 
 # allow showing multiple subtitle at the same time
 overlapsub = "yes"
