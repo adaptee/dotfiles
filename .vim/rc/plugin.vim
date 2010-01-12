@@ -102,6 +102,20 @@ endif
 "endif
 
 "------------------------------------------------------------------------------------------------------
+" fuzzyfinder ( quickly reach the buffer/file/command/bookmark/tag you want)
+"------------------------------------------------------------------------------------------------------
+nnoremap <Leader>fb  :FufBuffer<CR>
+nnoremap <Leader>ff  :FufFile<CR>
+nnoremap <Leader>fd  :FufDir<CR>
+nnoremap <Leader>fm  :FufMruFile<CR>
+nnoremap <Leader>ft  :FufTag<CR>
+nnoremap <Leader>fj  :FufJumpList<CR>
+nnoremap <Leader>fc  :FufChangeList<CR>
+nnoremap <Leader>fq  :FufQuickfix<CR>
+nnoremap <Leader>fl  :FufLine<CR>
+nnoremap <Leader>fh  :FufHelp<CR>
+
+"------------------------------------------------------------------------------------------------------
 " genutils.vim ( Useful buffer, file and window related functions, mainly used  by other plugins)
 "------------------------------------------------------------------------------------------------------
 
