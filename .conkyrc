@@ -17,7 +17,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 # use anti-aliased fonts
 use_xft yes
 xftalpha 0.8
-xftfont Vera Sans YuanTi:size=11
+xftfont DejaVu Sans YuanTi:size=11
 # don't show text in UGLY UPPER-CASE
 uppercase no
 # force utf-8 ; xftfont is required
