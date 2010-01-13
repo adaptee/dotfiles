@@ -8,7 +8,7 @@
 ao = alsa
 
 # use xv as video driver ; low resource usage
-vo = xv
+vo = "xv,fbdev2"
 
 # disble screenserver when movie is being played
 stop-xscreensaver = "yes"
