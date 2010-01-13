@@ -185,7 +185,7 @@ export GREP_OPTIONS="--binary-files=without-match --directories=recurse --color=
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 
 #--------------------------------bash related---------------------------------#
-export CDPATH=".:..:~:~/prog/EBook/:~/Desktop/:~/video/"
+export CDPATH=".:..:~:~/audio:~/book:~/code:~/down:~/vbox:/media"
 # ignore file with those suffix when perforaming filename-auto-completion
 export FIGNORE='.o:.bak:.tmp:.orig'
 
