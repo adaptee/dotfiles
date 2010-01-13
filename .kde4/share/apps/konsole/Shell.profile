@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=WhiteOnBlack
-Font=Vera Sans YuanTi Mono, 13,-1, 5, 50, 0, 0, 0, 0, 0
+Font=DejaVu Sans YuanTi Mono, 13,-1, 5, 50, 0, 0, 0, 0, 0
 
 [General]
 Icon=utilities-terminal
