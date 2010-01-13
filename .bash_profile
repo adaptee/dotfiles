@@ -28,7 +28,7 @@ if [ "prefix" !=  "prefix$DISPLAY" ]  ; then
     xhost +local:root
 
     # start devilspie, a nice rule matcher based on window property
-    which devilspie >& /dev/null  && devilpie &
+    which devilspie >& /dev/null  && devilspie &
 
 fi
 
