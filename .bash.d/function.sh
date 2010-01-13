@@ -218,8 +218,7 @@ function mpf()
     # FIXME:
     #if scale is set to 1024:768(the ideal size), some pixels will remain on the screen side
     # after mplayer exit.
-    mplayer -vo fbdev2 -fs -x 1024 -y 768 -vf scale=1000:750 -really-quiet "${file}" >& /dev/null &
-    #mplayer -vo fbdev2 -fs -x 1024 -y 768 -vf scale=1024:768 -really-quiet "${file}" >& /dev/null &
+    mplayer -vo fbdev2 -fs -x 1024 -y 768 -vf scale=1024:768 -really-quiet "${file}" >& /dev/null &
 
     # this is very important ;
     # clear the screen will make the display not interfered by console output
