@@ -22,13 +22,15 @@ export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
 # If under X window environment,
-if [ "prefix" !=  "prefix$DISPLAY" ]  ; then
+if [ -n "$DISPLAY" ]  ; then
 
     #grant root the access to X server
     xhost +local:root
 
     # start devilspie, a nice rule matcher based on window property
-    which devilspie >& /dev/null  && devilspie &
+    if which devilspie ; then
+        devilspie &
+    fi
 
 fi
 
