@@ -58,7 +58,7 @@ subfont-text-scale = 6
 #-----------------------font----------------------------#
 
 # font file
-font = "Vera Sans YuanTi Mono"
+font = "DejaVu Sans YuanTi Mono"
 
 # encoding of font file
 subfont-encoding = "unicode"
