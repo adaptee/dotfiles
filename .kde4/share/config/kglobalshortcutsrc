@@ -2,7 +2,7 @@
 update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
 
 [amarok]
-_k_friendly_name=Amarok
+_k_friendly_name=
 decreaseVolume=,Meta+-,降低音量
 increaseVolume=Meta++,Meta++,增加音量
 loveTrack=Meta+L,Meta+L,Last.fm：最爱当前音轨
@@ -25,7 +25,7 @@ stop_after_current=Meta+Shift+V,Meta+Shift+V,在当前音轨后停止
 toggleMainWindow=Meta+P,Meta+P,切换主窗口
 
 [juk]
-_k_friendly_name=JuK
+_k_friendly_name=
 back=,Ctrl+Alt+Left,Previous
 forward=,Ctrl+Alt+Right,&Next
 forwardAlbum=Ctrl+Alt+Up,Ctrl+Alt+Up,Play Next Album
