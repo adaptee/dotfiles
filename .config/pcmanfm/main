@@ -6,7 +6,7 @@ terminal=konsole
 [Window]
 width=1280
 height=742
-splitter_pos=160
+splitter_pos=152
 maximized=1
 
 [Desktop]
