@@ -41,6 +41,10 @@ immutability=1
 plugin=calendar
 zvalue=0
 
+[Containments][16][Applets][19][PopupApplet]
+DialogHeight=262
+DialogWidth=232
+
 [Containments][16][Applets][20]
 geometry=1122,0,64,32
 immutability=1
@@ -79,7 +83,7 @@ zvalue=0
 showLockButton=false
 
 [Containments][16][Applets][23]
-geometry=144,0,294,32
+geometry=108,0,294,32
 immutability=1
 plugin=pager
 zvalue=42
@@ -88,7 +92,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=442,0,400,32
+geometry=406,0,436,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -98,7 +102,7 @@ showOnlyCurrentDesktop=true
 showOnlyMinimized=true
 
 [Containments][16][Applets][25]
-geometry=72,0,32,32
+geometry=36,0,32,32
 immutability=1
 plugin=showdesktop
 zvalue=39
@@ -107,16 +111,10 @@ zvalue=39
 global=Meta+D
 
 [Containments][16][Applets][26]
-geometry=108,0,32,32
+geometry=72,0,32,32
 immutability=1
 plugin=trash
 zvalue=40
-
-[Containments][16][Applets][27]
-geometry=36,0,32,32
-immutability=1
-plugin=notifier
-zvalue=47
 
 [Containments][16][Applets][28]
 geometry=846,0,200,32
@@ -146,7 +144,7 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=6
+DialogHeight=12
 DialogWidth=0
 
 [Containments][16][Applets][33]
@@ -189,7 +187,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=6
+zvalue=47
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18
@@ -203,7 +201,7 @@ temps=acpi/thermal_zone/THRM/temperature
 geometry=992,336,277,180
 immutability=1
 plugin=sm_net
-zvalue=65
+zvalue=61
 
 [Containments][38][Applets][15][Configuration]
 inColor=210,210,0
