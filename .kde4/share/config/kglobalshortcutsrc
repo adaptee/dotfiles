@@ -2,7 +2,7 @@
 update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
 
 [amarok]
-_k_friendly_name=Amarok
+_k_friendly_name=
 decreaseVolume=,Meta+-,降低音量
 increaseVolume=Meta++,Meta++,增加音量
 loveTrack=Meta+L,Meta+L,Last.fm：最爱当前音轨

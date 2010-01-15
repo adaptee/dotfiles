@@ -6,7 +6,8 @@ Favorites=/home/whodare/.kde4/share/apps/konsole/Shell.profile
 
 [MainWindow]
 Height 800=801
-State=AAAA/wAAAAD9AAAAAAAABQAAAALOAAAABAAAAAQAAAAIAAAACPwAAAAA
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABQAAAALmAAAABAAAAAQAAAAIAAAACPwAAAAA
 Width 1280=1281
 
 [Notification Messages]
