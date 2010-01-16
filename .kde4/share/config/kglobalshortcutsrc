@@ -2,7 +2,7 @@
 update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
 
 [amarok]
-_k_friendly_name=
+_k_friendly_name=Amarok
 decreaseVolume=,Meta+-,降低音量
 increaseVolume=Meta++,Meta++,增加音量
 loveTrack=Meta+L,Meta+L,Last.fm：最爱当前音轨
@@ -237,7 +237,7 @@ view_zoom_out=Meta+-,Meta+-,Zoom &Out
 
 [kxkb]
 Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
-_k_friendly_name=KDE Keyboard Layout Switcher
+_k_friendly_name=
 
 [lancelot]
 Lancelot=,Alt+F5,Open Lancelot menu
