@@ -1,15 +1,20 @@
 font                = DejaVu Sans YuanTi Mono 13
-allow_bold          = true
+allow_bold          = True
 
-force_no_bell       = true
+# white text on black
+background_color = "#000000"
+foreground_color = "#FFFFFF"
+use_theme_colors = False
+
+force_no_bell       = True
 
 scrollbar_position  = disabled
 scrollback_lines    = 5000
-borderless          = true
-close_button_on_tab = false
+borderless          = True
+close_button_on_tab = False
 
-maximise            = true
-#fullscreen         = true
+maximise            = True
+#fullscreen         = True
 
-copy_on_selection   = true
+copy_on_selection   = True
 
