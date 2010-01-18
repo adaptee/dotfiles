@@ -184,6 +184,8 @@ alias dpS='dpkg -S'      # search file name
 alias dpl='dpkg -l'      # list pkg summary
 alias dpL='dpkg -L'      # list pkg details
 
+# use more friendly pacman
+which pacman-color >& /dev/null &&  alias pacman='pacman-color'
 
 #---------------------------------------------------------------------------#
 #                                   make alias                              #
