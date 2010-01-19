@@ -25,6 +25,7 @@
 
 [merge]
     tool = gitExternalMerge
+    conflictstyle = diff3
 
 [mergetool "gitExternalMerge"]
     ;cmd = gitMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
