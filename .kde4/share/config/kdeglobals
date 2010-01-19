@@ -109,6 +109,10 @@ DisabledSemiTransparent=true
 DisabledValue=1
 Size=48
 
+[DirSelect Dialog]
+DirSelectDialog Size=400,450
+History Items[$e]=file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
+
 [Emoticons]
 emoticonsTheme=kde4
 
