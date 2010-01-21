@@ -9,3 +9,12 @@
 
 # ignore all dlls
 *.dll
+
+# ignore all python compiled modules
+*.pyw
+
+# ignore all win32 executables
+*.exe
+
+# ignore all out executabls
+*.out
