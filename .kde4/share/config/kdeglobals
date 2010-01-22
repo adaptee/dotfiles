@@ -156,7 +156,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/.dropbox-list,$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物,$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio
+Recent URLs[$e]=$HOME/.dropbox-list,$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物,$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/snapshot5.png
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
@@ -164,7 +164,7 @@ Show Speedbar=true
 Show hidden files=false
 Sort by=Name
 Sort reversed=false
-Speedbar Width=110
+Speedbar Width=111
 View Style=Simple
 
 [KShortcutsDialog Settings]

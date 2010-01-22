@@ -17,7 +17,7 @@ screen=0
 zvalue=150
 
 [Containments][16][Applets][17]
-geometry=1050.48601546674,0,32,32
+geometry=1050,0,32,32
 immutability=1
 plugin=battery
 zvalue=43
@@ -36,7 +36,7 @@ DialogHeight=370
 DialogWidth=316
 
 [Containments][16][Applets][19]
-geometry=1086.48601546674,0,32,32
+geometry=1086,0,32,32
 immutability=1
 plugin=calendar
 zvalue=0
@@ -46,7 +46,7 @@ DialogHeight=262
 DialogWidth=232
 
 [Containments][16][Applets][20]
-geometry=1122.48601546674,0,64,32
+geometry=1122,0,64,32
 immutability=1
 plugin=digital-clock
 zvalue=0
@@ -61,11 +61,11 @@ sourceAppletId=20
 sourceAppletPluginName=digital-clock
 
 [Containments][16][Applets][20][PopupApplet]
-DialogHeight=276
+DialogHeight=270
 DialogWidth=327
 
 [Containments][16][Applets][21]
-geometry=1190.48601546674,0,31.7569922666284,32
+geometry=1190,0,32,32
 immutability=1
 plugin=lockout
 zvalue=0
@@ -74,7 +74,7 @@ zvalue=0
 showLogoutButton=false
 
 [Containments][16][Applets][22]
-geometry=1226.24300773337,0,31.7569922666284,32
+geometry=1226,0,32,32
 immutability=1
 plugin=lockout
 zvalue=0
@@ -92,7 +92,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=406,0,306.486015466743,32
+geometry=406,0,384,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -117,7 +117,7 @@ plugin=trash
 zvalue=40
 
 [Containments][16][Applets][28]
-geometry=716.486015466743,0,330,32
+geometry=794,0,252,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -187,7 +187,7 @@ zvalue=0
 geometry=991,78,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=47
+zvalue=42
 
 [Containments][38][Applets][14][Configuration]
 graphColor=20,19,18
