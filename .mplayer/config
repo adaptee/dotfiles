@@ -7,8 +7,17 @@
 # audio driver
 ao = alsa
 
-# use xv as video driver ; low resource usage
-vo = "xv,fbdev2"
+# prefer these video ouput drivers; fallback if none are found
+# the trailing comma is very important
+vo = "vdpau,xv,fbdev2,"
+
+# prefer these video codecs; fallback if none are found
+# the trailing comma is very important
+vc = "ffh264vdpau, ffmpeg12vdpau,"
+
+# prefer these video codecs families; fallback if none are found
+# the trailing comma is very important
+vc = "ffmpeg,libmpeg2"
 
 # disble screenserver when movie is being played
 stop-xscreensaver = "yes"
@@ -81,4 +90,7 @@ ffactor = 1
 
 # enable colorful output on terminals supporting ANSI color
 msgcolor = "yes"
+
+# turn off remote control support; I do not need it now
+nolirc = "yes"
 
