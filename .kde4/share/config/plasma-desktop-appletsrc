@@ -92,7 +92,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=406,0,436,32
+geometry=406,0,358,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -117,7 +117,7 @@ plugin=trash
 zvalue=40
 
 [Containments][16][Applets][28]
-geometry=846,0,200,32
+geometry=768,0,278,32
 immutability=1
 plugin=systemtray
 zvalue=48
