@@ -356,3 +356,7 @@ alias hd2='od -Ax -tx1z -v'
 
 alias im-switch='im-switch -z default'
 alias zhcon='zhcon --utf8 --drv=fb'
+
+# list all un-needed packages
+alias pac-nouse='pacman -Qtdq'
+
