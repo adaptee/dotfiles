@@ -32,8 +32,8 @@ sourceAppletId=17
 sourceAppletPluginName=battery
 
 [Containments][16][Applets][17][PopupApplet]
-DialogHeight=370
-DialogWidth=316
+DialogHeight=358
+DialogWidth=312
 
 [Containments][16][Applets][19]
 geometry=1086,0,32,32
@@ -52,6 +52,9 @@ plugin=digital-clock
 zvalue=0
 
 [Containments][16][Applets][20][Configuration][ExtenderItems][6]
+isCollapsed=true
+
+[Containments][16][Applets][20][Configuration][ExtenderItems][9]
 extenderIconName=view-pim-calendar
 extenderItemName=calendar
 extenderItemPosition=0
@@ -61,8 +64,8 @@ sourceAppletId=20
 sourceAppletPluginName=digital-clock
 
 [Containments][16][Applets][20][PopupApplet]
-DialogHeight=270
-DialogWidth=327
+DialogHeight=274
+DialogWidth=263
 
 [Containments][16][Applets][21]
 geometry=1190,0,32,32
@@ -169,27 +172,28 @@ extenderItemPosition=0
 [Containments][3][Applets][8][Configuration][ExtenderItems][2]
 extenderItemPosition=0
 
-[Containments][38]
+[Containments][42]
 activity=
 desktop=-1
 formfactor=0
-geometry=0,0,1280,800
+geometry=1286,0,1280,800
 immutability=1
 location=0
 plugin=desktop
 screen=0
+sortColumn=-1
 textColor=20,19,18
 wallpaperplugin=image
 wallpaperpluginmode=SingleImage
 zvalue=0
 
-[Containments][38][Applets][14]
-geometry=991,78,258,154
+[Containments][42][Applets][14]
+geometry=997,68,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=42
+zvalue=150
 
-[Containments][38][Applets][14][Configuration]
+[Containments][42][Applets][14][Configuration]
 graphColor=20,19,18
 interval=2
 showBackground=false
@@ -197,13 +201,13 @@ showPlotters=false
 showTopBar=false
 temps=acpi/thermal_zone/THRM/temperature
 
-[Containments][38][Applets][15]
-geometry=992,336,277,180
+[Containments][42][Applets][15]
+geometry=992,431,277,180
 immutability=1
 plugin=sm_net
-zvalue=61
+zvalue=203
 
-[Containments][38][Applets][15][Configuration]
+[Containments][42][Applets][15][Configuration]
 inColor=210,210,0
 interfaces=network/interfaces/wlan0/transmitter/data
 interval=2
@@ -211,13 +215,13 @@ outColor=242,0,0
 showBackground=true
 showTopBar=true
 
-[Containments][38][Wallpaper][image]
+[Containments][42][Wallpaper][image]
 slideTimer=10
 slidepaths=/usr/share/wallpapers/
-userswallpapers=
-wallpaper=/usr/share/wallpapers/Air
+userswallpapers=/home/whodare/horofox.png,/home/whodare/img/horofox.png
+wallpaper=/home/whodare/img/horofox.png
 wallpapercolor=56,111,150
-wallpaperposition=0
+wallpaperposition=5
 
 [General]
 immutability=1

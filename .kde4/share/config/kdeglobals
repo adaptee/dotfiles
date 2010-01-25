@@ -121,14 +121,14 @@ BrowserApplication[$e]=!/usr/bin/firefox
 XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
-desktopFont=Monaco, 11,-1, 5, 50, 0, 0, 0, 0, 0
-fixed=DejaVu Sans YuanTi Mono, 10,-1, 5, 50, 0, 0, 0, 0, 0
-font=DejaVu Sans YuanTi, 10,-1, 5, 50, 0, 0, 0, 0, 0
-menuFont=DejaVu Sans YuanTi, 10,-1, 5, 50, 0, 0, 0, 0, 0
+desktopFont=文泉驿等宽微米黑,10,-1,5,50,0,0,0,0,0
+fixed=DejaVu Sans YuanTi Mono,10,-1,5,50,0,0,0,0,0
+font=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
-smallestReadableFont=DejaVu Sans YuanTi, 9,-1, 5, 50, 0, 0, 0, 0, 0
-taskbarFont=DejaVu Sans YuanTi, 10,-1, 5, 50, 0, 0, 0, 0, 0
-toolBarFont=DejaVu Sans YuanTi, 10,-1, 5, 50, 0, 0, 0, 0, 0
+smallestReadableFont=DejaVu Sans YuanTi,9,-1,5,50,0,0,0,0,0
+taskbarFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 widgetStyle=oxygen
 
 [Icons]
@@ -156,7 +156,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/.dropbox-list,$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物,$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/snapshot5.png
+Recent URLs[$e]=$HOME/book/Language,$HOME/img/novel/emprise,$HOME/img/novel/emprise/金鳞岂是池中物,$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/img
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
@@ -164,7 +164,7 @@ Show Speedbar=true
 Show hidden files=false
 Sort by=Name
 Sort reversed=false
-Speedbar Width=111
+Speedbar Width=113
 View Style=Simple
 
 [KShortcutsDialog Settings]
@@ -258,7 +258,7 @@ Size=22
 
 [WM]
 activeBackground=128, 192, 224
-activeFont=DejaVu Sans YuanTi, 10,-1, 5, 50, 0, 0, 0, 0, 0
+activeFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 activeForeground=255, 255, 255
 inactiveBackground=111, 122, 99
 inactiveForeground=255, 255, 255
