@@ -95,7 +95,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=406,0,384,32
+geometry=406,0,358,32
 immutability=1
 plugin=tasks
 zvalue=54
@@ -120,7 +120,7 @@ plugin=trash
 zvalue=40
 
 [Containments][16][Applets][28]
-geometry=794,0,252,32
+geometry=768,0,278,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -176,7 +176,7 @@ extenderItemPosition=0
 activity=
 desktop=-1
 formfactor=0
-geometry=1286,0,1280,800
+geometry=0,0,1280,800
 immutability=1
 location=0
 plugin=desktop
@@ -191,7 +191,7 @@ zvalue=0
 geometry=997,68,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=150
+zvalue=141
 
 [Containments][42][Applets][14][Configuration]
 graphColor=20,19,18
@@ -202,10 +202,10 @@ showTopBar=false
 temps=acpi/thermal_zone/THRM/temperature
 
 [Containments][42][Applets][15]
-geometry=992,431,277,180
+geometry=1003,345,277,180
 immutability=1
 plugin=sm_net
-zvalue=203
+zvalue=205
 
 [Containments][42][Applets][15][Configuration]
 inColor=210,210,0
