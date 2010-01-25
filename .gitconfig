@@ -1,17 +1,18 @@
 [core]
     editor = vim
+
     # executable bit are ignored, useful for FAT.
     fileMode = false
+
     # convert CR/LF to LF only when fetching from remote repo
     autocrlf = input
 
     #symlinks = false
-    #logallrefupdates = true
 
     #gitproxy=""
 
 [user]
-    name = Adaptee
+    name  = Adaptee
     email = adaptee@gmail.com
 
 [rerere]
@@ -35,36 +36,53 @@
     cmd = gitExternalMerge  "$LOCAL" "$REMOTE" "$MERGED"
     trustExitCode = false
 
-[pager]
-    ;diff =
-
 [status]
     relativePath       = true
+
     # do not show untracked files & folders in git-status
     showUntrackedFiles = no
 
 [alias]
-    ai      = add -i
+    ad      = add
+    adi     = add -i
+
     br      = branch
     brd     = branch -d
     brD     = branch -D
+
     cm      = commit -m
     cma     = commit -a -m
+
     co      = checkout
     cob     = checkout -b
-    desc    = describe
+
     df      = diff
     dfc     = diff --cached
+    ch      = diff --stat -r
+
     st      = status
     wtf     = !git-wtf
+
     unstage = reset HEAD --
     recover = checkout HEAD --
+
     last    = log -1 HEAD
-    lg      = log --graph --pretty=format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-    lgs     = log --stat
+    lg      = log --stat --date=relative
+    lgs     = log --graph --pretty=format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
     assume  = !git-show-assume-unchanged
     contain = !git-show-what-is-contained
-    rmt     = remote -v
+
+    rmt       = remote -v
+    # prune all stale tracking branches in all remotes
+    prune-all = !git remote | xargs -n 1 git remote prune
+
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+    # create alias from command line
+    alias = !sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -
+
 
 [i18n]
     commitEncoding    = utf-8
