@@ -17,7 +17,7 @@ vc = "ffh264vdpau, ffmpeg12vdpau,"
 
 # prefer these video codecs families; fallback if none are found
 # the trailing comma is very important
-vc = "ffmpeg,libmpeg2"
+vfm = "ffmpeg,libmpeg2"
 
 # disble screenserver when movie is being played
 stop-xscreensaver = "yes"
