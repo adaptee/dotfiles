@@ -64,6 +64,9 @@ subfont-text-scale = 6
 # show subtitle under the scene, not interferin the movie
 #vf="expand=0:-50:0:0"
 
+# allow taking snapshot when playing video
+vf = "screenshot"
+
 #-----------------------font----------------------------#
 
 # font file
