@@ -5,7 +5,7 @@
 #--------------------audio & video------------------------------#
 
 # audio driver
-ao = alsa
+ao = "alsa,oss,"
 
 # prefer these video ouput drivers; fallback if none are found
 # the trailing comma is very important
@@ -63,6 +63,9 @@ subfont-text-scale = 6
 
 # show subtitle under the scene, not interferin the movie
 #vf="expand=0:-50:0:0"
+
+# allow taking snapshot when playing video
+vf = "screenshot"
 
 #-----------------------font----------------------------#
 
