@@ -5,7 +5,7 @@
 #--------------------audio & video------------------------------#
 
 # audio driver
-ao = alsa
+ao = "alsa,oss,"
 
 # prefer these video ouput drivers; fallback if none are found
 # the trailing comma is very important
