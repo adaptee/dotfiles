@@ -360,3 +360,6 @@ alias zhcon='zhcon --utf8 --drv=fb'
 # list all un-needed packages
 alias pac-nouse='pacman -Qtdq'
 
+# show process info in ps style
+alias fuser='fuser -v'
+
