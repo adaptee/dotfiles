@@ -18,3 +18,8 @@
 
 # ignore all out executabls
 *.out
+
+# ignroe variouis vs project files
+*.ncb
+*.ilk
+*.pdb
