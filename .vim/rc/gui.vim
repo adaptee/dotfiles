@@ -31,6 +31,12 @@ elseif has ("unix")
     "set columns=160
 endif
 
+" prevent showing corrupted  character in menu
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+autocmd EncodingChanged * if &encoding == "utf-8" | nmap <M-Space> :simalt ~<CR> | so $VIMRUNTIME/delmenu.vim | so $VIMRUNTIME/menu.vim | language message zh_CN.UTF-8 | endif
+autocmd EncodingChanged * if &encoding == "cp936" | nmap <M-Space> :simalt ~<CR> | so $VIMRUNTIME/delmenu.vim | so $VIMRUNTIME/menu.vim | language message zh_CN | endif
+
 "Alt+xxx is not used for menu shortcut
 "set winaltkeys=no
 

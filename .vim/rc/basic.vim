@@ -142,13 +142,6 @@ set encoding=utf-8
 " Make VIM understand following kinds of encoding
 set fileencodings=ucs-bom,utf-8,sjis,cp936,big5,japan,korea,latin1
 
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
-autocmd EncodingChanged * if &encoding == "utf-8" | nmap <M-Space> :simalt ~<CR> | so $VIMRUNTIME/delmenu.vim | so $VIMRUNTIME/menu.vim | language message zh_CN.UTF-8 | endif
-
-autocmd EncodingChanged * if &encoding == "cp936" | nmap <M-Space> :simalt ~<CR> | so $VIMRUNTIME/delmenu.vim | so $VIMRUNTIME/menu.vim | language message zh_CN | endif
-
 " show ambiguous character in two column width
 if ( has('multi_byte') && v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)' )
     set ambiwidth=double
