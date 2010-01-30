@@ -36,7 +36,7 @@ set ttimeout
 set ttimeoutlen=100
 
 "enable mouse support anywhere(even in the console !)
-set mouse=a
+"set mouse=a
 
 "make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
