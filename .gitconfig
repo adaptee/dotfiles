@@ -56,8 +56,8 @@
     co      = checkout
     cob     = checkout -b
 
-    df      = diff
-    dfc     = diff --cached
+    df      = difftool
+    dfc     = difftool --cached
     ch      = diff --stat -r
 
     st      = status
