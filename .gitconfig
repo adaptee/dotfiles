@@ -22,19 +22,19 @@
     ui = auto
 
 [diff]
-    external = gitExternalDiff
+    # invoked when runnig "git difftool"
+    tool = vimdiff
+
+
+[merge]
+    # invoked when running "git mergetool"
+    tool = kdiff3
+
+    # generate diff3 style conflict file: ours, base, theirs
+    conflictstyle = diff3
 
 [push]
     default = matching
-
-[merge]
-    tool = gitExternalMerge
-    conflictstyle = diff3
-
-[mergetool "gitExternalMerge"]
-    ;cmd = gitMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-    cmd = gitExternalMerge  "$LOCAL" "$REMOTE" "$MERGED"
-    trustExitCode = false
 
 [status]
     relativePath       = true
@@ -56,8 +56,8 @@
     co      = checkout
     cob     = checkout -b
 
-    df      = diff
-    dfc     = diff --cached
+    df      = difftool
+    dfc     = difftool --cached
     ch      = diff --stat -r
 
     st      = status
