@@ -25,6 +25,8 @@
     # invoked when runnig "git difftool"
     tool = vimdiff
 
+[difftool]
+    prompt = false
 
 [merge]
     # invoked when running "git mergetool"
