@@ -74,9 +74,6 @@ noremap ; :
 " re-enable ctrl-l to move focus on location bar
 noremap <C-l> <C-v><C-l>
 
-" re-enabl ctrl-k to move focus to search bar
-noremap <C-k> <C-v><A-d><Tab>
-
 " disbale highlight for the moment
 " Note, in order to map '\',we have to escape it with itself...:(
 " So, '\' won't work, '\\' is required here.
@@ -100,6 +97,10 @@ noremap  ] ]]
 " open/close the delicious sidbar
 noremap  <C-b> <C-z><C-b><Esc>
 inoremap <C-b> <C-z><C-b><Esc>
+
+" add current page to delicious
+noremap  <C-y> <C-z><C-y><Esc>
+inoremap <C-y> <C-z><C-y><Esc>
 
 " Make common Select All/Copy/Cut/Paste/Undo keybindings useable under vimperator
 noremap <C-V> <C-v>
