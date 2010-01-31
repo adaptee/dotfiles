@@ -30,7 +30,7 @@
 
 [merge]
     # invoked when running "git mergetool"
-    tool = vimdiff
+    tool = kdiff3
 
     # generate diff3 style conflict file: ours, base, theirs
     conflictstyle = diff3
