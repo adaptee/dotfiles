@@ -22,13 +22,17 @@
     ui = auto
 
 [diff]
-    external = gitExternalDiff
+    # invoked when runnig "git difftool"
+    tool = vimdiff
 
 [push]
     default = matching
 
 [merge]
-    tool = gitExternalMerge
+    # invoked when running "git mergetool"
+    tool = vimdiff
+
+    # generate diff3 style conflict file: ours, base, theirs
     conflictstyle = diff3
 
 [mergetool "gitExternalMerge"]
