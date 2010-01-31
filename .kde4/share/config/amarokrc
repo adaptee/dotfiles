@@ -1,0 +1,127 @@
+[Collection]
+Use Charset Detector=true
+
+[Collection Browser]
+TreeCategory=2,1
+View Mode=NormalCollections
+
+[Collection Folders]
+-1=./home/whodare/audio
+
+[Cool Streams]
+Cool StreamsEnabled=false
+
+[File Browser]
+Current Directory=/home/whodare/
+Decoration position=2
+Filter History=
+Filter History Length=9
+Last Filter=
+Previews=false
+Show Preview=false
+Show hidden files=false
+Sort by=Name
+Sort reversed=false
+Sorting=4
+UrlEditable=false
+View Style=Simple
+
+[General]
+Browser Path=root list/collections
+Debug Enabled=false
+First Run=false
+HiddenOnExit=true
+MainWindow Position=0,36
+MainWindow Size=1272,735
+
+[General Options]
+AutoGetCoverArt=true
+Last Dynamic Mode=随机
+Show Splashscreen=false
+Track Progression=RandomTrack
+
+[Librivox.org]
+Librivox.orgEnabled=false
+
+[Loaded Playlist Files]
+file:///home/whodare/audio/Dance/Groove.Coverage/Runaway/Groove_Coverage-Runaway-Promo_CDM-2005-USF/00-groove_coverage-runaway-promo_cdm-2005-usf.m3u=
+file:///home/whodare/audio/MyFavour/CranBerries/Treasure.Box/The%20cranberries%20-treasure%20box-4cd-2002.m3u=
+file:///home/whodare/audio/Others/Playlist/cran.m3u=
+file:///home/whodare/audio/Others/Playlist/suede.m3u=
+file:///home/whodare/audio/Others/Playlist/xjapan.m3u=
+
+[Lyrics Applet]
+Font=DejaVu Sans YuanTi Mono
+Size=10
+
+[Lyricwiki]
+Font=DejaVu Sans YuanTi Mono
+LyricWikiEnabled=false
+Size=10
+
+[Moodbar]
+MoodbarPaintStyle=3
+ShowMoodbarInSlider=true
+
+[MySQL]
+CheckCount=11
+
+[Notification Messages]
+hideOnCloseInfo=false
+systemtrayquitAmarok=false
+
+[OSD]
+Osd Duration=1000
+
+[Phonon::AudioOutput]
+Amarok_Volume=0.79
+
+[Playback]
+Fadeout=false
+Master Volume=75
+
+[Playlist Search]
+MatchAlbum=true
+MatchArtist=true
+MatchTrack=true
+
+[Plugins]
+Amarok Script ConsoleEnabled=false
+Cool StreamsEnabled=true
+Librivox.orgEnabled=true
+LyricWikiEnabled=true
+amarok_service_ampacheEnabled=false
+amarok_service_jamendoEnabled=false
+amarok_service_lastfmEnabled=false
+amarok_service_magnatunestoreEnabled=false
+amarok_service_mp3tunesEnabled=false
+amarok_service_opmldirectoryEnabled=false
+
+[Podcasts]
+AutoUpdate Interval=30
+Maximum Simultaneous Downloads=4
+Maximum Simultaneous Updates=4
+
+[ScriptManager]
+Running Scripts=Cool Streams,Librivox.org,Lyricwiki
+
+[Service_LastFm]
+fetchSimilar=true
+ignoreWallet=no
+scrobble=true
+sessionKey=
+
+[Service_Mp3tunes]
+email=
+harmonyEmail=
+harmonyEnabled=false
+identifier=001FC67FE3574895500420
+partnerToken=4895500420
+password=
+pin=
+
+[Session]
+LastPlaying=31
+
+[TagDialog]
+CurrentTab=0
