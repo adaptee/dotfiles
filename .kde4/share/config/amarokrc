@@ -64,7 +64,7 @@ MoodbarPaintStyle=3
 ShowMoodbarInSlider=true
 
 [MySQL]
-CheckCount=12
+CheckCount=13
 
 [Notification Messages]
 hideOnCloseInfo=false
