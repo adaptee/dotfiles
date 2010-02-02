@@ -17,7 +17,7 @@ screen=0
 zvalue=150
 
 [Containments][16][Applets][17]
-geometry=1049,0,33,32
+geometry=1050,0,32,32
 immutability=1
 plugin=battery
 zvalue=43
@@ -95,7 +95,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=406,0,385,32
+geometry=406,0,412,32
 immutability=1
 plugin=tasks
 zvalue=205
@@ -120,7 +120,7 @@ plugin=trash
 zvalue=40
 
 [Containments][16][Applets][28]
-geometry=795,0,250,32
+geometry=822,0,224,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -147,7 +147,7 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=70
+DialogHeight=12
 DialogWidth=0
 
 [Containments][16][Applets][33]
@@ -191,7 +191,7 @@ zvalue=0
 geometry=1015,79,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=198
+zvalue=195
 
 [Containments][42][Applets][14][Configuration]
 graphColor=20,19,18

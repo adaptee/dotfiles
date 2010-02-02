@@ -6,11 +6,11 @@ _k_friendly_name=Amarok
 decreaseVolume=,Meta+-,降低音量
 increaseVolume=Meta++,Meta++,增加音量
 loveTrack=Meta+L,Meta+L,Last.fm：最爱当前音轨
-mute=Meta+M,Meta+M,静音
-next=Meta+B,Meta+B,
+mute=none,Meta+M,静音
+next=Meta+N,Meta+B,
 play_pause=Meta+C,Meta+C,播放/暂停
 playlist_add=,Meta+A,添加媒体(&A)...
-prev=Meta+Z,Meta+Z,上一音轨
+prev=Meta+P,Meta+Z,上一音轨
 rate1=Meta+1,Meta+1,对当前音轨评分：1
 rate2=Meta+2,Meta+2,对当前音轨评分：2
 rate3=Meta+3,Meta+3,对当前音轨评分：3
@@ -22,7 +22,7 @@ showOsd=Meta+O,Meta+O,显示屏幕显示
 skipTrack=Meta+S,Meta+S,Last.fm：跳过当前音轨
 stop=Meta+V,Meta+V,停止
 stop_after_current=Meta+Shift+V,Meta+Shift+V,在当前音轨后停止
-toggleMainWindow=Meta+P,Meta+P,切换主窗口
+toggleMainWindow=Meta+M,Meta+P,切换主窗口
 
 [juk]
 _k_friendly_name=

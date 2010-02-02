@@ -30,7 +30,7 @@ View Style=Simple
 Browser Path=root list/collections
 Debug Enabled=false
 First Run=false
-HiddenOnExit=true
+HiddenOnExit=false
 MainWindow Position=0,36
 MainWindow Size=1272,735
 
@@ -64,7 +64,7 @@ MoodbarPaintStyle=3
 ShowMoodbarInSlider=true
 
 [MySQL]
-CheckCount=24
+CheckCount=29
 
 [Notification Messages]
 hideOnCloseInfo=false
@@ -121,7 +121,7 @@ password=
 pin=
 
 [Session]
-LastPlaying=31
+LastPlaying=1034
 
 [TagDialog]
 CurrentTab=0
