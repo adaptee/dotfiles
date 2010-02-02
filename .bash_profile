@@ -75,7 +75,7 @@ if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
     eval `${SSHAGENT} ${SSHAGENTARGS}`
 
     # kill this session's ssh-agent before shell exits.
-    trap " kill ${SSH_AGENT_PID} " 0
+    trap "kill -9 ${SSH_AGENT_PID}" 0
 fi
 
 # prompt user to add private key
