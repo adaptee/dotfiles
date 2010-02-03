@@ -111,7 +111,7 @@ Size=48
 
 [DirSelect Dialog]
 DirSelectDialog Size=400,450
-History Items[$e]=file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/Desktop,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
+History Items[$e]=file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/Desktop,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
 
 [Emoticons]
 emoticonsTheme=kde4
@@ -156,7 +156,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/img/novel/emprise/金鳞岂是池中物,$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/img,$HOME/audio/ACG,$HOME/down,$HOME/code/simplecd
+Recent URLs[$e]=$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/img,$HOME/audio/ACG,$HOME/down,$HOME/code/simplecd,$HOME/snapshot6.png
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false

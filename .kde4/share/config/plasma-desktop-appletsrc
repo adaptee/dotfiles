@@ -95,7 +95,7 @@ zvalue=42
 displayedText=1
 
 [Containments][16][Applets][24]
-geometry=406,0,412,32
+geometry=406,0,464,32
 immutability=1
 plugin=tasks
 zvalue=205
@@ -120,7 +120,7 @@ plugin=trash
 zvalue=40
 
 [Containments][16][Applets][28]
-geometry=822,0,224,32
+geometry=874,0,172,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -191,7 +191,7 @@ zvalue=0
 geometry=1015,79,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=195
+zvalue=194
 
 [Containments][42][Applets][14][Configuration]
 graphColor=20,19,18

@@ -64,7 +64,7 @@ MoodbarPaintStyle=3
 ShowMoodbarInSlider=true
 
 [MySQL]
-CheckCount=29
+CheckCount=25
 
 [Notification Messages]
 hideOnCloseInfo=false
@@ -121,7 +121,7 @@ password=
 pin=
 
 [Session]
-LastPlaying=1034
+LastPlaying=152
 
 [TagDialog]
 CurrentTab=0
