@@ -1,3 +1,7 @@
+" In windows , use cp936 as internal encoding
+" ugly choice, but windows is ugly itself...
+set encoding=cp936
+
 " behaves well under both Linux/Windows/Mac
 set fileformats=dos,unix,mac
 

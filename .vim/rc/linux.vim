@@ -1,3 +1,6 @@
+" In linux, UTF-8 is your best choice
+set encoding=utf-8
+
 " behaves well under both Linux/Windows/Mac
 set fileformats=unix,dos,mac
 
