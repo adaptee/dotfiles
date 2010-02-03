@@ -88,8 +88,9 @@ set number
 "highlight current line
 set cursorline
 
-"show TAB as '>-------', NEWLINE as '$', trailing whitespace as '~' when executing ":set list"
-set listchars=tab:>-,eol:$,trail:~
+" after executing ":set list"
+" show TAB as '>-------', NEWLINE as '$', trailing whitespace as '~'
+set listchars=tab:>-,eol:$,trail:*,extends:»,precedes:«
 
 "use advanced command-line auto-completion feature
 set wildmenu
@@ -131,6 +132,9 @@ set report=0
 
 " differ options
 set diffopt=filler,iwhite
+
+" highlight the 1st, 5th, 9th column ,etc
+"match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
 
 "--------------------------------------------------------------------------"
 "                           encodings & locale                             "
