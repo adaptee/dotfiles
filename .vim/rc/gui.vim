@@ -2,11 +2,11 @@
 
 "choose font
 if has("unix")
-    set guifont=DejaVu\ Sans\ Mono\ 14
-    set guifontwide=Vera\ Sans\ YuanTi\ Mono\ 14
+    set guifont=Monaco\ 13
+    set guifontwide=DejaVu\ Sans\ YuanTi\ Mono\ 13
 elseif has("win32")
-    set guifont=DejaVu_Sans_Mono:h11:cDEFAULT
-    set guifontwide=Vera_Sans_YuanTi_Mono:h11:cDEFAULT
+    set guifont=Monaco:h11:cANSI
+    set guifontwide=DejaVu_Sans_Mono:h11:cANSI
 endif
 
 "remove the toolbar, menubar
