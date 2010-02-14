@@ -2,7 +2,7 @@
 update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
 
 [amarok]
-_k_friendly_name=
+_k_friendly_name=amarok
 decreaseVolume=,Meta+-,降低音量
 increaseVolume=Meta++,Meta++,增加音量
 loveTrack=Meta+L,Meta+L,Last.fm：最爱当前音轨
@@ -25,7 +25,7 @@ stop_after_current=Meta+Shift+V,Meta+Shift+V,在当前音轨后停止
 toggleMainWindow=Meta+M,Meta+P,切换主窗口
 
 [juk]
-_k_friendly_name=
+_k_friendly_name=juk
 back=,Ctrl+Alt+Left,Previous
 forward=,Ctrl+Alt+Right,&Next
 forwardAlbum=Ctrl+Alt+Up,Ctrl+Alt+Up,Play Next Album
@@ -38,7 +38,7 @@ volumeDown=Ctrl+Alt+Shift+Down,Ctrl+Alt+Shift+Down,Volume Down
 volumeUp=Ctrl+Alt+Shift+Up,Ctrl+Alt+Shift+Up,Volume Up
 
 [khotkeys]
-_k_friendly_name=
+_k_friendly_name=khotkeys
 {961384ae-d1d7-4da4-848c-605c2639e927}=Print,none,PrintScreen
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 
@@ -97,7 +97,7 @@ mute=Meta+Down,Volume Mute,Mute
 ReadMessage=Ctrl+Shift+I,Ctrl+Shift+I,Read Message
 Set_Away_Back=Ctrl+Shift+W,Ctrl+Shift+W,Set Away/Back
 ShowContactList=Ctrl+Shift+S,Ctrl+Shift+S,Show/Hide Contact List
-_k_friendly_name=
+_k_friendly_name=kopete
 
 [krunner]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Halt Without Confirmation
@@ -110,6 +110,11 @@ Run Command on clipboard contents=Alt+Shift+F2,Alt+Shift+F2,Run Command on clipb
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
 Switch User=Ctrl+Alt+Ins,Ctrl+Alt+Ins,Switch User
 _k_friendly_name=Run Command Interface
+bookmarks=none,none,Run Command (runner "Bookmarks" only)
+desktopsessions=none,none,Run Command (runner "Desktop Sessions" only)
+kabccontacts=none,none,Run Command (runner "Contacts" only)
+solid=none,none,Run Command (runner "Devices" only)
+windows=none,none,Run Command (runner "Windows" only)
 
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
@@ -121,12 +126,17 @@ Cylinder=none,none,Desktop Cylinder
 Desktop Screenshot to Clipboard=Ctrl+Print,Ctrl+Print,Desktop Screenshot to Clipboard
 Expose=Ctrl+F9,Ctrl+F9,Toggle Present Windows (Current desktop)
 ExposeAll=none,Ctrl+F10,Toggle Present Windows (All desktops)
+ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
+FlipSwitchAll=none,none,Toggle Flip Switch (All desktops)
+FlipSwitchCurrent=none,none,Toggle Flip Switch (Current desktop)
 Invert=Meta+Ctrl+I,Meta+Ctrl+I,Toggle Invert Effect
 InvertWindow=Meta+Ctrl+U,Meta+Ctrl+U,Toggle Invert Effect on Window
 Kill Window=Meta+K,Ctrl+Alt+Esc,Kill Window
 Mouse Emulation=none,Alt+F12,Mouse Emulation
+Remove Window From Group=none,none,Remove Window From Group
 Setup Window Shortcut=none,none,Setup Window Shortcut
 Sharpen=Meta+Ctrl+S,Meta+Ctrl+S,Toggle Sharpen Effect
+Show Desktop=none,none,Show Desktop
 ShowDesktopGrid=Ctrl+F10,Ctrl+F8,Show Desktop Grid
 Snow=Ctrl+F12,Meta+Ctrl+F12,Snow
 Sphere=none,none,Desktop Sphere
@@ -135,6 +145,10 @@ Switch One Desktop Down=none,none,Switch One Desktop Down
 Switch One Desktop Up=none,none,Switch One Desktop Up
 Switch One Desktop to the Left=none,none,Switch One Desktop to the Left
 Switch One Desktop to the Right=none,none,Switch One Desktop to the Right
+Switch Window Down=Meta+Alt+Down,Meta+Alt+Down,Switch to Window Below
+Switch Window Left=Meta+Alt+Left,Meta+Alt+Left,Switch to Window to the Left
+Switch Window Right=Meta+Alt+Right,Meta+Alt+Right,Switch to Window to the Right
+Switch Window Up=Meta+Alt+Up,Meta+Alt+Up,Switch to Window Above
 Switch to Desktop 1=Ctrl+F1,Ctrl+F1,Switch to Desktop 1
 Switch to Desktop 10=none,none,Switch to Desktop 10
 Switch to Desktop 11=none,none,Switch to Desktop 11
@@ -171,8 +185,12 @@ Walk Through Desktop List=none,none,Walk Through Desktop List
 Walk Through Desktop List (Reverse)=none,none,Walk Through Desktop List (Reverse)
 Walk Through Desktops=none,none,Walk Through Desktops
 Walk Through Desktops (Reverse)=none,none,Walk Through Desktops (Reverse)
+Walk Through Window Tabs=none,none,Walk Through Window Tabs
+Walk Through Window Tabs (Reverse)=none,none,Walk Through Window Tabs (Reverse)
 Walk Through Windows=Alt+Tab,Alt+Tab,Walk Through Windows
 Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,Walk Through Windows (Reverse)
+Walk Through Windows Alternative=none,none,Walk Through Windows Alternative
+Walk Through Windows Alternative (Reverse)=none,none,Walk Through Windows Alternative (Reverse)
 Window Above Other Windows=Meta+A,none,Keep Window Above Others
 Window Below Other Windows=none,none,Keep Window Below Others
 Window Close=Alt+F4,Alt+F4,Close Window
@@ -196,6 +214,8 @@ Window Pack Down=none,none,Pack Window Down
 Window Pack Left=none,none,Pack Window to the Left
 Window Pack Right=none,none,Pack Window to the Right
 Window Pack Up=none,none,Pack Window Up
+Window Quick Tile Left=none,none,Quick Tile Window to the Left
+Window Quick Tile Right=none,none,Quick Tile Window to the Right
 Window Raise=none,none,Raise Window
 Window Resize=Alt+F6,none,Resize Window
 Window Screenshot to Clipboard=Alt+Print,Alt+Print,Window Screenshot to Clipboard
@@ -244,7 +264,7 @@ _k_friendly_name=KDE Keyboard Layout Switcher
 
 [lancelot]
 Lancelot=,Alt+F5,Open Lancelot menu
-_k_friendly_name=
+_k_friendly_name=lancelot
 
 [plasma-desktop]
 Show Dashboard=,Ctrl+F12,Show Dashboard

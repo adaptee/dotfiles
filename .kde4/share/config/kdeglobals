@@ -110,8 +110,8 @@ DisabledValue=1
 Size=48
 
 [DirSelect Dialog]
-DirSelectDialog Size=400,450
-History Items[$e]=file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/Desktop,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
+DirSelectDialog Size=579,525
+History Items[$e]=file:///mnt/personal/whodare/code/google-pinyin/scim-googlepinyin/src/share,file:///mnt/personal/whodare/code/google-pinyin/android-pinyin/jni/share,file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/Desktop,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
 
 [Emoticons]
 emoticonsTheme=kde4
@@ -156,7 +156,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/book,$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/img,$HOME/audio/ACG,$HOME/down,$HOME/code/simplecd,$HOME/snapshot6.png
+Recent URLs[$e]=$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/img,$HOME/audio/ACG,$HOME/down,$HOME/code/simplecd,$HOME/down/Incoming/BBC--生命之旅,$HOME/down/Incoming
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false

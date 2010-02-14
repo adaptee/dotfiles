@@ -4,6 +4,7 @@ update_info=kwin3_plugin.upd:kde3.2,kwin.upd:kde3.0r1,kwin.upd:kde3.2Xinerama,kw
 [Compositing]
 AnimationSpeed=2
 Backend=OpenGL
+CheckIsSafe=true
 DisableChecks=false
 Enabled=true
 GLDirect=true
@@ -19,6 +20,15 @@ Name_2=
 Name_3=
 Name_4=
 Number=4
+
+[Effect-BoxSwitch]
+TabBox=false
+
+[Effect-CoverSwitch]
+TabBox=false
+
+[Effect-FlipSwitch]
+TabBox=true
 
 [Effect-PresentWindows]
 TabBox=false
@@ -73,6 +83,7 @@ kwin4_effect_magnifierEnabled=false
 kwin4_effect_minimizeanimationEnabled=false
 kwin4_effect_mousemarkEnabled=false
 kwin4_effect_presentwindowsEnabled=true
+kwin4_effect_resizeEnabled=false
 kwin4_effect_scaleinEnabled=false
 kwin4_effect_shadowEnabled=true
 kwin4_effect_sharpenEnabled=false
@@ -81,6 +92,7 @@ kwin4_effect_showfpsEnabled=false
 kwin4_effect_showpaintEnabled=false
 kwin4_effect_slideEnabled=true
 kwin4_effect_slidebackEnabled=false
+kwin4_effect_slidingpopupsEnabled=true
 kwin4_effect_snaphelperEnabled=false
 kwin4_effect_snowEnabled=true
 kwin4_effect_taskbarthumbnailEnabled=true
@@ -91,7 +103,9 @@ kwin4_effect_wobblywindowsEnabled=false
 kwin4_effect_zoomEnabled=true
 
 [PopupInfo]
+PopupHideDelay=1000
 ShowPopup=false
+TextOnly=false
 
 [Style]
 BorderSize=1
@@ -102,6 +116,8 @@ PluginLib=kwin3_oxygen
 ShowToolTips=true
 
 [TabBox]
+ListMode=0
+ShowTabBox=true
 TraverseAll=false
 
 [Windows]
