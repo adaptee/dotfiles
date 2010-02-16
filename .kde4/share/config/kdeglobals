@@ -147,7 +147,7 @@ WheelScrollLines=3
 contrast=7
 
 [KDE-Global GUI Settings]
-GraphicEffectsLevel=6
+GraphicEffectsLevel=1
 
 [KFileDialog Settings]
 Automatically select filename extension=true
@@ -156,7 +156,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/audio/ACG/acfun/练习骑马,$HOME/audio,$HOME/img,$HOME/audio/ACG,$HOME/down,$HOME/code/simplecd,$HOME/down/Incoming/BBC--生命之旅,$HOME/down/Incoming
+Recent URLs[$e]=$HOME/audio/ACG/,$HOME/down/,$HOME/code/simplecd/,$HOME/down/Incoming/,/media/Study/Japanese/中央广播电视大学日语基础教学视频/,/media/Study/Japanese/,/media/Study/,$HOME/audio/
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
@@ -164,7 +164,7 @@ Show Speedbar=true
 Show hidden files=false
 Sort by=Name
 Sort reversed=false
-Speedbar Width=113
+Speedbar Width=118
 View Style=Simple
 
 [KShortcutsDialog Settings]
@@ -235,7 +235,8 @@ DisabledValue=1
 Size=22
 
 [Toolbar style]
-ToolButtonStyle=TextOnly
+ToolButtonStyle=TextBesideIcon
+ToolButtonStyleOtherToolbars=TextBesideIcon
 
 [ToolbarIcons]
 ActiveColor=169, 156, 255
