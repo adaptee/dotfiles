@@ -79,9 +79,6 @@ noremap <C-l> <C-v><C-l>
 " So, '\' won't work, '\\' is required here.
 noremap <Silent> \\ :nohlsearch<CR>
 
-" For the sake of FoxTabe, damn it!
-noremap <C-tab> :
-
 " go up quickly
 noremap <BS> gu
 noremap <S-Up> gu
@@ -228,10 +225,6 @@ proxy_toggler       = prefs_entry_toggler("network.proxy.type", 0 );
 
 EOF
 
-" toggle entry in prefs.js( about:config)
-js<<EOF
-
-EOF
 
 " Because vimperator put all keywords into one single argument, we first split it.
 js<<EOF
@@ -258,15 +251,6 @@ split_and_rejoin_args = function ( args)
 }
 EOF
 
-" Wiki Selected Text
-js<<EOF
-wiki_selected_text = function ()
-{
-    str = buffer.getCurrentWord();
-    liberator.execute('tabopen wikipedia ' + str);
-}
-EOF
-
 
 "Show the feed-button, even if the address-bar is not displayed"
 js<<EOF
@@ -282,57 +266,6 @@ var show_feed_button = function()
 show_feed_button();
 EOF
 
-
-
-" UserAgent Switch
-js<<EOF
-liberator.globalVariables['sx_uas'] = 0;
-switch_useragent = function () {
-    pre_useragents_list = [
-    //name, ua, appname, appversion, platform,
-        ['(Firefox) default', '', '', '', ''],
-
-        ['M$ IE7', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)',
-                 'Microsoft Internet Explorer',,
-                 '4.0 (compatible; MSIE 7.0; Windows NT 6.0)',
-                 'Win32',
-            ],
-
-        ['Google Bot', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', '', '', ''
-            ],
-        ['link2', 'Links (2.1pre15; FreeBSD 5.3-RELEASE i386; 196x84)', '', '',
-    ''],
-        ['Safari', 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.2 (KHTML, like Gecko) Safari/125.8','','',''],
-        ['Chrome', 'Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.1.1.1 Safari/525.13.','','',''],
-        ['Opera', 'Opera/9.20 (X11, Linux i686; U; en)', 'Opera', '9.20 (Linux i686; U; en)', 'Linux'],
-        ['Safari(iPhone)', 'Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3', '','',''],
-        ['BlackBerry', 'BlackBerry8300/4.5.0Profile/MIDP-2.0 Configuration/CLDC-1.1', '', '', ''],
-        ['T-Mobile G1', 'Mozilla/5.0 (Linux; U; Android 1.0; en-us; dream) AppleWebKit/5.25.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2', '','',''],
-
-    ];
-
-    if (liberator.globalVariables['sx_uas'] == pre_useragents_list.length-1)
-        liberator.globalVariables['sx_uas'] = 0;
-    else
-        liberator.globalVariables['sx_uas'] += 1;
-
-    var key = liberator.globalVariables['sx_uas'];
-    var name = pre_useragents_list[key][0];
-    liberator.execute('set! general.useragent.override=\'' + pre_useragents_list[key][1] + '\'');
-    //`echo` doesn't work? wtf
-    //liberator.execute('echo \'Use UA: '+ name + '\'');
-    document.getElementById('liberator-message').value='Use UserAgent: '+ name;
-
-}
-EOF
-
-" Fuck GFW; use proxy to access the specified URL
-js<<EOF
-fuck_gfw = function (url)
-{
-    liberator.execute('tabopen https://soproxy.appspot.com/' + url);
-}
-EOF
 
 js<<EOF
 search_in_verycd = function (args)
@@ -541,17 +474,12 @@ noremap <Leader>g :Gigapedia<Space>
 command! -nargs=* Netyi :js search_in_netyi("<args>")
 "noremap <Leader>n  :Netyi<Space>
 
-
 command! -nargs=* VeryCD :js search_in_verycd("<args>")
 noremap v :VeryCD<Space>
 
 " search in wikipedia
 command! -nargs=* Wiki :js search_in_wikipedia("<args>")
 noremap w :Wiki<Space>
-
-" Fuck GFW!
-command! -nargs=* GFW :js fuck_gfw("<args>")
-noremap W :GFW<Space>
 
 " reload vimperatorrc
 command! Source :js load_vimperatorrc()
@@ -563,7 +491,5 @@ noremap <Leader>c  :Font<CR>
 command! Proxy :js proxy_toggler()
 noremap <Leader>p  :Proxy<CR>
 
-" Switch user-agent
-"map <Silent> <F9> :js switch_useragent()<CR>
 
 "" vim: set ft=vimperator:
