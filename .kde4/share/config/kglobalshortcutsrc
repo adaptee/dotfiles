@@ -45,6 +45,9 @@ _k_friendly_name=khotkeys
 [klipper]
 _k_friendly_name=Klipper
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
+cycleNextAction=none,Ctrl+Alt+Down,Next history item
+cyclePrevAction=none,Ctrl+Alt+Up,Previous history item
+edit_clipboard=none,Ctrl+Alt+E,&Edit Contents...
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show_klipper_popup=Ctrl+Alt+V,Ctrl+Alt+V,Show Klipper Popup-Menu
 
