@@ -1,0 +1,12 @@
+[$Version]
+update_info=plasma_popupapplet_fix_groups.upd:PlasmaPopupAppletFixGroups2
+
+[Applet Browser]
+favorites=
+used=,notifier,folderview,systemtray,digital-clock,tasks,pager,battery,launcher,systemloadviewer,sm_cpu,sm_hwinfo,sm_net,sm_ram,sm_temperature,system-monitor_applet,fileWatcher,calculator,leavenote,magnifique,plasma_applet_notes,plasma_applet_parley,pastebin,paste,previewer,quicklaunch,sm_hdd,simplelauncher,showdesktop,clock,binaryclock,fuzzy-clock,worldclock,activitybar,bubblemon,calendar,incomingmsg,lancelot_launcher,weatherstation,lockout,luna,mediaplayer,showdashboard,timer,trash,weather,konsoleprofiles,charselect,hello-python,networkmanagement,powerchart,twitter,news,nowplaying,dict,katesession,frame,plasma_applet_didyouknow_kalzium,BbalL,notifier_automount
+
+[Theme]
+name=Tibanna
+
+[Theme-amarok]
+name=Amarok-Mockup
