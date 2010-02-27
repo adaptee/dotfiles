@@ -1,0 +1,64 @@
+[ConfigurationDialog]
+Height 600=400
+Height 800=499
+Width 1280=399
+
+[EdgePositions]
+Screen-1=430,36
+
+[General]
+FreeFloating=true
+PastQueries=,kon,amarok,pcm,emesene,qterm,amule,pcman,konsole,deluge,swift,virt,system,chrome,amu,kmix,eme,qbit,firefox,qter,xchat,google,plasmaengineexplorer,ibus,shaman,gdmap,vir,auda,bbc,audaci,gnome-terminal,konsol,gvim,xp,opera,amul,104,qte,xch,kdenlive,goog,swi,kate,pid,fire,goo,qtconfig,kphoto,digikam,acroread
+
+[Interface]
+Height 600=400
+Height 800=729
+Width 1280=420
+
+[PlasmaRunnerManager]
+LaunchCounts=1 shell_kate,1 shell_prism,9 shell_chrome,93 services_amule.desktop,2 shell_scite,28 shell_deluge,0 0 1 services_kde4-amarok.desktop,0 0 27 shell_deluge,0 0 6 shell_gnome-do,2 browserhistory_/home/whodare/down/Incoming,0 0 1 services_opengl.desktop,3 shell_qtconfig,0 0 2 shell_kupfer,2 services_audacious2.desktop,1 services_desktopthemedetails.desktop,0 0 10 services_smplayer.desktop,1 services_kde4-digikam.desktop,0 0 5 shell_pcmanfm,0 0 8 services_kde4-kcolorchooser.desktop,5 services_ibus.desktop,0 0 4 services_gedit.desktop,1 desktopsessions_kde,0 0 1 services_ibus.desktop,0 0 1 shell_kubuntu,5 shell_pidgin,5 services_kde4-kate.desktop,0 1 services_amule.desktop,2 shell_xp,2 services_qBittorrent.desktop,4 services_smplayer.desktop,7 shell_eric,35 services_pcmanfm.desktop,0 0 2 services_tilda.desktop,0 0 47 services_firefox.desktop,1 shell_gnome-terminal,0 0 9 shell_xchat,1 services_skype.desktop,1 shell_digikam,2 services_pida.desktop,15 shell_sqlitebrowser,2 locations_opendir,1 shell_gdmap,1 shell_deadbeef,0 0 12 shell_pidgin,1 shell_amule,2 services_shutter.desktop,0 0 1 services_kde4-kchmviewer.desktop,2 services_xchat.desktop,8 services_gvim.desktop,23 shell_xchat,0 0 52 services_amule.desktop,0 0 1 services_winpdb.desktop,0 0 14 services_kde4-dolphin.desktop,0 0 4 services_kde4-yakuake.desktop,0 0 1 services_qgit.desktop,0 0 33 services_gvim.desktop,5 services_kde4-dolphin.desktop,1 services_swiftfox.desktop,8 services_VirtualBox.desktop,4 services_kde4-ktimetracker.desktop,0 0 1 shell_gvim,0 0 2 shell_karm,2 services_kde4-kmix.desktop,1 shell_shaman,0 0 1 services_gparted.desktop,1 shell_kvpm,11 shell_acroread,0 0 5 services_kde4-konqbrowser.desktop,0 0 1 services_kde4-krusader.desktop,2 services_pidgin.desktop,2 services_kde4-kdenlive.desktop,1 services_eric.desktop,0 0 4 shell_gthumb,0 0 23 services_qterm.desktop,7 shell_exaile,0 0 3 services_kde4-kopete.desktop,0 0 2 shell_gnome-terminal,27 shell_bbc,0 0 1 shell_audacious,0 0 5 services_google-chrome.desktop,37 services_qterm.desktop,10 services_google-chrome.desktop,0 0 5 services_kde4-kate.desktop,18 services_emesene.desktop,0 0 4 services_pcmanfm.desktop,1 shell_opera,0 0 1 services_audacious2.desktop,2 services_kde4-yakuake.desktop,0 2 services_kde4-konsole.desktop,1 shell_openshot,0 0 2 services_kde4-kwalletmanager.desktop,0 0 11 services_VirtualBox.desktop,0 0 11 shell_acroread,0 0 2 desktopsessions,1 shell_qterm,28 shell_swift,0 0 3 shell_totem,56 services_kde4-konsole.desktop,2 desktopsessions,0 0 2 shell_gvim -X,18 services_kde4-systemsettings.desktop,1 services_kde4-kdiff3.desktop,57 services_firefox.desktop,0 0 1 services_gitg.desktop,6 shell_pcmanfm,1 shell_kdesu kvpm,0 0 2 shell_ksshaskpass,0 1 services_bell.desktop,0 0 42 services_kde4-systemsettings.desktop,1 shell_audacious,2 shell_plasmaengineexplorer,0 0 1 services_Nokia-QtCreator.desktop,10 services_kde4-amarok.desktop,1 recentdocuments_/home/whodare/.kde4/share/apps/RecentDocuments/dropboxd.desktop,1 shell_kubuntu,0 0 2 services_kupfer.desktop,0 0 6 services_comix.desktop,2 services_audacious2-gtkui.desktop,0 0 64 services_kde4-konsole.desktop,0 1 services_kde4-systemsettings.desktop,0 0 1 shell_vlc,9 shell_104,2 services_kde4-kphotoalbum.desktop,0 0 1 services_terminator.desktop,1 shell_kphotoalbum,0 0 7 shell_104
+
+[Plugins]
+PowerDevilEnabled=true
+audioplayercontrolEnabled=true
+bookmarksEnabled=false
+browserhistoryEnabled=false
+calculatorEnabled=true
+desktopsessionsEnabled=true
+kabccontactsEnabled=true
+katesessionsEnabled=false
+killEnabled=true
+konquerorsessionsEnabled=false
+konsolesessionsEnabled=false
+kopete_runnerEnabled=true
+krunner_kgetEnabled=true
+krunner_spellcheckEnabled=false
+locationsEnabled=true
+nepomuksearchEnabled=true
+placesEnabled=true
+plasma-desktopEnabled=true
+recentdocumentsEnabled=true
+servicesEnabled=true
+shellEnabled=true
+solidEnabled=true
+techbaseEnabled=false
+unitconverterEnabled=false
+webshortcutsEnabled=false
+wikipediaEnabled=false
+wikitravelEnabled=false
+windowsEnabled=true
+
+[TaskDialog]
+Height 600=400
+Height 800=419
+KeepAbove=false
+Width 1280=649
+filterState=0
+headerState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x07\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0b\\\x02\x00\x00\x00\x05\x00\x00\x00\t\x00\x00\x00d\x00\x00\x00\x06\x00\x00\x00d\x00\x00\x00\x04\x00\x00\x00d\x00\x00\x00\x03\x00\x00\x00d\x00\x00\x00\x02\x00\x00\x00d\x00\x00\x02Z\x00\x00\x00\x0b\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00»\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00:\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00D\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00e\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00Ø\x00\x00\x00\x01\x00\x00\x00\x00
+normalizeCPUUsage=true
+showCommandLineOptions=false
+showTooltips=true
+showTotals=true
+units=0
+updateIntervalMSecs=2000
+version=2
