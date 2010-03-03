@@ -19,6 +19,7 @@ Favorites=
 [Shortcuts]
 help_whats_this=none
 move-session-left=Shift+Left
+move-session-right=Shift+Right
 new-session=Alt+N
 next-session=Alt+Right
 previous-session=Alt+Left
