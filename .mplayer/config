@@ -13,11 +13,11 @@ vo = "vdpau,xv,fbdev2,"
 
 # prefer these video codecs; fallback if none are found
 # the trailing comma is very important
-vc = "ffh264vdpau, ffmpeg12vdpau,"
+#vc = "ffh264vdpau,ffmpeg12vdpau,"
 
 # prefer these video codecs families; fallback if none are found
 # the trailing comma is very important
-vfm = "ffmpeg,libmpeg2"
+vfm = "ffmpeg,libmpeg2,dshow,xvid"
 
 # disble screenserver when movie is being played
 stop-xscreensaver = "yes"
@@ -56,10 +56,10 @@ subcp = cp936
 subfont-autoscale=2
 
 #autoscale coefficient of the OSD element
-subfont-osd-scale=3
+subfont-osd-scale=4
 
 #subtitle text autoscale coefficient as percentage of the screen size
-subfont-text-scale = 6
+subfont-text-scale=6
 
 # show subtitle under the scene, not interferin the movie
 #vf="expand=0:-50:0:0"
