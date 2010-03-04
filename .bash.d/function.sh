@@ -349,14 +349,15 @@ function pdf2png()
 function dir2iso()
 {
     if [[ $# != 2 ]] ; then
-        echo "Usage: dir2iso [folder-name] [iso-label]."
+        echo "Usage: dir2iso [folder-name] [iso-label] "
         return 1
     fi
 
     local folder="$1"
-    local iso="$2"
+    local iso_label="$2"
 
-    genisoimage -r -J -joliet-long -input-charset utf-8 -hide boot.catalog -hide-joliet boot.catalog -V "${iso}" -o "${iso}.iso" "${folder}"
+    #genisoimage -r -J -joliet-long -input-charset utf-8 -hide boot.catalog -hide-joliet boot.catalog -V "${iso_label}" -o "${iso_label}.iso" "${folder}"
+    mkisofs -r -J -joliet-long -input-charset utf-8 -hide boot.catalog -hide-joliet boot.catalog -V "${iso_label}" -o "${iso_label}.iso" "${folder}"
 
 }
 
