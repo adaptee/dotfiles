@@ -27,4 +27,5 @@ rename-session=Alt+S
 
 [Window]
 DynamicTabTitles=true
+Height=45
 Width=100
