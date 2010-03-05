@@ -120,8 +120,11 @@ function bak()
     fi
 
     local orig_name="$1"
+    # strip tailing '/', if that exist
+    orig_name=${orig_name%/}
+
     # put timestamp in to the bakcup name
-    local backup_name="${1}.$(LANG=en date '+%Y-%m-%d').bak"
+    local backup_name="${orig_name}-$(LANG=en date '+%Y-%m-%d').bak"
 
     # make sure the specified file exist
     if [[ ! -a "${orig_name}" ]] ; then
