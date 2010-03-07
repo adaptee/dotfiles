@@ -144,7 +144,7 @@ set diffopt=filler,iwhite
 set encoding=utf-8
 
 "" Make VIM understand following kinds of encoding
-set fileencodings=ucs-bom,utf-8,sjis,chinese,taiwan,japan,korea,latin1
+set fileencodings=ucs-bom,utf-8,gbk,cp936,chinese,taiwan,japan,korea,latin1
 
 " show ambiguous character in two column width
 if ( has('multi_byte') && v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)' )
