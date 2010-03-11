@@ -586,7 +586,9 @@ autocmd BufReadPost *
 "--------------------------------------------------------------------------"
 
 "open file in new tab, making gf(goto included file) more convenient
-nnoremap gf <C-W>gf
+nnoremap gf <C-W>gf:q<CR>:tabnew<CR>:bp<CR>
+"nnoremap gf <C-W>gf
+"nnoremap gf :tab sp<CR>gf
 
 "Insert header automatically
 "autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
