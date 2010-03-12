@@ -83,4 +83,7 @@ set convert-meta off
 # display characters with the eighth bit set directly
 set output-meta on
 
-
+# specific for gdb
+#$if gdb
+    #set editing-mode vi
+#$endif
