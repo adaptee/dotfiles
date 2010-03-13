@@ -288,6 +288,16 @@ inoremap <C-E>   <End>
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
 
+" move more quickly in command line
+" help tcsh-style
+cnoremap <C-f> <S-Right>
+cnoremap <C-b> <S-Left>
+cnoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <End>
+cnoremap <C-k> <Home>
+
+
 "after jumping, move that position to the center, automatically
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
@@ -426,9 +436,6 @@ nmap <Leader>q :q<CR>
 nmap <Leader>Q :q!<CR>
 nmap <Leader>a :qa<CR>
 nmap <Leader>A :qa!<CR>
-
-" allows us to write to files even when we forget to use sudo when launching vim
-command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
 
 " add more functionality to existing <C-g>
 " first, show the full path
