@@ -299,3 +299,6 @@ function! WordFrequency() range
 endfunction
 
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
+
+" convert \uXXXX to corresponding unicode character
+command! -range=% ToUnicode <line1>,<line2> :s/\\u\x\{4\}/\=eval('"' . submatch(0) . '"')/g
