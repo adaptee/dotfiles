@@ -292,10 +292,10 @@ cnoremap <C-E>  <End>
 " help tcsh-style
 cnoremap <C-f> <S-Right>
 cnoremap <C-b> <S-Left>
-cnoremap <C-l> <Right>
 cnoremap <C-h> <Left>
-cnoremap <C-j> <End>
-cnoremap <C-k> <Home>
+cnoremap <C-l> <Right>
+cnoremap <C-j> <Home>
+cnoremap <C-k> <End>
 
 
 "after jumping, move that position to the center, automatically
