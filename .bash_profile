@@ -1,11 +1,17 @@
 # ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
+
+#------------------------------------------------------------------------------
+#                              basic setting                                  #
+#------------------------------------------------------------------------------
+
 # the default umask is already set in /etc/profile
-#umask 022
+umask 022
+
+# disable terminal to show  the annoying '^C' after pressing <Ctrl-C>
+stty -ctlecho
 
 #------------------------------------------------------------------------------
 #                           environment variables                             #
@@ -46,21 +52,6 @@ if [ -n "${BASH_VERSION}" ]; then
     fi
 fi
 
-#------------------------------------------------------------------------------
-#                           restore firefox profile.                          #
-#------------------------------------------------------------------------------
-#
-#if [ -x "${HOME}/bin/pack-firefox.sh" ];then
-    #${HOME}/bin/pack-firefox.sh restore &
-#fi
-
-#------------------------------------------------------------------------------
-#                               start gappproxy client                        #
-#------------------------------------------------------------------------------
-
-if [ -x "${HOME}/bin/gappproxy" ];then
-    ~/bin/gappproxy &
-fi
 
 #------------------------------------------------------------------------------
 #                                   SSH keyring                               #
@@ -81,3 +72,10 @@ fi
 # prompt user to add private key
 #ssh-add
 
+#------------------------------------------------------------------------------
+#                               start gappproxy client                        #
+#------------------------------------------------------------------------------
+
+if [ -x "${HOME}/bin/gappproxy" ];then
+    ~/bin/gappproxy &
+fi
