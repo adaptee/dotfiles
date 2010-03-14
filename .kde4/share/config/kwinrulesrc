@@ -1,0 +1,23 @@
+[1]
+Description=(Default) Disable focus stealing prevention for XV
+fsplevel=0
+fsplevelrule=2
+wmclass=^xv .*
+wmclasscomplete=true
+wmclassmatch=3
+
+[2]
+Description=konsole
+clientmachine=arch
+clientmachinematch=0
+noborder=true
+noborderrule=2
+title=whodare : bash
+titlematch=0
+types=1
+wmclass=konsole
+wmclasscomplete=false
+wmclassmatch=2
+
+[General]
+count=2
