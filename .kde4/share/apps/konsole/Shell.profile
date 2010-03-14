@@ -1,14 +1,14 @@
 [Appearance]
 ColorScheme=WhiteOnBlack
-Font=DejaVu Sans YuanTi Mono, 13,-1, 5, 50, 0, 0, 0, 0, 0
+Font=DejaVu Sans YuanTi Mono,13,-1,5,50,0,0,0,0,0
 
 [General]
 Icon=utilities-terminal
-LocalTabTitleFormat=%d : %n
+LocalTabTitleFormat=%D
 MenuIndex=1
 Name=Shell
 Parent=FALLBACK/
-RemoteTabTitleFormat=%h : %u
+RemoteTabTitleFormat=%u@%h
 ShowMenuBar=false
 TabBarPosition=1
 
