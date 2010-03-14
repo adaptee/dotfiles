@@ -22,38 +22,58 @@
 "\e[1~": beginning-of-line
 # 'END'        => move to the end of the line
 "\e[4~": end-of-line
+# 'PageUp'
+"\e[5~": beginning-of-history
+# 'PageDown'
+"\e[6~": end-of-history
 
 # 'INS'        => insert next typed key literally
 "\e[2~": quoted-insert
 # 'DEL'        => delete current char under the cursor
 "\e[3~": delete-char
 
-# 'PageUp'
-"\e[5~": beginning-of-history
-# 'PageDown'
-"\e[6~": end-of-history
-
+#-------------- <Ctrl-key> mappings-------------------#
+#
 # Ctrl + p     => move to previous history entry
 "\C-p": previous-history
 # Ctrl + n     => move to next history entry
 "\C-n": next-history
 
-# inseat the last argument to previous command
-"\M-l": insert-last-argument
-
-# use <S-Tab> to do menu-complete, like in cmd.exe of windows.
-"\e[Z": menu-complete
-
 # edit the PATH env
 "\C-xp": "PATH=${PATH}"
 
-# insert a pair of double quotes and move cursor between
-"\C-x\"": "\"\"\C-b"
-# insert a pair of single quotes and move cursor between
-"\C-x'": "''\C-b"
+#-------------- <Alt-key> mappings-------------------#
+#
+# navigate history
+#"\ep": previous-history
+#"\en": next-history
+# search history
+"\ej": history-search-backward
+
+# move within line
+"\eh": backward-char
+"\el": forward-char
+"\ef": forward-word
+"\eb": backward-word
+
+# insert the last argument of previous command
+"\ek": yank-last-arg
+
+# insert a pair of quotes
+"\e\"": "\"\"\C-b"
+"\e'": "''\C-b"
+"\e(": "()\C-b"
 
 # Quote current or previous word with double quotes
-"\C-xq": "\eb\"\ef\""
+"\eq": "\eb\"\ef\""
+
+#-------------- <Ctrl-Alt-key> mappings-------------------#
+#
+# append '|less ' into command
+"\e\C-l":"\C-e | less\C-m"
+# execute in background ,with all output discarded
+"\e\C-b":"\C-e > /dev/null 2>&1 &\C-m"
+
 
 #---------------------------Readline Options--------------------------------
 
