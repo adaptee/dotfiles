@@ -1,13 +1,13 @@
 [Desktop Entry]
-DefaultProfile=Shell.profile
+DefaultProfile=Konsole.profile
 
 [Favorite Profiles]
-Favorites=/home/whodare/.kde4/share/apps/konsole/Shell.profile
+Favorites=/home/whodare/.kde4/share/apps/konsole/Konsole.profile,/home/whodare/.kde4/share/apps/konsole/Yakuake.profile
 
 [MainWindow]
 Height 800=801
-MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAABQAAAALmAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAABQAAAALlAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
 Width 1280=1281
 
 [Notification Messages]
