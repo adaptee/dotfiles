@@ -152,11 +152,15 @@ shopt -s nullglob
 # use emacs-style in terminal-input
 set -o emacs on
 
+# I hate noise
+set bell-style none
+
+# list completion candicate immediately after pressing 'TAB'
+set show-all-if-ambiguous on
+
 # Let me have core dumps
 ulimit -c unlimited
 
-# I hate noise
-set bell-style none
 
 #---------------------------------------------------------------------------#
 #                       Environment Variables                               #
@@ -271,7 +275,7 @@ complete -e ee
 complete -o filenames -F _find f
 complete -o filenames -F _longopt g
 
-complete -c sudo
+complete -cf sudo
 
 # only provide .Z .gz and .tgz file to gunzip
 complete -A file -X '!*.@(Z|gz|tgz)' gunzip
