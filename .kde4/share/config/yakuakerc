@@ -6,7 +6,7 @@ BackgroundColorOpacity=0
 TerminalHighlightOnManualActivation=true
 
 [Desktop Entry]
-DefaultProfile=Yakuake.profile
+DefaultProfile=Konsole.profile
 
 [Dialogs]
 ConfirmQuit=false

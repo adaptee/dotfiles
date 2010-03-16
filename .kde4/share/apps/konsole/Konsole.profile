@@ -4,8 +4,8 @@ Font=DejaVu Sans YuanTi Mono,13,-1,5,50,0,0,0,0,0
 
 [General]
 Icon=utilities-terminal
-LocalTabTitleFormat=%D
-MenuIndex=1
+LocalTabTitleFormat=%d
+MenuIndex=3
 Name=Konsole
 Parent=FALLBACK/
 RemoteTabTitleFormat=%u@%h
