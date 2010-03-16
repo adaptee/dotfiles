@@ -119,6 +119,9 @@ export PS4='line $LINENO: '
 #                               Bash options                                #
 #---------------------------------------------------------------------------#
 
+# ask terminal not to show  the annoying '^C' after pressing <Ctrl-C>
+stty -ctlecho
+
 # check window size after each command and update LINES & COLUMNS if necessary
 shopt -s checkwinsize
 

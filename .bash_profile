@@ -10,8 +10,6 @@
 # the default umask is already set in /etc/profile
 umask 022
 
-# disable terminal to show  the annoying '^C' after pressing <Ctrl-C>
-stty -ctlecho
 
 #------------------------------------------------------------------------------
 #                           environment variables                             #
