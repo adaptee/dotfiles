@@ -363,3 +363,6 @@ alias pac-nouse='pacman -Qtdq'
 # show process info in ps style
 alias fuser='fuser -v'
 
+# use MB as unit
+alias free='free -m'
+
