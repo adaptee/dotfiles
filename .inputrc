@@ -63,6 +63,7 @@
 "\e\"": "\"\"\C-b"
 "\e'": "''\C-b"
 "\e(": "()\C-b"
+"\e`": "``\C-b"
 
 # Quote current or previous word with double quotes
 "\eq": "\eb\"\ef\""
