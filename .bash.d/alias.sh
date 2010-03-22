@@ -307,6 +307,7 @@ alias tpa='type -a'
 alias v='vim -p'
 alias vd='vimdiff'
 alias vi='vim -p'
+alias vim='vim -p'
 alias wh='which'
 # '-w' means supporting wildcards
 alias what='whatis -w'
