@@ -49,6 +49,10 @@ set modelines=20
 "make Backspace behave as expected anywhere and any time
 set backspace=indent,eol,start
 
+" Maximum number of tab pages to be opened by the -p command line argument
+" or the :tab all command.
+set tabpagemax=30
+
 "Enable filetype plugin indent
 filetype on
 filetype plugin on
