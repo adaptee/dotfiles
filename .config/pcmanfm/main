@@ -4,9 +4,9 @@ open_bookmark_method=2
 terminal=konsole
 
 [Window]
-width=1280
-height=742
-splitter_pos=152
+width=1272
+height=737
+splitter_pos=154
 maximized=1
 
 [Desktop]
