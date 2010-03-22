@@ -27,10 +27,22 @@ TabBox=false
 [Effect-CoverSwitch]
 TabBox=false
 
+[Effect-Cube]
+BorderActivate=9
+BorderActivateCylinder=9
+BorderActivateSphere=9
+
+[Effect-DesktopGrid]
+BorderActivate=9
+
 [Effect-FlipSwitch]
+BorderActivate=9
+BorderActivateAll=9
 TabBox=true
 
 [Effect-PresentWindows]
+BorderActivate=9
+BorderActivateAll=7
 TabBox=false
 
 [Effect-Snow]
@@ -40,6 +52,16 @@ MaxHSpeed=1
 MaxVSpeed=2
 MinFlakes=10
 Number=200
+
+[ElectricBorders]
+Bottom=None
+BottomLeft=None
+BottomRight=None
+Left=None
+Right=None
+Top=None
+TopLeft=None
+TopRight=None
 
 [MouseBindings]
 CommandActiveTitlebar1=Raise
@@ -130,6 +152,11 @@ CenterSnapZone=0
 ClickRaise=true
 DelayFocus=false
 DelayFocusInterval=750
+ElectricBorderCooldown=350
+ElectricBorderDelay=150
+ElectricBorderMaximize=false
+ElectricBorderTiling=false
+ElectricBorders=0
 FocusPolicy=ClickToFocus
 FocusStealingPreventionLevel=1
 GeometryTip=false
