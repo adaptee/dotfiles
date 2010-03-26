@@ -1,0 +1,10 @@
+[Dlg Accessibility]
+ChangeColors=true
+PaperColor=170,170,170
+RenderMode=Paper
+
+[General]
+UseKTTSD=false
+
+[Identity]
+IdentityAuthor=whodare@arch
