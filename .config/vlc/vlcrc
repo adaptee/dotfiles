@@ -1,0 +1,4162 @@
+﻿###
+###  VLC media player - version 1.0.5 Goldeneye - (c) 1996-2010 the VideoLAN team
+###
+
+###
+### lines beginning with a '#' character are comments
+###
+
+[normvol] # 音量规格化
+
+# 音频缓冲数量 (integer)
+#norm-buff-size=20
+
+# 最大等级 (float)
+#norm-max-level=2.000000
+
+[param_eq] # 参数均衡器
+
+# 低频 (Hz) (float)
+#param-eq-lowf=100.000000
+
+# 低频增益 (dB) (float)
+#param-eq-lowgain=0.000000
+
+# 高频 (Hz) (float)
+#param-eq-highf=10000.000000
+
+# 高频增益 (dB) (float)
+#param-eq-highgain=0.000000
+
+# 频率 1 (Hz) (float)
+#param-eq-f1=300.000000
+
+# 频率 1 增益 (dB) (float)
+#param-eq-gain1=0.000000
+
+# 频率 1 Q (float)
+#param-eq-q1=3.000000
+
+# 频率 2 (Hz) (float)
+#param-eq-f2=1000.000000
+
+# 频率 2 增益 (dB) (float)
+#param-eq-gain2=0.000000
+
+# 频率 2 Q (float)
+#param-eq-q2=3.000000
+
+# 频率 3 (Hz) (float)
+#param-eq-f3=3000.000000
+
+# 频率 3 增益 (dB) (float)
+#param-eq-gain3=0.000000
+
+# 频率 3 Q (float)
+#param-eq-q3=3.000000
+
+[a52tofloat32] # ATSC A/52 (AC-3) 音频解码器
+
+# A/52 动态范围压限 (boolean)
+#a52-dynrng=1
+
+# 开启内部混响 (boolean)
+#a52-upmix=0
+
+[headphone_channel_mixer] # 耳机虚拟空间定位效果
+
+# 性能基准 (integer)
+#headphone-dim=10
+
+# 延迟补偿 (boolean)
+#headphone-compensate=0
+
+# 不解码杜比环绕声 (boolean)
+#headphone-dolby=0
+
+[scaletempo] # 音频节拍定标器，与频率同步
+
+# 步长度 (integer)
+#scaletempo-stride=30
+
+# 覆盖长度 (float)
+#scaletempo-overlap=0.200000
+
+# 搜索长度 (integer)
+#scaletempo-search=14
+
+[spatializer] # 音频空间化器
+
+# 室内大小 (float)
+#spatializer-roomsize=1.050000
+
+# 室内宽度 (float)
+#spatializer-width=10.000000
+
+# 湿 (float)
+#spatializer-wet=3.000000
+
+# 干 (float)
+#spatializer-dry=2.000000
+
+# 湿气 (float)
+#spatializer-damp=1.000000
+
+[mono] # 用于将立体声转换为单声道的音频滤镜
+
+# 使用混缩算法 (boolean)
+#sout-mono-downmix=1
+
+# 选择要保留的声道 (integer)
+sout-mono-channel=0
+
+[equalizer] # 10 波段均衡器
+
+# 均衡器预设 (string)
+#equalizer-preset=flat
+
+# 带宽增益 (string)
+#equalizer-bands=
+
+# 双重 (boolean)
+#equalizer-2pass=0
+
+# 全局增益 (float)
+#equalizer-preamp=12.000000
+
+[dtstofloat32] # DTS 逻辑声学音频解码器
+
+# DTS 动态范围压限 (boolean)
+#dts-dynrng=1
+
+[mux_mpjpeg] # 多部件 JPEG 复用器
+
+[mux_ts] # TS 复用器 (libdvbpsi)
+
+# 视频 PID (integer)
+#sout-ts-pid-video=0
+
+# 音频 PID (integer)
+#sout-ts-pid-audio=0
+
+# SPU PID (integer)
+#sout-ts-pid-spu=0
+
+# PMT PID (integer)
+#sout-ts-pid-pmt=0
+
+# TS ID (integer)
+#sout-ts-tsid=0
+
+# NET ID (integer)
+#sout-ts-netid=0
+
+# PMT 程序编号 (string)
+#sout-ts-program-pmt=
+
+# 设置 PID 给 ES 的 ID (boolean)
+#sout-ts-es-id-pid=0
+
+# Mux PMT (需要 --sout-ts-es-id-pid) (string)
+#sout-ts-muxpmt=
+
+# SDT 描述符 (需要 --sout-ts-es-id-pid) (string)
+#sout-ts-sdtdesc=
+
+# 数据排列 (boolean)
+#sout-ts-alignment=1
+
+# 定型延迟 (毫秒) (integer)
+#sout-ts-shaping=200
+
+# 使用关键帧 (boolean)
+#sout-ts-use-key-frames=0
+
+# PCR 延迟 (毫秒) (integer)
+#sout-ts-pcr=70
+
+# 最小 B 值 (不推荐使用) (integer)
+#sout-ts-bmin=0
+
+# 最大 B 值 (不推荐使用) (integer)
+#sout-ts-bmax=0
+
+# DTS 延迟 (毫秒) (integer)
+#sout-ts-dts-delay=400
+
+# 加密音频 (boolean)
+#sout-ts-crypt-audio=1
+
+# 加密视频 (boolean)
+#sout-ts-crypt-video=1
+
+# CSA 密匙 (string)
+#sout-ts-csa-ck=
+
+# 第二 CSA 密匙 (string)
+#sout-ts-csa2-ck=
+
+# 在使用的 CSA 密匙 (string)
+#sout-ts-csa-use=1
+
+# 要加密的以字节为单位的数据包大小 (integer)
+#sout-ts-csa-pkt=188
+
+[mux_mp4] # MP4/MOV 复用器
+
+# 创建 "快速启动" 文件 (boolean)
+#sout-mp4-faststart=1
+
+[mux_asf] # ASF 复用器
+
+# 标题 (string)
+#sout-asf-title=
+
+# 作者 (string)
+#sout-asf-author=
+
+# 版权 (string)
+#sout-asf-copyright=
+
+# 注释 (string)
+#sout-asf-comment=
+
+# 分级 (string)
+#sout-asf-rating=
+
+# 数据包大小 (integer)
+#sout-asf-packet-size=4096
+
+# 位率覆盖 (integer)
+#sout-asf-bitrate-override=0
+
+[mux_ps] # PS 复用器
+
+# DTS 延迟 (毫秒) (integer)
+#sout-ps-dts-delay=200
+
+# PES 最大大小 (integer)
+#sout-ps-pes-max-size=65500
+
+[packetizer_mpegvideo] # MPEG-I/II 视频封包器
+
+# 在内部帧中同步 (boolean)
+#packetizer-mpegvideo-sync-iframe=0
+
+[snapshot] # 截图输出
+
+# 截图宽度 (integer)
+#vout-snapshot-width=320
+
+# 截图高度 (integer)
+#vout-snapshot-height=200
+
+# 色度 (string)
+#vout-snapshot-chroma=RV32
+
+# 缓冲大小 (图像数量) (integer)
+#vout-snapshot-cache-size=50
+
+[vmem] # 显存输出
+
+# 宽度 (integer)
+#vmem-width=320
+
+# 高度 (integer)
+#vmem-height=200
+
+# 节拍 (integer)
+#vmem-pitch=640
+
+# 色度 (string)
+#vmem-chroma=RV16
+
+# 锁定函数 (string)
+#vmem-lock=0
+
+# 取消锁定函数 (string)
+#vmem-unlock=0
+
+# 调用数据 (string)
+#vmem-data=0
+
+[opengl] # OpenGL 视频输出
+
+# OpenGL 提供商 (string)
+#opengl-provider=
+
+[vout_sdl] # Simple DirectMedia Layer 视频输出
+
+# SDL 色度格式 (string)
+#sdl-chroma=
+
+[xvideo] # XVideo 扩展视频输出
+
+# X11 显示 (string)
+#xvideo-display=
+
+# XVideo 适配器编号 (integer)
+#xvideo-adaptor=-1
+
+# 交替全屏模式 (boolean)
+#xvideo-altfullscreen=0
+
+# XVimage 色度格式 (string)
+#xvideo-chroma=
+
+# 使用共享内存 (boolean)
+#xvideo-shm=1
+
+# 全屏幕模式的屏幕。 (integer)
+#xvideo-xineramascreen=-1
+
+[fb] # GNU/Linux 帧缓冲视频输出
+
+# 帧缓冲设备 (string)
+#fbdev=/dev/fb0
+
+# 在当前的 tty 运行 fb。 (boolean)
+#fb-tty=1
+
+# 使用了色度。 (string)
+#fb-chroma=
+
+# 视频高宽比 (string)
+#fb-aspect-ratio=
+
+# 要使用的帧缓冲分辨率。 (integer)
+#fb-mode=4
+
+# 帧缓冲使用硬件加速。 (boolean)
+#fb-hw-accel=1
+
+[drawable] # 嵌入 X 窗口视频
+
+[x11] # X11 视频输出
+
+# X11 显示 (string)
+#x11-display=
+
+# 交替全屏模式 (boolean)
+#x11-altfullscreen=0
+
+# 使用共享内存 (boolean)
+#x11-shm=1
+
+# 全屏幕模式的屏幕。 (integer)
+#x11-xineramascreen=-1
+
+[yuv] # YUV 视频输出
+
+# 设备，先进先出队列或文件名 (string)
+#yuv-file=stream.yuv
+
+# 使用了色度。 (string)
+#yuv-chroma=
+
+# YUV4MPEG2 头部 (默认关闭) (boolean)
+#yuv-yuv4mpeg2=0
+
+[glx] # OpenGL (GLX) 提供者
+
+# X11 显示 (string)
+#glx-display=
+
+# 交替全屏模式 (boolean)
+#glx-altfullscreen=0
+
+# 全屏幕模式的屏幕。 (integer)
+#glx-xineramascreen=-1
+
+[qt4] # Qt 界面
+
+# 选择启动模式和外观 (integer)
+#qt-display-mode=0
+
+# 在轨道更改时显示提示弹出框 (boolean)
+#qt-notification=1
+
+# 在 0.1 到 1 之间的窗口不透明度。 (float)
+#qt-opacity=1.000000
+
+# 在 0.1 到 1 之间的全屏控制界面的不透明度。 (float)
+#qt-fs-opacity=0.800000
+
+# 系统托盘图标 (boolean)
+qt-system-tray=0
+
+# 仅以系统托盘方式启动 VLC (boolean)
+#qt-start-minimized=0
+
+# 缩放界面至原生视频大小 (boolean)
+qt-video-autoresize=0
+
+# 在窗口标题显示正在播放的项目名称 (boolean)
+#qt-name-in-title=1
+
+# 在全屏模式中显示控制器 (boolean)
+qt-fs-controller=0
+
+# 允许音量被设置为 400% (boolean)
+#qt-volume-complete=0
+
+# 自动在退出时保存音量 (boolean)
+qt-autosave-volume=1
+
+# 在打开对话框中嵌入文件浏览器 (boolean)
+#qt-embedded-open=0
+
+# 在菜单中保存最近播放的项目 (boolean)
+#qt-recentplay=1
+
+# 要过滤的单词列表，以 | 符号分隔 (string)
+#qt-recentplay-filter=
+
+# 高级选项 (boolean)
+#qt-adv-options=0
+
+# 显示高级参数设置代替简易设置 (boolean)
+#qt-advanced-pref=0
+
+# 显示不重要的错误和警告对话框 (boolean)
+#qt-error-dialogs=1
+
+# 定义音量滑杆的颜色 (string)
+#qt-slider-colours=255;255;255;20;210;20;255;199;15;245;39;29
+
+# 在启动时询问网络策略 (boolean)
+qt-privacy-ask=0
+
+[skins2] # 外观化界面
+
+# 要使用的外观 (string)
+#skins2-last=
+
+# 设置最后使用的外观 (string)
+#skins2-config=
+
+# 使用一个外观化的播放列表 (boolean)
+#skinned-playlist=1
+
+# Display video in a skinned window if any (boolean)
+#skinned-video=1
+
+[ncurses] # Ncurses 界面
+
+# 文件浏览器启始点 (string)
+#browse-dir=
+
+[access_output_http] # HTTP 流输出
+
+# 用户名 (string)
+#sout-http-user=
+
+# 密码 (string)
+#sout-http-pwd=
+
+# Mime (string)
+#sout-http-mime=
+
+# 证书文件 (string)
+#sout-http-cert=vlc.pem
+
+# 私匙文件 (string)
+#sout-http-key=
+
+# 根 CA 文件 (string)
+#sout-http-ca=
+
+# CRL 文件 (string)
+#sout-http-crl=
+
+[access_output_rtmp] # RTMP 流输出
+
+# 激活 TCP 连接 (boolean)
+#rtmp-connect=0
+
+[access_output_shout] # IceCAST 输出
+
+# 流名称 (string)
+#sout-shout-name=VLC media player - Live stream
+
+# 流描述 (string)
+#sout-shout-description=Live stream from VLC media player
+
+# 流 MP3 (boolean)
+#sout-shout-mp3=0
+
+# 流派描述 (string)
+#sout-shout-genre=Alternative
+
+# URL 描述 (string)
+#sout-shout-url=http://www.videolan.org/vlc
+
+# 位率 (string)
+#sout-shout-bitrate=
+
+# 采样率 (string)
+#sout-shout-samplerate=
+
+# 频道编号 (string)
+#sout-shout-channels=
+
+# Ogg Vorbis 质量 (string)
+#sout-shout-quality=
+
+# 公共流 (boolean)
+#sout-shout-public=0
+
+[access_output_udp] # UDP 流输出
+
+# 缓冲值 (毫秒) (integer)
+#sout-udp-caching=300
+
+# 分组数据包 (integer)
+#sout-udp-group=1
+
+[access_output_file] # 文件流输出
+
+# 附加到文件 (boolean)
+#sout-file-append=0
+
+[visual] # 可视化过滤器
+
+# 效果列表 (string)
+#effect-list=spectrum
+
+# 视频宽度 (integer)
+#effect-width=533
+
+# 视频高度 (integer)
+#effect-height=400
+
+# 更多频带 : 80 / 20 (boolean)
+#visual-80-bands=1
+
+# 开启峰值 (boolean)
+#visual-peaks=1
+
+# 开启原始图像光谱 (boolean)
+#spect-show-original=0
+
+# 开启基础 (boolean)
+#spect-show-base=1
+
+# 基础像素半径 (integer)
+#spect-radius=42
+
+# 光谱区域 (integer)
+#spect-sections=3
+
+# V 平面颜色 (integer)
+#spect-color=80
+
+# 开启波段 (boolean)
+#spect-show-bands=1
+
+# 更多频带 : 80 / 20 (boolean)
+#spect-80-bands=1
+
+# 频带分离器 (integer)
+#spect-separ=1
+
+# 放大 (integer)
+#spect-amp=8
+
+# 开启峰值 (boolean)
+#spect-show-peaks=1
+
+# 像素扩展宽度 (integer)
+#spect-peak-width=61
+
+# 峰值高度 (integer)
+#spect-peak-height=1
+
+[oss] # UNIX OSS 音频输出
+
+# OSS DSP 设备 (string)
+#oss-audio-device=/dev/dsp
+
+# 尝试和一个轻便的 OSS 驱动工作 (boolean)
+#oss-buggy=0
+
+[aout_file] # 文件音频输出
+
+# 输出可是 (string)
+#audiofile-format=s16
+
+# 输出声道数 (integer)
+#audiofile-channels=0
+
+# 输出文件 (string)
+#audiofile-file=audiofile.wav
+
+# 添加波形头部 (boolean)
+#audiofile-wav=1
+
+[alsa] # ALSA 音频输出
+
+# ALSA 设备名称 (string)
+#alsa-audio-device=default
+
+[jack] # JACK 音频输出
+
+# 自动连接到可写入的客户端 (boolean)
+#jack-auto-connect=0
+
+# 正在匹配连接到的客户端 (string)
+#jack-connect-regex=
+
+[podcast] # Podcast
+
+# Podcast URL 列表 (string)
+#podcast-urls=
+
+[shout] # Shoutcast 电台列表
+
+[sap] # SAP 通告
+
+# SAP 多播地址 (string)
+#sap-addr=
+
+# IPv4 SAP (boolean)
+#sap-ipv4=1
+
+# IPv6 SAP (boolean)
+#sap-ipv6=1
+
+# SAP 超时时限 (秒) (integer)
+#sap-timeout=1800
+
+# 尝试解析通告 (boolean)
+#sap-parse=1
+
+# SAP 严格模式 (boolean)
+#sap-strict=0
+
+[logger] # 文件日志
+
+# 日志文件名 (string)
+#logfile=
+
+# 日志格式 (string)
+#logmode=text
+
+[vod_rtsp] # RTSP VoD 服务器
+
+# RTSP 主机地址 (string)
+#rtsp-host=
+
+# 用于 RAW RTSP 传输的 MUX (string)
+#rtsp-raw-mux=ts
+
+# 连接的最大数量 (integer)
+#rtsp-throttle-users=0
+
+# 在 RTSP 会话字串中设置超时选项 (integer)
+#rtsp-session-timeout=5
+
+[audioscrobbler] # 提交已播放的歌曲给 last.fm
+
+# 用户名 (string)
+#lastfm-username=
+
+# 密码 (string)
+#lastfm-password=
+
+# Scrobbler 网址 (string)
+#scrobbler-url=post.audioscrobbler.com
+
+[notify] # LibNotify 提示插件
+
+# 超时 (毫秒) (integer)
+#notify-timeout=4000
+
+[dummy] # 空界面功能
+
+# 保存 raw 编码器数据 (boolean)
+#dummy-save-es=0
+
+# 空图像色度格式 (string)
+#dummy-chroma=
+
+[freetype] # Freetype2 字体渲染器
+
+# 字体 (string)
+freetype-font=/home/whodare/.fonts/DejaVuSansYuanTiMono-Regular.ttf
+
+# 以像素为单位的字体大小 (integer)
+#freetype-fontsize=0
+
+# 不透明度 (integer)
+#freetype-opacity=255
+
+# 文本默认色彩 (integer)
+freetype-color=16776960
+
+# 相对字体大小 (integer)
+#freetype-rel-fontsize=16
+
+# 字体效果 (integer)
+#freetype-effect=2
+
+# 使用 YUVP 渲染器 (boolean)
+#freetype-yuvp=0
+
+[lua] # 使用 lua 脚本获取封面
+
+# Lua 界面 (string)
+#lua-intf=dummy
+
+# Lua 界面设置 (string)
+#lua-config=
+
+[telepathy] # Telepathy "现在播放" (MissionControl)
+
+# 标题格式字串 (string)
+#telepathy-format=$a - $t
+
+[gnutls] # GnuTLS 传输层安全
+
+# 继续 TLS 会话的期满时间 (integer)
+#gnutls-cache-timeout=3600
+
+# 继续 TLS 会话数 (integer)
+#gnutls-cache-size=64
+
+[rotate] # 旋转视频滤镜
+
+# 角度值 (integer)
+#rotate-angle=30
+
+[canvas] # 自动调整大小并填补一个视频
+
+# 输出宽度 (integer)
+#canvas-width=0
+
+# 输出高度 (integer)
+#canvas-height=0
+
+# 输出图像宽高比 (string)
+#canvas-aspect=
+
+# Pad 视频 (boolean)
+#canvas-padd=1
+
+[bluescreen] # 蓝屏视频滤镜
+
+# 蓝屏 U 值 (integer)
+#bluescreen-u=120
+
+# 蓝屏 V 值 (integer)
+#bluescreen-v=90
+
+# 蓝屏 U 阀值 (integer)
+#bluescreen-ut=17
+
+# 蓝屏 V 阀值 (integer)
+#bluescreen-vt=17
+
+[marq] # Marquee 显示
+
+# 文本 (string)
+#marq-marquee=VLC
+
+# X 偏移 (integer)
+#marq-x=0
+
+# Y 偏移 (integer)
+#marq-y=0
+
+# Marquee 位置 (integer)
+marq-position=0
+
+# 不透明度 (integer)
+#marq-opacity=255
+
+# 颜色 (integer)
+#marq-color=16777215
+
+# 字体大小,像素 (integer)
+#marq-size=-1
+
+# 超时 (integer)
+#marq-timeout=0
+
+# 以毫秒为单位的刷新时间 (integer)
+#marq-refresh=1000
+
+[adjust] # 图像属性滤镜
+
+# 图像对比度 (0-2) (float)
+#contrast=1.000000
+
+# 图像亮度 (0-2) (float)
+#brightness=1.000000
+
+# 图像色调 (0-360) (integer)
+#hue=0
+
+# 图像饱和度 (0-3) (float)
+#saturation=1.000000
+
+# 图像色度 (0-10) (float)
+#gamma=1.000000
+
+# 亮度阀值 (boolean)
+#brightness-threshold=0
+
+[crop] # 裁剪视频滤镜
+
+# 裁剪几何图像 (像素) (string)
+#crop-geometry=
+
+# 自动裁剪 (boolean)
+#autocrop=0
+
+# 最大比率 (x 1000) (integer)
+#autocrop-ratio-max=2405
+
+# 手动比率 (integer)
+#crop-ratio=0
+
+# 要更改的图像数量 (integer)
+#autocrop-time=25
+
+# 更改的行数 (integer)
+#autocrop-diff=16
+
+# 非黑像素的数量 (integer)
+#autocrop-non-black-pixels=3
+
+# 跳过百分比 (%) (integer)
+#autocrop-skip-percent=17
+
+# 亮度阀值 (integer)
+#autocrop-luminance-threshold=40
+
+[wall] # 显示墙滤镜
+
+# 列数 (integer)
+#wall-cols=3
+
+# 行数 (integer)
+#wall-rows=3
+
+# 活动窗口 (string)
+#wall-active=
+
+# 元素高宽比 (string)
+#wall-element-aspect=4:3
+
+[erase] # 擦除视频滤镜
+
+# 图像掩码 (string)
+#erase-mask=
+
+# X 坐标 (integer)
+#erase-x=0
+
+# Y 坐标 (integer)
+#erase-y=0
+
+[remoteosd] # 通过 VNC 的远程 OSD
+
+# VNC 主机 (string)
+#rmtosd-host=myvdr
+
+# VNC 端口 (integer)
+#rmtosd-port=20001
+
+# VNC 密码 (string)
+#rmtosd-password=
+
+# VNC 查询间隔 (integer)
+rmtosd-update=300
+
+# VNC 查询 (boolean)
+#rmtosd-vnc-polling=0
+
+# 鼠标事件 (boolean)
+#rmtosd-mouse-events=0
+
+# 密匙事件 (boolean)
+#rmtosd-key-events=0
+
+# Alpha 透明值 (默认 255) (integer)
+#rmtosd-alpha=255
+
+[gradient] # 高斯视频滤镜
+
+# 扭曲模式 (string)
+#gradient-mode=gradient
+
+# 倾斜图像类型 (integer)
+#gradient-type=0
+
+# 应用卡通效果 (boolean)
+#gradient-cartoon=1
+
+[mosaic] # Mosaic 视频子滤镜
+
+# 透明 (integer)
+#mosaic-alpha=255
+
+# 高度 (integer)
+#mosaic-height=100
+
+# 宽度 (integer)
+#mosaic-width=100
+
+# Mosaic 排列 (integer)
+#mosaic-align=5
+
+# 左上角的 X 坐标 (integer)
+#mosaic-xoffset=0
+
+# 坐上角的 Y 坐标 (integer)
+#mosaic-yoffset=0
+
+# 边框宽度 (integer)
+#mosaic-borderw=0
+
+# 边框高度 (integer)
+#mosaic-borderh=0
+
+# 位置模块 (integer)
+#mosaic-position=0
+
+# 行数 (integer)
+#mosaic-rows=2
+
+# 列数 (integer)
+#mosaic-cols=2
+
+# 保持高宽比 (boolean)
+#mosaic-keep-aspect-ratio=0
+
+# 保持原始大小 (boolean)
+#mosaic-keep-picture=0
+
+# 元素顺序 (string)
+#mosaic-order=
+
+# 偏移顺序 (string)
+#mosaic-offsets=
+
+# 延迟 (integer)
+#mosaic-delay=0
+
+[croppadd] # 视频比例滤镜
+
+# 从顶部开始裁剪的像素 (integer)
+#croppadd-croptop=0
+
+# 从底部开始裁剪的像素 (integer)
+#croppadd-cropbottom=0
+
+# 从左侧开始裁剪的像素 (integer)
+#croppadd-cropleft=0
+
+# 从右侧开始裁剪的像素 (integer)
+#croppadd-cropright=0
+
+# 要添加到顶部的像素数量 (integer)
+#croppadd-paddtop=0
+
+# 要添加到底部的像素 (integer)
+#croppadd-paddbottom=0
+
+# 要添加到左侧的像素 (integer)
+#croppadd-paddleft=0
+
+# 要添加到右侧的像素 (integer)
+#croppadd-paddright=0
+
+[deinterlace] # 反交错视频滤镜
+
+# 反交错模式 (string)
+#deinterlace-mode=discard
+
+# 流反交错模式 (string)
+#sout-deinterlace-mode=blend
+
+[logo] # 标志子滤镜
+
+# 标志文件名 (string)
+#logo-file=
+
+# X 坐标 (integer)
+#logo-x=0
+
+# Y 坐标 (integer)
+#logo-y=0
+
+# 标志的间隔图像时间为毫秒 (integer)
+#logo-delay=1000
+
+# 标志动画 # 的循环 (integer)
+#logo-repeat=-1
+
+# 标志的透明度 (integer)
+#logo-transparency=255
+
+# 标志位置 (integer)
+logo-position=0
+
+[panoramix] # 摄像头: 覆盖视频滤镜的墙
+
+# 列数 (integer)
+#panoramix-cols=-1
+
+# 行数 (integer)
+#panoramix-rows=-1
+
+# X 偏移 (自动补偿) (boolean)
+#panoramix-offset-x=1
+
+# 重叠面积区域长度 (以 %) (integer)
+#panoramix-bz-length=100
+
+# 重叠面积区域高度 (以 %) (integer)
+#panoramix-bz-height=100
+
+# 衰减 (boolean)
+#panoramix-attenuate=1
+
+# 衰减, 开始 (在 %) (integer)
+#panoramix-bz-begin=0
+
+# 衰减, 中 (在 %) (integer)
+#panoramix-bz-middle=50
+
+# 衰减, 末尾 (在 %) (integer)
+#panoramix-bz-end=100
+
+# 中间位置 (在 %) (integer)
+#panoramix-bz-middle-pos=50
+
+# 伽玛 (红) 矫正 (float)
+#panoramix-bz-gamma-red=1.000000
+
+# 伽玛 (绿) 矫正 (float)
+#panoramix-bz-gamma-green=1.000000
+
+# 伽玛 (蓝) 矫正 (float)
+#panoramix-bz-gamma-blue=1.000000
+
+# 用于红色的黑压挤 (integer)
+#panoramix-bz-blackcrush-red=140
+
+# 用于绿色的黑压挤 (integer)
+#panoramix-bz-blackcrush-green=140
+
+# 用于蓝色的黑压挤 (integer)
+#panoramix-bz-blackcrush-blue=140
+
+# 用于红色白压挤 (integer)
+#panoramix-bz-whitecrush-red=200
+
+# 用于绿色的白压挤 (integer)
+#panoramix-bz-whitecrush-green=200
+
+# 用蓝色的白压挤 (integer)
+#panoramix-bz-whitecrush-blue=200
+
+# 红色的黑等级 (integer)
+#panoramix-bz-blacklevel-red=150
+
+# 绿色的黑等级 (integer)
+#panoramix-bz-blacklevel-green=150
+
+# 蓝色的黑等级 (integer)
+#panoramix-bz-blacklevel-blue=150
+
+# 红色的白等级 (integer)
+#panoramix-bz-whitelevel-red=0
+
+# 绿色的白等级 (integer)
+#panoramix-bz-whitelevel-green=0
+
+# 蓝色的白等级 (integer)
+#panoramix-bz-whitelevel-blue=0
+
+# Xinerama 选项 (boolean)
+#panoramix-xinerama=1
+
+# 活动窗口 (string)
+#panoramix-active=
+
+[osdmenu] # 屏幕显示菜单
+
+# X 坐标 (integer)
+#osdmenu-x=-1
+
+# Y 坐标 (integer)
+#osdmenu-y=-1
+
+# 菜单位置 (integer)
+#osdmenu-position=8
+
+# 设置文件 (string)
+#osdmenu-file=share/osdmenu/default.cfg
+
+# OSD 菜单图像的路径 (string)
+#osdmenu-file-path=
+
+# 菜单超时 (integer)
+#osdmenu-timeout=15
+
+# 菜单更新间隔 (integer)
+#osdmenu-update=300
+
+# Alpha 透明值 (默认 255) (integer)
+#osdmenu-alpha=255
+
+[blendbench] # 混合基准滤镜
+
+# 要混合的时间编号 (integer)
+#blendbench-loops=1000
+
+# 混合图像的 Alpha 值 (integer)
+#blendbench-alpha=128
+
+# 要混合的图像 (string)
+#blendbench-base-image=
+
+# 基础图像的色度 (string)
+#blendbench-base-chroma=I420
+
+# 警备混合的图像。 (string)
+#blendbench-blend-image=
+
+# 混合图像的色度 (string)
+#blendbench-blend-chroma=YUVA
+
+[swscale] # 视频比例滤镜
+
+# 缩放模式 (integer)
+#swscale-mode=2
+
+[atmo] # AtmoLight 滤镜
+
+# 串口/设备 (string)
+#atmo-serialdev=/dev/ttyS01
+
+# 暂停时的色彩 (boolean)
+#atmo-usepausecolor=0
+
+# 暂停红 (integer)
+#atmo-pcolor-red=0
+
+# 暂停率 (integer)
+#atmo-pcolor-green=0
+
+# 暂停蓝 (integer)
+#atmo-pcolor-blue=192
+
+# 暂停淡入步骤 (integer)
+#atmo-fadesteps=50
+
+# 结束红 (integer)
+#atmo-ecolor-red=192
+
+# 结束绿 (integer)
+#atmo-ecolor-green=192
+
+# 结束蓝 (integer)
+#atmo-ecolor-blue=192
+
+# 结束淡入步骤 (integer)
+#atmo-efadesteps=50
+
+# 边缘宽度 (integer)
+#atmo-EdgeWeightning=8
+
+# 亮度 (integer)
+#atmo-Brightness=100
+
+# 暗限制 (integer)
+#atmo-DarknessLimit=5
+
+# 色调窗口 (integer)
+#atmo-HueWinSize=3
+
+# 亮度窗口 (integer)
+#atmo-SatWinSize=3
+
+# 过滤模式 (integer)
+#atmo-filtermode=1
+
+# 过滤长度 (毫秒) (integer)
+#atmo-MeanLength=300
+
+# 过滤阀值 (integer)
+#atmo-MeanThreshold=40
+
+# 平滑过滤 (在 %) (integer)
+#atmo-PercentNew=50
+
+# 帧延迟 (integer)
+#atmo-FrameDelay=18
+
+# 通道统计 (integer)
+#atmo-channel_0=0
+
+# 左声道 (integer)
+#atmo-channel_1=1
+
+# 右声道 (integer)
+#atmo-channel_2=2
+
+# 上声道 (integer)
+#atmo-channel_3=3
+
+# 下声道 (integer)
+#atmo-channel_4=4
+
+# 使用软件白调节 (boolean)
+#atmo-whiteadj=1
+
+# 白红 (integer)
+#atmo-white-red=255
+
+# 白绿 (integer)
+#atmo-white-green=255
+
+# 白蓝 (integer)
+#atmo-white-blue=255
+
+# 摘要变化 (string)
+#atmo-gradient_zone_0=
+
+# 左变化 (string)
+#atmo-gradient_zone_1=
+
+# 右变化 (string)
+#atmo-gradient_zone_2=
+
+# 上变化 (string)
+#atmo-gradient_zone_3=
+
+# 下变化 (string)
+#atmo-gradient_zone_4=
+
+# 释放图像宽度 (integer)
+#atmo-width=64
+
+# 释放图像高度 (integer)
+#atmo-height=48
+
+[puzzle] # 智力交互游戏视频滤镜
+
+# 智力游戏的行数 (integer)
+#puzzle-rows=4
+
+# 智力游戏的列数 (integer)
+#puzzle-cols=4
+
+# 使一个碎块成为一个黑色的槽 (boolean)
+#puzzle-black-slot=0
+
+[dynamicoverlay] # 动态视频覆盖
+
+# 输入 FIFO (string)
+#overlay-input=
+
+# 输出 FIFO (string)
+#overlay-output=
+
+[clone] # 克隆视频滤镜
+
+# 克隆数量 (integer)
+#clone-count=2
+
+# 视频输出模块 (string)
+#clone-vout-list=
+
+[alphamask] # Alpha 掩码视频滤镜
+
+# 透明掩码 (string)
+#alphamask-mask=
+
+[scene] # 场景视频滤镜
+
+# 图像格式 (string)
+#scene-format=png
+
+# 图像宽度 (integer)
+#scene-width=-1
+
+# 图像高度 (integer)
+#scene-height=-1
+
+# 文件名前缀 (string)
+#scene-prefix=scene
+
+# 目录路径前缀 (string)
+#scene-path=
+
+# 总是写入到相同的文件中 (boolean)
+#scene-replace=0
+
+# 录制率 (integer)
+#scene-ratio=50
+
+[motionblur] # 动态模糊滤镜
+
+# 模糊因数 (1-127) (integer)
+#blur-factor=80
+
+[rss] # RSS 与 Atom feed 显示
+
+# Feed 网址 (string)
+#rss-urls=rss
+
+# X 偏移 (integer)
+#rss-x=0
+
+# Y 偏移 (integer)
+#rss-y=0
+
+# 文本位置 (integer)
+rss-position=0
+
+# 不透明度 (integer)
+#rss-opacity=255
+
+# 颜色 (integer)
+#rss-color=16777215
+
+# 字体大小,像素 (integer)
+#rss-size=-1
+
+# feed 的速度 (integer)
+#rss-speed=100000
+
+# 最大长度 (integer)
+#rss-length=60
+
+# 刷新时间 (integer)
+#rss-ttl=1800
+
+# Feed 图像 (boolean)
+#rss-images=1
+
+# 标题显示模式 (integer)
+#rss-title=-1
+
+[extract] # 释放 RGB 组件视频滤镜
+
+# 要释放的 RGB 部分 (integer)
+#extract-component=16711680
+
+[transform] # 视频转换滤镜
+
+# 变换类型 (string)
+#transform-type=90
+
+[gaussianblur] # 高斯模糊滤镜
+
+# 高斯标准离差 (float)
+#gaussianblur-sigma=2.000000
+
+[sharpen] # 增加外形间的反差
+
+# 锐化强度 (0-2) (float)
+#sharpen-sigma=0.050000
+
+[colorthres] # 色彩阀值滤镜
+
+# 颜色 (integer)
+#colorthres-color=16711680
+
+# 饱和度阀值 (integer)
+#colorthres-saturationthres=20
+
+# 相似阀值 (integer)
+#colorthres-similaritythres=15
+
+[postproc] # 视频预处理滤镜
+
+# 预处理质量 (integer)
+#postproc-q=6
+
+# FFmpeg 预处理滤镜链 (string)
+#postproc-name=default
+
+[access_mmap] # 内存映射文件输入
+
+# 使用文件内存映射 (boolean)
+#file-mmap=0
+
+[access_directory] # 标准文件系统目录输入
+
+# 子目录行为 (string)
+#recursive=expand
+
+# 忽略扩展名 (string)
+#ignore-filetypes=m3u,db,nfo,ini,jpg,jpeg,ljpg,gif,png,pgm,pgmyuv,pbm,pam,tga,bmp,pnm,xpm,xcf,pcx,tif,tiff,lbm,sfv,txt,sub,idx,srt,cue,ssa
+
+[access_alsa] # ALSA 音频捕获输入
+
+# 立体声 (boolean)
+#alsa-stereo=1
+
+# 采样率 (integer)
+#alsa-samplerate=48000
+
+# 缓存值为毫秒 (integer)
+#alsa-caching=300
+
+[access_ftp] # FTP 输入
+
+# 缓存值为毫秒 (integer)
+#ftp-caching=600
+
+# FTP 用户名 (string)
+#ftp-user=anonymous
+
+# FTP 密码 (string)
+#ftp-pwd=anonymous@example.com
+
+# FTP 帐号 (string)
+#ftp-account=anonymous
+
+[vcd] # VCD 输入
+
+# 缓存值为毫秒 (integer)
+#vcd-caching=300
+
+[access_oss] # OSS 输入
+
+# 立体声 (boolean)
+#oss-stereo=1
+
+# 采样率 (integer)
+#oss-samplerate=48000
+
+# 缓存值为毫秒 (integer)
+#oss-caching=300
+
+[access_realrtsp] # Real RTSP
+
+# 缓冲值 (毫秒) (integer)
+#realrtsp-caching=3000
+
+[access_fake] # 伪装输入
+
+# 缓存值为毫秒 (integer)
+#fake-caching=300
+
+# 帧率 (float)
+#fake-fps=25.000000
+
+# ID (integer)
+#fake-id=0
+
+# 以毫秒为单位的持续时间 (integer)
+#fake-duration=-1
+
+[pvr] # IVTV MPEG 编码卡输入
+
+# 缓存值为毫秒 (integer)
+#pvr-caching=300
+
+# 设备 (string)
+#pvr-device=/dev/video0
+
+# 电台设备 (string)
+#pvr-radio-device=/dev/radio0
+
+# 制式 (integer)
+#pvr-norm=0
+
+# 宽度 (integer)
+#pvr-width=-1
+
+# 高度 (integer)
+#pvr-height=-1
+
+# 频率 (integer)
+#pvr-frequency=-1
+
+# 帧率 (integer)
+#pvr-framerate=-1
+
+# 密匙间隔 (integer)
+#pvr-keyint=-1
+
+# 帧率 (integer)
+#pvr-bframes=-1
+
+# 位率 (integer)
+#pvr-bitrate=-1
+
+# 帧率峰值 (integer)
+#pvr-bitrate-peak=-1
+
+# 位率模式 (integer)
+#pvr-bitrate-mode=-1
+
+# 音频位掩码 (integer)
+#pvr-audio-bitmask=-1
+
+# 音量 (integer)
+#pvr-audio-volume=-1
+
+# 声道 (integer)
+#pvr-channel=-1
+
+[access_file] # 文件输入
+
+# 缓存值为毫秒 (integer)
+#file-caching=300
+
+[access_http] # HTTP 输入
+
+# HTTP 代理 (string)
+#http-proxy=
+
+# HTTP 代理密码 (string)
+#http-proxy-pwd=
+
+# 缓存值为毫秒 (integer)
+http-caching=600
+
+# HTTP 用户代理 (string)
+#http-user-agent=VLC media player - version 1.0.5 Goldeneye - (c) 1996-2010 the VideoLAN team
+
+# 自动重新连接 (boolean)
+#http-reconnect=0
+
+# 连续流 (boolean)
+#http-continuous=0
+
+# 转发 Cookies (boolean)
+#http-forward-cookies=1
+
+[dvb] # 带 v4l2 支持的 DVB 输入
+
+# 缓存值为毫秒 (integer)
+#dvb-caching=300
+
+# 要调节的适配卡 (integer)
+#dvb-adapter=0
+
+# 在适配器上使用的设备号 (integer)
+#dvb-device=0
+
+# 转发器/多播频率 (integer)
+#dvb-frequency=0
+
+# 倒转模式 (integer)
+#dvb-inversion=2
+
+# 探测 DVB 卡获取其功能 (boolean)
+#dvb-probe=1
+
+# 预算模式 (boolean)
+#dvb-budget-mode=0
+
+# Diseqc 系统的卫星编号 (integer)
+#dvb-satno=0
+
+# LNB 电压 (integer)
+#dvb-voltage=13
+
+# 高 LNB 电压 (boolean)
+#dvb-high-voltage=0
+
+# 22 kHz 调谐 (integer)
+#dvb-tone=-1
+
+# 转发器 FEC (integer)
+#dvb-fec=9
+
+# 以 kHz 为单位的符号率 (integer)
+#dvb-srate=27500000
+
+# 天线 lnb_lof1 (kHz) (integer)
+#dvb-lnb-lof1=0
+
+# 天线 lnb_lof2 (kHz) (integer)
+#dvb-lnb-lof2=0
+
+# 天线 lnb_slof (kHz) (integer)
+#dvb-lnb-slof=0
+
+# 调制类型 (integer)
+#dvb-modulation=0
+
+# 地面高优先级流代码率 (FEC) (integer)
+#dvb-code-rate-hp=9
+
+# 地面低优先级流代码率 (FEC) (integer)
+#dvb-code-rate-lp=9
+
+# 地面波段 (integer)
+#dvb-bandwidth=0
+
+# 地面保护间隔 (integer)
+#dvb-guard=0
+
+# 地面传输模式 (integer)
+#dvb-transmission=0
+
+# 地面控制模式 (integer)
+#dvb-hierarchy=0
+
+# HTTP 主机地址 (string)
+#dvb-http-host=
+
+# HTTP 用户名 (string)
+#dvb-http-user=
+
+# HTTP 密码 (string)
+#dvb-http-password=
+
+# HTTP ACL (string)
+#dvb-http-acl=
+
+# 证书文件 (string)
+#dvb-http-intf-cert=
+
+# 私匙文件 (string)
+#dvb-http-intf-key=
+
+# 根 CA 文件 (string)
+#dvb-http-intf-ca=
+
+# CRL 文件 (string)
+#dvb-http-intf-crl=
+
+[access_bd] # Blu-Ray 光碟输入
+
+# 缓存值为毫秒 (integer)
+#bd-caching=300
+
+[v4l] # Video4Linux 输入
+
+# 缓存值为毫秒 (integer)
+#v4l-caching=300
+
+# 适配输入色度格式 (string)
+#v4l-chroma=
+
+# 帧率 (float)
+#v4l-fps=-1.000000
+
+# 声道 (integer)
+#v4l-channel=0
+
+# 调谐器 (integer)
+#v4l-tuner=-1
+
+# 制式 (integer)
+#v4l-norm=3
+
+# 频率 (integer)
+#v4l-frequency=-1
+
+# 音频声道 (integer)
+#v4l-audio=-1
+
+# 宽度 (integer)
+#v4l-width=0
+
+# 高度 (integer)
+#v4l-height=0
+
+# 亮度 (integer)
+#v4l-brightness=-1
+
+# 颜色 (integer)
+#v4l-colour=-1
+
+# 色调 (integer)
+#v4l-hue=-1
+
+# 对比度 (integer)
+#v4l-contrast=-1
+
+# MJPEG (boolean)
+#v4l-mjpeg=0
+
+# 废弃 (integer)
+#v4l-decimation=1
+
+# 质量 (integer)
+#v4l-quality=100
+
+[x11_screen] # 屏幕输入
+
+# 缓存值为毫秒 (integer)
+#screen-caching=300
+
+# 帧率 (float)
+#screen-fps=5.000000
+
+# 子屏幕左上角 (integer)
+#screen-top=0
+
+# 子屏幕左上角 (integer)
+#screen-left=0
+
+# 子屏幕宽度 (integer)
+#screen-width=0
+
+# 子屏幕高度 (integer)
+#screen-height=0
+
+# 更随鼠标 (boolean)
+#screen-follow-mouse=0
+
+# 鼠标指针图像 (string)
+#screen-mouse-image=
+
+[access_mms] # Microsoft 媒体服务器 (MMS) 输入
+
+# 缓存值为毫秒 (integer)
+mms-caching=3000
+
+# TCP/UDP 超时 (毫秒) (integer)
+#mms-timeout=5000
+
+# 强制选择所有流 (boolean)
+#mms-all=0
+
+# 最大位率 (integer)
+#mms-maxbitrate=0
+
+# HTTP 代理 (string)
+#mmsh-proxy=
+
+[access_tcp] # TCP 输入
+
+# 缓存值为毫秒 (integer)
+#tcp-caching=300
+
+[dvdnav] # DVD 导航输入
+
+# DVD 视角 (integer)
+#dvdnav-angle=1
+
+# 缓存值为毫秒 (integer)
+#dvdnav-caching=300
+
+# 直接在菜单中启动 (boolean)
+#dvdnav-menu=1
+
+[v4l2] # Video4Linux2 输入
+
+# 标准 (integer)
+#v4l2-standard=0
+
+# 适配输入色度格式 (string)
+#v4l2-chroma=
+
+# 输入 (integer)
+#v4l2-input=0
+
+# 音频输入 (integer)
+#v4l2-audio-input=0
+
+# IO 模块 (integer)
+#v4l2-io=0
+
+# 宽度 (integer)
+#v4l2-width=-1
+
+# 高度 (integer)
+#v4l2-height=-1
+
+# 图像宽高比 n:m (string)
+#v4l2-aspect-ratio=4:3
+
+# 帧率 (float)
+#v4l2-fps=0.000000
+
+# 缓存值为毫秒 (integer)
+#v4l2-caching=300
+
+# 使用 libv4l2 (boolean)
+#v4l2-use-libv4l2=0
+
+# 调谐器 id (integer)
+#v4l2-tuner=0
+
+# 频率 (integer)
+#v4l2-tuner-frequency=-1
+
+# 音频模式 (integer)
+#v4l2-tuner-audio-mode=-1
+
+# 重置 v4l2 控制 (boolean)
+#v4l2-controls-reset=0
+
+# 亮度 (integer)
+#v4l2-brightness=-1
+
+# 对比度 (integer)
+#v4l2-contrast=-1
+
+# 饱和度 (integer)
+#v4l2-saturation=-1
+
+# 色调 (integer)
+#v4l2-hue=-1
+
+# 黑水平 (integer)
+#v4l2-black-level=-1
+
+# 自动白平衡 (integer)
+#v4l2-auto-white-balance=-1
+
+# 执行白平衡 (integer)
+#v4l2-do-white-balance=-1
+
+# 红平衡 (integer)
+#v4l2-red-balance=-1
+
+# 蓝平衡 (integer)
+#v4l2-blue-balance=-1
+
+# 伽玛 (integer)
+#v4l2-gamma=-1
+
+# 曝光 (integer)
+#v4l2-exposure=-1
+
+# 自动增益 (integer)
+#v4l2-autogain=-1
+
+# 增益 (integer)
+#v4l2-gain=-1
+
+# 水平倒转 (integer)
+#v4l2-hflip=-1
+
+# 垂直倒转 (integer)
+#v4l2-vflip=-1
+
+# 水平居中 (integer)
+#v4l2-hcenter=-1
+
+# 垂直居中 (integer)
+#v4l2-vcenter=-1
+
+# 音量 (integer)
+#v4l2-audio-volume=-1
+
+# 平衡 (integer)
+#v4l2-audio-balance=-1
+
+# 静音 (boolean)
+#v4l2-audio-mute=0
+
+# 低音 (integer)
+#v4l2-audio-bass=-1
+
+# 高音 (integer)
+#v4l2-audio-treble=-1
+
+# 响度 (integer)
+#v4l2-audio-loudness=-1
+
+# v4l2 驱动控制 (string)
+#v4l2-set-ctrls=
+
+[access_jack] # JACK 音频输入
+
+# 缓存值为毫秒 (integer)
+#jack-input-caching=300
+
+# 步调 (boolean)
+#jack-input-use-vlc-pace=0
+
+# 自动连接 (boolean)
+#jack-input-auto-connect=0
+
+[access_udp] # UDP 输入
+
+# 缓存值为毫秒 (integer)
+#udp-caching=300
+
+[access_rtmp] # RTMP 输入
+
+# 缓存值为毫秒 (integer)
+#rtmp-caching=300
+
+[cdda] # 音频 CD 输入
+
+# 缓存值为毫秒 (integer)
+#cdda-caching=300
+
+# ? (integer)
+#cdda-track=0
+
+# ? (integer)
+#cdda-first-sector=-1
+
+# ? (integer)
+#cdda-last-sector=-1
+
+# CDDB 服务器 (string)
+#cddb-server=freedb.freedb.org
+
+# CDDB 端口 (integer)
+#cddb-port=8880
+
+[access_smb] # SMB 输入
+
+# 缓存值为毫秒 (integer)
+#smb-caching=600
+
+# SMB 用户名 (string)
+#smb-user=
+
+# SMB 密码 (string)
+#smb-pwd=
+
+# SMB 域名 (string)
+#smb-domain=
+
+[rtp] # 实时协议 (RTP) 输入
+
+# RTP 反抖动缓冲长度 (毫秒) (integer)
+#rtp-caching=1000
+
+# RTCP (本地) 端口 (integer)
+#rtcp-port=0
+
+# SRTP 密匙 (十六进制) (string)
+#srtp-key=
+
+# SRTP 独立终端 (十六进制) (string)
+#srtp-salt=
+
+# 最大 RTP 源 (integer)
+#rtp-max-src=1
+
+# RTP 源超时 (秒) (integer)
+#rtp-timeout=5
+
+# 最大 RTP 丢弃序号 (integer)
+#rtp-max-dropout=3000
+
+# 最大 RTP 混淆序号 (integer)
+#rtp-max-misorder=100
+
+[dvdread] # DVDRead 输入 (无菜单支持)
+
+# DVD 视角 (integer)
+#dvdread-angle=1
+
+# 缓存值为毫秒 (integer)
+#dvdread-caching=300
+
+# libdvdcss 用于解密的模式 (string)
+#dvdread-css-method=
+
+[invmem] # 内存视频解码器
+
+# 宽度 (integer)
+#invmem-width=0
+
+# 高度 (integer)
+#invmem-height=0
+
+# 锁定函数 (string)
+#invmem-lock=0
+
+# 取消锁定函数 (string)
+#invmem-unlock=0
+
+# 调用数据 (string)
+#invmem-data=0
+
+[vorbis] # Vorbis 音频解码器
+
+# 编码质量 (integer)
+#sout-vorbis-quality=0
+
+# 最大编码位率 (integer)
+#sout-vorbis-max-bitrate=0
+
+# 最小编码位率 (integer)
+#sout-vorbis-min-bitrate=0
+
+# CBR 编码 (boolean)
+#sout-vorbis-cbr=0
+
+[telx] # Teletext 字幕解码器
+
+# 覆盖页 (integer)
+#telx-override-page=-1
+
+# 忽略字幕标志 (boolean)
+#telx-ignore-subtitle-flag=0
+
+# 针对法国的修正 (boolean)
+#telx-french-workaround=0
+
+[svcdsub] # Philips OGT (SVCD 字幕) 解码器
+
+# 开启调试 (integer)
+#svcdsub-debug=0
+
+[dvbsub] # DVB 字幕解码器
+
+# 子画面位置 (integer)
+#dvbsub-position=8
+
+# 解码 X 坐标 (integer)
+#dvbsub-x=-1
+
+# 解码 Y 坐标 (integer)
+#dvbsub-y=-1
+
+# 编码 X 坐标 (integer)
+#sout-dvbsub-x=-1
+
+# 编码 Y 坐标 (integer)
+#sout-dvbsub-y=-1
+
+[theora] # Theora 视频解码器
+
+# 编码质量 (integer)
+#sout-theora-quality=2
+
+[x264] # H.264/MPEG4 AVC 编码器 (x264)
+
+# 最大 GOP 大小 (integer)
+#sout-x264-keyint=250
+
+# 最小 GOP 大小 (integer)
+#sout-x264-min-keyint=25
+
+# 扩展 I 帧激进性 (integer)
+#sout-x264-scenecut=40
+
+# 在 I 和 P 之间的 B 帧 (integer)
+#sout-x264-bframes=3
+
+# 适应 B 帧检测 (integer)
+#sout-x264-b-adapt=1
+
+# 影响 (倾向) B 帧用法 (integer)
+#sout-x264-b-bias=0
+
+# 保留一些 B 帧作为参考 (string)
+#sout-x264-bpyramid=none
+
+# CABAC (boolean)
+#sout-x264-cabac=1
+
+# 参考帧数量 (integer)
+#sout-x264-ref=3
+
+# 跳过循环滤镜 (boolean)
+#sout-x264-nf=0
+
+# 循环滤镜 AlphaCO 和 Beta 参数 alpha: beta (string)
+#sout-x264-deblock=0:0
+
+# H.264 等级 (string)
+#sout-x264-level=5.1
+
+# H.264 档案 (string)
+#sout-x264-profile=high
+
+# 交错模式 (boolean)
+#sout-x264-interlaced=0
+
+# 设置 QP (integer)
+#sout-x264-qp=-1
+
+# 基于质量的 VBR (integer)
+#sout-x264-crf=23
+
+# 最小 QP (integer)
+#sout-x264-qpmin=10
+
+# 最大 QP (integer)
+#sout-x264-qpmax=51
+
+# 最大 QP 步进 (integer)
+#sout-x264-qpstep=4
+
+# 平均位率公差 (float)
+#sout-x264-ratetol=1.000000
+
+# 最大本地位率 (integer)
+#sout-x264-vbv-maxrate=0
+
+# VBV 缓冲 (integer)
+#sout-x264-vbv-bufsize=0
+
+# 初始 VBV 缓冲占有期 (float)
+#sout-x264-vbv-init=0.900000
+
+# I 和 P 之间的 QP 因数 (float)
+#sout-x264-ipratio=1.400000
+
+# P 和 B 之间的 QP 因数 (float)
+#sout-x264-pbratio=1.300000
+
+# 在色度和亮度之间的差异 (integer)
+#sout-x264-chroma-qp-offset=0
+
+# 多重率控制 (integer)
+#sout-x264-pass=0
+
+# QP 曲线压缩 (float)
+#sout-x264-qcomp=0.600000
+
+# 减少 QP 波动 (float)
+#sout-x264-cplxblur=20.000000
+
+# 减少 QP 波动 (float)
+#sout-x264-qblur=0.500000
+
+# AQ 发布位 (integer)
+#sout-x264-aq-mode=1
+
+# AQ 强度 (float)
+#sout-x264-aq-strength=1.000000
+
+# 分割计算器 (string)
+#sout-x264-partitions=normal
+
+# 直接 MV 预计模式 (string)
+#sout-x264-direct=spatial
+
+# 直接预计大小 (integer)
+#sout-x264-direct-8x8=1
+
+# 用于 B 帧的有利预计 (boolean)
+#sout-x264-weightb=1
+
+# Weighted prediction for P-frames (integer)
+#sout-x264-weightp=2
+
+# 整数像素运动估计模式 (string)
+#sout-x264-me=hex
+
+# 最大运动向量搜索范围 (integer)
+#sout-x264-merange=16
+
+# 最大运动向量长度 (integer)
+#sout-x264-mvrange=-1
+
+# 线程之间的最小缓存空间 (integer)
+#sout-x264-mvrange-thread=-1
+
+# 子像素运动估计和切割确定质量 (integer)
+#sout-x264-subme=5
+
+# 在一个每分割基础上判断参考 (boolean)
+#sout-x264-mixed-refs=1
+
+# 动态估算中的色度 (boolean)
+#sout-x264-chroma-me=1
+
+# 适应空间改版大小 (boolean)
+#sout-x264-8x8dct=0
+
+# 格式 RD 量化 (integer)
+#sout-x264-trellis=1
+
+# 在 P 帧上的早期跳过检测 (boolean)
+#sout-x264-fast-pskip=1
+
+# Framecount to use on frametype lookahead (integer)
+#sout-x264-lookahead=5
+
+# P 帧的阀系数 (boolean)
+#sout-x264-dct-decimate=1
+
+# 噪点消除 (integer)
+#sout-x264-nr=0
+
+# Inter 亮度量化死区 (integer)
+#sout-x264-deadzone-inter=21
+
+# Intra 亮度量化死区 (integer)
+#sout-x264-deadzone-intra=11
+
+# 在线程中的非确定性优化 (boolean)
+#sout-x264-non-deterministic=0
+
+# CPU 优化 (boolean)
+#sout-x264-asm=1
+
+# PSNR 计算 (boolean)
+#sout-x264-psnr=0
+
+# SSIM 计算 (boolean)
+#sout-x264-ssim=0
+
+# 静默模式 (boolean)
+#sout-x264-quiet=0
+
+# SPS 和 PPS id 号 (integer)
+#sout-x264-sps-id=0
+
+# 访问单元分隔符 (boolean)
+#sout-x264-aud=0
+
+# 统计 (boolean)
+#sout-x264-verbose=0
+
+# 2 重状态文件名 (string)
+#sout-x264-stats=x264_2pass.log
+
+[fluidsynth] # FluidSynth MIDI 合成器
+
+# Sound fonts (需要) (string)
+#soundfont=
+
+[zvbi] # VBI 和 Teletext 解码器
+
+# Teletext 页 (integer)
+#vbi-page=100
+
+# 文本总是不透明 (boolean)
+#vbi-opaque=1
+
+# Teletext 排列 (integer)
+#vbi-position=4
+
+# Teletext 文本字幕 (boolean)
+#vbi-text=0
+
+[avcodec] # FFmpeg 音频/视频解码器
+
+# 直接渲染 (boolean)
+#ffmpeg-dr=1
+
+# 弹性错误 (integer)
+#ffmpeg-error-resilience=1
+
+# 工作区 bug (integer)
+#ffmpeg-workaround-bugs=1
+
+# 紧急 (boolean)
+#ffmpeg-hurry-up=1
+
+# 跳帧 (默认=0) (integer)
+#ffmpeg-skip-frame=0
+
+# 跳过 idct (默认=0) (integer)
+#ffmpeg-skip-idct=0
+
+# 可视化运动向量 (integer)
+#ffmpeg-vismv=0
+
+# 低分辨率解码 (integer)
+#ffmpeg-lowres=0
+
+# 允许非正常速度优化 (boolean)
+#ffmpeg-fast=0
+
+# 用于 H.264 解码的跳过循环滤镜 (integer)
+#ffmpeg-skiploopfilter=0
+
+# 调试掩码 (integer)
+#ffmpeg-debug=0
+
+# 质量等级 (string)
+#sout-ffmpeg-hq=simple
+
+# 关键帧率 (integer)
+#sout-ffmpeg-keyint=0
+
+# B 帧率 (integer)
+#sout-ffmpeg-bframes=0
+
+# 紧急 (boolean)
+#sout-ffmpeg-hurry-up=0
+
+# 交错编码 (boolean)
+#sout-ffmpeg-interlace=0
+
+# 交错运动估算 (boolean)
+#sout-ffmpeg-interlace-me=1
+
+# 视频位率偏差 (integer)
+#sout-ffmpeg-vt=0
+
+# 预欲动估算 (boolean)
+#sout-ffmpeg-pre-me=0
+
+# 速率控制缓存大小 (integer)
+#sout-ffmpeg-rc-buffer-size=1835008
+
+# 帧率控制缓存激进性 (float)
+#sout-ffmpeg-rc-buffer-aggressivity=1.000000
+
+# I 量化因数 (float)
+#sout-ffmpeg-i-quant-factor=0.000000
+
+# 噪点消除 (integer)
+#sout-ffmpeg-noise-reduction=0
+
+# MPEG4 量化矩阵 (boolean)
+#sout-ffmpeg-mpeg4-matrix=0
+
+# 最小视频向量化比例 (integer)
+#sout-ffmpeg-qmin=0
+
+# 最大视频向量化比例 (integer)
+#sout-ffmpeg-qmax=0
+
+# 格式向量化 (boolean)
+#sout-ffmpeg-trellis=0
+
+# 固定量化比例 (float)
+#sout-ffmpeg-qscale=0.000000
+
+# 严格标准的一致 (integer)
+#sout-ffmpeg-strict=0
+
+# 明亮掩码 (float)
+#sout-ffmpeg-lumi-masking=0.000000
+
+# 阴暗掩码 (float)
+#sout-ffmpeg-dark-masking=0.000000
+
+# 运动掩码 (float)
+#sout-ffmpeg-p-masking=0.000000
+
+# 边框掩码 (float)
+#sout-ffmpeg-border-masking=0.000000
+
+# 亮度消除 (integer)
+#sout-ffmpeg-luma-elim-threshold=0
+
+# 色度消除 (integer)
+#sout-ffmpeg-chroma-elim-threshold=0
+
+# 指定要使用的 AAC 音频方案 (string)
+#sout-ffmpeg-aac-profile=low
+
+[subsdec] # 文本字幕解码器
+
+# 字幕调整 (integer)
+#subsdec-align=0
+
+# 字幕文本编码 (string)
+subsdec-encoding=GB18030
+
+# 自动检测 UTF-8 字幕 (boolean)
+#subsdec-autodetect-utf8=1
+
+# 格式化字幕 (boolean)
+#subsdec-formatted=1
+
+[fake] # 伪视频解码器
+
+# 图像文件 (string)
+#fake-file=
+
+# 重新载入图像文件 (integer)
+#fake-file-reload=0
+
+# 视频宽度 (integer)
+#fake-width=0
+
+# 视频高度 (integer)
+#fake-height=0
+
+# 保持高宽比 (boolean)
+#fake-keep-ar=0
+
+# 背景高宽比 (string)
+#fake-aspect-ratio=
+
+# 反交错视频 (boolean)
+#fake-deinterlace=0
+
+# 反交错模块 (string)
+#fake-deinterlace-module=deinterlace
+
+# 使用了色度。 (string)
+#fake-chroma=I420
+
+[speex] # Speex 音频解码器
+
+# 模式 (integer)
+#sout-speex-mode=0
+
+# 编码复杂度 (integer)
+#sout-speex-complexity=3
+
+# CBR 编码 (boolean)
+#sout-speex-cbr=0
+
+# 编码质量 (float)
+#sout-speex-quality=8.000000
+
+# 最大位率 (integer)
+#sout-speex-max-bitrate=0
+
+# 语音活动检测 (boolean)
+#sout-speex-vad=1
+
+# 非连续传输 (boolean)
+#sout-speex-dtx=0
+
+[stream_out_standard] # 标准流输出
+
+# 输出访问模式 (string)
+#sout-standard-access=
+
+# 输出复用器 (string)
+#sout-standard-mux=
+
+# 输出目标 (string)
+#sout-standard-dst=
+
+# 要绑定的设置 (用于 dst 的帮助器设置) (string)
+#sout-standard-bind=
+
+# 用于流的文件名 (用于 dts 的帮助器设置) (string)
+#sout-standard-path=
+
+# SAP 宣告 (boolean)
+#sout-standard-sap=0
+
+# 会话名称 (string)
+#sout-standard-name=
+
+# 会话组名 (string)
+#sout-standard-group=
+
+# 会话描述 (string)
+#sout-standard-description=
+
+# 会话 URL (string)
+#sout-standard-url=
+
+# 会话电子邮件 (string)
+#sout-standard-email=
+
+# 会话电话号码 (string)
+#sout-standard-phone=
+
+[stream_out_raop] # 远程音频输出协议 (RAOP) 串流输出
+
+# 主机 (string)
+#sout-raop-host=
+
+# 音量 (integer)
+#sout-raop-volume=100
+
+[stream_out_es] # 通量流输出
+
+# 输出访问模式 (string)
+#sout-es-access=
+
+# 输出复用器 (string)
+#sout-es-mux=
+
+# 输出 URL (string)
+#sout-es-dst=
+
+# 音频输出访问模式 (string)
+#sout-es-access-audio=
+
+# 音频输出复用器 (string)
+#sout-es-mux-audio=
+
+# 音频输出 URL (string)
+#sout-es-dst-audio=
+
+# 视频输出访问模块 (string)
+#sout-es-access-video=
+
+# 视频输出复用器 (string)
+#sout-es-mux-video=
+
+# 视频输出 URL (string)
+#sout-es-dst-video=
+
+[stream_out_transcode] # 转码流输出
+
+# 视频编码器 (string)
+#sout-transcode-venc=
+
+# 目标视频编码器 (string)
+#sout-transcode-vcodec=
+
+# 视频位率 (integer)
+#sout-transcode-vb=800000
+
+# 视频比例 (float)
+#sout-transcode-scale=1.000000
+
+# 视频帧率 (float)
+#sout-transcode-fps=0.000000
+
+# 紧急 (boolean)
+#sout-transcode-hurry-up=1
+
+# 反交错视频 (boolean)
+#sout-transcode-deinterlace=0
+
+# 反交错模块 (string)
+#sout-transcode-deinterlace-module=deinterlace
+
+# 视频宽度 (integer)
+#sout-transcode-width=0
+
+# 视频高度 (integer)
+#sout-transcode-height=0
+
+# 最大视频宽度 (integer)
+#sout-transcode-maxwidth=0
+
+# 最大视频高度 (integer)
+#sout-transcode-maxheight=0
+
+# 视频滤镜 (string)
+#sout-transcode-vfilter=
+
+# 音频编码器 (string)
+#sout-transcode-aenc=
+
+# 目标音频编码器 (string)
+#sout-transcode-acodec=
+
+# 音频位率 (integer)
+#sout-transcode-ab=0
+
+# 声道 (integer)
+#sout-transcode-channels=0
+
+# 音频采样率 (integer)
+#sout-transcode-samplerate=0
+
+# 同步音轨 (boolean)
+#sout-transcode-audio-sync=0
+
+# 音频滤镜 (string)
+#sout-transcode-afilter=
+
+# 字幕编码器 (string)
+#sout-transcode-senc=
+
+# 目标字幕编码器 (string)
+#sout-transcode-scodec=
+
+# 目标字幕编码器 (boolean)
+#sout-transcode-soverlay=0
+
+# 覆盖 (string)
+#sout-transcode-sfilter=
+
+# OSD 菜单 (boolean)
+#sout-transcode-osd=0
+
+# 线程数量 (integer)
+#sout-transcode-threads=0
+
+# 高优先级 (boolean)
+#sout-transcode-high-priority=0
+
+[stream_out_mosaic_bridge] # Mosaic 桥流输出
+
+# ID (string)
+#sout-mosaic-bridge-id=Id
+
+# 视频宽度 (integer)
+#sout-mosaic-bridge-width=0
+
+# 视频高度 (integer)
+#sout-mosaic-bridge-height=0
+
+# 示范高宽比 (string)
+#sout-mosaic-bridge-sar=1:1
+
+# 图像色度 (string)
+#sout-mosaic-bridge-chroma=
+
+# 视频滤镜 (string)
+#sout-mosaic-bridge-vfilter=
+
+# 透明 (integer)
+#sout-mosaic-bridge-alpha=255
+
+# X 偏移 (integer)
+#sout-mosaic-bridge-x=-1
+
+# Y 偏移 (integer)
+#sout-mosaic-bridge-y=-1
+
+[stream_out_rtp] # RTP 流输出
+
+# 目标 (string)
+#sout-rtp-dst=
+
+# SDP (string)
+#sout-rtp-sdp=
+
+# 复用器 (string)
+#sout-rtp-mux=
+
+# SAP 宣告 (boolean)
+#sout-rtp-sap=0
+
+# 会话名称 (string)
+#sout-rtp-name=
+
+# 会话描述 (string)
+#sout-rtp-description=
+
+# 会话 URL (string)
+#sout-rtp-url=
+
+# 会话电子邮件 (string)
+#sout-rtp-email=
+
+# 会话电话号码 (string)
+#sout-rtp-phone=
+
+# 传输协议 (string)
+#sout-rtp-proto=udp
+
+# 端口 (integer)
+#sout-rtp-port=5004
+
+# 音频端口 (integer)
+#sout-rtp-port-audio=0
+
+# 视频端口 (integer)
+#sout-rtp-port-video=0
+
+# 跳跃限制 (TTL) (integer)
+#sout-rtp-ttl=-1
+
+# RTP/RTCP 多路技术 (boolean)
+#sout-rtp-rtcp-mux=0
+
+# SRTP 密匙 (十六进制) (string)
+#sout-rtp-key=
+
+# SRTP 独立终端 (十六进制) (string)
+#sout-rtp-salt=
+
+# MP4A LATM (boolean)
+#sout-rtp-mp4a-latm=0
+
+[stream_out_bridge] # 桥接流输出
+
+# ID (integer)
+#sout-bridge-out-id=0
+
+# 目标 bridge-in 名称 (string)
+#sout-bridge-out-in-name=default
+
+# 延迟 (integer)
+#sout-bridge-in-delay=0
+
+# ID 偏移 (integer)
+#sout-bridge-in-id-offset=8192
+
+# 当前实例名称 (string)
+#sout-bridge-in-name=default
+
+# Fallback to placeholder stream when out of data (boolean)
+#sout-bridge-in-placeholder=0
+
+# 占位延迟 (integer)
+#sout-bridge-in-placeholder-delay=200
+
+# Wait for I frame before toggling placholder (boolean)
+#sout-bridge-in-placeholder-switch-on-iframe=1
+
+[stream_out_display] # 显示流输出
+
+# 开启音频 (boolean)
+#sout-display-audio=1
+
+# 开启视频 (boolean)
+#sout-display-video=1
+
+# 延迟 (integer)
+#sout-display-delay=100
+
+[stream_out_record] # 录制串流输出
+
+# 目标前缀 (string)
+#sout-record-dst-prefix=
+
+[hotkeys] # 热键管理界面
+
+# 鼠标轮 X 轴控制 (integer)
+#hotkeys-mousewheel-mode=0
+
+[telnet] # VLM 远程控制界面
+
+# 主机 (string)
+#telnet-host=
+
+# 端口 (integer)
+#telnet-port=4212
+
+# 密码 (string)
+#telnet-password=admin
+
+[lirc] # 红外线远程控制界面
+
+# 更改 lirc 的设置文件。 (string)
+#lirc-file=
+
+[motion] # 使用运动控制界面
+
+# 使用旋转视频滤镜代替变换 (boolean)
+#motion-use-rotate=0
+
+[gestures] # 鼠标手势控制界面
+
+# 运动限制 (10-100) (integer)
+#gestures-threshold=30
+
+# 触发按钮 (string)
+#gestures-button=right
+
+[http] # HTTP 远程控制界面
+
+# 主机地址 (string)
+#http-host=
+
+# 源目录 (string)
+#http-src=
+
+# 处理器 (string)
+#http-handlers=
+
+# 导出专辑封面为 /art。 (boolean)
+#http-album-art=0
+
+# 证书文件 (string)
+#http-intf-cert=
+
+# 私匙文件 (string)
+#http-intf-key=
+
+# 根 CA 文件 (string)
+#http-intf-ca=
+
+# CRL 文件 (string)
+#http-intf-crl=
+
+[showintf] # 使用鼠标显示界面
+
+# 阀值 (integer)
+#showintf-threshold=10
+
+[rc] # 远程控制界面
+
+# 显示流位置 (boolean)
+#rc-show-pos=0
+
+# 伪装 TTY (boolean)
+#rc-fake-tty=0
+
+# UNIX 端口命令输入 (string)
+#rc-unix=
+
+# TCP 命令输入 (string)
+#rc-host=
+
+[demuxdump] # 文件转储器
+
+# 转储文件名 (string)
+#demuxdump-file=stream-demux.dump
+
+# 附加到已存在的文件 (boolean)
+#demuxdump-append=0
+
+[avi] # AVI 去复用器
+
+# 强制交错模式 (boolean)
+#avi-interleaved=0
+
+# 强制创建缩影 (integer)
+#avi-index=0
+
+[rawvid] # Raw 去复用器
+
+# 每秒帧数 (string)
+#rawvid-fps=
+
+# 宽度 (integer)
+#rawvid-width=0
+
+# 高度 (integer)
+#rawvid-height=0
+
+# 强制色度 (谨慎使用) (string)
+#rawvid-chroma=
+
+# 高宽比 (string)
+#rawvid-aspect-ratio=
+
+[dirac] # Dirac video demuxer
+
+# Value to adjust dts by (integer)
+#dirac-dts-offset=0
+
+[subtitle] # 文本字幕解析器
+
+# 帧每秒 (float)
+#sub-fps=0.000000
+
+# 字幕延迟 (integer)
+#sub-delay=0
+
+# 字幕格式 (string)
+#sub-type=auto
+
+[mjpeg] # M-JPEG 摄像机去复用器
+
+# 每秒帧数 (float)
+#mjpeg-fps=0.000000
+
+[ps] # MPEG-PS 去复用器
+
+# 受信任的 MPEG 时间戳 (boolean)
+#ps-trust-timestamps=1
+
+[playlist] # 播放列表
+
+# 自动启动 (boolean)
+#playlist-autostart=1
+
+# ? (integer)
+#parent-item=0
+
+# 跳过广告 (boolean)
+#playlist-skip-ads=1
+
+# 显示 shoutcast 成人内容 (boolean)
+#shoutcast-show-adult=0
+
+[ts] # MPEG 传输流去复用器
+
+# 扩展 PMT (string)
+#ts-extra-pmt=
+
+# 设置 ES 的 id 为 PID (boolean)
+#ts-es-id-pid=1
+
+# 快速 udp 流 (string)
+#ts-out=
+
+# 用于输出模式的 MTU (integer)
+#ts-out-mtu=1400
+
+# CSA ck (string)
+#ts-csa-ck=
+
+# CSA ck (string)
+#ts-csa2-ck=
+
+# 以字节为单位的要解密的数据包大小 (integer)
+#ts-csa-pkt=188
+
+# 静默模式 (boolean)
+#ts-silent=0
+
+# 转储的文件名 (string)
+#ts-dump-file=
+
+# 附加 (boolean)
+#ts-dump-append=0
+
+# 转储缓冲大小 (integer)
+#ts-dump-size=16384
+
+[vc1] # VC1 去复用器
+
+# 每秒帧数 (float)
+#vc1-fps=25.000000
+
+[h264] # H264 视频去复用器
+
+# 每秒帧数 (float)
+#h264-fps=25.000000
+
+[rawaud] # Raw audio demuxer
+
+# 声道 (integer)
+#rawaud-channels=2
+
+# Audio samplerate (Hz) (integer)
+#rawaud-samplerate=48000
+
+# FOURCC code of raw input format (string)
+#rawaud-fourcc=s16l
+
+# Forces the audio language. (string)
+#rawaud-lang=eng
+
+[mod] # MOD 去复用器 (libmodplug)
+
+# 噪点消除 (boolean)
+#mod-noisereduction=1
+
+# 混响 (boolean)
+#mod-reverb=0
+
+# 混响等级 (integer)
+#mod-reverb-level=0
+
+# 混响延迟 (integer)
+#mod-reverb-delay=40
+
+# 超重低音 (boolean)
+#mod-megabass=0
+
+# 超重低音等级 (integer)
+#mod-megabass-level=0
+
+# 超重低音截至频率 (integer)
+#mod-megabass-range=10
+
+# 环绕声 (boolean)
+#mod-surround=0
+
+# 环绕声等级 (integer)
+#mod-surround-level=0
+
+# 环绕声延迟 (毫秒) (integer)
+#mod-surround-delay=5
+
+[avformat] # FFmpeg 去复用器
+
+# Ffmpeg 复用 (string)
+#ffmpeg-mux=
+
+[m4v] # MPEG-4 视频去复用器
+
+# 每秒帧数 (float)
+#m4v-fps=25.000000
+
+[mkv] # Matroska 流去复用器
+
+# 已排序的章节 (boolean)
+#mkv-use-ordered-chapters=1
+
+# 章节代码 (boolean)
+#mkv-use-chapter-codec=1
+
+# 预载目录 (boolean)
+#mkv-preload-local-dir=0
+
+# 基于百分比非时间的搜索 (boolean)
+#mkv-seek-percent=0
+
+# 空元素 (boolean)
+#mkv-use-dummy=0
+
+[live555] # RTP/RTSP/SDP 去复用器 (使用 Live555)
+
+# 使用 RTP 代替 RTSP (TCP) (boolean)
+#rtsp-tcp=0
+
+# 客户端端口 (integer)
+#rtp-client-port=-1
+
+# 通过 RTSP 强制多播 RTP (boolean)
+#rtsp-mcast=0
+
+# 通过 HTTP  通道使用 RTSP 和 RTP (boolean)
+#rtsp-http=0
+
+# HTTP 隧道端口 (integer)
+#rtsp-http-port=80
+
+# 缓冲值 (毫秒) (integer)
+rtsp-caching=600
+
+# Kasenna RTSP 方言 (boolean)
+#rtsp-kasenna=0
+
+# RTSP 用户名 (string)
+#rtsp-user=
+
+# RTSP 密码 (string)
+#rtsp-pwd=
+
+[rawdv] # DV (数字视频) 去复用器
+
+# 紧急 (boolean)
+#rawdv-hurry-up=0
+
+[main] # 主程序
+
+# 开启音频 (boolean)
+#audio=1
+
+# 默认音频音量 (integer)
+#volume=256
+
+# 音频输出音量步进 (integer)
+#volume-step=32
+
+# 音频输出频率 (Hz) (integer)
+#aout-rate=-1
+
+# 高质量音频重采样 (boolean)
+#hq-resampling=1
+
+# 在可能时使用 S/PDIF (boolean)
+#spdif=0
+
+# 强制检测杜比环绕声 (integer)
+#force-dolby-surround=0
+
+# 音频异步补偿 (integer)
+#audio-desync=0
+
+# 回放增益模式 (string)
+#audio-replay-gain-mode=none
+
+# 回放预放大 (float)
+#audio-replay-gain-preamp=0.000000
+
+# 默认回放增益 (float)
+#audio-replay-gain-default=-7.000000
+
+# 峰值保护 (boolean)
+#audio-replay-gain-peak-protection=1
+
+# 启用时间拉抻音频 (boolean)
+#audio-time-stretch=1
+
+# 音频输出模块 (string)
+#aout=
+
+# 音频滤镜 (string)
+#audio-filter=
+
+# 音频可视化 (string)
+#audio-visual=
+
+# 开启视频 (boolean)
+#video=1
+
+# 黑白输出视频 (boolean)
+#grayscale=0
+
+# 全屏幕视频输出 (boolean)
+#fullscreen=0
+
+# 嵌入视频 (boolean)
+#embedded-video=1
+
+# 丢弃延迟的帧 (boolean)
+#drop-late-frames=1
+
+# 跳帧 (boolean)
+#skip-frames=1
+
+# 静默同步 (boolean)
+#quiet-synchro=0
+
+# vout 级别的键盘和鼠标事件处理。 (integer)
+#vout-event=1
+
+# 覆盖视频输出 (boolean)
+#overlay=1
+
+# 总在最前 (boolean)
+#video-on-top=0
+
+# 关闭屏幕保护 (boolean)
+#disable-screensaver=1
+
+# 在视频上显示媒体标题 (boolean)
+#video-title-show=1
+
+# 显示视频标题 x 毫秒 (integer)
+#video-title-timeout=5000
+
+# 视频标题的位置 (integer)
+#video-title-position=8
+
+# 在 x 毫秒后隐藏光标和全屏控制器 (integer)
+#mouse-hide-timeout=1500
+
+# 视频截图目录 (或文件名) (string)
+#snapshot-path=
+
+# 视频截图文件前缀 (string)
+#snapshot-prefix=vlcsnap-
+
+# 视频截图格式 (string)
+#snapshot-format=png
+
+# 显示视频截图预览 (boolean)
+#snapshot-preview=1
+
+# 使用顺序编号代替时间戳 (boolean)
+#snapshot-sequential=0
+
+# 视频截图宽度 (integer)
+#snapshot-width=-1
+
+# 视频截图高度 (integer)
+#snapshot-height=-1
+
+# 视频宽度 (integer)
+#width=-1
+
+# 视频高度 (integer)
+#height=-1
+
+# 视频 X 坐标 (integer)
+#video-x=-1
+
+# 视频 Y 坐标 (integer)
+#video-y=-1
+
+# 视频裁剪 (string)
+#crop=
+
+# 自定义裁剪比列表 (string)
+#custom-crop-ratios=
+
+# 源高宽比 (string)
+#aspect-ratio=
+
+# 视频自动缩放 (boolean)
+#autoscale=1
+
+# 视频缩放因数 (float)
+#scale=1.000000
+
+# 显示器像素高宽比 (string)
+#monitor-par=
+
+# 自定义高宽比列表 (string)
+#custom-aspect-ratios=
+
+# 固定 HDTV 高度 (boolean)
+#hdtv-fix=1
+
+# 窗口装饰 (boolean)
+#video-deco=1
+
+# 视频标题 (string)
+#video-title=
+
+# 视频排列 (integer)
+#align=0
+
+# 缩放视频 (float)
+#zoom=1.000000
+
+# 视频输出模块 (string)
+#vout=
+
+# 视频滤镜模块 (string)
+#video-filter=
+
+# 视频输出滤镜模块 (string)
+#vout-filter=
+
+# 开启子画面 (boolean)
+#spu=1
+
+# 屏幕显示 (boolean)
+#osd=1
+
+# 文本渲染模块 (string)
+#text-renderer=
+
+# 使用字幕文件 (string)
+#sub-file=
+
+# 自动检测字幕文件 (boolean)
+#sub-autodetect-file=1
+
+# 字幕自动检测模糊性 (integer)
+#sub-autodetect-fuzzy=3
+
+# 字幕自动检测路径 (string)
+#sub-autodetect-path=./Subtitles, ./subtitles
+
+# 强制字幕位置 (integer)
+#sub-margin=0
+
+# 子画面滤镜模块 (string)
+#sub-filter=
+
+# 程序 (integer)
+#program=0
+
+# 程序 (string)
+#programs=
+
+# 音频轨道 (integer)
+#audio-track=-1
+
+# 字幕轨道 (integer)
+#sub-track=-1
+
+# 音频语言 (string)
+#audio-language=
+
+# 字幕语言 (string)
+#sub-language=
+
+# 音频轨道 ID (integer)
+#audio-track-id=-1
+
+# 字幕轨道 ID (integer)
+#sub-track-id=-1
+
+# 输入重复 (integer)
+#input-repeat=0
+
+# 起始时间 (float)
+#start-time=0.000000
+
+# 停止时间 (float)
+#stop-time=0.000000
+
+# 运行时间 (float)
+#run-time=0.000000
+
+# 快速寻找 (boolean)
+#input-fast-seek=0
+
+# 输入列表 (string)
+#input-list=
+
+# 从输入 (实验性) (string)
+#input-slave=
+
+# 一个流的书签列表 (string)
+#bookmarks=
+
+# DVD 设备 (string)
+#dvd=/dev/dvd
+
+# VCD 设备 (string)
+#vcd=/dev/cdrom
+
+# 音频 CD 设备 (string)
+#cd-audio=/dev/cdrom
+
+# UDP 端口 (integer)
+#server-port=1234
+
+# 网络界面的 MTU (integer)
+#mtu=1400
+
+# 强制 IPv6 (boolean)
+#ipv6=0
+
+# 强制 IPv4 (boolean)
+#ipv4=0
+
+# TCP 连接超时 (integer)
+#ipv4-timeout=5000
+
+# SOCKS 服务器 (string)
+#socks=
+
+# SOCKS 用户名 (string)
+#socks-user=
+
+# SOCKS 密码 (string)
+#socks-pwd=
+
+# 标题元数据 (string)
+#meta-title=
+
+# 作者元数据 (string)
+#meta-author=
+
+# 艺术家元数据 (string)
+#meta-artist=
+
+# 流派元数据 (string)
+#meta-genre=
+
+# 版权元数据 (string)
+#meta-copyright=
+
+# 描述元数据 (string)
+#meta-description=
+
+# 日期元数据 (string)
+#meta-date=
+
+# URL 元数据 (string)
+#meta-url=
+
+# 平均时钟应用计数器 (integer)
+#cr-average=40
+
+# 时钟同步 (integer)
+#clock-synchro=-1
+
+# 网络同步 (boolean)
+#network-synchronisation=0
+
+# 记录目录或文件名 (string)
+#input-record-path=
+
+# 偏好原生串流录制 (boolean)
+#input-record-native=1
+
+# 时间位移目录 (string)
+#input-timeshift-path=
+
+# 时间位移间隔 (integer)
+#input-timeshift-granularity=-1
+
+# 首选的解码器列表 (string)
+#codec=
+
+# 首选的解码器列表 (string)
+#encoder=
+
+# 访问模块 (string)
+#access=
+
+# 去复用模块 (string)
+#demux=
+
+# 首选系统插件替代 VLC (boolean)
+#prefer-system-codecs=0
+
+# 串流滤镜模块 (string)
+#stream-filter=
+
+# 默认流输出链 (string)
+#sout=
+
+# 在流发布时的显示 (boolean)
+#sout-display=0
+
+# 保持流输出打开 (boolean)
+#sout-keep=0
+
+# 为所有 ES 开启流 (boolean)
+#sout-all=0
+
+# 开启音频流输出 (boolean)
+#sout-audio=1
+
+# 开启视频流输出 (boolean)
+#sout-video=1
+
+# 开启 SPU 流输出 (boolean)
+#sout-spu=1
+
+# 流输出合成器缓冲 (毫秒) (integer)
+#sout-mux-caching=1500
+
+# VLM 设置文件 (string)
+#vlm-conf=
+
+# 混合模式 (string)
+#mux=
+
+# 访问输出模块 (string)
+#access_output=
+
+# 跳跃限制 (TTL) (integer)
+#ttl=-1
+
+# 多播输出接口 (string)
+#miface=
+
+# IPv4 多播输出接口地址 (string)
+#miface-addr=
+
+# DiffServ 代码点 (integer)
+#dscp=0
+
+# 首选的分包器列表 (string)
+#packetizer=
+
+# SAP 发布间隔 (integer)
+#sap-interval=5
+
+# 开启 FPU 支持 (boolean)
+#fpu=1
+
+# 开启 CPU MMX 支持 (boolean)
+#mmx=1
+
+# 开启 CPU 3D Now! 支持 (boolean)
+#3dn=1
+
+# 开启 CPU MMX EXT 支持 (boolean)
+#mmxext=1
+
+# 开启 CPU SSE 支持 (boolean)
+#sse=1
+
+# 开启 CPU SSE2 支持 (boolean)
+#sse2=1
+
+# 内存复制模块 (string)
+#memcpy=
+
+# 使用一个插件缓存 (boolean)
+#plugins-cache=1
+
+# 模块搜索路径 (string)
+#plugin-path=
+
+# 允许实时优先级 (boolean)
+#rt-priority=0
+
+# 调节 VLC 优先级 (integer)
+#rt-offset=0
+
+# 在播放时禁止电源管理程序 (boolean)
+#inhibit=1
+
+# 仅允许运行一个实例 (boolean)
+#one-instance=0
+
+# 在由文件启动时只有一个实例 (boolean)
+#one-instance-when-started-from-file=1
+
+# 永远随机播放文件 (boolean)
+#random=0
+
+# 全部重复 (boolean)
+#loop=0
+
+# 重复当前的项目 (boolean)
+#repeat=0
+
+# 播放并退出 (boolean)
+#play-and-exit=0
+
+# 播放与停止 (boolean)
+#play-and-stop=0
+
+# 使用媒体库 (boolean)
+#media-library=1
+
+# 显示播放列表树 (boolean)
+#playlist-tree=0
+
+# 默认流 (string)
+#open=
+
+# 自动预分析文件 (boolean)
+#auto-preparse=1
+
+# 专辑封面策略 (integer)
+#album-art=0
+
+# 服务发现模块 (string)
+#services-discovery=
+
+# 提示程度 (0,1,2) (integer)
+#verbose=0
+
+# 选择何对象应输出调试信息 (string)
+#verbose-objects=
+
+# 安静 (boolean)
+#quiet=0
+
+# 运行为守护进程 (boolean)
+#daemon=0
+
+# 写入进程 id 到文件中 (string)
+#pidfile=
+
+# 记录到文件 (boolean)
+#file-logging=0
+
+# 记录到 syslog (boolean)
+#syslog=0
+
+# 彩色消息 (boolean)
+#color=1
+
+# 显示高级选项 (boolean)
+#advanced=0
+
+# 界面交互 (boolean)
+#interact=1
+
+# 使用鼠标显示界面 (boolean)
+#show-intf=0
+
+# 收集统计 (boolean)
+#stats=1
+
+# 界面模块 (string)
+#intf=
+
+# 扩展界面模块 (string)
+#extraintf=
+
+# 控制界面 (string)
+#control=
+
+# 全屏幕 (key)
+#key-toggle-fullscreen=f
+
+# 全屏幕 (key)
+#global-key-toggle-fullscreen=Unset
+
+# 离开全屏幕 (key)
+#key-leave-fullscreen=Esc
+
+# 离开全屏幕 (key)
+#global-key-leave-fullscreen=Unset
+
+# 播放/暂停 (key)
+#key-play-pause=Space
+
+# 播放/暂停 (key)
+#global-key-play-pause=Unset
+
+# 仅暂停 (key)
+#key-pause=Unset
+
+# 仅暂停 (key)
+#global-key-pause=Unset
+
+# 仅播放 (key)
+#key-play=Unset
+
+# 仅播放 (key)
+#global-key-play=Unset
+
+# 较快 (key)
+#key-faster=+
+
+# 较快 (key)
+#global-key-faster=Unset
+
+# 较慢 (key)
+#key-slower=-
+
+# 较慢 (key)
+#global-key-slower=Unset
+
+# 正常比率 (key)
+#key-rate-normal==
+
+# 正常比率 (key)
+#global-key-rate-normal=Unset
+
+# 较快 (好) (key)
+#key-rate-faster-fine=]
+
+# 较快 (好) (key)
+#global-key-rate-faster-fine=Unset
+
+# 较慢 (好) (key)
+#key-rate-slower-fine=[
+
+# 较慢 (好) (key)
+#global-key-rate-slower-fine=Unset
+
+# 下一个 (key)
+#key-next=n
+
+# 下一个 (key)
+#global-key-next=Unset
+
+# 上一个 (key)
+#key-prev=p
+
+# 上一个 (key)
+#global-key-prev=Unset
+
+# 停止 (key)
+#key-stop=s
+
+# 停止 (key)
+#global-key-stop=Unset
+
+# 位置 (key)
+#key-position=t
+
+# 位置 (key)
+#global-key-position=Unset
+
+# 非常短的向后跳转 (key)
+#key-jump-extrashort=Shift-Left
+
+# 非常短的向后跳转 (key)
+#global-key-jump-extrashort=Unset
+
+# 非常短的向前跳转 (key)
+#key-jump+extrashort=Shift-Right
+
+# 非常短的向前跳转 (key)
+#global-key-jump+extrashort=Unset
+
+# 短向后跳转 (key)
+#key-jump-short=Alt-Left
+
+# 短向后跳转 (key)
+#global-key-jump-short=Unset
+
+# 短向前跳转 (key)
+#key-jump+short=Alt-Right
+
+# 短向前跳转 (key)
+#global-key-jump+short=Unset
+
+# 中向后跳转 (key)
+#key-jump-medium=Ctrl-Left
+
+# 中向后跳转 (key)
+#global-key-jump-medium=Unset
+
+# 中向前跳转 (key)
+#key-jump+medium=Ctrl-Right
+
+# 中向前跳转 (key)
+#global-key-jump+medium=Unset
+
+# 长向后跳转 (key)
+#key-jump-long=Alt-Ctrl-Left
+
+# 长向后跳转 (key)
+#global-key-jump-long=Unset
+
+# 长向前跳转 (key)
+#key-jump+long=Alt-Ctrl-Right
+
+# 长向前跳转 (key)
+#global-key-jump+long=Unset
+
+# 下一帧 (key)
+#key-frame-next=e
+
+# 下一帧 (key)
+#global-key-frame-next=Unset
+
+# 激活 (key)
+#key-nav-activate=Enter
+
+# 激活 (key)
+#global-key-nav-activate=Unset
+
+# 导航上 (key)
+#key-nav-up=Up
+
+# 导航上 (key)
+#global-key-nav-up=Unset
+
+# 导航下 (key)
+#key-nav-down=Down
+
+# 导航下 (key)
+#global-key-nav-down=Unset
+
+# 导航左 (key)
+#key-nav-left=Left
+
+# 导航左 (key)
+#global-key-nav-left=Unset
+
+# 导航右 (key)
+#key-nav-right=Right
+
+# 导航右 (key)
+#global-key-nav-right=Unset
+
+# 转到 DVD 菜单 (key)
+#key-disc-menu=Shift-m
+
+# 转到 DVD 菜单 (key)
+#global-key-disc-menu=Unset
+
+# 选择上一个 DVD 标题 (key)
+#key-title-prev=Shift-o
+
+# 选择上一个 DVD 标题 (key)
+#global-key-title-prev=Unset
+
+# 选择下一个 DVD 标题 (key)
+#key-title-next=Shift-b
+
+# 选择下一个 DVD 标题 (key)
+#global-key-title-next=Unset
+
+# 选择上一个 DVD 章节 (key)
+#key-chapter-prev=Shift-p
+
+# 选择上一个 DVD 章节 (key)
+#global-key-chapter-prev=Unset
+
+# 选择下一个 DVD 章节 (key)
+#key-chapter-next=Shift-n
+
+# 选择下一个 DVD 章节 (key)
+#global-key-chapter-next=Unset
+
+# 退出 (key)
+#key-quit=Ctrl-q
+
+# 退出 (key)
+#global-key-quit=Unset
+
+# 音量上 (key)
+#key-vol-up=Ctrl-Up
+
+# 音量上 (key)
+#global-key-vol-up=Unset
+
+# 音量下 (key)
+#key-vol-down=Ctrl-Down
+
+# 音量下 (key)
+#global-key-vol-down=Unset
+
+# 静音 (key)
+#key-vol-mute=m
+
+# 静音 (key)
+#global-key-vol-mute=Unset
+
+# 字幕延迟上 (key)
+#key-subdelay-up=h
+
+# 字幕延迟上 (key)
+#global-key-subdelay-up=Unset
+
+# 字幕延迟下 (key)
+#key-subdelay-down=g
+
+# 字幕延迟下 (key)
+#global-key-subdelay-down=Unset
+
+# 音频延迟上 (key)
+#key-audiodelay-up=k
+
+# 音频延迟上 (key)
+#global-key-audiodelay-up=Unset
+
+# 音频延迟下 (key)
+#key-audiodelay-down=j
+
+# 音频延迟下 (key)
+#global-key-audiodelay-down=Unset
+
+# 切换音轨 (key)
+#key-audio-track=b
+
+# 切换音轨 (key)
+#global-key-audio-track=Unset
+
+# 在音频设备之间切换 (key)
+#key-audiodevice-cycle=Shift-a
+
+# 在音频设备之间切换 (key)
+#global-key-audiodevice-cycle=Unset
+
+# 切换字幕轨道 (key)
+#key-subtitle-track=v
+
+# 切换字幕轨道 (key)
+#global-key-subtitle-track=Unset
+
+# 切换源高宽比 (key)
+#key-aspect-ratio=a
+
+# 切换源高宽比 (key)
+#global-key-aspect-ratio=Unset
+
+# 切换视频剪辑 (key)
+#key-crop=c
+
+# 切换视频剪辑 (key)
+#global-key-crop=Unset
+
+# 打开或关闭自动缩放 (key)
+#key-toggle-autoscale=o
+
+# 打开或关闭自动缩放 (key)
+#global-key-toggle-autoscale=Unset
+
+# 增大缩放因数 (key)
+#key-incr-scalefactor=Alt-o
+
+# 增大缩放因数 (key)
+#global-key-incr-scalefactor=Unset
+
+# 减小缩放因数 (key)
+#key-decr-scalefactor=Alt-Shift-o
+
+# 减小缩放因数 (key)
+#global-key-decr-scalefactor=Unset
+
+# 切换反交错模式 (key)
+#key-deinterlace=d
+
+# 切换反交错模式 (key)
+#global-key-deinterlace=Unset
+
+# 显示界面 (key)
+#key-intf-show=i
+
+# 显示界面 (key)
+#global-key-intf-show=Unset
+
+# 隐藏界面 (key)
+#key-intf-hide=Shift-i
+
+# 隐藏界面 (key)
+#global-key-intf-hide=Unset
+
+# 获取视频截图 (key)
+#key-snapshot=Shift-s
+
+# 获取视频截图 (key)
+#global-key-snapshot=Unset
+
+# 返回浏览历史 (key)
+#key-history-back=Shift-g
+
+# 返回浏览历史 (key)
+#global-key-history-back=Unset
+
+# 前进浏览历史 (key)
+#key-history-forward=Shift-h
+
+# 前进浏览历史 (key)
+#global-key-history-forward=Unset
+
+# 录制 (key)
+#key-record=Shift-r
+
+# 录制 (key)
+#global-key-record=Unset
+
+# 转储 (key)
+#key-dump=Shift-d
+
+# 转储 (key)
+#global-key-dump=Unset
+
+# 缩放 (key)
+#key-zoom=z
+
+# 缩放 (key)
+#global-key-zoom=Unset
+
+# 反变焦 (key)
+#key-unzoom=Shift-z
+
+# 反变焦 (key)
+#global-key-unzoom=Unset
+
+# 在视频输出模式中切换壁纸输出 (key)
+#key-wallpaper=w
+
+# 在视频输出模式中切换壁纸输出 (key)
+#global-key-wallpaper=Unset
+
+# 在视频输出顶端的 OSD 菜单 (key)
+#key-menu-on=Alt-Shift-m
+
+# 在视频输出顶端的 OSD 菜单 (key)
+#global-key-menu-on=Unset
+
+# 不在视频输出中显示 OSD 菜单 (key)
+#key-menu-off=Alt-Ctrl-m
+
+# 不在视频输出中显示 OSD 菜单 (key)
+#global-key-menu-off=Unset
+
+# 在右侧高亮显示 widget (key)
+#key-menu-right=Alt-Shift-Right
+
+# 在右侧高亮显示 widget (key)
+#global-key-menu-right=Unset
+
+# 高亮显示左侧的 widget (key)
+#key-menu-left=Alt-Shift-Left
+
+# 高亮显示左侧的 widget (key)
+#global-key-menu-left=Unset
+
+# 高亮显示顶端的 widget (key)
+#key-menu-up=Alt-Shift-Up
+
+# 高亮显示顶端的 widget (key)
+#global-key-menu-up=Unset
+
+# 高亮显示底部的 widget (key)
+#key-menu-down=Alt-Shift-Down
+
+# 高亮显示底部的 widget (key)
+#global-key-menu-down=Unset
+
+# 选择当前的 widget (key)
+#key-menu-select=Alt-Shift-Enter
+
+# 选择当前的 widget (key)
+#global-key-menu-select=Unset
+
+# 从视频顶端裁剪一个像素 (key)
+#key-crop-top=Alt-r
+
+# 从视频顶端裁剪一个像素 (key)
+#global-key-crop-top=Unset
+
+# 取消从视频顶端裁剪一个像素 (key)
+#key-uncrop-top=Alt-Shift-r
+
+# 取消从视频顶端裁剪一个像素 (key)
+#global-key-uncrop-top=Unset
+
+# 从视频左侧裁剪一个像素 (key)
+#key-crop-left=Alt-d
+
+# 从视频左侧裁剪一个像素 (key)
+#global-key-crop-left=Unset
+
+# 取消从视频左侧裁剪一个像素 (key)
+#key-uncrop-left=Alt-Shift-d
+
+# 取消从视频左侧裁剪一个像素 (key)
+#global-key-uncrop-left=Unset
+
+# 从视频底端裁剪一个像素 (key)
+#key-crop-bottom=Alt-c
+
+# 从视频底端裁剪一个像素 (key)
+#global-key-crop-bottom=Unset
+
+# 取消从视频底端裁剪一个像素 (key)
+#key-uncrop-bottom=Alt-Shift-c
+
+# 取消从视频底端裁剪一个像素 (key)
+#global-key-uncrop-bottom=Unset
+
+# 从视频右侧裁剪一个像素 (key)
+#key-crop-right=Alt-f
+
+# 从视频右侧裁剪一个像素 (key)
+#global-key-crop-right=Unset
+
+# 取消从视频右侧裁剪一个像素 (key)
+#key-uncrop-right=Alt-Shift-f
+
+# 取消从视频右侧裁剪一个像素 (key)
+#global-key-uncrop-right=Unset
+
+# 随机顺序 (key)
+#key-random=r
+
+# 随机顺序 (key)
+#global-key-random=Unset
+
+# 普通/重复/循环 (key)
+#key-loop=l
+
+# 普通/重复/循环 (key)
+#global-key-loop=Unset
+
+# 1:4 四分之一 (key)
+#key-zoom-quarter=Ctrl-1
+
+# 1:4 四分之一 (key)
+#global-key-zoom-quarter=Unset
+
+# 1:2 二分之一 (key)
+#key-zoom-half=Ctrl-2
+
+# 1:2 二分之一 (key)
+#global-key-zoom-half=Unset
+
+# 1:1 原始 (key)
+#key-zoom-original=Ctrl-3
+
+# 1:1 原始 (key)
+#global-key-zoom-original=Unset
+
+# 2:1 双倍 (key)
+#key-zoom-double=Ctrl-4
+
+# 2:1 双倍 (key)
+#global-key-zoom-double=Unset
+
+# 非常短的跳转长度 (integer)
+#extrashort-jump-size=3
+
+# 短跳转长度 (integer)
+#short-jump-size=10
+
+# 中跳转长度 (integer)
+#medium-jump-size=60
+
+# 长跳转长度 (integer)
+#long-jump-size=300
+
+# 设置播放列表书签 1 (key)
+#key-set-bookmark1=Ctrl-F1
+
+# 设置播放列表书签 1 (key)
+#global-key-set-bookmark1=Unset
+
+# 设置播放列表书签 2 (key)
+#key-set-bookmark2=Ctrl-F2
+
+# 设置播放列表书签 2 (key)
+#global-key-set-bookmark2=Unset
+
+# 设置播放列表书签 3 (key)
+#key-set-bookmark3=Ctrl-F3
+
+# 设置播放列表书签 3 (key)
+#global-key-set-bookmark3=Unset
+
+# 设置播放列表书签 4 (key)
+#key-set-bookmark4=Ctrl-F4
+
+# 设置播放列表书签 4 (key)
+#global-key-set-bookmark4=Unset
+
+# 设置播放列表书签 5 (key)
+#key-set-bookmark5=Ctrl-F5
+
+# 设置播放列表书签 5 (key)
+#global-key-set-bookmark5=Unset
+
+# 设置播放列表书签 6 (key)
+#key-set-bookmark6=Ctrl-F6
+
+# 设置播放列表书签 6 (key)
+#global-key-set-bookmark6=Unset
+
+# 设置播放列表书签 7 (key)
+#key-set-bookmark7=Ctrl-F7
+
+# 设置播放列表书签 7 (key)
+#global-key-set-bookmark7=Unset
+
+# 设置播放列表书签 8 (key)
+#key-set-bookmark8=Ctrl-F8
+
+# 设置播放列表书签 8 (key)
+#global-key-set-bookmark8=Unset
+
+# 设置播放列表书签 9 (key)
+#key-set-bookmark9=Ctrl-F9
+
+# 设置播放列表书签 9 (key)
+#global-key-set-bookmark9=Unset
+
+# 设置播放列表书签 10 (key)
+#key-set-bookmark10=Ctrl-F10
+
+# 设置播放列表书签 10 (key)
+#global-key-set-bookmark10=Unset
+
+# 播放播放列表书签 1 (key)
+#key-play-bookmark1=F1
+
+# 播放播放列表书签 1 (key)
+#global-key-play-bookmark1=Unset
+
+# 播放播放列表书签 2 (key)
+#key-play-bookmark2=F2
+
+# 播放播放列表书签 2 (key)
+#global-key-play-bookmark2=Unset
+
+# 播放播放列表书签 3 (key)
+#key-play-bookmark3=F3
+
+# 播放播放列表书签 3 (key)
+#global-key-play-bookmark3=Unset
+
+# 播放播放列表书签 4 (key)
+#key-play-bookmark4=F4
+
+# 播放播放列表书签 4 (key)
+#global-key-play-bookmark4=Unset
+
+# 播放播放列表书签 5 (key)
+#key-play-bookmark5=F5
+
+# 播放播放列表书签 5 (key)
+#global-key-play-bookmark5=Unset
+
+# 播放播放列表书签 6 (key)
+#key-play-bookmark6=F6
+
+# 播放播放列表书签 6 (key)
+#global-key-play-bookmark6=Unset
+
+# 播放播放列表书签 7 (key)
+#key-play-bookmark7=F7
+
+# 播放播放列表书签 7 (key)
+#global-key-play-bookmark7=Unset
+
+# 播放播放列表书签 8 (key)
+#key-play-bookmark8=F8
+
+# 播放播放列表书签 8 (key)
+#global-key-play-bookmark8=Unset
+
+# 播放播放列表书签 9 (key)
+#key-play-bookmark9=F9
+
+# 播放播放列表书签 9 (key)
+#global-key-play-bookmark9=Unset
+
+# 播放播放列表书签 10 (key)
+#key-play-bookmark10=F10
+
+# 播放播放列表书签 10 (key)
+#global-key-play-bookmark10=Unset
+
+# 播放列表书签 1 (string)
+#bookmark1=
+
+# 播放列表书签 2 (string)
+#bookmark2=
+
+# 播放列表书签 3 (string)
+#bookmark3=
+
+# 播放列表书签 4 (string)
+#bookmark4=
+
+# 播放列表书签 5 (string)
+#bookmark5=
+
+# 播放列表书签 6 (string)
+#bookmark6=
+
+# 播放列表书签 7 (string)
+#bookmark7=
+
+# 播放列表书签 8 (string)
+#bookmark8=
+
+# 播放列表书签 9 (string)
+#bookmark9=
+
+# 播放列表书签 10 (string)
+#bookmark10=
+
