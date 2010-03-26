@@ -1,0 +1,147 @@
+[$Version]
+update_info=kate-2.4.upd:kate2.4
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Favorite Profiles]
+Favorites=
+
+[FileList]
+Edit Shade=231,246,122
+Shading Enabled=true
+SortRole=34
+View Shade=174,167,182
+
+[General]
+Days Meta Infos=30
+First Start=false
+Modified Notification=true
+Restore Window Configuration=true
+Save Meta Infos=true
+Session Exit=discard
+Show Full Path in Title=true
+Show Status Bar=true
+Startup Session=new
+
+[KFileDialog Settings]
+Height 800=450
+Recent Files[$e]=$HOME/img/novel/sex/乱派/月皎花娇.txt,$HOME/Desktop/madedit-0.2.9/src/MadEditFrame.cpp,$HOME/wiki.txt
+Width 1280=700
+
+[KTEXTEDITOR:]
+DEVELOPER_INFO=NEVER TRY TO USE VALUES FROM THAT GROUP, THEY ARE SUBJECT TO CHANGES
+
+[Kate Document Defaults]
+Allow End of Line Detection=true
+Allow Simple Mode=true
+BOM=false
+Backup Config Flags=2
+Backup Prefix=
+Backup Suffix=~
+Basic Config Flags=384303216
+Encoding=UTF-8
+End of Line=0
+Indentation Mode=cstyle
+Indentation Width=4
+On-The-Fly Spellcheck=false
+PageUp/PageDown Moves Cursor=false
+ProberType for Encoding Autodetection=5
+Search Dir Config Depth=3
+Tab Handling=2
+Tab Width=8
+Word Wrap=false
+Word Wrap Column=80
+
+[Kate Plugins]
+kate_kttsd=false
+katebacktracebrowserplugin=false
+katebuildplugin=false
+katectagsplugin=true
+kateexternaltoolsplugin=false
+katefilebrowserplugin=true
+katefiletemplates=false
+katefindinfilesplugin=true
+katekonsoleplugin=true
+katemailfilesplugin=false
+kateopenheaderplugin=true
+katepybrowseplugin=false
+katequickdocumentswitcherplugin=false
+katesnippets_tngplugin=false
+katesnippetsplugin=false
+katesymbolviewerplugin=true
+katetabbarextensionplugin=true
+katetextfilterplugin=false
+katexmlcheckplugin=false
+
+[Kate Renderer Defaults]
+Schema=kate - Normal
+Show Indentation Lines=true
+Show Whole Bracket Expression=true
+Word Wrap Marker=false
+
+[Kate Vi Input Mode Settings]
+Normal Mode Mapping Keys=
+Normal Mode Mappings=
+
+[Kate View Defaults]
+Auto Center Lines=0
+Auto Completion=true
+Bookmark Menu Sorting=0
+Default Mark Type=1
+Dynamic Word Wrap=true
+Dynamic Word Wrap Align Indent=80
+Dynamic Word Wrap Indicators=1
+Folding Bar=true
+Icon Bar=false
+Line Numbers=true
+Persistent Selection=false
+Replacement Text History=
+Scroll Bar Marks=false
+Scroll Past End=false
+Search Pattern History=
+Search/Replace Flags=140
+Smart Copy Cut=false
+Vi Input Mode=false
+Vi Input Mode Hide Status Bar=false
+Vi Input Mode Steal Keys=false
+Word Completion=true
+Word Completion Minimal Word Length=3
+
+[Konsole]
+AutoSyncronize=true
+SetEditor=true
+
+[MainWindow]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1281
+
+[Plugin:katefindinfilesplugin::find-in-files]
+CaseSensitive=true
+FollowDirectorySymlinks=false
+LastSearchFiles=*,*.h\\,*.hxx\\,*.cpp\\,*.cc\\,*.C\\,*.cxx\\,*.idl\\,*.c,*.cpp\\,*.cc\\,*.C\\,*.cxx\\,*.c,*.h\\,*.hxx\\,*.idl
+LastSearchItems=
+LastSearchPaths=
+Recursive=true
+RegExp=false
+
+[PluginSymbolViewer]
+ExpandTree=false
+ViewTypes=true
+
+[TipOfDay]
+RunOnStart=false
+
+[filebrowser]
+toolbar actions=back,forward,up,delete,bookmarks,sync_dir,configure
+
+[fileselector]
+AutoSyncEvents=0
+filter history=
+filter history len=9
+pathcombo history len=9
+restore last filter=true
+restore location=true
+toolbar actions=up,back,forward,home,short view,detailed view,tree view,bookmarks,sync_dir
