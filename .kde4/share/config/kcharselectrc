@@ -1,0 +1,13 @@
+[$Version]
+update_info=kcharselect.upd:1
+
+[General]
+char=20228
+rtl=false
+selectedFont=DejaVu Sans YuanTi,12,-1,5,50,0,0,0,0,0
+
+[MainWindow]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABPgAAALKAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1281
