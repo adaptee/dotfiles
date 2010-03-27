@@ -302,3 +302,13 @@ command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 
 " convert \uXXXX to corresponding unicode character
 command! -range=% ToUnicode <line1>,<line2> :s/\\u\x\{4\}/\=eval('"' . submatch(0) . '"')/g
+
+
+" show the modificatioin made to the buffer since loading the file
+" stolen from help :DiffOrig, and add minor improvement : <silent>
+command! DiffOrig vert new | set bt=nofile | r # | silent 0d_ | diffthis
+        \ | wincmd p | diffthis
+
+" delete correspoding swap file
+command! DeleteSwp silent !rm .%.swp
+
