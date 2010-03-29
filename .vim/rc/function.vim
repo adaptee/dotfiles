@@ -39,7 +39,7 @@ function! AdjustCommaRelatedSpacing()
     endif
 endfunction
 
-" for parameter direction, 'b' means backword, 'f' means forward
+" for parameter direction, 'b' means backward, 'f' means forward
 function! SearchVisualSelectedText(direction) range
     let l:saved_reg = @"
     execute "normal! vgvy"
@@ -86,7 +86,7 @@ function! MergeBlankLinesIntoSingleLine()
     " finally, squeeze contiguous blank lines into single line
     silent! :%s/^\s*\n\{2,}/\r/
 
-    " retrun to original position
+    " return to original position
     silent! normal 't
 
     " disable highlighting search result temporarily.
@@ -283,7 +283,7 @@ function! TogglehlsearchOffOnlyOnce()
     endif
 endfunction
 
-"calc word frequency
+"calculate word frequency
 function! WordFrequency() range
   let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
   let frequencies = {}
@@ -300,15 +300,15 @@ endfunction
 
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 
-" convert \uXXXX to corresponding unicode character
+" convert \uXXXX to corresponding Unicode character
 command! -range=% ToUnicode <line1>,<line2> :s/\\u\x\{4\}/\=eval('"' . submatch(0) . '"')/g
 
 
-" show the modificatioin made to the buffer since loading the file
+" show the modification made to the buffer since loading the file
 " stolen from help :DiffOrig, and add minor improvement : <silent>
 command! DiffOrig vert new | set bt=nofile | r # | silent 0d_ | diffthis
         \ | wincmd p | diffthis
 
-" delete correspoding swap file
+" delete corresponding swap file
 command! DeleteSwp silent !rm .%.swp
 
