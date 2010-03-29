@@ -5,7 +5,7 @@
 #
 #         USAGE:  ./function.sh
 #
-#   DESCRIPTION:  Varisous bash functions
+#   DESCRIPTION:  Various bash functions
 #
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
@@ -62,7 +62,7 @@ function topN ()
 #                                 gnome  utility                            #
 #---------------------------------------------------------------------------#
 
-# open specified files with apporiate programs
+# open specified files with appropriate programs
 # usage: go FILES...
 function go ()
 {
@@ -74,7 +74,7 @@ function go ()
     done
 }
 
-# open specified location( defalut pwd) with file-manager nautilus.
+# open specified location( default pwd) with file-manager nautilus.
 # usage: fm [location]
 function fm ()
 {
@@ -110,7 +110,7 @@ function padoff ()
 #                              terminal  utility                            #
 #---------------------------------------------------------------------------#
 
-# create a backup for sepcified file/folder
+# create a backup for specified file/folder
 # usage: bak [file/folder]
 function bak()
 {
@@ -123,7 +123,7 @@ function bak()
     # strip tailing '/', if that exist
     orig_name=${orig_name%/}
 
-    # put timestamp in to the bakcup name
+    # put timestamp in to the backup name
     local backup_name="${orig_name}-$(LANG=en date '+%Y-%m-%d').bak"
 
     # make sure the specified file exist
@@ -132,7 +132,7 @@ function bak()
         return 2
     fi
 
-    # processs folder a bit differently
+    # process folder a bit differently
     if [[ -d "${orig_name}" ]] ; then
         cp -v -r "${orig_name}" "${backup_name}"
     else
@@ -243,7 +243,7 @@ function psg()
 # canonicalize path (including resolving symlinks)
 function realpath()
 {
-    # first consider accessable commnands
+    # first consider accessible commands
     if which "$1" > /dev/null ; then
         readlink -f $(which "$1")
     else
@@ -252,7 +252,7 @@ function realpath()
 }
 
 # echo bash variables more easily
-# here we use indirect refence format: ${!env_var}
+# here we use indirect reference format: ${!env_var}
 # usage: e shell_var_name...
 function e ()
 {
@@ -264,8 +264,8 @@ function e ()
 }
 
 
-# echo environment variables more easily(lower-case input is ok)
-# here we use indirect refence format: ${!env_var}
+# echo environment variables more easily(lower-case input is OK)
+# here we use indirect reference format: ${!env_var}
 # usage: ee env_var_name...
 function ee ()
 {
@@ -287,7 +287,7 @@ function null ()
     done
 }
 
-# Colorize follwoing text
+# Colorize following text
 # usage: green TEXT
 function green () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
 function red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
@@ -338,7 +338,7 @@ function purgecfg ()
 
 
 #---------------------------------------------------------------------------#
-#                               converting utilily                          #
+#                               converting utility                          #
 #---------------------------------------------------------------------------#
 
 # convert single pdf file to png files, one png file per one page
@@ -386,7 +386,7 @@ function man2pdf()
 
 
 #---------------------------------------------------------------------------#
-#                               encoding utilily                            #
+#                               encoding utility                            #
 #---------------------------------------------------------------------------#
 
 # convert filename to UTF-8 encoding
@@ -396,7 +396,7 @@ function convmv_utf8 ()
     convmv -f gbk -t utf-8 --notest "$@"
 }
 
-# tranform from gb* encoding to utf-8; old file is automatically renamed
+# transform from gb* encoding to utf-8; old file is automatically renamed
 # usage: gb2u8 files...
 function gb2u8()
 {
@@ -412,7 +412,7 @@ function gb2u8()
     done
 }
 
-# tranform from utf-8 encoding to gb*; old file is automatically renamed
+# transform from utf-8 encoding to gb*; old file is automatically renamed
 # usage: u82gb files...
 function u82gb()
 {
@@ -430,7 +430,7 @@ function u82gb()
 
 }
 
-# tranform from utf-16 encoding into utf-8; old file is automatically renamed
+# transform from utf-16 encoding into utf-8; old file is automatically renamed
 # usage: u162u8 files...
 function u162u8()
 {
@@ -447,7 +447,7 @@ function u162u8()
     done
 }
 
-# tranform from utf-16 encoding into gbk; old file is automatically renamed
+# transform from utf-16 encoding into gbk; old file is automatically renamed
 # usage: u162gb files...
 function u162gb()
 {
@@ -467,7 +467,7 @@ function u162gb()
 #                           programming related                             #
 #---------------------------------------------------------------------------#
 
-# adjust the indentation of xml files in place
+# adjust the indentation of XML files in place
 # usage: tidyxml xmlfiles...
 function tidyxml ()
 {
@@ -490,8 +490,8 @@ function git_diff()
     git diff --no-ext-diff -w "$@" | vim -R -
 }
 
-# set specifiles as 'assume unchanged', i.e, not tracking the modification in
-# the workding tree;
+# set specifies as 'assume unchanged', i.e, not tracking the modification in
+# the working tree;
 # usage:git_set_assume_unchanged
 function git_set_assume_unchanged ()
 {
@@ -517,7 +517,7 @@ function randomstr()
 #                               network related                             #
 #---------------------------------------------------------------------------#
 
-# download file. use "$*" to protect  weird charater within args
+# download file. use "$*" to protect  weird character within args
 function get ()
 {
     # url is the last argument; here we make use the indirect expansion feature
@@ -544,14 +544,14 @@ function  myip ()
 }
 
 
-# delelte all mails in the mailbox
+# delete all mails in the mailbox
 # usage: clearmail
 function clearmail ()
 {
     echo 'd *' | mail -N
 }
 
-# share folder throuth http://localhost:8000
+# share folder through http://localhost:8000
 # usage: share folder-path
 function share()
 {
@@ -559,7 +559,7 @@ function share()
     python -m SimpleHTTPServer &
 }
 
-# get blacklist from authority and generator the commmads
+# get blacklist from authority and generator the commands
 # for blocking these suspicious ip
 # usage: blacklist
 function blacklist()

@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------#
 
 
-# color name defintions ,which provide for better readability
+# color name definitions ,which provide for better readability
 
 # tput provides better portability for these colors definitions.
 if  which tput &> /dev/null ;then
@@ -32,7 +32,7 @@ if  which tput &> /dev/null ;then
 
 else
 
-    # when tput is unavailabe,fall back to hard-coded definition.
+    # when tput is unavailable,fall back to hard-coded definition.
     BLACK='\e[0;30m'
     RED='\e[0;31m'
     GREEN='\e[0;32m'
@@ -108,10 +108,10 @@ case "$TERM" in
 esac
 
 
-# PS3 is used when encounting select statement.
+# PS3 is used when encountering select statement.
 export PS3='Choose one option by number: '
 
-# PS4 wiil be used when 'set -x' is setted, for tracing purpose.
+# PS4 will be used when 'set -x' is set, for tracing purpose.
 export PS4='line $LINENO: '
 
 
@@ -152,13 +152,13 @@ shopt -s nocaseglob
 #return empty string if no matching is found
 shopt -s nullglob
 
-# use emacs-style in terminal-input
+# use Emacs-style in terminal-input
 set -o emacs on
 
 # I hate noise
 set bell-style none
 
-# list completion candicate immediately after pressing 'TAB'
+# list completion candidate immediately after pressing 'TAB'
 set show-all-if-ambiguous on
 
 # Let me have core dumps
@@ -186,14 +186,14 @@ export HISTIGNORE="pwd:l:ls:ll:la:history:rm"
 #--------------------------------grep related-------------------------------#
 
 # Ignore binary files
-# recurse by default
+# recursive by default
 # highlight target keyword in results
 export GREP_OPTIONS="--binary-files=without-match --directories=recurse --color=auto"
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 
 #--------------------------------bash related---------------------------------#
 CDPATH=".:..:~:~/audio:~/book:~/code:~/down:~/vbox:/media"
-# ignore file with those suffix when perforaming filename-auto-completion
+# ignore file with those suffix when performing filename-auto-completion
 FIGNORE='.o:.bak:.tmp:.orig'
 
 #-----------------------------------development-------------------------------#
@@ -201,7 +201,7 @@ FIGNORE='.o:.bak:.tmp:.orig'
 # for reference:
 # http://udrepper.livejournal.com/11429.html
 # http://www.pixelbeat.org/settings/.bashrc
-# enbale the auto init & clear feature of malloc() and free() in glibc
+# enable the auto init & clear feature of malloc() and free() in glibc
 #export MALLOC_CHECK_=3
 #export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
 

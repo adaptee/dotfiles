@@ -5,7 +5,7 @@
 #
 #         USAGE:  ./alias.sh
 #
-#   DESCRIPTION:  where alias is placed toghether.
+#   DESCRIPTION:  where alias is placed together.
 #
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
@@ -57,7 +57,7 @@ alias newest='ll -t * | head -1'
 # list file by size in descending order; sub-folder not considered.
 alias bigfile='ll -S'
 
-# count item under current foleder;
+# count item under current folder;
 alias num='expr $(ll | wc -l) - 1'
 
 
@@ -83,7 +83,7 @@ alias dir='dirs -v'
 #---------------------------------------------------------------------------#
 
 #show folder hierarchy in tree-view
-# list size in human-friednly way, also apply nice ASCII line graph.
+# list size in human-friendly way, also apply nice ASCII line graph.
 alias tree='tree -h -A -N '
 # only list folder.
 alias treed='tree -d'
@@ -96,7 +96,7 @@ alias treed='tree -d'
 # df improved: show FS type, human-friendly size and ignore pseudo FS.
 alias df='LANG=en df -h -T -x tmpfs | grep -vE "(gvfs|procbususb|rootfs)"'
 
-# show size in human-friednly way.
+# show size in human-friendly way.
 alias du='du -h'
 
 # only show the total size.
@@ -155,10 +155,10 @@ alias kad='killall -9 gnome-do'
 alias kag='killall -9 mplayer;killall -9 gmplayer;killall -9 smplayer'
 
 
-#kail all backgound jobs
+#kill all background jobs
 alias kajobs='kill "$@" $(jobs -p)'
 
-# pause sepcified process.
+# pause specified process.
 alias pause='kill -STOP'
 
 # list all jobs with its process id.
@@ -241,7 +241,7 @@ alias ax='axel'
 # download whole site.
 alias mirror='wget --random-wait -c -r -p -e robots=off -U mozilla'
 
-# download viedo from youtube and preserce original title.
+# download video from youtube and preserve original title.
 alias you='youtube-dl -t'
 
 # dial-up quickly
@@ -309,7 +309,7 @@ alias vd='vimdiff'
 alias vi='vim -p'
 alias vim='vim -p'
 alias wh='which'
-# '-w' means supporting wildcards
+# '-w' means supporting wild-cards
 alias what='whatis -w'
 alias where='whereis'
 alias x='xargs'
