@@ -16,14 +16,14 @@ set guioptions-=m       "No menu
 "make highlighted text yanked into global selection automatically
 set guioptions+=a
 
-"don't show boring scrollbar
+"don't show boring scroll-bar
 set guioptions-=r
 set guioptions-=l
 
 "make the window where mouse pointer on become current ; enumerate X-window style
 set mousefocus
 
-"maxmize the window when started
+"maximize the window when started
 if has ("win32")
     autocmd GUIEnter * simalt ~x
 elseif has ("unix")
@@ -47,11 +47,11 @@ map <silent> <A-F1> :call ToggleGUIMenuBar()<CR>
 set guitablabel=%N.%t\ %m
 
 
-"customize tab's tooltip
+"customize tab's tool-tip
 set guitabtooltip=%!GuiTabToolTip()
 
 
-"enable edit area tooltip, after cursor staying for 800ms;for example, on a folded area
+"enable edit area tool-tip, after cursor staying for 800ms;for example, on a folded area
 set ballooneval
 set balloondelay=800
 set balloonexpr=MyBalloonExpr()

@@ -50,10 +50,10 @@ nnoremap <Leader>u :BufExplorer<CR>
 "------------------------------------------------------------------------------------------------------
 " code_complete.vim( prompt function prototype in the fly)
 "------------------------------------------------------------------------------------------------------
-"the defaut hotkey <tab> will make plugin supertab does not work.
+"the default hotkey <tab> will make plug-in supertab does not work.
 "let g:completekey = "<tab>"   "hotkey
 
-"below are some candicate hotkeys.
+"below are some candidate hotkeys.
 let g:completekey = "<Leader><tab>"
 "let g:completekey = "<F8>"
 
@@ -61,10 +61,10 @@ let g:completekey = "<Leader><tab>"
 "------------------------------------------------------------------------------------------------------
 " csapprox.vim( simulate gvim-only colorschemes work transparently in terminal mode )
 "------------------------------------------------------------------------------------------------------
-" suprres the warning messages outputed when vim is compile without 'gui' support.
+" suppress the warning messages outputted when vim is compile without 'gui' support.
 let CSApprox_verbose_level=0
 
-" do not load this plugin under text console
+" do not load this plug-in under text console
 if $TERM == "linux"
    let g:CSApprox_loaded=1
 endif
@@ -153,7 +153,7 @@ let Grep_Skip_Files = '*.bak *.o *.obj *.pdb *.exe *.dll'
 "------------------------------------------------------------------------------------------------------
 " lookupfile.vim ( locate file by various means, and providing auto-completion feature )
 "------------------------------------------------------------------------------------------------------
-" orverrid the default mapping of <F5>
+" override the default mapping of <F5>
 nmap <silent> <leader>l <Plug>LookupFile<cr>
 
 let g:LookupFile_TagExpr                = string('/home/whodare/mplayer-1.0~rc2/filenametags')
@@ -206,18 +206,18 @@ let MRU_Max_Entries = 200
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 
 "------------------------------------------------------------------------------------------------------
-" NERD_commenter.vim ( A plugin that allows for easy commenting of code for many filetypes. )
+" NERD_commenter.vim ( A plug-in that allows for easy commenting of code for many filetypes. )
 "------------------------------------------------------------------------------------------------------
 
 "------------------------------------------------------------------------------------------------------
-" NERD_Tree.vim( A tree explorer plugin for navigating the file-system)
+" NERD_Tree.vim( A tree explorer plug-in for navigating the file-system)
 "------------------------------------------------------------------------------------------------------
 " use <F3> to start NERD_Tree; using current file's location as root node
 nnoremap <silent> <F3> :NERDTreeToggle .<CR>
 
 let NERDTreeCaseSensitiveSort = 1           " make name case-sensitive
 let NERDTreeIgnore            = ['\~$']     " innore auto-backup file
-let NERDTreeShowBookmarks     = 1           " set showing bookmark as default behaviror
+let NERDTreeShowBookmarks     = 1           " set showing bookmark as default behavior
 let NERDTreeShowLineNumbers   = 1           " show number as prefix
 let NERDTreeIgnore            = ['\.swp$', '\~$','\.vcproj$','\.ncb$','\.sln$','\.suo$']
 
@@ -246,7 +246,7 @@ let OmniCpp_MayCompleteArrow    = 1
 let OmniCpp_MayCompleteScope    = 1
 
 "------------------------------------------------------------------------------------------------------
-" pydiction ( A nice python code completion plugin)
+" pydiction ( A nice python code completion plug-in)
 "------------------------------------------------------------------------------------------------------
 let g:pydiction_location = $VIMLOCAL.'/ftplugin/python/pydiction/complete-dict'
 
@@ -345,7 +345,7 @@ let Tlist_Show_One_File           = 1       " only show current file's tags
 "autocmd FileType taglist map <buffer> <Leader>t t
 
 "------------------------------------------------------------------------------------------------------
-" ToggleWord.vim ( oggle words like:'true'=>'false', 'True'=>'False' etc )
+" ToggleWord.vim ( toggle words like:'true'=>'false', 'True'=>'False' etc )
 "------------------------------------------------------------------------------------------------------
 "toggle "true" to "false", "left right"
 nmap T :ToggleWord<CR>

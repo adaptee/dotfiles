@@ -57,7 +57,7 @@ nnoremap <M-5> <Esc>:setlocal<Space>invspell<CR>:setlocal<Space>spell?<CR>
 "set keywordprg = manall
 "set keywordprg = myman
 
-"lookup current word in the dictionary
+"look up current word in the dictionary
 nmap <Leader>k :!clear;sdcv "<cword>"<CR>
 
 " Use ':W'" to write to files even when we forget to use sudo when launching vim
