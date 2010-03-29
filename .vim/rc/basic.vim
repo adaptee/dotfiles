@@ -53,7 +53,7 @@ set backspace=indent,eol,start
 " or the :tab all command.
 set tabpagemax=30
 
-"Enable filetype plugin indent
+"Enable filetype plug-in indent
 filetype on
 filetype plugin on
 filetype indent on
@@ -131,7 +131,7 @@ set scrolloff=5
 " leading indicator for wrapped lines
 "set showbreak=>>
 
-" alway info us whenever anything is changed via Ex command;default threshold value is 2
+" always info us whenever anything is changed via Ex command;default threshold value is 2
 set report=0
 
 " differ options
@@ -141,10 +141,10 @@ set diffopt=filler,iwhite
 "match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
 
 "--------------------------------------------------------------------------"
-"                           encodings & locale                             "
+"                           encoding & locale                             "
 "--------------------------------------------------------------------------"
 
-" use utf-8 as VIM's default internal encoding scheme
+" use utf-8 as Vim's default internal encoding scheme
 set encoding=utf-8
 
 "" Make VIM understand following kinds of encoding
@@ -512,26 +512,47 @@ nnoremap <silent><leader>9 9gt<ESC>
 "--------------------------------------------------------------------------"
 
 "use abbreviation to auto-correct the typo
-iab teh     the
-iab scr     src
-iab taht    that
-iab sned    send
-iab itme    item
-iab evla    eval
-iab prot    port
-iab serach  search
-iab cosnt   const
-iab toogle  toggle
-iab partion partition
-iab htis     this
-iab tihs     this
-iab funciton function
-iab fucntion function
-iab funtion  function
-iab retunr   return
-iab reutrn   return
-iab sefl     self
-iab eslf     self
+iab teh         the
+iab scr         src
+iab taht        that
+iab sned        send
+iab itme        item
+iab evla        eval
+iab prot        port
+iab serach      search
+iab cosnt       const
+iab toogle      toggle
+iab partion     partition
+iab htis        this
+iab tihs        this
+iab funciton    function
+iab fucntion    function
+iab funtion     function
+iab retunr      return
+iab reutrn      return
+iab sefl        self
+iab eslf        self
+iab candicate   candidate
+iab seperate    separate
+iab enbale      enable
+iab unavailabe  unavailable
+iab encounting  encountering
+iab defalut default
+iab sepcified  specified
+iab bakcup backup
+iab processs process
+iab canonicalize canonicalize
+iab accessable accessible
+iab commmand command
+iab commmad  command
+iab follwo follow
+iab utilily utility
+iab tranform transform
+iab specifiles specifies
+iab charater character
+iab maxmize maximize
+iab approriate appropriate
+iab throuth through
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
 iab ok      OK
