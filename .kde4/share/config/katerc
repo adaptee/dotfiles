@@ -2,7 +2,7 @@
 update_info=kate-2.4.upd:kate2.4
 
 [Desktop Entry]
-DefaultProfile=Shell.profile
+DefaultProfile=Konsole.profile
 
 [Favorite Profiles]
 Favorites=
