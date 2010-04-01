@@ -312,3 +312,32 @@ command! DiffOrig vert new | set bt=nofile | r # | silent 0d_ | diffthis
 " delete corresponding swap file
 command! DeleteSwp silent !rm .%.swp
 
+" show simple regex reference
+command! Regex tabnew ~/.vim/doc/regexpref.txt
+
+" fill previously visual selected chars with SPACEs
+" BUG: fail on multilines
+function! FillWithSpace()
+
+    " implicit argl:
+    " previously visual selceted characters, stored in register @s
+
+    " remember original position
+    normal ms
+
+    let l:visual_selected_chars = @s
+    "echo l:visual_selected_chars
+
+    let l:char_num = len(l:visual_selected_chars)
+
+    "let l:commands = l:char_num . 'r ' . '\e'
+    let l:commands = l:char_num . 'r '
+
+    execute "normal" . l:commands
+
+    " restore original position
+    normal 's
+
+endfunc
+
+vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>

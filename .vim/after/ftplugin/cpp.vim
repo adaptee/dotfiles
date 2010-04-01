@@ -12,3 +12,6 @@ call omni#cpp#complete#Init()
 " to explicitly set equalprg to empty, because external command
 " indent does not work well with .cpp files
 setlocal equalprg=
+
+
+setlocal makeprg=g++\ %
