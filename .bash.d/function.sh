@@ -619,3 +619,55 @@ function greps()
     fi
 }
 
+
+# fix inappropriate file permission mode
+function fix-file-perm ()
+{
+    find . -type -f -perm 400 -exec chmod 644 {} \;
+}
+
+
+# fix inappropriate dir permission mode
+function fix-dir-perm ()
+{
+    find . -type d \( -perm 700 -o -perm 500 \) -exec chmod 755 {} \;
+}
+
+
+# automate merge operation in ~/dotfiles  repo
+function dotfiles-merge ()
+{
+    git checkout kde && git merge common && git checkout gnome && git merge common && git checkout common
+}
+
+# build qterm
+function build-qterm()
+{
+    cd ~/code/qterm/build
+
+    make clean
+    cmake .. -DCMAKE_INSTALL_PREFIX=/usr/ -DQTERM_ENABLE_SCRIPT_DEBUGGER=OFF -DQTERM_ENABLE_PHONON=OFF -DQTERM_ENABLE_DBUS=OFF
+    make
+
+    cd -
+}
+
+# show package size in ascending order
+function pac-size ()
+{
+    sort -k2 -n ~/.pac-size.list | column -t
+}
+
+# list all un-needed packages
+function pac-nouse ()
+{
+    pacman -Qtdq
+}
+
+# save core dump in one location ,and with better name
+# user-executable-signalnumber.core
+function core-pattern ()
+{
+    echo '/tmp/coredump/%u-%e-%s.core' | sudo tee /proc/sys/kernel/core_pattern
+}
+
