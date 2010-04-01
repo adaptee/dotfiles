@@ -22,10 +22,11 @@ deflogin on
 nonblock on
 #defutf8 on
 
-# message will be shown for 10 secods if not disruptted 
+# message will be shown for 10 secods if not disruptted
 msgwait 10
 
-#altscreen on
+# make sure the screen is restore after exiting from vim
+altscreen on
 
 
 #----------------------------------------------------------------------------------------
@@ -64,10 +65,10 @@ bind b focus bottom
 
 
 # make window switching more easy
-bind h  prev        
-bind ^h prev       
-bind l  next        
-bind ^l next       
+bind h  prev
+bind ^h prev
+bind l  next
+bind ^l next
 
 # make life easier, f1-f10 selects screens 0-9
 #bindkey -k k1 select 1
