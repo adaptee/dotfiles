@@ -17,15 +17,24 @@ ShowPopup=false
 Favorites=
 
 [Shortcuts]
+close-active-terminal=none
+close-session=none
+decrease-window-width=none
+file_quit=none
 help_whats_this=none
+increase-window-width=none
 move-session-left=Shift+Left
 move-session-right=Shift+Right
 new-session=Alt+N
 next-session=Alt+Right
+next-terminal=none
 previous-session=Alt+Left
+previous-terminal=none
 rename-session=Alt+S
+view-full-screen=none
 
 [Window]
 DynamicTabTitles=true
+ToggleToFocus=true
 Height=45
 Width=100
