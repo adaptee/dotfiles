@@ -148,7 +148,7 @@ set diffopt=filler,iwhite
 set encoding=utf-8
 
 "" Make VIM understand following kinds of encoding
-set fileencodings=ucs-bom,utf-8,gbk,cp936,chinese,taiwan,japan,korea,latin1
+set fileencodings=ucs-bom,utf-8,sjis,japan,cp936,gb18030,chinese,taiwan,big5,korea,latin1
 
 " show ambiguous character in two column width
 if ( has('multi_byte') && v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)' )
@@ -244,10 +244,10 @@ nnoremap <C-k> 3k
 vnoremap <C-k> 3k
 
 nnoremap <Space> <C-F>
-nnoremap <Leader><Space> <C-B>
-
 vnoremap <Space> <C-F>
-vnoremap <Leader><Space> <C-B>
+
+nnoremap <S-Space> <C-B>
+vnoremap <S-Space> <C-B>
 
 "enhance the function of '%' and '#'
 source $VIMRUNTIME/macros/matchit.vim
@@ -553,6 +553,8 @@ iab charater character
 iab maxmize maximize
 iab approriate appropriate
 iab throuth through
+iab hlep help
+cab hlep help
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
 iab ok      OK

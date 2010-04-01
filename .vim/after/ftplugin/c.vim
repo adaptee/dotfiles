@@ -30,5 +30,5 @@ iab r0 return 0;
 " current comment line.
 "setlocal comments-=://
 
-
+setlocal makeprg=gcc\ %
 

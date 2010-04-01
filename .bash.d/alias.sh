@@ -51,11 +51,11 @@ alias lf='ls -hl -d */'
 # In case you type 'ls' as 'sl'....
 alias sl='ls'
 
-# find most-recently modified file under current folder; sub-folder not considered.
-alias newest='ll -t * | head -1'
+## find most-recently modified file under current folder; sub-folder not considered.
+alias latest='ll -t * | head -1'
 
-# list file by size in descending order; sub-folder not considered.
-alias bigfile='ll -S'
+## list file by size in descending order; sub-folder not considered.
+alias bigfile='ll -S| head -3'
 
 # count item under current folder;
 alias num='expr $(ll | wc -l) - 1'
@@ -82,8 +82,9 @@ alias dir='dirs -v'
 #                                 tree alias                                #
 #---------------------------------------------------------------------------#
 
-#show folder hierarchy in tree-view
-# list size in human-friendly way, also apply nice ASCII line graph.
+# show folder hierarchy in tree-view
+# '-h' : list size in human-friendly way,
+# '-A: : apply nice ASCII line graph.
 alias tree='tree -h -A -N '
 # only list folder.
 alias treed='tree -d'
@@ -116,8 +117,6 @@ du2( )
 alias mnt='mount |grep -E "ext[2-4]|reiserfs|vfat|ntfs|xfs|jfs|zfs" |column -t'
 # remount all partition.
 alias mnta='sudo mount -a'
-# mount iso image..
-alias mntiso='sudo mount -t iso9660 -o user loop ro utf8'
 
 #---------------------------------------------------------------------------#
 #                                 chmod alias                               #
@@ -150,9 +149,10 @@ alias ka9='killall -9'
 
 alias kaa='killall -9 amule'
 alias kaf='killall -9 firefox'
+alias kas='killall swiftfox-bin'
 alias kad='killall -9 gnome-do'
 #kill all mplayer, useful when playing broken video.
-alias kag='killall -9 mplayer;killall -9 gmplayer;killall -9 smplayer'
+alias kam='killall -9 mplayer;killall -9 gmplayer;killall -9 smplayer'
 
 
 #kill all background jobs
@@ -220,8 +220,6 @@ alias smb='vim /etc/samba/smb.conf'
 #---------------------------------------------------------------------------#
 
 alias pi='pinger'
-alias pingl='ping 127.0.0.1'
-alias pingg='ping 192.168.1.1'
 
 alias dns='cat /etc/resolv.conf'
 
@@ -358,8 +356,6 @@ alias hd2='od -Ax -tx1z -v'
 alias im-switch='im-switch -z default'
 alias zhcon='zhcon --utf8 --drv=fb'
 
-# list all un-needed packages
-alias pac-nouse='pacman -Qtdq'
 
 # show process info in ps style
 alias fuser='fuser -v'
@@ -367,3 +363,11 @@ alias fuser='fuser -v'
 # use MB as unit
 alias free='free -m'
 
+alias sp='aspell check'
+alias dict='diction -b -s -L en'
+
+alias em='emacs'
+# lanuch the console version of emacs
+alias emc='emacs -nw'
+
+alias aml='tail ~/.aMule/logfile'

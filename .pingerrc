@@ -50,13 +50,17 @@ OPTIONS SECTION:
 title=standard set
 
 HOSTS SECTION:
-#212.80.76.18=seznam
 #66.249.93.99=google,3000,10000,2000
 ##123.45.67.89=somehost,arp,nolog,3000
 #www.gnu.org=GNU web
-#147.32.119.96=MyBox
+127.0.0.1=Localhost
 192.168.1.1=Gateway
-google.com=Google
 newsmth.net=Smth
+acfun.cn=ACfun
+google.com=Google
+blogspot.com=Blogspot
 youtube.com=Youtube
 wikipedia.org=Wiki
+twitter.com=Twitter
+facebook.com=FaceBook
+

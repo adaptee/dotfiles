@@ -283,3 +283,10 @@ complete -cf sudo
 # only provide .Z .gz and .tgz file to gunzip
 complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 
+#---------------------------------------------------------------------------#
+#                               Misc                                        #
+#---------------------------------------------------------------------------#
+
+# allow wtf to use personal acronym database
+export ACRONYMDB=$(echo "$HOME/.acronymdb $(ls /usr/share/misc/acronyms*)")
+
