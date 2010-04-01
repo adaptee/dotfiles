@@ -13,7 +13,7 @@ endif
 set guioptions-=T       "No toolbar
 set guioptions-=m       "No menu
 
-"make highlighted text yanked into global selection automatically
+"make highlighted text yanked into global selection (*) automatically
 set guioptions+=a
 
 "don't show boring scroll-bar
