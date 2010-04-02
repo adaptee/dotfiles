@@ -310,7 +310,7 @@ command! DiffOrig vert new | set bt=nofile | r # | silent 0d_ | diffthis
         \ | wincmd p | diffthis
 
 " delete corresponding swap file
-command! DeleteSwp silent !rm .%.swp
+command! DeleteSwp silent !rm .%.sw*
 
 " show simple regex reference
 command! Regex tabnew ~/.vim/doc/regexpref.txt
@@ -341,3 +341,10 @@ function! FillWithSpace()
 endfunc
 
 vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>
+
+
+"variant of getcwd(): un-expand $HOME to ~
+function! GetCWD()
+    return substitute(getcwd(), $HOME,'~','' )
+endfunc
+

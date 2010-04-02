@@ -104,11 +104,29 @@ set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 
 "set wildmode=list:full
 
+" customize the filling char used in statusline，vertical separator ,diff, etc
+set fillchars=stl:\ ,stlnc:\ ,vert:\ ,diff:-
+
 "always show status line
 set laststatus=2
 
-"customize the status-line
-set statusline=%2*[%-1.3n]%0*\ %F%m%r%h%w\ [GIT=%{GitBranch()}]\ [FMT=%{&ff}]\ [TYPE=%Y]\ [ENC=%{&fenc}]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [LEN=%L]\ [%p%%]
+"" make statusline customization easier
+set statusline=%2*[%-1.3n]%0*               "" buffer number
+set statusline+=\ [%{GetCWD()}]             "" current directory
+set statusline+=\ %t                        "" file name only
+set statusline+=%m                          "" buffer modified , or not
+set statusline+=%r                          "" file readonly, or not
+set statusline+=%h                          "" help buffer , nor not
+set statusline+=%w                          "" preview window, or not
+set statusline+=%\=                         "" after here, justify to the right
+set statusline+=\ [POS=%l,%c,%o]            "" line, column, byte-offset
+set statusline+=\ [HEX=0x%02B]              "" show current char's hexidecimal code point
+set statusline+=\ [%LL,%p%%]                "" percentage by line
+set statusline+=%<                          "" truncate from here, if needed
+set statusline+=\ [ENC=%{&fenc}]            "" show file encoding
+set statusline+=\ [GIT=%{GitBranch()}]      "" show which branch we are on
+set statusline+=\ [FMT=%{&ff}]              "" unix ,or dos
+set statusline+=\ [TYPE=%{&ft}]             "" show file type
 
 "show normal-mode command in the end of last line.
 set showcmd
@@ -431,6 +449,8 @@ set browsedir=buffer
 
 " automatically change $CWD to where the file is located
 set autochdir
+" double safe :)
+autocmd BufEnter * lcd %:p:h
 
 "use Ctrl+Left/Right arrow to cycle the buffer list
 nmap <C-right>    <ESC>:bn<CR>
@@ -471,8 +491,6 @@ nnoremap <C-P>      <C-W>W
 " put new window on right side of the original one.
 "set splitright
 
-" make splitters between windows be blank, with no boring dashes
-set fillchars=vert:\ ,stl:\ ,stlnc:\
 
 "--------------------------------------------------------------------------"
 "                                   tab page                               "
@@ -591,7 +609,8 @@ cab IM  imap
 cab UM  unmap
 cab R   registers
 cab S   set
-cab V   vimgrep
+cab V   verbose
+cab P   pwd
 
 "--------------------------------------------------------------------------"
 "                               quickfix mode                              "
