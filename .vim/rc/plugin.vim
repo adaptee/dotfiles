@@ -364,6 +364,21 @@ nmap T :ToggleWord<CR>
 " visualmark.vim ( Visual mark, similar to UltraEdit's bookmark )
 "------------------------------------------------------------------------------------------------------
 
+"------------------------------------------------------------------------------------------------------
+" visincr.vim (increase/decrease visual selected columns)
+"------------------------------------------------------------------------------------------------------
+
+"" :I        ;; incrase/decrase digit , left justified
+"" :II       ;; incrase/decrase digit , right justified
+"" :IX       ;; incrase/decrase HEX digit
+"" :IO       ;; incrase/decrase OCTAL digit
+"" :ID       ;; incrase/decrase day names, mondey,tuesday,etc
+"" :IA       ;; incrase/decrase alphabet
+"" :IYMD     ;; increase/decrace date, year/month/day
+"" :IMDY     ;; increase/decrace date, month/year/day
+"" :IMDY     ;; increase/decrace date, month/year/day
+
+
 
 "------------------------------------------------------------------------------------------------------
 " vimballPlugin.vim ( vim-based archiver: builds, extracts, and preview )
