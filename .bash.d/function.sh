@@ -665,9 +665,9 @@ function pac-nouse ()
 }
 
 # save core dump in one location ,and with better name
-# user-executable-signalnumber.core
+# executable-signalnumber.core
 function core-pattern ()
 {
-    echo '/tmp/coredump/%u-%e-%s.core' | sudo tee /proc/sys/kernel/core_pattern
+    echo '/tmp/coredump/%e-%s.core' | sudo tee /proc/sys/kernel/core_pattern
 }
 
