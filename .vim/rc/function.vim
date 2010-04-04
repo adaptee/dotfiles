@@ -316,13 +316,12 @@ command! DeleteSwp silent !rm .%.sw*
 command! Regex tabnew ~/.vim/doc/regexpref.txt
 
 " quick way ot open some official doc
-command! Ref    :tab help quickref.txt
+command! Quick  :tab help quickref.txt
 command! Index  :tab help index.txt
 command! Tips   :tab help tips.txt
 
-
-" reverse line orders ; stolen from usr_10.txt
-command! -range=% Reverse g/^/m 0 | nohlsearch
+" reverse lines orders ; stolen from usr_12.txt
+command! -range=% Reverse :<line1>,<line2> global/^/m <line1>-1 | nohlsearch
 
 " convert paragraph to single line
 " stolen from usr_25.txt
