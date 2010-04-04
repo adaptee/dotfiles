@@ -335,6 +335,30 @@ search_in_gigapedia = function (args)
 }
 EOF
 
+js<<EOF
+search_in_vim_org = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://www.vim.org/scripts/script_search_results.php?keywords='
+    var suffix       = '&script_type=&order_by=rating&direction=descending&search=search';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+js<<EOF
+search_in_stackoverflow = function (args)
+{
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://stackoverflow.com/search?q='
+    var full_url     = prefix + query_string ;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
 " search in Amazon.com
 js<<EOF
 search_in_amazon = function (args)
@@ -470,9 +494,12 @@ noremap <Leader>m :Man<Space>
 command! -nargs=* Gigapedia :js search_in_gigapedia("<args>")
 noremap <Leader>g :Gigapedia<Space>
 
-" Search in netyi.net
-command! -nargs=* Netyi :js search_in_netyi("<args>")
-"noremap <Leader>n  :Netyi<Space>
+" search vim.org
+command! -nargs=* Vim :js search_in_vim_org("<args>")
+
+" search in stackoverflow.com
+command! -nargs=* Stack :js search_in_stackoverflow("<args>")
+
 
 command! -nargs=* VeryCD :js search_in_verycd("<args>")
 noremap v :VeryCD<Space>
