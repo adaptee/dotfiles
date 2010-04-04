@@ -315,6 +315,19 @@ command! DeleteSwp silent !rm .%.sw*
 " show simple regex reference
 command! Regex tabnew ~/.vim/doc/regexpref.txt
 
+" quick way ot open some official doc
+command! Ref    :tabnew  $VIMRUNTIME/doc/quickref.txt
+command! Index  :tabnew  $VIMRUNTIME/doc/index.txt
+command! Tips   :tabnew  $VIMRUNTIME/doc/tips.txt
+
+
+" reverse line orders ; stolen from usr_10.txt
+command! -range=% Reverse g/^/m 0 | nohlsearch
+
+" convert paragraph to single line
+" stolen from usr_25.txt
+command! -range=% Para2Line g/\S/,/^\s*$/join
+
 " fill previously visual selected chars with SPACEs
 " BUG: fail on multilines
 function! FillWithSpace()
