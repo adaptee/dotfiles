@@ -316,9 +316,9 @@ command! DeleteSwp silent !rm .%.sw*
 command! Regex tabnew ~/.vim/doc/regexpref.txt
 
 " quick way ot open some official doc
-command! Ref    :tabnew  $VIMRUNTIME/doc/quickref.txt
-command! Index  :tabnew  $VIMRUNTIME/doc/index.txt
-command! Tips   :tabnew  $VIMRUNTIME/doc/tips.txt
+command! Ref    :tab help quickref.txt
+command! Index  :tab help index.txt
+command! Tips   :tab help tips.txt
 
 
 " reverse line orders ; stolen from usr_10.txt
