@@ -13,5 +13,3 @@ call omni#cpp#complete#Init()
 " indent does not work well with .cpp files
 setlocal equalprg=
 
-
-setlocal makeprg=g++\ %

@@ -30,5 +30,6 @@ iab r0 return 0;
 " current comment line.
 "setlocal comments-=://
 
-setlocal makeprg=gcc\ %
 
+" allow % to jump between '='  and ';' in assignment
+set matchpairs+==:;
