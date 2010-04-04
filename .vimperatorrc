@@ -245,11 +245,19 @@ split_and_rejoin_args = function ( args)
     query_string +=  keywords[length-1] ;
 
     // this query string should be encoded, becase it may contain special charatctr(e.g,chinese word)
-    query_string = encodeURIComponent(query_string);
+    // query_string = encodeURIComponent(query_string);
 
     return query_string;
 }
+
+make_keywords_usable_in_url = function (args)
+{
+    return encodeURIComponent(split_and_rejoin_args(args));
+}
+
 EOF
+
+
 
 
 "Show the feed-button, even if the address-bar is not displayed"
@@ -270,7 +278,7 @@ EOF
 js<<EOF
 search_in_verycd = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://www.verycd.com/search/folders?field=title+s+contents&kw=';
     var suffix       = '&rev=true&q=&from=&c2=0&range=&catalog=&status=all&sort=';
     var full_url     = prefix + query_string + suffix;
@@ -290,7 +298,7 @@ EOF
 js<<EOF
 search_in_douban = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://www.douban.com/subject_search?search_text=';
     var full_url     = prefix + query_string;
 
@@ -302,7 +310,7 @@ EOF
 js<<EOF
 search_in_mp3 = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://mp3.sogou.com/music.so?pf=mp3&as=&st=&ac=1&query=';
     var suffix       = '&class=1';
     var full_url     = prefix + query_string;
@@ -315,7 +323,7 @@ EOF
 js<<EOF
 search_in_netyi = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://netyi.net/Search.aspx?query=';
     var full_url     = prefix + query_string;
 
@@ -327,7 +335,7 @@ EOF
 js<<EOF
 search_in_gigapedia = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://gigapedia.info/1/';
     var full_url     = prefix + query_string;
 
@@ -338,6 +346,7 @@ EOF
 js<<EOF
 search_in_vim_org = function (args)
 {
+    // vim.org use 'key1+key2' style
     var query_string = split_and_rejoin_args(args);
     var prefix       = 'http://www.vim.org/scripts/script_search_results.php?keywords='
     var suffix       = '&script_type=&order_by=rating&direction=descending&search=search';
@@ -350,6 +359,7 @@ EOF
 js<<EOF
 search_in_stackoverflow = function (args)
 {
+    // stackoverflow use 'key1+key2' style
     var query_string = split_and_rejoin_args(args);
     var prefix       = 'http://stackoverflow.com/search?q='
     var full_url     = prefix + query_string ;
@@ -363,7 +373,7 @@ EOF
 js<<EOF
 search_in_amazon = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://www.amazon.com/s/ref=nb_ss_gw?url=search-alias%3Dstripbooks&field-keywords=';
     var full_url     = prefix + query_string;
 
@@ -374,7 +384,7 @@ EOF
 js<<EOF
 search_in_firefox_addon = function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'https://addons.mozilla.org/zh-CN/firefox/search?q=';
     var suffix       = '&cat=all';
     var full_url     = prefix + query_string;
@@ -389,7 +399,7 @@ EOF
 js<<EOF
 lookup_youdao_dictionary= function (args)
 {
-    var query_string = split_and_rejoin_args(args);
+    var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://dict.yodao.com/search?q=';
     var suffix       = '&btnindex=&ue=utf8&keyfrom=dict.index';
     var full_url     = prefix + query_string + suffix;
