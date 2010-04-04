@@ -12,7 +12,17 @@ language messages en_US.utf-8
 let g:mapleader =","
 
 "command-line history limitation
-set history=1000
+set history=5000
+
+" viminfo setting : what items are stored and restored?
+set viminfo = ""
+set viminfo+='1000  " number of files whose mark are saved
+set viminfo+=/5000  " size of search history
+set viminfo+=:5000  " size of Ex command history
+set viminfo+=@5000  " size of Ex command history
+set viminfo+=%      " save buffer list
+set viminfo+=h      " disbale the effect of hlsearch after loading viminfo
+set viminfo+=f1     " save global marks
 
 "spell checking configuration
 set spelllang=en
@@ -36,22 +46,28 @@ set ttimeout
 set ttimeoutlen=100
 
 "enable mouse support anywhere(even in the console !)
-"set mouse=a
+set mouse=a
+
+" hide mouse when typing
+set mousehide
+
+" mouse behave in X11 style
+behave xterm
 
 "make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
 
 "enable mode-line feature
 set modeline
-"check the first and last 20 lines of files for vim-related setting
-set modelines=20
+"check the first and last 10 lines of files for vim-related setting
+set modelines=10
 
 "make Backspace behave as expected anywhere and any time
 set backspace=indent,eol,start
 
 " Maximum number of tab pages to be opened by the -p command line argument
 " or the :tab all command.
-set tabpagemax=30
+set tabpagemax=50
 
 "Enable filetype plug-in indent
 filetype on
@@ -102,7 +118,29 @@ set wildmenu
 "files to be ignored in wild-menu
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 
-"set wildmode=list:full
+" within cmdline completion, filename with such suffixes are given low priority
+set suffixes +=~
+set suffixes +=.bak
+set suffixes +=.orig
+set suffixes +=.swp
+set suffixes +=.o
+set suffixes +=.info
+set suffixes +=.aux
+set suffixes +=.log
+set suffixes +=.dvi
+set suffixes +=.bbl
+set suffixes +=.blg
+set suffixes +=.brf
+set suffixes +=.cb
+set suffixes +=.ind
+set suffixes +=.idx
+set suffixes +=.ilg
+set suffixes +=.inx
+set suffixes +=.out
+set suffixes +=.toc
+
+" give the first completion. also list all candidates
+set wildmode=list:full
 
 " customize the filling char used in statusline，vertical separator ,diff, etc
 set fillchars=stl:\ ,stlnc:\ ,vert:\ ,diff:-
@@ -119,7 +157,7 @@ set statusline+=%r                          "" file readonly, or not
 set statusline+=%h                          "" help buffer , nor not
 set statusline+=%w                          "" preview window, or not
 set statusline+=%\=                         "" after here, justify to the right
-set statusline+=\ [POS=%l,%c,%o]            "" line, column, byte-offset
+set statusline+=\ [POS=%l,%v,%o]            "" line, column, byte-offset
 set statusline+=\ [HEX=0x%02B]              "" show current char's hexidecimal code point
 set statusline+=\ [%LL,%p%%]                "" percentage by line
 set statusline+=%<                          "" truncate from here, if needed
@@ -228,6 +266,12 @@ nnoremap q? <Nop>
 nnoremap n nzz
 nnoremap N Nzz
 
+" virtual replace is often what you prefer
+" especailly when dealing <TAB> aligned table columns
+nnoremap r gr
+nnoremap R gR
+
+
 "--------------------------------------------------------------------------"
 "                             cut & copy & paste                           "
 "--------------------------------------------------------------------------"
@@ -251,12 +295,16 @@ nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohl
 "Now 'C','D','Y' work the same way: from current position to EoF
 nnoremap Y y$
 
+"Make shift-insert work like in Xterm : paste selection
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
 "--------------------------------------------------------------------------"
 "                           moving around quickly                          "
 "--------------------------------------------------------------------------"
 
-"Allow virtual editing in Insert mode.
-set virtualedit=insert
+" allow virtual position in these modes
+set virtualedit=insert,block
 
 " move faster
 nnoremap <C-J> 3j
@@ -303,11 +351,7 @@ nmap <Leader>z <ESC><C-T>
 
 " In normal mode, move cursor to beginning/end quickly
 nnoremap H ^
-noremap  L $
-
-" In insert mode, move cursor to beginning/end quickly
-inoremap <C-A>   <Home>
-inoremap <C-E>   <End>
+nnoremap L $
 
 "make command-line operation more bash-style
 cnoremap <C-A>  <Home>
@@ -365,14 +409,19 @@ set softtabstop=4
 "set the length limitation of physical line; 0 mean unlimited
 set textwidth=0
 
-"show long line in auto-wrapping style----visually multi-line, but physically still one line
+" show long line in auto-wrapping style
+" visually multi-line, but physically still one line
 set wrap
 
-"make these operator multi-linable
-set whichwrap=b,s,<,>,[,]
-
-"make the wrapping more intelligent----DO NOT break up a word!
+" make the wrapping more intelligent----DO NOT break up a word!
+" like wrap, this option only control haw data is display .
+" It won't influece the data itself.
 set linebreak
+
+"make these operator to move cursor across lines
+set whichwrap+=b,s
+set whichwrap+=h,l
+set whichwrap+=<,>,[,]
 
 "set the space between two successive lines; effective only under gVim
 set linespace=0
@@ -579,6 +628,7 @@ cab hlep help
 
 "use abbreviation to reduce key-typing;come on, lazy boy!
 iab ok      OK
+iab ad      advertisement
 iab abbr    abbreviation
 iab autom   automatically
 iab i18n    Internationalization
@@ -641,10 +691,8 @@ autocmd BufReadPost *
 "                         programming features                             "
 "--------------------------------------------------------------------------"
 
-"open file in new tab, making gf(goto included file) more convenient
-nnoremap gf <C-W>gf:q<CR>:tabnew<CR>:bp<CR>
-"nnoremap gf <C-W>gf
-"nnoremap gf :tab sp<CR>gf
+" better gf : open the file in new tabpage, just next to current tabpage
+nnoremap gf :tab sfind <cfile> <CR>
 
 "Insert header automatically
 "autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
@@ -705,12 +753,5 @@ autocmd InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
 autocmd InsertLeave * let &updatetime=updatetimerestore
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 autocmd CursorHoldI * stopinsert
-
-"--------------------------------------------------------------------------"
-"                                   garbage                                "
-"--------------------------------------------------------------------------"
-
-"show the change since last save
-"nmap <F7> :call ShowDiffSinceLastSave()<CR>
 
 
