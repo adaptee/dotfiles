@@ -10,6 +10,12 @@ language messages C
 language ctype en_US.UTF-8
 language time C
 
+" alwways use English in  GUI menu
+set langmenu=none
+
+" always use and only use English help
+set helplang=en
+
 "now <Leader> means ','
 let g:mapleader =","
 
