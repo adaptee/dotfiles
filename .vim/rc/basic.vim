@@ -6,7 +6,9 @@
 set nocompatible
 
 "use English UI, because I don't need Chinese prompt when using vim.
-language messages en_US.utf-8
+language messages C
+language ctype en_US.UTF-8
+language time C
 
 "now <Leader> means ','
 let g:mapleader =","
@@ -353,18 +355,17 @@ nmap <Leader>z <ESC><C-T>
 nnoremap H ^
 nnoremap L $
 
-"make command-line operation more bash-style
+"make command-line operation more efficient, or more emacs style
+" help tcsh-style
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
-
-" move more quickly in command line
-" help tcsh-style
-cnoremap <C-f> <S-Right>
-cnoremap <C-b> <S-Left>
-cnoremap <C-h> <Left>
-cnoremap <C-l> <Right>
-cnoremap <C-j> <Home>
-cnoremap <C-k> <End>
+cnoremap <C-j>  <Home>
+cnoremap <C-k>  <End>
+cnoremap <C-h>  <Left>
+cnoremap <C-l>  <Right>
+cnoremap <C-b>  <S-Left>
+cnoremap <C-f>  <S-Right>
+cnoremap <C-D>  <Del>
 
 
 "after jumping, move that position to the center, automatically
@@ -390,9 +391,6 @@ nnoremap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
 
 ""make help system navigation more like Web pages
 autocmd FileType help call MakeHelpSystemNavigationWebStyle()
-
-"improve the user-experience of man pages;press "\K", instead of "K"
-source $VIMRUNTIME/ftplugin/man.vim
 
 "re-generate tags for help docs on start-up"
 helptags $VIMLOCAL/doc
@@ -584,6 +582,7 @@ nnoremap <silent><leader>9 9gt<ESC>
 "use abbreviation to auto-correct the typo
 iab teh         the
 iab scr         src
+iab fro         for
 iab taht        that
 iab sned        send
 iab itme        item
@@ -654,6 +653,7 @@ iab #l /*----------------------------------------------*/
 cab E   echo
 cab G   grep
 cab H   help
+cab HG  helpgrep
 cab M   map
 cab IM  imap
 cab UM  unmap
