@@ -59,9 +59,9 @@ if ( has('multi_byte_ime') || has('xim') )
     "" disable IM anywhere ,totally
     "set imdisable
 
-    " crontrol input method from vim
-    "" [NOTE], "space" , not "Space";
-    set imactivatekey=C-space
+    " [X11 only] crontrol input method from vim
+    " [NOTE], "space" , not "Space";
+    "set imactivatekey=C-space
 
     "" whether activate IM automatically when entering into search line
     "" my choice : [NO], because you seldom search non-English chars by
