@@ -1,13 +1,19 @@
 [1]
-Description=(Default) Disable focus stealing prevention for XV
-fsplevel=0
-fsplevelrule=2
-wmclass=^xv .*
-wmclasscomplete=true
-wmclassmatch=3
+Description=Gvim Maximized
+clientmachine=arch
+clientmachinematch=0
+position=0,36
+positionrule=2
+size=1280,764
+sizerule=2
+title=[No Name] - GVIM1
+titlematch=0
+wmclass=gvim
+wmclasscomplete=false
+wmclassmatch=1
 
 [2]
-Description=konsole
+Description=Konsole withou titles
 clientmachine=arch
 clientmachinematch=0
 noborder=true
