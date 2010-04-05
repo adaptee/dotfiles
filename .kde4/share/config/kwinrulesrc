@@ -1,13 +1,22 @@
 [1]
-Description=(Default) Disable focus stealing prevention for XV
-fsplevel=0
-fsplevelrule=2
-wmclass=^xv .*
-wmclasscomplete=true
-wmclassmatch=3
+Description=Gvim Maximized
+clientmachine=arch
+clientmachinematch=0
+position=0,36
+positionrule=2
+size=1280,764
+sizerule=2
+title=[No Name] - GVIM
+titlematch=0
+types=1
+windowrole=vim-14819-3332492594-1270472443
+windowrolematch=0
+wmclass=gvim
+wmclasscomplete=false
+wmclassmatch=1
 
 [2]
-Description=konsole
+Description=Konsole withou titles
 clientmachine=arch
 clientmachinematch=0
 noborder=true
@@ -19,5 +28,22 @@ wmclass=konsole
 wmclasscomplete=false
 wmclassmatch=2
 
+[3]
+Description=Vbox on separate desktop\s
+clientmachine=arch
+clientmachinematch=0
+desktop=4
+desktoprule=2
+maximizehoriz=true
+maximizehorizrule=2
+maximizevert=true
+maximizevertrule=2
+title=xp [正在运行] - Sun VirtualBox
+titlematch=0
+types=1
+wmclass=virtualbox
+wmclasscomplete=false
+wmclassmatch=1
+
 [General]
-count=2
+count=3
