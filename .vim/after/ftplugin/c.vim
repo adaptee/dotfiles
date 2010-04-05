@@ -18,6 +18,9 @@ nnoremap <BS> <C-T>
 "highlight trailing white space and spaces before a <Tab> in C/C++ files.
 let c_space_errors = 1
 
+" highlight strings and numbers within comments
+let c_comment_strings = 1
+
 setlocal equalprg=indent
 
 " simplify inputting
@@ -30,6 +33,5 @@ iab r0 return 0;
 " current comment line.
 "setlocal comments-=://
 
-
 " allow % to jump between '='  and ';' in assignment
-set matchpairs+==:;
+setlocal matchpairs+==:;
