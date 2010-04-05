@@ -321,6 +321,10 @@ command! Index  :tab help index.txt
 command! Howto  :tab help howto.txt
 command! Tips   :tab help tips.txt
 
+" open the colortest script in new tabpage
+command! ColorTest  tabnew | runtime syntax/colortest.vim | normal gg
+
+
 " reverse lines orders ; stolen from usr_12.txt
 command! -range=% Reverse :<line1>,<line2> global/^/m <line1>-1 | nohlsearch
 
@@ -361,3 +365,26 @@ function! GetCWD()
     return substitute(getcwd(), $HOME,'~','' )
 endfunc
 
+
+" record and show the output of Ex commands
+function! CaptureExOutput(cmd)
+  redir => l:message
+  silent execute a:cmd
+  redir END
+  tabnew
+  silent put=l:message
+  " delete the additional leading 2 blank lines
+  normal ggd2G
+  set nomodified
+endfunction
+
+command! -nargs=+ -complete=command CaptureExOutput call CaptureExOutput(<q-args>)
+
+
+
+" when current window lost focus, save the buffer
+function! SaveOnFocusLost()
+    execute ":autocmd FocusLost" expand("%") ":w"
+endfunction
+
+command! SaveOnFocusLost call SaveOnFocusLost()
