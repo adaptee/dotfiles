@@ -47,3 +47,40 @@ set ballooneval
 set balloondelay=800
 set balloonexpr=MyBalloonExpr()
 
+" use normal font in statusline in gvim
+hi StatusLine gui=none
+
+"--------------------------------------------------------------------------"
+"                                   input method                           "
+"--------------------------------------------------------------------------"
+
+if ( has('multi_byte_ime') || has('xim') )
+
+    "" disable IM anywhere ,totally
+    "set imdisable
+
+    " crontrol input method from vim
+    "" [NOTE], "space" , not "Space";
+    set imactivatekey=C-space
+
+    "" whether activate IM automatically when entering into search line
+    "" my choice : [NO], because you seldom search non-English chars by
+    "" typing them manually . Use */# intensively!
+    set imsearch=0
+
+    "" whether activate IM automatically when entering into command line
+    "" my choice : [NO], because you seldom input non-English chars in
+    "" commandline
+    set noimcmdline
+
+    "" whether activate IM automatically when entering into insert mode
+    "" [FIXME] current cause problem with ibus in X11
+    "" everything is OK with win32, such as google pinyin, sogou pinyin
+    set iminsert=0
+    "inoremap <ESC> <ESC>:silent set iminsert=0<CR>
+
+    "autocmd  InsertEnter * set iminsert=2
+    "autocmd  InsertLeave * set iminsert=0
+
+endif
+
