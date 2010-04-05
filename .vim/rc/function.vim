@@ -318,6 +318,7 @@ command! Regex tabnew ~/.vim/doc/regexpref.txt
 " quick way ot open some official doc
 command! Quick  :tab help quickref.txt
 command! Index  :tab help index.txt
+command! Howto  :tab help howto.txt
 command! Tips   :tab help tips.txt
 
 " reverse lines orders ; stolen from usr_12.txt
