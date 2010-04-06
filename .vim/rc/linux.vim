@@ -4,10 +4,10 @@ set encoding=utf-8
 " behaves well under both Linux/Windows/Mac
 set fileformats=unix,dos,mac
 
-"Fast reading of .vimrc
+" Fast reading of .vimrc
 nmap <silent> <leader>v :call SwitchToBuffer("$HOME/.vimrc")<CR>
 
-"When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
+" When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! bufwritepost .vimrc source $HOME/.vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
 
@@ -25,7 +25,7 @@ function! LoadSession()
     execute 'source ~/.vim_session.vim'
 endfunction
 
-"open files under current folder.
+" open files under current folder.
 nmap <Leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Note, if we only use gvim, then <A-1> will be OK.
@@ -53,11 +53,11 @@ nnoremap <M-4> <Esc>:e #<CR>
 set <M-5>=5
 nnoremap <M-5> <Esc>:setlocal<Space>invspell<CR>:setlocal<Space>spell?<CR>
 
-"Now 'K' invokes external cmd 'manall' , which will man all items with the same name
+" Now 'K' invokes external cmd 'manall' , which will man all items with the same name
 "set keywordprg = manall
 "set keywordprg = myman
 
-"look up current word in the dictionary
+" look up current word in the dictionary
 nmap <Leader>k :!clear;sdcv "<cword>"<CR>
 
 " Use ':W'" to write to files even when we forget to use sudo when launching vim

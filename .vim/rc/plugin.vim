@@ -50,10 +50,10 @@ nnoremap <Leader>u :BufExplorer<CR>
 "------------------------------------------------------------------------------------------------------
 " code_complete.vim( prompt function prototype in the fly)
 "------------------------------------------------------------------------------------------------------
-"the default hotkey <tab> will make plug-in supertab does not work.
+" the default hotkey <tab> will make supertab.vim fail to work.
 "let g:completekey = "<tab>"   "hotkey
 
-"below are some candidate hotkeys.
+" below are some candidate hotkeys.
 let g:completekey = "<Leader><tab>"
 "let g:completekey = "<F8>"
 
@@ -95,8 +95,8 @@ endif
 "------------------------------------------------------------------------------------------------------
 " fencview.vim( Autodetect multiple encodings )
 "------------------------------------------------------------------------------------------------------
-"Always detect the encoding automaticlly
-"However, this require iconv feature is enabled and iconv.dll available in $PATH
+" Always detect the encoding automaticlly
+" However, this require iconv feature is enabled and iconv.dll available in $PATH
 "if has("iconv")
     "autocmd BufReadPost * :FencAutoDetect
 "endif
@@ -122,7 +122,7 @@ nnoremap <Leader>fh  :FufHelp<CR>
 "------------------------------------------------------------------------------------------------------
 " git.vim ( execute git command from within vim)
 "------------------------------------------------------------------------------------------------------
-"all default keymappings is in the form of <Leader>g?
+" all default keymappings is in the form of <Leader>g?
 
 "------------------------------------------------------------------------------------------------------
 " grep.vim ( integration with external tools: grep, egrep, fgrep, find, xargs.)
@@ -138,7 +138,7 @@ nnoremap <C-F5> :Bgrep<Space>
 " set the default grep options
 "let Grep_Default_Options = '-i'
 
-"disable opening the quickfix window by default
+" disable opening the quickfix window by default
 let Grep_OpenQuickfixWindow = 0
 
 " set which folders should always be skipped
@@ -347,13 +347,13 @@ let Tlist_Show_One_File           = 1       " only show current file's tags
 "------------------------------------------------------------------------------------------------------
 " ToggleWord.vim ( toggle words like:'true'=>'false', 'True'=>'False' etc )
 "------------------------------------------------------------------------------------------------------
-"toggle "true" to "false", "left right"
+" toggle "true" to "false", "left right"
 nmap T :ToggleWord<CR>
 
 "------------------------------------------------------------------------------------------------------
 " vimim.vim ( Chinese input method embedded within VIM )
 "------------------------------------------------------------------------------------------------------
-"In insert mode, press C-\ to switch input method on/off
+" In insert mode, press C-\ to switch input method on/off
 "let g:vimim_enable_smart_space  = 1
 "let g:vimim_enable_dynamic_menu = 1
 "let g:vimim_enable_fuzzy_search = 1
@@ -368,15 +368,15 @@ nmap T :ToggleWord<CR>
 " visincr.vim (increase/decrease visual selected columns)
 "------------------------------------------------------------------------------------------------------
 
-"" :I        ;; incrase/decrase digit , left justified
-"" :II       ;; incrase/decrase digit , right justified
-"" :IX       ;; incrase/decrase HEX digit
-"" :IO       ;; incrase/decrase OCTAL digit
-"" :ID       ;; incrase/decrase day names, mondey,tuesday,etc
-"" :IA       ;; incrase/decrase alphabet
-"" :IYMD     ;; increase/decrace date, year/month/day
-"" :IMDY     ;; increase/decrace date, month/year/day
-"" :IMDY     ;; increase/decrace date, month/year/day
+" :I        ;; incrase/decrase digit , left justified
+" :II       ;; incrase/decrase digit , right justified
+" :IX       ;; incrase/decrase HEX digit
+" :IO       ;; incrase/decrase OCTAL digit
+" :ID       ;; incrase/decrase day names, mondey,tuesday,etc
+" :IA       ;; incrase/decrase alphabet
+" :IYMD     ;; increase/decrace date, year/month/day
+" :IMDY     ;; increase/decrace date, month/year/day
+" :IMDY     ;; increase/decrace date, month/year/day
 
 
 
@@ -395,5 +395,5 @@ nmap <silent><C-F12> :call EndWordComplete()<CR>
 "------------------------------------------------------------------------------------------------------
 " Zoomwin.vim ( Zoom in/out of windows)
 "------------------------------------------------------------------------------------------------------
-"Press <C-w>o :         zoom current window into full screen
-"Press <C-w>o again:    restore window to previous state
+" Press <C-w>o :         zoom current window into full screen
+" Press <C-w>o again:    restore window to previous state
