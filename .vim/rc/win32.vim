@@ -5,10 +5,10 @@ set encoding=cp936
 " behaves well under both Linux/Windows/Mac
 set fileformats=dos,unix,mac
 
-"Fast reading of _vimrc
+" Fast reading of _vimrc
 nmap <silent> <leader>v :call SwitchToBuffer("$VIM/_vimrc")<CR>
 
-"When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
+" When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
 autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $VIM/_vimrc
 
@@ -28,7 +28,7 @@ function! LoadSession()
     execute 'loadview $vim/vim_view.vim'
 endfunction
 
-"open files under current folder.
+" open files under current folder.
 nmap <Leader>o :e <C-R>=expand("%:p:h") . "\\" <CR>
 
 " In windows, we generally only use gvim.

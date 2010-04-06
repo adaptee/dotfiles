@@ -2,24 +2,29 @@
 "                                   general                                "
 "--------------------------------------------------------------------------"
 
-"disable vi-compatible mode
+" disable vi-compatible mode
 set nocompatible
 
-"use English UI, because I don't need Chinese prompt when using vim.
+" now <Leader> means ','
+let g:mapleader =","
+
+" use English UI, because I don't need Chinese prompt when using vim.
 language messages C
 language ctype en_US.UTF-8
 language time C
 
 " alwways use English in  GUI menu
 set langmenu=none
-
 " always use and only use English help
 set helplang=en
 
-"now <Leader> means ','
-let g:mapleader =","
+" Prevent sourcing $VIMRUNTIME/menu.vim, I do not want menus :)
+" [NOTE]: This has to be specified before enabling filetype support
+set guioptions+=M
+" Yes, I am lying!
+let did_install_default_menus = 1
 
-"command-line history limitation
+" command-line history limitation
 set history=5000
 
 " viminfo setting : what items are stored and restored?
@@ -32,15 +37,12 @@ set viminfo+=%      " save buffer list
 set viminfo+=h      " disbale the effect of hlsearch after loading viminfo
 set viminfo+=f1     " save global marks
 
-"spell checking configuration
+
+" spell checking configuration
 set spelllang=en
 set spellsuggest=best,5
-"setup where to store the good word(zg) and bad word(zw)
+" setup where to store the good word(zg) and bad word(zw)
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
-" tips:
-" ]s : jumps to next spell error
-" ]s : jumps to previous spell error.
-" z= : show candidate corrections.
 
 " none of these should be word dividers
 "set isk+=_,$,@,%,#,-
@@ -53,7 +55,7 @@ set timeoutlen=2000
 set ttimeout
 set ttimeoutlen=100
 
-"enable mouse support anywhere(even in the console !)
+" enable mouse support anywhere(even in the console !)
 set mouse=a
 
 " hide mouse when typing
@@ -62,22 +64,22 @@ set mousehide
 " mouse behave in X11 style
 behave xterm
 
-"make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
+" make '~' a full-featured operator, like 'd','c', which can be combined with motion and text-object
 set tildeop
 
-"enable mode-line feature
+" enable mode-line feature
 set modeline
-"check the first and last 10 lines of files for vim-related setting
+" check the first and last 10 lines of files for vim-related setting
 set modelines=10
 
-"make Backspace behave as expected anywhere and any time
+" make Backspace behave as expected anywhere and any time
 set backspace=indent,eol,start
 
 " Maximum number of tab pages to be opened by the -p command line argument
 " or the :tab all command.
 set tabpagemax=50
 
-"Enable filetype plug-in indent
+" Enable filetype plug-in indent
 filetype on
 filetype plugin on
 filetype indent on
@@ -92,38 +94,41 @@ nnoremap ; :
 "                                   colors                                 "
 "--------------------------------------------------------------------------"
 
-"enable syntax highlighting
+" enable syntax highlighting
 syntax on
 
 
-"choose color scheme
+" choose color scheme
 " text console provide poor support for colors....
 if $TERM == "linux"
-    exec "colo torte"
+    execute "colorscheme torte"
 else
-    "the terminal support 256 colors
+    " otherwise, the terminal support 256 colors
     set t_Co=256
-    exec "colo darkZ"
+    execute "colorscheme darkZ"
 endif
+
+" use normal font in statusline
+hi StatusLine gui=none
 
 "--------------------------------------------------------------------------"
 "                                   visual clues                           "
 "--------------------------------------------------------------------------"
 
-"show line-number
+" show line-number
 set number
 
-"highlight current line
+" highlight current line
 set cursorline
 
 " after executing ":set list"
 " show TAB as '>-------', NEWLINE as '$', trailing whitespace as '~'
 set listchars=tab:>-,eol:$,trail:*,extends:»,precedes:«
 
-"use advanced command-line auto-completion feature
+" use advanced command-line auto-completion feature
 set wildmenu
 
-"files to be ignored in wild-menu
+" files to be ignored in wild-menu
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 
 " within cmdline completion, filename with such suffixes are given low priority
@@ -153,10 +158,10 @@ set wildmode=list:full
 " customize the filling char used in statusline，vertical separator ,diff, etc
 set fillchars=stl:\ ,stlnc:\ ,vert:\ ,diff:-
 
-"always show status line
+" always show status line
 set laststatus=2
 
-"" make statusline customization easier
+"  make statusline customization easier
 set statusline=%2*[%-1.3n]%0*               "" buffer number
 set statusline+=\ [%{GetCWD()}]             "" current directory
 set statusline+=\ %t                        "" file name only
@@ -174,26 +179,26 @@ set statusline+=\ [GIT=%{GitBranch()}]      "" show which branch we are on
 set statusline+=\ [FMT=%{&ff}]              "" unix ,or dos
 set statusline+=\ [TYPE=%{&ft}]             "" show file type
 
-"show normal-mode command in the end of last line.
+" show normal-mode command in the end of last line.
 set showcmd
 
-"Show matching brackets in insert mode
+" Show matching brackets in insert mode
 set showmatch
 
-"make % apply to '<' and '>'
+" make % apply to '<' and '>'
 set matchpairs+=<:>
 
-"no noisy beeping, just flipping the window
+" no noisy beeping, just flipping the window
 set visualbell
 
-"do not redraw while executing macros (which will be much faster)
+" do not redraw while executing macros (which will be much faster)
 set lazyredraw
 
-"keep cursor stay away from the first and last 5 lines of the screen
+" keep cursor stay away from the first and last 5 lines of the screen
 set scrolloff=5
 
 " leading indicator for wrapped lines
-"set showbreak=>>
+" set showbreak=>>
 
 " always info us whenever anything is changed via Ex command;default threshold value is 2
 set report=0
@@ -202,7 +207,7 @@ set report=0
 set diffopt=filler,iwhite
 
 " highlight the 1st, 5th, 9th column ,etc
-"match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
+" match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
 
 "--------------------------------------------------------------------------"
 "                           encoding & locale                             "
@@ -211,7 +216,7 @@ set diffopt=filler,iwhite
 " use utf-8 as Vim's default internal encoding scheme
 set encoding=utf-8
 
-"" Make VIM understand following kinds of encoding
+"  Make VIM understand following kinds of encoding
 set fileencodings=ucs-bom,utf-8,sjis,japan,cp936,gb18030,chinese,taiwan,big5,korea,latin1
 
 " show ambiguous character in two column width
@@ -223,44 +228,45 @@ endif
 "                               search & replace                           "
 "--------------------------------------------------------------------------"
 
-"highlight searching result
+" highlight searching result
 set hlsearch
 
-"show real-time search result when typing the pattern
+" show real-time search result when typing the pattern
 set incsearch
 
-"enable wrapping around when searching
+" enable wrapping around when searching
 set wrapscan
 
-"ignore case when searching
+" ignore case when searching
 set ignorecase
 
-"resume case-sensitive if the pattern contain upper-case letter
+" resume case-sensitive if the pattern contain upper-case letter
 set smartcase
 
-"make vim more smart with upper/lower case when doing completion
+" make vim more smart with upper/lower case when doing completion
 set infercase
 
-"When on, the ":substitute" flag 'g' is default on.
+" When on, the ":substitute" flag 'g' is default on.
 "set gdefault
 
 " toggle search result highlighting; now the unused key '\' finally can do something now....
-nmap <silent> \      :nohlsearch<CR>
+vnoremap <silent> \      :nohlsearch<CR>
 
-"search visually-selected text
-vmap  * :call SearchVisualSelectedText('f')<CR>
-vmap  # :call SearchVisualSelectedText('b')<CR>
+" search visually-selected text
+vnoremap  * :call SearchVisualSelectedText('f')<CR>
+vnoremap  # :call SearchVisualSelectedText('b')<CR>
 
-"Search visual-selected text and put the matching lines in a new tab
+" Search visual-selected text and put the matching lines in a new tab
 vnoremap <Leader>g "*y<Esc>mzqqq:silent<Space>g/<C-R>*/y<Space>Q<CR>'z:tabnew<CR>"Qpdgg
 
-"Make good use of <BAR>:search lines containing current word------A simple grep!
-nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> exec "normal " . temp_nr . "[\t"<CR>
+" Make good use of <BAR>
+" "search lines containing current word------A simple grep!
+nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> execute "normal " . temp_nr . "[\t"<CR>
 
-"Substitute visually-selected text, interactively and globally
-vmap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
-vmap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
-"Note: the 'g' in substitute() belong to substitute(), not for command 's'
+" Substitute visually-selected text, interactively and globally
+" Note: 'g' applys to function substitute(), not to command ':s'
+vnoremap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
+vnoremap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 
 " Make p in Visual mode to replace selected text with previous yanked content.
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
@@ -290,7 +296,7 @@ set clipboard+=unnamed
 " automatically put visually selected text into "*
 set clipboard+=autoselect
 
-"super paste; now in insert mode, you can use <C-v> to do pasting
+" super paste; now in insert mode, you can use <C-v> to do pasting
 inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
 
 " stolen from VimTip 1539; added creating mark before making changes.
@@ -299,11 +305,11 @@ nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:no
 " exchange the word under cursor with previous word
 nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
-"Y's default functionality is duplicated with 'yy' and counter-intuitive
-"Now 'C','D','Y' work the same way: from current position to EoF
+" Y's default functionality is duplicated with 'yy' and counter-intuitive
+" Now 'C','D','Y' work the same way: from current position to EoF
 nnoremap Y y$
 
-"Make shift-insert work like in Xterm : paste selection
+" Make shift-insert work like in Xterm : paste selection
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
@@ -321,19 +327,16 @@ nnoremap <C-k> 3k
 vnoremap <C-k> 3k
 
 nnoremap <Space> <C-F>
-vnoremap <Space> <C-F>
-
 nnoremap <S-Space> <C-B>
-vnoremap <S-Space> <C-B>
 
-"enhance the function of '%' and '#'
+" enhance the function of '%' and '#'
 source $VIMRUNTIME/macros/matchit.vim
 
-"speed up the viewer scrolling 3 times
+" speed up the viewer scrolling 3 times
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-"swap  ' and `, since ` is more useful
+" swap  ' and `, since ` is more useful
 nnoremap ' `
 nnoremap ` '
 
@@ -343,25 +346,27 @@ nnoremap ` '
 nnoremap ]] ][
 nnoremap ][ ]]
 
-"map UP/DOWN to move one visual line, not one physical line
-nmap <DOWN> gj
-imap <DOWN> <ESC>gja
-nmap <UP> gk
-imap <UP> <ESC>gka
+" map UP/DOWN to move one visual line, not one physical line
+nnoremap <DOWN> gj
+inoremap <DOWN> <ESC>gja
+nnoremap <UP> gk
+inoremap <UP> <ESC>gka
 
 " make moving under insert mode more easy.
-imap <C-h> <Left>
-imap <C-l> <Right>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
-"make tag jumping more easy"
-nmap <Leader>d <ESC><C-]>
-nmap <Leader>z <ESC><C-T>
+" make tag jumping more easy"
+nnoremap <Leader>d <ESC><C-]>
+nnoremap <Leader>z <ESC><C-T>
 
-" In normal mode, move cursor to beginning/end quickly
+" In normal & visual mode, move cursor to beginning/end quickly
 nnoremap H ^
 nnoremap L $
+vnoremap H ^
+vnoremap L $
 
-"make command-line operation more efficient, or more emacs style
+" make command-line operation more efficient, or more emacs style
 " help tcsh-style
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
@@ -374,17 +379,17 @@ cnoremap <C-f>  <S-Right>
 cnoremap <C-D>  <Del>
 
 
-"after jumping, move that position to the center, automatically
+" after jumping, move that position to the center, automatically
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 
-"stolen from VimTip 646
-"Move current line of text up and down(crossing other text)
+" stolen from VimTip 646
+" Move current line of text up and down(crossing other text)
 set <M-j>=j
 set <M-k>=k
 nmap <M-j> mz:m+<CR>`z
 nmap <M-k> mz:m-2<CR>`z
-"Move visually-selected text up and down(crossing other text)
+" Move visually-selected text up and down(crossing other text)
 vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
@@ -392,13 +397,13 @@ vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 "                               help & man-pages                             "
 "--------------------------------------------------------------------------"
 
-"invoke help system more smart
-nnoremap <F1> <ESC>:exec "help ".expand("<cword>")<CR>
+" invoke help system more smart
+nnoremap <F1> <ESC>:execute "help ".expand("<cword>")<CR>
 
-""make help system navigation more like Web pages
+" make help system navigation more like Web pages
 autocmd FileType help call MakeHelpSystemNavigationWebStyle()
 
-"re-generate tags for help docs on start-up"
+" re-generate tags for help docs on start-up"
 helptags $VIMLOCAL/doc
 
 "--------------------------------------------------------------------------"
@@ -410,7 +415,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-"set the length limitation of physical line; 0 mean unlimited
+" set the length limitation of physical line; 0 mean unlimited
 set textwidth=0
 
 " show long line in auto-wrapping style
@@ -422,15 +427,15 @@ set wrap
 " It won't influece the data itself.
 set linebreak
 
-"make these operator to move cursor across lines
+" make these operator to move cursor across lines
 set whichwrap+=b,s
 set whichwrap+=h,l
 set whichwrap+=<,>,[,]
 
-"set the space between two successive lines; effective only under gVim
+" set the space between two successive lines; effective only under gVim
 set linespace=0
 
-"choose C-style indentation
+" choose C-style indentation
 set cindent
 
 " Now vim can reformat multi-byte text (e.g. Chinese)
@@ -442,14 +447,14 @@ map Q gq
 " format the whole file
 nnoremap <Leader>F gg=G''
 
-"make deleting annoying windows ^M more easy
+" make deleting annoying windows ^M more easy
 nnoremap <Leader>M :%s/\r//g<CR>
 
-"after indentation adjustment, re-select previously highlighted text
+" after indentation adjustment, re-select previously highlighted text
 vnoremap > >gv
 vnoremap < <gv
 
-"use TAB to do indentation
+" use TAB to do indentation
 vnoremap <Tab>   >gv
 vnoremap <S-Tab> <gv
 
@@ -460,22 +465,22 @@ nnoremap <silent><Leader>Z :call MergeBlankLinesIntoSingleLine()<CR>
 "                                   folding                                "
 "--------------------------------------------------------------------------"
 
-"Enable folding
+" Enable folding
 set foldenable
 
-"folding signature occupies 2 column on the left side
+" folding signature occupies 2 column on the left side
 set foldcolumn=2
 
-"set foldcolumn's color scheme
+" set foldcolumn's color scheme
 autocmd BufEnter * :highlight FoldColumn guibg=black guifg=white
 
-"create folding based on indentation
+" create folding based on indentation
 set foldmethod=indent
 
-"folds whose level is greater than 'foldlevel' are closed automatically
+" folds whose level is greater than 'foldlevel' are closed automatically
 set foldlevel=10         "when started, unzip(fold) all!
 
-"make fold opening/closing purely automatically
+" make fold opening/closing purely automatically
 "set foldopen=all
 "set foldclose=all
 
@@ -486,10 +491,10 @@ set foldlevel=10         "when started, unzip(fold) all!
 "                                   buffer & file                          "
 "--------------------------------------------------------------------------"
 
-"when switching buffer, also consider other tab
+" when switching buffer, also consider other tab
 set switchbuf=usetab
 
-"when detecting file is modified outside of Vim, reload the file automatically
+" when detecting file is modified outside of Vim, reload the file automatically
 set autoread
 
 " make a backup before overwriting a file, for the sake of safety.
@@ -505,11 +510,11 @@ set autochdir
 " double safe :)
 autocmd BufEnter * lcd %:p:h
 
-"use Ctrl+Left/Right arrow to cycle the buffer list
-nmap <C-right>    <ESC>:bn<CR>
-nmap <C-left>     <ESC>:bp<CR>
+" use Ctrl+Left/Right arrow to cycle the buffer list
+nnoremap <C-right>    <ESC>:bn<CR>
+nnoremap <C-left>     <ESC>:bp<CR>
 
-"make writing and quiting more easy
+" make writing and quiting more easy
 nmap <Leader>s mz:w<CR>'z
 nmap <Leader>W :w!<CR>
 nmap <Leader>q :q<CR>
@@ -526,14 +531,9 @@ nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 "                                   window                                 "
 "--------------------------------------------------------------------------"
 
-"make window manipulating more easy
-nmap <Leader>S :split<CR><C-W>W
-nmap <Leader>V :vsplit<CR><C-W>w
-
-" iterate to next window
-"nmap <Leader>i <C-w>w
-" reverse iterate to previous window
-"nmap <Leader>I <C-w>W
+" make window manipulating more easy
+nnoremap <Leader>S :split<CR><C-W>W
+nnoremap <Leader>V :vsplit<CR><C-W>w
 
 " iterate window quickly
 nnoremap <C-N>      <C-W>w
@@ -549,29 +549,29 @@ nnoremap <C-P>      <C-W>W
 "                                   tab page                               "
 "--------------------------------------------------------------------------"
 
-"always show tabline, even when only one tab is opened
+" always show tabline, even when only one tab is opened
 set showtabline=2
 
-"make tabline(tab pager) compact and more distinguishing
+" make tabline(tab pager) compact and more distinguishing
 set tabline=%!ShortTabLine()
 
-"create empty new tab
+" create empty new tab
 nnoremap <silent><Leader>t :tabnew<CR>
-"show all buffers in separate tabs
+" show all buffers in separate tabs
 nnoremap <silent><Leader>T :tab sball<CR>
 
-"switch to next tab
+" switch to next tab
 nnoremap <silent><Leader>n :tabnext<CR>
 nnoremap <silent><Tab>     :tabnext<CR>
-"switch to previous tab
+" switch to previous tab
 nnoremap <silent><Leader>p :tabprevious<CR>
 nnoremap <S-Tab>           :tabprevious<CR>
 
-"fast switch to first & last tab
+" fast switch to first & last tab
 nnoremap <silent><leader>1 :tabfirst<CR>
 nnoremap <silent><leader>0 :tablast<CR>
 
-"Switch to tab<N>
+" Switch to tab<N>
 nnoremap <silent><leader>2 2gt<ESC>
 nnoremap <silent><leader>3 3gt<ESC>
 nnoremap <silent><leader>4 4gt<ESC>
@@ -581,92 +581,6 @@ nnoremap <silent><leader>7 7gt<ESC>
 nnoremap <silent><leader>8 8gt<ESC>
 nnoremap <silent><leader>9 9gt<ESC>
 
-"--------------------------------------------------------------------------"
-"                                abbreviation                               "
-"--------------------------------------------------------------------------"
-
-"use abbreviation to auto-correct the typo
-iab teh         the
-iab scr         src
-iab fro         for
-iab taht        that
-iab sned        send
-iab itme        item
-iab evla        eval
-iab prot        port
-iab serach      search
-iab cosnt       const
-iab toogle      toggle
-iab partion     partition
-iab htis        this
-iab tihs        this
-iab funciton    function
-iab fucntion    function
-iab funtion     function
-iab retunr      return
-iab reutrn      return
-iab sefl        self
-iab eslf        self
-iab candicate   candidate
-iab seperate    separate
-iab enbale      enable
-iab unavailabe  unavailable
-iab encounting  encountering
-iab defalut default
-iab sepcified  specified
-iab bakcup backup
-iab processs process
-iab canonicalize canonicalize
-iab accessable accessible
-iab commmand command
-iab commmad  command
-iab follwo follow
-iab utilily utility
-iab tranform transform
-iab specifiles specifies
-iab charater character
-iab maxmize maximize
-iab approriate appropriate
-iab throuth through
-iab hlep help
-cab hlep help
-
-"use abbreviation to reduce key-typing;come on, lazy boy!
-iab ok      OK
-iab ad      advertisement
-iab abbr    abbreviation
-iab autom   automatically
-iab i18n    Internationalization
-iab l10n    Localization
-iab posix   POSIX
-iab envir   environment
-iab fst     first
-iab scd     second
-iab misc    miscellaneous
-iab xdate   <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
-iab xtime   <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
-iab kath    Katherine
-iab attr    attribute
-iab chinese Chinese
-iab english English
-iab america America
-iab spec    specification
-iab #b /************************************************
-iab #e ************************************************/
-iab #l /*----------------------------------------------*/
-
-" make entering the most frequently used command more easily
-cab E   echo
-cab G   grep
-cab H   help
-cab HG  helpgrep
-cab M   map
-cab IM  imap
-cab UM  unmap
-cab R   registers
-cab S   set
-cab V   verbose
-cab P   pwd
 
 "--------------------------------------------------------------------------"
 "                               quickfix mode                              "
@@ -677,17 +591,17 @@ nnoremap <silent><C-H> :cprevious<CR>
 nnoremap <silent><C-L> :cnext<CR>
 
 " jump to next/previous entry in quickfix list
-nmap <silent><Left>  :cprevious<CR>
-nmap <silent><Right> :cnext<CR>
+nnoremap <silent><Left>  :cprevious<CR>
+nnoremap <silent><Right> :cnext<CR>
 
-"press v in quickfix window to preview while holding focus in quickfix window
+" press v in quickfix window to preview while holding focus in quickfix window
 autocmd FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
 
 "--------------------------------------------------------------------------"
 "                               auto-commands                              "
 "--------------------------------------------------------------------------"
 
-"resume the cursor where the it was when the file was closed last time
+" resume the cursor where the it was when the file was closed last time
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \ exe "normal g`\"" |
@@ -700,10 +614,10 @@ autocmd BufReadPost *
 " better gf : open the file in new tabpage, just next to current tabpage
 nnoremap gf :tab sfind <cfile> <CR>
 
-"Insert header automatically
+" Insert header automatically
 "autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
 
-"Insert python header automatically
+" Insert python header automatically
 autocmd BufNewFile *.py  call InsertHeaderForPythonScript ()
 
 " Remove trailing white spaces when saving files
@@ -715,7 +629,7 @@ autocmd BufWritePre *                  call AdjustCommaRelatedSpacing()
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
 " prerequisite: set autochdir
-"set tags=tags;
+" set tags=tags;
 set tags=./tags,tags;
 
 " :tag will be replaced by :cstag ; the latter will search both tagfile and cscope database
@@ -732,18 +646,20 @@ set tags=./tags,tags;
 "                                miscellaneous                             "
 "--------------------------------------------------------------------------"
 
-" since <C-e> is customized to moving to EOL, I will map <C-b> to original <C-e>
-" now <C-y> and <C-b> is very to remember:
-" 1).y(upper) mean inserting character in corresponding position of upper line
-" 2).h(lower) mean repeating character in corresponding position of lower line
+" now <C-y> and <C-b> is very to remember by their relative position to 'h'
+" 1).y(above h) mean inserting character in corresponding position of upper line
+" 2).b(below h) mean repeating character in corresponding position of lower line
 inoremap <C-b> <C-e>
+
+" put 2 spaces after '.' '!' '?' when joining lines
+set joinspaces
 
 " Since Jx is more useful than only J....
 "nnoremap J Jx
 
 " for those who has the obsession of saving changes.....
 " save automatically after pressing <Enter>
-":inoremap <cr> <c-o>:w<cr><cr>
+"inoremap <cr> <c-o>:w<cr><cr>
 
 " For vimperator's sake
 let g:netrw_http_cmd = "wget -q -O"
@@ -753,11 +669,10 @@ let g:netrw_http_cmd = "wget -q -O"
 " note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
 
-"stolen from VimTip 1540
+" stolen from VimTip 1540
 " set 'updatetime' to 10 seconds when in insert mode
 autocmd InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
 autocmd InsertLeave * let &updatetime=updatetimerestore
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 autocmd CursorHoldI * stopinsert
-
 

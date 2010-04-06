@@ -217,7 +217,7 @@ function! ShortTabLine()
     return ret
 endfunction
 
-"only show filename in the tab label; path is not included
+" only show filename in the tab label; path is not included
 function! ShortGuiTabLabel ()
     let bufnrlist = tabpagebuflist (v:lnum)
     let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
@@ -283,7 +283,7 @@ function! TogglehlsearchOffOnlyOnce()
     endif
 endfunction
 
-"calculate word frequency
+" calculate word frequency
 function! WordFrequency() range
   let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
   let frequencies = {}
@@ -360,7 +360,7 @@ endfunc
 vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>
 
 
-"variant of getcwd(): un-expand $HOME to ~
+" variant of getcwd(): un-expand $HOME to ~
 function! GetCWD()
     return substitute(getcwd(), $HOME,'~','' )
 endfunc
