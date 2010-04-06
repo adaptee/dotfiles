@@ -1,8 +1,8 @@
 [$Version]
-update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,kwin_window_shortcuts.upd:kde414
+update_info=plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts, kwin_window_shortcuts.upd:kde414
 
 [amarok]
-_k_friendly_name=Amarok
+_k_friendly_name=amarok
 decreaseVolume=,Meta+-,降低音量
 increaseVolume=Meta++,Meta++,增加音量
 loveTrack=none,Meta+L,Last.fm：最爱当前音轨
@@ -27,16 +27,16 @@ toggleMainWindow=Meta+M,Meta+P,切换主窗口
 
 [juk]
 _k_friendly_name=juk
-back=,Ctrl+Alt+Left,Previous
-forward=,Ctrl+Alt+Right,&Next
-forwardAlbum=Ctrl+Alt+Up,Ctrl+Alt+Up,Play Next Album
-mute=Ctrl+Alt+M,Ctrl+Alt+M,Mute
-playPause=Ctrl+Alt+P,Ctrl+Alt+P,Play / Pause
-seekBack=,Ctrl+Alt+Shift+Left,Seek Back
-seekForward=,Ctrl+Alt+Shift+Right,Seek Forward
-stop=Ctrl+Alt+S,Ctrl+Alt+S,&Stop
-volumeDown=Ctrl+Alt+Shift+Down,Ctrl+Alt+Shift+Down,Volume Down
-volumeUp=Ctrl+Alt+Shift+Up,Ctrl+Alt+Shift+Up,Volume Up
+back=,Ctrl+Alt+Left,上一首
+forward=,Ctrl+Alt+Right,下一首(&N)
+forwardAlbum=Ctrl+Alt+Up,Ctrl+Alt+Up,播放下张专辑
+mute=Ctrl+Alt+M,Ctrl+Alt+M,静音
+playPause=Ctrl+Alt+P,Ctrl+Alt+P,播放/暂停
+seekBack=,Ctrl+Alt+Shift+Left,向后搜寻
+seekForward=,Ctrl+Alt+Shift+Right,向前搜寻
+stop=Ctrl+Alt+S,Ctrl+Alt+S,停止(&S)
+volumeDown=Ctrl+Alt+Shift+Down,Ctrl+Alt+Shift+Down,降低音量
+volumeUp=Ctrl+Alt+Shift+Up,Ctrl+Alt+Shift+Up,增大音量
 
 [khotkeys]
 _k_friendly_name=khotkeys
@@ -167,10 +167,10 @@ Switch to Desktop 19=none,none,切换到桌面 19
 Switch to Desktop 2=Ctrl+F2,Ctrl+F2,切换到桌面 2
 Switch to Desktop 20=none,none,切换到桌面 20
 Switch to Desktop 3=Ctrl+F3,Ctrl+F3,切换到桌面 3
-Switch to Desktop 4=Ctrl+F4,Ctrl+F4,切换到桌面 4
+Switch to Desktop 4=none,Ctrl+F4,切换到桌面 4
 Switch to Desktop 5=none,none,切换到桌面 5
 Switch to Desktop 6=none,none,切换到桌面 6
-Switch to Desktop 7=none,none,切换到桌面 7
+Switch to Desktop 7=,none,切换到桌面 7
 Switch to Desktop 8=none,none,切换到桌面 8
 Switch to Desktop 9=none,none,切换到桌面 9
 Switch to Next Desktop=Ctrl+Alt+Right,none,切换到前一桌面
@@ -275,6 +275,7 @@ Show Dashboard=,Ctrl+F12,显示部件板
 _k_friendly_name=Plasma 工作区
 activate widget 25=Meta+D,Meta+D,激活 显示桌面 部件
 activate widget 33=Shift+F1,Shift+F1,激活 应用程序启动菜单 部件
+activate widget 50=,Shift+F1,激活 应用程序启动菜单 部件
 activate widget 92=,Shift+F1,Activate Application Launcher Menu Widget
 activate widget 94=,Meta+D,Activate Show Desktop Widget
 
