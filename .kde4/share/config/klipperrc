@@ -1,0 +1,14 @@
+[$Version]
+update_info=klipper-kconfigxt.upd:KlipperNoSpacesInKeyNames
+
+[General]
+AutoStart=true
+MaxClipItems=15
+Number of Actions=0
+SyncClipboards=true
+URLGrabberEnabled=true
+Version=v0.9.7
+
+[Notification Messages]
+StartAutomatically=true
+really_clear_history=true
