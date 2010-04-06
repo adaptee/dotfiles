@@ -68,12 +68,19 @@
  </Menu>
  <ActionProperties>
   <Action shortcut="" name="clear-history-and-reset"/>
-  <Action shortcut="" name="close-session"/>
+  <Action shortcut="Alt+D" name="close-session"/>
   <Action shortcut="Alt+C" name="copy"/>
   <Action shortcut="Shift+Ins" name="paste"/>
   <Action shortcut="Alt+V" name="paste-selection"/>
   <Action shortcut="" name="rename-session"/>
   <Action shortcut="Ctrl+Alt+F" name="search-history"/>
   <Action shortcut="Alt+F1" name="show-menubar"/>
+  <Action shortcut="" name="copy-input-to-all-tabs"/>
+  <Action shortcut="Alt+P" name="edit-current-profile"/>
+  <Action shortcut="" name="zmodem-upload"/>
+  <Action shortcut="" name="copy-input-to-none"/>
+  <Action shortcut="" name="monitor-activity"/>
+  <Action shortcut="" name="monitor-silence"/>
+  <Action shortcut="" name="copy-input-to-selected-tabs"/>
  </ActionProperties>
 </kpartgui>

@@ -64,18 +64,23 @@
   <Action shortcut="Alt+Left; Ctrl+PgUp" name="previous-view"/>
   <Action shortcut="F12" name="view-full-screen"/>
   <Action shortcut="" name="help_contents"/>
-  <Action shortcut="Ctrl+Shift+B" name="add_bookmark"/>
+  <Action shortcut="" name="add_bookmark"/>
   <Action shortcut="" name="close-active-view"/>
   <Action shortcut="" name="close-other-views"/>
   <Action shortcut="" name="file_quit"/>
   <Action shortcut="" name="remote-connection"/>
   <Action shortcut="Alt+F1" name="show-menubar"/>
   <Action shortcut="Shift+Left" name="move-view-left"/>
-  <Action shortcut="" name="help_whats_this"/>
   <Action shortcut="Alt+N" name="new-tab"/>
   <Action shortcut="" name="new-window"/>
   <Action shortcut="" name="next-container"/>
   <Action shortcut="Shift+Right" name="move-view-right"/>
   <Action shortcut="" name="detach-view"/>
+  <Action shortcut="Alt+Q" name="options_configure_keybinding"/>
+  <Action shortcut="" name="expand-active-view"/>
+  <Action shortcut="" name="help_whats_this"/>
+  <Action shortcut="" name="shrink-active-view"/>
+  <Action shortcut="" name="split-view-top-bottom"/>
+  <Action shortcut="" name="split-view-left-right"/>
  </ActionProperties>
 </kpartgui>
