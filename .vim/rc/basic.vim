@@ -8,6 +8,9 @@ set nocompatible
 " now <Leader> means ','
 let g:mapleader =","
 
+" use utf-8 as Vim's internal encoding scheme
+set encoding=utf-8
+
 " use English UI, because I don't need Chinese prompt when using vim.
 language messages C
 language ctype en_US.UTF-8
@@ -37,9 +40,11 @@ set viminfo+=%      " save buffer list
 set viminfo+=h      " disbale the effect of hlsearch after loading viminfo
 set viminfo+=f1     " save global marks
 
+" 99% time, I have a fast tty connection; improve redrawing
+"set ttyfast
 
 " spell checking configuration
-set spelllang=en
+set spelllang=en_us
 set spellsuggest=best,5
 " setup where to store the good word(zg) and bad word(zw)
 set spellfile=$VIMLOCAL/rc/spellfile.utf-8.add
@@ -97,11 +102,14 @@ nnoremap ; :
 " enable syntax highlighting
 syntax on
 
+" do not perform syntax highlight for characters after this column
+" highlight a annomal-long line is slow and ridiculas.
+set synmaxcol=1000
 
 " choose color scheme
 " text console provide poor support for colors....
 if $TERM == "linux"
-    execute "colorscheme torte"
+    execute "colorscheme darkZ"
 else
     " otherwise, the terminal support 256 colors
     set t_Co=256
@@ -194,6 +202,7 @@ set visualbell
 " do not redraw while executing macros (which will be much faster)
 set lazyredraw
 
+
 " keep cursor stay away from the first and last 5 lines of the screen
 set scrolloff=5
 
@@ -203,8 +212,12 @@ set scrolloff=5
 " always info us whenever anything is changed via Ex command;default threshold value is 2
 set report=0
 
-" differ options
+" ignore whitespace difference
 set diffopt=filler,iwhite
+
+" show last line as much as possible, when these is not enough space
+" show un-printable character as <xx>, instead of ^K
+set display+=lastline,uhex
 
 " highlight the 1st, 5th, 9th column ,etc
 " match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
@@ -213,14 +226,12 @@ set diffopt=filler,iwhite
 "                           encoding & locale                             "
 "--------------------------------------------------------------------------"
 
-" use utf-8 as Vim's default internal encoding scheme
-set encoding=utf-8
 
 "  Make VIM understand following kinds of encoding
 set fileencodings=ucs-bom,utf-8,sjis,japan,cp936,gb18030,chinese,taiwan,big5,korea,latin1
 
-" show ambiguous character in two column width
-if ( has('multi_byte') && v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)' )
+" show ambiguous character in width of two columns
+if  has('multi_byte')
     set ambiwidth=double
 endif
 
@@ -250,7 +261,7 @@ set infercase
 "set gdefault
 
 " toggle search result highlighting; now the unused key '\' finally can do something now....
-vnoremap <silent> \      :nohlsearch<CR>
+nnoremap <silent> \      :nohlsearch<CR>
 
 " search visually-selected text
 vnoremap  * :call SearchVisualSelectedText('f')<CR>
@@ -397,6 +408,7 @@ vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 "                               help & man-pages                             "
 "--------------------------------------------------------------------------"
 
+
 " invoke help system more smart
 nnoremap <F1> <ESC>:execute "help ".expand("<cword>")<CR>
 
@@ -432,8 +444,9 @@ set whichwrap+=b,s
 set whichwrap+=h,l
 set whichwrap+=<,>,[,]
 
-" set the space between two successive lines; effective only under gVim
-set linespace=0
+
+" Round indent to multiple of 'shiftwidth'.
+set shiftround
 
 " choose C-style indentation
 set cindent
@@ -505,17 +518,22 @@ set nobackup
 " use directory of the related buffer as the start-point for file browser
 set browsedir=buffer
 
-" automatically change $CWD to where the file is located
-set autochdir
-" double safe :)
-autocmd BufEnter * lcd %:p:h
+" automatically change current directory to where the file is located
+if exists('+autochdir')
+    set autochdir
+else
+    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
+
+" when dealing with unsaved buffer, raise a confirmation dialog instead of failing
+set confirm
 
 " use Ctrl+Left/Right arrow to cycle the buffer list
 nnoremap <C-right>    <ESC>:bn<CR>
 nnoremap <C-left>     <ESC>:bp<CR>
 
 " make writing and quiting more easy
-nmap <Leader>s mz:w<CR>'z
+nmap <Leader>s mz:update<CR>'z
 nmap <Leader>W :w!<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>Q :q!<CR>
@@ -612,7 +630,12 @@ autocmd BufReadPost *
 "--------------------------------------------------------------------------"
 
 " better gf : open the file in new tabpage, just next to current tabpage
-nnoremap gf :tab sfind <cfile> <CR>
+"nnoremap gf :tabfind <cfile> <CR>
+nnoremap gf <C-w>gF
+vnoremap gf <C-w>gF
+
+" enable 'gf' to work with environment variable in the form of ${VAR}
+set isfname+={,}
 
 " Insert header automatically
 "autocmd BufNewFile *.sh  call InsertHeaderForBashScript()

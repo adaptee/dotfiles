@@ -9,9 +9,9 @@ elseif has("win32")
     set guifontwide=DejaVu_Sans_Mono:h11:cANSI
 endif
 
-" remove the toolbar, menubar
-set guioptions-=T       "No toolbar
-set guioptions-=m       "No menu
+" remove the toolbar and menubar
+set guioptions-=T
+set guioptions-=m
 
 " make highlighted text yanked into global selection (*) automatically
 set guioptions+=a
@@ -19,6 +19,9 @@ set guioptions+=a
 " don't show boring scroll-bar
 set guioptions-=r
 set guioptions-=l
+
+" prefer using text-based dialog, when possible
+set guioptions+=c
 
 " make the window where mouse pointer on become current ; enumerate X-window style
 set mousefocus
@@ -34,21 +37,11 @@ endif
 map <silent> <A-F1> :call ToggleGUIMenuBar()<CR>
 
 " customize tabpage label
-"set guitablabel=%{ShortGuiTabLabel()}
-set guitablabel=%N.%t\ %m
+" [number, filename, modified]
+set guitablabel=%N\ %t\ %m
 
-
-" customize tabpage's tool-tip
-set guitabtooltip=%!GuiTabToolTip()
-
-" enable edit area tool-tip, after cursor staying for 800ms
-" for example, on a folded area
-set ballooneval
-set balloondelay=800
-set balloonexpr=MyBalloonExpr()
-
-" use normal font in statusline in gvim
-hi StatusLine gui=none
+" set the space between two successive lines; effective only under gVim
+set linespace=0
 
 "--------------------------------------------------------------------------"
 "                                   input method                           "
@@ -84,3 +77,5 @@ if ( has('multi_byte_ime') || has('xim') )
 
 endif
 
+" I lied before; Now I tell the truth
+let did_install_default_menus = 0

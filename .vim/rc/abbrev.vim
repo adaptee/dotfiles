@@ -75,13 +75,15 @@ iab #l /*----------------------------------------------*/
 " make entering the most frequently used command more easily
 cab E   echo
 cab G   grep
-cab H   help
 cab HG  helpgrep
 cab M   map
-cab IM  imap
 cab UM  unmap
+cab IM  imap
+cab IUM iunmap
+cab CM  cmap
+cab CUM cunmap
 cab R   registers
 cab S   set
 cab V   verbose
 cab P   pwd
-cab - cd -
+cab -   cd -
