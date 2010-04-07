@@ -6,7 +6,6 @@ AutoStart=true
 MaxClipItems=15
 Number of Actions=0
 SyncClipboards=true
-URLGrabberEnabled=true
 Version=v0.9.7
 
 [Notification Messages]
