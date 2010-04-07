@@ -202,7 +202,7 @@ if has('unix')
 elseif has ('win32')
     let MRU_File = $VIM.'/_vim_mru'
 endif
-let MRU_Max_Entries = 200
+let MRU_Max_Entries = 1000
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 
 "------------------------------------------------------------------------------------------------------
@@ -231,8 +231,9 @@ map <F7> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 set completeopt=menu
 
 " auto close options when exiting insert mode
-autocmd InsertLeave  * if pumvisible() == 0|pclose|endif
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" the checking of &buftype is to avoid errror when in command history window
+autocmd InsertLeave  * if ( pumvisible() == 0 && &buftype != "nofile" ) |pclose|endif
+autocmd CursorMovedI * if ( pumvisible() == 0 && &buftype != "nofile" ) |pclose|endif
 
 let OmniCpp_GlobalScopeSearch   = 1  " 0 or 1
 let OmniCpp_NamespaceSearch     = 2  "search namespaces in this and included files

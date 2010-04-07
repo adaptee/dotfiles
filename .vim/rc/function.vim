@@ -65,11 +65,21 @@ function! DeleteTrailingWhiteSpaces()
 endfunction
 
 function! ToggleGUIMenuBar()
+
+    " dealy menu loading to the last momoent
+    "if g:did_install_default_menus == 0
+        "source $VIMRUNTIME/delmenu.vim
+        "source $VIMRUNTIME/menu.vim
+        "let did_install_default_menus=1
+        "set guioptions-=M
+    "endif
+
     if &guioptions =~# 'm'
         set guioptions-=m
     else
         set guioptions+=m
     endif
+
 endfunction
 
 function! MergeBlankLinesIntoSingleLine()
@@ -217,51 +227,6 @@ function! ShortTabLine()
     return ret
 endfunction
 
-" only show filename in the tab label; path is not included
-function! ShortGuiTabLabel ()
-    let bufnrlist = tabpagebuflist (v:lnum)
-    let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
-    let filename = fnamemodify (label, ':t')
-    return filename
-endfunction
-
-function! GuiTabToolTip()
-    "get window count
-    let wincount = tabpagewinnr(tabpagenr(),"$")
-    let bufferlist=""
-    "get name of active buffers in windows
-    for i in tabpagebuflist()
-        let bufferlist .= "[".fnamemodify(bufname(i),":t")."] "
-    endfor
-    return bufname($)."\n windows: ".wincount." " .bufferlist. " "
-endfunction
-
-function! MyBalloonExpr()
-    let foldStart = foldclosed(v:beval_lnum )
-    let foldEnd = foldclosedend(v:beval_lnum)
-    let lines = []
-    " Detect if we are in a fold
-    if foldStart < 0
-        " Detect if we are on a misspelled word
-        let lines = spellsuggest( spellbadword(v:beval_text)[ 0 ], 5, 0 )
-    else
-        " we are in a fold
-        let numLines = foldEnd - foldStart + 1
-        " if we have too many lines in fold, show only the first 14
-        " and the last 14 lines
-        if ( numLines > 31 )
-            let lines = getline( foldStart, foldStart + 14 )
-            let lines += [ '-- Snipped ' . ( numLines - 30 ) . ' lines --' ]
-            let lines += getline( foldEnd - 14, foldEnd )
-        else
-            "less than 30 lines, lets show all of them
-            let lines = getline( foldStart, foldEnd )
-        endif
-    endif
-    " return result
-    return join( lines, has( "balloon_multiline" ) ? "\n" : " " )
-endfunction
-
 "-----------------------------------------------------------------------------
 "                                problematic part
 "-----------------------------------------------------------------------------
@@ -362,6 +327,7 @@ vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>
 
 " variant of getcwd(): un-expand $HOME to ~
 function! GetCWD()
+    "return expand("%:p:h")
     return substitute(getcwd(), $HOME,'~','' )
 endfunc
 
@@ -388,3 +354,69 @@ function! SaveOnFocusLost()
 endfunction
 
 command! SaveOnFocusLost call SaveOnFocusLost()
+
+
+
+" prepend line numbers for ranges
+" [range]Nl [width=4]
+command! -range=% -nargs=? Nl <line1>,<line2>s/^/\=printf("%" . eval( "GetNiceWidth(<args>)" ) . "d  ", line(".") - <line1> + 1)/ | nohlsearch
+
+function! GetNiceWidth(...)
+    " use 4 asthe default linenumber width
+    " this witdh will be good for most files
+    if a:0 == 0
+        return 4
+    else
+        return a:1
+    endif
+endfunc
+
+
+" duplicate each line in ranges
+command! -range=% -nargs=0 Duplicate <line1>,<line2> g/^/copy . | nohlsearch
+
+
+" append a Newline for each line in range
+command! -range=% -nargs=0 Newline <line1>,<line2> g/^/put _ | nohlsearch
+
+
+" stole from vimtip 27
+" these 2 commands can apply to arguement, or all digit in the region
+command! -nargs=? -range Dec2hex call s:Dec2hex(<line1>, <line2>, '<args>')
+function! s:Dec2hex(line1, line2, arg) range
+    if empty(a:arg)
+        if histget(':', -1) =~# "^'<,'>" && visualmode() !=# 'V'
+            let cmd = 's/\%V\<\d\+\>/\=printf("0x%x",submatch(0)+0)/g'
+        else
+            let cmd = 's/\<\d\+\>/\=printf("0x%x",submatch(0)+0)/g'
+        endif
+        try
+            execute a:line1 . ',' . a:line2 . cmd
+        catch
+            echo 'Error: No decimal number found'
+        endtry
+    else
+        echo printf('%x', a:arg + 0)
+    endif
+endfunction
+
+command! -nargs=? -range Hex2dec call s:Hex2dec(<line1>, <line2>, '<args>')
+function! s:Hex2dec(line1, line2, arg) range
+    if empty(a:arg)
+        if histget(':', -1) =~# "^'<,'>" && visualmode() !=# 'V'
+            let cmd = 's/\%V0x\x\+/\=submatch(0)+0/g'
+        else
+            let cmd = 's/0x\x\+/\=submatch(0)+0/g'
+        endif
+        try
+            execute a:line1 . ',' . a:line2 . cmd
+        catch
+            echo 'Error: No hex number starting "0x" found'
+        endtry
+    else
+        echo (a:arg =~? '^0x') ? a:arg + 0 : ('0x'.a:arg) + 0
+    endif
+endfunction
+
+
+
