@@ -26,7 +26,7 @@ Startup Session=new
 
 [KFileDialog Settings]
 Height 800=450
-Recent Files[$e]=$HOME/img/novel/sex/乱派/月皎花娇.txt,$HOME/Desktop/madedit-0.2.9/src/MadEditFrame.cpp,$HOME/wiki.txt
+Recent Files[$e]=$HOME/img/novel/sex/乱派/月皎花娇.txt,$HOME/Desktop/japan/[ジュヴナイル] 横溝正史 「金色の魔術師」 v0.9.txt,$HOME/Desktop/japan/赤い糸～precious～.txt,$HOME/Desktop/japan/[ジュヴナイル] 横溝正史 「大迷宮」 v0.9.txt,$HOME/Desktop/japan/赤い糸～destiny～.txt,$HOME/Desktop/madedit-0.2.9/src/MadEditFrame.cpp
 Width 1280=700
 
 [KTEXTEDITOR:]
@@ -46,7 +46,7 @@ Indentation Mode=cstyle
 Indentation Width=4
 On-The-Fly Spellcheck=false
 PageUp/PageDown Moves Cursor=false
-ProberType for Encoding Autodetection=5
+ProberType for Encoding Autodetection=1
 Search Dir Config Depth=3
 Tab Handling=2
 Tab Width=8
@@ -57,20 +57,20 @@ Word Wrap Column=80
 kate_kttsd=false
 katebacktracebrowserplugin=false
 katebuildplugin=false
-katectagsplugin=true
+katectagsplugin=false
 kateexternaltoolsplugin=false
 katefilebrowserplugin=true
 katefiletemplates=false
 katefindinfilesplugin=true
 katekonsoleplugin=true
 katemailfilesplugin=false
-kateopenheaderplugin=true
+kateopenheaderplugin=false
 katepybrowseplugin=false
 katequickdocumentswitcherplugin=false
 katesnippets_tngplugin=false
 katesnippetsplugin=false
-katesymbolviewerplugin=true
-katetabbarextensionplugin=true
+katesymbolviewerplugin=false
+katetabbarextensionplugin=false
 katetextfilterplugin=false
 katexmlcheckplugin=false
 
@@ -113,10 +113,8 @@ AutoSyncronize=true
 SetEditor=true
 
 [MainWindow]
-Height 800=801
 State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1280=1281
 
 [Plugin:katefindinfilesplugin::find-in-files]
 CaseSensitive=true
