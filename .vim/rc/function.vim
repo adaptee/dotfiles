@@ -218,7 +218,7 @@ function! MyTabLine()
         "" buffers modified or not ;
         let ret .= '%{MyTabModified(' . (i + 1) . ')}'
 
-        " current buffer nema()
+        " current buffer short name()
         let ret .= ' %{MyTabLabel(' . (i + 1) . ')} '
 
     endfor
@@ -230,23 +230,26 @@ function! MyTabLine()
 endfunction
 
 function! MyTabLabel(n)
-    let buflist = tabpagebuflist(a:n)
-    let winnr = tabpagewinnr(a:n)
-    let bufname = bufname(buflist[winnr - 1])
-    "let filename = fnamemodify(bufname,':t')
+    let l:buflist = tabpagebuflist(a:n)
+    let l:winnr = tabpagewinnr(a:n)
+    let l:bufname = bufname(l:buflist[l:winnr - 1])
+    " we are only instrested with the tail component
+    let l:bufname = fnamemodify(l:bufname,':t')
+
+    echo "bufname : " . l:bufname
 
     " make empty tabpage do not looks that weired
-    if bufname == ""
-        let bufname="NoName"
+    if l:bufname == ""
+        let l:bufname="NoName"
     endif
 
-    "" only show the first 6 letters of the name whne
-    ""  the filename is more than 8 letters long
+    "" only show the first 10 letters of filename whne
     if strlen(bufname) >=10
         let bufname = bufname[0:9]
     endif
 
-    return bufname
+    return l:bufname
+
 endfunction
 
 
