@@ -41,7 +41,7 @@ set viminfo+=h      " disbale the effect of hlsearch after loading viminfo
 set viminfo+=f1     " save global marks
 
 " 99% time, I have a fast tty connection; improve redrawing
-"set ttyfast
+set ttyfast
 
 " spell checking configuration
 set spelllang=en_us
@@ -408,14 +408,10 @@ vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 "                               help & man-pages                             "
 "--------------------------------------------------------------------------"
 
+" invoke help system more easily
+nnoremap <F1> :execute "help ".expand("<cword>")<CR>
 
-" invoke help system more smart
-nnoremap <F1> <ESC>:execute "help ".expand("<cword>")<CR>
-
-" make help system navigation more like Web pages
-autocmd FileType help call MakeHelpSystemNavigationWebStyle()
-
-" re-generate tags for help docs on start-up"
+" re-generate tags for help docs on start-up
 helptags $VIMLOCAL/doc
 
 "--------------------------------------------------------------------------"
@@ -660,9 +656,6 @@ set tags=./tags,tags;
 
 " first search tag file, then search cscope database
 set cscopetagorder=1
-
-"map <F5> :call CompileCurrentFile()<CR>
-"map <C-F5> :call DebugCurrentFile()<CR>
 
 
 "--------------------------------------------------------------------------"
