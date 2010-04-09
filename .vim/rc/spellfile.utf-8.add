@@ -2,9 +2,7 @@ UI
 gVim
 google
 http
-http
 www
-http
 COFF
 BFD
 blog
@@ -14,8 +12,6 @@ malloc
 i386
 PowerPC
 PLT
-call
-Redux
 Tcl
 ABI
 SVR4
@@ -87,6 +83,5 @@ svn
 BT
 IRC
 IM
-#ophiisticated
-sophiisticated/!
 quickfix
+CTRL
