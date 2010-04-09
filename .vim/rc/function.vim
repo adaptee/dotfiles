@@ -149,7 +149,6 @@ function! InsertHeaderForPythonScript()
 endfunction
 
 
-
 function! InsertClosingPair(char)
     if getline('.')[col('.') - 1] == a:char
         return "\<Right>"
@@ -169,13 +168,22 @@ function! ShowDiffSinceLastSave()
 endfunction
 
 function! SwitchToBuffer(filename)
-    "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
+    let l:fullname = expand(a:filename)
+    let l:exist = bufexists(l:fullname)
+    if l:exist
+        echo l:fullname . " is already loaded !"
+    endif
     " find in current tab
+    "echo a:filename
     let bufwinnr = bufwinnr(a:filename)
+    echo "bufwinnr: " . bufwinnr
     if bufwinnr != -1
-        execute bufwinnr . "wincmd w"
+        "echo "#if branch"
+        "execute bufwinnr . "wincmd w"
         return
     else
+        "echo "#else branch"
+        "return
         " find in each tab
         tabfirst
         let tab = 1
@@ -194,38 +202,68 @@ function! SwitchToBuffer(filename)
     endif
 endfunction
 
-function! ShortTabLine()
+function! MyTabLine()
     let ret = ''
     for i in range(tabpagenr('$'))
-        " select the color group for highlighting active tab
+        " select the highlighting of active tabpage
         if i + 1 == tabpagenr()
-            let ret .= '%#errorMsg#'
+            let ret .= '%#TabLineSel#'
         else
             let ret .= '%#TabLine#'
         endif
 
-        " find the buffername for the tablabel
-        let buflist = tabpagebuflist(i+1)
-        let winnr = tabpagewinnr(i+1)
-        let buffername = bufname(buflist[winnr-1])
-        let filename = fnamemodify(buffername,':t')
-        " check if there is no name
-        if filename == ''
-            let filename = 'noname'
-        endif
-        " only show the first 6 letters of the name and
-        " .. if the filename is more than 8 letters long
-        if strlen(filename) >=8
-            let ret .= '['. filename[0:5].'..]'
-        else
-            let ret .= '['.filename.']'
+        " set the tab page number (for mouse clicks)
+        let ret .= '%' . (i + 1) . 'T'
+
+        "" buffers modified or not ;
+        let ret .= '%{MyTabModified(' . (i + 1) . ')}'
+
+        " current buffer nema()
+        let ret .= ' %{MyTabLabel(' . (i + 1) . ')} '
+
+    endfor
+
+    " after the last tab fill with TabLineFill and reset tab page nr
+    let ret .= '%#TabLineFill#%T'
+    return ret
+
+endfunction
+
+function! MyTabLabel(n)
+    let buflist = tabpagebuflist(a:n)
+    let winnr = tabpagewinnr(a:n)
+    let bufname = bufname(buflist[winnr - 1])
+    "let filename = fnamemodify(bufname,':t')
+
+    " make empty tabpage do not looks that weired
+    if bufname == ""
+        let bufname="NoName"
+    endif
+
+    "" only show the first 6 letters of the name whne
+    ""  the filename is more than 8 letters long
+    if strlen(bufname) >=10
+        let bufname = bufname[0:9]
+    endif
+
+    return bufname
+endfunction
+
+
+function! MyTabModified(n)
+
+    let buflist = tabpagebuflist(a:n)
+
+    " if any buffer is modified
+    for bufnr in buflist
+        if getbufvar(bufnr, '&modified')
+            return ' +'
         endif
     endfor
 
-    " after the last tab fill with TabLineFill and reset tab page #
-    let ret .= '%#TabLineFill#%T'
-    return ret
-endfunction
+    return ""
+
+endfunc
 
 "-----------------------------------------------------------------------------
 "                                problematic part
