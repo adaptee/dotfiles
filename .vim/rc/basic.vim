@@ -215,9 +215,9 @@ set report=0
 " ignore whitespace difference
 set diffopt=filler,iwhite
 
-" show last line as much as possible, when these is not enough space
-" show un-printable character as <xx>, instead of ^K
-set display+=lastline,uhex
+" lastline :show last line as much as possible, when these is not enough space
+" uhex: show un-printable character as <xx>, instead of ^K
+set display+=lastline
 
 " highlight the 1st, 5th, 9th column ,etc
 " match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
@@ -570,8 +570,8 @@ nnoremap <C-P>      <C-W>W
 " always show tabline, even when only one tab is opened
 set showtabline=2
 
-" make tabline(tab pager) compact and more distinguishing
-set tabline=%!ShortTabLine()
+" make tabline(tabpage) compact and more distinguishing
+set tabline=%!MyTabLine()
 
 " create empty new tab
 nnoremap <silent><Leader>t :tabnew<CR>
@@ -659,7 +659,7 @@ set tags=./tags,tags;
 "set cscopetag
 
 " first search tag file, then search cscope database
-"set cscopetagorder=1
+set cscopetagorder=1
 
 "map <F5> :call CompileCurrentFile()<CR>
 "map <C-F5> :call DebugCurrentFile()<CR>
