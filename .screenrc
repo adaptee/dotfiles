@@ -95,3 +95,7 @@ termcapinfo xterm ti@:te@
 #term screen-256color
 
 shell /bin/bash
+
+# make <Esc> work normally in vim ,without long delayment
+maptimeout 5
+
