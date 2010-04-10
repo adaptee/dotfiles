@@ -1,16 +1,4 @@
-" Note, this file serves as a centralized location for defining vim functions.
-
-function! MakeHelpSystemNavigationWebStyle()
-    " jump and jump back, like surfing web
-    nmap <buffer> <CR> <C-]>
-    nmap <buffer> <BS> <C-T>
-    " jump to next/previous option item
-    nmap <buffer> o /'[a-z]\{2,\}'<CR>
-    nmap <buffer> O ?'[a-z]\{2,\}'<CR>
-    " jump to next/previous subject item
-    nmap <buffer> s /\|\S\+\|<CR>
-    nmap <buffer> S ?\|\S\+\|<CR>
-endfunction
+" this file serves as a centralized location for user-defined functions.
 
 function! CopyCurrentFileName()
     " Without the clipboard feature, these 2 operation is invalid
@@ -59,19 +47,19 @@ function! SearchVisualSelectedText(direction) range
 endfunc
 
 function! DeleteTrailingWhiteSpaces()
-        normal m`
-        silent! :%s/\s\+$//e
-        normal ``
+    normal m`
+    silent! :%s/\s\+$//e
+    normal ``
 endfunction
 
 function! ToggleGUIMenuBar()
 
     " dealy menu loading to the last momoent
     "if g:did_install_default_menus == 0
-        "source $VIMRUNTIME/delmenu.vim
-        "source $VIMRUNTIME/menu.vim
-        "let did_install_default_menus=1
-        "set guioptions-=M
+    "source $VIMRUNTIME/delmenu.vim
+    "source $VIMRUNTIME/menu.vim
+    "let did_install_default_menus=1
+    "set guioptions-=M
     "endif
 
     if &guioptions =~# 'm'
@@ -104,48 +92,11 @@ function! MergeBlankLinesIntoSingleLine()
 
 endfunc
 
-
-function! CompileCurrentFile()
-    execute "w"
-    execute "!clear"
-    if &filetype == 'c'
-        execute "!gcc % -g -o %<"
-        execute "!./%<"
-    elseif &filetype == 'java'
-        execute "!javac %"
-        execute "!java %<"
-    endif
-endfunction
-
-function! DebugCurrentFile()
-    execute "w"
-    if &filetype == 'c'
-        execute "!gcc % -g -o %<"
-        execute "!gdb %<"
-    elseif &filetype == 'java'
-        execute "!javac %"
-        execute "!jdb %<"
-    endif
-endfunction
-
-function! InsertHeaderForBashScript()
-        call setline(1, "#!/bin/bash")
-        call setline(2, "")
-        call setline(1, "/*************************************************************************")
-        call append(line("."), " Author: Jekyll.Wu")
-        call append(line(".")+1, " Created Time: ".strftime("%c"))
-        call append(line(".")+2, " File Name: ".expand("%"))
-        call append(line(".")+3, " Description: ")
-        call append(line(".")+4, " ************************************************************************/")
-        call append(line(".")+5, "")
-    endif
-endfunction
-
 function! InsertHeaderForPythonScript()
-        call setline(1, "#!/usr/bin/env python")
-        call setline(2, "")
-        call setline(3, "")
-        normal G
+    call setline(1, "#!/usr/bin/env python")
+    call setline(2, "")
+    call setline(3, "")
+    normal G
 endfunction
 
 
@@ -156,16 +107,6 @@ function! InsertClosingPair(char)
         return a:char
     endif
 endf
-
-function! ShowDiffSinceLastSave()
-    let filename=expand('%')
-    let diffname = filename.'.fileFromBuffer'
-    execute 'saveas! '.diffname
-    diffthis
-    vsplit
-    execute 'edit '.filename
-    diffthis
-endfunction
 
 function! SwitchToBuffer(filename)
     let l:fullname = expand(a:filename)
@@ -236,8 +177,6 @@ function! MyTabLabel(n)
     " we are only instrested with the tail component
     let l:bufname = fnamemodify(l:bufname,':t')
 
-    echo "bufname : " . l:bufname
-
     " make empty tabpage do not looks that weired
     if l:bufname == ""
         let l:bufname="NoName"
@@ -268,9 +207,6 @@ function! MyTabModified(n)
 
 endfunc
 
-"-----------------------------------------------------------------------------
-"                                problematic part
-"-----------------------------------------------------------------------------
 
 " toggle off search result highlighting only once.
 let g:hlsearch_toggle_off_temporarily=0
@@ -291,17 +227,17 @@ endfunction
 
 " calculate word frequency
 function! WordFrequency() range
-  let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
-  let frequencies = {}
-  for word in all
-    let frequencies[word] = get(frequencies, word, 0) + 1
-  endfor
-  new
-  setlocal buftype=nofile bufhidden=hide noswapfile tabstop=20
-  for [key,value] in items(frequencies)
-    call append('$', key."\t".value)
-  endfor
-  sort i
+    let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
+    let frequencies = {}
+    for word in all
+        let frequencies[word] = get(frequencies, word, 0) + 1
+    endfor
+    new
+    setlocal buftype=nofile bufhidden=hide noswapfile tabstop=20
+    for [key,value] in items(frequencies)
+        call append('$', key."\t".value)
+    endfor
+    sort i
 endfunction
 
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
@@ -310,10 +246,23 @@ command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 command! -range=% ToUnicode <line1>,<line2> :s/\\u\x\{4\}/\=eval('"' . submatch(0) . '"')/g
 
 
-" show the modification made to the buffer since loading the file
-" stolen from help :DiffOrig, and add minor improvement : <silent>
-command! DiffOrig vert new | set bt=nofile | r # | silent 0d_ | diffthis
-        \ | wincmd p | diffthis
+" diff between buffer and the file on the filesystem
+" idea stolen from help :DiffOrig
+function! DiffOrig()
+    let filetype=&ft
+    diffthis
+
+    " new window
+    vert new | r # | normal! 1Gdd
+    diffthis
+    execute "setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile readonly filetype=" . filetype
+
+    " back to previous window
+    wincmd p
+endfunction
+
+command! -nargs=0 DiffOrig :call DiffOrig()
+
 
 " delete corresponding swap file
 command! DeleteSwp silent !rm .%.sw*
@@ -326,7 +275,6 @@ command! Quick  :tab help quickref.txt
 command! Index  :tab help index.txt
 command! Howto  :tab help howto.txt
 command! Tips   :tab help tips.txt
-
 " open the colortest script in new tabpage
 command! ColorTest  tabnew | runtime syntax/colortest.vim | normal gg
 
@@ -375,14 +323,16 @@ endfunc
 
 " record and show the output of Ex commands
 function! CaptureExOutput(cmd)
-  redir => l:message
-  silent execute a:cmd
-  redir END
-  tabnew
-  silent put=l:message
-  " delete the additional leading 2 blank lines
-  normal ggd2G
-  set nomodified
+    " got you !
+    redir  @x
+    silent execute a:cmd
+    redir END
+
+    tabnew
+    setlocal buftype=nofile
+    normal "xp
+    normal gg
+    "nohlsearch
 endfunction
 
 command! -nargs=+ -complete=command CaptureExOutput call CaptureExOutput(<q-args>)
@@ -394,8 +344,7 @@ function! SaveOnFocusLost()
     execute ":autocmd FocusLost" expand("%") ":w"
 endfunction
 
-command! SaveOnFocusLost call SaveOnFocusLost()
-
+command! -nargs=0 SaveOnFocusLost call SaveOnFocusLost()
 
 
 " prepend line numbers for ranges
@@ -412,17 +361,15 @@ function! GetNiceWidth(...)
     endif
 endfunc
 
-
 " duplicate each line in ranges
 command! -range=% -nargs=0 Duplicate <line1>,<line2> g/^/copy . | nohlsearch
-
 
 " append a Newline for each line in range
 command! -range=% -nargs=0 Newline <line1>,<line2> g/^/put _ | nohlsearch
 
 
-" stole from vimtip 27
-" these 2 commands can apply to arguement, or all digit in the region
+" stole from vimtip #27
+" can apply to arguement, or all digit in the region
 command! -nargs=? -range Dec2hex call s:Dec2hex(<line1>, <line2>, '<args>')
 function! s:Dec2hex(line1, line2, arg) range
     if empty(a:arg)
@@ -460,4 +407,58 @@ function! s:Hex2dec(line1, line2, arg) range
 endfunction
 
 
+" vimtip #659
+" view folder hierarchical in flat mode
+function! FlatView(dir)
+    new
+    set buftype=nofile
+    set bufhidden=hide
+    set noswapfile
+    normal i.
+    while 1
+        let file = getline(".")
+        if (file == '')
+            normal dd
+        elseif (isdirectory(file))
+            normal dd
+            let @" = glob(file . "/*")
+            normal O
+            normal P
+            let @" = glob(file . "/.[^.]*")
+            if (@" != '')
+                normal O
+                normal P
+            endif
+        else
+            if (line('.') == line('$'))
+                return
+            else
+                normal j
+            endif
+        endif
+    endwhile
+endfunction
+
+" vimtip #913
+function! Rm(...)
+    " when no args are given, delete current file
+    if(exists('a:1'))
+        let theFile = expand(a:1)
+    else
+        let theFile = expand('%:p')
+    endif
+
+    " builtin function delete() works on all OSs
+    let delStatus = delete(theFile)
+    if(delStatus == 0)
+        echo "Deleted " . theFile
+    else
+        echohl WarningMsg
+        echo "Failed to delete " . theFile
+        echohl None
+    endif
+endfunction
+
+" delete file on the disk
+command! -complete=file -nargs=? Rm call Rm(<f-args>)
 
