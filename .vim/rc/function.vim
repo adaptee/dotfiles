@@ -13,7 +13,7 @@ endfunc
 function! AdjustCommaRelatedSpacing()
     if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
         "memory current position
-        "normal m`
+        normal mc
 
         "remove extra white-spaces between comma and its previous word.
         silent! :%s/\>\s\+,/,/ge
@@ -23,7 +23,7 @@ function! AdjustCommaRelatedSpacing()
         silent! :%s/,\</, /ge
 
         "return to memorize position
-        "normal ``
+        normal 'c
     endif
 endfunction
 
@@ -47,9 +47,9 @@ function! SearchVisualSelectedText(direction) range
 endfunc
 
 function! DeleteTrailingWhiteSpaces()
-    normal m`
+    normal mt
     silent! :%s/\s\+$//e
-    normal ``
+    normal 't
 endfunction
 
 function! ToggleGUIMenuBar()
@@ -73,7 +73,7 @@ endfunction
 function! MergeBlankLinesIntoSingleLine()
 
     " remember current position
-    normal mt
+    normal mb
 
     " first, delete all trailing white spaces in each line
     silent! :%s/\s\+$//e
@@ -85,7 +85,7 @@ function! MergeBlankLinesIntoSingleLine()
     silent! :%s/^\s*\n\{2,}/\r/
 
     " return to original position
-    silent! normal 't
+    silent! normal 'b
 
     " disable highlighting search result temporarily.
     nohlsearch
