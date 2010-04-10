@@ -209,8 +209,6 @@ set scrolloff=5
 " leading indicator for wrapped lines
 " set showbreak=>>
 
-" always info us whenever anything is changed via Ex command;default threshold value is 2
-set report=0
 
 " ignore whitespace difference
 set diffopt=filler,iwhite
@@ -221,6 +219,9 @@ set display+=lastline
 
 " highlight the 1st, 5th, 9th column ,etc
 " match Search /\%(\_^\s*\)\@<=\%(\%1v\|\%5v\|\%9v\)\s/
+
+" highlight text beyond the 80th column
+"match ErrorMsg '\%>80v.\+'
 
 "--------------------------------------------------------------------------"
 "                           encoding & locale                             "
@@ -394,15 +395,13 @@ cnoremap <C-D>  <Del>
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 
-" stolen from VimTip 646
-" Move current line of text up and down(crossing other text)
-set <M-j>=j
-set <M-k>=k
-nmap <M-j> mz:m+<CR>`z
-nmap <M-k> mz:m-2<CR>`z
-" Move visually-selected text up and down(crossing other text)
-vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
+" now you car press 'd '  to delete until next <Space>(inclusice)
+onoremap <Space> f<Space>
+
+"  '_' has no usage, my opionin
+"  now, '+' and '_', both pressed together with Shift, do opposotie thing
+nnoremap _ -
+vnoremap _ -
 
 "--------------------------------------------------------------------------"
 "                               help & man-pages                             "
@@ -447,11 +446,18 @@ set shiftround
 " choose C-style indentation
 set cindent
 
-" Now vim can reformat multi-byte text (e.g. Chinese)
-set formatoptions+=mM
+
+" format paragraph
+set formatprg=fmt
 
 " do not use Ex-mode, use Q for formatting
 map Q gq
+
+" put 2 spaces after '.' '!' '?' when join lines
+set joinspaces
+
+" Since Jx is more useful than only J....
+"nnoremap J Jx
 
 " format the whole file
 nnoremap <Leader>F gg=G''
@@ -469,6 +475,38 @@ vnoremap <S-Tab> <gv
 
 " merge multiple contiguous blank lines into single one.
 nnoremap <silent><Leader>Z :call MergeBlankLinesIntoSingleLine()<CR>
+
+"--------------------------------------------------------------------------"
+"                                 formatoptions                            "
+"--------------------------------------------------------------------------"
+
+" auto-re-foramt paragraph after insertion or deletion
+"set formatoptions+=a
+
+" auto-wrap text
+"set formatoptions+=t
+
+" auto-format comments , useful for source code
+"set formatoptions+=c
+
+" add extra indentation to the first line of a paragraph
+"set formatoptions+=2
+
+" insert comment header when new comment line is created
+"set formatoptions+=o
+"set formatoptions+=r
+
+" allow line-breaking after multibyte char, such as Chinese
+set formatoptions+=mM
+
+"--------------------------------------------------------------------------"
+"                                  Printing                                "
+"--------------------------------------------------------------------------"
+
+" these 2 options has to match
+set printencoding=utf-8
+set printmbcharset=ISO10646
+
 
 "--------------------------------------------------------------------------"
 "                                   folding                                "
@@ -529,17 +567,23 @@ nnoremap <C-right>    <ESC>:bn<CR>
 nnoremap <C-left>     <ESC>:bp<CR>
 
 " make writing and quiting more easy
-nmap <Leader>s mz:update<CR>'z
-nmap <Leader>W :w!<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>Q :q!<CR>
-nmap <Leader>a :qa<CR>
-nmap <Leader>A :qa!<CR>
+nnoremap <Leader>s mz:update<CR>'z
+nnoremap <Leader>W :w!<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :q!<CR>
+nnoremap <Leader>a :qa<CR>
+nnoremap <Leader>A :qa!<CR>
 
 " add more functionality to existing <C-g>
 " first, show the full path
 " then, copy the full path into 3 main registers: *, +,
 nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
+
+" view folder hierarchical in flat mode
+nnoremap -F :call FlatView('.')<CR>
+
+" supprss W10 : changing a readonly file
+autocmd FileChangedRO /*  setlocal noreadonly
 
 "--------------------------------------------------------------------------"
 "                                   window                                 "
@@ -560,7 +604,7 @@ nnoremap <C-P>      <C-W>W
 
 
 "--------------------------------------------------------------------------"
-"                                   tab page                               "
+"                                   tabpage                                "
 "--------------------------------------------------------------------------"
 
 " always show tabline, even when only one tab is opened
@@ -586,14 +630,34 @@ nnoremap <silent><leader>1 :tabfirst<CR>
 nnoremap <silent><leader>0 :tablast<CR>
 
 " Switch to tab<N>
-nnoremap <silent><leader>2 2gt<ESC>
-nnoremap <silent><leader>3 3gt<ESC>
-nnoremap <silent><leader>4 4gt<ESC>
-nnoremap <silent><leader>5 5gt<ESC>
-nnoremap <silent><leader>6 6gt<ESC>
-nnoremap <silent><leader>7 7gt<ESC>
-nnoremap <silent><leader>8 8gt<ESC>
-nnoremap <silent><leader>9 9gt<ESC>
+nnoremap <silent><leader>2 2gt
+nnoremap <silent><leader>3 3gt
+nnoremap <silent><leader>4 4gt
+nnoremap <silent><leader>5 5gt
+nnoremap <silent><leader>6 6gt
+nnoremap <silent><leader>7 7gt
+nnoremap <silent><leader>8 8gt
+nnoremap <silent><leader>9 9gt
+
+"--------------------------------------------------------------------------"
+"                                 messages                                 "
+"--------------------------------------------------------------------------"
+
+" enable a bunch of shortness
+set shortmess+=a
+
+" avoid the warning message when finding .swp file
+"set shortmess+=A
+
+" don't give 'search hit BOTTOM, continuing at TOP'
+set shortmess+=s
+
+" truncate file message at the start if it is too long
+set shortmess+=t
+
+" always info us whenever anything is changed via Ex command
+" default threshold is 2 lines
+set report=0
 
 
 "--------------------------------------------------------------------------"
@@ -633,17 +697,17 @@ vnoremap gf <C-w>gF
 " enable 'gf' to work with environment variable in the form of ${VAR}
 set isfname+={,}
 
-" Insert header automatically
-"autocmd BufNewFile *.sh  call InsertHeaderForBashScript()
+" archives with those extensions are actully zip files
+autocmd BufReadCmd *.jar,*.xpi call zip#Browse(expand("<amatch>"))
 
 " Insert python header automatically
-autocmd BufNewFile *.py  call InsertHeaderForPythonScript ()
+autocmd BufNewFile *.py  call InsertHeaderForPythonScript()
 
 " Remove trailing white spaces when saving files
-autocmd BufWritePre *                  call DeleteTrailingWhiteSpaces()
+autocmd BufWritePre *    call DeleteTrailingWhiteSpaces()
 
 " Adjust wrongly spaced commas when saving changes
-autocmd BufWritePre *                  call AdjustCommaRelatedSpacing()
+autocmd BufWritePre *    call AdjustCommaRelatedSpacing()
 
 " improve tag's utility
 " Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
@@ -662,16 +726,18 @@ set cscopetagorder=1
 "                                miscellaneous                             "
 "--------------------------------------------------------------------------"
 
+" left-and-right-align a line by filling in appropriate extra spaces
+source $VIMRUNTIME/macros/justify.vim
+
+" if file is already open in other vim instance,  activate that instace
+" then just exit
+source $VIMRUNTIME/macros/editexisting.vim
+
 " now <C-y> and <C-b> is very to remember by their relative position to 'h'
 " 1).y(above h) mean inserting character in corresponding position of upper line
 " 2).b(below h) mean repeating character in corresponding position of lower line
 inoremap <C-b> <C-e>
 
-" put 2 spaces after '.' '!' '?' when joining lines
-set joinspaces
-
-" Since Jx is more useful than only J....
-"nnoremap J Jx
 
 " for those who has the obsession of saving changes.....
 " save automatically after pressing <Enter>
@@ -685,10 +751,10 @@ let g:netrw_http_cmd = "wget -q -O"
 " note, alpha mean (a, b, c, d,...z); besides, decimal is always implied.
 set nrformats=alpha,hex
 
-" stolen from VimTip 1540
+" VimTip 1540
 " set 'updatetime' to 10 seconds when in insert mode
 autocmd InsertEnter * let updatetimerestore=&updatetime | set updatetime=10000
 autocmd InsertLeave * let &updatetime=updatetimerestore
-" automatically leave insert mode after 'updatetime' milliseconds of inaction
+" automatically leave insert mode after 'updatetime' milliseconds of idleness
 autocmd CursorHoldI * stopinsert
 
