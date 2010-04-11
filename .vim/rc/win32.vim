@@ -6,11 +6,11 @@ set encoding=cp936
 set fileformats=dos,unix,mac
 
 " Fast reading of _vimrc
-nmap <silent> <leader>v :call SwitchToBuffer("$VIM/_vimrc")<CR>
+nnoremap <silent> <leader>v :call SwitchToBuffer("$VIM/_vimrc")<CR>
 
 " When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
-autocmd! bufwritepost _vimrc source $VIM/_vimrc
-autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $VIM/_vimrc
+autocmd! BufWritePost _vimrc source $VIM/_vimrc
+autocmd! BufWritePost $VIMLOCAL/rc/*.vim source $VIM/_vimrc
 
 "autocmd VimEnter * call LoadSession()
 "autocmd VimLeave * call SaveSession()
@@ -29,7 +29,8 @@ function! LoadSession()
 endfunction
 
 " open files under current folder.
-nmap <Leader>o :e <C-R>=expand("%:p:h") . "\\" <CR>
+nnoremap <Leader>o :e <C-R>=expand("%:p:h") . "\\" <CR>
+cnoremap <C-o> edit <C-R>=expand("%:p:h") . "\\" <CR>
 
 " In windows, we generally only use gvim.
 " So,<A-1> will work fine. NO dirty hacking is needed.
