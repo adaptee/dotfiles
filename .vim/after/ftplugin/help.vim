@@ -12,3 +12,5 @@ nmap <buffer> O ?'[a-z]\{2,\}'<CR>
 nmap <buffer> s /\|\S\+\|<CR>
 nmap <buffer> S ?\|\S\+\|<CR>
 
+" help file reads bettern without linenumber
+setlocal nonumber
