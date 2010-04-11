@@ -8,7 +8,7 @@ function! CopyCurrentFileName()
     endif
     " this operation is always safe
     let @" = expand('%:p')
-endfunc
+endfunction
 
 function! AdjustCommaRelatedSpacing()
     if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
@@ -44,7 +44,7 @@ function! SearchVisualSelectedText(direction) range
 
     let @/ = l:pattern
     let @" = l:saved_reg
-endfunc
+endfunction
 
 function! DeleteTrailingWhiteSpaces()
     normal mt
@@ -90,7 +90,7 @@ function! MergeBlankLinesIntoSingleLine()
     " disable highlighting search result temporarily.
     nohlsearch
 
-endfunc
+endfunction
 
 function! InsertHeaderForPythonScript()
     call setline(1, "#!/usr/bin/env python")
@@ -205,7 +205,7 @@ function! MyTabModified(n)
 
     return ""
 
-endfunc
+endfunction
 
 
 " toggle off search result highlighting only once.
@@ -309,7 +309,7 @@ function! FillWithSpace()
     " restore original position
     normal 's
 
-endfunc
+endfunction
 
 vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>
 
@@ -318,7 +318,7 @@ vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>
 function! GetCWD()
     "return expand("%:p:h")
     return substitute(getcwd(), $HOME,'~','' )
-endfunc
+endfunction
 
 
 " record and show the output of Ex commands
@@ -359,7 +359,7 @@ function! GetNiceWidth(...)
     else
         return a:1
     endif
-endfunc
+endfunction
 
 " duplicate each line in ranges
 command! -range=% -nargs=0 Duplicate <line1>,<line2> g/^/copy . | nohlsearch
@@ -461,4 +461,9 @@ endfunction
 
 " delete file on the disk
 command! -complete=file -nargs=? Rm call Rm(<f-args>)
+
+
+" techinally, ASCII is 00-ff
+command! HighlightNonASCII normal /[^\x00-\xff]<CR>
+command! DeleteNonASCII %s/[^\x00-\xff]//g
 
