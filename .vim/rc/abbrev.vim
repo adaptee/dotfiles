@@ -2,7 +2,7 @@
 "                                abbreviation                               "
 "--------------------------------------------------------------------------"
 
-" use abbreviation to auto-correct typo
+" auto-correct typo
 iab teh         the
 iab scr         src
 iab fro         for
@@ -48,7 +48,7 @@ iab throuth through
 iab hlep help
 cab hlep help
 
-" use abbreviation to reduce key-typing;come on, lazy boy!
+" reduce key-typing;come on, lazy boy!
 iab ok      OK
 iab ad      advertisement
 iab abbr    abbreviation
@@ -60,22 +60,20 @@ iab envir   environment
 iab fst     first
 iab scd     second
 iab misc    miscellaneous
-iab xdate   <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
-iab xtime   <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 iab kath    Katherine
 iab attr    attribute
 iab chinese Chinese
 iab english English
 iab america America
 iab spec    specification
-iab #b /************************************************
-iab #e ************************************************/
-iab #l /*----------------------------------------------*/
+iab appl application
+iab appro appropriate
+
 
 " make entering the most frequently used command more easily
 cab E   echo
 cab G   grep
-cab HG  helpgrep
+cab H   helpgrep
 cab M   map
 cab UM  unmap
 cab IM  imap
@@ -87,3 +85,29 @@ cab S   set
 cab V   verbose
 cab P   pwd
 cab -   cd -
+
+
+" some more instresting abbrevs
+
+" insert date and time more easylit
+" Format String              Example output
+" -------------              --------------
+" %c                         Thu 27 Sep 2007 07:37:42 AM EDT (depends on locale)
+" %a %d %b %Y                Thu 27 Sep 2007
+" %b %d, %Y                  Sep 27, 2007
+" %d/%m/%y %H:%M:%S          27/09/07 07:36:32
+" %H:%M:%S                   07:36:44
+" %T                         07:38:09
+" %m/%d/%y                   09/27/07
+" %y%m%d                     070927
+" %x %X (%Z)                 09/27/2007 08:00:59 AM (EDT)
+" RFC822 format:
+" %a, %d %b %Y %H:%M:%S %z   Wed, 29 Aug 2007 02:37:15 -0400
+" ISO8601/W3C format (http://www.w3.org/TR/NOTE-datetime):
+" %FT%T%z                    2007-08-29T02:37:13-0400
+iab <expr> xdate  strftime("%F")
+iab <expr> xtime  strftime("%F %H:%M:%S")
+
+iab #b /************************************************
+iab #e ************************************************/
+iab #l /*----------------------------------------------*/
