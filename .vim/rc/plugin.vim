@@ -300,7 +300,7 @@ function! ToggleQuickfixSigns()
         echo "quickfixsigns is on now"
     endif
 
-endfunc
+endfunction
 
 "------------------------------------------------------------------------------------------------------
 " renamer.vim( renamed large amount of files quickly with the powerful editing feature of vim )
