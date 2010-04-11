@@ -95,6 +95,13 @@ inoremap jj <Esc>
 " since ';' is not quite useful in normal mode, use it to enter Ex mode quickly
 nnoremap ; :
 
+" ; is quite useless in command line
+" if you really need to insert ; , press <C-v>;
+cnoremap ; :
+
+" repeat last change for each line withn selected range
+vnoremap . :normal .<CR>
+
 "--------------------------------------------------------------------------"
 "                                   colors                                 "
 "--------------------------------------------------------------------------"
@@ -117,7 +124,7 @@ else
 endif
 
 " use normal font in statusline
-hi StatusLine gui=none
+highlight StatusLine gui=none
 
 "--------------------------------------------------------------------------"
 "                                   visual clues                           "
