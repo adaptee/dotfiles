@@ -58,6 +58,8 @@
     co      = checkout
     cob     = checkout -b
 
+    cl      = clone
+
     df      = difftool
     dfc     = difftool --cached
     ch      = diff --stat -r
