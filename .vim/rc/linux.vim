@@ -5,11 +5,11 @@ set encoding=utf-8
 set fileformats=unix,dos,mac
 
 " Fast reading of .vimrc
-nmap <silent> <leader>v :call SwitchToBuffer("$HOME/.vimrc")<CR>
+nnoremap <silent> <leader>v :call SwitchToBuffer("$HOME/.vimrc")<CR>
 
 " When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
-autocmd! bufwritepost .vimrc source $HOME/.vimrc
-autocmd! bufwritepost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
+autocmd! BufWritePost .vimrc source $HOME/.vimrc
+autocmd! BufWritePost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
 
 "autocmd VimEnter * call LoadSession()
 "autocmd VimLeave * call SaveSession()
@@ -26,8 +26,8 @@ function! LoadSession()
 endfunction
 
 " open files under current folder.
-nmap <Leader>o :edit <C-R>=expand("%:p:h") . "/" <CR>
-cmap <C-o> edit <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>o :edit <C-R>=expand("%:p:h") . "/" <CR>
+cnoremap <C-o> edit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Note, if we only use gvim, then <A-1> will be OK.
 " However, terminal support is necessary.
@@ -58,7 +58,7 @@ nnoremap <M-5> <Esc>:setlocal<Space>invspell<CR>:setlocal<Space>spell?<CR>
 "set keywordprg = myman
 
 " look up current word in the dictionary
-nmap <Leader>k :!clear;sdcv "<cword>"<CR>
+nnoremap <Leader>k :!clear;sdcv "<cword>"<CR>
 
 " Use ':W'" to write to files even when we forget to use sudo when launching vim
 command! -bar -nargs=0 W :silent exe "w !sudo tee % > /dev/null" | silent edit!
