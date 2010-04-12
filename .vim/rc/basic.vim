@@ -92,12 +92,10 @@ filetype indent on
 " since 'jj' nearly never occur in input mode, use it to return to normal mode.
 inoremap jj <Esc>
 
-" since ';' is not quite useful in normal mode, use it to enter Ex mode quickly
-nnoremap ; :
+" insert newline for lazy guys
+" kk apprear rarely  in word ; don't worry
+inoremap kk <CR>
 
-" ; is quite useless in command line
-" if you really need to insert ; , press <C-v>;
-cnoremap ; :
 
 " repeat last change for each line withn selected range
 vnoremap . :normal .<CR>
@@ -287,8 +285,6 @@ nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> execute "normal " . temp_nr
 vnoremap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 vnoremap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 
-" Make p in Visual mode to replace selected text with previous yanked content.
-vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
 
 " disable annoying window
 nnoremap q: <Nop>
@@ -315,8 +311,19 @@ set clipboard+=unnamed
 " automatically put visually selected text into "*
 set clipboard+=autoselect
 
+" paste in line-wise mode
+nnoremap ,p :put "<CR>
+nnoremap ,P :put! "<CR>
+
+" Make p in Visual mode to replace selected text with previous yanked content.
+vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
+
 " super paste; now in insert mode, you can use <C-v> to do pasting
 inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
+
+" Y's default functionality is duplicated with 'yy' and counter-intuitive
+" Now 'C','D','Y' work the same way: from current position to EoF
+nnoremap Y y$
 
 " stolen from VimTip 1539; added creating mark before making changes.
 " exchange the word under cursor with next word
@@ -324,9 +331,6 @@ nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:no
 " exchange the word under cursor with previous word
 nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
-" Y's default functionality is duplicated with 'yy' and counter-intuitive
-" Now 'C','D','Y' work the same way: from current position to EoF
-nnoremap Y y$
 
 " Make shift-insert work like in Xterm : paste selection
 map <S-Insert> <MiddleMouse>
@@ -376,8 +380,8 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 " make tag jumping more easy"
-nnoremap <Leader>d <ESC><C-]>
-nnoremap <Leader>z <ESC><C-T>
+nnoremap <silent><Leader>d :call GotoDefinition(expand("<cword>"))<CR>
+nnoremap <Leader>z <C-T>
 
 " In normal & visual mode, move cursor to beginning/end quickly
 nnoremap H ^
@@ -385,7 +389,30 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 
-" make command-line operation more efficient, or more emacs style
+" after jumping, move that position to the center, automatically
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+
+" now you car press 'd '  to delete until next <Space>(inclusice)
+onoremap <Space> f<Space>
+
+if ( &virtualedit == "all")
+    nnoremap <silent>x x:call BetterXinVirtualEdit()<CR>
+endif
+
+"  '_' has no usage, my opionin
+"  now, '+' and '_', both pressed together with Shift, do opposotie thing
+nnoremap _ -
+vnoremap _ -
+
+"--------------------------------------------------------------------------"
+"                                  command line                            "
+"--------------------------------------------------------------------------"
+
+" ';' is not quite useful in normal mode, use it to enter Ex mode quickly
+nnoremap ; :
+
+" make command-line operation more emacs style
 " help tcsh-style
 cnoremap <C-A>  <Home>
 cnoremap <C-E>  <End>
@@ -397,21 +424,33 @@ cnoremap <C-b>  <S-Left>
 cnoremap <C-f>  <S-Right>
 cnoremap <C-D>  <Del>
 
+" <CR> is hard to each
+cnoremap <C-m> <CR>
 
-" after jumping, move that position to the center, automatically
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
+" ; is quite useless in command line
+" if you really need to insert ; , press <C-v>;
+cnoremap ; :
 
-" now you car press 'd '  to delete until next <Space>(inclusice)
-onoremap <Space> f<Space>
-
-"  '_' has no usage, my opionin
-"  now, '+' and '_', both pressed together with Shift, do opposotie thing
-nnoremap _ -
-vnoremap _ -
 
 "--------------------------------------------------------------------------"
-"                               help & man-pages                             "
+"                                  Arrows                                  "
+"--------------------------------------------------------------------------"
+
+" cycle  buffer list
+nnoremap <silent><Left>     :bprevious<CR>
+nnoremap <silent><Right>    :bnext<CR>
+
+" scroll the alternate window
+nnoremap <silent><Up>       :call ScrollOtherWindow("up")<CR>
+nnoremap <silent><Down>     :call ScrollOtherWindow("down")<CR>
+
+" move tabpage
+nnoremap <silent><S-Left>   :call TabMoveLeft()<CR>
+nnoremap <silent><S-Right>  :call TabMoveRight()<CR>
+
+
+"--------------------------------------------------------------------------"
+"                               help & man-pages                           "
 "--------------------------------------------------------------------------"
 
 " invoke help system more easily
@@ -569,21 +608,18 @@ endif
 " when dealing with unsaved buffer, raise a confirmation dialog instead of failing
 set confirm
 
-" use Ctrl+Left/Right arrow to cycle the buffer list
-nnoremap <C-right>    <ESC>:bn<CR>
-nnoremap <C-left>     <ESC>:bp<CR>
 
 " make writing and quiting more easy
 nnoremap <Leader>s mz:update<CR>'z
 nnoremap <Leader>W :w!<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>Q :q!<CR>
-nnoremap <Leader>a :qa<CR>
-nnoremap <Leader>A :qa!<CR>
+nnoremap <silent><Leader>q :Quit("q")<CR>
+nnoremap <silent><Leader>Q :Quit("q!")<CR>
+nnoremap <silent><Leader>a :qa<CR>
+nnoremap <silent><Leader>A :qa!<CR>
 
 " add more functionality to existing <C-g>
 " first, show the full path
-" then, copy the full path into 3 main registers: *, +,
+" then, copy the full path into 3 registers: * + "
 nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 
 " view folder hierarchical in flat mode
@@ -626,11 +662,9 @@ nnoremap <silent><Leader>t :tabnew<CR>
 nnoremap <silent><Leader>T :tab sball<CR>
 
 " switch to next tab
-nnoremap <silent><Leader>n :tabnext<CR>
 nnoremap <silent><Tab>     :tabnext<CR>
 " switch to previous tab
-nnoremap <silent><Leader>p :tabprevious<CR>
-nnoremap <S-Tab>           :tabprevious<CR>
+nnoremap <silent><S-Tab>   :tabprevious<CR>
 
 " fast switch to first & last tab
 nnoremap <silent><leader>1 :tabfirst<CR>
@@ -674,10 +708,6 @@ set report=0
 " jump to next/previous entry in quickfix list
 nnoremap <silent><C-H> :cprevious<CR>
 nnoremap <silent><C-L> :cnext<CR>
-
-" jump to next/previous entry in quickfix list
-nnoremap <silent><Left>  :cprevious<CR>
-nnoremap <silent><Right> :cnext<CR>
 
 " press v in quickfix window to preview while holding focus in quickfix window
 autocmd FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
