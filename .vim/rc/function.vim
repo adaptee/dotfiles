@@ -1,5 +1,41 @@
 " this file serves as a centralized location for user-defined functions.
 
+"--------------------------------------------------------------------------"
+"                                   for status line                        "
+"--------------------------------------------------------------------------"
+
+" the syntax group of current word
+function! SyntaxGroup()
+    return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+
+" the highlight group of current word
+function! HighlightGroup()
+    return synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
+endfunction
+
+" offset percentage by byte, instead of by line
+function! BytePercent()
+    let CurByte = line2byte (line ( "." ) ) + col ( "." ) - 1
+    let TotBytes = line2byte( line( "$" ) + 1) - 1
+    return ( CurByte * 100 ) / TotBytes
+endfunction
+
+" current line's indent level
+function! IndentLevel()
+    let l:indentlevel = (indent('.') / &shiftwidth )
+    if l:indentlevel == 0
+        let l:indentlevel='*'
+    endif
+    return l:indentlevel
+endfunction
+
+"set statusline+=\ [Syn=%{SyntaxGroup()}]
+"set statusline+=\ [HI=%{HighlightGroup()}]
+"set statusline+=\ [%{IndentLevel()}]
+"set statusline+=\ [%{BytePercent()}%%]
+
+
 function! CopyCurrentFileName()
     " Without the clipboard feature, these 2 operation is invalid
     if has('clipboard')
@@ -10,22 +46,6 @@ function! CopyCurrentFileName()
     let @" = expand('%:p')
 endfunction
 
-function! AdjustCommaRelatedSpacing()
-    if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
-        "memory current position
-        normal mc
-
-        "remove extra white-spaces between comma and its previous word.
-        silent! :%s/\>\s\+,/,/ge
-        "remove extra white-spaces between comma and its next word.
-        silent! :%s/,\s\+\</, /ge
-        "if comma is directly followed by a word, insert one space
-        silent! :%s/,\</, /ge
-
-        "return to memorize position
-        normal 'c
-    endif
-endfunction
 
 " for parameter direction, 'b' means backward, 'f' means forward
 function! SearchVisualSelectedText(direction) range
@@ -70,6 +90,23 @@ function! ToggleGUIMenuBar()
 
 endfunction
 
+function! AdjustCommaRelatedSpacing()
+    if ( &filetype == 'c' || &filetype == 'cpp' || &filetype == "")
+        "memory current position
+        normal mc
+
+        "remove extra white-spaces between comma and its previous word.
+        silent! :%s/\>\s\+,/,/ge
+        "remove extra white-spaces between comma and its next word.
+        silent! :%s/,\s\+\</, /ge
+        "if comma is directly followed by a word, insert one space
+        silent! :%s/,\</, /ge
+
+        "return to memorize position
+        normal 'c
+    endif
+endfunction
+
 function! MergeBlankLinesIntoSingleLine()
 
     " remember current position
@@ -98,7 +135,6 @@ function! InsertHeaderForPythonScript()
     call setline(3, "")
     normal G
 endfunction
-
 
 function! InsertClosingPair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -242,8 +278,6 @@ endfunction
 
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 
-" convert \uXXXX to corresponding Unicode character
-command! -range=% ToUnicode <line1>,<line2> :s/\\u\x\{4\}/\=eval('"' . submatch(0) . '"')/g
 
 
 " diff between buffer and the file on the filesystem
@@ -463,7 +497,118 @@ endfunction
 command! -complete=file -nargs=? Rm call Rm(<f-args>)
 
 
-" techinally, ASCII is 00-ff
+" techinally, ASCII is only 00-ff
 command! HighlightNonASCII normal /[^\x00-\xff]<CR>
 command! DeleteNonASCII %s/[^\x00-\xff]//g
+
+
+" close window
+" when current tabpage is also close , switch to the on on the left
+" instead of the default right one
+function! Quit(quitcmd)
+
+    let l:prev_tabpageamount = tabpagenr('$')
+    let l:prev_tabpagenr = tabpagenr()
+
+    execute a:quitcmd
+
+    let l:curr_tabpageamount = tabpagenr('$')
+    let l:curr_tabpagenr = tabpagenr()
+
+    if ( l:curr_tabpageamount < l:prev_tabpageamount  && l:curr_tabpagenr == l:prev_tabpagenr)
+        tabprev
+    endif
+endfunction
+
+command! -nargs=1  Quit call Quit(<args>)
+
+
+" add execution permission for current file
+function! XBit()
+    let fname = expand("%:p")
+    checktime
+    silent !chmod u+x %
+    checktime
+endfunction
+command! -nargs=0 Xbit call XBit()
+
+
+
+" first consider global variable
+" if not found ,consider local variable
+function! GotoDefinition(identifier)
+    "echo "a:identifier " . a:identifier
+    let pos = getpos(".")
+
+    "silent! execute "tag " . a:identifier
+    silent! execute "normal \<C-]>"
+
+    " staying at same line means not found
+    if getpos(".") == pos
+        normal gd
+    endif
+endfunction
+
+
+function! TabMoveLeft()
+    let l:current_nr = tabpagenr()
+
+    if l:current_nr == 1
+        return
+    else
+        execute "tabmove "  . (l:current_nr - 2)
+    endif
+endfunction
+
+function! TabMoveRight()
+    let l:current_nr = tabpagenr()
+    let l:last_nr = tabpagenr('$')
+
+    if l:current_nr == l:last_nr
+        return
+    else
+        execute "tabmove "  . (l:current_nr )
+    endif
+endfunction
+
+
+" vimtip #131
+function! ScrollOtherWindow(dir)
+    if a:dir == "down"
+        let move = "\<C-E>"
+    elseif a:dir == "up"
+        let move = "\<C-Y>"
+    endif
+    exec "normal \<C-W>p" . move . "\<C-W>p"
+endfunction
+
+" vimtip #576
+function! GenerateUnicode(first, last)
+    let i = a:first
+    while i <= a:last
+        if (i%256 == 0)
+            silent $put ='----------------------------------------------------'
+            silent $put ='     0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F '
+            silent $put ='----------------------------------------------------'
+        endif
+        let c = printf('%04X ', i)
+        for j in range(16)
+            let c = c . nr2char(i) . ' '
+            let i += 1
+        endfor
+        silent $put =c
+    endwhile
+endfunction
+
+" convert \uXXXX to corresponding Unicode character
+command! -range=% ToUnicode <line1>,<line2> :s/\\u\x\{4\}/\=eval('"' . submatch(0) . '"')/g
+
+
+" vimtip #734
+" when at somewhere past EOL, 'x' will bring you back to EOL
+function! BetterXinVirtualEdit()
+    if &ve != "" && col('.') >= col('$')
+        normal $
+    endif
+endfunction
 

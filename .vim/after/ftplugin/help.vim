@@ -14,3 +14,11 @@ nmap <buffer> S ?\|\S\+\|<CR>
 
 " help file reads bettern without linenumber
 setlocal nonumber
+
+" help file do not need folding
+setlocal foldcolumn=0
+
+" ( and ) should be excluded when expanding <cword>
+" with this setting, Ctrl-[  will fail on ('wrap'
+" example  $VIMRUNTIME/doc/motion.txt :200
+setlocal iskeyword+=^(,^)
