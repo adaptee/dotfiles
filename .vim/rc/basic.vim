@@ -316,7 +316,7 @@ nnoremap ,p :put "<CR>
 nnoremap ,P :put! "<CR>
 
 " Make p in Visual mode to replace selected text with previous yanked content.
-vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>:let @"=current_reg<CR><Esc>
+vnoremap <silent> p <Esc>:let register_backup=@"<CR>gvp:let @"=register_backup<CR>
 
 " super paste; now in insert mode, you can use <C-v> to do pasting
 inoremap <C-v> <ESC>:set paste<CR>mua<C-R>*<ESC>:set nopaste<CR>a
@@ -327,9 +327,9 @@ nnoremap Y y$
 
 " stolen from VimTip 1539; added creating mark before making changes.
 " exchange the word under cursor with next word
-nnoremap <Leader>x mx<Esc>:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
+nnoremap <Leader>x mx:s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 " exchange the word under cursor with previous word
-nnoremap <Leader>X mx<Esc>:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
+nnoremap <Leader>X mx:s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/<CR>'x<Esc>:nohlsearch<CR>
 
 
 " Make shift-insert work like in Xterm : paste selection
@@ -379,9 +379,7 @@ inoremap <UP> <ESC>gka
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
-" make tag jumping more easy"
-nnoremap <silent><Leader>d :call GotoDefinition(expand("<cword>"))<CR>
-nnoremap <Leader>z <C-T>
+
 
 " In normal & visual mode, move cursor to beginning/end quickly
 nnoremap H ^
@@ -397,7 +395,7 @@ nnoremap <C-i> <C-i>zz
 onoremap <Space> f<Space>
 
 if ( &virtualedit == "all")
-    nnoremap <silent>x x:call BetterXinVirtualEdit()<CR>
+    nnoremap <silent> x x:call BetterXinVirtualEdit()<CR>
 endif
 
 "  '_' has no usage, my opionin
@@ -437,27 +435,18 @@ cnoremap ; :
 "--------------------------------------------------------------------------"
 
 " cycle  buffer list
-nnoremap <silent><Left>     :bprevious<CR>
-nnoremap <silent><Right>    :bnext<CR>
+nnoremap <silent> <Left>     :bprevious<CR>
+nnoremap <silent> <Right>    :bnext<CR>
 
 " scroll the alternate window
-nnoremap <silent><Up>       :call ScrollOtherWindow("up")<CR>
-nnoremap <silent><Down>     :call ScrollOtherWindow("down")<CR>
+nnoremap <silent> <Up>       :call ScrollOtherWindow("up")<CR>
+nnoremap <silent> <Down>     :call ScrollOtherWindow("down")<CR>
 
 " move tabpage
-nnoremap <silent><S-Left>   :call TabMoveLeft()<CR>
-nnoremap <silent><S-Right>  :call TabMoveRight()<CR>
+nnoremap <silent> <S-Left>   :call TabMoveLeft()<CR>
+nnoremap <silent> <S-Right>  :call TabMoveRight()<CR>
 
 
-"--------------------------------------------------------------------------"
-"                               help & man-pages                           "
-"--------------------------------------------------------------------------"
-
-" invoke help system more easily
-nnoremap <F1> :execute "help ".expand("<cword>")<CR>
-
-" re-generate tags for help docs on start-up
-helptags $VIMLOCAL/doc
 
 "--------------------------------------------------------------------------"
 "                         text formatting/layout                           "
@@ -520,7 +509,7 @@ vnoremap <Tab>   >gv
 vnoremap <S-Tab> <gv
 
 " merge multiple contiguous blank lines into single one.
-nnoremap <silent><Leader>Z :call MergeBlankLinesIntoSingleLine()<CR>
+nnoremap <silent> <Leader>Z :call MergeBlankLinesIntoSingleLine()<CR>
 
 "--------------------------------------------------------------------------"
 "                                 formatoptions                            "
@@ -612,15 +601,15 @@ set confirm
 " make writing and quiting more easy
 nnoremap <Leader>s mz:update<CR>'z
 nnoremap <Leader>W :w!<CR>
-nnoremap <silent><Leader>q :Quit("q")<CR>
-nnoremap <silent><Leader>Q :Quit("q!")<CR>
-nnoremap <silent><Leader>a :qa<CR>
-nnoremap <silent><Leader>A :qa!<CR>
+nnoremap <silent> <Leader>q :Quit("q")<CR>
+nnoremap <silent> <Leader>Q :Quit("q!")<CR>
+nnoremap <silent> <Leader>a :qa<CR>
+nnoremap <silent> <Leader>A :qa!<CR>
 
 " add more functionality to existing <C-g>
 " first, show the full path
 " then, copy the full path into 3 registers: * + "
-nnoremap <silent><C-g> 1<C-g>:call CopyCurrentFileName()<CR>
+nnoremap <silent> <C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 
 " view folder hierarchical in flat mode
 nnoremap -F :call FlatView('.')<CR>
@@ -657,28 +646,28 @@ set showtabline=2
 set tabline=%!MyTabLine()
 
 " create empty new tab
-nnoremap <silent><Leader>t :tabnew<CR>
+nnoremap <silent> <Leader>t :tabnew<CR>
 " show all buffers in separate tabs
-nnoremap <silent><Leader>T :tab sball<CR>
+nnoremap <silent> <Leader>T :tab sball<CR>
 
 " switch to next tab
-nnoremap <silent><Tab>     :tabnext<CR>
+nnoremap <silent> <Tab>     :tabnext<CR>
 " switch to previous tab
-nnoremap <silent><S-Tab>   :tabprevious<CR>
+nnoremap <silent> <S-Tab>   :tabprevious<CR>
 
 " fast switch to first & last tab
-nnoremap <silent><leader>1 :tabfirst<CR>
-nnoremap <silent><leader>0 :tablast<CR>
+nnoremap <silent> <leader>1 :tabfirst<CR>
+nnoremap <silent> <leader>0 :tablast<CR>
 
 " Switch to tab<N>
-nnoremap <silent><leader>2 2gt
-nnoremap <silent><leader>3 3gt
-nnoremap <silent><leader>4 4gt
-nnoremap <silent><leader>5 5gt
-nnoremap <silent><leader>6 6gt
-nnoremap <silent><leader>7 7gt
-nnoremap <silent><leader>8 8gt
-nnoremap <silent><leader>9 9gt
+nnoremap <silent> <leader>2 2gt
+nnoremap <silent> <leader>3 3gt
+nnoremap <silent> <leader>4 4gt
+nnoremap <silent> <leader>5 5gt
+nnoremap <silent> <leader>6 6gt
+nnoremap <silent> <leader>7 7gt
+nnoremap <silent> <leader>8 8gt
+nnoremap <silent> <leader>9 9gt
 
 "--------------------------------------------------------------------------"
 "                                 messages                                 "
@@ -700,31 +689,47 @@ set shortmess+=t
 " default threshold is 2 lines
 set report=0
 
+"--------------------------------------------------------------------------"
+"                                  tags                                    "
+"--------------------------------------------------------------------------"
+
+" improve tag's utility
+" Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
+" prerequisite: set autochdir
+" set tags=tags;
+set tags=./tags,tags;
+
+" :tag will be replaced by :cstag ; the latter will search both tagfile and cscope database
+"set cscopetag
+
+" first search tag file, then search cscope database
+set cscopetagorder=1
+
+" make tag jumping more easy"
+nnoremap <silent> <Leader>d :call GotoDefinition(expand("<cword>"))<CR>
+nnoremap <Leader>z <C-T>
+
+" invoke help system more easily
+nnoremap <F1> :execute "help ".expand("<cword>")<CR>
+
+" re-generate tags for help docs on start-up
+helptags $VIMLOCAL/doc
 
 "--------------------------------------------------------------------------"
 "                               quickfix mode                              "
 "--------------------------------------------------------------------------"
 
 " jump to next/previous entry in quickfix list
-nnoremap <silent><C-H> :cprevious<CR>
-nnoremap <silent><C-L> :cnext<CR>
+nnoremap <silent> <C-H> :cprevious<CR>
+nnoremap <silent> <C-L> :cnext<CR>
 
 " press v in quickfix window to preview while holding focus in quickfix window
 autocmd FileType qf :nnoremap <buffer> v <Enter>zz:wincmd p<Enter>
 
 "--------------------------------------------------------------------------"
-"                               auto-commands                              "
-"--------------------------------------------------------------------------"
-
-" resume the cursor where the it was when the file was closed last time
-autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \ exe "normal g`\"" |
-            \ endif
-
-"--------------------------------------------------------------------------"
 "                         programming features                             "
 "--------------------------------------------------------------------------"
+
 
 " better gf : open the file in new tabpage, just next to current tabpage
 "nnoremap gf :tabfind <cfile> <CR>
@@ -746,22 +751,17 @@ autocmd BufWritePre *    call DeleteTrailingWhiteSpaces()
 " Adjust wrongly spaced commas when saving changes
 autocmd BufWritePre *    call AdjustCommaRelatedSpacing()
 
-" improve tag's utility
-" Note: the final ';' is very import, which cause vim to loop up tag file upward recursively
-" prerequisite: set autochdir
-" set tags=tags;
-set tags=./tags,tags;
-
-" :tag will be replaced by :cstag ; the latter will search both tagfile and cscope database
-"set cscopetag
-
-" first search tag file, then search cscope database
-set cscopetagorder=1
 
 
 "--------------------------------------------------------------------------"
 "                                miscellaneous                             "
 "--------------------------------------------------------------------------"
+
+" resume the cursor where the it was when the file was closed last time
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \ exe "normal g`\"" |
+            \ endif
 
 " left-and-right-align a line by filling in appropriate extra spaces
 source $VIMRUNTIME/macros/justify.vim
@@ -774,7 +774,6 @@ source $VIMRUNTIME/macros/editexisting.vim
 " 1).y(above h) mean inserting character in corresponding position of upper line
 " 2).b(below h) mean repeating character in corresponding position of lower line
 inoremap <C-b> <C-e>
-
 
 " for those who has the obsession of saving changes.....
 " save automatically after pressing <Enter>
