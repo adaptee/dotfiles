@@ -369,11 +369,6 @@ nnoremap ` '
 nnoremap ]] ][
 nnoremap ][ ]]
 
-" map UP/DOWN to move one visual line, not one physical line
-nnoremap <DOWN> gj
-inoremap <DOWN> <ESC>gja
-nnoremap <UP> gk
-inoremap <UP> <ESC>gka
 
 " make moving under insert mode more easy.
 inoremap <C-h> <Left>
@@ -433,6 +428,12 @@ cnoremap ; :
 "--------------------------------------------------------------------------"
 "                                  Arrows                                  "
 "--------------------------------------------------------------------------"
+
+" map UP/DOWN to move one visual line, not one physical line
+nnoremap <DOWN> gj
+inoremap <DOWN> <ESC>gja
+nnoremap <UP> gk
+inoremap <UP> <ESC>gka
 
 " cycle  buffer list
 nnoremap <silent> <Left>     :bprevious<CR>
