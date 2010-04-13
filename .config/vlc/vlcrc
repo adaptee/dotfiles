@@ -371,7 +371,7 @@ sout-mono-channel=0
 [qt4] # Qt 界面
 
 # 选择启动模式和外观 (integer)
-#qt-display-mode=0
+qt-display-mode=2
 
 # 在轨道更改时显示提示弹出框 (boolean)
 #qt-notification=1
@@ -623,13 +623,13 @@ qt-privacy-ask=0
 #sap-ipv4=1
 
 # IPv6 SAP (boolean)
-#sap-ipv6=1
+sap-ipv6=0
 
 # SAP 超时时限 (秒) (integer)
 #sap-timeout=1800
 
 # 尝试解析通告 (boolean)
-#sap-parse=1
+sap-parse=0
 
 # SAP 严格模式 (boolean)
 #sap-strict=0
@@ -2348,7 +2348,7 @@ mms-caching=3000
 #subsdec-align=0
 
 # 字幕文本编码 (string)
-subsdec-encoding=GB18030
+subsdec-encoding=UTF-8
 
 # 自动检测 UTF-8 字幕 (boolean)
 #subsdec-autodetect-utf8=1
@@ -3003,7 +3003,7 @@ rtsp-caching=600
 #audio=1
 
 # 默认音频音量 (integer)
-#volume=256
+volume=544
 
 # 音频输出音量步进 (integer)
 #volume-step=32
@@ -3039,7 +3039,7 @@ rtsp-caching=600
 #audio-time-stretch=1
 
 # 音频输出模块 (string)
-#aout=
+aout=alsa
 
 # 音频滤镜 (string)
 #audio-filter=
@@ -3177,7 +3177,7 @@ rtsp-caching=600
 #osd=1
 
 # 文本渲染模块 (string)
-#text-renderer=
+text-renderer=freetype
 
 # 使用字幕文件 (string)
 #sub-file=
@@ -3246,13 +3246,13 @@ rtsp-caching=600
 #bookmarks=
 
 # DVD 设备 (string)
-#dvd=/dev/dvd
+dvd=/dev/sr0
 
 # VCD 设备 (string)
-#vcd=/dev/cdrom
+vcd=/dev/sr0
 
 # 音频 CD 设备 (string)
-#cd-audio=/dev/cdrom
+cd-audio=/dev/sr0
 
 # UDP 端口 (integer)
 #server-port=1234
@@ -3504,7 +3504,7 @@ rtsp-caching=600
 #stats=1
 
 # 界面模块 (string)
-#intf=
+intf=qt4
 
 # 扩展界面模块 (string)
 #extraintf=
@@ -3597,49 +3597,49 @@ rtsp-caching=600
 #global-key-position=Unset
 
 # 非常短的向后跳转 (key)
-#key-jump-extrashort=Shift-Left
+key-jump-extrashort=Unset
 
 # 非常短的向后跳转 (key)
 #global-key-jump-extrashort=Unset
 
 # 非常短的向前跳转 (key)
-#key-jump+extrashort=Shift-Right
+key-jump+extrashort=Unset
 
 # 非常短的向前跳转 (key)
 #global-key-jump+extrashort=Unset
 
 # 短向后跳转 (key)
-#key-jump-short=Alt-Left
+key-jump-short=Left
 
 # 短向后跳转 (key)
 #global-key-jump-short=Unset
 
 # 短向前跳转 (key)
-#key-jump+short=Alt-Right
+key-jump+short=Right
 
 # 短向前跳转 (key)
 #global-key-jump+short=Unset
 
 # 中向后跳转 (key)
-#key-jump-medium=Ctrl-Left
+key-jump-medium=Up
 
 # 中向后跳转 (key)
 #global-key-jump-medium=Unset
 
 # 中向前跳转 (key)
-#key-jump+medium=Ctrl-Right
+key-jump+medium=Down
 
 # 中向前跳转 (key)
 #global-key-jump+medium=Unset
 
 # 长向后跳转 (key)
-#key-jump-long=Alt-Ctrl-Left
+key-jump-long=Page Up
 
 # 长向后跳转 (key)
 #global-key-jump-long=Unset
 
 # 长向前跳转 (key)
-#key-jump+long=Alt-Ctrl-Right
+key-jump+long=Page Down
 
 # 长向前跳转 (key)
 #global-key-jump+long=Unset
@@ -3657,25 +3657,25 @@ rtsp-caching=600
 #global-key-nav-activate=Unset
 
 # 导航上 (key)
-#key-nav-up=Up
+key-nav-up=Unset
 
 # 导航上 (key)
 #global-key-nav-up=Unset
 
 # 导航下 (key)
-#key-nav-down=Down
+key-nav-down=Unset
 
 # 导航下 (key)
 #global-key-nav-down=Unset
 
 # 导航左 (key)
-#key-nav-left=Left
+key-nav-left=Unset
 
 # 导航左 (key)
 #global-key-nav-left=Unset
 
 # 导航右 (key)
-#key-nav-right=Right
+key-nav-right=Unset
 
 # 导航右 (key)
 #global-key-nav-right=Unset
@@ -3717,13 +3717,13 @@ rtsp-caching=600
 #global-key-quit=Unset
 
 # 音量上 (key)
-#key-vol-up=Ctrl-Up
+key-vol-up=.
 
 # 音量上 (key)
 #global-key-vol-up=Unset
 
 # 音量下 (key)
-#key-vol-down=Ctrl-Down
+key-vol-down=/
 
 # 音量下 (key)
 #global-key-vol-down=Unset
@@ -3747,13 +3747,13 @@ rtsp-caching=600
 #global-key-subdelay-down=Unset
 
 # 音频延迟上 (key)
-#key-audiodelay-up=k
+key-audiodelay-up=Unset
 
 # 音频延迟上 (key)
 #global-key-audiodelay-up=Unset
 
 # 音频延迟下 (key)
-#key-audiodelay-down=j
+key-audiodelay-down=Unset
 
 # 音频延迟下 (key)
 #global-key-audiodelay-down=Unset
@@ -3771,7 +3771,7 @@ rtsp-caching=600
 #global-key-audiodevice-cycle=Unset
 
 # 切换字幕轨道 (key)
-#key-subtitle-track=v
+key-subtitle-track=j
 
 # 切换字幕轨道 (key)
 #global-key-subtitle-track=Unset
@@ -3789,7 +3789,7 @@ rtsp-caching=600
 #global-key-crop=Unset
 
 # 打开或关闭自动缩放 (key)
-#key-toggle-autoscale=o
+key-toggle-autoscale=Unset
 
 # 打开或关闭自动缩放 (key)
 #global-key-toggle-autoscale=Unset
@@ -3873,13 +3873,13 @@ rtsp-caching=600
 #global-key-wallpaper=Unset
 
 # 在视频输出顶端的 OSD 菜单 (key)
-#key-menu-on=Alt-Shift-m
+key-menu-on=o
 
 # 在视频输出顶端的 OSD 菜单 (key)
 #global-key-menu-on=Unset
 
 # 不在视频输出中显示 OSD 菜单 (key)
-#key-menu-off=Alt-Ctrl-m
+key-menu-off=Unset
 
 # 不在视频输出中显示 OSD 菜单 (key)
 #global-key-menu-off=Unset
