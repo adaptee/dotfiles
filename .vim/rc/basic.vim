@@ -273,17 +273,17 @@ nnoremap <silent> \      :nohlsearch<CR>
 vnoremap  * :call SearchVisualSelectedText('f')<CR>
 vnoremap  # :call SearchVisualSelectedText('b')<CR>
 
+" Substitute current word , or visually-selected text
+" Note: 'g' applys to function substitute(), not to command ':s'
+nnoremap <Leader>s  :%s/\<<C-R>=expand("<cword>")<CR>\>//g<Left><Left>
+vnoremap <Leader>s y:%s/\<<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>\>//g<Left><Left>
+
 " Search visual-selected text and put the matching lines in a new tab
 vnoremap <Leader>g "*y<Esc>mzqqq:silent<Space>g/<C-R>*/y<Space>Q<CR>'z:tabnew<CR>"Qpdgg
 
 " Make good use of <BAR>
 " "search lines containing current word------A simple grep!
 nmap <BAR> [I:let temp_nr=input("Which line:") <BAR> execute "normal " . temp_nr . "[\t"<CR>
-
-" Substitute visually-selected text, interactively and globally
-" Note: 'g' applys to function substitute(), not to command ':s'
-vnoremap <Leader>s y:%s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
-vnoremap <Leader>S y:s/<C-R>=substitute(escape(@", '\\/.*$^~[]'), '\n', '', 'g')<CR>/
 
 
 " disable annoying window
@@ -598,10 +598,10 @@ endif
 " when dealing with unsaved buffer, raise a confirmation dialog instead of failing
 set confirm
 
-
 " make writing and quiting more easy
-nnoremap <Leader>s mz:update<CR>'z
+nnoremap <Leader>w mw:update<CR>'w
 nnoremap <Leader>W :w!<CR>
+
 nnoremap <silent> <Leader>q :Quit("q")<CR>
 nnoremap <silent> <Leader>Q :Quit("q!")<CR>
 nnoremap <silent> <Leader>a :qa<CR>
@@ -657,18 +657,18 @@ nnoremap <silent> <Tab>     :tabnext<CR>
 nnoremap <silent> <S-Tab>   :tabprevious<CR>
 
 " fast switch to first & last tab
-nnoremap <silent> <leader>1 :tabfirst<CR>
-nnoremap <silent> <leader>0 :tablast<CR>
+nnoremap <silent> <Leader>1 :tabfirst<CR>
+nnoremap <silent> <Leader>0 :tablast<CR>
 
 " Switch to tab<N>
-nnoremap <silent> <leader>2 2gt
-nnoremap <silent> <leader>3 3gt
-nnoremap <silent> <leader>4 4gt
-nnoremap <silent> <leader>5 5gt
-nnoremap <silent> <leader>6 6gt
-nnoremap <silent> <leader>7 7gt
-nnoremap <silent> <leader>8 8gt
-nnoremap <silent> <leader>9 9gt
+nnoremap <silent> <Leader>2 2gt
+nnoremap <silent> <Leader>3 3gt
+nnoremap <silent> <Leader>4 4gt
+nnoremap <silent> <Leader>5 5gt
+nnoremap <silent> <Leader>6 6gt
+nnoremap <silent> <Leader>7 7gt
+nnoremap <silent> <Leader>8 8gt
+nnoremap <silent> <Leader>9 9gt
 
 "--------------------------------------------------------------------------"
 "                                 messages                                 "
