@@ -11,9 +11,6 @@ call omni#cpp#complete#Init()
 setlocal path+=/usr/include/c++/4.3
 setlocal path+=/usr/include/linux
 
-" make tag jumping more user-friendly
-nnoremap <CR> g<C-]>
-nnoremap <BS> <C-T>
 
 "highlight trailing white space and spaces before a <Tab> in C/C++ files.
 let c_space_errors = 1
@@ -24,10 +21,10 @@ let c_comment_strings = 1
 setlocal equalprg=indent
 
 " simplify inputting
-iab rt return true;
-iab rf return false;
-iab rn return NULL;
-iab r0 return 0;
+iab <buffer> rt return true;
+iab <buffer> rf return false;
+iab <buffer> rn return NULL;
+iab <buffer> r0 return 0;
 
 " don't automatically insert leading // at the next line of
 " current comment line.
@@ -35,3 +32,24 @@ iab r0 return 0;
 
 " allow % to jump between '='  and ';' in assignment
 setlocal matchpairs+==:;
+
+" show the definition in preview window
+"nnoremap <buffer> <C-]> :execute "ptjump " . expand("<cword>")<Esc>
+" similiar, but put focus on new window
+nnoremap <buffer> <C-]> <C-w>g<C-]>
+
+" in c/cpp code, somo characters are used much more frequencies then theri twins
+inoremap <buffer> 5 %
+inoremap <buffer> % 5
+
+inoremap <buffer> 7 &
+inoremap <buffer> & 7
+
+inoremap <buffer> 8 *
+inoremap <buffer> * 8
+
+"inoremap <buffer> [ {
+"inoremap <buffer> { [
+
+"inoremap <buffer> ] }
+"inoremap <buffer> } ]
