@@ -322,7 +322,14 @@ function! s:SuperTab(command)
         exec "let complType = \"" .
           \ escape(g:SuperTabContextDefaultCompletionType, '<') . "\""
       endif
-      return complType . key
+      "return complType . key
+      " hacking from
+      " http://wrongpc.blogspot.com/2010/02/hacking-supertabvim.html
+      if pumvisible()
+          return "\<ESC>a" . complType . key
+      else
+          return complType . key
+      endif
     endif
 
     " Hack to workaround bug when invoking command line completion via <c-r>=
