@@ -68,6 +68,8 @@ iab america America
 iab spec    specification
 iab appl application
 iab appro appropriate
+iab ms    Microsoft
+iab gg    Google
 
 
 " make entering the most frequently used command more easily
@@ -85,6 +87,7 @@ cab S   set
 cab V   verbose
 cab P   pwd
 cab -   cd -
+cab kk  <C-m>
 
 
 " some more instresting abbrevs
@@ -107,7 +110,7 @@ cab -   cd -
 " %FT%T%z                    2007-08-29T02:37:13-0400
 iab <expr> xdate  strftime("%F")
 iab <expr> xtime  strftime("%F %H:%M:%S")
+iab <expr> xlast  "Last Modified : " . strftime("%F")
+iab xmail adaptee@gmail.com
+iab xsig  Love Katherine
 
-iab #b /************************************************
-iab #e ************************************************/
-iab #l /*----------------------------------------------*/

@@ -144,6 +144,8 @@ set wildmenu
 " files to be ignored in wild-menu
 set wildignore=*.o,*.out,*.exe,*.dll,*.lib,*.info,*.swp,*.exp,*.
 
+set completeopt=menu,longest
+
 " within cmdline completion, filename with such suffixes are given low priority
 set suffixes +=~
 set suffixes +=.bak
