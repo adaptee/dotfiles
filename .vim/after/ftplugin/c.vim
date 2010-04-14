@@ -53,3 +53,8 @@ inoremap <buffer> * 8
 
 "inoremap <buffer> ] }
 "inoremap <buffer> } ]
+
+" start or end comment
+iab <buffer> #b /************************************************
+iab <buffer> #e ************************************************/
+iab <buffer> #l /*----------------------------------------------*/
