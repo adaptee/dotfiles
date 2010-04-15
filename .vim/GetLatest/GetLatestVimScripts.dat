@@ -8,13 +8,11 @@ ScriptID SourceID Filename
 508     9865    :AutoInstall:   ZoomWin.vim
 31      7218    :AutoInstall:   a.vim
 #365     11059   :AutoInstall:   bash-support.zip
-2222    8969    :AutoInstall:   cmdline-complete.vim
-614     3666    :AutoInstall:   crefvim.zip
+#2222    8969    :AutoInstall:   cmdline-complete.vim
 #51     171     :AutoInstall:   cscope_macros.vim
 1735    10501   :AutoInstall:   echofunc.vim
 #1708    1       :AutoInstall:   fencview.vim
 197 11399 :AutoInstall:   genutils-2.4.zip
-642     8136    :AutoInstall:   getscript.vim
 311 7645 :AutoInstall:   grep.vim
 1581    7671    :AutoInstall:   lookupfile-1.8.zip
 1506 9277 :AutoInstall:   LargeFile.vba.gz
@@ -26,10 +24,10 @@ ScriptID SourceID Filename
 1375 4651 :AutoInstall:   qfixtoggle.zip
 #2540   1       :AutoInstall:   snipMate.zip
 1643 11853 :AutoInstall:   supertab.vim
-1697    8283    :AutoInstall:   surround.vim
+1697 12566 :AutoInstall:   surround.vim
 273     7701    :AutoInstall:   taglist_45.zip
 #1502    8743    :AutoInstall:   vimball.tar.gz
-2506 11949 :AutoInstall:   vimim.vim
+2506 12730 :AutoInstall:   vimim.vim
 1026    4700    :AutoInstall:   visualmark.vim
 73      6504    :AutoInstall:   word_complete.vim
 #301    10362   :AutoInstall:   xml.vim
@@ -37,5 +35,8 @@ ScriptID SourceID Filename
 # vim:ft=sh
 1506 9277 :AutoInstall: LargeFile.vim
 1066 7618 :AutoInstall: cecutil.vim
-2584 1 :AutoInstall: quickfixsigns.vim
-1502 1 :AutoInstall: vimball.vim
+2584 11434 :AutoInstall: quickfixsigns.vim
+1502 11981 :AutoInstall: vimball.vim
+2754 12764 :AutoInstall: delimitMate.vim
+1984 11852 :AutoInstall: FuzzyFinder
+2709 11599 :AutoInstall: SudoEdit.vim
