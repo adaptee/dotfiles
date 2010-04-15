@@ -4,8 +4,8 @@
 " @GIT:         http://github.com/tomtom/vimtlib/
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2009-03-14.
-" @Last Change: 2009-03-29.
-" @Revision:    250
+" @Last Change: 2009-08-02.
+" @Revision:    276
 " GetLatestVimScripts: 2584 1 :AutoInstall: quickfixsigns.vim
 
 if &cp || exists("loaded_quickfixsigns") || !has('signs')
@@ -19,19 +19,19 @@ set cpo&vim
 
 if !exists('g:quickfixsigns_lists')
     " A list of list definitions whose items should be marked with signs.
-    " By default, the following lists are included: |quickfix|,
-    " |location-list|, marks |'a|-zA-Z (see also
+    " By default, the following lists are included: |quickfix|, 
+    " |location-list|, marks |'a|-zA-Z (see also 
     " |g:quickfixsigns_marks|).
     "
     " A list definition is a |Dictionary| with the following fields:
     "
-    "   sign:  The name of the sign, which has to be defined. If the
-    "          value begins with "*", the value is interpreted as
-    "          function name that is called with a qfl item as its
+    "   sign:  The name of the sign, which has to be defined. If the 
+    "          value begins with "*", the value is interpreted as 
+    "          function name that is called with a qfl item as its 
     "          single argument.
-    "   get:   A vim script expression as string that returns a list
+    "   get:   A vim script expression as string that returns a list 
     "          compatible with |getqflist()|.
-    "   event: The event on which signs of this type should be set.
+    "   event: The event on which signs of this type should be set. 
     "          Possible values: BufEnter, any
     " :read: let g:quickfixsigns_lists = [...] "{{{2
     let g:quickfixsigns_lists = [
@@ -44,24 +44,42 @@ if !exists('g:quickfixsigns_marks')
     " A list of marks that should be displayed as signs.
     let g:quickfixsigns_marks = split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<>', '\zs') "{{{2
     " let g:quickfixsigns_marks = split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<>''`^.(){}[]', '\zs') "{{{2
+    " let g:quickfixsigns_marks = split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<>.''`^', '\zs') "{{{2
 endif
 
 if !exists('g:quickfixsigns_marks_def')
-    " The definition of the |g:quickfixsigns_lists| item for marks. Must
+    " The definition of the |g:quickfixsigns_lists| item for marks. Must 
     " have a field "type" with value "marks".
     " :read: let g:quickfixsigns_marks_def = {...} "{{{2
     let g:quickfixsigns_marks_def = {
                 \ 'type': 'marks',
                 \ 'sign': '*s:MarkSign',
                 \ 'get': 's:Marks()',
-                \ 'event': ['BufEnter', 'CursorHold', 'CursorHoldI', 'CursorMoved', 'CursorMovedI'],
                 \ 'id': 's:MarkId',
+                \ 'event': ['BufEnter', 'CursorHold', 'CursorHoldI', 'CursorMoved', 'CursorMovedI'],
                 \ 'timeout': 2
                 \ }
+    " \ 'event': ['BufEnter', 'CursorHold', 'CursorHoldI'],
+endif
+if !&lazyredraw
+    let s:cmn = index(g:quickfixsigns_marks_def.event, 'CursorMoved')
+    let s:cmi = index(g:quickfixsigns_marks_def.event, 'CursorMovedI')
+    if s:cmn >= 0 || s:cmi >= 0
+        echohl Error
+        echom "quickfixsigns: Support for CursorMoved(I) events requires 'lazyredraw' to be set"
+        echohl NONE
+        if s:cmn >= 0
+            call remove(g:quickfixsigns_marks_def.event, s:cmn)
+        endif
+        if s:cmi >= 0
+            call remove(g:quickfixsigns_marks_def.event, s:cmi)
+        endif
+    endif
+    unlet s:cmn s:cmi
 endif
 
 if !exists('g:quickfixsigns_balloon')
-    " If non-null, display a balloon when hovering with the mouse over
+    " If non-null, display a balloon when hovering with the mouse over 
     " the sign.
     " buffer-local or global
     let g:quickfixsigns_balloon = 1   "{{{2
@@ -95,14 +113,14 @@ sign define QFS_DUMMY text=. texthl=SignColumn
 let s:last_run = {}
 
 
-" (Re-)Set the signs that should be updated at a certain event. If event
+" (Re-)Set the signs that should be updated at a certain event. If event 
 " is empty, update all signs.
 "
 " Normally, the end-user doesn't need to call this function.
 function! QuickfixsignsSet(event) "{{{3
-    let lz = &lazyredraw
-    set lz
-    try
+    " let lz = &lazyredraw
+    " set lz
+    " try
         let bn = bufnr('%')
         let anyway = empty(a:event)
         for def in g:quickfixsigns_lists
@@ -120,27 +138,23 @@ function! QuickfixsignsSet(event) "{{{3
                     if !empty(list) && len(list) < g:quickfixsigns_max
                         let get_id = get(def, 'id', 's:SignId')
                         call s:ClearBuffer(def.sign, bn, s:PlaceSign(def.sign, list, get_id))
-                        if has('balloon_eval') && g:quickfixsigns_balloon && !exists('b:quickfixsigns_balloon') && &balloonexpr != 'QuickfixsignsBalloon()'
+                        if has('balloon_eval') && g:quickfixsigns_balloon && !exists('b:quickfixsigns_balloon') && empty(&balloonexpr)
                             let b:quickfixsigns_ballooneval = &ballooneval
                             let b:quickfixsigns_balloonexpr = &balloonexpr
                             setlocal ballooneval balloonexpr=QuickfixsignsBalloon()
                             let b:quickfixsigns_balloon = 1
                         endif
-                        " elseif exists('b:quickfixsigns_balloonexpr')
-                        "     let &l:balloonexpr = b:quickfixsigns_balloonexpr
-                        "     let &l:ballooneval = b:quickfixsigns_ballooneval
-                        "     unlet! b:quickfixsigns_balloonexpr b:quickfixsigns_ballooneval
                     else
                         call s:ClearBuffer(def.sign, bn, [])
                     endif
                 endif
             endif
         endfor
-    finally
-        if &lz != lz
-            let &lz = lz
-        endif
-    endtry
+    " finally
+    "     if &lz != lz
+    "         let &lz = lz
+    "     endif
+    " endtry
 endf
 
 
@@ -247,8 +261,8 @@ function! s:SignId(item) "{{{3
 endf
 
 
-" Add signs for all locations in LIST. LIST must confirm with the
-" quickfix list format (see |getqflist()|; only the fields lnum and
+" Add signs for all locations in LIST. LIST must confirm with the 
+" quickfix list format (see |getqflist()|; only the fields lnum and 
 " bufnr are required).
 "
 " list:: a quickfix or location list
@@ -311,7 +325,7 @@ endf
 
 if !empty(g:quickfixsigns_marks)
     call QuickfixsignsMarks(1)
-
+    
     for s:i in g:quickfixsigns_marks
         if index(s:signs, 'QFS_Mark_'. s:i) == -1
             exec 'sign define QFS_Mark_'. s:i .' text='. s:i .' texthl=Identifier'
@@ -337,15 +351,6 @@ augroup QuickFixSigns
     unlet s:ev_set s:ev s:def
 augroup END
 
-"------------------startd of addition by adaptee----------------------"
-if !exists('g:quickfixsigns_on')
-    " disable by default
-    let g:quickfixsigns_on = 0
-endif
-
-call QuickfixsignsMarks(g:quickfixsigns_on)
-
-"------------------end of addition by adaptee-------------------------"
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
@@ -369,7 +374,11 @@ Incompatible changes:
 - g:quickfixsigns_lists: timeout field: don't re-display this list more often than n seconds
 
 0.4
-- FIX: Error when g:quickfixsigns_marks = []
+- FIX: Error when g:quickfixsigns_marks = [] (thanks Ingo Karkat)
 - s:ClearBuffer: removed old code
 - QuickfixsignsMarks(state): Switch the display of marks on/off.
+
+0.5
+- Set balloonexpr only if empty (don't try to be smart)
+- Disable CursorMoved(I) events, when &lazyredraw isn't set.
 
