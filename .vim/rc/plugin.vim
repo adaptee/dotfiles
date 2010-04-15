@@ -283,8 +283,12 @@ nmap <F6> :QFix<CR>
 " quickfixsigns.vim( highlight the quickfix entries and marks)
 "------------------------------------------------------------------------------------------------------
 
+" do not show marks as sign
+let g:quickfixsigns_marks = [ ]
+
 " set initial state to off
 let g:quickfixsigns_on = 0
+
 " toggle between on/off
 nnoremap <silent><F10> :call ToggleQuickfixSigns()<CR>
 
