@@ -47,6 +47,8 @@ iab approriate appropriate
 iab throuth through
 iab hlep help
 cab hlep help
+iab yuo you
+iab YOu You
 
 " reduce key-typing;come on, lazy boy!
 iab ok      OK
