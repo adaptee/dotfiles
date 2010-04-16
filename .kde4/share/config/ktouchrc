@@ -1,0 +1,30 @@
+[Colors]
+CurrentColorScheme=0
+CurrentPalette=Forty Colors
+ErrorTextColor=188,188,188
+
+[General]
+CurrentLectureFile[$e]=file://$HOME/js.txt
+Font=DejaVu Sans YuanTi Mono,13,-1,5,50,0,0,0,0,0
+OverrideLectureFont=true
+SlidingSpeed=36
+
+[KFileDialog Settings]
+Height 800=510
+Recent Files[$e]=vim.txt,$HOME/js.txt,/usr/share/licenses/acroread/License.txt,/usr/share/licenses/autoconf/COPYING.EXCEPTION,$HOME/vim.txt
+Width 1280=816
+
+[Keyboard]
+CurrentKeyboardFile[$e]=/usr/share/apps/ktouch/en.keyboard.xml
+ShowKeyboard=false
+
+[MainWindow]
+Height 800=276
+State=AAAA/wAAAAD9AAAAAAAABQIAAADGAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1282
+
+[Training]
+NumberOfLinesWorkload=50
+PressEnterOnLineEnd=false
+UpCorrectLimit=96
