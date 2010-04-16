@@ -49,6 +49,25 @@ iab hlep help
 cab hlep help
 iab yuo you
 iab YOu You
+iab eralier earlier
+iab similiar similar
+iab ti it
+iab ot to
+iab fo of
+iab fra far
+iab edn end
+iab tha the
+iab waht what
+iab tehn then
+iab othre other
+iab place palce
+iab elemenet element
+iab elmeent element
+iab wihch which
+iab standarsd  stardards
+iab standrad  stardard
+iab alghough although
+iab docuemnt document
 
 " reduce key-typing;come on, lazy boy!
 iab ok      OK
