@@ -5,7 +5,6 @@ update_info=klipper-kconfigxt.upd:KlipperNoSpacesInKeyNames
 AutoStart=true
 MaxClipItems=15
 Number of Actions=0
-SyncClipboards=true
 Version=v0.9.7
 
 [Notification Messages]
