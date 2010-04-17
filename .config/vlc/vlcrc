@@ -2348,7 +2348,7 @@ mms-caching=3000
 #subsdec-align=0
 
 # 字幕文本编码 (string)
-subsdec-encoding=UTF-8
+#subsdec-encoding=
 
 # 自动检测 UTF-8 字幕 (boolean)
 #subsdec-autodetect-utf8=1
@@ -3003,7 +3003,7 @@ rtsp-caching=600
 #audio=1
 
 # 默认音频音量 (integer)
-volume=544
+volume=320
 
 # 音频输出音量步进 (integer)
 #volume-step=32
@@ -3186,7 +3186,7 @@ text-renderer=freetype
 #sub-autodetect-file=1
 
 # 字幕自动检测模糊性 (integer)
-#sub-autodetect-fuzzy=3
+sub-autodetect-fuzzy=2
 
 # 字幕自动检测路径 (string)
 #sub-autodetect-path=./Subtitles, ./subtitles
@@ -3246,13 +3246,13 @@ text-renderer=freetype
 #bookmarks=
 
 # DVD 设备 (string)
-dvd=/dev/sr0
+dvd=�z�	8p�	xu�	
 
 # VCD 设备 (string)
-vcd=/dev/sr0
+vcd=�z�	8p�	xu�	
 
 # 音频 CD 设备 (string)
-cd-audio=/dev/sr0
+cd-audio=�z�	8p�	xu�	
 
 # UDP 端口 (integer)
 #server-port=1234
@@ -3504,7 +3504,7 @@ cd-audio=/dev/sr0
 #stats=1
 
 # 界面模块 (string)
-intf=qt4
+intf=qt
 
 # 扩展界面模块 (string)
 #extraintf=
@@ -3585,7 +3585,7 @@ intf=qt4
 #global-key-prev=Unset
 
 # 停止 (key)
-#key-stop=s
+key-stop=Unset
 
 # 停止 (key)
 #global-key-stop=Unset
@@ -3681,37 +3681,37 @@ key-nav-right=Unset
 #global-key-nav-right=Unset
 
 # 转到 DVD 菜单 (key)
-#key-disc-menu=Shift-m
+key-disc-menu=Unset
 
 # 转到 DVD 菜单 (key)
 #global-key-disc-menu=Unset
 
 # 选择上一个 DVD 标题 (key)
-#key-title-prev=Shift-o
+key-title-prev=Unset
 
 # 选择上一个 DVD 标题 (key)
 #global-key-title-prev=Unset
 
 # 选择下一个 DVD 标题 (key)
-#key-title-next=Shift-b
+key-title-next=Unset
 
 # 选择下一个 DVD 标题 (key)
 #global-key-title-next=Unset
 
 # 选择上一个 DVD 章节 (key)
-#key-chapter-prev=Shift-p
+key-chapter-prev=Unset
 
 # 选择上一个 DVD 章节 (key)
 #global-key-chapter-prev=Unset
 
 # 选择下一个 DVD 章节 (key)
-#key-chapter-next=Shift-n
+key-chapter-next=Unset
 
 # 选择下一个 DVD 章节 (key)
 #global-key-chapter-next=Unset
 
 # 退出 (key)
-#key-quit=Ctrl-q
+key-quit=q
 
 # 退出 (key)
 #global-key-quit=Unset
@@ -3723,7 +3723,7 @@ key-vol-up=.
 #global-key-vol-up=Unset
 
 # 音量下 (key)
-key-vol-down=/
+key-vol-down=,
 
 # 音量下 (key)
 #global-key-vol-down=Unset
@@ -3813,7 +3813,7 @@ key-toggle-autoscale=Unset
 #global-key-deinterlace=Unset
 
 # 显示界面 (key)
-#key-intf-show=i
+key-intf-show=Unset
 
 # 显示界面 (key)
 #global-key-intf-show=Unset
@@ -3825,7 +3825,7 @@ key-toggle-autoscale=Unset
 #global-key-intf-hide=Unset
 
 # 获取视频截图 (key)
-#key-snapshot=Shift-s
+key-snapshot=s
 
 # 获取视频截图 (key)
 #global-key-snapshot=Unset
