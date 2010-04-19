@@ -617,8 +617,8 @@ nnoremap <silent> <C-g> 1<C-g>:call CopyCurrentFileName()<CR>
 " view folder hierarchical in flat mode
 nnoremap -F :call FlatView('.')<CR>
 
-" supprss W10 : changing a readonly file
-autocmd FileChangedRO /*  setlocal noreadonly
+" suppress W10 : changing a readonly file
+autocmd FileChangedRO /etc/*  setlocal noreadonly
 
 "--------------------------------------------------------------------------"
 "                                   window                                 "
