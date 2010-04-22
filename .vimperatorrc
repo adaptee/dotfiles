@@ -8,6 +8,9 @@ let mapleader = ","
 " For the sake of char-hint-mode2.js; use lower-case letter for identifing links.
 let hintsio   = 'io'
 
+" for char-hint-mode2.js
+let g:hintlabeling="a"
+
 "---------------------------------------------------------------------------------------------
 " Mappings
 "---------------------------------------------------------------------------------------------
@@ -162,6 +165,7 @@ set previouspattern=\s*上一页|上一张|上页\s*,\bprev|Prev|previous\b,^<$,
 
 " wait 800ms before automatically following a non-unique numerical hint
 set hinttimeout=800
+
 
 "---------------------------------------------------------------------------------------------
 " Firefox preferences
@@ -455,6 +459,10 @@ javascript <<EOF
     })();
 EOF
 
+"the highlight for hints
+highlight Hint font-family: monospace; font-size: 13px; font-weight: bold; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px
+
+
 ""---------------------------------------------------------------------------------------------
 "" Map to js functions
 ""---------------------------------------------------------------------------------------------
@@ -527,6 +535,5 @@ noremap <Leader>c  :Font<CR>
 
 command! Proxy :js proxy_toggler()
 noremap <Leader>p  :Proxy<CR>
-
 
 "" vim: set ft=vimperator:
