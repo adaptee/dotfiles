@@ -630,7 +630,7 @@ function fix-file-perm ()
 # fix inappropriate dir permission mode
 function fix-dir-perm ()
 {
-    find . -type d \( -perm 700 -o -perm 500 \) -exec chmod 755 {} \;
+    find . -type d \( -perm 700 -o -perm 500 -o -perm 555 \) -exec chmod 755 {} \;
 }
 
 
