@@ -612,3 +612,8 @@ function! BetterXinVirtualEdit()
     endif
 endfunction
 
+
+" make contiguous duplicate lines uniq, without sorting
+" sort -u works similarly, but sort before deleting
+command! -range=%  -nargs=0 Uniq <line1>,<line2> global/^\(.*\)$\n\1$/d | nohlsearch
+
