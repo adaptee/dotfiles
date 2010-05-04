@@ -97,3 +97,5 @@ msgcolor = "yes"
 # turn off remote control support; I do not need it now
 nolirc = "yes"
 
+# show filename as the title of window
+use-filename-title = "yes"
