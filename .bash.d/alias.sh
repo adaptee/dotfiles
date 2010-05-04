@@ -265,6 +265,9 @@ alias bd='cd ~/.bash.d'
 alias c='cl'
 alias D='cd ~/Desktop'
 alias D2='cd ~/Desktop/Dropbox'
+alias d2='cd ~/dotfiles'
+alias k4='cd ~/.kde4/share/'
+alias rc='cd ~/.vim/rc'
 # show date in pretty format.
 alias dt='date "+%Y-%m-%d %A    %T %Z"'
 alias f='find'
@@ -314,7 +317,7 @@ alias x='xargs'
 alias x0='xargs -0'
 
 # convert id3 tag's encoding.
-alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
+#alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
 
 
 
@@ -371,3 +374,13 @@ alias em='emacs'
 alias emc='emacs -nw'
 
 alias aml='tail ~/.aMule/logfile'
+
+
+# prevent typo
+alias mr='rm'
+
+
+# create subfolder with the same name, if necessary, before extracting
+alias unp='unp -u'
+
+alias gst='git status'

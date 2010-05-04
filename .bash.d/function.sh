@@ -671,3 +671,10 @@ function core-pattern ()
     echo '/tmp/coredump/%u-%e-%s.core' | sudo tee /proc/sys/kernel/core_pattern
 }
 
+
+# normalize and clear bad info within mp3 id3 tag
+function mp3tag ()
+{
+    find . -type f -iname '*.mp3' -print0 | xargs -0 id3clean.sh
+}
+
