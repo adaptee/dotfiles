@@ -4,8 +4,8 @@ set encoding=utf-8
 " behaves well under both Linux/Windows/Mac
 set fileformats=unix,dos,mac
 
-" Fast reading of .vimrc
-nnoremap <silent> <leader>v :call SwitchToBuffer("$HOME/.vimrc")<CR>
+" Fast  viewing vimrc
+nnoremap <silent> <leader>v :call Gf("$HOME/.vimrc")<CR>
 
 " When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! BufWritePost .vimrc source $HOME/.vimrc
