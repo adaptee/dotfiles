@@ -678,3 +678,10 @@ function mp3tag ()
     find . -type f -iname '*.mp3' -print0 | xargs -0 id3clean.sh
 }
 
+
+# normalize and clear bad info within mp3 id3 tag
+function mp3tag ()
+{
+    find . -type f -iname '*.mp3' -print0 | xargs -0 id3clean.sh
+}
+
