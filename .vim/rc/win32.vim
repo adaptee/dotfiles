@@ -5,8 +5,8 @@ set encoding=cp936
 " behaves well under both Linux/Windows/Mac
 set fileformats=dos,unix,mac
 
-" Fast reading of _vimrc
-nnoremap <silent> <leader>v :call SwitchToBuffer("$VIM/_vimrc")<CR>
+" Fast  viewing vimrc
+nnoremap <silent> <leader>v :call Gf("$VIM/_vimrc")<CR>
 
 " When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! BufWritePost _vimrc source $VIM/_vimrc
