@@ -291,6 +291,18 @@ search_in_verycd = function (args)
 }
 EOF
 
+js<<EOF
+search_in_acfun = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://acfun.cn/plus/search.php?kwtype=0&keyword=' ;
+    var suffix       = '&searchtype=titlekeyword' ;
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
 " Search specified keyword in wikipedia
 js<<EOF
 search_in_wikipedia = function (keyword)
@@ -520,6 +532,9 @@ command! -nargs=* Stack :js search_in_stackoverflow("<args>")
 
 
 command! -nargs=* VeryCD :js search_in_verycd("<args>")
+noremap v :VeryCD<Space>
+
+command! -nargs=* Ac :js search_in_acfun("<args>")
 noremap v :VeryCD<Space>
 
 " search in wikipedia
