@@ -341,7 +341,8 @@ endfunction
 nnoremap <silent> <F2> :TlistToggle<CR>
 set updatetime=2000    " update showing every 2 seconds. May cause problem.
 
-let Tlist_Sort_Type               = "name"  " sort tags by name, not appearing order
+let Tlist_Sort_Type               = "name"  " sort tags by name
+
 let Tlist_GainFocus_On_ToggleOpen = 1       " when opening taglist window, switch the focus to it
 let Tlist_Process_File_Always     = 1       " keep processing even when taglist window is closed.
 let Tlist_File_Fold_Auto_Close    = 1       " automatically close folding for in-active files
