@@ -103,6 +103,9 @@ if !exists('loaded_taglist')
         endif
     endif
 
+    " Taglist doesn't work with multibyte language because of encoding
+    " issue. ypguo fix it and mark it. The fix start with ypguo
+    let Tlist_Enc_Patch = 1
 
     " Automatically open the taglist window on Vim startup
     if !exists('Tlist_Auto_Open')
@@ -2177,6 +2180,13 @@ function! s:Tlist_Parse_Tagline(tag_line)
     " Extract the tag name
     let tag_name = strpart(a:tag_line, 0, stridx(a:tag_line, "\t"))
 
+    " ypguo add: The tag_name is parsed from the original buf and encoded with
+    " origional buffer's &fenc, so convert it to new buffer's &enc if they are
+    " different.
+    if (&enc != getbufvar("#", "&fenc"))
+	    let tag_name = iconv(tag_name, getbufvar("#", "&fenc"), &enc)
+    endif
+
     " Extract the tag scope/prototype
     if g:Tlist_Display_Prototype
         let ttxt = '    ' . s:Tlist_Get_Tag_Prototype(s:fidx, s:tidx)
@@ -2264,8 +2274,9 @@ function! s:Tlist_Process_File(filename, ftype)
         set noshellslash
     endif
 
-    if has('win32') && !has('win32unix') && !has('win95')
-                \ && (&shell =~ 'cmd.exe')
+    "ypguo disable it: Windows doesn't work well with Chinese in batch file, I
+    "didn't see the problem described in the following.
+    if 0
         " Windows does not correctly deal with commands that have more than 1
         " set of double quotes.  It will strip them all resulting in:
         " 'C:\Program' is not recognized as an internal or external command
@@ -2284,6 +2295,20 @@ function! s:Tlist_Process_File(filename, ftype)
     endif
 
     call s:Tlist_Log_Msg('Cmd: ' . ctags_cmd)
+
+    "ypguo add: win32 cmd(shell) need 'cpxxx' characters, so convert it before
+    "pass the parameters, if chcp doesn't work, please set it maually.
+    if executable("chcp")
+	    let code_page = 'cp' . matchstr(system("chcp"), "\\d\\+")
+	    call s:Tlist_Log_Msg('code_page: ' . code_page)
+    else
+	    " If chcp doesn't work, set its value manually here.
+	    let code_page = 'cp936'
+    endif
+
+    if has('win32') && !has('win32unix') && (&enc != code_page)
+	    let ctags_cmd = iconv(ctags_cmd, &enc, code_page)
+    endif
 
     " Run ctags and get the tag list
     let cmd_output = system(ctags_cmd)
@@ -3337,6 +3362,12 @@ function! s:Tlist_Window_Jump_To_Tag(win_ctrl)
     let tidx = s:Tlist_Window_Get_Tag_Index(fidx, lnum)
     if tidx != 0
         let tagpat = s:Tlist_Get_Tag_SearchPat(fidx, tidx)
+
+	" ypguo add: The tagpat will be passed to get the location. make sure
+	" is the same encoding as the origional buffer's &fenc
+	if (&enc != getbufvar("#", "&fenc"))
+		let tagpat = iconv(tagpat, getbufvar("#", "&fenc"), &enc)
+	endif
 
         " Highlight the tagline
         call s:Tlist_Window_Highlight_Line()
