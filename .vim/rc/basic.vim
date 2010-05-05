@@ -271,10 +271,6 @@ set infercase
 " toggle search result highlighting; now the unused key '\' finally can do something now....
 nnoremap <silent> \      :nohlsearch<CR>
 
-" search visually-selected text
-vnoremap  * :call SearchVisualSelectedText('f')<CR>
-vnoremap  # :call SearchVisualSelectedText('b')<CR>
-
 " Substitute current word , or visually-selected text
 " Note: 'g' applys to function substitute(), not to command ':s'
 nnoremap <Leader>s  :%s/\<<C-R>=expand("<cword>")<CR>\>//g<Left><Left>

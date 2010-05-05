@@ -46,26 +46,6 @@ function! CopyCurrentFileName()
     let @" = expand('%:p')
 endfunction
 
-
-" for parameter direction, 'b' means backward, 'f' means forward
-function! SearchVisualSelectedText(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-    "make sure it have like in normal mode, I.e, matching exactly the word.
-    "let l:pattern = '\<' . l:pattern . '\>'
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    else
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
 function! DeleteTrailingWhiteSpaces()
     normal mt
     silent! :%s/\s\+$//e
