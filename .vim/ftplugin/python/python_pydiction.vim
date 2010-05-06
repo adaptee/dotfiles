@@ -59,15 +59,17 @@ endif
 
 
 " Make the Tab key do python code completion:
-inoremap <silent> <buffer> <Tab> 
-         \<C-R>=<SID>SetVals()<CR>
-         \<C-R>=<SID>TabComplete('down')<CR>
-         \<C-R>=<SID>RestoreVals()<CR>
+"inoremap <silent> <buffer> <Tab> 
+         "\<C-R>=<SID>SetVals()<CR>
+         "\<C-R>=<SID>TabComplete('down')<CR>
+         "\<C-R>=<SID>RestoreVals()<CR>
 
-" Make Shift+Tab do python code completion in the reverse direction:
+" [modified by adaptee] Tab is used more oftenly to do other completion 
+" [note by adaptee] the extra space after <S-Tab> is very important
+" " Make Shift+Tab do python code completion in the reverse direction:
 inoremap <silent> <buffer> <S-Tab> 
          \<C-R>=<SID>SetVals()<CR>
-         \<C-R>=<SID>TabComplete('up')<CR>
+         \<C-R>=<SID>TabComplete('down')<CR>
          \<C-R>=<SID>RestoreVals()<CR>
 
 
