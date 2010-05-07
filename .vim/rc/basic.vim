@@ -765,9 +765,6 @@ autocmd BufReadPost *
 " left-and-right-align a line by filling in appropriate extra spaces
 source $VIMRUNTIME/macros/justify.vim
 
-" if file is already open in other vim instance,  activate that instace
-" then just exit
-source $VIMRUNTIME/macros/editexisting.vim
 
 " now <C-y> and <C-b> is very to remember by their relative position to 'h'
 " 1).y(above h) mean inserting character in corresponding position of upper line
