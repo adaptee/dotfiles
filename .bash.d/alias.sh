@@ -168,26 +168,6 @@ alias jobs='jobs -l'
 alias release='fuser -k'
 
 #---------------------------------------------------------------------------#
-#                                 apt-get alias                             #
-#---------------------------------------------------------------------------#
-
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade -y --force-yes'
-
-alias purge='sudo apt-get purge -y --force-yes'
-alias syn='sudo synaptic'
-
-alias dpi='sudo dpkg -i' # install pkg
-alias dpp='sudo dpkg -P' # purge pkg
-alias dps='dpkg -s'      # search pkg name
-alias dpS='dpkg -S'      # search file name
-alias dpl='dpkg -l'      # list pkg summary
-alias dpL='dpkg -L'      # list pkg details
-
-# use more friendly pacman
-which pacman-color >& /dev/null &&  alias pacman='pacman-color'
-
-#---------------------------------------------------------------------------#
 #                                   make alias                              #
 #---------------------------------------------------------------------------#
 
@@ -225,9 +205,6 @@ alias dns='cat /etc/resolv.conf'
 
 alias trace='tracepath'
 alias mtr='mtr -t'
-
-alias rnet='sudo /etc/init.d/networking restart'
-alias rsmb='sudo /etc/init.d/samba restart'
 
 alias nets='netstat -anp'
 alias netst='netstat -anpt'     # only show tcp ports
@@ -381,6 +358,6 @@ alias mr='rm'
 
 
 # create subfolder with the same name, if necessary, before extracting
-alias unp='unp -u'
+alias unps='unp -u'
 
 alias gst='git status'

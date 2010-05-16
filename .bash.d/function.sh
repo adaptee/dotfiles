@@ -652,18 +652,6 @@ function build-qterm()
     cd -
 }
 
-# show package size in ascending order
-function pac-size ()
-{
-    sort -k2 -n ~/.pac-size.list | column -t
-}
-
-# list all un-needed packages
-function pac-nouse ()
-{
-    pacman -Qtdq
-}
-
 # save core dump in one location ,and with better name
 # executable-signalnumber.core
 function core-pattern ()
