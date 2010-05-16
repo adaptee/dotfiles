@@ -47,7 +47,9 @@ sub-fuzziness = 1
 overlapsub = "yes"
 
 # encoding of subtitile file
-subcp = cp936
+#subcp = cp936
+#subcp = "enca:zh:cp936"
+subcp = "enca:zh:utf-8"
 
 # scaling subtitle proportionally to :
 #  1 : movie height
