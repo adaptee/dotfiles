@@ -298,7 +298,7 @@ command! -range=% Reverse :<line1>,<line2> global/^/m <line1>-1 | nohlsearch
 
 " convert paragraph to single line
 " stolen from usr_25.txt
-command! -range=% Para2Line g/\S/,/^\s*$/join
+command! -range=% Para2Line <line1>,<line2> global/\S/,/^\s*$/-1join
 
 " fill previously visual selected chars with SPACEs
 " BUG: fail on multilines
