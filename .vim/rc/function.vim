@@ -111,8 +111,9 @@ endfunction
 
 function! InsertHeaderForPythonScript()
     call setline(1, "#!/usr/bin/env python")
-    call setline(2, "")
+    call setline(2, "# vim: set fileencoding=utf-8 : ")
     call setline(3, "")
+    call setline(4, "")
     normal G
 endfunction
 
@@ -123,41 +124,6 @@ function! InsertClosingPair(char)
         return a:char
     endif
 endf
-
-function! SwitchToBuffer(filename)
-    let l:fullname = expand(a:filename)
-    let l:exist = bufexists(l:fullname)
-    if l:exist
-        echo l:fullname . " is already loaded !"
-    endif
-    " find in current tab
-    "echo a:filename
-    let bufwinnr = bufwinnr(a:filename)
-    echo "bufwinnr: " . bufwinnr
-    if bufwinnr != -1
-        "echo "#if branch"
-        "execute bufwinnr . "wincmd w"
-        return
-    else
-        "echo "#else branch"
-        "return
-        " find in each tab
-        tabfirst
-        let tab = 1
-        while tab <= tabpagenr("$")
-            let bufwinnr = bufwinnr(a:filename)
-            if bufwinnr != -1
-                execute "normal " . tab . "gt"
-                execute bufwinnr . "wincmd w"
-                return
-            endif
-            tabnext
-            let tab = tab + 1
-        endwhile
-        " not exist, new tab
-        execute "tabnew " . a:filename
-    endif
-endfunction
 
 function! MyTabLine()
     let ret = ''
@@ -596,4 +562,14 @@ endfunction
 " make contiguous duplicate lines uniq, without sorting
 " sort -u works similarly, but sort before deleting
 command! -range=%  -nargs=0 Uniq <line1>,<line2> global/^\(.*\)$\n\1$/d | nohlsearch
+
+
+" Captilize the first character of each word.
+" Exception: the char before the word is ' or .
+command! -range=% Camelize <line1>,<line2>substitute/\('\|\.\)\@<!\<\(\w\)/\u&/g
+
+
+" layout all the window in horizontal/vertical way
+command! -nargs=0 Horizontal windo wincmd K
+command! -nargs=0 Vertical windo wincmd H
 
