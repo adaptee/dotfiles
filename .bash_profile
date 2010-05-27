@@ -32,7 +32,7 @@ if [ -n "$DISPLAY" ]  ; then
     xhost +local:root
 
     # start devilspie, a nice rule matcher based on window property
-    if which devilspie ; then
+    if which devilspie &> /dev/null ; then
         devilspie &
     fi
 
