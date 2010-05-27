@@ -384,6 +384,17 @@ search_in_stackoverflow = function (args)
 }
 EOF
 
+" search in wikipedia Chinese version
+js<<EOF
+search_in_wikipedia_zh = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://zh.wikipedia.org/zh-cn/';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
 
 " search in Amazon.com
 js<<EOF
@@ -540,6 +551,10 @@ noremap v :VeryCD<Space>
 " search in wikipedia
 command! -nargs=* Wiki :js search_in_wikipedia("<args>")
 noremap w :Wiki<Space>
+
+" search in wikipedia Chinese version
+command! -nargs=* WikiZh :js search_in_wikipedia_zh("<args>")
+noremap W :WikiZh<Space>
 
 " reload vimperatorrc
 command! Source :js load_vimperatorrc()
