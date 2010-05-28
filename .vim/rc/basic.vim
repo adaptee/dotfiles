@@ -131,6 +131,9 @@ highlight StatusLine gui=none
 " show line-number
 set number
 
+" by default, the line numer occupies 3 columns
+set numberwidth=3
+
 " highlight current line
 set cursorline
 
