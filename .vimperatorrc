@@ -291,6 +291,20 @@ search_in_verycd = function (args)
 }
 EOF
 
+
+js<<EOF
+search_in_shooter = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://shooter.cn/search/Sub:' ;
+    var suffix       = '/?x=0&y=0&';
+    var full_url     = prefix + query_string + suffix ;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
 js<<EOF
 search_in_acfun = function (args)
 {
@@ -541,6 +555,9 @@ command! -nargs=* Vim :js search_in_vim_org("<args>")
 " search in stackoverflow.com
 command! -nargs=* Stack :js search_in_stackoverflow("<args>")
 
+" searhc in shooter.cn for subtitles
+command! -nargs=* Shooter :js search_in_shooter("<args>")
+noremap S :Shooter<Space>
 
 command! -nargs=* VeryCD :js search_in_verycd("<args>")
 noremap v :VeryCD<Space>
