@@ -1,0 +1,31 @@
+AlwaysUpgradeAur yes
+
+AlwaysUpgradeDevel no
+
+AurVoteSupport no
+
+ColorMod normal
+
+DontNeedToPressEnter yes
+
+EditPkgbuild no
+
+ExportToLocalRepository /home/whodare/code/abs
+
+ForceEnglish no
+
+LastCommentsNumber 5
+
+LastCommentsOrder asc
+
+PacmanBin /usr/bin/pacman-color
+
+PkgbuildEditor vim
+
+
+#AURUPGRADE=1
+#AURVOTE=0
+#NOENTER=1
+#EDITFILES=0
+#NOCONFIRM=1
+#PacmanBin=/usr/bin/pacman-color
