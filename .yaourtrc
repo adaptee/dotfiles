@@ -10,8 +10,6 @@ DontNeedToPressEnter yes
 
 EditPkgbuild no
 
-ExportToLocalRepository /home/whodare/code/abs
-
 ForceEnglish no
 
 LastCommentsNumber 5
