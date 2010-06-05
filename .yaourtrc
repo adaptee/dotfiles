@@ -18,6 +18,8 @@ LastCommentsNumber 5
 
 LastCommentsOrder asc
 
+NoConfirm  yes
+
 PacmanBin /usr/bin/pacman-color
 
 PkgbuildEditor vim
