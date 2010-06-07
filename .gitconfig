@@ -49,6 +49,7 @@
     adi     = add -i
 
     br      = branch
+    bra     = branch -a
     brd     = branch -d
     brD     = branch -D
 
