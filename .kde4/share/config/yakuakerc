@@ -4,6 +4,7 @@ Frames=1
 [Appearance]
 BackgroundColorOpacity=0
 TerminalHighlightOnManualActivation=true
+Translucency=false
 
 [Desktop Entry]
 DefaultProfile=Konsole.profile
@@ -35,6 +36,5 @@ view-full-screen=none
 
 [Window]
 DynamicTabTitles=true
-ToggleToFocus=true
 Height=45
 Width=100
