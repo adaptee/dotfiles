@@ -95,7 +95,7 @@ alias treed='tree -d'
 #---------------------------------------------------------------------------#
 
 # df improved: show FS type, human-friendly size and ignore pseudo FS.
-alias df='LANG=en df -h -T -x tmpfs | grep -vE "(gvfs|procbususb|rootfs|devtmpfs)"'
+alias df='LANG=en df -h -T -x tmpfs | grep -vE "(tmpfs|gvfs|procbususb|rootfs|devtmpfs|debugfs)"'
 
 # show size in human-friendly way.
 alias du='du -h'
