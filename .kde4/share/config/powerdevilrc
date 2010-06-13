@@ -1,0 +1,11 @@
+[BatteryManagement]
+BatLowAction=8
+
+[General]
+configLockScreen=false
+
+[Profiles]
+ACProfile=Powersave
+BatteryProfile=Powersave
+LowProfile=Powersave
+WarningProfile=Aggressive Powersave
