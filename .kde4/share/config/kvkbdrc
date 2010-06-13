@@ -1,3 +1,8 @@
 KvkbdFont=DejaVu Sans YuanTi Mono,7.33333,-1,5,50,0,0,0,0,0
 autoresfont=true
+geometry=701,424,550,235
 showdock=false
+visible=false
+
+[Notification Messages]
+systemtrayquitKvkbd=false
