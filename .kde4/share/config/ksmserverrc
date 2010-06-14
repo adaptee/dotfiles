@@ -1,0 +1,10 @@
+[$Version]
+update_info=ksmserver.upd:kde3
+
+[General]
+confirmLogout=false
+excludeApps=
+loginMode=default
+offerShutdown=false
+screenCount=1
+shutdownType=0
