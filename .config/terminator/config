@@ -1,20 +1,28 @@
-font                = DejaVu Sans YuanTi Mono 13
-allow_bold          = True
-
-# white text on black
-background_color = "#000000"
-foreground_color = "#FFFFFF"
-use_theme_colors = False
-
-force_no_bell       = True
-
-scrollbar_position  = disabled
-scrollback_lines    = 5000
-borderless          = True
-close_button_on_tab = False
-
-maximise            = True
-#fullscreen         = True
-
-copy_on_selection   = True
-
+[global_config]
+  geometry_hinting = False
+  window_state = maximise
+  handle_size = 1
+  borderless = True
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    scrollback_lines = 5000
+    scrollbar_position = hidden
+    cursor_color = "#fafafafafafa"
+    foreground_color = "#ffffff"
+    icon_bell = False
+    show_titlebar = False
+    color_scheme = white_on_black
+    font = DejaVu Sans YuanTi Mono 13
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
