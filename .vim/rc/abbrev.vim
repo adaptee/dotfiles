@@ -68,6 +68,7 @@ iab standarsd  stardards
 iab standrad  stardard
 iab alghough although
 iab docuemnt document
+iab telent   telnet
 
 " reduce key-typing;come on, lazy boy!
 iab ok      OK
