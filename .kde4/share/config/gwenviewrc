@@ -1,0 +1,42 @@
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+Width 1280=1281
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[General]
+HistoryEnabled=false
+
+[ImageView]
+EnlargeSmallerImages=true
+
+[KFileDialog Settings]
+Height 800=510
+Recent Files[$e]=$HOME/NTIxODE4MCxwYW5sZWkyMDAz.jpeg,$HOME/NTIxODE4MCxwYW5sZWkyMDAz.jpeg
+Width 1280=816
+
+[KPropertiesDialog]
+Height 800=441
+Width 1280=419
+
+[MainWindow]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1281
+
+[SideBar-BrowseMode]
+CurrentPage=information
+IsVisible=false
+
+[SideBar-FullScreenMode]
+CurrentPage=information
+IsVisible=false
+
+[SideBar-ViewMode]
+CurrentPage=information
+IsVisible=false
+
+[ThumbnailView]
+ThumbnailDetails=4
