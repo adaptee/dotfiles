@@ -1,0 +1,24 @@
+[General]
+NormalUrlInputLine=true
+ShowStatusBar=true
+
+[MainWindow]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAQAAAAAAAACzAAACk/wCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AQAAADgAAAKTAAAAjAEAAAUAAARCAAACkwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1281
+
+[Notification Messages]
+DoNotAskBeforeExit=false
+systemtrayquitKRDC=false
+
+[Plugins]
+krdc_rdppluginEnabled=true
+krdc_testpluginEnabled=false
+krdc_vncpluginEnabled=true
+
+[RDP]
+ColorDepth=2
+
+[VNC]
+Quality=0
