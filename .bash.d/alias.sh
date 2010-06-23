@@ -30,7 +30,7 @@
 # enable color support of ls(LS_COLORS)
 if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"
-    alias ls='ls --color=auto '
+    alias ls='ls --color=auto --group-directories-first'
 fi
 
 # 'F' means show trailing handy hints of the entry type
@@ -358,6 +358,8 @@ alias mr='rm'
 
 
 # create subfolder with the same name, if necessary, before extracting
-alias unps='unp -u'
+alias unp='dtrx --recursive --one-entry=here'
+alias unpl='dtrx --list'
+#alias unps='unp -u'
 
 alias gst='git status'
