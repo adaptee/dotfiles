@@ -19,9 +19,11 @@
 #===============================================================================
 
 alias rsmb='sudo /etc/rc.d/samba restart'
-alias rnet='sudo /etc/rc.d/network restart'
 
-# use more friendly pacman
+# install missing dependency automatically
+alias makepkg='makepkg -s'
+
+# pacman-color is more user-friendly
 which pacman-color >& /dev/null &&  alias pacman='pacman-color'
 
 # install package
@@ -81,6 +83,13 @@ function pac-list()
 {
     pacman -Ql "$1"
 }
+
+# grep the list of installed packages
+function pac-grep()
+{
+    pacman -Q | grep -i "$1"
+}
+
 
 # list all un-needed packages
 function pac-nouse ()
