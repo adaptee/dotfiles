@@ -1,0 +1,8 @@
+[KSplash Theme: OxyArch]
+Name = KDE 4.2 Splash Screen
+Description = Arch Linux Splash Screen
+Version = 1.0
+Author = Raphael Gomes <raphael_gomes@ymail.com>
+
+# Theme behaviour settings.
+Engine = KSplashX
