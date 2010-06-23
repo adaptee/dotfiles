@@ -21,4 +21,5 @@ user_pref("font.name.monospace.zh-CN", "DejaVu Sans YuanTi Mono");
 user_pref("font.name.sans-serif.zh-CN", "DejaVu Sans YuanTi");
 user_pref("font.name.serif.zh-CN", "DejaVu Sans YuanTi");
 user_pref("font.name.variable.x-western", "Sans");
-user_pref("intl.charset.detector", "universal_charset_detector");
+//user_pref("intl.charset.detector", "universal_charset_detector");
+user_pref("intl.charset.detector", "zhcn_parallel_state_machine");
