@@ -51,7 +51,6 @@
     br      = branch
     bra     = branch -a
     brd     = branch -d
-    brD     = branch -D
 
     cm      = commit -m
     cma     = commit -a -m
