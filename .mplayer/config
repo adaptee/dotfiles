@@ -30,7 +30,7 @@ mc = 0
 zoom = "no"
 
 # speed up playbacking
-#speed = "1.1"
+speed = "1.1"
 
 #--------------------display------------------------------#
 
