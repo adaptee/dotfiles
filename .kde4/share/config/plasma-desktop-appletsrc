@@ -26,13 +26,13 @@ zvalue=43
 extenderIconName=battery
 extenderItemName=powermanagement
 extenderItemPosition=0
-extenderTitle=Power Management
+extenderTitle=电源管理
 isCollapsed=false
 sourceAppletId=17
 sourceAppletPluginName=battery
 
 [Containments][16][Applets][17][LayoutInformation]
-Order=6
+Order=5
 
 [Containments][16][Applets][17][PopupApplet]
 DialogHeight=232
@@ -45,7 +45,7 @@ plugin=calendar
 zvalue=0
 
 [Containments][16][Applets][19][LayoutInformation]
-Order=7
+Order=6
 
 [Containments][16][Applets][19][PopupApplet]
 DialogHeight=262
@@ -64,13 +64,13 @@ isCollapsed=true
 extenderIconName=view-pim-calendar
 extenderItemName=calendar
 extenderItemPosition=0
-extenderTitle=Calendar
+extenderTitle=日历
 isCollapsed=false
 sourceAppletId=20
 sourceAppletPluginName=digital-clock
 
 [Containments][16][Applets][20][LayoutInformation]
-Order=8
+Order=7
 
 [Containments][16][Applets][20][PopupApplet]
 DialogHeight=274
@@ -87,10 +87,10 @@ Share=false
 showLockButton=true
 
 [Containments][16][Applets][22][LayoutInformation]
-Order=9
+Order=8
 
 [Containments][16][Applets][23]
-geometry=108,0,298,32
+geometry=72,0,211,32
 immutability=1
 plugin=pager
 zvalue=42
@@ -100,10 +100,10 @@ Share=false
 displayedText=1
 
 [Containments][16][Applets][23][LayoutInformation]
-Order=3
+Order=2
 
 [Containments][16][Applets][24]
-geometry=410,0,425,32
+geometry=287,0,522,32
 immutability=1
 plugin=tasks
 zvalue=205
@@ -113,34 +113,22 @@ showOnlyCurrentDesktop=true
 showOnlyMinimized=true
 
 [Containments][16][Applets][24][LayoutInformation]
-Order=4
-
-[Containments][16][Applets][25]
-geometry=36,0,32,32
-immutability=1
-plugin=showdesktop
-zvalue=39
-
-[Containments][16][Applets][25][LayoutInformation]
-Order=1
-
-[Containments][16][Applets][25][Shortcuts]
-global=Meta+D
-
-[Containments][16][Applets][26]
-geometry=72,0,32,32
-immutability=1
-plugin=trash
-zvalue=40
-
-[Containments][16][Applets][26][LayoutInformation]
-Order=2
+Order=3
 
 [Containments][16][Applets][28]
-geometry=839,0,208,32
+geometry=813,0,234,32
 immutability=1
 plugin=systemtray
 zvalue=48
+
+[Containments][16][Applets][28][Configuration][ExtenderItems][10]
+extenderIconName=dialog-information
+extenderItemName=oldNotificationsGroup
+extenderTitle=最近的通知
+isCollapsed=true
+isGroup=true
+sourceAppletId=28
+sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][Configuration][ExtenderItems][7]
 extenderIconName=
@@ -157,7 +145,7 @@ sourceAppletPluginName=systemtray
 extenderIconName=
 extenderItemName=completedJobsGroup
 extenderItemPosition=0
-extenderTitle=0 Recently Completed Jobs:
+extenderTitle=0 个最近完成的任务：
 groupCollapsed=false
 isCollapsed=false
 isGroup=true
@@ -165,11 +153,11 @@ sourceAppletId=28
 sourceAppletPluginName=systemtray
 
 [Containments][16][Applets][28][LayoutInformation]
-Order=5
+Order=4
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=12
-DialogWidth=0
+DialogHeight=53
+DialogWidth=424
 
 [Containments][16][Applets][33]
 geometry=0,0,32,32
@@ -182,6 +170,12 @@ Order=0
 
 [Containments][16][Applets][33][Shortcuts]
 global=Shift+F1
+
+[Containments][16][Applets][50]
+geometry=36,0,32,32
+immutability=1
+plugin=trash
+zvalue=219
 
 [Containments][16][Configuration]
 maximumSize=1280,36
@@ -212,10 +206,10 @@ wallpaperpluginmode=SingleImage
 zvalue=0
 
 [Containments][42][Applets][14]
-geometry=991,75,258,154
+geometry=10,62,258,154
 immutability=1
 plugin=sm_temperature
-zvalue=216
+zvalue=218
 
 [Containments][42][Applets][14][Configuration]
 graphColor=20,19,18
@@ -226,10 +220,10 @@ showTopBar=false
 temps=acpi/thermal_zone/THRM/temperature
 
 [Containments][42][Applets][15]
-geometry=999,493,277,180
+geometry=12,600,277,180
 immutability=1
 plugin=sm_net
-zvalue=214
+zvalue=219
 
 [Containments][42][Applets][15][Configuration]
 inColor=210,210,0
@@ -246,8 +240,8 @@ offset=67
 [Containments][42][Wallpaper][image]
 slideTimer=10
 slidepaths=/usr/share/wallpapers/
-userswallpapers=/home/whodare/horofox.png,/home/whodare/img/horofox.png
-wallpaper=/home/whodare/img/horofox.png
+userswallpapers=/home/whodare/horofox.png,/home/whodare/img/horofox.png,/mnt/personal/Desktop/WCup.jpg
+wallpaper=/mnt/personal/Desktop/WCup.jpg
 wallpapercolor=56,111,150
 wallpaperposition=5
 
