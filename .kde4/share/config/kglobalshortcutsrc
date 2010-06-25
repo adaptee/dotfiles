@@ -25,6 +25,12 @@ stop=Meta+V,Media Stop,停止
 stop_after_current=Meta+Shift+V,Meta+Shift+V,在当前音轨后停止
 toggleMainWindow=Meta+M,Meta+P,切换主窗口
 
+[choqok]
+_k_friendly_name=choqok
+choqok_new_post=Meta+Ctrl+T,Meta+Ctrl+T,赶快吼吼
+toggle_mainwin=Meta+Ctrl+C,Meta+Ctrl+C,
+update_timeline=Meta+Ctrl+F5,Meta+Ctrl+F5,更新时间线
+
 [juk]
 _k_friendly_name=juk
 back=,Ctrl+Alt+Left,上一首
@@ -37,6 +43,10 @@ seekForward=,Ctrl+Alt+Shift+Right,向前搜寻
 stop=Ctrl+Alt+S,Ctrl+Alt+S,停止(&S)
 volumeDown=Ctrl+Alt+Shift+Down,Ctrl+Alt+Shift+Down,降低音量
 volumeUp=Ctrl+Alt+Shift+Up,Ctrl+Alt+Shift+Up,增大音量
+
+[kded]
+_k_friendly_name=KDE 守护进程
+display=Display,Display,切换显示
 
 [khotkeys]
 _k_friendly_name=khotkeys
@@ -120,13 +130,19 @@ kabccontacts=none,none,运行命令(只运行启动器“联系人”)
 solid=none,none,运行命令(只运行启动器“设备”)
 windows=none,none,运行命令(只运行启动器“窗口”)
 
+[ktorrent]
+_k_friendly_name=ktorrent
+queue_pause=Alt+Shift+P,Alt+Shift+P,暂停 KTorrent
+queue_suspend=,Alt+Shift+P,Suspend Torrents
+show_kt=Alt+Shift+T,Alt+Shift+T,显示/隐藏 KTorrent
+
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,激活请求注意的窗口
 Block Global Shortcuts=none,none,屏蔽全局快捷键
 ClearLastMouseMark=none,Meta+Shift+F12,Clear Last Mouse Mark
 ClearMouseMarks=Meta+Shift+F11,Meta+Shift+F11,Clear Mouse Marks
-Cube=Ctrl+F11,Ctrl+F11,Desktop Cube
-Cylinder=none,none,Desktop Cylinder
+Cube=Ctrl+F11,Ctrl+F11,桌面立方
+Cylinder=none,none,桌面圆柱
 Desktop Screenshot to Clipboard=Ctrl+Print,Ctrl+Print,桌面抓图到剪贴板
 Expose=Ctrl+F9,Ctrl+F9,Toggle Present Windows (Current desktop)
 ExposeAll=none,Ctrl+F10,Toggle Present Windows (All desktops)
@@ -139,16 +155,16 @@ Kill Window=Meta+K,Ctrl+Alt+Esc,杀死窗口
 Mouse Emulation=none,Alt+F12,鼠标模拟
 Remove Window From Group=none,none,从分组中移除窗口
 Setup Window Shortcut=none,none,设置窗口快捷键
-Sharpen=Meta+Ctrl+S,Meta+Ctrl+S,Toggle Sharpen Effect
-Show Desktop=none,none,显示桌面
-ShowDesktopGrid=Ctrl+F10,Ctrl+F8,Show Desktop Grid
+Sharpen=none,Meta+Ctrl+S,切换锐化效果
+Show Desktop=Meta+D,none,显示桌面
+ShowDesktopGrid=none,Ctrl+F8,显示桌面网格
 Snow=Ctrl+F12,Meta+Ctrl+F12,Snow
-Sphere=none,none,Desktop Sphere
+Sphere=none,none,桌面球体
 Suspend Compositing=none,Alt+Shift+F12,挂起混成器
-Switch One Desktop Down=none,none,切换到下面的桌面
-Switch One Desktop Up=none,none,切换到上面的桌面
-Switch One Desktop to the Left=none,none,切换到左边的桌面
-Switch One Desktop to the Right=none,none,切换到右边的桌面
+Switch One Desktop Down=none,none,将一个桌面向下切换
+Switch One Desktop Up=none,none,将一个桌面向上切换
+Switch One Desktop to the Left=none,none,将一个桌面切换到左边
+Switch One Desktop to the Right=none,none,将一个桌面切换到右边
 Switch Window Down=Meta+Alt+Down,Meta+Alt+Down,切换到下方的窗口
 Switch Window Left=Meta+Alt+Left,Meta+Alt+Left,切换到左边的窗口
 Switch Window Right=Meta+Alt+Right,Meta+Alt+Right,切换到右边的窗口
@@ -167,15 +183,15 @@ Switch to Desktop 19=none,none,切换到桌面 19
 Switch to Desktop 2=Ctrl+F2,Ctrl+F2,切换到桌面 2
 Switch to Desktop 20=none,none,切换到桌面 20
 Switch to Desktop 3=Ctrl+F3,Ctrl+F3,切换到桌面 3
-Switch to Desktop 4=none,Ctrl+F4,切换到桌面 4
+Switch to Desktop 4=Ctrl+F4,Ctrl+F4,切换到桌面 4
 Switch to Desktop 5=none,none,切换到桌面 5
 Switch to Desktop 6=none,none,切换到桌面 6
 Switch to Desktop 7=,none,切换到桌面 7
 Switch to Desktop 8=none,none,切换到桌面 8
 Switch to Desktop 9=none,none,切换到桌面 9
-Switch to Next Desktop=Ctrl+Alt+Right,none,切换到前一桌面
+Switch to Next Desktop=Ctrl+Alt+Right,none,切换到下一个桌面
 Switch to Next Screen=none,none,切换到下一屏幕
-Switch to Previous Desktop=Ctrl+Alt+Left,none,切换到后一桌面
+Switch to Previous Desktop=Ctrl+Alt+Left,none,切换到上一个桌面
 Switch to Screen 0=none,none,切换到屏幕 10
 Switch to Screen 1=none,none,切换到屏幕 1
 Switch to Screen 2=none,none,切换到屏幕 2
@@ -192,9 +208,9 @@ Walk Through Desktops (Reverse)=none,none,遍历桌面(反向)
 Walk Through Window Tabs=none,none,遍历窗口标签
 Walk Through Window Tabs (Reverse)=none,none,遍历窗口标签(反向)
 Walk Through Windows=Alt+Tab,Alt+Tab,遍历窗口
-Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,遍历窗口(反向)
+Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,反向遍历窗口
 Walk Through Windows Alternative=none,none,遍历候选窗口
-Walk Through Windows Alternative (Reverse)=none,none,遍历候选窗口(反向)
+Walk Through Windows Alternative (Reverse)=none,none,反向遍历候选窗口
 Window Above Other Windows=Meta+A,none,让窗口常居顶端
 Window Below Other Windows=none,none,让窗口常居底端
 Window Close=Alt+F4,Alt+F4,关闭窗口
@@ -273,11 +289,10 @@ _k_friendly_name=lancelot
 [plasma-desktop]
 Show Dashboard=,Ctrl+F12,显示部件板
 _k_friendly_name=Plasma 工作区
-activate widget 25=Meta+D,Meta+D,激活 显示桌面 部件
 activate widget 33=Shift+F1,Shift+F1,激活 应用程序启动菜单 部件
 activate widget 50=,Shift+F1,激活 应用程序启动菜单 部件
 activate widget 92=,Shift+F1,Activate Application Launcher Menu Widget
-activate widget 94=,Meta+D,Activate Show Desktop Widget
+activate widget 94=none,Meta+D,Activate Show Desktop Widget
 
 [yakuake]
 _k_friendly_name=Yakuake
