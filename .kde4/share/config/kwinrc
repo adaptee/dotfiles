@@ -41,8 +41,21 @@ BorderActivateAll=9
 TabBox=true
 
 [Effect-PresentWindows]
+Accuracy=1
 BorderActivate=9
 BorderActivateAll=7
+DrawWindowCaptions=true
+DrawWindowIcons=true
+FillGaps=true
+IgnoreMinimized=false
+LayoutMode=0
+LeftButtonDesktop=2
+LeftButtonWindow=1
+MiddleButtonDesktop=0
+MiddleButtonWindow=0
+RightButtonDesktop=0
+RightButtonWindow=2
+ShowPanel=false
 TabBox=false
 
 [Effect-Snow]
