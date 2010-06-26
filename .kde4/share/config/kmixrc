@@ -12,7 +12,7 @@ Position=352,153
 Size=640,320
 Tickmarks=true
 TrayVolumeControl=true
-Visible=true
+Visible=false
 startkdeRestore=true
 
 [View.Base.ALSA::HDA_Intel:1.Beep:0]
