@@ -1,31 +1,62 @@
-AlwaysUpgradeAur yes
+#AlwaysUpgradeAur yes
+#
+#AlwaysUpgradeDevel no
+#
+#AurVoteSupport no
+#
+#ColorMod normal
+#
+#DontNeedToPressEnter yes
+#
+#EditPkgbuild no
+#
+#ForceEnglish no
+#
+#LastCommentsNumber 5
+#
+#LastCommentsOrder asc
+#
+#NoConfirm  yes
+#
+#PacmanBin /usr/bin/pacman-color
+#
+#PkgbuildEditor vim
 
-AlwaysUpgradeDevel no
-
-AurVoteSupport no
-
-ColorMod normal
-
-DontNeedToPressEnter yes
-
-EditPkgbuild no
-
-ForceEnglish no
-
-LastCommentsNumber 5
-
-LastCommentsOrder asc
-
-NoConfirm  yes
-
-PacmanBin /usr/bin/pacman-color
-
-PkgbuildEditor vim
 
 
-#AURUPGRADE=1
-#AURVOTE=0
-#NOENTER=1
-#EDITFILES=0
-#NOCONFIRM=1
-#PacmanBin=/usr/bin/pacman-color
+# alwasy search for available upgrade when running 'yaourt -Su'
+AURUPGRADE=1
+
+# give details about upgrading ( new version/release)
+DETAILUPGRAD=1
+
+# alwasy search for devel version(git/svn) when upgrading
+#DEVEL=1
+
+# do not vote
+AURVOTE=0
+
+# save exising config file with .pacnew extension
+#AUTOSAVEBACKUPFILE=1
+
+COLORMODE="normal"
+
+# needn't answer yes/no question
+NOENTER=1
+
+# do not prompt user for editing PKGBUILD
+EDITFILES=0
+
+# show last 5 comments
+MAXCOMMENTS=5
+
+# always use the default choice
+NOCONFIRM=1
+
+# make your life a bit more colorful
+PacmanBin="/usr/bin/pacman-color"
+
+# use vim to edit PKGFILE
+EDITOR="vim"
+
+AURSEARCH=1
