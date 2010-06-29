@@ -1,17 +1,3 @@
-binding "gtk-vi-text-view"
-{
-    bind "<ctrl>d" { "move-cursor" (display-lines, 5, 0) }
-    bind "<ctrl>f" { "move-cursor" (display-lines, 5, 0) }
-    bind "<ctrl>u" { "move-cursor" (display-lines, -5, 0) }
-    bind "<ctrl>b" { "move-cursor" (display-lines, -5, 0) }
-    bind "<ctrl>e" { "move-cursor" (display-lines, -1, 0) }
-    bind "<ctrl>y" { "move-cursor" (display-lines, 1, 0) }
-    bind "j" { "move-cursor" (display-lines, 1, 0) }
-    bind "k" { "move-cursor" (display-lines, -1, 0) }
-    bind "l" { "move-cursor" (logical-positions, 1, 0) }
-    bind "h" { "move-cursor" (logical-positions, -1, 0) }
-}
-
 binding "gtk-vi-tree-view"
 {
     bind "j" { "move-cursor" (display-lines, 1) }
@@ -20,15 +6,15 @@ binding "gtk-vi-tree-view"
     bind "h" { "move-cursor" (logical-positions, -1) }
 }
 
-binding "gtk-vi-icon-view"
-{
-    bind "j" { "move-cursor" (display-lines, 1) }
-    bind "k" { "move-cursor" (display-lines, -1) }
-    bind "l" { "move-cursor" (logical-positions, 1) }
-    bind "h" { "move-cursor" (logical-positions, -1) }
+class "GtkTreeView" binding "gtk-vi-tree-view"
+
+binding "gtk-vi-text-entry" {
+    bind "<ctrl>h" { "delete-from-cursor" (chars, -1) }
+    bind "<ctrl>u" { "delete-from-cursor" (paragraph-ends, -1) }
+    bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) }
 }
 
-class "GtkTextView" binding "gtk-vi-text-view"
-class "GtkTreeView" binding "gtk-vi-tree-view"
-class "GtkIconView" binding "gtk-vi-icon-view"
+class "GtkEntry" binding "gtk-vi-text-entry"
+class "GtkTextView" binding "gtk-vi-text-entry"
+
 
