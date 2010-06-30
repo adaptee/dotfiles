@@ -239,7 +239,7 @@ set display+=lastline
 
 
 "  Make VIM understand following kinds of encoding
-set fileencodings=ucs-bom,utf-8,sjis,japan,cp936,gb18030,chinese,taiwan,big5,korea,latin1
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,chinese,taiwan,big5,sjis,japan,korea,latin1
 
 " show ambiguous character in width of two columns
 if  has('multi_byte')
