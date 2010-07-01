@@ -43,7 +43,7 @@ TabBox=true
 [Effect-PresentWindows]
 Accuracy=1
 BorderActivate=9
-BorderActivateAll=7
+BorderActivateAll=9
 DrawWindowCaptions=true
 DrawWindowIcons=true
 FillGaps=true
