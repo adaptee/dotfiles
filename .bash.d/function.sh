@@ -667,3 +667,30 @@ function mp3tag ()
 }
 
 
+# better cp ;
+function bcp ()
+{
+    cp -v -a --parents "$1" "$2"
+}
+
+
+# change $PWD to the last directory , after exiting ranger
+function ranger() {
+    command ranger --fail-if-run $@ && cd "$(grep \^\' ~/.ranger/bookmarks | cut -b3-)"
+}
+
+# test whether amule-daemon can correctly handle ed2k links containing unicode
+function test-amuled()
+{
+    ed2k 'ed2k://|file|[生活大爆炸.第三季].The.Big.Bang.Theory.S03E22.The.Staircase.Implementation.720p.HDTV.x264-CTU.srt|22086|6501EB5F50605CCE60C876D3ED325757|/'
+
+}
+
+# test the speed of network connection
+function test-speed ()
+{
+    cd /tmp && wget http://yuiblog.com/yuitheater/crockford-json.m4v
+}
+
+
+
