@@ -78,6 +78,9 @@ alias -- -='cd -'
 # list one item per line , with prepending index.
 alias dir='dirs -v'
 
+alias I='cd ~/down/Incoming/'
+alias T='cd ~/down/Temp/'
+
 #---------------------------------------------------------------------------#
 #                                 tree alias                                #
 #---------------------------------------------------------------------------#
@@ -103,8 +106,9 @@ alias du='du -h'
 # only show the total size.
 alias dus='du -s'
 
-# only show sub-folders of depth one.
-alias du1='du -h --max-depth=1'
+# calculate size of subfolders, and show them in increasing order.
+alias du1='du -h --max-depth=1 | sort -h'
+
 
 #sort by size; only consider sub-folders.
 function du2 ( )
@@ -303,6 +307,12 @@ alias x0='xargs -0'
 #                                  misc alias                               #
 #---------------------------------------------------------------------------#
 
+# also copy the higher hierarchry
+alias cpp='cp --parents'
+
+# create missing parent folder, if necessary
+alias mkdir='mkdir -p'
+
 # ack-grep is a better grep!
 # alias it to ack  only if it is installed as ack-grep
 which ack-grep >& /dev/null &&  alias ack=ack-grep
@@ -363,3 +373,6 @@ alias unpl='dtrx --list'
 #alias unps='unp -u'
 
 alias gst='git status'
+
+
+

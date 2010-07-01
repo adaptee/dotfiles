@@ -23,6 +23,9 @@ alias rsmb='sudo /etc/rc.d/samba restart'
 # install missing dependency automatically
 alias makepkg='makepkg -s'
 
+# no boring confimration!
+alias yaourt='yaourt --noconfirm'
+
 # pacman-color is more user-friendly
 which pacman-color >& /dev/null &&  alias pacman='pacman-color'
 
