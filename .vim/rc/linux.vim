@@ -7,6 +7,9 @@ set fileformats=unix,dos,mac
 " Fast  viewing vimrc
 nnoremap <silent> <leader>v :call Gf("$HOME/.vimrc")<CR>
 
+" BOM often cause probelems under linux ; So remove BOM when writing
+autocmd BufEnter * setlocal nobomb
+
 " When vimrc or sub-vimrc is edited and saved, reload vimrc automatically
 autocmd! BufWritePost .vimrc source $HOME/.vimrc
 autocmd! BufWritePost $VIMLOCAL/rc/*.vim source $HOME/.vimrc
