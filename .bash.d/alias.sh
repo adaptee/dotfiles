@@ -374,5 +374,7 @@ alias unpl='dtrx --list'
 
 alias gst='git status'
 
+# always force tmux to assume 256-color terminal
+alias tmux='tmux -2'
 
 

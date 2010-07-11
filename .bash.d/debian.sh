@@ -19,12 +19,15 @@
 #===============================================================================
 
 alias rnet='sudo /etc/init.d/networking restart'
-alias rsmb='sudo /etc/init.d/samba restart'
+alias rsmb='sudo /etc/init.d/smbd restart'
 
 
 #---------------------------------------------------------------------------#
 #                                 apt-get alias                             #
 #---------------------------------------------------------------------------#
+
+# apt-get is hard to type!
+alias apt='apt-get'
 
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get dist-upgrade -y --force-yes'
