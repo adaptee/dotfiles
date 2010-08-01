@@ -283,8 +283,8 @@ js<<EOF
 search_in_verycd = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
-    var prefix       = 'http://www.verycd.com/search/folders?field=title+s+contents&kw=';
-    var suffix       = '&rev=true&q=&from=&c2=0&range=&catalog=&status=all&sort=';
+    var prefix       = 'http://www.verycd.com/search/folders?field=title&kw=';
+    var suffix       = '&rev=true&q=&from=&c2=0&range=&catalog=&status=all&sort=file_bytes';
     var full_url     = prefix + query_string + suffix;
 
     liberator.execute('tabopen ' + full_url );
