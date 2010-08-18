@@ -1,0 +1,67 @@
+<!DOCTYPE kpartgui>
+<kpartgui version="12" name="session">
+ <MenuBar>
+  <Menu name="file">
+   <Action group="session-tab-operations" name="close-session"/>
+   <Action group="session-operations" name="file_save_as"/>
+   <Separator group="session-operations"/>
+   <Action group="session-operations" name="open-browser"/>
+  </Menu>
+  <Menu name="edit">
+   <Action group="session-edit-operations" name="edit_copy"/>
+   <Action group="session-edit-operations" name="edit_paste"/>
+   <Separator group="session-edit-operations"/>
+   <Menu group="session-edit-operations" name="edit-copy-input-to">
+    <text>Copy Input To</text>
+    <Action name="copy-input-to-all-tabs"/>
+    <Action name="copy-input-to-selected-tabs"/>
+    <Action name="copy-input-to-none"/>
+   </Menu>
+   <Action group="session-edit-operations" name="rename-session"/>
+   <Action group="session-edit-operations" name="zmodem-upload"/>
+   <Separator group="session-edit-operations"/>
+   <Action group="session-edit-operations" name="edit_find"/>
+   <Action group="session-edit-operations" name="edit_find_next"/>
+   <Action group="session-edit-operations" name="edit_find_prev"/>
+  </Menu>
+  <Menu name="view">
+   <Action group="session-view-operations" name="monitor-silence"/>
+   <Action group="session-view-operations" name="monitor-activity"/>
+   <Separator group="session-view-operations"/>
+   <Action group="session-view-operations" name="enlarge-font"/>
+   <Action group="session-view-operations" name="shrink-font"/>
+   <Action group="session-view-operations" name="set-encoding"/>
+   <Separator group="session-view-operations"/>
+   <Action group="session-view-operations" name="clear-history"/>
+   <Action group="session-view-operations" name="clear-history-and-reset"/>
+  </Menu>
+  <!--<Menu name="debug"><text>Debug</text>
+            <Action name="debug-process"/>
+        </Menu>!-->
+ </MenuBar>
+ <Menu name="session-popup-menu">
+  <Action name="edit_copy"/>
+  <Action name="edit_paste"/>
+  <Action name="open-browser"/>
+  <Separator/>
+  <Action name="set-encoding"/>
+  <Action name="clear-history"/>
+  <Action name="configure-history"/>
+  <Separator/>
+  <Action name="show-menubar"/>
+  <Action name="change-profile"/>
+  <Action name="edit-current-profile"/>
+  <Separator/>
+  <Action name="close-session"/>
+ </Menu>
+ <Menu name="change-profile">
+  <text>&amp;Change Profile</text>
+  <ActionList name="profile-list"/>
+ </Menu>
+ <ActionProperties scheme="Default">
+  <Action shortcut="Alt+F1" name="show-menubar"/>
+  <Action shortcut="Alt+P" name="edit-current-profile"/>
+  <Action shortcut="Alt+C; Ctrl+Ins" name="edit_copy"/>
+  <Action shortcut="Alt+V; Shift+Ins" name="edit_paste"/>
+ </ActionProperties>
+</kpartgui>
