@@ -111,7 +111,7 @@ Size=48
 
 [DirSelect Dialog]
 DirSelectDialog Size=579,525
-History Items[$e]=file:///mnt/personal/whodare/code/google-pinyin/scim-googlepinyin/src/share,file:///mnt/personal/whodare/code/google-pinyin/android-pinyin/jni/share,file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/Desktop,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
+History Items[$e]=file://$HOME/down/Incoming/lijing/win/win7-sdb1,file://$HOME/down/Incoming/lijing/win,file:///mnt/personal/babylon,file:///mnt/personal/stardict/dic,file://$HOME/Desktop,file://$HOME/img/wallpaper,file://$HOME/vbox/iso,file://$HOME/down/Incoming,file://$HOME/down,file://$HOME/vbox,file://$HOME/down/Incoming/new,file://$HOME/down/Incoming/Scorpions,file://$HOME/etc-repo/arch,file:///mnt/personal/whodare/code/google-pinyin/scim-googlepinyin/src/share,file:///mnt/personal/whodare/code/google-pinyin/android-pinyin/jni/share,file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
 
 [Emoticons]
 emoticonsTheme=kde4
@@ -156,19 +156,23 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/audio/ACG/,$HOME/down/,$HOME/code/simplecd/,$HOME/down/Incoming/,/media/Study/Japanese/中央广播电视大学日语基础教学视频/,/media/Study/Japanese/,/media/Study/,$HOME/audio/
+Recent URLs[$e]=$HOME/img/Image/wallpaper/,$HOME/Desktop/mp3/,$HOME/down/,remote:/,$HOME/.wine/drive_c/Program Files/WinKawaks/,$HOME/Desktop/RJ064742/,$HOME/vbox/
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
 Show Speedbar=true
 Show hidden files=false
 Sort by=Name
+Sort directories first=true
 Sort reversed=false
-Speedbar Width=118
+Speedbar Width=132
 View Style=Simple
 
 [KShortcutsDialog Settings]
-Dialog Size=1280,715
+Dialog Size=1272,715
+
+[Locale]
+Country=cn
 
 [MainToolbarIcons]
 ActiveColor=169, 156, 255

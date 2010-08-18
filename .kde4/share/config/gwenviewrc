@@ -22,9 +22,15 @@ Width 1280=419
 
 [MainWindow]
 Height 800=801
-State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABPwAAAKqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1281
+
+[Notification Messages]
+ConfirmTrash=true
+
+[SideBar]
+PreferredMetaInfoKeyList=General.Name,General.Size,General.ImageSize
 
 [SideBar-BrowseMode]
 CurrentPage=information
@@ -35,7 +41,7 @@ CurrentPage=information
 IsVisible=false
 
 [SideBar-ViewMode]
-CurrentPage=information
+CurrentPage=operations
 IsVisible=false
 
 [ThumbnailView]

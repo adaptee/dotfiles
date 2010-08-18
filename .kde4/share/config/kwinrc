@@ -1,17 +1,18 @@
 [$Version]
-update_info=kwin3_plugin.upd:kde3.2, kwin.upd:kde3.0r1, kwin.upd:kde3.2Xinerama, kwin_on_off.upd:kwin_on_off, kwin_focus2.upd:kwin_focus2, kwin_focus1.upd:kwin_focus1
+update_info=kwin3_plugin.upd:kde3.2, kwin.upd:kde3.0r1, kwin.upd:kde3.2Xinerama, kwin_on_off.upd:kwin_on_off, kwin_focus2.upd:kwin_focus2, kwin_focus1.upd:kwin_focus1,kwin_blacklist.upd:Blacklist-4.5
 
 [Compositing]
 AnimationSpeed=2
 Backend=OpenGL
 CheckIsSafe=true
-DisableChecks=false
+DisableChecks=true
 Enabled=true
 GLDirect=true
 GLMode=TFP
 GLTextureFilter=1
 GLVSync=true
 HiddenPreviews=5
+OpenGLIsUnsafe=false
 XRenderSmoothScale=false
 
 [Desktops]
@@ -95,6 +96,7 @@ CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
 [Plugins]
+kwin4_effect_blurEnabled=true
 kwin4_effect_boxswitchEnabled=false
 kwin4_effect_coverswitchEnabled=false
 kwin4_effect_cubeEnabled=true
@@ -108,6 +110,7 @@ kwin4_effect_fadeEnabled=true
 kwin4_effect_fadedesktopEnabled=false
 kwin4_effect_fallapartEnabled=false
 kwin4_effect_flipswitchEnabled=true
+kwin4_effect_glideEnabled=false
 kwin4_effect_highlightwindowEnabled=false
 kwin4_effect_invertEnabled=false
 kwin4_effect_loginEnabled=true
