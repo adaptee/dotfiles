@@ -207,6 +207,13 @@ alias pi='pinger'
 
 alias dns='cat /etc/resolv.conf'
 
+# this is much simpler than command arp
+alias arp='cat /proc/net/arp'
+
+# scan a subnet
+# [Example] scan 192.168.1.0/24
+alias scan='nmap -sP '
+
 alias trace='tracepath'
 alias mtr='mtr -t'
 
@@ -214,6 +221,7 @@ alias nets='netstat -anp'
 alias netst='netstat -anpt'     # only show tcp ports
 alias netsu='netstat -anpu'     # only show udp ports
 alias listening='netstat -tlnp' # list all listening ports;root previlige would be better
+alias listening='ss -l -p'      # list all listening ports and corrsponding process
 
 alias ax='axel'
 
@@ -225,10 +233,6 @@ alias you='youtube-dl -t'
 
 # dial-up quickly
 alias po='sudo pon dsl-provider'
-
-
-# start vpn quickly.
-alias vpn='sudo openvpn --config ~/.openvpn/alonweb.conf --ca ~/.openvpn/alonweb.crt'
 
 # solve the encoding problem seamlessly.
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
