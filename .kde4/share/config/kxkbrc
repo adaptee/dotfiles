@@ -1,11 +1,12 @@
 [Layout]
-DisplayNames=us
+DisplayNames=
 IndicatorOnly=false
 LayoutList=us
 Model=asus_laptop
-Options=caps:swapescape
+Options=caps:swapescape,terminate:ctrl_alt_bksp
 ResetOldOptions=true
 ShowFlag=false
+ShowLayoutIndicator=false
 ShowSingle=false
 SwitchMode=Global
 Use=true
