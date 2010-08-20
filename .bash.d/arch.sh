@@ -20,43 +20,101 @@
 
 alias rsmb='sudo /etc/rc.d/samba restart'
 
-# install missing dependency automatically
-alias makepkg='makepkg -s'
+# pacman-color is more user-friendly
+which pacman-color >& /dev/null &&  alias pacman='pacman-color'
 
 # no boring confimration!
 alias yaourt='yaourt --noconfirm'
 
-# pacman-color is more user-friendly
-which pacman-color >& /dev/null &&  alias pacman='pacman-color'
+# install missing dependency automatically
+alias makepkg='makepkg -s'
 
-# install package
-function pac-add ()
+
+#---------------------------------------------------------------------------#
+#                                 package management                        #
+#---------------------------------------------------------------------------#
+
+# installl new package
+# [Example] add firefox
+function add ()
 {
-    yaourt -S "$@"
+    yaourt -S --noconfirm "$@"
 }
 
-# search package by name
-function pac-search ()
+# remove existing package
+# [Example] purge firefox
+function purge ()
 {
-    yaourt -Ss "$1"
+    yaourt -Rs --noconfirm "$@"
 }
 
-# query  meta-info
-function pac-info ()
+function update ()
 {
-    pacman -Qi "$*"
+    yaourt -Syy
 }
 
-# claer package cache
-function pac-clean()
+function upgrade ()
+{
+    yaourt -Su --devel
+}
+
+function clean ()
 {
     sudo rm /var/cache/pacman/pkg/* 2>/dev/null
 }
 
-# mark packages as explicited installed
-function pac-explicit ()
+# list all installed packages
+function world ()
 {
-    sudo pacman -S --noconfirm --asexplicit $@
+    yaourt -Q
+}
+
+# list all availabe packages from the repos
+function all ()
+{
+    true
+}
+
+# list what are contained within specified package
+# [Example] list firefox
+function list ()
+{
+    pacman -Ql "$1"
+}
+
+# which package own the specified file?
+# [Example] own /usr/bin/vim
+function own ()
+{
+    pacman -Qo "$1"
+}
+
+# search package by name
+# [Example] search firefox
+function search ()
+{
+    yaourt -Ss "$1"
+}
+
+# show the meta info of specified package
+# [Example] meta firefox
+function meta ()
+{
+    pacman -Qi "$1"
+}
+
+
+
+# mark packages as explicited installed
+function explicit ()
+{
+    sudo pacman -S --noconfirm --asexplicit "$@"
+}
+
+# list all un-needed packages
+function nouse ()
+{
+    pacman -Qtdq
 }
 
 # show package size in ascending order
@@ -67,6 +125,12 @@ function pac-size ()
     else
         grep "$@" ~/.pac-size.list
     fi
+}
+
+# grep the list of installed packages
+function pac-grep()
+{
+    pacman -Q | grep -i "$1"
 }
 
 # list the commands provided by the package
@@ -81,33 +145,4 @@ function pac-man()
     pacman -Ql "$1" | grep  '/man/'
 }
 
-# list the files provided by the package
-function pac-list()
-{
-    pacman -Ql "$1"
-}
 
-# grep the list of installed packages
-function pac-grep()
-{
-    pacman -Q | grep -i "$1"
-}
-
-
-# list all un-needed packages
-function pac-nouse ()
-{
-    pacman -Qtdq
-}
-
-
-function update ()
-{
-    sudo pacman -Syy
-}
-
-function upgrade ()
-{
-    #sudo pacman -Su --noconfirm
-    sudo yaourt -Su --devel
-}
