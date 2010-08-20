@@ -1,0 +1,21 @@
+
+# date output formats for -d, -m, -t and -w
+# see 'man date' for control codes
+DayFormat    "%x"
+MonthFormat  "%b '%y"
+TopFormat    "%x"
+
+
+# used rate unit (0 = bytes, 1 = bits)
+RateUnit 0
+
+# how units are prefixed when traffic is shown
+# 0 = IEC standard prefixes (KiB/MiB/GiB/TiB)
+# 1 = old style binary prefixes (KB/MB/GB/TB)
+UnitMode 1
+
+# vim:set ft=conf: #
+
+
+
+
