@@ -208,7 +208,7 @@ alias pi='pinger'
 alias dns='cat /etc/resolv.conf'
 
 # this is much simpler than command arp
-alias arp='cat /proc/net/arp'
+alias arp='cat /proc/net/arp | grep -v "00:00:00:00:00:00" '
 
 # scan a subnet
 # [Example] scan 192.168.1.0/24
