@@ -442,7 +442,7 @@ function u162u8()
             iconv -f utf16 -t utf8  -c "${item}" > "${item}.new"  &&
             \mv "${item}" "${item}.old"  &&   mv "${item}.new" "${item}"
 
-            echo "${item} is converted into utf-16 encoding."
+            echo "${item} is converted into utf-8 encoding."
         fi
     done
 }
