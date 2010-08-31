@@ -4,8 +4,10 @@
     # executable bit are ignored, useful for FAT.
     fileMode = false
 
-    # convert CR/LF to LF only when fetching from remote repo
-    autocrlf = input
+    # no line-ending conversion during commit or checkout
+    # [Reason] otherswise, you may encounter some weired things:
+    # [Example] right after clonging, 'git status' tells you some files modified
+    autocrlf = false
 
     #symlinks = false
 
