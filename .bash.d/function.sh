@@ -676,7 +676,7 @@ function bcp ()
 
 # change $PWD to the last directory , after exiting ranger
 function ranger() {
-    command ranger --fail-if-run $@ && cd "$(grep \^\' ~/.ranger/bookmarks | cut -b3-)"
+    command ranger --fail-if-run $@ && cd "$(grep \^\' ~/.config/ranger/bookmarks | cut -b3-)"
 }
 
 # test whether amule-daemon can correctly handle ed2k links containing unicode
