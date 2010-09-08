@@ -296,8 +296,9 @@ vnoremap <silent><Space> "sy<Esc>:call FillWithSpace()<CR>
 
 " variant of getcwd(): un-expand $HOME to ~
 function! GetCWD()
-    "return expand("%:p:h")
-    return substitute(getcwd(), $HOME,'~','' )
+    let folder = expand("%:p:h")
+    return substitute(folder, $HOME,'~','' )
+    "return substitute(getcwd(), $HOME,'~','' )
 endfunction
 
 
