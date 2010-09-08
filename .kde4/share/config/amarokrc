@@ -1,95 +1,95 @@
+[Bookmark Manager]
+Window Size=600,400
+
 [Collection]
-Use Charset Detector=true
+Show Years=false
 
 [Collection Browser]
 TreeCategory=2,1
-View Mode=NormalCollections
+View Mode=UnifiedCollection
 
 [Collection Folders]
 -1=./home/whodare/audio
+Use MusicLocation=true
 
 [Cool Streams]
 Cool StreamsEnabled=false
 
+[Cover Fetcher]
+Height 800=467
+Width 1280=594
+
+[DownloadDialog Settings]
+Height 800=400
+Width 1280=700
+
 [File Browser]
-Current Directory=/home/whodare/
-Decoration position=2
-Filter History=
-Filter History Length=9
-Last Filter=
-Previews=false
-Show Preview=false
-Show hidden files=false
-Sort by=Name
-Sort reversed=false
-Sorting=4
-UrlEditable=false
-View Style=Simple
+Current Directory=/home/whodare
+
+[FilenameLayoutDialog]
+Custom Scheme=
 
 [General]
 Browser Path=root list/collections
 Debug Enabled=false
 First Run=false
-HiddenOnExit=true
+HiddenOnExit=false
 LayoutFileDeleted=true
 MainWindow Position=0,36
-MainWindow Size=1272,737
+MainWindow Size=1276,737
 
 [General Options]
 AutoGetCoverArt=true
 Last Dynamic Mode=随机
-Show Splashscreen=false
+Show Album Art=false
 Track Progression=RandomTrack
 
 [Librivox.org]
 Librivox.orgEnabled=false
 
 [Loaded Playlist Files]
-file:///home/whodare/audio/Dance/Groove.Coverage/Runaway/Groove_Coverage-Runaway-Promo_CDM-2005-USF/00-groove_coverage-runaway-promo_cdm-2005-usf.m3u=
-file:///home/whodare/audio/MyFavour/CranBerries/Treasure.Box/The%20cranberries%20-treasure%20box-4cd-2002.m3u=
-file:///home/whodare/audio/Others/Playlist/cran.m3u=
-file:///home/whodare/audio/Others/Playlist/suede.m3u=
-file:///home/whodare/audio/Others/Playlist/xjapan.m3u=
+file:///home/whodare/audio/NetMusic/Playlist/%E7%8E%8B%E6%9D%B0.m3u=
+file:///home/whodare/audio/NetMusic/Playlist/%E8%8B%8F%E6%85%A7%E4%BC%A6.m3u=
 
 [Lyrics Applet]
-Font=DejaVu Sans YuanTi Mono
-Size=10
+Font=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 
 [Lyricwiki]
-Font=DejaVu Sans YuanTi Mono
 LyricWikiEnabled=false
-Size=10
 
 [Moodbar]
-MoodbarPaintStyle=3
 ShowMoodbarInSlider=true
 
 [MySQL]
-CheckCount=27
+CheckCount=8
+Password=amarokuser
+UseServer=true
 
 [Notification Messages]
-hideOnCloseInfo=false
 systemtrayquitAmarok=false
-
-[OSD]
-Osd Duration=1000
-
-[Phonon::AudioOutput]
-Amarok_Volume=0.79
 
 [Playback]
 Fadeout=false
-Master Volume=75
+Master Volume=100
+Replay Gain Mode=Album
+
+[Playlist Layout]
+CurrentLayout=Default
 
 [Playlist Search]
 MatchAlbum=true
 MatchArtist=true
+MatchRating=false
 MatchTrack=true
+ShowOnlyMatches=true
+
+[Playlist Sorting]
+SortPath=
 
 [Plugins]
 Amarok Script ConsoleEnabled=false
-Cool StreamsEnabled=true
-Librivox.orgEnabled=true
+Cool StreamsEnabled=false
+Librivox.orgEnabled=false
 LyricWikiEnabled=true
 amarok_service_ampacheEnabled=false
 amarok_service_jamendoEnabled=false
@@ -98,19 +98,20 @@ amarok_service_magnatunestoreEnabled=false
 amarok_service_mp3tunesEnabled=false
 amarok_service_opmldirectoryEnabled=false
 
+[Podcast View]
+Merged View=true
+
 [Podcasts]
 AutoUpdate Interval=30
 Maximum Simultaneous Downloads=4
 Maximum Simultaneous Updates=4
 
-[ScriptManager]
-Running Scripts=Cool Streams,Librivox.org,Lyricwiki
+[Saved Playlists View]
+Merged View=false
 
-[Service_LastFm]
-fetchSimilar=true
-ignoreWallet=no
-scrobble=true
-sessionKey=
+[ScriptManager]
+LastUpdateCheck=1283732189
+Running Scripts=Lyricwiki
 
 [Service_Mp3tunes]
 email=
@@ -122,7 +123,7 @@ password=
 pin=
 
 [Session]
-LastPlaying=3
+LastPlaying=1684
 
 [TagDialog]
-CurrentTab=0
+CurrentTab=1
