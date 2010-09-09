@@ -1,0 +1,63 @@
+ape.strip_apev2 1
+ape.write_apev2 0
+cli_add_playlist_name Default
+cli_add_to_specific_playlist 1
+filechooser.lastdir file:///home/whodare/down/Incoming/@100
+gtkui.color.bar_foreground 57040 27679 6204
+gtkui.color.listview_cursor 39578 22873 8995
+gtkui.color.listview_even_row 4112 3084 3084
+gtkui.color.listview_odd_row 9766 8995 8995
+gtkui.color.listview_selected_text 5397 5397 2827
+gtkui.color.listview_selection 40092 22873 8995
+gtkui.color.listview_text 59194 57666 56681
+gtkui.color.tabstrip_dark 11035 12886 9042
+gtkui.embolden_current_track 1
+gtkui.eq.visible 0
+gtkui.headers.visible 1
+gtkui.override_bar_colors 1
+gtkui.override_listview_colors 1
+gtkui.override_tabstrip_colors 0
+gtkui.statusbar.visible 1
+gtkui.tabs.visible 0
+gtkui.titlebar_playing %a - %t - DeaDBeeF-%V
+gtkui.titlebar_stopped DeaDBeeF-%V
+mainwin.geometry.h 300
+mainwin.geometry.maximized 1
+mainwin.geometry.w 500
+mainwin.geometry.x 0
+mainwin.geometry.y 36
+mp3.id3v1_encoding gbk
+mp3.id3v2_version 4
+mp3.strip_apev2 1
+mp3.strip_id3v1 1
+mp3.write_id3v1 0
+mp3.write_id3v2 1
+network.proxy.port 8080
+network.proxy.type HTTP
+output_plugin PulseAudio output plugin
+playback.dynsamplerate 1
+playback.loop 0
+playback.order 0
+playback.volume -19.28569
+playlist.column.0 "Playing" "" 1 50 0
+playlist.column.1 "Artist / Album" "%a - %b" -1 643 0
+playlist.column.2 "Track No" "%n" -1 91 1
+playlist.column.3 "Title / Track Artist" "%t" -1 360 0
+playlist.column.4 "Duration" "%l" -1 50 0
+playlist.cursor.0 0
+playlist.scroll.0 0
+playlist.scroll.cursorfollowplayback 0
+playlist.scroll.followplayback 0
+playlist.stop_after_current 0
+playlist.tab.00 Default
+replaygain_mode 2
+replaygain_scale 1
+resume.playlist 0
+resume.position 130.00276
+resume.track 0
+searchwin.geometry.h 150
+searchwin.geometry.w 450
+searchwin.geometry.x 826
+searchwin.geometry.y 36
+src_quality 2
+wv.write_apev2 1
