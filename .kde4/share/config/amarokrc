@@ -12,6 +12,9 @@ View Mode=UnifiedCollection
 -1=./home/whodare/audio
 Use MusicLocation=true
 
+[Colors]
+CurrentPalette=Forty Colors
+
 [Cool Streams]
 Cool StreamsEnabled=false
 
@@ -33,7 +36,7 @@ Custom Scheme=
 Browser Path=root list/collections
 Debug Enabled=false
 First Run=false
-HiddenOnExit=false
+HiddenOnExit=true
 LayoutFileDeleted=true
 MainWindow Position=0,36
 MainWindow Size=1276,737
@@ -57,16 +60,20 @@ Font=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 [Lyricwiki]
 LyricWikiEnabled=false
 
-[Moodbar]
-ShowMoodbarInSlider=true
-
 [MySQL]
-CheckCount=8
+CheckCount=30
 Password=amarokuser
 UseServer=true
 
 [Notification Messages]
 systemtrayquitAmarok=false
+
+[OSD]
+Osd Alignment=Right
+Osd Duration=3000
+Osd Enabled=true
+Osd Text Color=237,177,228
+Osd Y Offset=37
 
 [Playback]
 Fadeout=false
@@ -123,7 +130,7 @@ password=
 pin=
 
 [Session]
-LastPlaying=1684
+LastPlaying=1247
 
 [TagDialog]
 CurrentTab=1
