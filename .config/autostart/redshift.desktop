@@ -1,0 +1,22 @@
+[Desktop Entry]
+Categories=Utility;
+Comment[zh_CN]=Color temperature adjustment tool
+Comment=Color temperature adjustment tool
+Exec=redshift -l 39.92:116.46
+GenericName[zh_CN]=Color temperature adjustment
+GenericName=Color temperature adjustment
+Icon=redshift
+MimeType=
+Name[zh_CN]=Redshift
+Name=Redshift
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-GNOME-Autostart-enabled=false
+X-KDE-SubstituteUID=false
+X-KDE-Username=
