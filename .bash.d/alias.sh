@@ -203,7 +203,7 @@ alias smb='vim /etc/samba/smb.conf'
 #                                network alias                              #
 #---------------------------------------------------------------------------#
 
-alias pi='pinger'
+alias pi='pinger --quiet'
 
 alias dns='cat /etc/resolv.conf'
 
