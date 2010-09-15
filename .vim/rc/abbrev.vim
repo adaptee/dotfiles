@@ -60,7 +60,7 @@ iab tha the
 iab waht what
 iab tehn then
 iab othre other
-iab place palce
+iab palce place 
 iab elemenet element
 iab elmeent element
 iab wihch which
