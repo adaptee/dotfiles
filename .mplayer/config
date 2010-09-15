@@ -67,7 +67,7 @@ subfont-text-scale=6
 #vf="expand=0:-50:0:0"
 
 # allow taking snapshot when playing video
-vf = "screenshot"
+#vf = "screenshot"
 
 #-----------------------font----------------------------#
 
