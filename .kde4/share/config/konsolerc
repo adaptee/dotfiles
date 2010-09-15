@@ -16,3 +16,6 @@ CloseAllTabs=false
 
 [Shortcut Schemes]
 Current Scheme=Default
+
+[ProcessInfo]
+CommonDirNames=""
