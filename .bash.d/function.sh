@@ -693,4 +693,10 @@ function test-speed ()
 }
 
 
+# typing file `which xxx` is a bit long and annoying
+function flcmd ()
+{
+    file $(which "$1")
+
+}
 
