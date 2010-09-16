@@ -146,3 +146,30 @@ function pac-man()
 }
 
 
+
+#---------------------------------------------------------------------------#
+#                                 service management                        #
+#---------------------------------------------------------------------------#
+
+
+# start service
+# [Example] start smbd
+function start ()
+{
+    sudo /etc/rc.d/${1} start
+}
+
+# stop service
+# [Example] stop smbd
+function stop ()
+{
+    sudo /etc/rc.d/${1} stop
+}
+
+# restart service
+# [Example] restart smbd
+function restart ()
+{
+    sudo /etc/rc.d/${1} restart
+}
+
