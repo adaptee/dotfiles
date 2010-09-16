@@ -5,6 +5,6 @@ update_info=ksmserver.upd:kde3
 confirmLogout=false
 excludeApps=
 loginMode=default
-offerShutdown=false
+offerShutdown=true
 screenCount=1
 shutdownType=0
