@@ -229,8 +229,8 @@ export LESS_TERMCAP_ue=$'\e[01;34m'
 export LESS_TERMCAP_us=$'\e[01;35m'
 
 # make less more friendly for non-text input files, see lesspipe(1)
-which lesspipe &>/dev/null && eval "$(lesspipe)"
-which lesspipe.sh &>/dev/null && eval "$(lesspipe.sh)"
+#which lesspipe &>/dev/null && eval "$(lesspipe)"
+#which lesspipe.sh &>/dev/null && eval "$(lesspipe.sh)"
 
 # press 'V' to call-out VIM, even when less is used together with pipeline.
 echo "V pipe $ vim - \n" > "/tmp/lesskey-${USER}"
