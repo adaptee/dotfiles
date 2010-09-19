@@ -27,9 +27,14 @@ Source "$PRIVATE_BASH_DIR/function.sh"
 Source "$PRIVATE_BASH_DIR/common.sh"
 
 if [[ $(uname) =~ 'Linux'  ]] ; then
-    Source "$PRIVATE_BASH_DIR/linux.sh"
-fi
-if [[ $(uname) =~ 'Cygwin' ]] ; then
+
+    distro=$(distro-detect)
+
+    if [[ ${distro} != "unknown"  ]] ; then
+        Source "${PRIVATE_BASH_DIR}/${distro}.sh"
+    fi
+
+elif [[ $(uname) =~ 'Cygwin' ]] ; then
     Source "$PRIVATE_BASH_DIR/cygwin.sh"
 fi
 
