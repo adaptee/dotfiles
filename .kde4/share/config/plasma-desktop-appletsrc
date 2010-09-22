@@ -11,13 +11,15 @@ desktop=-1
 formfactor=2
 geometry=0,-42,1280,36
 immutability=1
+lastDesktop=-1
+lastScreen=0
 location=3
 plugin=panel
 screen=0
 zvalue=150
 
 [Containments][16][Applets][17]
-geometry=1051,0,35,32
+geometry=1054,0,32,32
 immutability=1
 plugin=battery
 zvalue=43
@@ -35,8 +37,8 @@ sourceAppletPluginName=battery
 Order=5
 
 [Containments][16][Applets][17][PopupApplet]
-DialogHeight=232
-DialogWidth=384
+DialogHeight=240
+DialogWidth=372
 
 [Containments][16][Applets][19]
 geometry=1090,0,32,32
@@ -73,8 +75,8 @@ sourceAppletPluginName=digital-clock
 Order=7
 
 [Containments][16][Applets][20][PopupApplet]
-DialogHeight=274
-DialogWidth=263
+DialogHeight=273
+DialogWidth=255
 
 [Containments][16][Applets][22]
 geometry=1194,0,64,32
@@ -90,7 +92,7 @@ showLockButton=true
 Order=8
 
 [Containments][16][Applets][23]
-geometry=72,0,211,32
+geometry=36,0,211,32
 immutability=1
 plugin=pager
 zvalue=42
@@ -103,7 +105,7 @@ displayedText=1
 Order=2
 
 [Containments][16][Applets][24]
-geometry=287,0,522,32
+geometry=251,0,587,32
 immutability=1
 plugin=tasks
 zvalue=205
@@ -116,10 +118,53 @@ showOnlyMinimized=true
 Order=3
 
 [Containments][16][Applets][28]
-geometry=813,0,234,32
+geometry=842,0,208,32
 immutability=1
 plugin=systemtray
 zvalue=48
+
+[Containments][16][Applets][28][Configuration]
+DefaultAppletsAdded=true
+
+[Containments][16][Applets][28][Configuration][Applets][52]
+geometry=139,4,24,24
+immutability=1
+plugin=notifier
+zvalue=0
+
+[Containments][16][Applets][28][Configuration][Applets][53]
+geometry=0,4,24,24
+immutability=1
+plugin=notifications
+zvalue=0
+
+[Containments][16][Applets][28][Configuration][Applets][53][Configuration][ExtenderItems][10]
+extenderIconName=dialog-information
+extenderItemName=jobGroup
+isGroup=true
+sourceAppletId=53
+sourceAppletPluginName=notifications
+
+[Containments][16][Applets][28][Configuration][Applets][53][PopupApplet]
+DialogHeight=53
+DialogWidth=362
+
+[Containments][16][Applets][28][Configuration][Applets][54]
+geometry=167,4,24,24
+immutability=1
+plugin=battery
+zvalue=0
+
+[Containments][16][Applets][28][Configuration][Applets][54][Configuration][ExtenderItems][11]
+extenderIconName=battery
+extenderItemName=powermanagement
+extenderTitle=电源管理
+sourceAppletId=54
+sourceAppletPluginName=battery
+
+[Containments][16][Applets][28][Configuration][Applets][54][PopupApplet]
+DialogHeight=240
+DialogWidth=372
 
 [Containments][16][Applets][28][Configuration][ExtenderItems][10]
 extenderIconName=dialog-information
@@ -152,12 +197,15 @@ isGroup=true
 sourceAppletId=28
 sourceAppletPluginName=systemtray
 
+[Containments][16][Applets][28][Configuration][Shortcuts]
+Systemtray-Klipper-28=Ctrl+Alt+V
+
 [Containments][16][Applets][28][LayoutInformation]
 Order=4
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=53
-DialogWidth=424
+DialogHeight=32
+DialogWidth=32
 
 [Containments][16][Applets][33]
 geometry=0,0,32,32
@@ -170,12 +218,6 @@ Order=0
 
 [Containments][16][Applets][33][Shortcuts]
 global=Shift+F1
-
-[Containments][16][Applets][50]
-geometry=36,0,32,32
-immutability=1
-plugin=trash
-zvalue=219
 
 [Containments][16][Configuration]
 maximumSize=1280,36
@@ -191,11 +233,14 @@ extenderItemPosition=0
 extenderItemPosition=0
 
 [Containments][42]
-activity=
+activity=未命名
+activityId=09e1690b-519f-4000-8fa0-569c3185002a
 desktop=-1
 formfactor=0
 geometry=0,0,1280,800
 immutability=1
+lastDesktop=-1
+lastScreen=0
 location=0
 plugin=desktop
 screen=0
@@ -247,13 +292,16 @@ wallpaperposition=5
 
 [Containments][44]
 activity=Desktop
+activityId=dda39186-350d-4000-bf7d-f4888ed9adf1
 desktop=-1
 formfactor=0
 geometry=1286,0,1280,800
 immutability=1
+lastDesktop=-1
+lastScreen=0
 location=0
 plugin=desktop
-screen=-1
+screen=0
 wallpaperplugin=image
 wallpaperpluginmode=SingleImage
 zvalue=0
@@ -268,6 +316,7 @@ wallpaperposition=0
 
 [Containments][45]
 activity=Desktop
+activityId=29cd4846-78ac-4000-9318-206c06742a95
 desktop=-1
 formfactor=0
 geometry=0,956,1280,800
@@ -289,6 +338,7 @@ wallpaperposition=0
 
 [Containments][46]
 activity=Desktop
+activityId=11b8bc33-3c70-4000-8173-79d17423ae4f
 desktop=-1
 formfactor=0
 geometry=1286,956,1280,800
@@ -310,6 +360,7 @@ wallpaperposition=0
 
 [Containments][47]
 activity=Desktop
+activityId=eca78060-46a8-4000-a6d1-89865ef8d578
 desktop=-1
 formfactor=0
 geometry=0,1912,1280,800
