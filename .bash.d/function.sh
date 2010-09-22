@@ -623,7 +623,7 @@ function greps()
 # fix inappropriate file permission mode
 function fix-file-perm ()
 {
-    find . -type -f -perm 400 -exec chmod 644 {} \;
+    find . -type f \( -perm 400 -o -perm 444 \) -exec chmod 644 {} \;
 }
 
 
