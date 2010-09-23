@@ -177,7 +177,13 @@ export HISTCONTROL=ignoreboth
 # print the time stamp associated with each history entry
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
-export HISTFILESIZE=50000
+# Remove size limitation on history file ( .bash_history) ;
+# now your .bash_history won't be truncated any more!
+# [Side effect]: huge-sized .bash_history may cause slow startup
+# [Reference]: http://mywiki.wooledge.org/BashFAQ/088
+unset HISTFILESIZE
+
+# the running bash do not need to remember the whole history
 export HISTSIZE=50000
 
 # do not record these commands
