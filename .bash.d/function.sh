@@ -680,11 +680,22 @@ function ranger() {
 }
 
 
-# typing file `which xxx` is a bit long and annoying
+# typing " file `which xxx` " is a bit long and annoying
 function flcmd ()
 {
     file $(which "$1")
+}
 
+# typing " vi `which xxx` " is a bit long and annoying
+function vicmd ()
+{
+    vim $(which "$1")
+}
+
+# typing " ls -l `which xxx` " is a bit long and annoying
+function llcmd ()
+{
+    ls -l $(which "$1")
 }
 
 
