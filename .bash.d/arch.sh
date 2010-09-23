@@ -38,7 +38,13 @@ alias makepkg='makepkg -s'
 # [Example] add firefox
 function add ()
 {
-    yaourt -S --noconfirm "$@"
+    if echo "$1" | grep -E 'pkg\.tar\.(xz|gx)$'  2>&1 >/dev/null ; then
+        # add from local archive
+        sudo pacman -U "$1"
+    else
+        # add from online repo or AUR
+        yaourt --noconfirm -S --noconfirm "$@"
+    fi
 }
 
 # remove existing package
