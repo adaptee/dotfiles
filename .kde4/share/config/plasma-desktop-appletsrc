@@ -7,9 +7,10 @@ lmsensors/acpitz/temp1=temp1
 
 [Containments][16]
 activity=
+activityId=
 desktop=-1
 formfactor=2
-geometry=0,-42,1280,36
+geometry=0,-42, 1280, 36
 immutability=1
 lastDesktop=-1
 lastScreen=0
@@ -19,7 +20,7 @@ screen=0
 zvalue=150
 
 [Containments][16][Applets][17]
-geometry=1054,0,32,32
+geometry=1122,0,32,32
 immutability=1
 plugin=battery
 zvalue=43
@@ -34,27 +35,27 @@ sourceAppletId=17
 sourceAppletPluginName=battery
 
 [Containments][16][Applets][17][LayoutInformation]
-Order=5
+Order=4
 
 [Containments][16][Applets][17][PopupApplet]
 DialogHeight=240
 DialogWidth=372
 
 [Containments][16][Applets][19]
-geometry=1090,0,32,32
+geometry=1158,0,32,32
 immutability=1
 plugin=calendar
 zvalue=0
 
 [Containments][16][Applets][19][LayoutInformation]
-Order=6
+Order=5
 
 [Containments][16][Applets][19][PopupApplet]
 DialogHeight=262
 DialogWidth=244
 
 [Containments][16][Applets][20]
-geometry=1126,0,64,32
+geometry=1194,0,64,32
 immutability=1
 plugin=digital-clock
 zvalue=0
@@ -72,24 +73,11 @@ sourceAppletId=20
 sourceAppletPluginName=digital-clock
 
 [Containments][16][Applets][20][LayoutInformation]
-Order=7
+Order=6
 
 [Containments][16][Applets][20][PopupApplet]
 DialogHeight=273
 DialogWidth=255
-
-[Containments][16][Applets][22]
-geometry=1194,0,64,32
-immutability=1
-plugin=lockout
-zvalue=0
-
-[Containments][16][Applets][22][Configuration]
-Share=false
-showLockButton=true
-
-[Containments][16][Applets][22][LayoutInformation]
-Order=8
 
 [Containments][16][Applets][23]
 geometry=36,0,211,32
@@ -102,10 +90,10 @@ Share=false
 displayedText=1
 
 [Containments][16][Applets][23][LayoutInformation]
-Order=2
+Order=1
 
 [Containments][16][Applets][24]
-geometry=251,0,587,32
+geometry=251,0,655,32
 immutability=1
 plugin=tasks
 zvalue=205
@@ -115,10 +103,10 @@ showOnlyCurrentDesktop=true
 showOnlyMinimized=true
 
 [Containments][16][Applets][24][LayoutInformation]
-Order=3
+Order=2
 
 [Containments][16][Applets][28]
-geometry=842,0,208,32
+geometry=910,0,208,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -127,7 +115,7 @@ zvalue=48
 DefaultAppletsAdded=true
 
 [Containments][16][Applets][28][Configuration][Applets][52]
-geometry=139,4,24,24
+geometry=153,4,24,24
 immutability=1
 plugin=notifier
 zvalue=0
@@ -141,6 +129,8 @@ zvalue=0
 [Containments][16][Applets][28][Configuration][Applets][53][Configuration][ExtenderItems][10]
 extenderIconName=dialog-information
 extenderItemName=jobGroup
+extenderItemPosition=0
+isCollapsed=false
 isGroup=true
 sourceAppletId=53
 sourceAppletPluginName=notifications
@@ -148,23 +138,6 @@ sourceAppletPluginName=notifications
 [Containments][16][Applets][28][Configuration][Applets][53][PopupApplet]
 DialogHeight=53
 DialogWidth=362
-
-[Containments][16][Applets][28][Configuration][Applets][54]
-geometry=167,4,24,24
-immutability=1
-plugin=battery
-zvalue=0
-
-[Containments][16][Applets][28][Configuration][Applets][54][Configuration][ExtenderItems][11]
-extenderIconName=battery
-extenderItemName=powermanagement
-extenderTitle=电源管理
-sourceAppletId=54
-sourceAppletPluginName=battery
-
-[Containments][16][Applets][28][Configuration][Applets][54][PopupApplet]
-DialogHeight=240
-DialogWidth=372
 
 [Containments][16][Applets][28][Configuration][ExtenderItems][10]
 extenderIconName=dialog-information
@@ -201,7 +174,7 @@ sourceAppletPluginName=systemtray
 Systemtray-Klipper-28=Ctrl+Alt+V
 
 [Containments][16][Applets][28][LayoutInformation]
-Order=4
+Order=3
 
 [Containments][16][Applets][28][PopupApplet]
 DialogHeight=32
@@ -213,6 +186,11 @@ immutability=1
 plugin=simplelauncher
 zvalue=0
 
+[Containments][16][Applets][33][Configuration]
+Share=false
+maxRecentApps=0
+views=Applications,Leave
+
 [Containments][16][Applets][33][LayoutInformation]
 Order=0
 
@@ -220,8 +198,8 @@ Order=0
 global=Shift+F1
 
 [Containments][16][Configuration]
-maximumSize=1280,36
-minimumSize=1280,36
+maximumSize=1280, 36
+minimumSize=1280, 36
 
 [Containments][3][Applets][10][Configuration][ExtenderItems][4]
 extenderItemPosition=0
@@ -234,30 +212,30 @@ extenderItemPosition=0
 
 [Containments][42]
 activity=未命名
-activityId=09e1690b-519f-4000-8fa0-569c3185002a
+activityId=30536710-f982-4739-96c8-07126da59745
 desktop=-1
 formfactor=0
-geometry=0,0,1280,800
+geometry=0, 0, 1280, 800
 immutability=1
 lastDesktop=-1
 lastScreen=0
 location=0
 plugin=desktop
-screen=0
+screen=-1
 sortColumn=-1
-textColor=20,19,18
+textColor=20, 19, 18
 wallpaperplugin=image
 wallpaperpluginmode=SingleImage
 zvalue=0
 
 [Containments][42][Applets][14]
-geometry=10,62,258,154
+geometry=10, 62, 258, 154
 immutability=1
 plugin=sm_temperature
 zvalue=218
 
 [Containments][42][Applets][14][Configuration]
-graphColor=20,19,18
+graphColor=20, 19, 18
 interval=2
 showBackground=false
 showPlotters=false
@@ -265,16 +243,16 @@ showTopBar=false
 temps=acpi/thermal_zone/THRM/temperature
 
 [Containments][42][Applets][15]
-geometry=12,600,277,180
+geometry=12, 600, 277, 180
 immutability=1
 plugin=sm_net
 zvalue=219
 
 [Containments][42][Applets][15][Configuration]
-inColor=210,210,0
+inColor=210, 210, 0
 interfaces=network/interfaces/wlan0/transmitter/data
 interval=2
-outColor=242,0,0
+outColor=242, 0, 0
 showBackground=true
 showTopBar=true
 
@@ -287,21 +265,21 @@ slideTimer=10
 slidepaths=/usr/share/wallpapers/
 userswallpapers=/home/whodare/horofox.png,/home/whodare/img/horofox.png,/mnt/personal/Desktop/WCup.jpg
 wallpaper=/mnt/personal/Desktop/WCup.jpg
-wallpapercolor=56,111,150
+wallpapercolor=56, 111, 150
 wallpaperposition=5
 
 [Containments][44]
 activity=Desktop
-activityId=dda39186-350d-4000-bf7d-f4888ed9adf1
+activityId=ba341ad6-4580-47af-b175-f9af010e5055
 desktop=-1
 formfactor=0
-geometry=1286,0,1280,800
+geometry=1286, 0, 1280, 800
 immutability=1
 lastDesktop=-1
 lastScreen=0
 location=0
 plugin=desktop
-screen=0
+screen=-1
 wallpaperplugin=image
 wallpaperpluginmode=SingleImage
 zvalue=0
@@ -311,16 +289,18 @@ slideTimer=10
 slidepaths=/usr/share/wallpapers/
 userswallpapers=
 wallpaper=/usr/share/wallpapers/Ethais
-wallpapercolor=56,111,150
+wallpapercolor=56, 111, 150
 wallpaperposition=0
 
 [Containments][45]
 activity=Desktop
-activityId=29cd4846-78ac-4000-9318-206c06742a95
+activityId=21e80495-e5ef-4ee8-a8c5-2e55cf9ab74e
 desktop=-1
 formfactor=0
-geometry=0,956,1280,800
+geometry=0, 956, 1280, 800
 immutability=1
+lastDesktop=-1
+lastScreen=-1
 location=0
 plugin=desktop
 screen=-1
@@ -333,16 +313,18 @@ slideTimer=10
 slidepaths=/usr/share/wallpapers/
 userswallpapers=
 wallpaper=/usr/share/wallpapers/Ethais
-wallpapercolor=56,111,150
+wallpapercolor=56, 111, 150
 wallpaperposition=0
 
 [Containments][46]
 activity=Desktop
-activityId=11b8bc33-3c70-4000-8173-79d17423ae4f
+activityId=68453820-f159-4aa7-bbbf-4698cf726396
 desktop=-1
 formfactor=0
-geometry=1286,956,1280,800
+geometry=1286, 956, 1280, 800
 immutability=1
+lastDesktop=-1
+lastScreen=-1
 location=0
 plugin=desktop
 screen=-1
@@ -355,22 +337,70 @@ slideTimer=10
 slidepaths=/usr/share/wallpapers/
 userswallpapers=
 wallpaper=/usr/share/wallpapers/Ethais
-wallpapercolor=56,111,150
+wallpapercolor=56, 111, 150
 wallpaperposition=0
 
 [Containments][47]
 activity=Desktop
-activityId=eca78060-46a8-4000-a6d1-89865ef8d578
+activityId=ab1801cb-dedf-46f4-afa7-8b48160a671e
 desktop=-1
 formfactor=0
-geometry=0,1912,1280,800
+geometry=0, 1912, 1280, 800
 immutability=1
+lastDesktop=-1
+lastScreen=-1
 location=0
 plugin=desktop
 screen=-1
 wallpaperplugin=image
 wallpaperpluginmode=SingleImage
 zvalue=0
+
+[Containments][57]
+activity=Desktop
+activityId=ce13cebf-1cdb-464b-83c4-a253e6f8fc58
+desktop=-1
+formfactor=0
+geometry=1286, 1912, 1280, 800
+immutability=1
+lastDesktop=-1
+lastScreen=0
+location=0
+plugin=desktop
+screen=0
+wallpaperplugin=image
+wallpaperpluginmode=SingleImage
+zvalue=0
+
+[Containments][57][Applets][58]
+geometry=11,561,258,167
+immutability=1
+plugin=sm_net
+zvalue=222
+
+[Containments][57][Applets][58][Configuration]
+Share=false
+interfaces=network/interfaces/wlan0/transmitter/data
+interval=5
+
+[Containments][57][Applets][59]
+geometry=17,89,213,134
+immutability=1
+plugin=sm_temperature
+zvalue=221
+
+[Containments][57][Applets][59][Configuration]
+Share=false
+interval=5
+temps=lmsensors/acpitz/temp1
+
+[Containments][57][Wallpaper][image]
+slideTimer=10
+slidepaths=/usr/share/wallpapers/
+userswallpapers=
+wallpaper=/usr/share/wallpapers/Ethais
+wallpapercolor=0, 0, 0
+wallpaperposition=0
 
 [General]
 immutability=1
