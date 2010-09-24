@@ -372,9 +372,29 @@ alias unp='dtrx --recursive --one-entry=here'
 alias unpl='dtrx --list'
 #alias unps='unp -u'
 
-alias gst='git status'
 
 # always force tmux to assume 256-color terminal
 alias tmux='tmux -2'
 
 
+# bash aliases for git aliases! lazy is good virture!
+
+alias ad='git add'
+alias lg='git lg'
+alias co='git co'
+alias st='git status'
+alias cm='git cm'
+alias br='git br'
+alias cma='git cma'
+alias bra='git bra'
+alias dff='git df'
+alias pull='git pull'
+alias push='git push'
+alias pick='git cherry-pick'
+alias fetch='git fetch'
+alias merge='git merge'
+alias clone='git clone'
+alias rebase='git rebase'
+alias assume='git assume'
+alias contain='git contain'
+alias recover='git recover'
