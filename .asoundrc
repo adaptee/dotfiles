@@ -1,12 +1,21 @@
-pcm.pulse {
-    type pulse
-}
-ctl.pulse {
-    type pulse
-}
+# a copy of /etc/asound.conf, provided by  'pulseaudio-alsa' of ArchLinux
+#
+# Use PulseAudio by default
 pcm.!default {
-    type pulse
+  type pulse
 }
+
 ctl.!default {
-    type pulse
+  type pulse
 }
+
+# Explicit PulseAudio device
+pcm.pulse {
+  type pulse
+}
+
+ctl.pulse {
+  type pulse
+}
+
+# vim:set ft=alsaconf:
