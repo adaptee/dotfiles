@@ -18,6 +18,10 @@
 #      REVISION:  ---
 #===============================================================================
 
+# Dear Ubuntu, I do not need you to telli me which package to install!
+unset command_not_found_handle
+
+
 alias rnet='sudo /etc/init.d/networking restart'
 alias rsmb='sudo /etc/init.d/smbd restart'
 
