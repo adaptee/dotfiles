@@ -1,11 +1,14 @@
+[Alarm]
+show_firstrun_09=false
+
 [Bookmark Manager]
-Window Size=600,400
+Window Size=600, 400
 
 [Collection]
 Show Years=false
 
 [Collection Browser]
-TreeCategory=2,1
+TreeCategory=2, 1
 View Mode=UnifiedCollection
 
 [Collection Folders]
@@ -38,13 +41,14 @@ Debug Enabled=false
 First Run=false
 HiddenOnExit=true
 LayoutFileDeleted=true
-MainWindow Position=0,36
-MainWindow Size=1276,737
+MainWindow Position=0, 36
+MainWindow Size=1276, 737
 
 [General Options]
 AutoGetCoverArt=true
 Last Dynamic Mode=随机
 Show Album Art=false
+Show Splashscreen=false
 Track Progression=RandomTrack
 
 [Librivox.org]
@@ -55,10 +59,16 @@ file:///home/whodare/audio/NetMusic/Playlist/%E7%8E%8B%E6%9D%B0.m3u=
 file:///home/whodare/audio/NetMusic/Playlist/%E8%8B%8F%E6%85%A7%E4%BC%A6.m3u=
 
 [Lyrics Applet]
-Font=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+Font=DejaVu Sans YuanTi, 10,-1, 5, 50, 0, 0, 0, 0, 0
 
 [Lyricwiki]
 LyricWikiEnabled=false
+
+[MainWindow]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAT8AAACdPwBAAAAA/sAAAAkAE0AZQBkAGkAYQAgAFMAbwB1AHIAYwBlAHMAIABkAG8AYwBrAQAAAAAAAAGoAAAAjgAH///7AAAAGgBQAGwAYQB5AGwAaQBzAHQAIABkAG8AYwBrAQAAAasAAAGnAAAA7wAH///7AAAAGABDAG8AbgB0AGUAeAB0ACAAZABvAGMAawEAAANVAAABpwAAAGoAB///AAAAAAAAAnQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAgAAABgAUwBsAGkAbQAgAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAAAAABYATQBhAGkAbgBUAG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1280=1281
 
 [MySQL]
 CheckCount=30
@@ -72,12 +82,12 @@ systemtrayquitAmarok=false
 Osd Alignment=Right
 Osd Duration=3000
 Osd Enabled=true
-Osd Text Color=237,177,228
+Osd Text Color=237, 177, 228
 Osd Y Offset=37
 
 [Playback]
 Fadeout=false
-Master Volume=100
+Master Volume=25
 Replay Gain Mode=Album
 
 [Playlist Layout]
@@ -94,10 +104,12 @@ ShowOnlyMatches=true
 SortPath=
 
 [Plugins]
+AlarmEnabled=false
 Amarok Script ConsoleEnabled=false
 Cool StreamsEnabled=false
 Librivox.orgEnabled=false
 LyricWikiEnabled=true
+SHOUTcast Service tralalaEnabled=false
 amarok_service_ampacheEnabled=false
 amarok_service_jamendoEnabled=false
 amarok_service_lastfmEnabled=false
@@ -117,7 +129,8 @@ Maximum Simultaneous Updates=4
 Merged View=false
 
 [ScriptManager]
-LastUpdateCheck=1283732189
+AutoUpdateScripts=true
+LastUpdateCheck=1285398149
 Running Scripts=Lyricwiki
 
 [Service_Mp3tunes]
@@ -130,7 +143,7 @@ password=
 pin=
 
 [Session]
-LastPlaying=1247
+LastPlaying=930
 
 [TagDialog]
 CurrentTab=1
