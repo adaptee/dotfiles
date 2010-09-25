@@ -34,8 +34,8 @@ function add ()
 # [Example] purge firefox
 function purge ()
 {
-    sudo emerge --clean "$@"
-    #sudo emerge --unmerge "$@"
+    sudo emerge --unmerge "$@"
+    #sudo emerge --clean "$@"
 }
 
 function update ()
@@ -70,7 +70,7 @@ function explicit()
 # list all availabe packages from the repos
 function all ()
 {
-    apt-cache pkgnames
+    true
 }
 
 # list what are contained within specified package
