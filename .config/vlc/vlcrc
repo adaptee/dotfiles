@@ -2528,7 +2528,7 @@ mms-caching=3000
 #subsdec-align=0
 
 # Subtitles text encoding (string)
-subsdec-encoding=
+#subsdec-encoding=
 
 # UTF-8 subtitles autodetection (boolean)
 #subsdec-autodetect-utf8=1
@@ -3248,7 +3248,7 @@ volume=320
 #audio-time-stretch=1
 
 # Audio output module (string)
-aout=alsa
+aout=pulse
 
 # Audio filters (string)
 #audio-filter=
@@ -3440,7 +3440,7 @@ sub-autodetect-fuzzy=2
 audio-language=
 
 # Subtitle language (string)
-sub-language=
+#sub-language=
 
 # Audio track ID (integer)
 #audio-track-id=-1
