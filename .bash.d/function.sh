@@ -254,7 +254,7 @@ function psg()
 function realpath()
 {
     # first consider accessible commands
-    if which "$1" >& /dev/null ; then
+    if which "$1" &> /dev/null ; then
         readlink -f $(which "$1")
     else
         readlink -f "$1"

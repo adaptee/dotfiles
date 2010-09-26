@@ -27,14 +27,14 @@
 # [Example] add firefox
 function add ()
 {
-    sudo emerge "$@"
+    sudo emerge -av "$@"
 }
 
 # remove existing package
 # [Example] purge firefox
 function purge ()
 {
-    sudo emerge --unmerge "$@"
+    sudo emerge -av --unmerge "$@"
     #sudo emerge --clean "$@"
 }
 
@@ -51,7 +51,7 @@ function upgrade ()
 
 function clean ()
 {
-    sudo emerge --depclean --ask
+    sudo emerge -av --depclean
 
 }
 
@@ -117,7 +117,6 @@ function hasuse ()
 }
 
 
-
 #---------------------------------------------------------------------------#
 #                                 service management                        #
 #---------------------------------------------------------------------------#
@@ -142,4 +141,12 @@ function restart ()
 {
     sudo /etc/init.d/${1} restart
 }
+
+
+#---------------------------------------------------------------------------#
+#                                       Misc                                #
+#---------------------------------------------------------------------------#
+
+
+
 

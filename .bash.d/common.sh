@@ -214,8 +214,8 @@ FIGNORE='.o:.bak:.tmp:.orig'
 
 
 #-----------------------------------vim related-------------------------------#
-export EDITOR=$(which vim)
-export FCEDIT=$(which vim)
+export EDITOR=$(which vim 2>/dev/null)
+export FCEDIT=$(which vim 2>/dev/null)
 export CTAGS='--c-kinds=+x --c++-kinds=+x --fields=+aiSt --extra=+q'
 
 
