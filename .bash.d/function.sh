@@ -18,6 +18,30 @@
 #      REVISION:  ---
 #===============================================================================
 
+# check which disto are we running in?
+function distro-detect()
+{
+    if [ -f /etc/pacman.conf ] ; then
+        echo "arch"
+
+    elif [ -f /etc/apt/sources.list  ] ; then
+        echo "debian"
+
+    elif [ -f /etc/make.conf     ] ; then
+        echo  "gentoo"
+
+    else
+        echo "unknown"
+    fi
+
+}
+
+# recommend way of using which, quoted from the manpage
+which ()
+{
+    (alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+export -f which
 
 #---------------------------------------------------------------------------#
 #                               history related                             #
@@ -52,7 +76,8 @@ function hh ()
     history 10;
 }
 
-function topN ()
+# list most used commands
+function topcmd ()
 {
     history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20;
 
@@ -68,29 +93,14 @@ function go ()
 {
     local item
     for item in "$@";do
-        #echo "${item}"
-        #gnome-open "${item}"
         xdg-open "${item}"
     done
 }
 
-# open specified location( default pwd) with file-manager nautilus.
-# usage: fm [location]
-function fm ()
-{
-    nautilus "${@:-$PWD}"
-}
-
 # empty the trash box
-function trashempty()
+function trash-empty()
 {
-    empty-trash && notify-send -i ~/.icons/trash.png "Trash is emptied."
-}
-
-# open the trash box
-function trashopen()
-{
-   xdg-open ~/.local/share/Trash
+    command trash-empty && notify-send -i ~/.icons/trash.png "Trash is emptied."
 }
 
 # enable touchpad
@@ -168,7 +178,7 @@ function commify ()
 # return the extension part of a filename
 # input:  hello.world.I.love.linux.iso
 # output: iso
-function extension()
+function getextension()
 {
     local filename="$1"
     echo ${filename##*.}
@@ -244,7 +254,7 @@ function psg()
 function realpath()
 {
     # first consider accessible commands
-    if which "$1" > /dev/null ; then
+    if which "$1" >& /dev/null ; then
         readlink -f $(which "$1")
     else
         readlink -f "$1"
@@ -288,53 +298,9 @@ function null ()
 }
 
 # Colorize following text
-# usage: green TEXT
-function green () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
-function red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
-
-
-#---------------------------------------------------------------------------#
-#                                 APT  utility                              #
-#---------------------------------------------------------------------------#
-
-
-# short name for 'sudo apt-get install'
-function inst()
-{
-    local pkgname
-    pkgname=$(echo $@ | tr '[A-Z]' '[a-x]')
-    sudo apt-get install -y $pkgname
-}
-
-# add GPG key for debian-repo
-# usage: addkey 0x5017d4931d0acade295b68adfc6d7d9d009ed615
-function addkey ()
-{
-    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com "$1"
-}
-
-# view sources.list, or append new entry
-# usage: addscr [source-entry]
-function addsrc ()
-{
-    case "$#" in
-        # when no argument is provided, view sources.list
-        0)
-        sudo vim /etc/apt/sources.list
-        ;;
-        # otherwise, append new entry
-        *)
-        echo -ne "\n$@\n"| sudo tee -a /etc/apt/sources.list  >/dev/null 2>&1
-        ;;
-    esac
-}
-
-# clean already-removed package's etc files.
-# usage: purgecfg
-function purgecfg ()
-{
-    dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get -y purge
-}
+# usage: green-echo TEXT
+function green-echo () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
+function red-echo ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
 
 
 #---------------------------------------------------------------------------#
@@ -390,8 +356,8 @@ function man2pdf()
 #---------------------------------------------------------------------------#
 
 # convert filename to UTF-8 encoding
-# usage convmv_utf8 FILES....
-function convmv_utf8 ()
+# usage convmv-utf8 FILES....
+function convmv-utf8 ()
 {
     convmv -f gbk -t utf-8 --notest "$@"
 }
@@ -484,27 +450,6 @@ function parse_git_branch()
     git branch 2> /dev/null | sed -e '/^[^*]/d' | cut -f 2 -d ' '
 }
 
-#access the default git diff behavior
-function git_diff()
-{
-    git diff --no-ext-diff -w "$@" | vim -R -
-}
-
-# set specifies as 'assume unchanged', i.e, not tracking the modification in
-# the working tree;
-# usage:git_set_assume_unchanged
-function git_set_assume_unchanged ()
-{
-    git update-index --assume-unchanged ~/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
-    git update-index --assume-unchanged ~/.gconf/apps/gedit-2/plugins/filebrowser/on_load/%gconf.xml
-    git update-index --assume-unchanged ~/.gconf/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
-    git update-index --assume-unchanged ~/.aMule/amule.conf
-    git update-index --assume-unchanged ~/.qterm/qterm.cfg
-    git update-index --assume-unchanged ~/.mplayer/gui.conf
-    git update-index --assume-unchanged ~/.htoprc
-}
-
-
 # generate random string with specified length
 # usage: randomstr N
 function randomstr()
@@ -567,32 +512,14 @@ function blacklist()
     wget -qO - http://infiltrated.net/blacklisted|awk '!/#|[a-z]/&&/./{print "iptables -A INPUT -s "$1" -j DROP"}'
 }
 
-# use opendns.org for domain resolution
-function opendns()
-{
-    cat /dev/null |sudo tee /etc/resolv.conf > /dev/null
-    echo "#Generated by user-function opendns" | sudo tee -a /etc/resolv.conf >/dev/null
-    echo "nameserver 208.67.222.222" | sudo tee -a /etc/resolv.conf >/dev/null
-    sudo /etc/init.d/networking restart
-}
-
-# use gateway for domain resolution
-function localdns()
-{
-    cat /dev/null |sudo tee /etc/resolv.conf > /dev/null
-    echo "#Generated by user-function opendns" | sudo tee -a /etc/resolv.conf >/dev/null
-    echo "nameserver 192.168.1.1" | sudo tee -a /etc/resolv.conf >/dev/null
-    sudo /etc/init.d/networking restart
-}
-
 # grep files with specified suffix recursively, starting from current folder
 # usage:
-#   greps  [pattern]
-#   greps  [pattern] [suffix_filter]
+#   grep-suffix  [pattern]
+#   grep-suffix  [pattern] [suffix_filter]
 # example:
-#   greps include txt
+#   grep-suffix include txt
 
-function greps()
+function grep-suffix()
 {
     local content=$1
 
@@ -619,20 +546,17 @@ function greps()
     fi
 }
 
-
-# fix inappropriate file permission mode
-function fix-file-perm ()
-{
-    find . -type f \( -perm 400 -o -perm 444 \) -exec chmod 644 {} \;
-}
-
-
 # fix inappropriate dir permission mode
 function fix-dir-perm ()
 {
     find . -type d \( -perm 700 -o -perm 500 -o -perm 555 \) -exec chmod 755 {} \;
 }
 
+# fix inappropriate file permission mode
+function fix-file-perm ()
+{
+    find . -type f \( -perm 400 -o -perm 444 \) -exec chmod 644 {} \;
+}
 
 # automate merge operation in ~/dotfiles  repo
 function dotfiles-merge ()
@@ -643,22 +567,14 @@ function dotfiles-merge ()
 # build qterm
 function build-qterm()
 {
+    rm ~/code/qterm/build/* -rf
     cd ~/code/qterm/build
 
-    make clean
     cmake .. -DCMAKE_INSTALL_PREFIX=/usr/ -DQTERM_ENABLE_SCRIPT_DEBUGGER=OFF -DQTERM_ENABLE_PHONON=OFF -DQTERM_ENABLE_DBUS=OFF
     make
 
     cd -
 }
-
-# save core dump in one location ,and with better name
-# executable-signalnumber.core
-function core-pattern ()
-{
-    echo '/tmp/coredump/%e-%s.core' | sudo tee /proc/sys/kernel/core_pattern
-}
-
 
 # normalize and clear bad info within mp3 id3 tag
 function mp3tag ()
@@ -699,21 +615,6 @@ function llcmd ()
 }
 
 
-# check which disto are we running in?
-function distro-detect()
-{
-    if [ -f /etc/pacman.conf ] ; then
-        echo "arch"
 
-    elif [ -f /etc/apt/sources.list  ] ; then
-        echo "debian"
 
-    elif [ -f /etc/make.conf     ] ; then
-        echo  "gentoo"
-
-    else
-        echo "unknown"
-    fi
-
-}
 

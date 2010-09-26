@@ -34,7 +34,10 @@ alias rsmb='sudo /etc/init.d/smbd restart'
 # [Example] add firefox
 function add ()
 {
-    sudo apt-get install --yes --force-yes  --auto-remove "$@"
+    local pkgnames
+    pkgnames=$(echo "$@" | tr '[A-Z]' '[a-x]')
+
+    sudo apt-get install --yes --force-yes  --auto-remove "${pkgnames}"
 }
 
 # remove existing package
@@ -108,6 +111,28 @@ alias dpp='sudo dpkg -P'        # purge .deb
 alias dpl='dpkg-query -l'       # list pkg summary
 alias dpL='dpkg-query -L'       # list pkg contents
 
+# add GPG key for debian-repo
+# usage: addkey 0x5017d4931d0acade295b68adfc6d7d9d009ed615
+function addkey ()
+{
+    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com "$1"
+}
+
+# view sources.list, or append new entry
+# usage: addscr [source-entry]
+function addsrc ()
+{
+    case "$#" in
+        # when no argument is provided, view sources.list
+        0)
+        sudo vim /etc/apt/sources.list
+        ;;
+        # otherwise, append new entry
+        *)
+        echo -ne "\n$@\n"| sudo tee -a /etc/apt/sources.list  >/dev/null 2>&1
+        ;;
+    esac
+}
 
 # show package size in sorted order
 function pac-size ()
@@ -123,7 +148,7 @@ function old-kernels ()
 
 function old-kernels-purge ()
 {
-    dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
+    dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get --yes purge
 
 }
 
