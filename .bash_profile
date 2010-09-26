@@ -55,20 +55,30 @@ fi
 #                                   SSH keyring                               #
 #------------------------------------------------------------------------------
 
-SSHAGENT=/usr/bin/ssh-agent
-SSHAGENTARGS="-s"
 
-if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
-    # now, all application within this session know how to communicate with
-    # ssh-agent by enviroment variable $SSH_AGENT_PID
-    eval `${SSHAGENT} ${SSHAGENTARGS}`
+# keychain is preferred, because the ssh-agent it start persists across login
+# if keychain is not available, start ssh-agent in normal way
+if which keychain &> /dev/null ; then
+    eval $(keychain --eval id_rsa)
+else
 
-    # kill this session's ssh-agent before shell exits.
-    trap "kill -9 ${SSH_AGENT_PID}" 0
+    SSHAGENT=/usr/bin/ssh-agent
+
+    if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
+        # now, all application within this session know how to communicate with
+        # ssh-agent by enviroment variable $SSH_AGENT_PID
+        eval `${SSHAGENT} -s`
+
+        # kill this session's ssh-agent before login-shell exits
+        trap "kill -9 ${SSH_AGENT_PID}" 0
+    fi
+
+    # prompt user to load private key into ssh-agent
+    #ssh-add
+
 fi
 
-# prompt user to add private key
-#ssh-add
+
 
 #------------------------------------------------------------------------------
 #                               start gappproxy client                        #
