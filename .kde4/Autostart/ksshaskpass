@@ -1,5 +1,16 @@
-#!/bin/sh
-export SSH_ASKPASS=/usr/bin/ksshaskpass
-ssh-add < /dev/null
+#!/bin/bash
+
+# if ssh-agent is already loaed with some identities
+# we do not bother anymore
+
+# when some identities are already loaded, the exit code is 0
+# when no identity is loaded, the exit code of 'ssh-add -l' is '1'
+if ssh-add -l &> /dev/null ; then
+    #echo "do not bother"
+    true
+else
+    export SSH_ASKPASS=/usr/bin/ksshaskpass
+    ssh-add < /dev/null
+fi
 
 
