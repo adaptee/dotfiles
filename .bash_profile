@@ -59,7 +59,7 @@ fi
 # keychain is preferred, because the ssh-agent it start persists across login
 # if keychain is not available, start ssh-agent in normal way
 if which keychain &> /dev/null ; then
-    eval $(keychain --eval id_rsa)
+    eval $(keychain --agents ssh --eval id_rsa)
 else
 
     SSHAGENT=/usr/bin/ssh-agent
