@@ -37,7 +37,7 @@ function add ()
     local pkgnames
     pkgnames=$(echo "$@" | tr '[A-Z]' '[a-x]')
 
-    sudo apt-get install --yes --force-yes  --auto-remove "${pkgnames}"
+    sudo apt-get install --yes --force-yes  --auto-remove ${pkgnames}
 }
 
 # remove existing package
