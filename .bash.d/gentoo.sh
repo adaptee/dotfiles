@@ -27,7 +27,7 @@
 # [Example] add firefox
 function add ()
 {
-    sudo emerge -av "$@"
+    sudo emerge -av --keep-going "$@"
 }
 
 # remove existing package
@@ -35,17 +35,17 @@ function add ()
 function purge ()
 {
     sudo emerge -av --unmerge "$@"
-    #sudo emerge --clean "$@"
 }
 
 function update ()
 {
     sudo emerge --sync
+    sudo layman -S
 }
 
 function upgrade ()
 {
-    sudo emerge -uavDN world
+    sudo emerge -uavDN --keep-going world
 
 }
 
