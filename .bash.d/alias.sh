@@ -207,8 +207,12 @@ alias pi='pinger --quiet'
 
 alias dns='cat /etc/resolv.conf'
 
+# show numeric ip address
+alias arp='arp -n'
+
 # this is much simpler than command arp
-alias arp='cat /proc/net/arp | grep -v "00:00:00:00:00:00" '
+#alias arp='cat /proc/net/arp | grep -v "00:00:00:00:00:00" '
+
 
 # scan a subnet
 # [Example] scan 192.168.1.0/24
@@ -255,7 +259,6 @@ alias k4='cd ~/.kde4/share/'
 alias rc='cd ~/.vim/rc'
 # show date in pretty format.
 alias dt='date "+%Y-%m-%d %A    %T %Z"'
-alias f='find'
 alias fl='file'
 alias ff='cd ~/.mozilla/firefox/'
 alias g='grep'
@@ -398,3 +401,5 @@ alias rebase='git rebase'
 alias assume='git assume'
 alias contain='git contain'
 alias recover='git recover'
+alias ignore='git update-index --assume-unchanged'
+alias unignore='git update-index --no-assume-unchanged'

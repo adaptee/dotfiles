@@ -615,6 +615,18 @@ function llcmd ()
 }
 
 
+# find is made easier
+# [1] case-insensitive
+# [2] do not descend onto other filesystems
+function f ()
+{
+
+    if [[  $# == 1  ]] ; then
+        find . -mount -type f -iname "*$1*"
+    else
+        find . -mount -type f
+    fi
+}
 
 
 
