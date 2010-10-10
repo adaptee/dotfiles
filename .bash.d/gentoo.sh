@@ -19,6 +19,10 @@
 #===============================================================================
 
 
+# gentoo's dafault does not contain /usr/sbin
+# thus makeing ifconfig, lspci,etc unconvenient to use
+export PATH="${PATH}:/usr/sbin:/sbin"
+
 #---------------------------------------------------------------------------#
 #                                 package management                        #
 #---------------------------------------------------------------------------#
@@ -116,6 +120,25 @@ function hasuse ()
     equery hasuse "$1"
 }
 
+# find out which (installed) package own the command
+function owncmd()
+{
+    local cmdname=$1
+    local cmdpath=$(which ${cmdname} 2>/dev/null)
+
+    if [[  "${cmdpath}" == ""  ]] ; then
+        echo "command [$cmdname] does not exist!"
+    else
+        own ${cmdpath}
+    fi
+}
+
+
+# list all installed package; larger than world
+function all()
+{
+    qlist -I
+}
 
 #---------------------------------------------------------------------------#
 #                                 service management                        #
