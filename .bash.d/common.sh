@@ -150,7 +150,7 @@ shopt -s histappend
 shopt -s nocaseglob
 
 #return empty string if no matching is found
-shopt -s nullglob
+#shopt -s nullglob
 
 # use Emacs-style in terminal-input
 set -o emacs on
@@ -294,5 +294,5 @@ complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 #---------------------------------------------------------------------------#
 
 # allow wtf to use personal acronym database
-export ACRONYMDB=$(echo "$HOME/.acronymdb $(ls /usr/share/misc/acronyms*)")
+export ACRONYMDB=$(echo "$HOME/.acronymdb")
 
