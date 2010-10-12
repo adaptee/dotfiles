@@ -89,8 +89,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" since 'jj' nearly never occur in input mode, use it to return to normal mode.
+" since 'jj' nearly never occur in input/command mode, use it as ESC
 inoremap jj <Esc>
+cnoremap jj <Esc>
 
 " insert newline for lazy guys
 " kk apprear rarely  in word ; don't worry
