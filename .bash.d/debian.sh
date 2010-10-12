@@ -34,21 +34,21 @@ alias rsmb='sudo /etc/init.d/smbd restart'
 # [Example] start smbd
 function start ()
 {
-    sudo /etc/rc.d/${1} start
+    sudo /etc/init.d/${1} start
 }
 
 # stop service
 # [Example] stop smbd
 function stop ()
 {
-    sudo /etc/rc.d/${1} stop
+    sudo /etc/init.d/${1} stop
 }
 
 # restart service
 # [Example] restart smbd
 function restart ()
 {
-    sudo /etc/rc.d/${1} restart
+    sudo /etc/init.d/${1} restart
 }
 
 #---------------------------------------------------------------------------#
