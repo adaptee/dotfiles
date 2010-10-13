@@ -88,14 +88,22 @@ function clean ()
     sudo apt-get autoremove
 }
 
-# list all installed packages
+# inspired by gentoo
+# list all directly installed packages
+# FIXME: haven't find how to achive this aim
 function world ()
 {
     dpkg-query -l
 }
 
-# list all availabe packages from the repos
+# list all installed packages
 function all ()
+{
+    dpkg-query -l
+}
+
+# list all availabe packages from repos
+function universe ()
 {
     apt-cache pkgnames
 }
