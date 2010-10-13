@@ -31,7 +31,7 @@ export PATH="${PATH}:/usr/sbin:/sbin"
 # [Example] add firefox
 function add ()
 {
-    sudo emerge -av --keep-going "$@"
+    sudo emerge -av --tree --keep-going "$@"
 }
 
 # remove existing package
@@ -49,7 +49,7 @@ function update ()
 
 function upgrade ()
 {
-    sudo emerge -uavDN --keep-going world
+    sudo emerge -uavDN --tree --keep-going world
 
 }
 
@@ -65,45 +65,49 @@ function world ()
     cat /var/lib/portage/world
 }
 
+# list all installed packages, explictly or as dependency
+function all()
+{
+    qlist -I -U
+}
+
 # add package into 'world
+# [example] explicit ktorrent
 function explicit()
 {
     sudo emerge --noreplace "$1"
 }
 
-# list all availabe packages from the repos
-function all ()
-{
-    true
-}
-
-# list what are contained within specified package
+# list the contents of pkgs
 # [Example] list firefox
 function list ()
 {
-    equery files "$1"
+    qlist $@
+    #equery files "$1"
 }
 
 # which package own the specified file?
 # [Example] own /usr/bin/vim
 function own ()
 {
-    equery belongs "$1"
+    qfile -e $@
+    #equery belongs "$1"
 }
 
 # search package by name
 # [Example] search firefox
 function search ()
 {
-    emerge --search "$1"
-    #emerge --searchdesc "$1"
+    eix $1
+    #qsearch $1
+    #emerge --search "$1"
 }
 
 # show the meta info of specified package
 # [Example] meta firefox
 function meta ()
 {
-    equery depends "$1"
+    equery uses "$1"
 }
 
 # show the USE flags of some package
@@ -111,6 +115,7 @@ function meta ()
 function use ()
 {
     equery uses "$1"
+    #qlist -U $@
 }
 
 # search packages which use specific USE flags
@@ -118,6 +123,23 @@ function use ()
 function hasuse ()
 {
     equery hasuse "$1"
+    #quse $@
+}
+
+# whom does <pkg> depends on?
+# [example] depend amule
+function depend()
+{
+    qdepends $1
+    #equery depgraph --depth=1 $1
+}
+
+# who depends on <pkg>?
+function rev-depend()
+# [example] rev-depend amule
+{
+    qdepends -Q $1
+    #equery depends $1
 }
 
 # find out which (installed) package own the command
@@ -133,12 +155,35 @@ function owncmd()
     fi
 }
 
-
-# list all installed package; larger than world
-function all()
+# Show average building time of specified packages
+# The estimation is based upon emerge log
+# [example] etime amule ktorrent
+function etime()
 {
-    qlist -I
+    qlop -Ht $@
 }
+
+# show the merging history of specified pkg, or all pkgs
+# [example] ehistory amule
+function ehistory()
+{
+    qlop -l $@
+}
+
+# show the size of spcified installed packages(including direct dependency)
+# [example] esize amule
+function esize()
+{
+    qsize -m -s $@
+}
+
+# list packages which are multi-slot installed, such as python2/3
+# [example] slot
+function eslot ()
+{
+    qlist -D
+}
+
 
 #---------------------------------------------------------------------------#
 #                                 service management                        #

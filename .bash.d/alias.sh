@@ -42,11 +42,12 @@ alias la='l -A'
 alias l1='l -1'
 
 # show detailed info
-alias ll='l -hl'
+# show time in the format of yyyy-mm-dd
+alias ll='l -hl --time-style=long-iso'
 alias lla='ll -A'
 
 # only list sub-directory under current directory
-alias lf='ls -hl -d */'
+alias lf='ll -d */'
 
 # In case you type 'ls' as 'sl'....
 alias sl='ls'
