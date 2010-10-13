@@ -59,10 +59,15 @@ function restart ()
 # [Example] add firefox
 function add ()
 {
-    local pkgnames
-    pkgnames=$(echo "$@" | tr '[A-Z]' '[a-x]')
-
-    sudo apt-get install --yes --force-yes  --auto-remove ${pkgnames}
+    if echo "$1" | grep -E '\.deb$'  2>&1 >/dev/null ; then
+        # add from local .deb archive
+        sudo dpkg -i "$1"
+    else
+        # add from online repo or AUR
+        local pkgnames
+        pkgnames=$(echo "$@" | tr '[A-Z]' '[a-x]')
+        sudo apt-get install --yes --force-yes  --auto-remove ${pkgnames}
+    fi
 }
 
 # remove existing package
