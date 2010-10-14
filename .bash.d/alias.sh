@@ -396,9 +396,9 @@ alias bra='git bra'
 alias dff='git df'
 alias pull='git pull'
 alias push='git push'
-#  -x   append extra note recording the original commit
-#  -ff  perform fast-forward when possible
-alias pick='git cherry-pick -x -ff'
+#  -x    append extra note recording the original commit
+#  --ff  perform fast-forward when possible
+alias pick='git cherry-pick -x --ff'
 alias fetch='git fetch'
 alias merge='git merge'
 alias clone='git clone'
