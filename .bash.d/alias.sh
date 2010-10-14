@@ -208,6 +208,8 @@ alias pi='pinger --quiet'
 
 alias dns='cat /etc/resolv.conf'
 
+alias fping='fping -a'
+
 # show numeric ip address
 alias arp='arp -n'
 
@@ -394,7 +396,9 @@ alias bra='git bra'
 alias dff='git df'
 alias pull='git pull'
 alias push='git push'
-alias pick='git cherry-pick'
+#  -x   append extra note recording the original commit
+#  -ff  perform fast-forward when possible
+alias pick='git cherry-pick -x -ff'
 alias fetch='git fetch'
 alias merge='git merge'
 alias clone='git clone'
