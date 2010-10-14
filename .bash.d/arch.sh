@@ -116,7 +116,11 @@ function meta ()
     pacman -Qi "$1"
 }
 
-
+# only the the version of that package
+function version()
+{
+    pacman -Q "$1"
+}
 
 # mark packages as explicited installed
 function explicit ()
