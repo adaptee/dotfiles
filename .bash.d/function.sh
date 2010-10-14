@@ -599,21 +599,34 @@ function ranger() {
 # typing " file `which xxx` " is a bit long and annoying
 function flcmd ()
 {
-    file $(which "$1")
+    if command which $1 &> /dev/null ; then
+        file $(command which "$1")
+    fi
 }
 
 # typing " vi `which xxx` " is a bit long and annoying
 function vicmd ()
 {
-    vim $(which "$1")
+    if command which $1 &> /dev/null ; then
+        vim $(command which "$1")
+    fi
 }
 
 # typing " ls -l `which xxx` " is a bit long and annoying
 function llcmd ()
 {
-    ls -l $(which "$1")
+    if command which $1 &> /dev/null ; then
+        ls -l $(command which "$1")
+    fi
 }
 
+# typing " ldd `which xxx` " is a bit long and annoying
+function lddcmd ()
+{
+    if command which $1 &> /dev/null ; then
+        ldd $(command which "$1")
+    fi
+}
 
 # find is made easier
 # [1] case-insensitive
