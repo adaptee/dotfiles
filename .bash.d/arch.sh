@@ -69,16 +69,23 @@ function clean ()
     sudo rm /var/cache/pacman/pkg/* 2>/dev/null
 }
 
-# list all installed packages
+# inspired by  gentoo
+# list all exlicitly installed packages
 function world ()
+{
+    pacman -Qet
+}
+
+# list all installed packages
+function all ()
 {
     yaourt -Q
 }
 
-# list all availabe packages from the repos
-function all ()
+# list all un-needed  packages
+function orphan ()
 {
-    true
+    pacman -Qtdq
 }
 
 # list what are contained within specified package
@@ -117,10 +124,17 @@ function explicit ()
     sudo pacman -S --noconfirm --asexplicit "$@"
 }
 
-# list all un-needed packages
-function nouse ()
+# find out which (installed) package own the command
+function owncmd()
 {
-    pacman -Qtdq
+    local cmdname=$1
+    local cmdpath=$(which ${cmdname} 2>/dev/null)
+
+    if [[  "${cmdpath}" == ""  ]] ; then
+        echo "command [$cmdname] does not exist!"
+    else
+        own ${cmdpath}
+    fi
 }
 
 # show package size in ascending order
