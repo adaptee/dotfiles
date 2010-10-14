@@ -58,9 +58,6 @@ alias latest='ll -t * | head -1'
 ## list file by size in descending order; sub-folder not considered.
 alias bigfile='ll -S| head -3'
 
-# count item under current folder;
-alias num='expr $(ll | wc -l) - 1'
-
 
 #---------------------------------------------------------------------------#
 #                                   cd alias                                #

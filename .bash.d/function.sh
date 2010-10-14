@@ -642,4 +642,12 @@ function f ()
 }
 
 
+# count the line num of output of follwing command
+function count ()
+{
+    (eval $@) | wc -l
+}
+
+# num is shorter to type
+alias num='count'
 
