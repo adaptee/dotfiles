@@ -239,7 +239,7 @@ alias you='youtube-dl -t'
 alias po='sudo pon dsl-provider'
 
 # solve the encoding problem seamlessly.
-alias smth='luit -encoding gbk telnet bbs.newsmth.net'
+alias smth='luit -x -encoding gbk telnet bbs.newsmth.net'
 
 # start gappproxy local client
 alias proxy='python ~/bin/gae/localproxy/proxy.py'
