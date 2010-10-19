@@ -153,6 +153,15 @@ let Grep_Skip_Files = '*.bak *.o *.obj *.pdb *.exe *.dll'
 "let Grep_Cygwin_Find = 1
 
 "------------------------------------------------------------------------------------------------------
+" gundo.vim ( show undo-tree in human-friendly visulization)
+"------------------------------------------------------------------------------------------------------
+
+" toggle the gundo sidebar
+nmap <F6> :GundoToggle<CR>
+
+
+
+"------------------------------------------------------------------------------------------------------
 " lookupfile.vim ( locate file by various means, and providing auto-completion feature )
 "------------------------------------------------------------------------------------------------------
 " override the default mapping of <F5>
