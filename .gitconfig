@@ -56,6 +56,8 @@
 
     cm      = commit -m
     cma     = commit -a -m
+    amend   = commit --amend -C HEAD
+
 
     co      = checkout
     cob     = checkout -b
@@ -74,7 +76,7 @@
 
     last    = log -1 HEAD
     lg      = log --stat --date=relative
-    lgs     = log --graph --pretty=format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lgs     = log --graph --pretty=format:'%Cred%h%Creset\n-%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative  --decorate
 
     assume  = !git-show-assume-unchanged
     contain = !git-show-what-is-contained
