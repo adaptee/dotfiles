@@ -375,10 +375,25 @@ alias unp='dtrx --recursive --one-entry=here'
 alias unpl='dtrx --list'
 #alias unps='unp -u'
 
+# -r            recursive
+# -t            preserve modification timestamp
+# -p            preserve permission
+# -E            preserve executability
+# -l            copy symlink itself
+# -x            one file system, not crossing FS border
+# -v            verbose
+# --progress    show progress
+# --spars       handle sparse file efficiently
+alias rsync='rsync -r -t -p -E -l -x -v --progress --sparse'
 
 # always force tmux to assume 256-color terminal
 alias tmux='tmux -2'
 
+
+
+#---------------------------------------------------------------------------#
+#                                   git alias                               #
+#---------------------------------------------------------------------------#
 
 # bash aliases for git aliases! lazy is good virture!
 
