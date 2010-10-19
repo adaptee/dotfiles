@@ -98,22 +98,11 @@ alias treed='tree -d'
 # df improved: show FS type, human-friendly size and ignore pseudo FS.
 alias df='LANG=en df -h -T -x tmpfs | grep -vE "(tmpfs|gvfs|procbususb|rootfs|devtmpfs|debugfs)"'
 
-# show size in human-friendly way.
-alias du='du -h'
+# show the size of direct-subentry, and sort them in acednding order by size
+alias du='command du -h --max-depth=1 --one-file-system |sort -h'
 
-# only show the total size.
-alias dus='du -s'
-
-# calculate size of subfolders, and show them in increasing order.
-alias du1='du -h --max-depth=1 | sort -h'
-
-
-#sort by size; only consider sub-folders.
-function du2 ( )
-{
-    du -b --max-depth=1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e'
-
-}
+# show the total size
+alias dus='command du -h -s --one-file-system'
 
 #show currently mounted partition in nice layout
 alias mnt='mount |grep -E "ext[2-4]|reiserfs|vfat|ntfs|xfs|jfs|zfs" |column -t'
