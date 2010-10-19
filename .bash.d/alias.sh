@@ -410,6 +410,7 @@ alias pull='git pull'
 alias push='git push'
 #  -x    append extra note recording the original commit
 alias pick='git cherry-pick -x '
+alias amend='git amend'
 alias fetch='git fetch'
 alias merge='git merge'
 alias clone='git clone'
