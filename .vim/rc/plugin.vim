@@ -27,7 +27,7 @@ vmap <silent> <Leader>a/ <ESC>:AlignPush<CR>:AlignCtrl lp0P0<CR>:'<,'>Align //<C
 "------------------------------------------------------------------------------------------------------
 
 " supported pairs
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '<': '>', '"': '"', "'": "'"} 
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '<': '>', '"': '"', "'": "'"}
 
 "------------------------------------------------------------------------------------------------------
 " bash-support.vim( BASH IDE -- Write and run BASH-scripts using menus and hotkeys. )
@@ -227,7 +227,7 @@ let NERDTreeIgnore            = ['\.swp$', '\~$','\.vcproj$','\.ncb$','\.sln$','
 " omniCPPComplete.vim
 "------------------------------------------------------------------------------------------------------
 " generate ctags for current folder:
-map <F7> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F11> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
 " No annoying preview window!
 set completeopt=menu
@@ -278,7 +278,7 @@ let g:pylint_onwrite = 0
 "------------------------------------------------------------------------------------------------------
 " qfixtoggle.vim( toggle the quickfix window)
 "------------------------------------------------------------------------------------------------------
-nmap <F6> :QFix<CR>
+nmap <F7> :QFix<CR>
 
 
 "------------------------------------------------------------------------------------------------------
