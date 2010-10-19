@@ -299,6 +299,9 @@ alias x0='xargs -0'
 #                                  misc alias                               #
 #---------------------------------------------------------------------------#
 
+# ranger is my favorite console-baese filemanager
+alias fm='ranger'
+
 # also copy the higher hierarchry
 alias cpp='cp --parents'
 
