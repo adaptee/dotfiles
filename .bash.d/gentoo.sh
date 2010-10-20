@@ -49,7 +49,7 @@ function update ()
 
 function upgrade ()
 {
-    sudo emerge -uavDN --tree --keep-going world
+    sudo emerge -uavDN --keep-going world
 
 }
 
@@ -59,7 +59,7 @@ function clean ()
 
 }
 
-# list all installed packages
+# list all directly installed packages
 function world ()
 {
     cat /var/lib/portage/world
@@ -68,7 +68,7 @@ function world ()
 # list all installed packages, explictly or as dependency
 function all()
 {
-    qlist -I -U
+    qlist -I
 }
 
 # add package into 'world
