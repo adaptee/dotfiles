@@ -185,7 +185,7 @@ set! network.proxy.type=0
 "---------------------------------------------------------------------------------------------
 
 " PassThrough gmail and greader
-:autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
+:autocmd LocationChange .* :javascript modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
 
 " Use gVim to edit gmail content
 autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
@@ -197,11 +197,11 @@ autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\'
 
 
 ""---------------------------------------------------------------------------------------------
-"" Js scripts
+"" javascript scripts
 ""---------------------------------------------------------------------------------------------
 
 " generic utility for toggle ui elements
-js<<EOF
+javascript <<EOF
 toggle_ui_element = function (name)
 {
     document.getElementById(name).collapsed ^= 1;
@@ -209,7 +209,7 @@ toggle_ui_element = function (name)
 EOF
 
 " toggle entry in prefs.js( about:config)
-js<<EOF
+javascript <<EOF
 prefs_entry_toggler = function (entry_name, entry_init_value)
 {
     var entry_curr_value = entry_init_value;
@@ -231,7 +231,7 @@ EOF
 
 
 " Because vimperator put all keywords into one single argument, we first split it.
-js<<EOF
+javascript <<EOF
 split_and_rejoin_args = function ( args)
 {
     // split by space
@@ -265,7 +265,7 @@ EOF
 
 
 "Show the feed-button, even if the address-bar is not displayed"
-js<<EOF
+javascript <<EOF
 var show_feed_button = function()
 {
     var feedPanel = document.createElement("statusbarpanel");
@@ -279,7 +279,7 @@ show_feed_button();
 EOF
 
 
-js<<EOF
+javascript <<EOF
 search_in_verycd = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -292,7 +292,7 @@ search_in_verycd = function (args)
 EOF
 
 
-js<<EOF
+javascript <<EOF
 search_in_shooter = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -305,7 +305,7 @@ search_in_shooter = function (args)
 EOF
 
 
-js<<EOF
+javascript <<EOF
 search_in_acfun = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -318,14 +318,14 @@ search_in_acfun = function (args)
 EOF
 
 " Search specified keyword in wikipedia
-js<<EOF
+javascript <<EOF
 search_in_wikipedia = function (keyword)
 {
     liberator.execute('tabopen wikipedia ' + keyword);
 }
 EOF
 
-js<<EOF
+javascript <<EOF
 search_in_douban = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -337,7 +337,7 @@ search_in_douban = function (args)
 EOF
 
 
-js<<EOF
+javascript <<EOF
 search_in_mp3 = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -350,7 +350,7 @@ search_in_mp3 = function (args)
 EOF
 
 
-js<<EOF
+javascript <<EOF
 search_in_netyi = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -362,7 +362,7 @@ search_in_netyi = function (args)
 EOF
 
 
-js<<EOF
+javascript <<EOF
 search_in_gigapedia = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -373,7 +373,7 @@ search_in_gigapedia = function (args)
 }
 EOF
 
-js<<EOF
+javascript <<EOF
 search_in_vim_org = function (args)
 {
     // vim.org use 'key1+key2' style
@@ -386,7 +386,7 @@ search_in_vim_org = function (args)
 }
 EOF
 
-js<<EOF
+javascript <<EOF
 search_in_stackoverflow = function (args)
 {
     // stackoverflow use 'key1+key2' style
@@ -399,7 +399,7 @@ search_in_stackoverflow = function (args)
 EOF
 
 " search in wikipedia Chinese version
-js<<EOF
+javascript <<EOF
 search_in_wikipedia_zh = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -411,7 +411,7 @@ search_in_wikipedia_zh = function (args)
 EOF
 
 " search in Amazon.com
-js<<EOF
+javascript <<EOF
 search_in_amazon = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -422,7 +422,7 @@ search_in_amazon = function (args)
 }
 EOF
 
-js<<EOF
+javascript <<EOF
 search_in_firefox_addon = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -437,7 +437,7 @@ EOF
 
 
 " Lookup online dictionary of youdao.com
-js<<EOF
+javascript <<EOF
 lookup_youdao_dictionary= function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
@@ -451,7 +451,7 @@ lookup_youdao_dictionary= function (args)
 EOF
 
 "Lookup specified *nix commands in online manpages
-js<<EOF
+javascript <<EOF
 lookup_manpage = function (keyword)
 {
     var prefix   = 'http://www.google.com/cse?q=';
@@ -464,7 +464,7 @@ EOF
 
 
 " Reload vimperatorrc
-js <<EOF
+javascript <<EOF
 load_vimperatorrc= function ()
 {
     var platform = navigator.platform;
@@ -501,86 +501,86 @@ highlight Hint font-family: monospace; font-size: 13px; font-weight: bold; color
 
 
 ""---------------------------------------------------------------------------------------------
-"" Map to js functions
+"" Map to javascript functions
 ""---------------------------------------------------------------------------------------------
 
 " toggle Firefox menu-bar
-noremap <Silent> <F1> :js toggle_ui_element('toolbar-menubar')<CR>
+noremap <Silent> <F1> :javascript toggle_ui_element('toolbar-menubar')<CR>
 
 " toggle Firefox nav-bar
-noremap <Silent> <F2> :js toggle_ui_element('nav-bar')<CR>
+noremap <Silent> <F2> :javascript toggle_ui_element('nav-bar')<CR>
 
 " toggle Firefox bookmark-bar
-noremap <Silent> <F3> :js toggle_ui_element('PersonalToolbar')<CR>
+noremap <Silent> <F3> :javascript toggle_ui_element('PersonalToolbar')<CR>
 
 " toggle status-bar
-noremap <Silent> <F4> :js toggle_ui_element('status-bar')<CR>
+noremap <Silent> <F4> :javascript toggle_ui_element('status-bar')<CR>
 
 " toggle diigo-toolbar
-noremap <Silent> <F5> :js toggle_ui_element('diigotb-toolbar')<CR>
+noremap <Silent> <F5> :javascript toggle_ui_element('diigotb-toolbar')<CR>
 
 " toggle google-toolbar
-noremap <Silent> <F6> :js toggle_ui_element('gtbToolbar')<CR>
+noremap <Silent> <F6> :javascript toggle_ui_element('gtbToolbar')<CR>
 
 " search firefox addons
-command! -nargs=* Addon :js search_in_firefox_addon("<args>")
+command! -nargs=* Addon :javascript search_in_firefox_addon("<args>")
 noremap A :Addon<Space>
 
 " search Amazon.com
-command! -nargs=* Amazon :js search_in_amazon("<args>")
+command! -nargs=* Amazon :javascript search_in_amazon("<args>")
 noremap a :Amazon<Space>
 
 " lookup word in yodao dictionary
-command! -nargs=* Dict :js lookup_youdao_dictionary("<args>")
+command! -nargs=* Dict :javascript lookup_youdao_dictionary("<args>")
 noremap c :Dict<Space>
 
 " Search in douban.com
-command! -nargs=* Douban :js search_in_douban("<args>")
+command! -nargs=* Douban :javascript search_in_douban("<args>")
 noremap <Leader>d :Douban<Space>
 
-command! -nargs=* Music :js search_in_mp3("<args>")
+command! -nargs=* Music :javascript search_in_mp3("<args>")
 noremap m :Music<Space>
 
 " lookup online manpages; Note, we override the default 'm' key utility
-command! -nargs=* Man :js lookup_manpage("<args>")
+command! -nargs=* Man :javascript lookup_manpage("<args>")
 noremap <Leader>m :Man<Space>
 
 " Search in gigapedia.com
-command! -nargs=* Gigapedia :js search_in_gigapedia("<args>")
+command! -nargs=* Gigapedia :javascript search_in_gigapedia("<args>")
 noremap <Leader>g :Gigapedia<Space>
 
 " search vim.org
-command! -nargs=* Vim :js search_in_vim_org("<args>")
+command! -nargs=* Vim :javascript search_in_vim_org("<args>")
 
 " search in stackoverflow.com
-command! -nargs=* Stack :js search_in_stackoverflow("<args>")
+command! -nargs=* Stack :javascript search_in_stackoverflow("<args>")
 
 " searhc in shooter.cn for subtitles
-command! -nargs=* Shooter :js search_in_shooter("<args>")
+command! -nargs=* Shooter :javascript search_in_shooter("<args>")
 noremap S :Shooter<Space>
 
-command! -nargs=* VeryCD :js search_in_verycd("<args>")
+command! -nargs=* VeryCD :javascript search_in_verycd("<args>")
 noremap v :VeryCD<Space>
 
-command! -nargs=* Ac :js search_in_acfun("<args>")
+command! -nargs=* Ac :javascript search_in_acfun("<args>")
 noremap v :VeryCD<Space>
 
 " search in wikipedia
-command! -nargs=* Wiki :js search_in_wikipedia("<args>")
+command! -nargs=* Wiki :javascript search_in_wikipedia("<args>")
 noremap w :Wiki<Space>
 
 " search in wikipedia Chinese version
-command! -nargs=* WikiZh :js search_in_wikipedia_zh("<args>")
+command! -nargs=* WikiZh :javascript search_in_wikipedia_zh("<args>")
 noremap W :WikiZh<Space>
 
 " reload vimperatorrc
-command! Source :js load_vimperatorrc()
+command! Source :javascript load_vimperatorrc()
 noremap <Leader>v  :Source<CR>
 
-command! Font :js custom_font_toggler()
+command! Font :javascript custom_font_toggler()
 noremap <Leader>c  :Font<CR>
 
-command! Proxy :js proxy_toggler()
+command! Proxy :javascript proxy_toggler()
 noremap <Leader>p  :Proxy<CR>
 
 "" vim: set ft=vimperator:
