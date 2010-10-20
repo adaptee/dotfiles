@@ -64,9 +64,10 @@ function upgrade ()
     yaourt -Su --devel
 }
 
-function clean ()
+# remove package cache
+function clean()
 {
-    sudo rm /var/cache/pacman/pkg/* 2>/dev/null
+    sudo pacman -Scc --noconfirm
 }
 
 # inspired by  gentoo
