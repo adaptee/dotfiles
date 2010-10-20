@@ -153,7 +153,16 @@ function search ()
 # [Example] meta firefox
 function meta ()
 {
-    apt-cache show "$1"
+    if echo "$1" | grep -E '\.deb$'  2>&1 >/dev/null ; then
+        # get info from local .deb archive
+        local archivename="$1"
+        dpkg --info "$archivename" | tail -n +5
+    else
+        # get info from dpkg database
+        local pkgname
+        pkgname=$(echo "$@" | tr '[A-Z]' '[a-x]')
+        apt-cache show "$pkgname"
+    fi
 }
 
 alias syn='sudo synaptic'
