@@ -38,7 +38,7 @@ alias makepkg='makepkg -s'
 # [Example] add firefox
 function add ()
 {
-    if echo "$1" | grep -E 'pkg\.tar\.(xz|gx)$'  2>&1 >/dev/null ; then
+    if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
         # add from local archive
         sudo pacman -U "$1"
     else
@@ -111,9 +111,19 @@ function search ()
 
 # show the meta info of specified package
 # [Example] meta firefox
+# [Example] meta firefox-i686.pkg.xz
 function meta ()
 {
-    pacman -Qi "$1"
+    if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
+        # get info from local  archive
+        local archivename="$1"
+        pacman -Qpi "$archivename"
+    else
+        # get info from pacman database
+        local pkgname
+        pkgname=$(echo "$@" | tr '[A-Z]' '[a-x]')
+        pacman -Qi "$pkgname"
+    fi
 }
 
 # only the the version of that package
