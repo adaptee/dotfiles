@@ -127,6 +127,21 @@ function own ()
     apt-file search "$1"
 }
 
+# find out which (installed) package own the command
+# [example] owncmd amuled
+function owncmd()
+{
+    local cmdname=$1
+    local cmdpath=$(which ${cmdname} 2>/dev/null)
+
+    if [[  "${cmdpath}" == ""  ]] ; then
+        echo "command [$cmdname] does not exist!"
+    else
+        own ${cmdpath}
+    fi
+}
+
+
 # search package by name
 # [Example] search firefox
 function search ()
