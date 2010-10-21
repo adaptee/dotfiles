@@ -40,10 +40,10 @@ function add ()
 {
     if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
         # add from local archive
-        sudo pacman -U "$1"
+        sudo pacman -U $@
     else
         # add from online repo or AUR
-        yaourt --noconfirm -S --noconfirm "$@"
+        yaourt --noconfirm -S --noconfirm $@
     fi
 }
 
@@ -51,7 +51,7 @@ function add ()
 # [Example] purge firefox
 function purge ()
 {
-    yaourt -Rs --noconfirm "$@"
+    yaourt -Rs --noconfirm $@
 }
 
 function update ()
@@ -97,13 +97,13 @@ function list ()
 {
     if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
         # list content of local archive
-        local archivename="$1"
-        pacman -Qpl "$archivename"
+        local archivename="$@"
+        pacman -Qpl $archivename
     else
         # list content of installed package
         local pkgname
         pkgname=$(echo "$@" | tr '[A-Z]' '[a-x]')
-        pacman -Ql "$pkgname"
+        pacman -Ql $pkgname
     fi
 }
 
@@ -128,13 +128,13 @@ function meta ()
 {
     if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
         # get info from local  archive
-        local archivename="$1"
-        pacman -Qpi "$archivename"
+        local archivename="$@"
+        pacman -Qpi $archivename
     else
         # get info from pacman database
         local pkgname
         pkgname=$(echo "$@" | tr '[A-Z]' '[a-x]')
-        pacman -Qi "$pkgname"
+        pacman -Qi $pkgname
     fi
 }
 
@@ -147,7 +147,7 @@ function version()
 # mark packages as explicited installed
 function explicit ()
 {
-    sudo pacman -S --noconfirm --asexplicit "$@"
+    sudo pacman -S --noconfirm --asexplicit $@
 }
 
 # find out which (installed) package own the command
