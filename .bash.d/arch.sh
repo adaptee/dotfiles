@@ -89,11 +89,22 @@ function orphan ()
     pacman -Qtdq
 }
 
+
 # list what are contained within specified package
 # [Example] list firefox
+# [Example] list firefox-i686.pkg.xz
 function list ()
 {
-    pacman -Ql "$1"
+    if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
+        # list content of local archive
+        local archivename="$1"
+        pacman -Qpl "$archivename"
+    else
+        # list content of installed package
+        local pkgname
+        pkgname=$(echo "$@" | tr '[A-Z]' '[a-x]')
+        pacman -Ql "$pkgname"
+    fi
 }
 
 # which package own the specified file?
