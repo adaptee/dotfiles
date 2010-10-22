@@ -381,6 +381,8 @@ alias rsync='rsync -r -t -p -E -l -x -v --progress --sparse'
 # always force tmux to assume 256-color terminal
 alias tmux='tmux -2'
 
+# print the mime type of specified files
+alias mime='file -i'
 
 
 #---------------------------------------------------------------------------#
