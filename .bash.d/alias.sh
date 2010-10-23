@@ -289,10 +289,10 @@ alias where='whereis'
 alias x='xargs'
 alias x0='xargs -0'
 
-# convert id3 tag's encoding.
-#alias mp3tag='find . -iname "*.mp3" -execdir mid3iconv -e GBK {} \;'
-
-
+# find is made easier
+# [1] do not descend onto other filesystems
+# [2] only consider normal file
+alias f='find . -mount -type f'
 
 
 #---------------------------------------------------------------------------#

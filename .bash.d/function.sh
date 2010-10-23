@@ -579,7 +579,7 @@ function build-qterm()
 # normalize and clear bad info within mp3 id3 tag
 function mp3tag ()
 {
-    find . -type f -iname '*.mp3' -print0 | xargs -0 id3clean.sh
+    find . -type f -iname '*.mp3' -print0 | xargs -0 id3clean
 }
 
 
@@ -627,20 +627,6 @@ function lddcmd ()
         ldd $(command which "$1")
     fi
 }
-
-# find is made easier
-# [1] case-insensitive
-# [2] do not descend onto other filesystems
-function f ()
-{
-
-    if [[  $# == 1  ]] ; then
-        find . -mount -type f -iname "*$1*"
-    else
-        find . -mount -type f
-    fi
-}
-
 
 # count the line num of output of follwing command
 function count ()
