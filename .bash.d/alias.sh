@@ -384,6 +384,8 @@ alias tmux='tmux -2'
 # print the mime type of specified files
 alias mime='file -i'
 
+# case-insensitve by default
+alias locate='locate -i'
 
 #---------------------------------------------------------------------------#
 #                                   git alias                               #
