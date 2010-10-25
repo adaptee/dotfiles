@@ -60,7 +60,7 @@ iab tha the
 iab waht what
 iab tehn then
 iab othre other
-iab palce place 
+iab palce place
 iab elemenet element
 iab elmeent element
 iab wihch which
@@ -108,7 +108,6 @@ cab R   registers
 cab S   set
 cab V   verbose
 cab P   pwd
-cab -   cd -
 cab kk  <C-m>
 
 
