@@ -1,0 +1,18 @@
+
+[Default Applications]
+video/x-msvideo=mplayer.desktop
+video/x-matroska=mplayer.desktop
+application/vnd.rn-realmedia=mplayer.desktop
+video/x-ms-wmv=mplayer.desktop
+audio/mpeg=deadbeef.desktop
+video/mpeg=mplayer.desktop
+video/mp4=mplayer.desktop
+application/x-bittorrent=ktorrent.desktop
+video/quicktime=mplayer.desktop
+video/x-flv=mplayer.desktop
+text/plain=gvim.desktop
+image/jpeg=kde4-gwenview.desktop
+audio/x-flac=deadbeef.desktop
+application/x-chm=kchmviewer.desktop
+video/3gpp=mplayer.desktop
+audio/mp4=deadbeef.desktop
