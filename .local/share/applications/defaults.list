@@ -2,6 +2,7 @@
 [Default Applications]
 audio/mpeg=deadbeef.desktop
 audio/x-flac=deadbeef.desktop
+audio/x-ape=deadbeef.desktop
 audio/mp4=deadbeef.desktop
 application/pdf=acroread.desktop
 application/vnd.rn-realmedia=mplayer.desktop
