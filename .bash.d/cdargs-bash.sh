@@ -32,15 +32,15 @@ function _cdargs_get_dir ()
     # if there is one exact match (possibly with extra path info after it),
     # then just use that match without calling cdargs
     if [ -e "$HOME/.cdargs" ]; then
-        dir=`/bin/grep "^$1 " "$HOME/.cdargs"`
+        dir=`grep "^$1 " "$HOME/.cdargs"`
         if [ -z "$dir" ]; then
             bookmark="${1/\/*/}"
             if [ "$bookmark" != "$1" ]; then
-                dir=`/bin/grep "^$bookmark " "$HOME/.cdargs"`
-                extrapath=`echo "$1" | /bin/sed 's#^[^/]*/#/#'`
+                dir=`grep "^$bookmark " "$HOME/.cdargs"`
+                extrapath=`echo "$1" | sed 's#^[^/]*/#/#'`
             fi
         fi
-        [ -n "$dir" ] && dir=`echo "$dir" | /bin/sed 's/^[^ ]* //'`
+        [ -n "$dir" ] && dir=`echo "$dir" | sed 's/^[^ ]* //'`
     fi
     if [ -z "$dir" -o "$dir" != "${dir/
 /}" ]; then
@@ -49,7 +49,7 @@ function _cdargs_get_dir ()
         dir=
         if cdargs --noresolve "${1/\/*/}"; then
             dir=`cat "$HOME/.cdargsresult"`
-            /bin/rm -f "$HOME/.cdargsresult";
+            rm -f "$HOME/.cdargsresult";
         fi
     fi
     if [ -z "$dir" ]; then
@@ -142,11 +142,11 @@ function cpb ()
 # @access public                                #
 # @return void                                  #
 # --------------------------------------------- #
-function cdb () 
-{ 
+function cdb ()
+{
     local dir
 
-    _cdargs_get_dir "$1" && cd "$dir" ;
+    _cdargs_get_dir "$1" && cd "$dir" && echo `pwd`;
 }
 alias cb='cdb'
 alias cv='cdb'
@@ -161,25 +161,25 @@ alias cv='cdb'
 # @access public                                #
 # @return void                                  #
 # --------------------------------------------- #
-function mark () 
-{ 
+function mark ()
+{
     local tmpfile
 
     # first clear any bookmarks with this same alias, if file exists
     if [[ "$CDARGS_NODUPS" && -e "$HOME/.cdargs" ]]; then
-        tmpfile=`echo ${TEMP:-${TMPDIR:-/tmp}} | /bin/sed -e "s/\\/$//"`
+        tmpfile=`echo ${TEMP:-${TMPDIR:-/tmp}} | sed -e "s/\\/$//"`
         tmpfile=$tmpfile/cdargs.$USER.$$.$RANDOM
-        /bin/grep -v "^$1 " "$HOME/.cdargs" > $tmpfile && 'mv' -f $tmpfile "$HOME/.cdargs";
+        grep -v "^$1 " "$HOME/.cdargs" > $tmpfile && 'mv' -f $tmpfile "$HOME/.cdargs";
     fi
     # add the alias to the list of bookmarks
-    cdargs --add=":$1:`pwd`"; 
+    cdargs --add=":$1:`pwd`";
     # sort the resulting list
     if [ "$CDARGS_SORT" ]; then
         sort -o "$HOME/.cdargs" "$HOME/.cdargs";
     fi
 }
-# Oh, no! Not overwrite 'm' for stefan! This was 
-# the very first alias I ever wrote in my un*x 
+# Oh, no! Not overwrite 'm' for stefan! This was
+# the very first alias I ever wrote in my un*x
 # carreer and will always be aliased to less...
 # alias m='mark'
 
@@ -197,15 +197,8 @@ function mark ()
 # --------------------------------------------- #
 function ca ()
 {
-case "$#" in
-1)
     # add the alias to the list of bookmarks
-    cdargs --add=":$1:`pwd`"
-;;
-2)
-    cdargs --add=":$1:$2";
-;;
-esac
+    cdargs --add=":$1:`pwd`";
 }
 
 # --------------------------------------------- #
@@ -225,7 +218,7 @@ function _cdargs_aliases ()
         cur=${COMP_WORDS[COMP_CWORD]}
         if [ "$cur" != "${cur/\//}" ]; then # if at least one /
             bookmark="${cur/\/*/}"
-            dir=`/bin/grep "^$bookmark " "$HOME/.cdargs" | /bin/sed 's#^[^ ]* ##'`
+            dir=`grep "^$bookmark " "$HOME/.cdargs" | sed 's#^[^ ]* ##'`
             if [ -n "$dir" -a "$dir" = "${dir/
 /}" -a -d "$dir" ]; then
                 strip="${dir//?/.}"
@@ -233,8 +226,8 @@ function _cdargs_aliases ()
                 IFS='
 '
                 COMPREPLY=( $(
-                    compgen -d "$dir`echo "$cur" | /bin/sed 's#^[^/]*##'`" \
-                        | /bin/sed -e "s/^$strip/$bookmark/" -e "s/\([^\/a-zA-Z0-9#%_+\\\\,.-]\)/\\\\\\1/g" ) )
+                    compgen -d "$dir`echo "$cur" | sed 's#^[^/]*##'`" \
+                        | sed -e "s/^$strip/$bookmark/" -e "s/\([^\/a-zA-Z0-9#%_+\\\\,.-]\)/\\\\\\1/g" ) )
                 IFS="$oldIFS"
             fi
         else
