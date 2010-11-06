@@ -41,13 +41,6 @@ setopt hist_find_no_dups
 setopt no_hist_beep
 
 
-#----------------------------------------------------------------------------------------
-#                                           Completion
-#----------------------------------------------------------------------------------------
-
-# turn on powerful tab-completion
-autoload -U compinit
-compinit
 
 #----------------------------------------------------------------------------------------
 #                                           Prompt
@@ -117,4 +110,31 @@ set_prompt()
 
 # add the feature of showing current vi mode: insert? normal?
 Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
+
+
+#----------------------------------------------------------------------------------------
+#                                           Completion
+#----------------------------------------------------------------------------------------
+
+# turn on powerful tab-completion
+autoload -U compinit
+compinit
+
+#----------------------------------------------------------------------------------------
+#                                           MIME Association
+#----------------------------------------------------------------------------------------
+
+# open file without prefixing command
+autoload -U zsh-mime-setup
+zsh-mime-setup
+
+# open .avi and .mkv with mplayer
+alias -s avi=mplayer
+alias -s mkv=mplayer
+alias -s flac=deadbeef
+
+
+
+
+
 
