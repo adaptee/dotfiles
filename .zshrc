@@ -1,42 +1,60 @@
-# Created by newuser for 4.3.6
-#
-#
+# If not running interactively, do nothing
+[ -z "$PS1" ] && return
+
+# source specified file, only when it really exist.
+Source ()
+{
+    local item
+
+    for item in "$@" ; do
+        if [ -f "${item}" ] ; then
+            source "${item}"
+        else
+            :
+            #echo "[error] file '${item}' does not exist."
+        fi
+    done
+}
+
+export PRIVATE_SHELL_DIR=$HOME/.sh.d
+export PRIVATE_ZSH_DIR=$HOME/.zsh.d
 
 # auto correct spelling mistake
-setopt CORRECT
-setopt CORRECT_ALL
+setopt correct
+setopt correct_all
 
-setopt NO_BEEP
-setopt AUTO_CD
-setopt EXTENDED_GLOB
-setopt MULTIOS
+setopt no_beep
+setopt auto_cd
+setopt extended_glob
+setopt multios
 
-setopt PUSHD_IGNORE_DUPS
-#setopt AUTO_PUSHD
+setopt pushd_ignore_dups
+#setopt auto_pushd
 
 # use vi-mode for input
 bindkey -v
+
+
 
 #----------------------------------------------------------------------------------------
 #                                       History
 #----------------------------------------------------------------------------------------
 
 HISTSIZE=50000
-SAVEHIST=50000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh.d/history
 
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+setopt append_history
+setopt inc_append_history
+setopt share_history
 
-setopt EXTENDED_HISTORY
+setopt extended_history
 
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_find_no_dups
 
-setopt HIST_IGNORE_SPACE
-
-setopt NO_HIST_BEEP
+setopt no_hist_beep
 
 
 #----------------------------------------------------------------------------------------
@@ -45,7 +63,7 @@ setopt NO_HIST_BEEP
 
 #%D{%L:%M}
 
-setopt PROMPT_SUBST
+setopt prompt_subst
 
 # get the colors
 autoload colors zsh/terminfo
@@ -89,7 +107,7 @@ set_prompt()
     RPS2='%^'
 
     # load prompt functions
-    setopt promptsubst
+    setopt prompt_subst
     unsetopt transient_rprompt # leave the pwd
 
     precmd()  {
@@ -101,4 +119,44 @@ set_prompt()
 
 
 # add the feature of showing current vi mode: insert? normal?
-source ~/.zsh.d/prompt-current-vi-mode.zsh
+Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
+
+
+##############################################################################
+
+
+
+
+# turn on powerful tab-completion
+autoload -U compinit
+compinit
+
+# turn on powerful pormpt system
+autoload -U promptinit
+promptinit
+
+# Completion style improvements
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+##############################################################################
+
+
+Source "$PRIVATE_SHELL_DIR/alias.sh"
+Source "$PRIVATE_SHELL_DIR/function.sh"
+
+if [[ $(uname) =~ 'Linux'  ]] ; then
+
+    distro=$(distro-detect)
+
+    if [[ ${distro} != "unknown"  ]] ; then
+        Source "${PRIVATE_SHELL_DIR}/${distro}.sh"
+    fi
+
+elif [[ $(uname) =~ 'Cygwin' ]] ; then
+    Source "$PRIVATE_SHELL_DIR/cygwin.sh"
+fi
+
+Source "$PRIVATE_ZSH_DIR/zsh.zsh"
+Source "$PRIVATE_SHELL_DIR/test.sh"
+
