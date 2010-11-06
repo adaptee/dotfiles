@@ -53,8 +53,31 @@ alias -- -='cd -'
 # list one item per line , with prepending index.
 alias dir='dirs -v'
 
+alias A='cd ~/audio/ACG'
 alias I='cd ~/down/Incoming/'
 alias T='cd ~/down/Temp/'
+
+alias b='cd ~/bin'
+
+alias bd='cd ~/.bash.d'
+alias sd='cd ~/.sh.d'
+alias zd='cd ~/.zsh.d'
+
+alias D='cd ~/Desktop'
+alias D2='cd ~/Desktop/Dropbox'
+alias d2='cd ~/dotfiles'
+alias k4='cd ~/.kde4/share/'
+
+alias ff='cd ~/.mozilla/firefox/'
+alias rc='cd ~/.vim/rc'
+
+alias log='cd /var/log'
+alias core='cd /tmp/coredump/'
+
+alias p='pwd'
+alias pu='pushd'
+alias po='popd'
+
 
 #---------------------------------------------------------------------------#
 #                                 tree alias                                #
@@ -152,10 +175,7 @@ alias mkc='make clean'
 #---------------------------------------------------------------------------#
 
 # edit config file
-alias rc=' vim ~/.bashrc'
-alias irc='vim ~/.inputrc'
 alias vrc='vim ~/.vimrc'
-alias src='vim ~/.screenrc'
 alias vprc='vim ~/.vimperatorrc'
 alias grc='vim ~/.gitconfig'
 alias menu='vim /boot/grub/menu.lst'
@@ -210,48 +230,38 @@ alias smth='luit -x -encoding gbk telnet bbs.newsmth.net'
 # start gappproxy local client
 alias proxy='python ~/bin/gae/localproxy/proxy.py'
 
-#---------------------------------------------------------------------------#
-#                             top useful alias                              #
-#---------------------------------------------------------------------------#
 
-alias a='alias'
-alias b='cd ~/bin'
-alias bd='cd ~/.bash.d'
-alias c='cl'
-alias D='cd ~/Desktop'
-alias D2='cd ~/Desktop/Dropbox'
-alias d2='cd ~/dotfiles'
-alias k4='cd ~/.kde4/share/'
-alias rc='cd ~/.vim/rc'
-# show date in pretty format.
-alias dt='date "+%Y-%m-%d %A    %T %Z"'
-alias fl='file'
-alias ff='cd ~/.mozilla/firefox/'
+
+#---------------------------------------------------------------------------#
+#                                 Grep quickly                              #
+#---------------------------------------------------------------------------#
 alias g='grep'
 alias gi='grep -i'
 alias gl='grep -l'
 alias gn='grep -n'
 alias gr='grep -r'
 alias gv='grep -v'
-alias gconf='gconf-editor'
+
+
+alias a='alias'
+alias c='cl'
+
+# show date in pretty format.
+alias dt='date "+%Y-%m-%d %A    %T %Z"'
+
+alias fl='file'
 alias h='help'
 alias io='iotop -o'
-alias log='cd /var/log'
 alias m='man'
 alias ma='man -a'
 alias mf='man -f'
 alias mm='man man'
 alias mp='mplayer'
-alias smp='smplayer'
 alias mon='bmon -p wlan0'
-alias o='popd'
-alias p='pushd'
-alias py='python'
-alias ipy='ipython'
+alias py='ipython'
 alias s='sudo'
 #switch to specified user's environment, making su safer.
 alias su='su -l'
-alias scr='screen'
 alias t='htop'
 alias tp='type'
 alias tpa='type -a'
@@ -277,13 +287,14 @@ alias f='find . -mount -type f'
 #---------------------------------------------------------------------------#
 
 # ranger is my favorite console-baese filemanager
-alias fm='ranger'
+alias r='ranger'
 
 # also copy the higher hierarchry
 alias cpp='cp --parents'
 
 # create missing parent folder, if necessary
 alias mkdir='mkdir -p'
+
 
 # ack-grep is a better grep!
 # alias it to ack  only if it is installed as ack-grep
@@ -296,9 +307,6 @@ alias cdiff='colordiff'
 
 alias svn-versionalize="svn status |grep '\?' |awk '{print $2}'| xargs svn add"
 alias svndiff='svn diff -diff-cmd=colordiff'
-
-alias recordscreen='/usr/bin/byzanz-record ~/screen_record.gif'
-
 
 # Do not print the introductory and copyright messages
 alias gdb='gdb --quiet'
@@ -318,7 +326,6 @@ alias hd2='od -Ax -tx1z -v'
 alias im-switch='im-switch -z default'
 alias zhcon='zhcon --utf8 --drv=fb'
 
-
 # show process info in ps style
 alias fuser='fuser -v'
 
@@ -334,10 +341,9 @@ alias emc='emacs -nw'
 
 alias aml='tail ~/.aMule/logfile'
 
-
 # prevent typo
 alias mr='rm'
-
+alias vm='mv'
 
 # create subfolder with the same name, if necessary, before extracting
 alias unp='dtrx --recursive --one-entry=here'
@@ -393,11 +399,4 @@ alias recover='git recover'
 alias assume='git update-index --assume-unchanged'
 alias noassume='git update-index --no-assume-unchanged'
 alias assumed='git assumed'
-
-
-# ranger rocks
-alias r='ranger'
-
-alias core='cd /tmp/coredump/'
-
 
