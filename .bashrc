@@ -40,7 +40,6 @@ elif [[ $(uname) =~ 'Cygwin' ]] ; then
 fi
 
 Source "$PRIVATE_BASH_DIR/bash.bash"
-
-Source "$PRIVATE_SHELL_DIR/test.sh"
 Source "$PRIVATE_BASH_DIR/test.bash"
 
+Source "$PRIVATE_SHELL_DIR/test.sh"
