@@ -104,6 +104,9 @@ alias du='command du -h --max-depth=1 --one-file-system |sort -h'
 # show the total size
 alias dus='command du -h -s --one-file-system'
 
+# make the output of mount looks better
+alias mount='mount | column -t'
+
 #show currently mounted partition in nice layout
 alias mnt='mount |grep -E "ext[2-4]|reiserfs|vfat|ntfs|xfs|jfs|zfs" |column -t'
 # remount all partition.
