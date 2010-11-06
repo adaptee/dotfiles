@@ -251,7 +251,8 @@ function e ()
     local item
 
     for item in "$@";do
-        builtin echo "${!item}";
+        # indirect expansion
+        eval echo "\$${item}"
     done
 }
 
