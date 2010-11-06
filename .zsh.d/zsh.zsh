@@ -3,17 +3,81 @@
 #                                       options
 #----------------------------------------------------------------------------------------
 
+#----- Changing Directories
+
+# Make cd push the old directory onto the directory stack.
+setopt auto_pushd
+
+setopt auto_cd
+
+setopt cdable_vars
+
+# Have pushd with no arguments act like `pushd $HOME'.
+setopt pushd_to_home
+
+# setopt auto_pushd
+setopt pushd_ignore_dups
+
+#----- Completion
+
+setopt always_to_end
+
+# Lay out the matches in completion lists sorted horizontally
+setopt list_rows_first
+
+# override auto_menu
+setopt menu_complete
+
+#----- Expansion and Globbing
+
+# show warning about bad globbing pattern
+setopt bad_pattern
+
+setopt extended_glob
+
+# If a pattern for filename generation has no matches, print an error
+setopt nomatch
+
+
+# If numeric filenames are matched by a filename generation pattern,
+# sort the filenames numerically rather than lexicographically.
+setopt numeric_glob_sort
+
+
+# ----- History
+
+
+# ----- Input/Output
+
 # auto correct spelling mistake
 setopt correct
 setopt correct_all
 
+# allow input comments in interactive shell
+setopt interactive_comments
+
+#setopt print_exit_value
+
+#setopt rm_star_silent
+
+
+# ----- Job control
+
+# Run all background jobs at a lower priority
+setopt bg_nice
+
+
+# ----- Scripts and Functions
+# Output hexadecimal numbers in standard C format,
+# for example, show `0xFF' instead of the default 16#FF'
+setopt c_bases
+
+# make the precedence of arithmetic operators to be more like C
+setopt c_precedences
+
 setopt no_beep
-setopt auto_cd
-setopt extended_glob
 setopt multios
 
-setopt pushd_ignore_dups
-#setopt auto_pushd
 
 # use vi-mode for input
 bindkey -v
@@ -36,9 +100,11 @@ setopt append_history
 setopt inc_append_history
 setopt share_history
 
+# Save  command's  timestamp  and duration (in seconds) to the history file
 setopt extended_history
 
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_find_no_dups
 
@@ -56,6 +122,8 @@ promptinit
 
 #%D{%L:%M}
 
+# enable parameter expansion, command substitution and arithmetic expansion
+# within prompt.
 setopt prompt_subst
 
 # get the colors
