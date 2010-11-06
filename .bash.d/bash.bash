@@ -255,10 +255,8 @@ lesskey -o ~/.less "/tmp/lesskey-${USER}"
 Source "/etc/bash_completion"
 
 if [ -x "$HOME/bin/chsdir" ] ; then
-    Source "${PRIVATE_BASH_DIR}/chs_completion.sh"
+    Source "${PRIVATE_BASH_DIR}/chs_completion.bash"
 fi
-
-Source "${PRIVATE_BASH_DIR}/cdargs-bash.sh"
 
 complete -o filenames -F _man m
 complete -o filenames -F _man ma
