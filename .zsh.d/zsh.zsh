@@ -18,6 +18,10 @@ setopt pushd_ignore_dups
 # use vi-mode for input
 bindkey -v
 
+# use emacs mode for input
+#bindkey -e
+# make key 'DEL'  work as expected
+#bindkey "\e[3~" delete-char
 
 
 #----------------------------------------------------------------------------------------
