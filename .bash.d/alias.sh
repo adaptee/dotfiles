@@ -287,7 +287,7 @@ alias mkdir='mkdir -p'
 
 # ack-grep is a better grep!
 # alias it to ack  only if it is installed as ack-grep
-which ack-grep >& /dev/null &&  alias ack=ack-grep
+which ack-grep >/dev/null 2>&1  &&  alias ack=ack-grep
 
 # generated unified  result
 alias diff='diff -aruN'
