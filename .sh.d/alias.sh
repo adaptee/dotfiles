@@ -393,3 +393,11 @@ alias recover='git recover'
 alias assume='git update-index --assume-unchanged'
 alias noassume='git update-index --no-assume-unchanged'
 alias assumed='git assumed'
+
+
+# ranger rocks
+alias r='ranger'
+
+alias core='cd /tmp/coredump/'
+
+

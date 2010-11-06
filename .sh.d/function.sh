@@ -621,3 +621,47 @@ function count ()
 # num is shorter to type
 alias num='count'
 
+
+# access vimdoc from cmdline
+# [Example] vimhelp fileencoding
+function vimhelp()
+{
+    # hint: remove all VimEnter related cutocmds
+    vim -c "help $1" -c "only" -c "autocmd! VimEnter *"
+}
+
+# grep vimdoc from cmdline
+# [Example] vimhelpgrep fileencoding
+function vimhelpgrep()
+{
+    vim -c "helpgrep $1" -c "only" -c "copen" -c "autocmd! VimEnter *"
+}
+
+
+# when make produce errors, open vim to view such errors
+function Make ()
+{
+    command make "$@" |& tee make.errors || vim -q make.errors -c ":copen" ;
+}
+
+
+# get the pwd of specified process by PID
+# [Example] getpwd 1023 3045
+function getpwd()
+{
+    pwdx $@
+}
+
+
+# better than the obsolete id3info command
+function id3info()
+{
+    mid3v2 -l "$1"
+}
+
+# list metadata of flac file
+function flacinfo()
+{
+    metaflac --list "$1"
+}
+

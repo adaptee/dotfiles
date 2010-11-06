@@ -8,9 +8,9 @@ which pacman-color >& /dev/null &&  alias pacman='pacman-color'
 # no boring confimration!
 alias yaourt='yaourt --noconfirm'
 
-# install missing dependency automatically
-alias makepkg='makepkg -s'
-
+# -s install depends ;
+# -f overwrite already-built package
+alias makepkg='makepkg -s -f'
 
 #---------------------------------------------------------------------------#
 #                                 package management                        #
@@ -144,6 +144,15 @@ function owncmd()
         own ${cmdpath}
     fi
 }
+
+
+# list package installed from aur( not within repo)
+function aurs()
+{
+    pacman -Qmq
+
+}
+
 
 # show package size in ascending order
 function pac-size ()
