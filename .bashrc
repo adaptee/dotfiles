@@ -20,22 +20,27 @@ Source ()
     done
 }
 
+export PRIVATE_SHELL_DIR=$HOME/.sh.d
 export PRIVATE_BASH_DIR=$HOME/.bash.d
 
-Source "$PRIVATE_BASH_DIR/alias.sh"
-Source "$PRIVATE_BASH_DIR/function.sh"
-Source "$PRIVATE_BASH_DIR/common.sh"
+Source "$PRIVATE_SHELL_DIR/alias.sh"
+Source "$PRIVATE_SHELL_DIR/function.sh"
+
 
 if [[ $(uname) =~ 'Linux'  ]] ; then
 
     distro=$(distro-detect)
 
     if [[ ${distro} != "unknown"  ]] ; then
-        Source "${PRIVATE_BASH_DIR}/${distro}.sh"
+        Source "${PRIVATE_SHELL_DIR}/${distro}.sh"
     fi
 
 elif [[ $(uname) =~ 'Cygwin' ]] ; then
-    Source "$PRIVATE_BASH_DIR/cygwin.sh"
+    Source "$PRIVATE_SHELL_DIR/cygwin.sh"
 fi
 
+
+Source "$PRIVATE_BASH_DIR/common.sh"
+
+Source "$PRIVATE_SHELL_DIR/test.sh"
 Source "$PRIVATE_BASH_DIR/test.sh"
