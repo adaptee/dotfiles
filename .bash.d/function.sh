@@ -1,22 +1,4 @@
-#!/bin/bash
-#===============================================================================
-#
-#          FILE:  function.sh
-#
-#         USAGE:  ./function.sh
-#
-#   DESCRIPTION:  Various bash functions
-#
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  adaptee (), adaptee@gmail.com
-#       COMPANY:  Open Source Corporation
-#       VERSION:  1.0
-#       CREATED:  2009年09月04日 00时43分52秒 CST
-#      REVISION:  ---
-#===============================================================================
+#!/bin/sh
 
 # check which disto are we running in?
 function distro-detect()
