@@ -282,8 +282,8 @@ function null ()
 
 # Colorize following text
 # usage: green-echo TEXT
-function green-echo () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
-function red-echo ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
+function green () { echo -e "${BRIGHTGREEN}$@${NOCOLOR}"; }
+function red ()   { echo -e "${BRIGHTRED}$@${NOCOLOR}"; }
 
 
 #---------------------------------------------------------------------------#
