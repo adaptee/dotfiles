@@ -39,8 +39,8 @@ elif [[ $(uname) =~ 'Cygwin' ]] ; then
     Source "$PRIVATE_SHELL_DIR/cygwin.sh"
 fi
 
-
-Source "$PRIVATE_BASH_DIR/common.sh"
+Source "$PRIVATE_BASH_DIR/bash.bash"
 
 Source "$PRIVATE_SHELL_DIR/test.sh"
-Source "$PRIVATE_BASH_DIR/test.sh"
+Source "$PRIVATE_BASH_DIR/test.bash"
+
