@@ -1,22 +1,4 @@
 #!/bin/bash
-#===============================================================================
-#
-#          FILE:  ubuntu.sh
-#
-#         USAGE:  ./ubuntu.sh
-#
-#   DESCRIPTION:  ubuntu specific setting for bash
-#
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  adaptee (), adaptee@gmail.com
-#       COMPANY:  Open Source Corporation
-#       VERSION:  1.0
-#       CREATED:  05/07/10 14:01:56 CST
-#      REVISION:  ---
-#===============================================================================
 
 # Dear Ubuntu, I do not need you to telli me which package to install!
 unset command_not_found_handle

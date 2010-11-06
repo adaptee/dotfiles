@@ -1,23 +1,4 @@
 #!/bin/bash
-#===============================================================================
-#
-#          FILE:  gentoo.sh
-#
-#         USAGE:  ./gentoo.sh
-#
-#   DESCRIPTION:
-#
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  adaptee (), adaptee@gmail.com
-#       COMPANY:  Open Source Corporation
-#       VERSION:  1.0
-#       CREATED:  09/16/10 13:18:46 CST
-#      REVISION:  ---
-#===============================================================================
-
 
 # gentoo's dafault does not contain /usr/sbin
 # thus makeing ifconfig, lspci,etc unconvenient to use

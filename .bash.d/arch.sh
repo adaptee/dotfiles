@@ -1,22 +1,4 @@
 #!/bin/bash
-#===============================================================================
-#
-#          FILE:  arch.sh
-#
-#         USAGE:  ./arch.sh
-#
-#   DESCRIPTION:  archlinux specific settging for bash
-#
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  adaptee (), adaptee@gmail.com
-#       COMPANY:  Open Source Corporation
-#       VERSION:  1.0
-#       CREATED:  05/07/10 13:56:59 CST
-#      REVISION:  ---
-#===============================================================================
 
 alias rsmb='sudo /etc/rc.d/samba restart'
 
