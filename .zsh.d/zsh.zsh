@@ -86,7 +86,8 @@ set_prompt()
 
     for a (${(k)jobstates})
         {
-            j=$jobstates[$a];i="${${(@s,:,)j}[2]}"
+            j=$jobstates[$a];
+            i="${${(@s,:,)j}[2]}"
             myjobs+=($a${i//[^+-]/})
         }
 
