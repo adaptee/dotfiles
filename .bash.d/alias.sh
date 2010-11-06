@@ -1,27 +1,4 @@
-#!/bin/bash
-#===============================================================================
-#
-#          FILE:  alias.sh
-#
-#         USAGE:  ./alias.sh
-#
-#   DESCRIPTION:  where alias is placed together.
-#
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  adaptee (), adaptee@gmail.com
-#       COMPANY:  Open Source Corporation
-#       VERSION:  1.0
-#       CREATED:  2009年08月01日 00时06分40秒 CST
-#      REVISION:  ---
-#===============================================================================
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+#!/bin/sh
 
 #---------------------------------------------------------------------------#
 #                                   ls alias                                #
