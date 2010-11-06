@@ -265,7 +265,8 @@ function ee ()
 
     for item in "$@";do
         env_var=$(echo "${item}" |tr '[a-z]' '[A-Z]');
-        builtin echo "${!env_var}";
+        # indirect expansion
+        eval echo "\$${env_var}"
     done
 }
 
