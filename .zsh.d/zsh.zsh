@@ -56,7 +56,8 @@ setopt correct_all
 # allow input comments in interactive shell
 setopt interactive_comments
 
-#setopt print_exit_value
+#show the exit code when a command  fails
+setopt print_exit_value
 
 #setopt rm_star_silent
 
@@ -65,7 +66,6 @@ setopt interactive_comments
 
 # Run all background jobs at a lower priority
 setopt bg_nice
-
 
 # ----- Scripts and Functions
 # Output hexadecimal numbers in standard C format,
@@ -212,6 +212,11 @@ Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
 autoload -U compinit
 compinit
 
+# cache the result of completion
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+
 #----------------------------------------------------------------------------------------
 #                                           MIME Association
 #----------------------------------------------------------------------------------------
@@ -226,7 +231,48 @@ alias -s mkv=mplayer
 alias -s flac=deadbeef
 
 
+#----------------------------------------------------------------------------------------
+#                                           Global aliases
+#----------------------------------------------------------------------------------------
+#
+# removing ANSI color code from stdin
+alias -g B='| sed -r "s:\x1B\[[0-9;]*[mK]::g"'
+
+alias -g G='| gi'
+
+alias -g H='| head'
+
+alias -g L='| less'
+
+# global alias for matching the latest modified item
+# o     : sort
+# c     : sort by modification time of inode
+# [1]   : show only one match
+alias -g NN="*(oc[1])"
+
+alias -g S='| sort'
+alias -g T='| tail'
+
+alias -g V='| vim -'
+
+# counting lines
+alias -g W='| wc -l'
+
+alias -g X='| xargs '
+alias -g X0='| xargs -0 '
+
+#----------------------------------------------------------------------------------------
+#                                           VCS info
+#----------------------------------------------------------------------------------------
+
+# To load vcs_info:
+autoload -Uz vcs_info
 
 
 
+#----------------------------------------------------------------------------------------
+#                                           Environment
+#----------------------------------------------------------------------------------------
+
+cdpath=(~ ~/code ~/down ~/audio)
 
