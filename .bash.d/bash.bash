@@ -294,3 +294,7 @@ complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 # allow wtf to use personal acronym database
 export ACRONYMDB=$(echo "$HOME/.acronymdb")
 
+# enable autojump
+source /etc/profile.d/autojump.bash
+
+
