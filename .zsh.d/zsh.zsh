@@ -78,14 +78,31 @@ setopt c_precedences
 setopt no_beep
 setopt multios
 
+#----------------------------------------------------------------------------------------
+#                                       Keybindings
+#----------------------------------------------------------------------------------------
 
-# use vi-mode for input
+
+# use vi-mode keybindings
 bindkey -v
 
-# use emacs mode for input
+# use Ctrl-R to search histroy, backwardly and incrementally
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
+
+# move the head/tail more quickly
+#bindkey -M vicmd H  vi-beginning-of-line
+bindkey -M vicmd H  vi-first-non-blank
+bindkey -M vicmd L  vi-beginning-of-line
+
+# use 'Alt-k' to insert the last word of previous command
+bindkey -M viins "\M-k" insert-last-word
+
+# comment/uncomment quickly
+bindkey -M vicmd "#" vi-pound-insert
+
+# use emacs-mode keybindings
 #bindkey -e
-# make key 'DEL'  work as expected
-#bindkey "\e[3~" delete-char
 
 
 #----------------------------------------------------------------------------------------
