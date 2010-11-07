@@ -1,3 +1,7 @@
+[user]
+    name  = Adaptee
+    email = adaptee@gmail.com
+
 [core]
     editor = vim
 
@@ -13,15 +17,16 @@
 
     #gitproxy=""
 
-[user]
-    name  = Adaptee
-    email = adaptee@gmail.com
 
 [rerere]
     #enabled = true
 
 [color]
     ui = auto
+
+[branch]
+    # when pulling, rebase instead of merge
+    ;autosetuprebase = always
 
 [diff]
     # invoked when runnig "git difftool"
@@ -54,6 +59,7 @@
     bra     = branch -a
     brd     = branch -d
 
+    c       = commit
     cm      = commit -m
     cma     = commit -a -m
     amend   = commit --amend -C HEAD
@@ -101,4 +107,7 @@
 
 [help]
     autocorrect = 0
+
+[github]
+    user = adaptee
 
