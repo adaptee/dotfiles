@@ -114,7 +114,7 @@ bindkey -M viins '^k' history-beginning-search-backward
 
 HISTSIZE=50000
 SAVEHIST=$HISTSIZE
-HISTFILE=~/.zsh.d/history
+HISTFILE=~/.zsh.d/data/history
 
 setopt append_history
 setopt inc_append_history
