@@ -295,6 +295,6 @@ complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 export ACRONYMDB=$(echo "$HOME/.acronymdb")
 
 # enable autojump
-source /etc/profile.d/autojump.bash
+Source /etc/profile.d/autojump.bash
 
 
