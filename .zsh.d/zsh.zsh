@@ -146,6 +146,9 @@ promptinit
 # within prompt.
 setopt prompt_subst
 
+# Remove right prompt from display when accepting a command line
+#setopt transient_rprompt
+
 # get the colors
 autoload colors zsh/terminfo
 
@@ -161,7 +164,6 @@ done
 C_OFF="%{$terminfo[sgr0]%}"
 
 # set the prompt
-
 set_prompt()
 {
 
@@ -182,26 +184,24 @@ set_prompt()
 
         rehash
 
-    }
+}
 
-    RPSL=$'$C_OFF'
-    RPSR=$'$C_OFF$C_L_RED%(0?.$C_L_GREEN. (%?%))$C_OFF'
-    RPS2='%^'
+RPSL=$'$C_OFF'
+RPSR=$'$C_OFF$C_L_RED%(0?.$C_L_GREEN. (%?%))$C_OFF'
+RPS2='%^'
 
-    # load prompt functions
-    setopt prompt_subst
-    unsetopt transient_rprompt # leave the pwd
+# load prompt functions
+#unsetopt transient_rprompt # leave the pwd
 
-    precmd()  {
-        set_prompt
-        print -Pn "\e]0;%n@$__IP:%l\a"
-    }
+precmd()  {
+    set_prompt
+    print -Pn "\e]0;%n@$__IP:%l\a"
+}
 
-    PS1=$'$C_L_BLUE%(1j.[$myjobs]% $C_OFF .$C_OFF)%m.%B%n%b$C_OFF$C_L_RED%#$C_OFF'
-
+PS1=$'$C_L_BLUE%(1j.[$myjobs]% $C_OFF .$C_OFF)%m@%B%n%b$C_OFF$C_L_RED%#$C_OFF'
 
 # add the feature of showing current vi mode: insert? normal?
-Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
+#Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
 
 
 #----------------------------------------------------------------------------------------
