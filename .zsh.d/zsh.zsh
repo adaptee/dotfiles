@@ -95,11 +95,14 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 bindkey -M vicmd H  vi-first-non-blank
 bindkey -M vicmd L  vi-beginning-of-line
 
-# use 'Alt-k' to insert the last word of previous command
-bindkey -M viins "\M-k" insert-last-word
-
 # comment/uncomment quickly
-bindkey -M vicmd "#" vi-pound-insert
+bindkey -M vicmd '#' vi-pound-insert
+
+# use 'Alt-k' to insert the last word of previous command
+bindkey -M viins '\M-k' insert-last-word
+
+# complete by history command match current head
+bindkey -M viins '^k' history-beginning-search-backward
 
 # use emacs-mode keybindings
 #bindkey -e
