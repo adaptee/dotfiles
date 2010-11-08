@@ -3,7 +3,7 @@
 #                                       options
 #----------------------------------------------------------------------------------------
 
-#----- Changing Directories
+#----- Changing Directories ----- #
 
 # Make cd push the old directory onto the directory stack.
 setopt auto_pushd
@@ -18,7 +18,7 @@ setopt pushd_to_home
 # setopt auto_pushd
 setopt pushd_ignore_dups
 
-#----- Completion
+#----- Completion ----- #
 
 setopt always_to_end
 
@@ -28,7 +28,7 @@ setopt list_rows_first
 # override auto_menu
 setopt menu_complete
 
-#----- Expansion and Globbing
+#----- Expansion and Globbing ---- #
 
 # show warning about bad globbing pattern
 setopt bad_pattern
@@ -45,14 +45,11 @@ setopt nomatch
 # sort the filenames numerically rather than lexicographically.
 setopt numeric_glob_sort
 
-
-# ----- History
-
-
 # ----- Input/Output
 
-# auto correct spelling mistake
+# auto correct mis-spoken command-name
 setopt correct
+# also try to correct arguemnts
 setopt correct_all
 
 # allow input comments in interactive shell
@@ -68,6 +65,9 @@ setopt print_exit_value
 
 # Run all background jobs at a lower priority
 setopt bg_nice
+
+# show pid in bg job list
+setopt long_list_jobs
 
 # ----- Scripts and Functions
 # Output hexadecimal numbers in standard C format,
@@ -196,46 +196,52 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 #                                           MIME Association
 #----------------------------------------------------------------------------------------
 
+# show ls -F style marks in file completion
+setopt list_types
+
 # open file without prefixing command
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
+
 # open .avi and .mkv with mplayer
-alias -s avi=mplayer
-alias -s mkv=mplayer
 alias -s flac=deadbeef
 alias -s txt=vim
+
+for i in jpg jpeg png svg;                  alias -s $i=gwenview
+for i in mp3 wma ogg flac ape tta wv wav;   alias -s $i=deadbeef
+for i in avi rmvb wmv mkv mp4;              alias -s $i=mplayer
+for i in rar zip gz 7z xz lzma;                alias -s $i=unp
 
 
 #----------------------------------------------------------------------------------------
 #                                           Global aliases
 #----------------------------------------------------------------------------------------
 #
+alias -g A="|awk"
 # removing ANSI color code from stdin
 alias -g B='| sed -r "s:\x1B\[[0-9;]*[mK]::g"'
-
+alias -g C='| column -t'
+alias -g E='| sed'
 alias -g G='| gi'
-
+alias -g H="| head -n $(($LINES-2))"
 alias -g H='| head'
-
 alias -g L='| less'
+alias -g N="> /dev/null"
 
 # global alias for matching the latest modified item
 # o     : sort
 # c     : sort by modification time of inode
 # [1]   : show only one match
-alias -g NN="*(oc[1])"
+alias -g NF="./*(oc[1])"
 
+alias -g R='| tac'
 alias -g S='| sort'
-alias -g T='| tail'
-
+alias -g T="| tail -n $(($LINES-2))"
 alias -g V='| vim -'
-
-# counting lines
 alias -g W='| wc -l'
-
 alias -g X='| xargs '
-alias -g X0='| xargs -0 '
+alias -g X0='| xargs -0'
 
 #----------------------------------------------------------------------------------------
 #                                           VCS info
@@ -250,3 +256,8 @@ autoload -Uz vcs_info
 
 cdpath=(~ ~/code ~/down ~/audio)
 
+# less is better than more!
+export READNULLCMD=less
+
+# remove duplicataed entry within PATH
+typeset -U PATH
