@@ -22,11 +22,33 @@ function distro-detect()
 }
 
 # recommend way of using which, quoted from the manpage
-which ()
+function which ()
 {
     (alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
 }
 export -f which
+
+# only consider binary existing in the FS; no funtions nor aliases
+function bin-exist()
+{
+    if command which $1 >/dev/null 2>/dev/null ; then
+        return 0
+    else
+        return 1
+    fi
+
+}
+
+# this one considers functions and aliases
+function cmd-exist()
+{
+    if which $1 >/dev/null 2>/dev/null ; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 
 #---------------------------------------------------------------------------#
 #                               history related                             #
