@@ -35,9 +35,11 @@ setopt bad_pattern
 
 setopt extended_glob
 
+# make globbing case-insensitve
+unsetopt case_glob
+
 # If a pattern for filename generation has no matches, print an error
 setopt nomatch
-
 
 # If numeric filenames are matched by a filename generation pattern,
 # sort the filenames numerically rather than lexicographically.
@@ -202,6 +204,7 @@ zsh-mime-setup
 alias -s avi=mplayer
 alias -s mkv=mplayer
 alias -s flac=deadbeef
+alias -s txt=vim
 
 
 #----------------------------------------------------------------------------------------
