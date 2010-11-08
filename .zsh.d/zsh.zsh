@@ -96,13 +96,38 @@ bindkey -M vicmd H  vi-first-non-blank
 bindkey -M vicmd L  vi-beginning-of-line
 
 # comment/uncomment quickly
+bindkey -M viins '\e3' vi-pound-insert
 bindkey -M vicmd '#' vi-pound-insert
 
-# use 'Alt-k' to insert the last word of previous command
-bindkey -M viins '\M-k' insert-last-word
+# work-aroung of failing "\M-k"
+bindkey -M viins "\ek" insert-last-word
+bindkey -M vicmd "\ek" insert-last-word
 
-# complete by history command match current head
-bindkey -M viins '^k' history-beginning-search-backward
+# work-aroung of failing "\M-j"
+bindkey -M viins "\ej" history-beginning-search-backward
+bindkey -M vicmd "\ej" history-beginning-search-backward
+
+# stop editing; execute the command
+bindkey -M viins "\em" accept-line
+bindkey -M vicmd "\em" accept-line
+
+# move backword by one char, in insert mode
+bindkey -M viins -s "\eh" "\\ei"
+# move forward by one char, in insert mode
+bindkey -M viins -s "\el" "\\e[C"
+
+# insert a pair of ``, "", ''
+bindkey -M viins -s '\e`' \`\`\\ei
+bindkey -M viins -s "\e;" \"\"\\ei
+bindkey -M viins -s "\e'" \'\'\\ei
+
+# use 'Ctrl-k' to insert the last word of previous command
+#bindkey -M viins '^k' insert-last-word
+#bindkey -M vicmd '^k' insert-last-word
+
+# complete history command by matching current head
+#bindkey -M viins '^j' history-beginning-search-backward
+#bindkey -M vicmd '^j' history-beginning-search-backward
 
 # use emacs-mode keybindings
 #bindkey -e
