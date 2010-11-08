@@ -12,6 +12,9 @@ function distro-detect()
     elif [ -f /etc/make.conf     ] ; then
         echo  "gentoo"
 
+    elif [[ $(uname) =~ 'Cygwin' ]] ; then
+        echo "cygwin"
+
     else
         echo "unknown"
     fi
