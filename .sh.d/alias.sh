@@ -7,7 +7,10 @@
 # enable color support of ls(LS_COLORS)
 if [[ "$TERM" != "dumb" ]]; then
     eval "$(dircolors -b)"
-    alias ls='ls --color=auto --group-directories-first'
+    #  -X     sort alphabetically by entry extension
+    alias ls='ls -X --group-directories-first --color=auto'
+else
+    alias ls='ls -X --group-directories-first'
 fi
 
 # 'F' means show trailing handy hints of the entry type
