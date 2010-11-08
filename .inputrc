@@ -43,12 +43,12 @@
 "\C-xp": "PATH=${PATH}"
 
 #-------------- <Alt-key> mappings-------------------#
-#
-# navigate history
-#"\ep": previous-history
-#"\en": next-history
+
 # search history
 "\ej": history-search-backward
+
+# stop editting; execute the command
+"\em": accept-line
 
 # move within line
 "\eh": backward-char
