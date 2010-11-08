@@ -247,7 +247,7 @@ alias proxy='python ~/bin/gae/localproxy/proxy.py'
 alias egrep='egrep -I --color=auto'
 
 # '-I' means returning no match for any binary file
-alias g='grep -I --color-auto'
+alias g='grep -I --color=auto'
 
 alias gi='g -i'
 alias gl='g -l'
