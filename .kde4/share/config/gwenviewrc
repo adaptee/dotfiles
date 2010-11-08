@@ -1,5 +1,5 @@
 Height 800=801
-State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABPwAAAKqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 Width 1280=1281
 
 [Colors]
@@ -33,7 +33,7 @@ ConfirmTrash=true
 PreferredMetaInfoKeyList=General.Name,General.Size,General.ImageSize
 
 [SideBar-BrowseMode]
-CurrentPage=information
+CurrentPage=folders
 IsVisible=false
 
 [SideBar-FullScreenMode]

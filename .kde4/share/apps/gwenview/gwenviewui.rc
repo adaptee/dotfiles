@@ -117,5 +117,9 @@
   <Action shortcut="Ctrl+X; X" name="edit_cut"/>
   <Action shortcut="Ctrl+V; P" name="edit_paste"/>
   <Action shortcut="F5; R" name="reload"/>
+  <Action shortcut="" name="file_quit"/>
+  <Action shortcut="Q" name="browse"/>
+  <Action shortcut="V" name="view"/>
+  <Action shortcut="I" name="file_show_properties"/>
  </ActionProperties>
 </kpartgui>
