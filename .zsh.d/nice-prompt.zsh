@@ -43,7 +43,7 @@ function prompt_char {
 
 # default prompt
 PS1='%(!.%B%U%F{blue}%n%f%u%b.%F{green}%n%f)@%F{green}%m%f on %F{yellow}%y%f in %F{cyan}%~%f
-{${vcs_info_msg_0_} %(!.%F{red}$(prompt_char)%f.$(prompt_char)) }: %{$reset_color%}'
+{${vcs_info_msg_0_}} %(!.%F{red}$(prompt_char)%f.$(prompt_char)) %{$reset_color%}'
 
 # default prompt's right side
 # show date and time
