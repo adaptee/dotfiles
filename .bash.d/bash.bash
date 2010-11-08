@@ -4,7 +4,6 @@
 #                               Shell prompt                                #
 #---------------------------------------------------------------------------#
 
-
 # color name definitions ,which provide for better readability
 
 # tput provides better portability for these colors definitions.
@@ -109,10 +108,10 @@ esac
 
 
 # PS3 is used when encountering select statement.
-export PS3='Choose one option by number: '
+PS3='Choose one option by number: '
 
 # PS4 will be used when 'set -x' is set, for tracing purpose.
-export PS4='line $LINENO: '
+PS4='line $LINENO: '
 
 
 #---------------------------------------------------------------------------#
@@ -161,21 +160,16 @@ set bell-style none
 # list completion candidate immediately after pressing 'TAB'
 set show-all-if-ambiguous on
 
-# Let me have core dumps
+# enable generating core dump
 ulimit -c unlimited
-
-
-#---------------------------------------------------------------------------#
-#                       Environment Variables                               #
-#---------------------------------------------------------------------------#
 
 #------------------------------history related------------------------------#
 
 # enables both ignorespace and ignoredups
-export HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth
 
 # print the time stamp associated with each history entry
-export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 # Remove size limitation on history file ( .bash_history) ;
 # now your .bash_history won't be truncated any more!
@@ -184,55 +178,20 @@ export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 unset HISTFILESIZE
 
 # the running bash do not need to remember the whole history
-export HISTSIZE=50000
+HISTSIZE=50000
 
 # do not record these commands
-export HISTIGNORE="pwd:l:ls:ll:la:history:rm"
-
-#--------------------------------grep related-------------------------------#
-
-# Ignore binary files
-# recursive by default
-# highlight target keyword in results
-export GREP_OPTIONS="--binary-files=without-match --directories=recurse --color=auto"
-export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
+HISTIGNORE="pwd:l:ls:ll:la:history:rm"
 
 #--------------------------------bash related---------------------------------#
+
 CDPATH=".:..:~:~/audio:~/book:~/code:~/down:~/vbox:/media"
+
 # ignore file with those suffix when performing filename-auto-completion
 FIGNORE='.o:.bak:.tmp:.orig'
 
-#-----------------------------------development-------------------------------#
-
-# for reference:
-# http://udrepper.livejournal.com/11429.html
-# http://www.pixelbeat.org/settings/.bashrc
-# enable the auto init & clear feature of malloc() and free() in glibc
-#export MALLOC_CHECK_=3
-#export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
-
-
-
-#-----------------------------------vim related-------------------------------#
-export EDITOR=$(command which vim 2>/dev/null)
-export FCEDIT=$(command which vim 2>/dev/null)
-export CTAGS='--c-kinds=+x --c++-kinds=+x --fields=+aiSt --extra=+q'
-
 
 #-----------------------------------man & less--------------------------------#
-
-# colorful man page
-
-export PAGER="less"
-export LESS='--ignore-case --squeeze-blank-lines --LONG-PROMPT --RAW-CONTROL-CHARS '
-export BROWSER="$PAGER"
-export LESS_TERMCAP_mb=$'\e[01;31m'
-export LESS_TERMCAP_md=$'\e[01;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;44;32m'
-export LESS_TERMCAP_ue=$'\e[01;34m'
-export LESS_TERMCAP_us=$'\e[01;35m'
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #which lesspipe &>/dev/null && eval "$(lesspipe)"
@@ -240,8 +199,10 @@ export LESS_TERMCAP_us=$'\e[01;35m'
 
 # press 'V' to call-out VIM, even when less is used together with pipeline.
 echo "V pipe $ vim - \n" > "/tmp/lesskey-${USER}"
+
 # press 'S' to search the head of each section in the manpage
 echo "S forw-search \^[A-Z][A-Z\ ]+$\r" >> "/tmp/lesskey-${USER}"
+
 lesskey -o ~/.less "/tmp/lesskey-${USER}"
 
 #---------------------------------------------------------------------------#
@@ -291,10 +252,5 @@ complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 #                               Misc                                        #
 #---------------------------------------------------------------------------#
 
-# allow wtf to use personal acronym database
-export ACRONYMDB=$(echo "$HOME/.acronymdb")
-
 # enable autojump
 Source /etc/profile.d/autojump.bash
-
-
