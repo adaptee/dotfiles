@@ -92,7 +92,10 @@ if which ibam &> /dev/null; then
         PR_BATTERY=""
     fi
 fi
+
+PR_BATTERY=""
 }
+
 
 # If I am using vi keys, I want to know what mode I'm currently using.
 # zle-keymap-select is executed every time KEYMAP changes.

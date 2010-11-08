@@ -147,9 +147,9 @@ setopt prompt_subst
 # Remove right prompt from display when accepting a command line
 #setopt transient_rprompt
 
-
-# add the feature of showing current vi mode: insert? normal?
-Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
+# which prompt to use?
+#Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
+Source $PRIVATE_ZSH_DIR/nice-prompt.zsh
 #Source $PRIVATE_ZSH_DIR/ugly-prompt.zsh
 
 #----------------------------------------------------------------------------------------
@@ -213,10 +213,8 @@ alias -g X0='| xargs -0 '
 #                                           VCS info
 #----------------------------------------------------------------------------------------
 
-# To load vcs_info:
+# load vcs_info:
 autoload -Uz vcs_info
-
-
 
 #----------------------------------------------------------------------------------------
 #                                           Environment
