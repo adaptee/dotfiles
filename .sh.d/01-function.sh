@@ -260,12 +260,7 @@ function psg()
 # canonicalize path (including resolving symlinks)
 function realpath()
 {
-    # first consider accessible commands
-    if which "$1" &> /dev/null ; then
-        readlink -f $(which "$1")
-    else
-        readlink -f "$1"
-    fi
+    readlink -f "$1"
 }
 
 # echo bash variables more easily
@@ -608,7 +603,7 @@ function ranger() {
 # typing " file `which xxx` " is a bit long and annoying
 function flcmd ()
 {
-    if command which $1 &> /dev/null ; then
+    if bin-exist "$1" ; then
         file $(command which "$1")
     fi
 }
@@ -616,7 +611,7 @@ function flcmd ()
 # typing " vi `which xxx` " is a bit long and annoying
 function vicmd ()
 {
-    if command which $1 &> /dev/null ; then
+    if bin-exist "$1" ; then
         vim $(command which "$1")
     fi
 }
@@ -624,7 +619,7 @@ function vicmd ()
 # typing " ls -l `which xxx` " is a bit long and annoying
 function llcmd ()
 {
-    if command which $1 &> /dev/null ; then
+    if bin-exist "$1" ; then
         ls -l $(command which "$1")
     fi
 }
@@ -632,7 +627,7 @@ function llcmd ()
 # typing " ldd `which xxx` " is a bit long and annoying
 function lddcmd ()
 {
-    if command which $1 &> /dev/null ; then
+    if bin-exist "$1" ; then
         ldd $(command which "$1")
     fi
 }
