@@ -25,8 +25,8 @@ setopt always_to_end
 # Lay out the matches in completion lists sorted horizontally
 setopt list_rows_first
 
-# override auto_menu
-setopt menu_complete
+# insert the first candidate immediately when ambigurious
+#setopt menu_complete
 
 #----- Expansion and Globbing ---- #
 
@@ -123,6 +123,23 @@ bindkey -M viins -s '\e`' \`\`\\ei
 bindkey -M viins -s "\e;" \"\"\\ei
 bindkey -M viins -s "\e'" \'\'\\ei
 
+# from linuxtoy: http://linuxtoy.org/archives/zsh_per_dir_hist.html
+# pressing TAB in an empty command makes a cd command with completion list
+dumb-cd(){
+    if [[ -n $BUFFER ]] ; then  # if line is not empty
+        zle expand-or-complete  # perform origial action of TAB
+    else
+        BUFFER="cd "            # insert 'cd'
+        zle end-of-line         # move cursor to end-of-line
+        zle expand-or-complete  # perform origial action of TAB
+    fi
+}
+
+zle -N dumb-cd
+bindkey "\t" dumb-cd
+
+
+
 # use 'Ctrl-k' to insert the last word of previous command
 #bindkey -M viins '^k' insert-last-word
 #bindkey -M vicmd '^k' insert-last-word
@@ -191,6 +208,21 @@ compinit
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
+#----------------------------------------------------------------------------------------
+#                                           Aliases
+#----------------------------------------------------------------------------------------
+
+# zsh's 'type' is not that powerful; whence is the one you need
+alias tp='whence -f'
+alias tpa='whence -fca'
+
+# show whole history
+alias history='history 1'
+
+# stop correction for mv, cp, mkdir
+for i in mkdir mv cp;       alias $i="nocorrect $i"
+
+
 
 #----------------------------------------------------------------------------------------
 #                                           MIME Association
@@ -244,20 +276,13 @@ alias -g X='| xargs '
 alias -g X0='| xargs -0'
 
 #----------------------------------------------------------------------------------------
-#                                           VCS info
-#----------------------------------------------------------------------------------------
-
-# load vcs_info:
-autoload -Uz vcs_info
-
-#----------------------------------------------------------------------------------------
 #                                           Environment
 #----------------------------------------------------------------------------------------
 
-cdpath=(~ ~/code ~/down ~/audio)
+cdpath=( . ~  ~/code )
 
 # less is better than more!
-export READNULLCMD=less
+READNULLCMD=less
 
 # remove duplicataed entry within PATH
 typeset -U PATH
