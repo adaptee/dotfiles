@@ -86,7 +86,8 @@ alias po='popd'
 # show folder hierarchy in tree-view
 # '-h' : list size in human-friendly way,
 # '-A: : apply nice ASCII line graph.
-alias tree='tree -h -A -N '
+# '--dirsfirst :  list dir before  file
+alias tree='tree -h -A -N --dirsfirst'
 # only list folder.
 alias treed='tree -d'
 
@@ -213,6 +214,7 @@ alias mtr='mtr -t'
 alias nets='netstat -anp'
 alias netst='netstat -anpt'     # only show tcp ports
 alias netsu='netstat -anpu'     # only show udp ports
+
 alias listening='netstat -tlnp' # list all listening ports;root previlige would be better
 alias listening='ss -l -p'      # list all listening ports and corrsponding process
 
@@ -238,13 +240,21 @@ alias proxy='python ~/bin/gae/localproxy/proxy.py'
 #---------------------------------------------------------------------------#
 #                                 Grep quickly                              #
 #---------------------------------------------------------------------------#
-alias g='grep'
-alias gi='grep -i'
-alias gl='grep -l'
-alias gn='grep -n'
-alias gr='grep -r'
-alias gv='grep -v'
 
+alias egrep='egrep -I --color=auto'
+
+# '-I' means returning no match for any binary file
+alias g='grep -I --color-auto'
+
+alias gi='g -i'
+alias gl='g -l'
+alias gn='g -n'
+alias gr='g -r'
+alias gv='g -v'
+
+#---------------------------------------------------------------------------#
+#                                   Others                                  #
+#---------------------------------------------------------------------------#
 
 alias a='alias'
 alias c='cl'
@@ -284,6 +294,8 @@ alias x0='xargs -0'
 # [2] only consider normal file
 alias f='find . -mount -type f'
 
+# make vim-fans feel at home when using viewing info pages
+alias info='info --vi-keys'
 
 #---------------------------------------------------------------------------#
 #                                  misc alias                               #
@@ -372,6 +384,9 @@ alias mime='file -i'
 
 # case-insensitve by default
 alias locate='locate -i'
+
+# show 3 months's calendar
+alias cal='cal -3m'
 
 #---------------------------------------------------------------------------#
 #                                   git alias                               #

@@ -665,3 +665,18 @@ function flacinfo()
     metaflac --list "$1"
 }
 
+# minimal calculator
+function calc()
+{
+    awk "BEGIN{ print $* }"
+}
+
+# date for different areas
+function dates
+{
+    for i in US/Eastern Asia/Shanghai Europe/London; do
+        printf %-22s "$i:";TZ=$i date +"%m-%d %a %H:%M"
+    done
+}
+
+
