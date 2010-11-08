@@ -16,21 +16,25 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn hg bzr
 
 precmd () {
-        if [[ -z $(git ls-files --modified --exclude-standard 2> /dev/null) ]] {
-                zstyle ':vcs_info:*' formats '%F{cyan}[%b]%f'
+        #if [[ -z $(git ls-files --modified --exclude-standard 2> /dev/null) ]] {
+        if [[ -z $(git status -s 2> /dev/null) ]] {
+                #true
+                zstyle ':vcs_info:*' formats '%F{cyan}[%s][%b]%f'
         } else {
+                #true
                 # red means 'unstaged modifications'
-                zstyle ':vcs_info:*' formats '%F{cyan}[%b]%F{red}●%f'
+                zstyle ':vcs_info:*' formats '%F{cyan}[%s][%b]%F{red}●%f'
         }
 
         vcs_info
 }
 
 # which VCS is used ?
+# who are you?
 function prompt_char {
-	git branch >/dev/null 2>/dev/null && echo '±' && return
-	hg root >/dev/null 2>/dev/null && echo '☿' && return
-	svn info >/dev/null 2>/dev/null && echo '⚡' && return
+	#git branch >/dev/null 2>/dev/null && echo '±' && return
+	#hg root >/dev/null 2>/dev/null && echo '☿' && return
+	#svn info >/dev/null 2>/dev/null && echo '⚡' && return
 
         # return '%' for normal user, # for root
 	echo '%#'
