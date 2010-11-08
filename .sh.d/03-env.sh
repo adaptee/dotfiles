@@ -40,7 +40,8 @@ export CTAGS='--c-kinds=+x --c++-kinds=+x --fields=+aiSt --extra=+q'
 # allow wtf to use personal acronym database
 export ACRONYMDB=$(echo "$HOME/.acronymdb")
 
-
+# make the prompt of sudo provide more info
+export SUDO_PROMPT=$'[\e[31;5msudo\e[m] password for \e[33;1m%p\e[m: '
 
 
 
