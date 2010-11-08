@@ -1,9 +1,9 @@
 #!/bin/sh
 
+# I am a Vimmer, so use vim anywhere !
 export EDITOR=$(command which vim 2>/dev/null)
 export VISUAL=$EDITOR
 export FCEDIT=$EDITOR
-
 
 export PAGER="less"
 export BROWSER="$PAGER"
@@ -18,9 +18,7 @@ export LESS_TERMCAP_so=$'\e[01;44;32m'
 export LESS_TERMCAP_ue=$'\e[01;34m'
 export LESS_TERMCAP_us=$'\e[01;35m'
 
-# Ignore binary files
-# recursive by default
-# highlight found target in results
+# Ignore binary files; recursive by default ; highlight found target in results
 export GREP_OPTIONS="--binary-files=without-match --directories=recurse --color=auto"
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 
