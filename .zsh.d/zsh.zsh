@@ -95,7 +95,7 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 # move the head/tail more quickly
 #bindkey -M vicmd H  vi-beginning-of-line
 bindkey -M vicmd H  vi-first-non-blank
-bindkey -M vicmd L  vi-beginning-of-line
+bindkey -M vicmd L  vi-end-of-line
 
 # comment/uncomment quickly
 bindkey -M viins '\e3' vi-pound-insert
@@ -139,6 +139,48 @@ zle -N dumb-cd
 bindkey "\t" dumb-cd
 
 
+# bind 'Alt-e' to invoke external editor to edit cmdline
+autoload -U edit-command-line
+zle -N      edit-command-line
+bindkey -M viins '\ee' edit-command-line
+bindkey -M vicmd '\ee' edit-command-line
+
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+autoload -U zkbd
+
+#define an array
+typeset -A key
+
+#if zkbd definition exists, use defined keys instead
+if [[ -f ~/.zkbd/${TERM}-${DISPLAY:-$VENDOR-$OSTYPE} ]]; then
+    source ~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
+else
+    key[Home]=${terminfo[khome]}
+    key[End]=${terminfo[kend]}
+    key[Insert]=${terminfo[kich1]}
+    key[Delete]=${terminfo[kdch1]}
+    key[Up]=${terminfo[kcuu1]}
+    key[Down]=${terminfo[kcud1]}
+    key[Left]=${terminfo[kcub1]}
+    key[Right]=${terminfo[kcuf1]}
+    key[PageUp]=${terminfo[kpp]}
+    key[PageDown]=${terminfo[knp]}
+    for k in ${(k)key} ; do
+        # $terminfo[] entries are weird in ncurses application mode...
+        [[ ${key[$k]} == $'\eO'* ]] && key[$k]=${key[$k]/O/[}
+    done
+fi
+
+# setup key accordingly
+[[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
+[[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
+[[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
+[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      up-line-or-history
+[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
+[[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
+[[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
 # use 'Ctrl-k' to insert the last word of previous command
 #bindkey -M viins '^k' insert-last-word
@@ -279,10 +321,20 @@ alias -g X0='| xargs -0'
 #                                           Environment
 #----------------------------------------------------------------------------------------
 
+# remove duplicataed entry within PATH
+typeset -U PATH
+
 cdpath=( . ~  ~/code )
 
 # less is better than more!
 READNULLCMD=less
 
-# remove duplicataed entry within PATH
-typeset -U PATH
+# remove / and . from default WORDCHARS
+WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
+
+# highlight chars or regions of the cmdline that have a particular  significance.
+zle_highlight=( region:bg=magenta
+                special:bold,fg=magenta
+                default:bold
+                isearch:underline
+              )
