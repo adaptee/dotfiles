@@ -324,7 +324,8 @@ alias -g X0='| xargs -0'
 # remove duplicataed entry within PATH
 typeset -U PATH
 
-cdpath=( . ~  ~/code )
+# similar to CDPATH in bash
+#cdpath=(  ~/code )
 
 # less is better than more!
 READNULLCMD=less
