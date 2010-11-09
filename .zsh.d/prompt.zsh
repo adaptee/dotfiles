@@ -3,22 +3,24 @@
 # Enables additional prompt extentions
 setopt prompt_subst
 
+# get info about VCS (e.g. Git, Subversion, Mercurial
+autoload -Uz vcs_info
+
 # Enables colours
 autoload -U colors && colors
 autoload -U zsh/terminfo
 
-# get info about VCS (e.g. Git, Subversion, Mercurial
-autoload -Uz vcs_info
-
 # wrapper colors %{...%}.
-PR_NOCOLOR="%{$reset_color%}"
+NOCOLOR="%{$reset_color%}"
 for COLOR in RED GREEN YELLOW BLUE CYAN MAGENTA WHITE BLACK; do
 
     #eval PR_$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
-    #eval PR_BD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+    #eval FG_BD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
 
-    eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
-    eval PR_BD_$COLOR='%{$terminfo[bold]$fg[${(L)COLOR}]%}'
+    eval FG_$COLOR='%{$fg[${(L)COLOR}]%}'
+    eval BG_$COLOR='%{$bg[${(L)COLOR}]%}'
+    eval FG_BD_$COLOR='%{$terminfo[bold]$fg[${(L)COLOR}]%}'
+    eval BG_BD_$COLOR='%{$terminfo[bold]$bg[${(L)COLOR}]%}'
 
 done
 
@@ -40,16 +42,16 @@ function precmd () {
         # this has to be done ahead of any other tasg.
         local code=$?
         if [[ $code != 0 ]]; then
-            PR_EXITCODE=${PR_BD_RED}\[$code\]${PR_NOCOLOR}
+            PR_EXITCODE=${FG_BD_RED}\[$code\]${NOCOLOR}
         else
             PR_EXITCODE=""
         fi
 
         if [[ -z $(git status -s 2> /dev/null) ]] {
-                zstyle ':vcs_info:*' formats "${PR_CYAN}%s|%b ${PR_NOCOLOR}"
+                zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${NOCOLOR}"
         } else {
                 # red indicates 'modifications'
-                zstyle ':vcs_info:*' formats "${PR_CYAN}%s|%b ${PR_BD_RED}●${PR_NOCOLOR}"
+                zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${FG_BD_RED}●${NOCOLOR}"
         }
 
         # after executing one command, zle is alawys in insert mode, isn't it?
@@ -65,26 +67,26 @@ function setupprompt() {
     PR_SYMBOL="unknown"
     if [[ $USENAME == "root" ]] ; then
         # highlight by red for root.
-        PR_USERNAME=${PR_BD_RED}%n${PR_NOCOLOR}
-        PR_SYMBOL=${PR_BD_RED}'#'${PR_NOCOLOR}
+        PR_USERNAME=${FG_BD_RED}%n${NOCOLOR}
+        PR_SYMBOL=${FG_BD_RED}'#'${NOCOLOR}
     else
-        PR_USERNAME=${PR_BD_GREEN}%n${PR_NOCOLOR}
-        PR_SYMBOL=${PR_BD_GREEN}'$'${PR_NOCOLOR}
+        PR_USERNAME=${FG_BD_GREEN}%n${NOCOLOR}
+        PR_SYMBOL=${FG_BD_GREEN}'$'${NOCOLOR}
     fi
 
     PR_HOSTNAME="unknown"
     if [ -n "$SSH_TTY" ]; then
         # highlight by red for ssh session.
-        PR_HOSTNAME=${PR_BD_RED}%m${PR_NOCOLOR}
+        PR_HOSTNAME=${FG_BD_RED}%m${NOCOLOR}
     else
-        PR_HOSTNAME=${PR_BD_GREEN}%m${PR_NOCOLOR}
+        PR_HOSTNAME=${FG_BD_GREEN}%m${NOCOLOR}
     fi
 
     PR_TTY="unknown"
-    PR_TTY=${PR_YELLOW}%y${PR_NOCOLOR}
+    PR_TTY=${FG_YELLOW}%y${NOCOLOR}
 
     PR_PWD="unknown"
-    PR_PWD=${PR_BD_CYAN}%~${PR_NOCOLOR}
+    PR_PWD=${FG_BD_CYAN}%~${NOCOLOR}
 
     # default prompt
     PS1='${PR_USERNAME}@${PR_HOSTNAME} on ${PR_TTY} in ${PR_PWD} ${ZLEVIMODE}
@@ -93,7 +95,7 @@ function setupprompt() {
     # default prompt's right side
     # show date and time
     # [format] hh:mm year-month-day weekday
-    RPS1='${PR_CYAN}%D{%H:%M %Y-%m-%d %a}${PR_NOCOLOR}'
+    RPS1='${FG_CYAN}%D{%H:%M %Y-%m-%d %a}${NOCOLOR}'
 
     # prompt for complex flow control, such as if, for and while.
     # '%_' will be replace with the parser's current state by zsh
