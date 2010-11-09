@@ -26,7 +26,7 @@ function which ()
 {
     (alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
 }
-export -f which
+#export which
 
 # only consider binary existing in the FS; no funtions nor aliases
 function bin-exist()
