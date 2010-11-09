@@ -24,6 +24,7 @@ for COLOR in RED GREEN YELLOW BLUE CYAN MAGENTA WHITE BLACK; do
 
 done
 
+
 # only intrested with these VCSs
 zstyle ':vcs_info:*' enable git hg bzr
 

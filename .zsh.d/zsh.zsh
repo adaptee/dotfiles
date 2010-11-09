@@ -354,6 +354,9 @@ READNULLCMD=less
 # remove / and . from default WORDCHARS
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 
+# colorize the prompt when asking correction
+SPROMPT="${FG_YELLOW}zsh${NOCOLOR}: correct '${FG_BD_RED}%R${NOCOLOR}' to '${FG_BD_GREEN}%r${NOCOLOR}' ? ([${FG_CYAN}Y${NOCOLOR}]es/[${FG_CYAN}N${NOCOLOR}]o/[${FG_CYAN}E${NOCOLOR}]dit/[${FG_CYAN}A${NOCOLOR}]bort) "
+
 # highlight chars or regions of the cmdline that have a particular  significance.
 zle_highlight=( region:bg=magenta
                 special:bold,fg=magenta
