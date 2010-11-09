@@ -111,7 +111,7 @@ PR_PWD=${PR_BD_CYAN}%~${PR_NOCOLOR}
 #{${vcs_info_msg_0_}} %(!.%F{red}$(prompt_char)%f.$(prompt_char)) %{$reset_color%}'
 
 PS1='%(!.%B%U%F{blue}%n%f%u%b.%F{green}%n%f)@${PR_HOSTNAME} on ${PR_TTY} in ${PR_PWD}
-{${vcs_info_msg_0_}} %(!.%F{red}$(prompt_char)%f.$(prompt_char)) %{$reset_color%}'
+{${vcs_info_msg_0_}} ${PR_SYMBOL} '
 
 # default prompt's right side
 # show date and time
