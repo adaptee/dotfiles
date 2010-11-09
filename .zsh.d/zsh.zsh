@@ -247,10 +247,8 @@ setopt prompt_subst
 # Remove right prompt from display when accepting a command line
 #setopt transient_rprompt
 
-# which prompt to use?
-#Source $PRIVATE_ZSH_DIR/prompt-current-vi-mode.zsh
-Source $PRIVATE_ZSH_DIR/nice-prompt.zsh
-#Source $PRIVATE_ZSH_DIR/ugly-prompt.zsh
+# setup my prompt
+Source $PRIVATE_ZSH_DIR/prompt.zsh
 
 #----------------------------------------------------------------------------------------
 #                                           Completion
