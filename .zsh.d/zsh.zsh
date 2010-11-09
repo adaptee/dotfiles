@@ -55,13 +55,17 @@ setopt correct_all
 # allow input comments in interactive shell
 setopt interactive_comments
 
-#show the exit code when a command  fails
+# show the exit code when a command  fails
 setopt print_exit_value
 
 #setopt rm_star_silent
 
 
 # ----- Job control
+# Report the status of background and suspended jobs before exiting a shell
+# a second  attempt to  exit  the shell will succeed.
+setopt check_jobs
+
 
 # Run all background jobs at a lower priority
 setopt bg_nice
@@ -382,7 +386,7 @@ for i in jpg jpeg png svg;                  alias -s $i=gwenview
 for i in mp3 wma ogg flac ape tta wv wav;   alias -s $i=deadbeef
 for i in avi rmvb wmv mkv mp4;              alias -s $i=mplayer
 for i in rar zip gz 7z xz lzma;             alias -s $i=unp
-for i in txt list cue conf sh zsh bash log; alias -s $i=vim
+for i in txt list cue conf log;             alias -s $i=vim
 
 
 #----------------------------------------------------------------------------------------
