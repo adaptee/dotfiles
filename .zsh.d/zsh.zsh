@@ -92,6 +92,11 @@ bindkey -v
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
 
+# kill previous word
+bindkey -M viins '^w' vi-backward-kill-word
+# kill till EOL
+bindkey -M viins '^k' vi-kill-eol
+
 # move the head/tail more quickly
 #bindkey -M vicmd H  vi-beginning-of-line
 bindkey -M vicmd H  vi-first-non-blank
@@ -144,6 +149,15 @@ autoload -U edit-command-line
 zle -N      edit-command-line
 bindkey -M viins '\ee' edit-command-line
 bindkey -M vicmd '\ee' edit-command-line
+
+# Functions to make it easier to type URLs as command line arguments.  As
+# you type, the input character is analyzed and, if it may need quoting,
+# the current word is checked for a URI scheme.  If one is found and the
+# current word is not already in quotes, a backslash is inserted before
+# the input character.
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -264,7 +278,16 @@ alias history='history 1'
 # stop correction for mv, cp, mkdir
 for i in mkdir mv cp;       alias $i="nocorrect $i"
 
-
+# switch folder quickly
+alias 1='cd -'
+alias 2='cd +2'
+alias 3='cd +3'
+alias 4='cd +4'
+alias 5='cd +5'
+alias 6='cd +6'
+alias 7='cd +7'
+alias 8='cd +8'
+alias 9='cd +9'
 
 #----------------------------------------------------------------------------------------
 #                                           MIME Association
