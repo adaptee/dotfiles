@@ -294,7 +294,7 @@ compinit
 # general option( I do not know what they do, yet)
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
-zstyle ':completion:*:*:default' force-list always
+#zstyle ':completion:*:*:default' force-list always
 zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
 
 # cache the result of completion
@@ -334,7 +334,7 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # killing is so sexy and easy now!
 zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:*:*:*:processes' force-list always
+#zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=1;31"
 
