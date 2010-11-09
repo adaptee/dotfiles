@@ -5,15 +5,21 @@ setopt prompt_subst
 
 # Enables colours
 autoload -U colors && colors
+autoload -U zsh/terminfo
 
 # get info about VCS (e.g. Git, Subversion, Mercurial
 autoload -Uz vcs_info
 
 # wrapper colors %{...%}.
 PR_NOCOLOR="%{$reset_color%}"
-for COLOR in RED GREEN YELLOW BLUE CYAN WHITE BLACK; do
-    eval PR_$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
-    eval PR_BD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+for COLOR in RED GREEN YELLOW BLUE CYAN MAGENTA WHITE BLACK; do
+
+    #eval PR_$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
+    #eval PR_BD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+
+    eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
+    eval PR_BD_$COLOR='%{$terminfo[bold]$fg[${(L)COLOR}]%}'
+
 done
 
 # only intrested with these VCSs
