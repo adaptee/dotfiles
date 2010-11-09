@@ -196,6 +196,43 @@ fi
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
+
+# colorize command as blue if found in path or defined.
+# stolen from git://github.com/roylez/dotfiles.git
+TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'do' 'time' 'strace')
+
+recolor-cmd() {
+    region_highlight=()
+    colorize=true
+    start_pos=0
+    for arg in ${(z)BUFFER}; do
+        ((start_pos+=${#BUFFER[$start_pos+1,-1]}-${#${BUFFER[$start_pos+1,-1]## #}}))
+        ((end_pos=$start_pos+${#arg}))
+        if $colorize; then
+            colorize=false
+            res=$(LC_ALL=C builtin type $arg 2>/dev/null)
+            case $res in
+                *'reserved word'*)   style="fg=magenta,bold";;
+                *'alias for'*)       style="fg=cyan,bold";;
+                *'shell builtin'*)   style="fg=yellow,bold";;
+                *'shell function'*)  style='fg=green,bold';;
+                *"$arg is"*)
+                    [[ $arg = 'sudo' ]] && style="fg=red,bold" || style="fg=blue,bold";;
+                *)                   style='none,bold';;
+            esac
+            region_highlight+=("$start_pos $end_pos $style")
+        fi
+        [[ ${${TOKENS_FOLLOWED_BY_COMMANDS[(r)${arg//|/\|}]}:+yes} = 'yes' ]] && colorize=true
+        start_pos=$end_pos
+    done
+}
+
+check-cmd-self-insert() { zle .self-insert && recolor-cmd }
+check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
+
+zle -N self-insert check-cmd-self-insert
+zle -N backward-delete-char check-cmd-backward-delete-char
+
 # use 'Ctrl-k' to insert the last word of previous command
 #bindkey -M viins '^k' insert-last-word
 #bindkey -M vicmd '^k' insert-last-word
@@ -203,10 +240,6 @@ fi
 # complete history command by matching current head
 #bindkey -M viins '^j' history-beginning-search-backward
 #bindkey -M vicmd '^j' history-beginning-search-backward
-
-# use emacs-mode keybindings
-#bindkey -e
-
 
 #----------------------------------------------------------------------------------------
 #                                       History
@@ -258,9 +291,52 @@ Source $PRIVATE_ZSH_DIR/prompt.zsh
 autoload -U compinit
 compinit
 
+# general option( I do not know what they do, yet)
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:default' force-list always
+zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
+
 # cache the result of completion
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# tune path completion
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-shlashes 'yes'
+zstyle ':completion::complete:*' '\\'
+
+# make completion menu colorful
+zmodload zsh/complist
+eval $(dircolors -b)
+export ZLSCOLORS="${LS_COLORS}"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# in completion menu, show catetory info about candicates
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:descriptions' format $'\e[01;33m -- %d --\e[0m'
+zstyle ':completion:*:messages' format $'\e[01;35m -- %d --\e[0m'
+zstyle ':completion:*:warnings' format $'\e[01;31m -- No Matches Found --\e[0m'
+zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m'
+
+## case-insensitive (uppercase from lowercase) completion
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+## case-insensitive (all) completion
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# correct typo
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+# killing is so sexy and easy now!
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=1;31"
 
 #----------------------------------------------------------------------------------------
 #                                           Aliases
@@ -354,7 +430,7 @@ READNULLCMD=less
 # remove / and . from default WORDCHARS
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 
-# colorize the prompt when asking correction
+# colorize the spelling prompt
 SPROMPT="${FG_YELLOW}zsh${NOCOLOR}: correct '${FG_BD_RED}%R${NOCOLOR}' to '${FG_BD_GREEN}%r${NOCOLOR}' ? ([${FG_CYAN}Y${NOCOLOR}]es/[${FG_CYAN}N${NOCOLOR}]o/[${FG_CYAN}E${NOCOLOR}]dit/[${FG_CYAN}A${NOCOLOR}]bort) "
 
 # highlight chars or regions of the cmdline that have a particular  significance.
@@ -363,3 +439,16 @@ zle_highlight=( region:bg=magenta
                 default:bold
                 isearch:underline
               )
+
+
+#show 256 color tab
+# stolen from git://github.com/roylez/dotfiles.git
+256tab() {
+    for k in `seq 0 1`;do
+        for j in `seq $((16+k*18)) 36 $((196+k*18))`;do
+            for i in `seq $j $((j+17))`; do
+                printf "\e[01;$1;38;5;%sm%4s" $i $i;
+            done;echo;
+        done;
+    done
+}

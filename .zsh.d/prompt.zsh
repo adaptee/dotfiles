@@ -59,6 +59,8 @@ function precmd () {
         ZLEVIMODE=''
 
         vcs_info
+
+        zshjobs="%1(j,$pfg_red:$pfg_blue%j,)$pR"
 }
 
 
@@ -91,7 +93,7 @@ function setupprompt() {
 
     # default prompt
     PS1='${PR_USERNAME}@${PR_HOSTNAME} on ${PR_TTY} in ${PR_PWD} ${ZLEVIMODE}
-{${vcs_info_msg_0_}} ${PR_EXITCODE} ${PR_SYMBOL} '
+{${vcs_info_msg_0_}} ${PR_EXITCODE} ${PR_SYMBOL} $zshjobs'
 
     # default prompt's right side
     # show date and time
@@ -100,10 +102,10 @@ function setupprompt() {
 
     # prompt for complex flow control, such as if, for and while.
     # '%_' will be replace with the parser's current state by zsh
-    PS2='{%_} '
+    PS2='${FG_CYAN}{%_}${NOCOLOR} ${FG_BD_GREEN}>>>${NOCOLOR}'
 
     #prompt for 'select' statement
-    PS3='{ ... } '
+    PS3='${FG_CYAN}{...}${NOCOLOR} ${FG_BD_GREEN}>>>${NOCOLOR}'
 
     # So far I don't use "setopt xtrace", so I don't need this prompt
     # prompt for 'xtrace' option
