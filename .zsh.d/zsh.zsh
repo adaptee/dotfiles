@@ -279,13 +279,13 @@ zsh-mime-setup
 
 
 # open .avi and .mkv with mplayer
-alias -s flac=deadbeef
 alias -s txt=vim
 
 for i in jpg jpeg png svg;                  alias -s $i=gwenview
 for i in mp3 wma ogg flac ape tta wv wav;   alias -s $i=deadbeef
 for i in avi rmvb wmv mkv mp4;              alias -s $i=mplayer
-for i in rar zip gz 7z xz lzma;                alias -s $i=unp
+for i in rar zip gz 7z xz lzma;             alias -s $i=unp
+for i in txt list cue conf sh zsh bash log; alias -s $i=vim
 
 
 #----------------------------------------------------------------------------------------
