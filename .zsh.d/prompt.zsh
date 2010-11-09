@@ -59,8 +59,6 @@ function precmd () {
         ZLEVIMODE=''
 
         vcs_info
-
-        zshjobs="%1(j,$pfg_red:$pfg_blue%j,)$pR"
 }
 
 
@@ -93,7 +91,7 @@ function setupprompt() {
 
     # default prompt
     PS1='${PR_USERNAME}@${PR_HOSTNAME} on ${PR_TTY} in ${PR_PWD} ${ZLEVIMODE}
-{${vcs_info_msg_0_}} ${PR_EXITCODE} ${PR_SYMBOL} $zshjobs'
+{${vcs_info_msg_0_}} ${PR_EXITCODE} ${PR_SYMBOL} '
 
     # default prompt's right side
     # show date and time
