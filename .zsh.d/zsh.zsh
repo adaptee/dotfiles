@@ -170,7 +170,7 @@ zle -N self-insert url-quote-magic
 
 
 ## set command prediction from history, see 'man 1 zshcontrib'
-is4 && zrcautoload predict-on && \
+autoload  zle/predict-on && \
 zle -N predict-on         && \
 zle -N predict-off        && \
 bindkey "^X^o" predict-on && \
