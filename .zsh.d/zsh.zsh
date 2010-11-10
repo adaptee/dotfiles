@@ -7,16 +7,18 @@
 
 # Make cd push the old directory onto the directory stack.
 setopt auto_pushd
+setopt pushd_ignore_dups
+# Have pushd with no arguments act like `pushd $HOME'.
+setopt pushd_to_home
 
 setopt auto_cd
 
 setopt cdable_vars
 
-# Have pushd with no arguments act like `pushd $HOME'.
-setopt pushd_to_home
+# expand path acronyms
+# cd /v/c/p/p<TAB>  => /var/cache/pacman/pkg
+setopt complete_in_word
 
-# setopt auto_pushd
-setopt pushd_ignore_dups
 
 #----- Completion ----- #
 
@@ -309,6 +311,13 @@ zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh.d/cache
 
+## use vi navigation keys (hjkl) in menu completion
+bindkey -M menuselect 'h' vi-backward-char        # left
+bindkey -M menuselect 'k' vi-up-line-or-history   # up
+bindkey -M menuselect 'l' vi-forward-char         # right
+bindkey -M menuselect 'j' vi-down-line-or-history # bottom
+
+
 # tune path completion
 zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-shlashes 'yes'
@@ -345,6 +354,22 @@ zstyle ':completion:*:*:kill:*' menu yes select
 #zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=1;31"
+
+
+# completion for ssh, scp, etc
+my_accounts=(
+whodare@192.168.1.37
+adaptee@gmail.com
+)
+zstyle ':completion:*:my-accounts' users-hosts $my_accounts
+
+# force rehash when command not found
+# http://zshwiki.org/home/examples/compsys/general
+_force_rehash() {
+    (( CURRENT == 1 )) && rehash
+    return 1    # Because we did not really complete anything
+}
+zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match #_user_expand
 
 #----------------------------------------------------------------------------------------
 #                                           Aliases
