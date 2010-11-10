@@ -85,15 +85,16 @@ setopt c_bases
 setopt c_precedences
 
 setopt no_beep
+
 setopt multios
 
 #----------------------------------------------------------------------------------------
 #                                       Keybindings
 #----------------------------------------------------------------------------------------
 
-# shorten the default keyboard timeout from 0.4s to 0.1s
+# shorten the default keyboard timeout
 # unit: 1/100 s
-KEYTIMEOUT=10
+KEYTIMEOUT=20
 
 # use vi-mode keybindings
 bindkey -v
@@ -249,6 +250,17 @@ check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
 zle -N self-insert check-cmd-self-insert
 zle -N backward-delete-char check-cmd-backward-delete-char
 
+# insert 'sudo' at the front of command-line
+function sudo-command-line()
+{
+    [[ -z $BUFFER ]] && zle up-history
+    [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
+    zle end-of-line # move cursor to the end
+    #zle vi-end-of-line
+}
+zle -N sudo-command-line
+bindkey "\es" sudo-command-line
+
 # use 'Ctrl-k' to insert the last word of previous command
 #bindkey -M viins '^k' insert-last-word
 #bindkey -M vicmd '^k' insert-last-word
@@ -363,6 +375,8 @@ zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=1;31"
 
+# completion for ping
+zstyle ':completion:*:ping:*' hosts douban.com 192.168.1.{1,2,3,10,14}
 
 # completion for ssh, scp, etc
 my_accounts=(
@@ -387,7 +401,8 @@ zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match
 alias tp='whence -f'
 alias tpa='whence -fca'
 
-
+# what commands do you use most often?
+alias topcmd='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 20'
 
 # stop correction for mv, cp, mkdir
 for i in mkdir mv cp;       alias $i="nocorrect $i"
@@ -501,3 +516,8 @@ function history ()
     fc -l -i 1
 }
 
+# Switching shell safely and efficiently?
+# http://www.zsh.org/mla/workers/2001/msg02410.html
+bash() {
+   NO_SWITCH="yes" command bash "$@"
+}
