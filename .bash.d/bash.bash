@@ -118,9 +118,6 @@ PS4='line $LINENO: '
 #                               Bash options                                #
 #---------------------------------------------------------------------------#
 
-# ask terminal not to show  the annoying '^C' after pressing <Ctrl-C>
-stty -ctlecho
-
 # check window size after each command and update LINES & COLUMNS if necessary
 shopt -s checkwinsize
 
@@ -160,8 +157,6 @@ set bell-style none
 # list completion candidate immediately after pressing 'TAB'
 set show-all-if-ambiguous on
 
-# enable generating core dump
-ulimit -c unlimited
 
 #------------------------------history related------------------------------#
 

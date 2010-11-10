@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# allow generating core dump
+ulimit -c unlimited
+
+# ask terminal not to show  the annoying '^C' after pressing <Ctrl-C>
+stty -ctlecho
+
 # I am a Vimmer, so use vim anywhere !
 export EDITOR=$(command which vim 2>/dev/null)
 export VISUAL=$EDITOR
