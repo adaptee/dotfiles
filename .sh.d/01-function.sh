@@ -212,7 +212,7 @@ function mpf()
     # FIXME:
     #if scale is set to 1024:768(the ideal size), some pixels will remain on the screen side
     # after mplayer exit.
-    mplayer -vo fbdev2 -fs -x 1024 -y 768 -vf scale=1024:768 -really-quiet "${file}" >& /dev/null &
+    mplayer -vo fbdev2 -fs -x 1024 -y 768 -vf scale=1024:768 -really-quiet "${file}" 2>&1 >/dev/null &
 
     # this is very important ;
     # clear the screen will make the display not interfered by console output
@@ -478,8 +478,7 @@ function clearmail ()
 # usage: share folder-path
 function share()
 {
-    builtin cd "${@:-$PWD}"
-    python -m SimpleHTTPServer &
+    cd "${@:-$PWD}" && python -m SimpleHTTPServer &
 }
 
 # get blacklist from authority and generator the commands
