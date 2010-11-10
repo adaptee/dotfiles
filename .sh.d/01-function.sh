@@ -157,7 +157,7 @@ function bak()
 function cl() { cd "${@:-$HOME}" && ls; }
 
 # insert thousand separator into number, for better readability
-# usage: commify NUMBER
+# usage: commify 123456789
 function commify ()
 {
     typeset text=${1}
@@ -166,11 +166,11 @@ function commify ()
     typeset adot=${text#${bdot}}
 
     typeset i commified
-    (( i = ${#bdot} - 1 ))
+    i=$(( ${#bdot} - 1 ))
 
     while (( i>=3 )) && [[ ${bdot:i-3:1} == [0-9] ]]; do
         commified=",${bdot:i-2:3}${commified}"
-        (( i -= 3 ))
+        i=$(( $i - 3 ))
     done
 
     echo "${bdot:0:i+1}${commified}${adot}"
