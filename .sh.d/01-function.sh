@@ -154,7 +154,7 @@ function bak()
 
 # often the next command after 'cd' is 'ls', so why not combine into one?
 # usage: cl PATH
-function cl() { builtin cd "${@:-$HOME}" && ls; }
+function cl() { cd "${@:-$HOME}" && ls; }
 
 # insert thousand separator into number, for better readability
 # usage: commify NUMBER
