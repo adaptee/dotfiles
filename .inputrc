@@ -59,6 +59,10 @@
 # insert the last argument of previous command
 "\ek": yank-last-arg
 
+# kill word delimited by space;
+# as a compliment to 'C-w', useful for delete one part of path
+"\ew": backward-kill-word
+
 # insert a pair of quotes
 "\e\"": "\"\"\C-b"
 "\e'": "''\C-b"
