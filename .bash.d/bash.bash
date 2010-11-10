@@ -247,5 +247,13 @@ complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 #                               Misc                                        #
 #---------------------------------------------------------------------------#
 
+# list most used commands
+# [NOTE] $HISTTIMEFORMAT is bash-specific
+function topcmd ()
+{
+    history | awk '{a[$'`echo "1 2 $HISTTIMEFORMAT" | wc -w`']++}END{for(i in a){print a[i] "\t" i}}' | sort -rn | head -20;
+
+}
+
 # enable autojump
 Source /etc/profile.d/autojump.bash
