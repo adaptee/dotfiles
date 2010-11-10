@@ -58,7 +58,8 @@ setopt interactive_comments
 # show the exit code when a command  fails
 setopt print_exit_value
 
-#setopt rm_star_silent
+# no not ask for confirm before executing 'rm *'
+setopt rm_star_silent
 
 
 # ----- Job control
