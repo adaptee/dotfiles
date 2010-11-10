@@ -432,7 +432,9 @@ typeset -U PATH
 READNULLCMD=less
 
 # remove / and . from default WORDCHARS
-WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
+WORDCHARS="${WORDCHARS:s#/#}"
+WORDCHARS="${WORDCHARS:s#.#}"
+#WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 
 # colorize the spelling prompt
 SPROMPT="${FG_YELLOW}zsh${NOCOLOR}: correct '${FG_BD_RED}%R${NOCOLOR}' to '${FG_BD_GREEN}%r${NOCOLOR}' ? ([${FG_CYAN}Y${NOCOLOR}]es/[${FG_CYAN}N${NOCOLOR}]o/[${FG_CYAN}E${NOCOLOR}]dit/[${FG_CYAN}A${NOCOLOR}]bort) "
