@@ -307,7 +307,7 @@ zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
 
 # cache the result of completion
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path ~/.zsh.d/cache
 
 # tune path completion
 zstyle ':completion:*' expand 'yes'
