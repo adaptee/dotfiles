@@ -89,6 +89,9 @@ setopt multios
 #                                       Keybindings
 #----------------------------------------------------------------------------------------
 
+# shorten the default keyboard timeout from 0.4s to 0.1s
+# unit: 1/100 s
+KEYTIMEOUT=10
 
 # use vi-mode keybindings
 bindkey -v
