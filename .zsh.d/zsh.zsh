@@ -301,6 +301,8 @@ Source $PRIVATE_ZSH_DIR/prompt.zsh
 autoload -U compinit
 compinit
 
+zmodload zsh/complist
+
 # general option( I do not know what they do, yet)
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
@@ -324,7 +326,6 @@ zstyle ':completion:*' squeeze-shlashes 'yes'
 zstyle ':completion::complete:*' '\\'
 
 # make completion menu colorful
-zmodload zsh/complist
 eval $(dircolors -b)
 export ZLSCOLORS="${LS_COLORS}"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
