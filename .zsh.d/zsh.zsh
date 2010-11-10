@@ -169,11 +169,17 @@ autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
 
+## set command prediction from history, see 'man 1 zshcontrib'
+is4 && zrcautoload predict-on && \
+zle -N predict-on         && \
+zle -N predict-off        && \
+bindkey "^X^o" predict-on && \
+bindkey "^X^f" predict-off
+
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 autoload -U zkbd
-
-#define an array
 typeset -A key
 
 #if zkbd definition exists, use defined keys instead
@@ -301,6 +307,7 @@ Source $PRIVATE_ZSH_DIR/prompt.zsh
 autoload -U compinit
 compinit
 
+# should be include before using keymap 'menuselect'
 zmodload zsh/complist
 
 # general option( I do not know what they do, yet)
@@ -380,8 +387,7 @@ zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match
 alias tp='whence -f'
 alias tpa='whence -fca'
 
-# show whole history
-alias history='history 1'
+
 
 # stop correction for mv, cp, mkdir
 for i in mkdir mv cp;       alias $i="nocorrect $i"
@@ -488,3 +494,10 @@ zle_highlight=( region:bg=magenta
         done;
     done
 }
+
+# we needs an history function that is similar to  bash's
+function history ()
+{
+    fc -l -i 1
+}
+
