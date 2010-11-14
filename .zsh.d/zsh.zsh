@@ -90,8 +90,10 @@ setopt c_bases
 # make the precedence of arithmetic operators to be more like C
 setopt c_precedences
 
+# just shut up
 setopt no_beep
 
+#Perform implicit tees or cats when multiple redirections are attempted
 setopt multios
 
 # limit the modification to options and traps local to function
@@ -298,8 +300,6 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_find_no_dups
 
-setopt no_hist_beep
-
 # do not execute the result of history expansion immeditely
 set hist_very
 
@@ -434,7 +434,7 @@ zsh-mime-setup
 # open .avi and .mkv with mplayer
 alias -s txt=vim
 
-for i in jpg jpeg png svg;                  alias -s $i=gwenview
+for i in jpg jpeg png svg bmp;              alias -s $i=gwenview
 for i in mp3 wma ogg flac ape tta wv wav;   alias -s $i=deadbeef
 for i in avi rmvb wmv mkv mp4;              alias -s $i=mplayer
 for i in rar zip gz 7z xz lzma;             alias -s $i=unp

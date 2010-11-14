@@ -112,9 +112,9 @@ function setupprompt() {
     #prompt for 'select' statement
     PS3='${FG_CYAN}{...}${NOCOLOR} ${FG_BD_GREEN}>>>${NOCOLOR}'
 
-    # So far I don't use "setopt xtrace", so I don't need this prompt
     # prompt for 'xtrace' option
-    PS4='{%_} '
+    # show function/script name and lineno.
+    PS4='{%N|%i} '
 
 }
 
