@@ -1,7 +1,14 @@
-# http://matija.suklje.name/?q=node/207
 
-# Enables additional prompt extentions
+# turn on powerful pormpt system
+#autoload -U promptinit
+#promptinit
+
+# enable parameter expansion, command substitution and arithmetic expansion
+# within prompt.
 setopt prompt_subst
+
+# Remove right prompt from display when accepting a command line
+#setopt transient_rprompt
 
 # get info about VCS (e.g. Git, Subversion, Mercurial
 autoload -Uz vcs_info

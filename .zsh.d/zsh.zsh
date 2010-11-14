@@ -76,6 +76,12 @@ setopt bg_nice
 # show pid in bg job list
 setopt long_list_jobs
 
+# do not report finished jobs immediately
+setopt no_notify
+
+# do not send SIGHUP to background jobs when shell exits
+setopt no_hup
+
 # ----- Scripts and Functions
 # Output hexadecimal numbers in standard C format,
 # for example, show `0xFF' instead of the default 16#FF'
@@ -87,6 +93,9 @@ setopt c_precedences
 setopt no_beep
 
 setopt multios
+
+# limit the modification to options and traps local to function
+#setopt local_options local_traps
 
 #----------------------------------------------------------------------------------------
 #                                       Keybindings
@@ -291,22 +300,14 @@ setopt hist_find_no_dups
 
 setopt no_hist_beep
 
+# do not execute the result of history expansion immeditely
+set hist_very
+
 
 
 #----------------------------------------------------------------------------------------
 #                                           Prompt
 #----------------------------------------------------------------------------------------
-
-# turn on powerful pormpt system
-autoload -U promptinit
-promptinit
-
-# enable parameter expansion, command substitution and arithmetic expansion
-# within prompt.
-setopt prompt_subst
-
-# Remove right prompt from display when accepting a command line
-#setopt transient_rprompt
 
 # setup my prompt
 Source $PRIVATE_ZSH_DIR/prompt.zsh
