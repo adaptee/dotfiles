@@ -426,14 +426,11 @@ alias 9='cd +9'
 # show ls -F style marks in file completion
 setopt list_types
 
-# open file without prefixing command
-autoload -U zsh-mime-setup
-zsh-mime-setup
+# setup suffix aliases automatically, according to existing MIME info
+# in /etc/mailcap and /etc/mime.types
+autoload -U zsh-mime-setup  && zsh-mime-setup
 
-
-# open .avi and .mkv with mplayer
-alias -s txt=vim
-
+# setup suffix aliases, manually
 for i in jpg jpeg png svg bmp;              alias -s $i=gwenview
 for i in mp3 wma ogg flac ape tta wv wav;   alias -s $i=deadbeef
 for i in avi rmvb wmv mkv mp4;              alias -s $i=mplayer
