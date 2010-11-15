@@ -121,8 +121,8 @@ bindkey -M viins '^k' vi-kill-eol
 
 # move the head/tail more quickly
 #bindkey -M vicmd H  vi-beginning-of-line
-bindkey -M vicmd H  vi-first-non-blank
-bindkey -M vicmd L  vi-end-of-line
+bindkey -M vicmd 'H' vi-first-non-blank
+bindkey -M vicmd 'L'  vi-end-of-line
 
 # comment/uncomment quickly
 bindkey -M viins '\e3' vi-pound-insert
