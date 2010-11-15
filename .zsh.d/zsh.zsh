@@ -177,8 +177,9 @@ bindkey -M vicmd '\ee' edit-command-line
 # the current word is checked for a URI scheme.  If one is found and the
 # current word is not already in quotes, a backslash is inserted before
 # the input character.
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
+
+#autoload -U url-quote-magic
+#zle -N self-insert url-quote-magic
 
 
 ## set command prediction from history, see 'man 1 zshcontrib'
