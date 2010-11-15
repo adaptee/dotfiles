@@ -444,7 +444,8 @@ function randomstr()
 function get ()
 {
     # url is the last argument; here we make use the indirect expansion feature
-    local url="${!#}"
+    #local url="${!#}"
+    eval local args=("$@")
 
     # option is all the other argument except the last
     local options=""
