@@ -351,7 +351,7 @@ alias fuser='fuser -v'
 alias free='free -m'
 
 alias sp='aspell check'
-alias dict='diction -b -s -L en'
+#alias dict='diction -b -s -L en'
 
 alias em='emacs'
 # lanuch the console version of emacs
