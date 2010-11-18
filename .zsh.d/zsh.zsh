@@ -157,6 +157,10 @@ bindkey -M viins -s '\e`' \`\`\\ei
 bindkey -M viins -s "\e;" \"\"\\ei
 bindkey -M viins -s "\e'" \'\'\\ei
 
+# push current line onto stack for later usage, then clean cmdline
+# this one is really useful!
+bindkey -M viins '\ep' push-line-or-edit
+
 # from linuxtoy: http://linuxtoy.org/archives/zsh_per_dir_hist.html
 # pressing TAB in an empty command makes a cd command with completion list
 dumb-cd(){
@@ -347,6 +351,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history   # up
 bindkey -M menuselect 'l' vi-forward-char         # right
 bindkey -M menuselect 'j' vi-down-line-or-history # bottom
 
+# now you have a mini folder explorer
+bindkey -M menuselect '\eo' accept-and-infer-next-history
 
 # tune path completion
 zstyle ':completion:*' expand 'yes'
@@ -543,3 +549,17 @@ function history ()
 bash() {
    NO_SWITCH="yes" command bash "$@"
 }
+
+#----------------------------------------------------------------------------------------
+#                                           Misc
+#----------------------------------------------------------------------------------------
+
+# useful for checking zsh version
+autoload is-at-lease
+
+# zsh's equivalence to the 'help' of bash
+HELPDIR=$HOME/.zsh.d/data/help
+unalias run-help
+autoload run-help
+alias help=run-help
+
