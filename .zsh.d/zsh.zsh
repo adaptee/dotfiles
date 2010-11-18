@@ -559,7 +559,7 @@ autoload is-at-lease
 
 # zsh's equivalence to the 'help' of bash
 HELPDIR=$HOME/.zsh.d/data/help
-unalias run-help
+unalias run-help 2> /dev/null
 autoload run-help
 alias help=run-help
 
