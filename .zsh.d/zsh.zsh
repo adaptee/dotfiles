@@ -406,6 +406,9 @@ function _pinyin()
 }
 
 zstyle ':completion:*' user-expand _pinyin
+# omit origianl
+zstyle ':completion:*:user-expand:*' tag-order '!original'
+
 zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match _user_expand
 
 #----------------------------------------------------------------------------------------
