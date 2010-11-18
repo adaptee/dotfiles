@@ -22,6 +22,13 @@ setopt complete_in_word
 
 #----- Completion ----- #
 
+# Automatically use menu completion after the second consecutive <TAB>
+setopt auto_menu
+
+# when finding exact match, ignore other candicates
+setopt rec_exact
+
+# alwasy move cursor to the end of inserted completion
 setopt always_to_end
 
 # Lay out the matches in completion lists sorted horizontally
@@ -326,7 +333,7 @@ zmodload zsh/complist
 
 # general option( I do not know what they do, yet)
 zstyle ':completion:*' verbose yes
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu select=4
 #zstyle ':completion:*:*:default' force-list always
 zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
 
