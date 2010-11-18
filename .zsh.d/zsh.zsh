@@ -400,7 +400,23 @@ _force_rehash() {
     (( CURRENT == 1 )) && rehash
     return 1    # Because we did not really complete anything
 }
-zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match #_user_expand
+
+
+# support chsdir, which provide pinyin-based completion for chinese characters
+function _pinyin()
+{
+    # chsdir print one candidate per line
+    # this looks weird, bug IFS='\n' does not work in interactive shell
+    local IFS=$'\n'
+
+    reply=($(chsdir 0 $*))
+}
+
+zstyle ':completion:*' user-expand _pinyin
+# omit origianl
+zstyle ':completion:*:user-expand:*' tag-order '!original'
+
+zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match _user_expand
 
 #----------------------------------------------------------------------------------------
 #                                           Aliases
