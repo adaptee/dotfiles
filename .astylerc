@@ -1,0 +1,11 @@
+--indent=spaces=4
+--brackets=break
+--indent-classes
+--indent-switches
+--indent-preprocessor
+--delete-empty-lines
+--pad=oper
+--unpad=paren
+--convert-tabs
+--suffix=.ast
+
