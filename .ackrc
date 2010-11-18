@@ -1,0 +1,6 @@
+# Ignore case if PATTERN contains no uppercase characters.
+--smart-case
+
+# Use "less -r" as my pager
+# --pager=less -r
+
