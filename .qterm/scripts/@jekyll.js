@@ -1,5 +1,6 @@
 QTerm.loadScript("utils.js");
 QTerm.loadScript("highlight.js");
+QTerm.loadScript("google.js");
 
 QTerm.SMTH= {
     Unknown : -1,
@@ -13,7 +14,11 @@ QTerm.pageState = QTerm.SMTH.Unknown;
 
 QTerm.init = function()
 {
-    QTerm.osdMessage("system script loaded", QTerm.OSDType.Info, 10000);
+    QTerm.osdMessage(qsTr("System script loaded"), QTerm.OSDType.Info, 10000);
+    if (QTerm.addPopupMenu( "aboutScript", qsTr("About This Script") ) ) {
+        QTerm.aboutScript.triggered.connect(QTerm.onAbout);
+    }
+
 }
 
 QTerm.setCursorType = function(x,y)
@@ -79,7 +84,7 @@ QTerm.setSelectRect = function(x, y)
         if (item.length > 0) {
             var index = line.getText().indexOf(item);
             rect[0] = line.beginIndex(index);
-            rect[1] = y
+            rect[1] = y;
             rect[2] = line.beginIndex(index+item.length) - rect[0];
             rect[3] = 1;
         }
@@ -87,9 +92,9 @@ QTerm.setSelectRect = function(x, y)
         if (y >= 2 && y < QTerm.rows() -1 && x > 12 && x < QTerm.columns() - 16 && QTerm.getText(y).search(/[^\s]/)!=-1) {
             QTerm.accepted = true;
             rect[0] = 0;
-            rect[1] = y - y%2;
+            rect[1] = y;
             rect[2] = QTerm.columns();
-            rect[3] = 2;
+            rect[3] = 1;
         }
     }
     return rect;
@@ -173,7 +178,11 @@ QTerm.sendKey = function(x, y)
         var text = QTerm.getText(y - y%2);
         result = QTerm.getText(y - y%2).match(/\s+(\d+)\s+/);
         QTerm.sendString(result[1]);
-        QTerm.sendParsedString("^M");
+        if (y%2 == 0) {
+            QTerm.sendParsedString("s");
+        } else {
+            QTerm.sendParsedString("^M");
+        }
     }
     return false;
 }
@@ -195,7 +204,7 @@ QTerm.onNewData = function()
     QTerm.accepted = false;
     // This will highlight qterm and kde, function defined in highlight.js
     QTerm.scriptEvent("QTerm: new data");
-    QTerm.highlightKeywords(/银英|英雄志|三体|凉子/ig);
+    QTerm.highlightKeywords(/三体|银英|银魂|凉子/ig);
     return false;
 }
 
@@ -237,21 +246,6 @@ QTerm.onZmodemState = function(type, value, state)
 
 // Here is an example about how to add item to the popup menu.
 
-
-QTerm.onGoogle= function()
-{
-    text = QTerm.getSelectedText();
-    if (text.size > 0) {
-        url = "http://www.google.com/search?q="+QTerm.getSelectedText()+"&ie=UTF-8&oe=UTF-8";
-        QTerm.openUrl(url);
-    } else
-        QTerm.osdMessage("No text is selected to search for", QTerm.OSDType.Warning, 5000);
-}
-
-if (QTerm.addPopupMenu( "googleSearch", "Search Selected Text in Google" ) ) {
-        QTerm.googleSearch.triggered.connect(QTerm.onGoogle);
-}
-
 if (QTerm.qtbindingsAvailable) {
     QTerm.loadScript("console.js");
     QTerm.loadScript("senddelay.js");
@@ -260,7 +254,7 @@ if (QTerm.qtbindingsAvailable) {
     {
         var text = ""
         if (QTerm.pageState != QTerm.SMTH.Article)
-            QTerm.osdMessage("No article to download", QTerm.OSDType.Warning, 5000);
+            QTerm.osdMessage(qsTr("No article to download"), QTerm.OSDType.Warning, 5000);
         else
             text = QTerm.Article.getArticle();
         QTerm.accepted = true;
@@ -279,12 +273,8 @@ QTerm.addPopupSeparator();
 
 QTerm.onAbout = function()
 {
-    msg = "You are using smth.js in QTerm " + QTerm.version() + " (C) 2009 QTerm Developers";
+    msg = qsTr("You are using smth.js in QTerm %1 (C) 2009-2010 QTerm Developers").arg(QTerm.version());;
     QTerm.osdMessage(msg, QTerm.OSDType.Info, 10000);
-}
-
-if (QTerm.addPopupMenu( "aboutScript", "About This Script" ) ) {
-        QTerm.aboutScript.triggered.connect(QTerm.onAbout);
 }
 
 QTerm.endOfArticle = function()
