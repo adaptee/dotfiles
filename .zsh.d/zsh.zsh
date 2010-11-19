@@ -26,7 +26,7 @@ setopt complete_in_word
 setopt auto_menu
 
 # when finding exact match, ignore other candicates
-setopt rec_exact
+#setopt rec_exact
 
 # alwasy move cursor to the end of inserted completion
 setopt always_to_end
