@@ -337,7 +337,7 @@ zmodload zsh/complist
 
 # general option( I do not know what they do, yet)
 zstyle ':completion:*' verbose yes
-zstyle ':completion:*' menu select=4
+zstyle ':completion:*' menu select
 #zstyle ':completion:*:*:default' force-list always
 zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
 
