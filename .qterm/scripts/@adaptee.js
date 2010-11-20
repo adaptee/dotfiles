@@ -3,8 +3,8 @@ QTerm.loadScript("block.js");
 
 QTerm.onKeyPressEvent = function(key, modifiers, text)
 {
-    var msg = "The key pressed is: " + text + "," + modifiers + "," + key;
-    QTerm.osdMessage(msg,1,1000);
+    //var msg = "The key pressed is: " + text + "," + modifiers + "," + key;
+    //QTerm.osdMessage(msg,1,1000);
 
     if (QTerm.pageState == QTerm.SMTH.List )
     {
