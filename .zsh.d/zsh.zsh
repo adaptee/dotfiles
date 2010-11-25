@@ -408,17 +408,18 @@ _force_rehash() {
 }
 
 
-# support chsdir, which provide pinyin-based completion for chinese characters
-function _pinyin()
+# support pinyin-comp, which complete path by acronym of pinyin-initials
+function _pinyin_comp()
 {
     # chsdir print one candidate per line
     # this looks weird, bug IFS='\n' does not work in interactive shell
     local IFS=$'\n'
 
-    reply=($(chsdir 0 $*))
+    reply=($(pinyin-comp 0 $*))
 }
 
-zstyle ':completion:*' user-expand _pinyin
+
+zstyle ':completion:*' user-expand _pinyin_comp
 # omit origianl
 zstyle ':completion:*:user-expand:*' tag-order '!original'
 
