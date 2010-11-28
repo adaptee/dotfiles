@@ -77,10 +77,9 @@ function clean ()
 
 # inspired by gentoo
 # list all directly installed packages
-# FIXME: haven't find how to achive this aim
 function world ()
 {
-    dpkg-query -l
+    aptitude search '~i !~M'
 }
 
 # list all installed packages
