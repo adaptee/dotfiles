@@ -50,4 +50,5 @@ export ACRONYMDB=$(echo "$HOME/.acronymdb")
 export SUDO_PROMPT=$'[\e[31;5msudo\e[m] password for \e[33;1m%p\e[m: '
 
 
-
+# customize standard python interpreter
+export PYTHONSTARTUP=$HOME/.pythonstartup
