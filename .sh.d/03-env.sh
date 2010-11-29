@@ -50,5 +50,8 @@ export ACRONYMDB=$(echo "$HOME/.acronymdb")
 export SUDO_PROMPT=$'[\e[31;5msudo\e[m] password for \e[33;1m%p\e[m: '
 
 
+# extra (highest priority) path for search python modules
+export PYTHONPATH="$HOME/.python.d"
+
 # customize standard python interpreter
 export PYTHONSTARTUP=$HOME/.pythonstartup
