@@ -1,4 +1,12 @@
 # python startup file
+#
+# for lazy guys;
+# save you from the trouble of importing standard module manually.
+try :
+    from autoimp import *
+except ImportError:
+    pass
+
 # stolen from <expert python programming>
 import readline
 import rlcompleter
