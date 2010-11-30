@@ -93,7 +93,7 @@ autocall 1
 # a file with syntax errors in it.  If this variable is true, IPython will ask
 # you whether to re-open the editor immediately to correct such an error.
 
-autoedit_syntax 0
+autoedit_syntax 1
 
 # Auto-indent. IPython can recognize lines ending in ':' and indent the next
 # line, while also un-indenting automatically after 'raise' or 'return'.
@@ -193,7 +193,7 @@ color_info 1
 # the magic functions %Exit or %Quit you can force a direct exit, bypassing
 # any confirmation.
 
-confirm_exit 1
+confirm_exit 0
 
 # Use deep_reload() as a substitute for reload() by default. deep_reload() is
 # still available as dreload() and appears as a builtin.
@@ -228,7 +228,7 @@ messages 1
 # are used to debugging using pdb, this puts you automatically inside of it
 # after any call (either in IPython or in code called by it) which triggers an
 # exception which goes uncaught.
-pdb 0
+pdb 1
 
 # Enable the pprint module for printing. pprint tends to give a more readable
 # display (than print) for complex nested data structures.
@@ -263,7 +263,7 @@ prompts_pad_left 1
 
 # For details on pylab, see the matplotlib website:
 # http://matplotlib.sf.net
-pylab_import_all 1
+pylab_import_all 0
 
 
 # quick 1 -> same as ipython -quick
@@ -362,7 +362,7 @@ multi_line_specials 1
 
 system_header "IPython system call: "
 
-system_verbose 1
+system_verbose 0
 
 # wxversion: request a specific wxPython version (used for -wthread)
 
