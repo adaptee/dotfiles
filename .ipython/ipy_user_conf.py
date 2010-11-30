@@ -50,19 +50,56 @@ def main():
 
     # An example on how to set options
     o = ip.options
+
     o.autocall = 1
+    o.autoedit_syntax = 1
     o.autoindent = 1
     o.automagic =  1
-    o.autoedit_syntax = 1
+
+    o.cache_size = 1000
+    o.classic = 0
+
     o.colors =  "Linux"
     o.color_info = 1
+
     o.confirm_exit =  0
+
     o.deep_reload = 1
+
     o.editor = "vim"
+
+    o.log = 1
+
+    o.banner = 1
+    o.messages = 1
+
     o.pdb = 1
     o.pprint = 1
-    o.xmode = "Context"
+
+    o.prompt_in1 = 'In [\#]: '
+    o.prompt_in2 = '   .\D.: '
+    o.prompt_out = 'Out[\#]: '
+    o.prompts_pad_left = 1
+
+    o.readline = 1
+    o.screen_length = 0
+
+
+    o.quick = 0
+
+    # problematic
+    #o.separate_in   = '\n'
+    #o.separate_out  = 0
+    #o.separate_out2 = 0
+    #o.nosep         = 0
+
+
+    o.system_header  = "IPython system call: "
     o.system_verbose = 0
+
+    o.wildcards_case_sensitive = 0
+
+    o.xmode = "Context"
 
     # alway import_all those module
     #execf('~/.ipython/ns.py')
