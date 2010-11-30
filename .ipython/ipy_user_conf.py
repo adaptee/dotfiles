@@ -101,6 +101,7 @@ def main():
 
     o.xmode = "Context"
 
+    #import_all("os sys")
     # alway import_all those module
     #execf('~/.ipython/ns.py')
 
@@ -137,6 +138,13 @@ def main():
     # at your own risk!
     #import ipy_greedycompleter
 
+    # If you are on Linux, you may be annoyed by
+    # "Display all N possibilities? (y or n)" on tab completion,
+    # as well as the paging through "more". Uncomment the following
+    # lines to disable that behaviour
+    #import readline
+    #readline.parse_and_bind('set completion-query-items 1000')
+    #readline.parse_and_bind('set page-completions no')
 
 
 # some config helper functions you can use
