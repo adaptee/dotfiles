@@ -161,7 +161,13 @@ def magic_h(self, arg):
     ip = self.api
     ip.ex("help(%s)" % (arg))
 
+def magic_i(self, arg):
+    ip = self.api
+    ip.ex("import %s" % (arg))
+
 # 'h' short for 'help'
 ip.expose_magic('h',magic_h)
+# 'h' short for 'import'
+ip.expose_magic('i',magic_i)
 
 main()
