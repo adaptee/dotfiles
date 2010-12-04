@@ -157,4 +157,11 @@ def execf(fname):
     """ Execute a file in user namespace """
     ip.ex('execfile("%s")' % os.path.expanduser(fname))
 
+def magic_h(self, arg):
+    ip = self.api
+    ip.ex("help(%s)" % (arg))
+
+# 'h' short for 'help'
+ip.expose_magic('h',magic_h)
+
 main()
