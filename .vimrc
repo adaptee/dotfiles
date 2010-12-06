@@ -9,7 +9,6 @@ source $VIMLOCAL/rc/function.vim
 source $VIMLOCAL/rc/basic.vim
 source $VIMLOCAL/rc/abbrev.vim
 source $VIMLOCAL/rc/plugin.vim
-"source $VIMLOCAL/rc/autocorrect.vim
 
 if has('unix')
     source $VIMLOCAL/rc/linux.vim
