@@ -71,6 +71,11 @@ function orphan ()
     pacman -Qtdq
 }
 
+# list all packages identified as foreign(most from AUR)
+function aur ()
+{
+    pacman -Qtdq
+}
 
 # list what are contained within specified package
 # [Example] list firefox
