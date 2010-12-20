@@ -74,7 +74,7 @@ function orphan ()
 # list all packages identified as foreign(most from AUR)
 function aur ()
 {
-    pacman -Qtdq
+    pacman -Qmq
 }
 
 # list what are contained within specified package
