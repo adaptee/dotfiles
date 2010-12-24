@@ -47,8 +47,8 @@ function add ()
     else
         # add from online repo or AUR
         local pkgnames
-        pkgnames=$(echo "$@" | tr '[A-Z]' '[a-x]')
-        sudo apt-get install --yes --force-yes  --auto-remove ${pkgnames}
+        pkgnames=($(echo $* | tr '[A-Z]' '[a-x]'))
+        sudo apt-get install --yes --force-yes  --auto-remove ${pkgnames[@]}
     fi
 }
 
