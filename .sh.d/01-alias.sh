@@ -238,6 +238,7 @@ alias smth='luit -x -encoding gbk telnet bbs.newsmth.net'
 # start gappproxy local client
 alias proxy='python ~/bin/gae/localproxy/proxy.py'
 
+alias get='wget -c'
 
 
 #---------------------------------------------------------------------------#
@@ -400,6 +401,7 @@ alias cal='cal -3m'
 alias ad='git add'
 alias lg='git lg'
 alias co='git co'
+alias cob='git cob'
 alias st='git status'
 alias cm='git cm'
 alias br='git br'

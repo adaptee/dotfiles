@@ -440,26 +440,6 @@ function randomstr()
 #                               network related                             #
 #---------------------------------------------------------------------------#
 
-# download file. use "$*" to protect  weird character within args
-function get ()
-{
-    # url is the last argument; here we make use the indirect expansion feature
-    #local url="${!#}"
-    eval local args=("$@")
-
-    # option is all the other argument except the last
-    local options=""
-    local args_num=$#
-    local args=("$@")
-    for (( i = 0; i < ${args_num} - 1; i++ )); do
-       options="${options} ${args[$i]}"
-    done
-
-    # note, we enclose the url with single-quote in order to protect special character
-    echo "wget -c ${options} '${url}' "
-    eval " wget -c ${options} '${url}' " && notify-send -i ~/.icons/gdebi.png  "Download finished!"
-}
-
 
 # show my actually ip .
 function  myip ()
