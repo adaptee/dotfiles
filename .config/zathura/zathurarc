@@ -7,8 +7,8 @@ set statusbar_bgcolor black
 set statusbar_fgcolor yellow
 
 # inpurtbar
-set inputbar_bgcolor grey
-set inputbar_fgcolor white
+#set inputbar_bgcolor grey
+#set inputbar_fgcolor white
 
 # background
 set recolor_darkcolor  #353535
