@@ -19,6 +19,9 @@ browser('M', fm.open_console('mkdir '))
 # 'F' for ':find'
 browser('F', fm.open_console('find '))
 
+# search incremenally, just like in vim
+browser('/', fm.open_console("search_inc ") )
+
 # similar to 'j/k', but with larger step
 browser('J', fm.move(down=3, relative=True))
 browser('K', fm.move(up=3, relative=True))
