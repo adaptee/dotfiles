@@ -548,9 +548,10 @@ function bcp ()
 }
 
 
+# make ranger utilize the optimization feature provided by ptyhon
 # change $PWD to the last directory , after exiting ranger
 function ranger() {
-    command ranger --fail-if-run $@ && cd "$(grep \^\' ~/.config/ranger/bookmarks | cut -b3-)"
+    PYTHONOPTIMIZE=1 command ranger --fail-if-run $@ && cd "$(grep \^\' ~/.config/ranger/bookmarks | cut -b3-)"
 }
 
 
