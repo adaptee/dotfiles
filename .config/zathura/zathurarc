@@ -1,0 +1,30 @@
+# dirty way to for maximizing on startup
+set width 1280
+set height 800
+
+# statusbar
+set statusbar_bgcolor black
+set statusbar_fgcolor yellow
+
+# inpurtbar
+set inputbar_bgcolor grey
+set inputbar_fgcolor white
+
+# background
+set recolor_darkcolor  #353535
+set recolor_lightcolor #DBDBDB
+
+# on opening file, adjust window to fit its width
+set adjust_open width
+
+# fonts, fonts!
+set font DejaVu Sans YuanTi
+
+# key bindings
+map + zoom in
+map = zoom in
+map - zoom out
+
+map q quit
+
+# vim:set filetype=sh  : #
