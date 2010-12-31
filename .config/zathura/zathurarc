@@ -3,12 +3,12 @@ set width 1280
 set height 800
 
 # statusbar
-set statusbar_bgcolor black
-set statusbar_fgcolor yellow
+set statusbar_bgcolor yellow
+set statusbar_fgcolor black
 
 # inpurtbar
-#set inputbar_bgcolor grey
-#set inputbar_fgcolor white
+set inputbar_bgcolor black
+set inputbar_fgcolor white
 
 # background
 set recolor_darkcolor  #353535
