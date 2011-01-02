@@ -33,3 +33,9 @@ browser('b', fm.move(up=0.5, pages=True))
 # 'q'  for 'quit'
 browser("q", fm.exit())
 
+@browser('T')
+def newtab(arg):
+	arg.fm.tab_new()
+	arg.fm.cd('``')   # To return to the original directory, type ``
+
+

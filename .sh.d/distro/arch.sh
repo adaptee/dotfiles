@@ -84,13 +84,14 @@ function list ()
 {
     if echo "$1" | grep -E 'pkg\.tar\.(xz|gz)$'  2>&1 >/dev/null ; then
         # list content of local archive
-        local archivename="$@"
-        pacman -Qpl $archivename
+        local archivenames
+        archivenames=( $(echo "$@" | tr '[A-Z]' '[a-x]') )
+        pacman -Qpl ${archivenames[@]}
     else
         # list content of installed package
-        local pkgname
-        pkgname=$(echo "$@" | tr '[A-Z]' '[a-x]')
-        pacman -Ql $pkgname
+        local pkgnames
+        pkgnames=( $(echo "$@" | tr '[A-Z]' '[a-x]') )
+        pacman -Ql ${pkgnames[@]}
     fi
 }
 
