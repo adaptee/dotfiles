@@ -121,6 +121,7 @@ function rev-depend()
 {
     qdepends -Q $1
     #equery depends $1
+    #emerge --depclean --pretend --verbose $1
 }
 
 # find out which (installed) package own the command
