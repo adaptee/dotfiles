@@ -30,7 +30,7 @@ function update ()
 
 function upgrade ()
 {
-    sudo emerge -uavDN --keep-going world
+    sudo emerge -uavDN --keep-going $@ world
 
 }
 
