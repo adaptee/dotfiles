@@ -28,6 +28,7 @@ del os, histfile, readline, rlcompleter
 
 # Enable Pretty Printing for stdout
 # http://sontek.net/tips-and-tricks-for-the-python-interpreter
+import sys
 import pprint
 def my_displayhook(value):
     if value is not None:
