@@ -1,0 +1,45 @@
+[extensions]
+
+# mport revisions from foreign VCS repositories into Mercurial
+convert =
+
+# allow external programs to compare revisions
+extdiff =
+
+# pull, update and merge in one command
+fetch =
+
+# accelerate status report using Linux's inotify service
+inotify=
+
+#--------------experimental-------------------------#
+color =
+
+pager =
+
+progress =
+
+purge =
+
+mq =
+
+# for hg-git
+hgext.bookmarks =
+hggit =
+
+
+[extdiff]
+
+# now you can run `hg kdiff3` or `hg df`
+cmd.kdiff3 =
+cmd.df = vimdiff
+
+[ui]
+
+username = Jekyll Wu <adaptee@gmail.com>
+
+# the output style of `hg log`
+#style = compact
+
+[web]
+style = gitweb
