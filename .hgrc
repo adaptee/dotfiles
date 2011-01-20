@@ -1,4 +1,28 @@
+[alias]
+# only show the latest N commits
+latest = log --limit
+
+[diff]
+
+#  Use git extended diff format.
+git = true
+
+# Ignore white space when comparing lines.
+ignorews = true
+
+# Ignore changes whose lines are all blank.
+ignoreblanklines = true
+
 [extensions]
+
+# track a line of development with movable markers
+bookmarks =
+
+# command to display statistics about repository history
+churn =
+
+# colorize output from some commands
+color =
 
 # mport revisions from foreign VCS repositories into Mercurial
 convert =
@@ -9,34 +33,61 @@ extdiff =
 # pull, update and merge in one command
 fetch =
 
+# command to view revision graphs from a shell
+graphlog =
+
+# browse the repository in a(n other) graphical way
+hgview =
+
+# syntax highlighting for hgweb (requires Pygments)
+highlight =
+
+# push and pull from a Git server
+hggit =
+
 # accelerate status report using Linux's inotify service
 inotify=
 
-#--------------experimental-------------------------#
-color =
-
-pager =
-
-progress =
-
-purge =
-
+# manage a stack of patches
 mq =
 
-# for hg-git
-hgext.bookmarks =
-hggit =
+# browse command output with an external pager
+pager =
+
+# show progress bars for some actions
+progress =
+
+# command to delete untracked files from the working directory
+purge =
+
+# command to move sets of revisions to a different ancestor
+# simulation of `git rebase`
+rebase =
+
 
 
 [extdiff]
-
-# now you can run `hg kdiff3` or `hg df`
+# allow `hg kdiff3`
 cmd.kdiff3 =
-cmd.df = vimdiff
+
+# allow `hg dff`
+cmd.dff = vimdiff
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output
+
+[pager]
+# control which pager to use and how to invoke
+#pager = less -FRSX
+
+# avoid "BROKEN PIPE" error messages
+quite = true
 
 [ui]
-
 username = Jekyll Wu <adaptee@gmail.com>
+
+# use kdiff3 as default merger
+#merge = kdiff3
 
 # the output style of `hg log`
 #style = compact
