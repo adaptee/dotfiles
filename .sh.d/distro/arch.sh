@@ -41,7 +41,14 @@ function update ()
     yaourt -Syy
 }
 
+# official + AUR
 function upgrade ()
+{
+    yaourt -Su
+}
+
+# plus all dev-version pacakges
+function full-upgrade ()
 {
     yaourt -Su --devel
 }

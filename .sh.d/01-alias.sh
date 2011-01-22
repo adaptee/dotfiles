@@ -319,8 +319,8 @@ alias mkdir='mkdir -p'
 # alias it to ack  only if it is installed as ack-grep
 which ack-grep >/dev/null 2>&1  &&  alias ack=ack-grep
 
-# generated unified  result
-alias diff='diff -aruN'
+# make the output of diff more friendly
+alias diff='diff --text --unified=3 --recursive --new-file'
 
 alias cdiff='colordiff'
 
