@@ -24,8 +24,8 @@ function purge ()
 
 function update ()
 {
-    sudo emerge --sync
     sudo layman -S
+    sudo emerge --sync
 }
 
 function upgrade ()
