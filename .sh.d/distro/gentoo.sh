@@ -142,7 +142,8 @@ function owncmd()
 # [example] etime amule ktorrent
 function etime()
 {
-    qlop -Ht $@
+    #qlop -Ht $@
+    genlop -i $@
 }
 
 # show the merging history of specified pkg, or all pkgs
