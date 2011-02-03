@@ -1,10 +1,11 @@
 [Animation]
-Frames=1
+Frames=0
 
 [Appearance]
 BackgroundColorOpacity=0
+Skin=Oxygen-Panel-Revised
 TerminalHighlightOnManualActivation=true
-Translucency=false
+Translucency=true
 
 [Desktop Entry]
 DefaultProfile=Konsole.profile
@@ -36,5 +37,5 @@ view-full-screen=none
 
 [Window]
 DynamicTabTitles=true
-Height=45
+Height=80
 Width=100
