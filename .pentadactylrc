@@ -1,0 +1,589 @@
+" 2.0 (created: 2008/08/16 18:51:52)
+
+"---------------------------------------------------------------------------------------------
+" Global variables
+"---------------------------------------------------------------------------------------------
+"let mapleader = ","
+set mapleader=","
+
+" For the sake of char-hint-mode2.js; use lower-case letter for identifing links.
+op hintsio   = 'io'
+
+" for char-hint-mode2.js
+op g:hintlabeling="a"
+
+"---------------------------------------------------------------------------------------------
+" Mappings
+"---------------------------------------------------------------------------------------------
+
+" open addon configuration page in new tab
+noremap <Leader>a <Esc>:tabnew<CR>:addon<CR>
+
+"close all tabs
+noremap <Leader>q :qa<CR>
+noremap <Leader>x :xa<CR>
+
+" create a new tab is just 2 key stroke!
+noremap <Leader>t :tabopen<CR><CR>
+
+" Show metainfo for current page
+noremap <Leader>i g<C-g>
+
+" Save curent page
+noremap <Leader>s :sav
+
+" restart firefox quickly
+noremap <Leader>r  :restart<CR>
+
+" make tab-switching more easy
+noremap h gT
+noremap l gt
+noremap < g0
+noremap > g$
+
+" swap these two key-bindings, since open homepage in new tab is used more oftenlly.
+noremap gh gH
+noremap gH gh
+
+" scroll more
+noremap j  3j
+noremap k  3k
+noremap J <C-d>
+noremap K <C-u>
+
+" Noscript mapping
+noremap <Leader>ni :noscript info<CR>
+noremap <Leader>no :noscript popup<CR>
+noremap <Leader>nt :noscript toggletemp<CR>
+noremap <Leader>np :noscript toggleperm<CR>
+
+" 's' map to :search proviede by plugin
+noremap s :search<Space>
+
+" 'S' stands for 'Stop'
+noremap S <C-c>
+
+" Access Ubiquity features!
+noremap <Leader>u :ubiquity<Space>
+
+" Go to the website's root point
+noremap U gU<CR>
+
+" 'V' stands for 'View Source Code'
+noremap V gf
+
+" since : is more often used than ;
+noremap ; :
+
+" re-enable ctrl-l to move focus on location bar
+noremap <C-l> <C-v><C-l>
+
+" disbale highlight for the moment
+" Note, in order to map '\',we have to escape it with itself...:(
+" So, '\' won't work, '\\' is required here.
+noremap <Silent> \\ :nohlsearch<CR>
+
+" go up quickly
+noremap <BS> gu
+noremap <S-Up> gu
+
+" switch focus between frames
+noremap { [f
+noremap } ]f
+
+" prev/next is more easy now!
+noremap  [ [[
+noremap  ] ]]
+
+" open/close the delicious sidbar
+noremap  <C-b> <C-z><C-b><Esc>
+inoremap <C-b> <C-z><C-b><Esc>
+
+" add current page to delicious
+noremap  <C-y> <C-z><C-y><Esc>
+inoremap <C-y> <C-z><C-y><Esc>
+
+" Make common Select All/Copy/Cut/Paste/Undo keybindings useable under vimperator
+noremap <C-V> <C-v>
+noremap <C-Z> <C-z>
+noremap <C-c> <C-v><C-c>
+noremap <C-a> <C-v><C-a>
+
+cnoremap <C-c> <C-v><C-c>
+cnoremap <C-v> <C-v><C-v>
+cnoremap <C-x> <C-v><C-x>
+
+inoremap <C-a> <C-v><C-a>
+inoremap <C-c> <C-v><C-c>
+inoremap <C-v> <C-v><C-v>
+inoremap <C-x> <C-v><C-x>
+inoremap <C-z> <C-v><C-z>
+inoremap <C-y> <C-v><C-y>
+
+" restore some useful default keybindings offered by origial firefox
+noremap <Silent> <C-d> :dialog<Space>addbookmark<CR><Esc>
+noremap <Silent> <C-o> :dialog<Space>openfile<CR>
+noremap <Silent> <C-p> :dialog<Space>preferences<CR>
+noremap <Silent> <C-i> :dialog<Space>pageinfo<CR>
+
+
+"---------------------------------------------------------------------------------------------
+" Vimperator Options
+"---------------------------------------------------------------------------------------------
+
+" Show standard toolbar
+"set guioptions+=T
+
+" Show Bookmark toolbar
+set guioptions+=B
+
+" Number the tab
+set guioptions+=n
+
+" Always show command line
+set guioptions+=c
+
+" better searching experience
+set incfind
+set findcase=smart
+
+" always show status-line
+"set laststatus=2
+" show mode in the command-line
+set showmode
+
+" Try to stay in Normal mode after loading a web page
+"set focuscontent
+
+" use gVIm as external editor
+set editor="gvim -f"
+
+" always sort the auto-completion candidates
+"set wildoptions="sort"
+set wildmode="list:full"
+"set complete=l
+
+set nextpattern=\s*下一页|下一张|下页\s*,\b[Nn]ext\b,^>$,^(>>|››|»)$,^(>|»),(>|»)$,\bmore\b
+set previouspattern=\s*上一页|上一张|上页\s*,\bprev|Prev|previous\b,^<$,^(<<|‹‹|«)$,^(<|«),(<|«)$
+
+" wait 800ms before automatically following a non-unique numerical hint
+set hinttimeout=800
+
+
+"---------------------------------------------------------------------------------------------
+" Firefox preferences
+"---------------------------------------------------------------------------------------------
+set! browser.tabs.tabMinWidth=100
+set! browser.tabs.tabMaxWidth=160
+" Always startup firefox with blank page
+set! browser.startup.page=0
+" Do not use font specified in HTML pages; use system defaults.
+set! browser.display.use_document_fonts=0
+" Do not use proxy, by decault
+set! network.proxy.type=0
+
+
+"---------------------------------------------------------------------------------------------
+" Auto-Commands
+"---------------------------------------------------------------------------------------------
+
+" PassThrough gmail and greader
+:autocmd LocationChange .* :javascript modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
+
+" Use gVim to edit gmail content
+autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
+
+
+"---------------------------------------------------------------------------------------------
+" Abbreviations
+"---------------------------------------------------------------------------------------------
+
+
+""---------------------------------------------------------------------------------------------
+"" javascript scripts
+""---------------------------------------------------------------------------------------------
+
+" generic utility for toggle ui elements
+javascript <<EOF
+toggle_ui_element = function (name)
+{
+    document.getElementById(name).collapsed ^= 1;
+}
+EOF
+
+" toggle entry in prefs.js( about:config)
+javascript <<EOF
+prefs_entry_toggler = function (entry_name, entry_init_value)
+{
+    var entry_curr_value = entry_init_value;
+
+    var inner_function = function ()
+    {
+        entry_curr_value ^= 1;
+        var commands = "set! " + entry_name + "=" + entry_curr_value;
+        //alert(commands);
+        liberator.execute( commands);
+    }
+    return inner_function;
+}
+
+custom_font_toggler = prefs_entry_toggler("browser.display.use_document_fonts", 0 );
+proxy_toggler       = prefs_entry_toggler("network.proxy.type", 0 );
+
+EOF
+
+
+" Because vimperator put all keywords into one single argument, we first split it.
+javascript <<EOF
+split_and_rejoin_args = function ( args)
+{
+    // split by space
+    var keywords     = args.split(' ');
+    var query_string = '';
+    var length       = keywords.length;
+
+    // Now we rejoin those keywords with '+'
+    for( var i = 0; i< length - 1 ; ++i)
+    {
+        query_string +=  keywords[i] ;
+        query_string +=  '+' ;
+    }
+    // Don't forget the last keyword!
+    query_string +=  keywords[length-1] ;
+
+    // this query string should be encoded, becase it may contain special charatctr(e.g,chinese word)
+    // query_string = encodeURIComponent(query_string);
+
+    return query_string;
+}
+
+make_keywords_usable_in_url = function (args)
+{
+    return encodeURIComponent(split_and_rejoin_args(args));
+}
+
+EOF
+
+
+
+
+"Show the feed-button, even if the address-bar is not displayed"
+javascript <<EOF
+var show_feed_button = function()
+{
+    var feedPanel = document.createElement("statusbarpanel");
+    feedPanel.setAttribute("id", "feed-panel-clone");
+    feedPanel.appendChild(document.getElementById("feed-button"));
+    feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    document.getElementById("status-bar")
+        .insertBefore(feedPanel, document.getElementById("security-button"));
+}
+show_feed_button();
+EOF
+
+
+javascript <<EOF
+search_in_verycd = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://www.verycd.com/search/folders?field=title&kw=';
+    var suffix       = '&rev=true&q=&from=&c2=0&range=&catalog=&status=all&sort=file_bytes';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+javascript <<EOF
+search_in_shooter = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://shooter.cn/search/Sub:' ;
+    var suffix       = '/?x=0&y=0&';
+    var full_url     = prefix + query_string + suffix ;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+javascript <<EOF
+search_in_acfun = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://acfun.cn/plus/search.php?kwtype=0&keyword=' ;
+    var suffix       = '&searchtype=titlekeyword' ;
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+" Search specified keyword in wikipedia
+javascript <<EOF
+search_in_wikipedia = function (keyword)
+{
+    liberator.execute('tabopen wikipedia ' + keyword);
+}
+EOF
+
+javascript <<EOF
+search_in_douban = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://www.douban.com/subject_search?search_text=';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+javascript <<EOF
+search_in_mp3 = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://mp3.sogou.com/music.so?pf=mp3&as=&st=&ac=1&query=';
+    var suffix       = '&class=1';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+javascript <<EOF
+search_in_netyi = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://netyi.net/Search.aspx?query=';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+javascript <<EOF
+search_in_gigapedia = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://gigapedia.info/1/';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+javascript <<EOF
+search_in_vim_org = function (args)
+{
+    // vim.org use 'key1+key2' style
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://www.vim.org/scripts/script_search_results.php?keywords='
+    var suffix       = '&script_type=&order_by=rating&direction=descending&search=search';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+javascript <<EOF
+search_in_stackoverflow = function (args)
+{
+    // stackoverflow use 'key1+key2' style
+    var query_string = split_and_rejoin_args(args);
+    var prefix       = 'http://stackoverflow.com/search?q='
+    var full_url     = prefix + query_string ;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+" search in wikipedia Chinese version
+javascript <<EOF
+search_in_wikipedia_zh = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://zh.wikipedia.org/zh-cn/';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+" search in Amazon.com
+javascript <<EOF
+search_in_amazon = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://www.amazon.com/s/ref=nb_ss_gw?url=search-alias%3Dstripbooks&field-keywords=';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+javascript <<EOF
+search_in_firefox_addon = function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'https://addons.mozilla.org/zh-CN/firefox/search?q=';
+    var suffix       = '&cat=all';
+    var full_url     = prefix + query_string;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+
+" Lookup online dictionary of youdao.com
+javascript <<EOF
+lookup_youdao_dictionary= function (args)
+{
+    var query_string = make_keywords_usable_in_url(args);
+    var prefix       = 'http://dict.yodao.com/search?q=';
+    var suffix       = '&btnindex=&ue=utf8&keyfrom=dict.index';
+    var full_url     = prefix + query_string + suffix;
+
+    liberator.execute('tabopen ' + full_url );
+
+}
+EOF
+
+"Lookup specified *nix commands in online manpages
+javascript <<EOF
+lookup_manpage = function (keyword)
+{
+    var prefix   = 'http://www.google.com/cse?q=';
+    var suffix   = '&sa=Search&ie=ISO-8859-1&cx=partner-pub-5823754184406795%3A54htp1rtx5u&cof=FORID%3A9#927';
+    var full_url = prefix + keyword + suffix ;
+
+    liberator.execute('tabopen ' + full_url );
+}
+EOF
+
+
+" Reload vimperatorrc
+javascript <<EOF
+load_vimperatorrc= function ()
+{
+    var platform = navigator.platform;
+    if (platform.indexOf("Linux") != -1 ) // under linux
+    {
+        liberator.execute( 'source ~/.vimperatorrc' );
+    }
+    else if ( platform.indexOf("Win") != -1 ) // under windows
+    {
+        liberator.execute( 'source ~/_vimperatorrc' );
+    }
+}
+EOF
+
+
+" set commandline' bgcolor as dark silver grey
+hi CmdLine                background: #828282 ; font-family: monospace; padding: 1px;
+
+" Highlight the vimperator command line with grennyello background when you're in it
+"javascript <<EOF
+    "(function() {
+        "var inputElement = document.getElementById('liberator-commandline-command');
+        "function swapBGColor(event) {
+            "//inputElement.style.backgroundColor = event.type == "focus" ? "yellow" : "";
+            "inputElement.style.backgroundColor = event.type == "focus" ? "GreenYellow ": "";
+        "}
+        "inputElement.addEventListener('focus', swapBGColor, false);
+        "inputElement.addEventListener('blur', swapBGColor, false);
+    "})();
+"EOF
+
+"the highlight for hints
+highlight Hint font-family: monospace; font-size: 13px; font-weight: bold; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px
+
+
+""---------------------------------------------------------------------------------------------
+"" Map to javascript functions
+""---------------------------------------------------------------------------------------------
+
+" toggle Firefox menu-bar
+noremap <Silent> <F1> :javascript toggle_ui_element('toolbar-menubar')<CR>
+
+" toggle Firefox nav-bar
+noremap <Silent> <F2> :javascript toggle_ui_element('nav-bar')<CR>
+
+" toggle Firefox bookmark-bar
+noremap <Silent> <F3> :javascript toggle_ui_element('PersonalToolbar')<CR>
+
+" toggle status-bar
+noremap <Silent> <F4> :javascript toggle_ui_element('status-bar')<CR>
+
+" toggle diigo-toolbar
+noremap <Silent> <F5> :javascript toggle_ui_element('diigotb-toolbar')<CR>
+
+" toggle google-toolbar
+noremap <Silent> <F6> :javascript toggle_ui_element('gtbToolbar')<CR>
+
+" search firefox addons
+command! -nargs=* Addon :javascript search_in_firefox_addon("<args>")
+noremap A :Addon<Space>
+
+" search Amazon.com
+command! -nargs=* Amazon :javascript search_in_amazon("<args>")
+noremap a :Amazon<Space>
+
+" lookup word in yodao dictionary
+command! -nargs=* Dict :javascript lookup_youdao_dictionary("<args>")
+noremap c :Dict<Space>
+
+" Search in douban.com
+command! -nargs=* Douban :javascript search_in_douban("<args>")
+noremap <Leader>d :Douban<Space>
+
+command! -nargs=* Music :javascript search_in_mp3("<args>")
+noremap m :Music<Space>
+
+" lookup online manpages; Note, we override the default 'm' key utility
+command! -nargs=* Man :javascript lookup_manpage("<args>")
+noremap <Leader>m :Man<Space>
+
+" Search in gigapedia.com
+command! -nargs=* Gigapedia :javascript search_in_gigapedia("<args>")
+noremap <Leader>g :Gigapedia<Space>
+
+" search vim.org
+command! -nargs=* Vim :javascript search_in_vim_org("<args>")
+
+" search in stackoverflow.com
+command! -nargs=* Stack :javascript search_in_stackoverflow("<args>")
+
+" searhc in shooter.cn for subtitles
+command! -nargs=* Shooter :javascript search_in_shooter("<args>")
+noremap S :Shooter<Space>
+
+command! -nargs=* VeryCD :javascript search_in_verycd("<args>")
+noremap v :VeryCD<Space>
+
+command! -nargs=* Ac :javascript search_in_acfun("<args>")
+noremap v :VeryCD<Space>
+
+" search in wikipedia
+command! -nargs=* Wiki :javascript search_in_wikipedia("<args>")
+noremap w :Wiki<Space>
+
+" search in wikipedia Chinese version
+command! -nargs=* WikiZh :javascript search_in_wikipedia_zh("<args>")
+noremap W :WikiZh<Space>
+
+" reload vimperatorrc
+command! Source :javascript load_vimperatorrc()
+noremap <Leader>v  :Source<CR>
+
+command! Font :javascript custom_font_toggler()
+noremap <Leader>c  :Font<CR>
+
+command! Proxy :javascript proxy_toggler()
+noremap <Leader>p  :Proxy<CR>
+
+"" vim: set ft=vimperator:
