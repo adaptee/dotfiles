@@ -4,9 +4,6 @@
 
 " this file is intended to serve both c and c++ files.
 
-" OmniCppComplete initialization
-call omni#cpp#complete#Init()
-
 " for c/c++ programmer under *nix
 setlocal path+=/usr/include/c++/4.3
 setlocal path+=/usr/include/linux
