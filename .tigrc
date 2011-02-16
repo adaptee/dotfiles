@@ -1,1 +1,7 @@
+# Show untracked directories contents in the status view
 set status-untracked-dirs = false
+
+# show revision graph in the main view on start-up
+#set show-rev-graph = yes
+
+#color cursor white blue
