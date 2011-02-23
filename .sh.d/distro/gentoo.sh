@@ -128,7 +128,7 @@ function rev-depend()
 function owncmd()
 {
     local cmdname=$1
-    local cmdpath=$(which ${cmdname} 2>/dev/null)
+    local cmdpath=$(command which ${cmdname} 2>/dev/null)
 
     if [[  "${cmdpath}" == ""  ]] ; then
         echo "command [$cmdname] does not exist!"
