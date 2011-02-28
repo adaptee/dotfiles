@@ -1,0 +1,4 @@
+arch	ftp://ftp.archlinux.org/
+gnu	http://ftp.gnu.org/gnu/
+kde	ftp://ftp.kde.org/pub/kde/stable/
+kernel	ftp://ftp.kernel.org/pub/
