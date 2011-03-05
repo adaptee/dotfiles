@@ -3,3 +3,5 @@ blfs	ftp://ftp.osuosl.org/pub/blfs/
 gnu	http://ftp.gnu.org/gnu/
 kde	ftp://ftp.kde.org/pub/kde/stable/
 kernel	ftp://ftp.kernel.org/pub/
+acg	ftp://acg:acg@59.66.140.201:1938/
+gate	ftp://admin:13054019322@192.168.1.1/
