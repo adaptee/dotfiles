@@ -3,14 +3,14 @@
 # check which disto are we running in?
 function distro-detect()
 {
-    if [ -f /etc/pacman.conf ] ; then
+    if [ -f /etc/make.conf     ] ; then
+        echo  "gentoo"
+
+    elif [ -f /etc/pacman.conf ] ; then
         echo "arch"
 
     elif [ -f /etc/apt/sources.list  ] ; then
         echo "debian"
-
-    elif [ -f /etc/make.conf     ] ; then
-        echo  "gentoo"
 
     elif [[ $(uname) =~ 'Cygwin' ]] ; then
         echo "cygwin"
