@@ -30,7 +30,7 @@ function update ()
 
 function upgrade ()
 {
-    sudo emerge -uavDN --keep-going $@ world
+    sudo emerge -uavDN --jobs=2 --keep-going $@ world
 
 }
 
@@ -165,6 +165,15 @@ function esize()
 function eslot ()
 {
     qlist -D
+}
+
+function list-overlay ()
+{
+    #--in-overlay overlay
+        #Only match packages with at least one version in an overlay matching overlay.
+    #--only-in-overlay overlay
+        #Only match packages which have only versions in an overlay matching overlay.
+    eix --only-in-overlay "$1"
 }
 
 
