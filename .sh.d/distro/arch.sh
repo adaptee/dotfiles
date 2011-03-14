@@ -106,7 +106,8 @@ function list ()
 # [Example] own /usr/bin/vim
 function own ()
 {
-    pacman -Qo "$1"
+    # relative path is also OK, thanks to `readlink`
+    pacman -Qo $(readlink -f "$1")
 }
 
 # search package by name

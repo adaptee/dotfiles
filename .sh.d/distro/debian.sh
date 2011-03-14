@@ -108,7 +108,8 @@ function list ()
 # [Example] own /usr/bin/vim
 function own ()
 {
-    apt-file search "$1"
+    # relative path is also OK, thanks to `readlink`
+    apt-file search $(readlink -f "$1")
 }
 
 # find out which (installed) package own the command

@@ -71,7 +71,8 @@ function list ()
 # [Example] own /usr/bin/vim
 function own ()
 {
-    qfile -e $@
+    # relative path is also OK, thanks to `readlink`
+    qfile -e $(readlink -f "$1")
     #equery belongs "$1"
 }
 
