@@ -2,6 +2,7 @@
 DisplayNames=
 IndicatorOnly=false
 LayoutList=us
+LayoutLoopCount=-1
 Model=asus_laptop
 Options=caps:swapescape,terminate:ctrl_alt_bksp
 ResetOldOptions=true
