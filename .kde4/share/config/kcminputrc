@@ -5,7 +5,7 @@ update_info=mouse_cursor_theme.upd:kde3.4.99
 ClickVolume=0
 KeyboardRepeating=true
 NumLock=2
-RepeatDelay=660
+RepeatDelay=200
 RepeatRate=25
 
 [Mouse]
