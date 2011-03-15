@@ -33,6 +33,7 @@ next-terminal=none
 previous-session=Alt+Left
 previous-terminal=none
 rename-session=Alt+S
+toggle-window-state=Pause
 view-full-screen=none
 
 [Window]
