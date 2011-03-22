@@ -122,9 +122,6 @@ noremap <Silent> <C-i> :dialog<Space>pageinfo<CR>
 " Vimperator Options
 "---------------------------------------------------------------------------------------------
 
-" Show standard toolbar
-"set guioptions+=T
-
 " Show Bookmark toolbar
 set guioptions+=B
 
@@ -139,16 +136,11 @@ set incfind
 set hlfind
 set findcase=smart
 
-" always show status-line
-"set laststatus=2
 " show mode in the command-line
 set showmode
 
-" Try to stay in Normal mode after loading a web page
-"set focuscontent
-
 " use gVIm as external editor
-set editor="gvim -f"
+"set editor="gvim -f"
 
 " always sort the auto-completion candidates
 "set wildoptions="sort"
@@ -201,14 +193,6 @@ autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\'
 ""---------------------------------------------------------------------------------------------
 "" javascript scripts
 ""---------------------------------------------------------------------------------------------
-
-" generic utility for toggle ui elements
-javascript <<EOF
-toggle_ui_element = function (name)
-{
-    document.getElementById(name).collapsed ^= 1;
-}
-EOF
 
 " toggle entry in prefs.js( about:config)
 javascript <<EOF
@@ -506,23 +490,16 @@ highlight Hint font-family: monospace; font-size: 13px; font-weight: bold; color
 "" Map to javascript functions
 ""---------------------------------------------------------------------------------------------
 
-" toggle Firefox menu-bar
-noremap <Silent> <F1> :javascript toggle_ui_element('toolbar-menubar')<CR>
+noremap <Silent> <F1> :toolbartoggle 菜单栏<CR>
 
-" toggle Firefox nav-bar
-noremap <Silent> <F2> :javascript toggle_ui_element('nav-bar')<CR>
+noremap <Silent> <F2> :toolbartoggle 导航工具栏<CR>
 
-" toggle Firefox bookmark-bar
-noremap <Silent> <F3> :javascript toggle_ui_element('PersonalToolbar')<CR>
+noremap <Silent> <F3> :toolbartoggle 书签工具栏<CR>
 
 " toggle status-bar
-noremap <Silent> <F4> :javascript toggle_ui_element('status-bar')<CR>
+noremap <Silent> <F4> :toolbartoggle 附加组件栏<CR>
 
-" toggle diigo-toolbar
-noremap <Silent> <F5> :javascript toggle_ui_element('diigotb-toolbar')<CR>
-
-" toggle google-toolbar
-noremap <Silent> <F6> :javascript toggle_ui_element('gtbToolbar')<CR>
+noremap <Silent> <F5> :toolbartoggle Google 工具栏<CR>
 
 " search firefox addons
 command! -nargs=* Addon :javascript search_in_firefox_addon("<args>")
@@ -562,9 +539,6 @@ command! -nargs=* Shooter :javascript search_in_shooter("<args>")
 noremap S :Shooter<Space>
 
 command! -nargs=* VeryCD :javascript search_in_verycd("<args>")
-noremap v :VeryCD<Space>
-
-command! -nargs=* Ac :javascript search_in_acfun("<args>")
 noremap v :VeryCD<Space>
 
 " search in wikipedia
