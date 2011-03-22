@@ -204,7 +204,7 @@ prefs_entry_toggler = function (entry_name, entry_init_value)
         entry_curr_value ^= 1;
         var commands = "set! " + entry_name + "=" + entry_curr_value;
         //alert(commands);
-        liberator.execute( commands);
+        dactyl.execute( commands);
     }
     return inner_function;
 }
@@ -272,7 +272,7 @@ search_in_verycd = function (args)
     var suffix       = '&rev=true&q=&from=&c2=0&range=&catalog=&status=all&sort=file_bytes';
     var full_url     = prefix + query_string + suffix;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -285,7 +285,7 @@ search_in_shooter = function (args)
     var suffix       = '/?x=0&y=0&';
     var full_url     = prefix + query_string + suffix ;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -298,7 +298,7 @@ search_in_acfun = function (args)
     var suffix       = '&searchtype=titlekeyword' ;
     var full_url     = prefix + query_string + suffix;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -306,7 +306,7 @@ EOF
 javascript <<EOF
 search_in_wikipedia = function (keyword)
 {
-    liberator.execute('tabopen wikipedia ' + keyword);
+    dactyl.execute('tabopen wikipedia ' + keyword);
 }
 EOF
 
@@ -317,7 +317,7 @@ search_in_douban = function (args)
     var prefix       = 'http://www.douban.com/subject_search?search_text=';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -330,7 +330,7 @@ search_in_mp3 = function (args)
     var suffix       = '&class=1';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -342,7 +342,7 @@ search_in_netyi = function (args)
     var prefix       = 'http://netyi.net/Search.aspx?query=';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -354,7 +354,7 @@ search_in_gigapedia = function (args)
     var prefix       = 'http://gigapedia.info/1/';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -367,7 +367,7 @@ search_in_vim_org = function (args)
     var suffix       = '&script_type=&order_by=rating&direction=descending&search=search';
     var full_url     = prefix + query_string + suffix;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -379,7 +379,7 @@ search_in_stackoverflow = function (args)
     var prefix       = 'http://stackoverflow.com/search?q='
     var full_url     = prefix + query_string ;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -391,7 +391,7 @@ search_in_wikipedia_zh = function (args)
     var prefix       = 'http://zh.wikipedia.org/zh-cn/';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -403,7 +403,7 @@ search_in_amazon = function (args)
     var prefix       = 'http://www.amazon.com/s/ref=nb_ss_gw?url=search-alias%3Dstripbooks&field-keywords=';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -415,7 +415,7 @@ search_in_firefox_addon = function (args)
     var suffix       = '&cat=all';
     var full_url     = prefix + query_string;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -430,7 +430,7 @@ lookup_youdao_dictionary= function (args)
     var suffix       = '&btnindex=&ue=utf8&keyfrom=dict.index';
     var full_url     = prefix + query_string + suffix;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 
 }
 EOF
@@ -443,7 +443,7 @@ lookup_manpage = function (keyword)
     var suffix   = '&sa=Search&ie=ISO-8859-1&cx=partner-pub-5823754184406795%3A54htp1rtx5u&cof=FORID%3A9#927';
     var full_url = prefix + keyword + suffix ;
 
-    liberator.execute('tabopen ' + full_url );
+    dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
@@ -455,11 +455,11 @@ load_vimperatorrc= function ()
     var platform = navigator.platform;
     if (platform.indexOf("Linux") != -1 ) // under linux
     {
-        liberator.execute( 'source ~/.pentadactylrc' );
+        dactyl.execute( 'source ~/.pentadactylrc' );
     }
     else if ( platform.indexOf("Win") != -1 ) // under windows
     {
-        liberator.execute( 'source ~/_pentadactylrc' );
+        dactyl.execute( 'source ~/_pentadactylrc' );
     }
 }
 EOF
