@@ -134,7 +134,8 @@ set findcase=smart
 set wildmode="list:full"
 
 " newly added
-set autocomplete='!.*'
+"set autocomplete='!.*'
+set autocomplete=
 set eventignore="all"
 
 set nextpattern=\s*下一页|下一张|下页\s*,\b[Nn]ext\b,^>$,^(>>|››|»)$,^(>|»),(>|»)$,\bmore\b
@@ -154,14 +155,18 @@ set hintkeys="asdfg;lkjh"
 "---------------------------------------------------------------------------------------------
 set! browser.tabs.tabMinWidth=100
 set! browser.tabs.tabMaxWidth=160
+
 " Always startup firefox with blank page
 set! browser.startup.page=0
+
 " Do not use font specified in HTML pages; use system defaults.
 set! browser.display.use_document_fonts=0
+
 " Do not use proxy, by decault
 set! network.proxy.type=0
 
-
+" Do not close firefox when the last tab is closed
+set! browser.tabs.closeWindowWithLastTab=false
 "---------------------------------------------------------------------------------------------
 " Auto-Commands
 "---------------------------------------------------------------------------------------------
