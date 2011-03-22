@@ -175,10 +175,10 @@ set! browser.tabs.closeWindowWithLastTab=false
 ":autocmd LocationChange .* :javascript modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
 
 "autocmd LocationChange www.google.com/reader/view/ :normal! <C-z>
-"autocmd LocationChange google.com :normal <C-z>
+autocmd LocationChange google.com :normal! <C-z>
 
-autocmd LocationChange mail.google.com :normal <C-z>
-autocmd LocationChange '^https?://www\.google\.com/reader/view/.*' :normal! <C-z>
+"autocmd LocationChange mail.google.com :normal <C-z>
+"autocmd LocationChange '^https?://www\.google\.com/reader/view/.*' :normal! <C-z>
 
 " Use gVim to edit gmail content
 "autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
