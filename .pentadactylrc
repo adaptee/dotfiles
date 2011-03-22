@@ -160,6 +160,8 @@ set followhints=0
 " wait 800ms before automatically following a non-unique numerical hint
 set hinttimeout=800
 
+" more convenient than numbers
+set hintkeys="asdfg;lkjh"
 
 "---------------------------------------------------------------------------------------------
 " Firefox preferences
@@ -467,7 +469,8 @@ EOF
 
 
 " highlight for statusbar and command line.
-highlight CmdLine                 background:black ; font-family: monospace; padding: 1px;
+"highlight CmdLine                 background:black ; font-family: monospace; padding: 1px;
+highlight CmdLine                 font-family: monospace; padding: 1px;
 highlight Normal                  background:greenyellow ; font-family: monospace; padding: 1px;
 
 "highlight for hints
