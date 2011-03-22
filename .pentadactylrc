@@ -466,25 +466,12 @@ load_vimperatorrc= function ()
 EOF
 
 
-" set commandline' bgcolor as dark silver grey
-hi CmdLine                background: #828282 ; font-family: monospace; padding: 1px;
+" highlight for statusbar and command line.
+highlight CmdLine                 background:black ; font-family: monospace; padding: 1px;
+highlight Normal                  background:greenyellow ; font-family: monospace; padding: 1px;
 
-" Highlight the vimperator command line with grennyello background when you're in it
-"javascript <<EOF
-    "(function() {
-        "var inputElement = document.getElementById('liberator-commandline-command');
-        "function swapBGColor(event) {
-            "//inputElement.style.backgroundColor = event.type == "focus" ? "yellow" : "";
-            "inputElement.style.backgroundColor = event.type == "focus" ? "GreenYellow ": "";
-        "}
-        "inputElement.addEventListener('focus', swapBGColor, false);
-        "inputElement.addEventListener('blur', swapBGColor, false);
-    "})();
-"EOF
-
-"the highlight for hints
+"highlight for hints
 highlight Hint font-family: monospace; font-size: 13px; font-weight: bold; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px
-
 
 ""---------------------------------------------------------------------------------------------
 "" Map to javascript functions
