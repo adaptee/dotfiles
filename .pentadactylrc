@@ -6,12 +6,6 @@
 "let mapleader = ","
 set mapleader=","
 
-" For the sake of char-hint-mode2.js; use lower-case letter for identifing links.
-op hintsio   = 'io'
-
-" for char-hint-mode2.js
-op g:hintlabeling="a"
-
 "---------------------------------------------------------------------------------------------
 " Mappings
 "---------------------------------------------------------------------------------------------
@@ -136,16 +130,8 @@ set incfind
 set hlfind
 set findcase=smart
 
-" show mode in the command-line
-set showmode
-
-" use gVIm as external editor
-"set editor="gvim -f"
-
 " always sort the auto-completion candidates
-"set wildoptions="sort"
 set wildmode="list:full"
-"set complete=l
 
 " newly added
 set autocomplete='!.*'
@@ -181,10 +167,16 @@ set! network.proxy.type=0
 "---------------------------------------------------------------------------------------------
 
 " PassThrough gmail and greader
-:autocmd LocationChange .* :javascript modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
+":autocmd LocationChange .* :javascript modes.passAllKeys = /mail\.google\.com|www\.google\.com\/reader\/view|www\.google\.com\/calendar/.test(buffer.URL)
+
+"autocmd LocationChange www.google.com/reader/view/ :normal! <C-z>
+"autocmd LocationChange google.com :normal <C-z>
+
+autocmd LocationChange mail.google.com :normal <C-z>
+autocmd LocationChange '^https?://www\.google\.com/reader/view/.*' :normal! <C-z>
 
 " Use gVim to edit gmail content
-autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
+"autocmd LocationChange mail\.google\.com :set editor='gvim -f -c \'set ft=mail\' '
 
 
 "---------------------------------------------------------------------------------------------
