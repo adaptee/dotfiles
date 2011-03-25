@@ -150,7 +150,7 @@ alias kaf='killall -9 firefox'
 alias kas='killall swiftfox-bin'
 alias kad='killall -9 gnome-do'
 #kill all mplayer, useful when playing broken video.
-alias kam='killall -9 mplayer;killall -9 gmplayer;killall -9 smplayer'
+alias kam='killall -9 mplayer'
 
 
 #kill all background jobs
@@ -273,7 +273,7 @@ alias m='man'
 alias ma='man -a'
 alias mf='man -f'
 alias mm='man man'
-alias mp='mplayer'
+alias mp='mplayer -af volnorm'
 alias mon='bmon -p wlan0'
 alias py='ipython'
 alias s='sudo'
