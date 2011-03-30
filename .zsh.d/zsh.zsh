@@ -360,7 +360,6 @@ zstyle ':completion:*' squeeze-shlashes 'yes'
 zstyle ':completion::complete:*' '\\'
 
 # make completion menu colorful
-eval $(dircolors -b)
 export ZLSCOLORS="${LS_COLORS}"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 

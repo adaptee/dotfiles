@@ -5,8 +5,13 @@
 #---------------------------------------------------------------------------#
 
 # enable color support of ls(LS_COLORS)
-if [[ "$TERM" != "dumb" ]]; then
-    eval "$(dircolors -b)"
+if [[ "$TERM" != "dumb" ]] ; then
+    if [[ -f ~/.dircolors ]] ; then
+        eval $(dircolors ~/.dircolors)
+    else
+        eval $(dircolors )
+    fi
+
     #  -X     sort alphabetically by entry extension
     alias ls='ls -X --group-directories-first --color=auto'
 else
