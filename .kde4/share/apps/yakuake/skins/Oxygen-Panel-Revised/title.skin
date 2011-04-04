@@ -16,6 +16,7 @@ y=15
 red=240
 green=240
 blue=240
+bold=true
 text=KDE Terminal Emulator
 
 [Background]
