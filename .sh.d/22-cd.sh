@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# often the next command after 'cd' is 'ls', so why not combine into one?
+# usage: cl PATH
+function cl() { cd "${@:-$HOME}" && ls; }
+
 #---------------------------------------------------------------------------#
 #                                   cd alias                                #
 #---------------------------------------------------------------------------#
