@@ -148,7 +148,8 @@ set followhints=0
 set hinttimeout=800
 
 " more convenient than numbers
-set hintkeys="asdfg;lkjh"
+"set hintkeys="asdfg;lkjh"
+set hintkeys="jkdfslgha;"
 
 "---------------------------------------------------------------------------------------------
 " Firefox preferences
