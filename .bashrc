@@ -15,6 +15,26 @@ Source ()
     fi
 }
 
+# which disto are we running in?
+function distro-detect()
+{
+    if [ -f /etc/make.conf     ] ; then
+        echo  "gentoo"
+
+    elif [ -f /etc/pacman.conf ] ; then
+        echo "arch"
+
+    elif [ -f /etc/apt/sources.list  ] ; then
+        echo "debian"
+
+    elif [[ $(uname) =~ 'Cygwin' ]] ; then
+        echo "cygwin"
+
+    else
+        echo "unknown"
+    fi
+}
+
 # common stuff for all shells
 export PRIVATE_SHELL_DIR=$HOME/.sh.d
 distro=$(distro-detect)
@@ -24,6 +44,7 @@ for item in $PRIVATE_SHELL_DIR/*.sh ; do
     Source "${item}"
 done
 Source "$PRIVATE_SHELL_DIR/test.sh"
+
 
 # specific stuff for bash
 export PRIVATE_BASH_DIR=$HOME/.bash.d

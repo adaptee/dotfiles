@@ -1,26 +1,5 @@
 #!/bin/sh
 
-# check which disto are we running in?
-function distro-detect()
-{
-    if [ -f /etc/make.conf     ] ; then
-        echo  "gentoo"
-
-    elif [ -f /etc/pacman.conf ] ; then
-        echo "arch"
-
-    elif [ -f /etc/apt/sources.list  ] ; then
-        echo "debian"
-
-    elif [[ $(uname) =~ 'Cygwin' ]] ; then
-        echo "cygwin"
-
-    else
-        echo "unknown"
-    fi
-
-}
-
 # recommend way of using which, quoted from the manpage
 function which ()
 {
