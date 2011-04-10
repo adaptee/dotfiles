@@ -1,15 +1,5 @@
 #!/bin/sh
 
-# grep the result of ps
-# Usage: psg [CMD-NAME]
-# Tip: [\1]  is used to exclude grep from the final result
-function psg()
-{
-    target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
-    command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
-    #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
-    ps ax | grep -i -E "$target|$command"
-}
 
 #---------------------------------------------------------------------------#
 #                                process alias                              #
@@ -47,3 +37,16 @@ alias jobs='jobs -l'
 
 # kill whatever process who is occupying specified file.
 alias release='fuser -k'
+
+
+# grep the result of ps
+# Usage: psg [CMD-NAME]
+# Tip: [\1]  is used to exclude grep from the final result
+function psg()
+{
+    target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
+    command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
+    #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
+    ps ax | grep -i -E "$target|$command"
+}
+
