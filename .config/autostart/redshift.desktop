@@ -17,6 +17,3 @@ Type=Application
 Version=1.0
 X-DBUS-ServiceName=
 X-DBUS-StartupType=
-X-GNOME-Autostart-enabled=false
-X-KDE-SubstituteUID=false
-X-KDE-Username=
