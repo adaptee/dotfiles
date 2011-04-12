@@ -4,6 +4,7 @@
 function cleanid3 ()
 {
     find . -type f -iname '*.mp3' -print0 | xargs -0 id3clean
+    find . -type f -iname '*.mp3' -print0 | xargs -0 mid3iconv -e gbk
 }
 
 
