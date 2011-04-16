@@ -21,20 +21,15 @@ if [ -d "${HOME}/bin" ] ; then
 fi
 
 # use ibus as input method anywhere
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-export XMODIFIERS="@im=ibus"
+#export GTK_IM_MODULE="ibus"
+#export QT_IM_MODULE="ibus"
+#export XMODIFIERS="@im=ibus"
 
 # If under X window environment,
 if [ -n "$DISPLAY" ]  ; then
 
     #grant root the access to X server
     xhost +local:root
-
-    # start devilspie, a nice rule matcher based on window property
-    if which devilspie &> /dev/null ; then
-        devilspie &
-    fi
 
 fi
 
