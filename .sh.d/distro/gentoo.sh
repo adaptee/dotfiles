@@ -49,7 +49,7 @@ function world ()
 # list all installed packages, explictly or as dependency
 function all()
 {
-    qlist -I
+    qlist -I --verbose
 }
 
 # add package into 'world
