@@ -20,11 +20,6 @@ if [ -d "${HOME}/bin" ] ; then
     PATH="${PATH}:${HOME}/bin"
 fi
 
-# use ibus as input method anywhere
-#export GTK_IM_MODULE="ibus"
-#export QT_IM_MODULE="ibus"
-#export XMODIFIERS="@im=ibus"
-
 # If under X window environment,
 if [ -n "$DISPLAY" ]  ; then
 
