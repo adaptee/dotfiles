@@ -177,6 +177,11 @@ function list-overlay ()
     eix --in-overlay "$1"
 }
 
+# show all packages installed from specified overlay
+function list-from-overlay ()
+{
+    eix --installed-from-overlay "$1"
+}
 
 #---------------------------------------------------------------------------#
 #                                 service management                        #
