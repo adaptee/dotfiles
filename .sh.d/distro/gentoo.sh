@@ -49,7 +49,7 @@ function world ()
 # list all installed packages, explictly or as dependency
 function all()
 {
-    qlist -I
+    qlist -I --verbose
 }
 
 # add package into 'world
@@ -177,6 +177,11 @@ function list-overlay ()
     eix --in-overlay "$1"
 }
 
+# show all packages installed from specified overlay
+function list-from-overlay ()
+{
+    eix --installed-from-overlay "$1"
+}
 
 #---------------------------------------------------------------------------#
 #                                 service management                        #
