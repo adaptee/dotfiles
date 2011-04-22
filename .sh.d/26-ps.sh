@@ -6,7 +6,7 @@
 #---------------------------------------------------------------------------#
 
 # customize the displaying layout for command ps.
-alias ps='ps -w -o user,pid,ppid,%cpu,%mem,vsz,rss,tname,stat,policy,wchan,start_time,bsdtime,args'
+alias ps='ps -o user,pid,ppid,%cpu,%mem,vsz,rss,tname,stat,policy,wchan,start_time,bsdtime,args -w'
 
 # '-n' means sort sibling processes by numeric pid, not by name
 alias pstree='pstree -n'
@@ -46,7 +46,7 @@ function psg()
 {
     target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
     command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
-    #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
-    ps ax | grep -i -E "$target|$command"
+    #ps axw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
+    ps -axw | grep -i -E "$target|$command"
 }
 
