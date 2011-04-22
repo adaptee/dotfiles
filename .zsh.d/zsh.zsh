@@ -13,7 +13,8 @@ setopt pushd_to_home
 
 setopt auto_cd
 
-setopt cdable_vars
+# turn on this if you want `cd user` to be interpreted as `cd ~user`
+#setopt cdable_vars
 
 # expand path acronyms
 # cd /v/c/p/p<TAB>  => /var/cache/pacman/pkg
