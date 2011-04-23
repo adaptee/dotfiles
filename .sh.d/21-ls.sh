@@ -9,9 +9,9 @@ if [[ "$TERM" != "dumb" ]] ; then
     fi
 
     #  -X     sort alphabetically by entry extension
-    alias ls='ls -X --group-directories-first --color=auto'
+    alias ls='gnuls -X --group-directories-first --color=auto'
 else
-    alias ls='ls -X --group-directories-first'
+    alias ls='gnuls -X --group-directories-first'
 fi
 
 # 'F' means show trailing handy hints of the entry type
