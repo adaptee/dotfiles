@@ -46,7 +46,11 @@ function psg()
 {
     target=$(echo $1 | sed "s/^\(.\)/[\1]/g")
     command=$(echo "COMMAND" | sed "s/^\(.\)/[\1]/g")
-    #ps auxw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
-    ps -axw | grep -i -E "$target|$command"
+
+    # `a` --    all process
+    # `x` --    even including processes without controlling tty
+    # `w` --    wide output
+    ps -axw| grep -i -E "$target|$command"
+    #ps axw | grep -E "$(echo $1 | sed "s/^\(.\)/[\1]/g")"
 }
 

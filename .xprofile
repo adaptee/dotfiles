@@ -25,6 +25,9 @@ export XMODIFIERS="@im=ibus"
 # repeat rate: 20 times per second
 xset r rate 200 20
 
+# [dangerous]
+# improve the perfomace of kde4 with nvidia card
+nvidia-settings -a InitialPixmapPlacement=2 -a GlyphCache=1
 
 # extra stuff for pcbsd
 
