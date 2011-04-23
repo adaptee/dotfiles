@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # https://wiki.archlinux.org/index.php/Xprofile
- 
+
 # /etc/xprofile and ~/.xprofile allow you to execute commands at
 # the beginning of the X user session, BEFORE the Window Manager
 # is started. Therefore it CANNOT be used to start window-based
@@ -24,3 +24,18 @@ export XMODIFIERS="@im=ibus"
 # dalay before autorepeat: 200ms
 # repeat rate: 20 times per second
 xset r rate 200 20
+
+
+# extra stuff for pcbsd
+
+# Setup some extra PATH variables
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/Programs/bin:/usr/local/sbin:/usr/local/bin:/usr/local/kde4/bin:$HOME/bin; export PATH
+
+# setxkbmap is part of xorg
+setxkbmap -model pc104 -layout us U.S.
+
+# quoted from /usr/local/kde4/env/enable-ibus.sh
+# In some PBI, iBus GTK IM module makes GTK version mismatch error
+# with GTK libraries included in the PBI package.
+GTK_IM_MODULE="xim" ; export GTK_IM_MODULE
+GTK_IM_MODULE_FILE=/usr/local/etc/gtk-2.0/gtk.immodules ; export GTK_IM_MODULE_FILE
