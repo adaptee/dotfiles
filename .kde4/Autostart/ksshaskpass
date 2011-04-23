@@ -9,7 +9,7 @@ if ssh-add -l &> /dev/null ; then
     #echo "do not bother"
     true
 else
-    export SSH_ASKPASS=/usr/bin/ksshaskpass
+    export SSH_ASKPASS=$(which ksshaskpass)
     ssh-add < /dev/null
 fi
 

@@ -6,6 +6,10 @@ set bmk:save-passwords true
 
 #set net:limit-rate 30000:0
 
-alias up "cd ..;ls"
-alias upp "cd ../..;ls"
-alias l  "ls"
+set cls-default "--long --human-readable --classify --nocase --dirsfirst"
+
+alias l  "cls --long --human-readable --classify --nocase --dirsfirst"
+
+alias u "cd ../;l"
+alias uu "cd ../../;l"
+alias uuu "cd ../../../;l"
