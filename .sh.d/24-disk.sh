@@ -5,13 +5,13 @@
 #---------------------------------------------------------------------------#
 
 # df improved: show FS type, human-friendly size and ignore pseudo FS.
-alias df='LANG=en df -h -T -x tmpfs | grep -vE "(tmpfs|gvfs|procbususb|rootfs|devtmpfs|debugfs)"'
+alias df='LANG=en df -h -T | grep -vE "(tmpfs|gvfs|procbususb|rootfs|devtmpfs|debugfs)"'
 
 # show the size of direct-subentry, and sort them in acednding order by size
-alias du='command du -h --max-depth=1 --one-file-system |sort -h'
+alias du='command du -h -d 1 -x |sort -n'
 
 # show the total size
-alias dus='command du -h -s --one-file-system'
+alias dus='command du -h -s -x'
 
 # make the output of mount looks better
 alias mount='mount | column -t'
