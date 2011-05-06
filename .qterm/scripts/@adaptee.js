@@ -98,6 +98,32 @@ editPostInGvim = function ()
 }
 
 
+sleep = function (delay)
+{
+    var dieTime = QTime.currentTime().addMSecs(delay);
+    while( QTime.currentTime() < dieTime )
+        ;
+}
+
+articleKeyEvent = function(key, modifiers, text)
+{
+    if ( text ==  'V')
+    {
+        QTerm.sendString('r\n');
+
+        // FIXME: how to ask qterm to refresh its display?
+        sleep(2000);
+
+        editPostInGvim() ;
+
+        QTerm.accepted = true;
+    }
+    else
+    {
+        QTerm.accepted = false;
+    }
+}
+
 unknownKeyEvent = function(key, modifiers, text)
 {
 
@@ -111,6 +137,7 @@ unknownKeyEvent = function(key, modifiers, text)
         QTerm.accepted = false;
     }
 }
+
 
 QTerm.onKeyPressEvent = function(key, modifiers, text)
 {
@@ -126,6 +153,10 @@ QTerm.onKeyPressEvent = function(key, modifiers, text)
     else if (QTerm.pageState == QTerm.SMTH.Unknown )
     {
         unknownKeyEvent(key, modifiers, text)
+    }
+    else if (QTerm.pageState == QTerm.SMTH.Article )
+    {
+        articleKeyEvent(key, modifiers, text)
     }
     else
     {
