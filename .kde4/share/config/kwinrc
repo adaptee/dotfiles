@@ -8,11 +8,12 @@ CheckIsSafe=true
 DisableChecks=true
 Enabled=true
 GLDirect=true
-GLMode=TFP
+GLMode=SHM
 GLTextureFilter=1
 GLVSync=true
 HiddenPreviews=5
 OpenGLIsUnsafe=false
+UnredirectFullscreen=false
 XRenderSmoothScale=false
 
 [Desktops]
@@ -22,11 +23,41 @@ Name_3=
 Name_4=
 Number=4
 
+[Effect-BeClock]
+24h=true
+Align=65
+Background=255,255,255
+ElectricBorders=
+Font=Monaco,12,-1,5,50,0,0,0,0,0
+Foreground=0,0,0
+HideOnHover=true
+Screen=-1
+ShowDate=true
+ShowDayOfWeek=false
+ShowDigits=true
+ShowRings=true
+ShowSeconds=true
+Size=192
+X=20
+Y=20
+
 [Effect-BoxSwitch]
 TabBox=false
 
 [Effect-CoverSwitch]
-TabBox=false
+AnimateStart=true
+AnimateStop=true
+AnimateSwitch=true
+Duration=0
+DynamicThumbnails=true
+MirrorFrontColor=0,0,0
+MirrorRearColor=0,0,0
+Reflection=true
+TabBox=true
+ThumbnailWindows=8
+Thumbnails=true
+WindowTitle=true
+ZPosition=592
 
 [Effect-Cube]
 BorderActivate=9
@@ -39,7 +70,7 @@ BorderActivate=9
 [Effect-FlipSwitch]
 BorderActivate=9
 BorderActivateAll=9
-TabBox=true
+TabBox=false
 
 [Effect-PresentWindows]
 Accuracy=1
@@ -96,12 +127,14 @@ CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
 [Plugins]
+kwin4_effect_beclockEnabled=false
 kwin4_effect_blurEnabled=true
 kwin4_effect_boxswitchEnabled=false
-kwin4_effect_coverswitchEnabled=false
+kwin4_effect_coverswitchEnabled=true
 kwin4_effect_cubeEnabled=true
 kwin4_effect_cubeslideEnabled=false
-kwin4_effect_desktopgridEnabled=false
+kwin4_effect_dashboardEnabled=true
+kwin4_effect_desktopgridEnabled=true
 kwin4_effect_dialogparentEnabled=true
 kwin4_effect_diminactiveEnabled=false
 kwin4_effect_dimscreenEnabled=false
@@ -123,6 +156,7 @@ kwin4_effect_mousemarkEnabled=false
 kwin4_effect_presentwindowsEnabled=true
 kwin4_effect_resizeEnabled=false
 kwin4_effect_scaleinEnabled=false
+kwin4_effect_screenshotEnabled=true
 kwin4_effect_shadowEnabled=true
 kwin4_effect_sharpenEnabled=false
 kwin4_effect_sheetEnabled=false
@@ -133,10 +167,12 @@ kwin4_effect_slidebackEnabled=false
 kwin4_effect_slidingpopupsEnabled=true
 kwin4_effect_snaphelperEnabled=false
 kwin4_effect_snowEnabled=true
+kwin4_effect_startupfeedbackEnabled=true
 kwin4_effect_taskbarthumbnailEnabled=true
 kwin4_effect_thumbnailasideEnabled=false
 kwin4_effect_trackmouseEnabled=false
 kwin4_effect_translucencyEnabled=true
+kwin4_effect_windowgeometryEnabled=false
 kwin4_effect_wobblywindowsEnabled=false
 kwin4_effect_zoomEnabled=true
 
