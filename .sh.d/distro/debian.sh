@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # I like typing `ifconfig`, not `/sbin/ifconfig`
-export PATH="/sbin:/usr/sbin:${PATH}"
+export PATH="/usr/sbin:/sbin:${PATH}"
 
 # Dear Ubuntu, I do not need you to telli me which package to install!
 unset command_not_found_handle
