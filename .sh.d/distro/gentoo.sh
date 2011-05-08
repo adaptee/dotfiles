@@ -2,7 +2,7 @@
 
 # gentoo's dafault does not contain /usr/sbin
 # thus makeing ifconfig, lspci,etc unconvenient to use
-export PATH="/usr/sbin:/sbin:${PATH}"
+export PATH="/sbin:/usr/sbin:${PATH}"
 
 #---------------------------------------------------------------------------#
 #                                 package management                        #
