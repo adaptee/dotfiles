@@ -10,6 +10,9 @@
 # xprofiles are sourced by KDM (/usr/share/config/kdm/Xsession)
 # and GDM (/etc/gdm/Xsession).
 
+# In Desktop Environmen, I prefer native locale over English.
+export LANG="zh_CN.UTF-8"
+
 # use ibus as input method platform
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
