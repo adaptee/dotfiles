@@ -15,17 +15,11 @@ umask 022
 #                           environment variables                             #
 #------------------------------------------------------------------------------
 
-# set PATH to include user's private bin ,if it exists
-if [ -d "${HOME}/bin" ] ; then
-    PATH="${PATH}:${HOME}/bin"
-fi
-
 # If under X window environment,
 if [ -n "$DISPLAY" ]  ; then
 
     #grant root the access to X server
     xhost +local:root
-
 fi
 
 #------------------------------------------------------------------------------
