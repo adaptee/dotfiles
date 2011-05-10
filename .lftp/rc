@@ -1,15 +1,38 @@
+# some useful aliases
+alias reconnect "close; cache flush; cd ."
+alias gbk set ftp:charset gbk; set file:charset UTF-8
+alias utf8 set ftp:charset UTF-8; set file:charset UTF-8
+
+# make prompt look better
+set prompt "\[\e[0;30m\]\[\e[1;37m\]lftp\[\e[0;30m\]] \[\e[1;32m\]\u\[\e[0;33m\]\@\[\e[1;31m\]\h\[\e[0;30m\]:\[\e[1;34m\]\w\[\e[0;30m\]>\[\e[0m\] "
+
 debug 3
 
+# optiimized for FTP server using Chinese
 set ftp:charset "gbk"
 set file:charset "UTF-8"
+
+# if default ftp passive mode does not work, try this:
+#set ftp:passive-mode off
+
+# save password in bookmark
 set bmk:save-passwords true
 
+# limit download/upload speed
 #set net:limit-rate 30000:0
 
+# for lazy gues
 set cls-default "--long --human-readable --classify --nocase --dirsfirst"
-
 alias l  "cls --long --human-readable --classify --nocase --dirsfirst"
-
 alias u "cd ../;l"
 alias uu "cd ../../;l"
 alias uuu "cd ../../../;l"
+
+# Set this to follow http redirections
+set xfer:max-redirections 10
+
+
+## If you don't like advertising lftp or servers hate it, set this:
+# set ftp:anon-pass "mozilla@"
+# set ftp:client ""
+# set http:user-agent "Mozilla/4.7 [en] (WinNT; I)"
