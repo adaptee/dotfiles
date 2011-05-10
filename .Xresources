@@ -30,7 +30,8 @@ xterm*renderFont: true
 xterm*preeditType: Root
 xterm*xftAntialias: true
 xterm*faceName: DejaVu Sans Mono:pixelsize=13.5
-xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13.5
+!xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13.5
+xterm*faceNameDoublesize: Dejavu Sans YuanTi Mono:pixelsize=13.5
 
 !fix alt-key inputting
 xterm*eightBitInput: false
