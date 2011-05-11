@@ -28,6 +28,11 @@ export XMODIFIERS="@im=ibus"
 # repeat rate: 20 times per second
 xset r rate 200 20
 
+# force setting dpi to 96 in a dirty but sure way
+# http://scanline.ca/dpi/
+#xrandr --dpi 96
+
 # [dangerous] 
 # improve the perfomace of kde4 with nvidia card
 nvidia-settings -a InitialPixmapPlacement=2 -a GlyphCache=1
+
