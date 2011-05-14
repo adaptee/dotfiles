@@ -1,15 +1,12 @@
 [Desktop Entry]
-Categories=Utility;
-Comment[zh_CN]=Color temperature adjustment tool
-Comment=Color temperature adjustment tool
-Exec=redshift -l 39.92:116.46
-GenericName[zh_CN]=Color temperature adjustment
+Name=Redshift
 GenericName=Color temperature adjustment
+Categories=Utility;
+Comment=Color temperature adjustment tool
 Icon=redshift
 MimeType=
-Name[zh_CN]=Redshift
-Name=Redshift
 Path=
+Exec=redshift -l 39.92:116.46
 StartupNotify=true
 Terminal=false
 TerminalOptions=
