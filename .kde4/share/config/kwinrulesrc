@@ -21,6 +21,20 @@ wmclasscomplete=false
 wmclassmatch=2
 
 [3]
+Description=ThunderBird Maximized
+clientmachine=arch
+clientmachinematch=0
+maximizehoriz=true
+maximizehorizrule=2
+maximizevert=true
+maximizevertrule=2
+title=newsfan - Mozilla Thunderbird
+titlematch=0
+wmclass=thunderbird
+wmclasscomplete=false
+wmclassmatch=1
+
+[4]
 Description=Vbox on 4th desktop
 desktop=4
 desktoprule=2
@@ -34,4 +48,4 @@ wmclasscomplete=false
 wmclassmatch=1
 
 [General]
-count=3
+count=4
