@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<kanatest_config>
+  <window_x>0</window_x>
+  <window_y>36</window_y>
+  <window_size_x>1272</window_size_x>
+  <window_size_y>725</window_size_y>
+  <repeat_mode>0</repeat_mode>
+  <kana_mode>1</kana_mode>
+  <kana_set>14</kana_set>
+  <ca_timeout>1</ca_timeout>
+  <stat_window_x>45</stat_window_x>
+  <stat_window_y>120</stat_window_y>
+  <stat_size_x>760</stat_size_x>
+  <stat_size_y>450</stat_size_y>
+  <about_window_x>320</about_window_x>
+  <about_window_y>165</about_window_y>
+  <options_window_x>608</options_window_x>
+  <options_window_y>36</options_window_y>
+  <chart_window_x>200</chart_window_x>
+  <chart_window_y>60</chart_window_y>
+  <stats_sort_column>0</stats_sort_column>
+  <stats_sort_column_dir>1</stats_sort_column_dir>
+  <hiragana_mode>1</hiragana_mode>
+  <ratio_begin>0</ratio_begin>
+  <ratio_end>50</ratio_end>
+  <kana_font_face>DejaVu Sans YuanTi</kana_font_face>
+  <kana_color>#000000</kana_color>
+  <romaji_color>#BB1010</romaji_color>
+  <user_defined_lesson>+++++++++++++++++++++++++------------------------------------------------------------------------------</user_defined_lesson>
+</kanatest_config>
