@@ -3,6 +3,7 @@ ColorScheme=WhiteOnBlack
 Font=DejaVu Sans YuanTi Mono,13,-1,5,50,0,0,0,0,0
 
 [General]
+Command=zsh
 Icon=utilities-terminal
 LocalTabTitleFormat=%d
 MenuIndex=3
