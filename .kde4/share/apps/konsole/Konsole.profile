@@ -1,8 +1,9 @@
 [Appearance]
 ColorScheme=WhiteOnBlack
-Font=DejaVu Sans YuanTi Mono,13,-1,5,50,0,0,0,0,0
+Font=DejaVu Sans YuanTi Mono, 13,-1, 5, 50, 0, 0, 0, 0, 0
 
 [General]
+Command=zsh
 Environment=TERM=xterm-256color
 Icon=utilities-terminal
 LocalTabTitleFormat=%d
