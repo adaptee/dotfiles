@@ -13,6 +13,10 @@ RemoteTabTitleFormat=%u@%h
 ShowMenuBar=false
 TabBarPosition=1
 
+[Interaction Options]
+TripleClickSelectsFromCursor=false
+WordCharacters=@-./_~?&=%+#
+
 [Keyboard]
 KeyBindings=default
 
