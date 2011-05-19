@@ -1,0 +1,89 @@
+[Application Settings]
+LastAudioLevelsUrl[$e]=file://$HOME
+LastSubtitleUrl[$e]=file://$HOME
+LastVideoUrl[$e]=file://$HOME
+Muted=false
+Volume=100
+
+[Current Line Settings]
+PrimaryCheckSpelling=false
+TranslationCheckSpelling=false
+
+[Errors]
+AutoClearFixed=false
+MaxCharacters=80
+MaxDuration=5000
+MaxDurationPerCharacter=185
+MaxLines=2
+MinDuration=700
+MinDurationPerCharacter=30
+
+[ErrorsDialog Settings]
+Height=370
+Width=500
+
+[ErrorsWidget Settings]
+Columns State=0;0;0;-1;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;44;0;0;0;3;1;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;100;-1;-1;-1;-1;0;0;0;-127;0;0;0;0;0;0;0;1;0;0;1;44;0;0;0;3;0;0;0;0;
+
+[GStreamer]
+AudioSink=
+VideoSink=
+
+[General]
+AutomaticVideoLoad=true
+DefaultSubtitlesEncoding=UTF-8
+GrabbedPositionCompensation=250
+LinesQuickShiftAmount=100
+SeekOffsetOnDoubleClick=1500
+
+[LinesWidget Settings]
+Columns State=0;0;0;-1;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;5;16;0;0;0;1;0;0;0;4;0;0;0;100;0;0;4;-20;0;0;0;5;0;0;0;1;0;0;0;0;0;0;0;0;3;0;0;0;100;-1;-1;-1;-1;0;0;0;-127;0;0;0;0;0;0;0;5;0;0;0;42;0;0;0;1;0;0;0;3;0;0;0;92;0;0;0;1;0;0;0;3;0;0;0;87;0;0;0;1;0;0;0;3;0;0;4;15;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;
+
+[MPlayer]
+AudioOutput=
+AutoSyncFactor=
+CacheSize=5120
+ExecutablePath=mplayer
+FrameDropping=false
+HardFrameDropping=false
+InputConfigPath=/usr/share/kde4/apps/subtitlecomposer/input.conf
+VideoOutput=
+VolumeNormalizationEnabled=false
+
+[MainWindow]
+Height 800=737
+State=AAAA/wAAAAD9AAAAAAAABPwAAAKUAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAFgBlAGQAaQB0AFQAbwBvAGwAQgBhAHIBAAACHf////8AAAAAAAAAAA==
+ToolBarsMovable=Disabled
+Width 1280=1276
+
+[Player]
+Backend=Phonon
+FontColor=#ffff80
+FontFamily=Sans Serif
+FontPointSize=16
+OutlineColor=#000000
+OutlineWidth=0
+SeekJumpLength=15
+ShowPositionTimeEdit=true
+
+[Recent Subtitles]
+File0[$e]=file://$HOME/down/Incoming/@臭作/(18禁アニメ) 鬼作 魂(Spirit) 復帰第一発 「伊頭家の食卓」(無修正 x264 Q20 120fps[itvfr] 640x480 DVD).ssa?charset=UTF-8
+Files=1
+
+[Recent Translation Subtitles]
+Files=0
+
+[Recent Videos]
+Files=0
+
+[Spelling]
+backgroundCheckerEnabled=true
+checkUppercase=false
+checkerEnabledByDefault=false
+defaultClient=
+defaultLanguage=
+skipRunTogether=true
+
+[Xine]
+AudioDriver=
+VideoDriver=
