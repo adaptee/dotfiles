@@ -40,29 +40,39 @@ fi
 #------------------------------------------------------------------------------
 
 
-# keychain is preferred, because the ssh-agent it start persists across login
-# if keychain is not available, start ssh-agent in normal way
+# keychain is preferred, because the agent it starts persists across login
 if which keychain &> /dev/null ; then
-    eval $(keychain --agents ssh --eval id_rsa)
+    eval $(keychain --eval)
 else
 
-    SSHAGENT=/usr/bin/ssh-agent
+    # ----------setup ssh-agent manually ---------- #
+    SSH_AGENT=/usr/bin/ssh-agent
 
-    if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSHAGENT}" ]; then
+    if [ -z "${SSH_AUTH_SOCK}" -a -x "${SSH_AGENT}" ]; then
         # now, all application within this session know how to communicate with
         # ssh-agent by enviroment variable $SSH_AGENT_PID
-        eval `${SSHAGENT} -s`
+        eval `${SSH_AGENT} -s`
 
         # kill this session's ssh-agent before login-shell exits
         trap "kill -9 ${SSH_AGENT_PID}" 0
+
+        # prompt user to load private key into ssh-agent
+        #ssh-add
     fi
 
-    # prompt user to load private key into ssh-agent
-    #ssh-add
+
+    # ----------setup gpg-agent manually ---------- #
+    GPG_ENV_FILE="${HOME}/.gnupg/gpg-agent.env"
+
+    if test -f "$GPG_ENV_FILE" && kill -0 $(grep GPG_AGENT_INFO "$GPG_ENV_FILE" | cut -d: -f 2) 2>/dev/null; then
+        eval "$(cat "$GPG_ENV_FILE")"
+    else
+        eval "$(gpg-agent --daemon --write-env-file "$GPG_ENV_FILE")"
+    fi
+    # the env file does not contain the export statement
+    export GPG_AGENT_INFO  
 
 fi
-
-
 
 #------------------------------------------------------------------------------
 #                               start gappproxy client                        #
