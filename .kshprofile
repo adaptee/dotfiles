@@ -10,6 +10,11 @@
 # the default umask is already set in /etc/profile
 umask 022
 
+# include user's bin into PATH ,if it exists
+if [ -d "${HOME}/bin" ] ; then
+    export PATH="${PATH}:${HOME}/bin"
+fi
+
 
 #------------------------------------------------------------------------------
 #                           environment variables                             #
@@ -70,7 +75,7 @@ else
         eval "$(gpg-agent --daemon --write-env-file "$GPG_ENV_FILE")"
     fi
     # the env file does not contain the export statement
-    export GPG_AGENT_INFO  
+    export GPG_AGENT_INFO
 
 fi
 
