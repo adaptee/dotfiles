@@ -144,7 +144,7 @@ function version()
 # mark packages as explicited installed
 function explicit ()
 {
-    sudo pacman -S --noconfirm --asexplicit $@
+    sudo pacman -D --asexplicit --noconfirm $@
 }
 
 # find out which (installed) package own the command
