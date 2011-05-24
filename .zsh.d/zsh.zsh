@@ -221,6 +221,7 @@ else
     key[Right]=${terminfo[kcuf1]}
     key[PageUp]=${terminfo[kpp]}
     key[PageDown]=${terminfo[knp]}
+
     for k in ${(k)key} ; do
         # $terminfo[] entries are weird in ncurses application mode...
         [[ ${key[$k]} == $'\eO'* ]] && key[$k]=${key[$k]/O/[}
