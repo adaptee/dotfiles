@@ -1,23 +1,8 @@
 [Desktop Entry]
-Categories=Network;P2P;
-Comment[zh_CN]=aMule remote control
-Comment=aMule remote control
-Comment[de]=aMule-Fernsteuerung
-Comment[fr]=Contrôle à distance d'aMule
-Comment[hu]=aMule távoli vezérlő
-Exec=amulegui -s
-GenericName[zh_CN]=
-GenericName=
-Icon=amulegui
-MimeType=
-Name[zh_CN]=aMuleGUI
 Name=aMuleGUI
-Path=
-StartupNotify=true
+Comment=aMule remote control
+Exec=amulegui
+Icon=/home/whodare/.icons/amulegui.svg
 Terminal=false
-TerminalOptions=
 Type=Application
-X-DBUS-ServiceName=
-X-DBUS-StartupType=
-X-KDE-SubstituteUID=false
-X-KDE-Username=
+Categories=Network;P2P;

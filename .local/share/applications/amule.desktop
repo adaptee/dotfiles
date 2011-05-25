@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=aMule
+Comment=A client for the eD2k network
+Exec=amule
+Icon=/home/whodare/.icons/amule.svg
+Terminal=false
+Type=Application
+Categories=Network;P2P;
