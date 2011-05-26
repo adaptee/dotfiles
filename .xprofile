@@ -32,6 +32,10 @@ xset r rate 200 20
 # http://scanline.ca/dpi/
 #xrandr --dpi 96
 
+# auto-sync between cut and seleciotn of X11
+#autocutsel -fork &
+#autocutsel -selection PRIMARY -fork &
+
 if which ksshaskpass &> /dev/null ; then
     export SSH_ASKPASS=$(which ksshaskpass)
 fi
