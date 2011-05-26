@@ -1,6 +1,8 @@
 [Program]
 # 字体
-Font=Dejavu Sans YuanTi
+Font=DejaVu Sans YuanTi
+# 菜单字体
+MenuFont=DejaVu Sans YuanTi
 # 字体区域
 FontLocale=zh_CN.UTF-8
 # 记录文件
@@ -42,7 +44,7 @@ ShowInputWindowAfterTriggering=True
 # 序号后加点
 ShowPointAfterIndex=True
 # 显示输入速度
-ShowInputSpeed=True
+ShowInputSpeed=False
 # 显示版本
 ShowVersion=True
 # 环境未配置正确时显示提示窗口
@@ -92,7 +94,7 @@ ResetRecordingKey=CTRL_ALT_A
 # 拼音输入法优先级，0为禁用
 PinyinOrder=1
 # 双拼输入法优先级，0为禁用
-ShuangpinOrder=1
+ShuangpinOrder=0
 # 默认双拼方案
 DefaultShuangpinSchema=自然码
 # 区位输入法优先级，0为禁用
