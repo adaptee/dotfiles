@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=aMuleGUI
 Comment=aMule remote control
-Exec=amulegui
+Exec=amulegui -s
 Icon=/home/whodare/.icons/amulegui.svg
 Terminal=false
 Type=Application
