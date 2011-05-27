@@ -1,8 +1,43 @@
 [$Version]
 update_info=kate-2.4.upd:kate2.4
 
+[AutoBrace Plugin]
+autobrackets=true
+autoquotations=true
+
+[CTags]
+GlobalCommand=ctags -R --c++-types=+px --excmd=pattern --exclude=Makefile --exclude=.
+GlobalNumTargets=0
+
 [Desktop Entry]
 DefaultProfile=Konsole.profile
+
+[Document 0]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=None
+Indentation Mode=cstyle
+Mode=
+ReadWrite=true
+URL=
+
+[Document 1]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=None
+Indentation Mode=cstyle
+Mode=
+ReadWrite=true
+URL=file:///home/whodare/Desktop/thunderbird.rst
+
+[Document 2]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=C++
+Indentation Mode=cstyle
+Mode=C++
+ReadWrite=true
+URL=file:///home/whodare/code/amarok/src/likeback/LikeBackBar.h
 
 [Favorite Profiles]
 Favorites=
@@ -16,6 +51,7 @@ View Shade=174,167,182
 [General]
 Days Meta Infos=30
 First Start=false
+Last Session=
 Modified Notification=true
 Restore Window Configuration=true
 Save Meta Infos=true
@@ -26,7 +62,7 @@ Startup Session=new
 
 [KFileDialog Settings]
 Height 800=450
-Recent Files[$e]=$HOME/img/novel/sex/乱派/月皎花娇.txt,$HOME/Desktop/japan/[ジュヴナイル] 横溝正史 「金色の魔術師」 v0.9.txt,$HOME/Desktop/japan/赤い糸～precious～.txt,$HOME/Desktop/japan/[ジュヴナイル] 横溝正史 「大迷宮」 v0.9.txt,$HOME/Desktop/japan/赤い糸～destiny～.txt,$HOME/Desktop/madedit-0.2.9/src/MadEditFrame.cpp
+Recent Files[$e]=$HOME/img/novel/sex/乱派/月皎花娇.txt,$HOME/code/amarok/src/likeback/LikeBackBar.h,$HOME/code/amarok/src/likeback/LikeBackBar.cpp,$HOME/Desktop/thunderbird.rst,$HOME/Desktop/fontforge.rst
 Width 1280=700
 
 [KTEXTEDITOR:]
@@ -35,6 +71,7 @@ DEVELOPER_INFO=NEVER TRY TO USE VALUES FROM THAT GROUP, THEY ARE SUBJECT TO CHAN
 [Kate Document Defaults]
 Allow End of Line Detection=true
 Allow Simple Mode=true
+Automatically Insert Closing Brackets=false
 BOM=false
 Backup Config Flags=2
 Backup Prefix=
@@ -42,37 +79,60 @@ Backup Suffix=~
 Basic Config Flags=384303216
 Encoding=UTF-8
 End of Line=0
+Indent On Backspace=false
+Indent On Tab=true
+Indent On Text Paste=false
 Indentation Mode=cstyle
 Indentation Width=4
-On-The-Fly Spellcheck=false
-PageUp/PageDown Moves Cursor=false
+Keep Extra Spaces=false
+No sync=false
+On-The-Fly Spellcheck=true
+Overwrite Mode=false
+PageUp/PageDown Moves Cursor=true
 ProberType for Encoding Autodetection=1
+Remove Spaces=false
+RemoveTrailingDyn=false
+ReplaceTabsDyn=true
 Search Dir Config Depth=3
+Show Spaces=true
+Show Tabs=true
+Smart Home=true
 Tab Handling=2
 Tab Width=8
 Word Wrap=false
 Word Wrap Column=80
+Wrap Cursor=true
+
+[Kate Part Defaults]
+Encoding Prober Type=5
+Fallback Encoding=ISO-8859-15
 
 [Kate Plugins]
 kate_kttsd=false
 katebacktracebrowserplugin=false
 katebuildplugin=false
-katectagsplugin=false
+katectagsplugin=true
 kateexternaltoolsplugin=false
 katefilebrowserplugin=true
 katefiletemplates=false
+katefiletreeplugin=true
 katefindinfilesplugin=true
+kategdbplugin=false
 katekonsoleplugin=true
 katemailfilesplugin=false
-kateopenheaderplugin=false
+kateopenheaderplugin=true
 katepybrowseplugin=false
-katequickdocumentswitcherplugin=false
-katesnippets_tngplugin=false
+katequickdocumentswitcherplugin=true
+katesearchplugin=false
+katesnippets_tngplugin=true
 katesnippetsplugin=false
+katesqlplugin=false
 katesymbolviewerplugin=false
-katetabbarextensionplugin=false
+katetabbarextensionplugin=true
+katetabifyplugin=false
 katetextfilterplugin=false
 katexmlcheckplugin=false
+katexmltoolsplugin=false
 
 [Kate Renderer Defaults]
 Schema=kate - Normal
@@ -85,6 +145,7 @@ Normal Mode Mapping Keys=
 Normal Mode Mappings=
 
 [Kate View Defaults]
+Allow Mark Menu=true
 Auto Center Lines=0
 Auto Completion=true
 Bookmark Menu Sorting=0
@@ -95,14 +156,15 @@ Dynamic Word Wrap Indicators=1
 Folding Bar=true
 Icon Bar=false
 Line Numbers=true
+Maximum Search History Size=100
 Persistent Selection=false
 Replacement Text History=
 Scroll Bar Marks=false
 Scroll Past End=false
-Search Pattern History=
+Search Pattern History=#include,LIKEBACKBAR_H
 Search/Replace Flags=140
 Smart Copy Cut=false
-Vi Input Mode=false
+Vi Input Mode=true
 Vi Input Mode Hide Status Bar=false
 Vi Input Mode Steal Keys=false
 Word Completion=true
@@ -113,21 +175,174 @@ AutoSyncronize=true
 SetEditor=true
 
 [MainWindow]
-State=AAAA/wAAAAD9AAAAAAAABPgAAAKpAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABQAAAAK6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
 ToolBarsMovable=Disabled
+Width 1280=1281
+
+[MainWindow0]
+Height 800=801
+Kate-MDI-H-Splitter=200,1251,200
+Kate-MDI-Sidebar-0-Splitter=0,0,0
+Kate-MDI-Sidebar-3-Splitter=0,0,1251
+Kate-MDI-Sidebar-Style=2
+Kate-MDI-ToolView-kate_plugin_snippets_tng-Persistent=false
+Kate-MDI-ToolView-kate_plugin_snippets_tng-Position=0
+Kate-MDI-ToolView-kate_plugin_snippets_tng-Sidebar-Position=2
+Kate-MDI-ToolView-kate_plugin_snippets_tng-Visible=false
+Kate-MDI-ToolView-kate_private_plugin_katectagsplugin-Persistent=false
+Kate-MDI-ToolView-kate_private_plugin_katectagsplugin-Position=3
+Kate-MDI-ToolView-kate_private_plugin_katectagsplugin-Sidebar-Position=2
+Kate-MDI-ToolView-kate_private_plugin_katectagsplugin-Visible=false
+Kate-MDI-ToolView-kate_private_plugin_katefileselectorplugin-Persistent=false
+Kate-MDI-ToolView-kate_private_plugin_katefileselectorplugin-Position=0
+Kate-MDI-ToolView-kate_private_plugin_katefileselectorplugin-Sidebar-Position=1
+Kate-MDI-ToolView-kate_private_plugin_katefileselectorplugin-Visible=false
+Kate-MDI-ToolView-kate_private_plugin_katefiletreeplugin-Persistent=false
+Kate-MDI-ToolView-kate_private_plugin_katefiletreeplugin-Position=0
+Kate-MDI-ToolView-kate_private_plugin_katefiletreeplugin-Sidebar-Position=0
+Kate-MDI-ToolView-kate_private_plugin_katefiletreeplugin-Visible=false
+Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Persistent=false
+Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Position=3
+Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Sidebar-Position=0
+Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Visible=false
+Kate-MDI-ToolView-katefindinfilesplugin_1-Persistent=false
+Kate-MDI-ToolView-katefindinfilesplugin_1-Position=3
+Kate-MDI-ToolView-katefindinfilesplugin_1-Sidebar-Position=1
+Kate-MDI-ToolView-katefindinfilesplugin_1-Visible=false
+Kate-MDI-V-Splitter=150,671,200
+State=AAAA/wAAAAD9AAAAAAAABQAAAAK6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
+Width 1280=1281
+
+[MainWindow0 Settings]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABQAAAAK6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
+Width 1280=1281
+WindowState=10
+
+[MainWindow0-Splitter 0]
+Sizes=1251
+
+[MainWindow0-ViewSpace 0]
+Active View=
+Count=1
+View 0=file:///home/whodare/code/amarok/src/likeback/LikeBackBar.h
+View 1=file:///home/whodare/Desktop/thunderbird.rst
+View 2=file:///home/whodare/code/amarok/src/likeback/LikeBackBar.h
+
+[MainWindow0-ViewSpace 0 file:///home/whodare/Desktop/fontforge.rst]
+CursorColumn=0
+CursorLine=0
+
+[MainWindow0-ViewSpace 0 file:///home/whodare/Desktop/thunderbird.rst]
+CursorColumn=0
+CursorLine=5
+
+[MainWindow0-ViewSpace 0 file:///home/whodare/code/amarok/src/likeback/LikeBackBar.h]
+CursorColumn=6
+CursorLine=43
+ViRegisterContents=adkjfkjdf
+ViRegisterFlags=0
+ViRegisterNames=-
+
+[Notification Messages]
+AutoBraceSupersedesInformation=false
+
+[Open Documents]
+Count=1
+
+[Open MainWindows]
+Count=1
+
+[Plugin:katectagsplugin:MainWindow:0:ctags-plugin]
+SessionDatabase=/home/whodare/.kde4/share/apps/kate/plugins/katectags/session_db_20110527_180403
+SessionNumTargets=2
+SessionTarget_  0=/home/whodare/code/amarok/src/likeback/LikeBackBar.cpp
+SessionTarget_  1=/home/whodare/code/amarok/src/likeback/LikeBackBar.h
+TagsGenCMD=ctags -R --c++-types=+px --excmd=pattern --exclude=Makefile --exclude=.
+
+[Plugin:katefilebrowserplugin:MainWindow:0]
+auto sync folder=false
+filter history=
+location[$e]=file://$HOME
+
+[Plugin:katefilebrowserplugin:MainWindow:0:dir]
+Decoration position=0
+Previews=false
+Show Preview=false
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+View Style=Simple
 
 [Plugin:katefindinfilesplugin::find-in-files]
-CaseSensitive=true
+CaseSensitive=false
 FollowDirectorySymlinks=false
+IncludeHiddenFiles=false
 LastSearchFiles=*,*.h\\,*.hxx\\,*.cpp\\,*.cc\\,*.C\\,*.cxx\\,*.idl\\,*.c,*.cpp\\,*.cc\\,*.C\\,*.cxx\\,*.c,*.h\\,*.hxx\\,*.idl
-LastSearchItems=
-LastSearchPaths=
-Recursive=true
+LastSearchItems=void
+LastSearchPaths=file:///home/whodare/code/amarok/src/likeback
+Recursive=false
 RegExp=false
+
+[Plugin:katesnippets_tngplugin:enabled-snippets]
+count=0
+
+[Plugin:katetabbarextensionplugin:MainWindow:0:view]
+button style=0
+color active=150,150,255
+color modified=255,0,0
+color previous=150,150,255
+count of rows=1
+fixed height=22
+follow current tab=true
+highlight active=false
+highlight modified=false
+highlight opacity=20
+highlight previous=false
+highlighted colors=
+highlighted documents=
+location top=false
+maximum width=150
+minimum width=70
+sort type=0
 
 [PluginSymbolViewer]
 ExpandTree=false
 ViewTypes=true
+
+[Recent Files]
+File1[$e]=$HOME/Desktop/fontforge.rst
+File2[$e]=$HOME/Desktop/thunderbird.rst
+File3[$e]=$HOME/code/amarok/src/likeback/LikeBack.cpp
+File4[$e]=$HOME/code/amarok/src/likeback/LikeBack.h
+File5[$e]=$HOME/code/amarok/src/likeback/LikeBackDialog.h
+File6[$e]=$HOME/code/amarok/src/likeback/LikeBackDialog.cpp
+File7[$e]=$HOME/code/amarok/src/likeback/LikeBackBar.cpp
+File8[$e]=$HOME/code/amarok/src/likeback/LikeBackBar.h
+Name1[$e]=fontforge.rst
+Name2[$e]=thunderbird.rst
+Name3[$e]=LikeBack.cpp
+Name4[$e]=LikeBack.h
+Name5[$e]=LikeBackDialog.h
+Name6[$e]=LikeBackDialog.cpp
+Name7[$e]=LikeBackBar.cpp
+Name8[$e]=LikeBackBar.h
+
+[Shortcuts]
+file_openheader=F4
+kate_mdi_toolview_kate_private_plugin_katectagsplugin=F2
+kate_mdi_toolview_kate_private_plugin_katefileselectorplugin=F1
+kate_mdi_toolview_kate_private_plugin_katekonsoleplugin=F6
+
+[Spelling]
+backgroundCheckerEnabled=true
+checkUppercase=false
+checkerEnabledByDefault=true
+defaultClient=
+defaultLanguage=zh_CN
+skipRunTogether=true
 
 [TipOfDay]
 RunOnStart=false
@@ -143,3 +358,11 @@ pathcombo history len=9
 restore last filter=true
 restore location=true
 toolbar actions=up,back,forward,home,short view,detailed view,tree view,bookmarks,sync_dir
+
+[filetree]
+editShade=255,201,241
+listMode=false
+shadingEnabled=true
+showFullPathOnRoots=false
+sortRole=0
+viewShade=185,178,206
