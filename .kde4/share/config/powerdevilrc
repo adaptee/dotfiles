@@ -8,4 +8,4 @@ configLockScreen=false
 ACProfile=Powersave
 BatteryProfile=Powersave
 LowProfile=Powersave
-WarningProfile=Aggressive Powersave
+WarningProfile=Aggressive powersave
