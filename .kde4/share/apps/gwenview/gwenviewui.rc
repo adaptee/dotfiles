@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui version="50" name="gwenview">
+<kpartgui version="52" name="gwenview">
  <MenuBar>
   <Menu name="file">
    <Action name="file_save"/>
@@ -71,8 +71,10 @@
    <Action name="red_eye_reduction"/>
   </Menu>
   <Menu name="go">
+   <Action name="go_first"/>
    <Action name="go_previous"/>
    <Action name="go_next"/>
+   <Action name="go_last"/>
    <Separator/>
    <Action name="go_up"/>
    <Separator/>
@@ -106,20 +108,20 @@
   <Action name="rotate_left"/>
   <Action name="rotate_right"/>
  </ToolBar>
- <ActionProperties scheme="Default">
-  <Action shortcut="F" name="fullscreen"/>
-  <Action shortcut="Space; J" name="go_next"/>
-  <Action shortcut="Backspace; K" name="go_previous"/>
-  <Action shortcut="S" name="toggle_slideshow"/>
-  <Action shortcut="Del; D" name="file_trash"/>
-  <Action shortcut="Alt+Up; H" name="go_up"/>
+ <ActionProperties>
+  <Action shortcut="Q" name="browse"/>
   <Action shortcut="Ctrl+C; Y" name="edit_copy"/>
   <Action shortcut="Ctrl+X; X" name="edit_cut"/>
   <Action shortcut="Ctrl+V; P" name="edit_paste"/>
-  <Action shortcut="F5; R" name="reload"/>
   <Action shortcut="" name="file_quit"/>
-  <Action shortcut="Q" name="browse"/>
-  <Action shortcut="V" name="view"/>
   <Action shortcut="I" name="file_show_properties"/>
+  <Action shortcut="Del; D" name="file_trash"/>
+  <Action shortcut="F" name="fullscreen"/>
+  <Action shortcut="Space; J" name="go_next"/>
+  <Action shortcut="Backspace; K" name="go_previous"/>
+  <Action shortcut="Alt+Up; H" name="go_up"/>
+  <Action shortcut="F5; R" name="reload"/>
+  <Action shortcut="S" name="toggle_slideshow"/>
+  <Action shortcut="V" name="view"/>
  </ActionProperties>
 </kpartgui>

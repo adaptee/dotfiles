@@ -6,14 +6,16 @@ Width 1280=1281
 CurrentPalette=Forty Colors
 
 [General]
-HistoryEnabled=false
+ThumbnailBarOrientation=Vertical
+UrlNavigatorIsEditable=true
 
 [ImageView]
 EnlargeSmallerImages=true
+MouseWheelBehavior=MouseWheelBehavior::Browse
 
 [KFileDialog Settings]
 Height 800=510
-Recent Files[$e]=$HOME/NTIxODE4MCxwYW5sZWkyMDAz.jpeg,$HOME/NTIxODE4MCxwYW5sZWkyMDAz.jpeg
+Recent Files[$e]=mplayer-extra.jpeg,$HOME/mplayer-extra.jpeg
 Width 1280=816
 
 [KPropertiesDialog]
@@ -22,7 +24,7 @@ Width 1280=419
 
 [MainWindow]
 Height 800=801
-State=AAAA/wAAAAD9AAAAAAAABPwAAAKqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABPgAAAKeAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1281
 
@@ -41,8 +43,9 @@ CurrentPage=information
 IsVisible=false
 
 [SideBar-ViewMode]
-CurrentPage=operations
-IsVisible=false
+CurrentPage=information
+IsVisible=true
 
 [ThumbnailView]
-ThumbnailDetails=4
+ListVideos=false
+ThumbnailDetails=5
