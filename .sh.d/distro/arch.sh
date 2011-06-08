@@ -26,7 +26,7 @@ function add ()
         sudo pacman -U $@
     else
         # add from online repo or AUR
-        yaourt --noconfirm -S --noconfirm $@
+        yaourt -S --noconfirm $@
     fi
 }
 
