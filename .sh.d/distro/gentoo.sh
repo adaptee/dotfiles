@@ -24,7 +24,7 @@ function purge ()
 
 function update ()
 {
-    sudo layman -S
+    sudo layman -S --nofetch
     sudo emerge --sync
 }
 
