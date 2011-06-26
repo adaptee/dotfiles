@@ -12,10 +12,10 @@ alias dns='cat /etc/resolv.conf'
 alias fping='fping -a'
 
 # show numeric ip address
-alias arp='arp -n'
+#alias arp='arp -n'
 
 # this is much simpler than command arp
-#alias arp='cat /proc/net/arp | grep -v "00:00:00:00:00:00" '
+alias arp='cat /proc/net/arp | grep -v "00:00:00:00:00:00" '
 
 
 # scan a subnet
