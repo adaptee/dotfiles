@@ -12,6 +12,18 @@ wmclasscomplete=false
 wmclassmatch=1
 
 [2]
+Description=Yakuake Unclosable
+clientmachine=arch
+clientmachinematch=0
+closeable=false
+closeablerule=2
+title=Yakuake
+titlematch=0
+wmclass=yakuake
+wmclasscomplete=false
+wmclassmatch=1
+
+[3]
 Description=Konsole without title
 noborder=true
 noborderrule=2
@@ -20,7 +32,7 @@ wmclass=konsole
 wmclasscomplete=false
 wmclassmatch=2
 
-[3]
+[4]
 Description=ThunderBird Maximized
 clientmachine=arch
 clientmachinematch=0
@@ -34,7 +46,7 @@ wmclass=thunderbird
 wmclasscomplete=false
 wmclassmatch=1
 
-[4]
+[5]
 Description=Vbox on 4th desktop
 desktop=4
 desktoprule=2
@@ -48,4 +60,4 @@ wmclasscomplete=false
 wmclassmatch=1
 
 [General]
-count=4
+count=5
