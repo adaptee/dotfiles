@@ -92,6 +92,16 @@ function meta ()
     equery uses "$1"
 }
 
+# view the changelog of spefied package
+function changelog ()
+{
+    local ebuild=$(equery which "$1")
+    local folder=$(dirname "$ebuild")
+    local logfile="${folder}/ChangeLog"
+
+    [ -f "$logfile" ] && view "$logfile"
+}
+
 # show the USE flags of some package
 # [Example] use firefox
 function use ()
