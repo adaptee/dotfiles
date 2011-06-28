@@ -69,6 +69,7 @@ function update ()
 
 function upgrade ()
 {
+    which debdelta-upgrade >& /dev/null && sudo debdelta-upgrade
     sudo apt-get dist-upgrade --yes --force-yes --verbose-versions
 }
 
