@@ -32,6 +32,10 @@ xset r rate 200 20
 # http://scanline.ca/dpi/
 #xrandr --dpi 96
 
+# this is a bit rude, but it works well
+# Better way is to behave differently based upon $DESKTOP_SESSION
+xmodmap ~/.xmodmaprc
+
 # auto-sync between cut and seleciotn of X11
 #autocutsel -fork &
 #autocutsel -selection PRIMARY -fork &
