@@ -8,7 +8,7 @@ Categories=GTK;Utility;TextEditor;
 Type=Application
 TryExec=gvim
 # open mutiple files in one instance, one tab per file
-Exec=gvim -p %F
+Exec=gvim -f -p %F
 Icon=/home/whodare/.icons/vim.svg
 Terminal=false
 X-MultipleArgs=true
