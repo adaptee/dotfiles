@@ -122,6 +122,12 @@ function version()
     pacman -Q "$1"
 }
 
+# show the changelog of specific package
+function changelog()
+{
+    repoquery --changelog "$1" | view -
+}
+
 # mark packages as explicited installed
 function explicit ()
 {
