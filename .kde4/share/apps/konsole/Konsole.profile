@@ -23,5 +23,4 @@ KeyBindings=default
 
 [Scrolling]
 HistoryMode=2
-HistorySize=5000
 ScrollBarPosition=2
