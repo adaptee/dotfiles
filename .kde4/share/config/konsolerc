@@ -1,5 +1,5 @@
 [Desktop Entry]
-DefaultProfile=Konsole.profile
+DefaultProfile=Zsh.profile
 
 [Favorite Profiles]
 Favorites=
@@ -7,15 +7,15 @@ Favorites=
 [MainWindow]
 Height 800=801
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAABQAAAAL8AAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAABQAAAAMFAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1281
 
 [Notification Messages]
 CloseAllTabs=false
 
-[Shortcut Schemes]
-Current Scheme=Default
-
 [ProcessInfo]
 CommonDirNames=""
+
+[Shortcut Schemes]
+Current Scheme=Default
