@@ -30,7 +30,7 @@ function update ()
 
 function upgrade ()
 {
-    sudo emerge -uavDN --jobs=2 --keep-going $@ world
+    sudo emerge --update --deep --newuse --jobs=2 --keep-going --ask --verbose $@ world
 
 }
 
