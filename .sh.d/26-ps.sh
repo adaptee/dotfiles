@@ -18,10 +18,7 @@ alias k9='kill -9'
 alias ka='killall'
 alias ka9='killall -9'
 
-alias kaa='killall -9 amule'
-alias kaf='killall -9 firefox'
-alias kas='killall swiftfox-bin'
-alias kad='killall -9 gnome-do'
+alias kaf='killall -9 firefox firefox-bin'
 #kill all mplayer, useful when playing broken video.
 alias kam='killall -9 mplayer'
 
