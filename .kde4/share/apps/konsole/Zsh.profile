@@ -8,7 +8,7 @@ Environment=TERM=xterm-256color
 Icon=utilities-terminal
 LocalTabTitleFormat=%d
 MenuIndex=3
-Name=Konsole
+Name=Zsh
 Parent=FALLBACK/
 RemoteTabTitleFormat=%u@%h
 ShowMenuBar=false
