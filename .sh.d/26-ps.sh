@@ -18,7 +18,7 @@ alias k9='kill -9'
 alias ka='killall'
 alias ka9='killall -9'
 
-alias kaf='killall -9 firefox firefox-bin'
+alias kaf='killall -9 firefox firefox-bin 2>/dev/null'
 #kill all mplayer, useful when playing broken video.
 alias kam='killall -9 mplayer'
 
