@@ -1,4 +1,5 @@
 [Appearance]
+AntiAliasFonts=true
 ColorScheme=WhiteOnBlack
 Font=DejaVu Sans YuanTi Mono,13,-1,5,50,0,0,0,0,0
 
