@@ -42,8 +42,8 @@ hgview =
 # syntax highlighting for hgweb (requires Pygments)
 highlight =
 
-# push and pull from a Git server
-hggit =
+## push and pull from a Git server
+#hggit =
 
 # accelerate status report using Linux's inotify service
 inotify=
