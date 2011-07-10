@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=Fast session switcher
+Name[zh_CN]=快速新建会话
+GenericName=Start new session( without locking current session)
+GenericName[zh_CN]=快速新建会话
+Comment=Start new session( without locking current session)
+Comment=Switcher
+Comment[zh_CN]=新建会话(不锁定当前会话)
+Type=Application
+Categories=KDE;System;
+Icon=system-switch-user
+TryExec=kdmctl
+Exec=fast-session-switcher
+OnlyShowIn=KDE;
+Terminal=false
+StartupNotify=false
+X-KDE-StartupNotify=false
