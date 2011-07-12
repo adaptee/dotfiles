@@ -55,12 +55,13 @@ function precmd () {
             PR_EXITCODE=""
         fi
 
-        if [[ -z $(git status -s 2> /dev/null) ]] {
-                zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${NOCOLOR}"
-        } else {
-                # red indicates 'modifications'
-                zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${FG_BD_RED}●${NOCOLOR}"
-        }
+        #if [[ -z $(git status -s 2> /dev/null) ]] {
+                #zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${NOCOLOR}"
+        #} else {
+                ## red indicates 'modifications'
+                #zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${FG_BD_RED}●${NOCOLOR}"
+        #}
+        zstyle ':vcs_info:*' formats "${FG_CYAN}%s|%b ${NOCOLOR}"
 
         # after executing one command, zle is alawys in insert mode, isn't it?
         ZLEVIMODE=''
