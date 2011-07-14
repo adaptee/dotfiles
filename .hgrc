@@ -94,3 +94,4 @@ username = Jekyll Wu <adaptee@gmail.com>
 
 [web]
 style = gitweb
+cacerts = /etc/ssl/certs/ca-certificates.crt
