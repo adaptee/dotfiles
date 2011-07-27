@@ -8,7 +8,7 @@ TerminalHighlightOnManualActivation=true
 Translucency=true
 
 [Desktop Entry]
-DefaultProfile=Konsole.profile
+DefaultProfile=Zsh.profile
 
 [Dialogs]
 ConfirmQuit=false
