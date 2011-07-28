@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui version="12" name="session">
+<kpartgui version="13" name="session">
  <MenuBar>
   <Menu name="file">
    <Action group="session-tab-operations" name="close-session"/>
@@ -35,6 +35,9 @@
    <Action group="session-view-operations" name="clear-history"/>
    <Action group="session-view-operations" name="clear-history-and-reset"/>
   </Menu>
+  <Menu name="settings">
+   <Action group="session-settings" name="edit-current-profile"/>
+  </Menu>
   <!--<Menu name="debug"><text>Debug</text>
             <Action name="debug-process"/>
         </Menu>!-->
@@ -58,10 +61,11 @@
   <text>&amp;Change Profile</text>
   <ActionList name="profile-list"/>
  </Menu>
- <ActionProperties scheme="Default">
-  <Action shortcut="Alt+F1" name="show-menubar"/>
+ <ActionProperties>
   <Action shortcut="Alt+P" name="edit-current-profile"/>
   <Action shortcut="Alt+C; Ctrl+Ins" name="edit_copy"/>
-  <Action shortcut="Alt+V; Shift+Ins" name="edit_paste"/>
+  <Action shortcut="Alt+V" name="edit_paste"/>
+  <Action shortcut="Alt+F1" name="show-menubar"/>
+  <Action shortcut="Shift+Ins" name="paste-selection"/>
  </ActionProperties>
 </kpartgui>
