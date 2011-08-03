@@ -1,7 +1,7 @@
 [General]
 activeFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
-desktopFont=Monaco,11,-1,5,50,0,0,0,0,0
-fixed=DejaVu Sans YuanTi Mono,10,-1,5,50,0,0,0,0,0
+desktopFont=Adobe 黑体 Std,10,-1,5,50,0,0,0,0,0
+fixed=Monaco,10,-1,5,50,0,0,0,0,0
 font=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 menuFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
 smallestReadableFont=DejaVu Sans YuanTi,9,-1,5,50,0,0,0,0,0
