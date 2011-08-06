@@ -40,3 +40,7 @@ view-full-screen=none
 DynamicTabTitles=true
 Height=80
 Width=100
+
+[ProcessInfo]
+CommonDirNames=""
+
