@@ -19,6 +19,7 @@ closeable=false
 closeablerule=2
 title=Yakuake
 titlematch=0
+types=1
 wmclass=yakuake
 wmclasscomplete=false
 wmclassmatch=1
