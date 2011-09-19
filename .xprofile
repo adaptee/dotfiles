@@ -13,16 +13,20 @@
 # In Desktop Environmen, I prefer native locale over English.
 export LANG="zh_CN.UTF-8"
 
-# use ibus as input method platform
+## use ibus as input method platform
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 
-# use fcitx as input method platform
+## use fcitx as input method platform
 #export XMODIFIERS="@im=fcitx"
-#export GTK_IM_MODULE=xim
-#export QT_IM_MODULE=xim
+#export GTK_IM_MODULE="fcitx"
+#export QT_IM_MODULE="fcitx"
 
+## use scim as input method platform
+#export XMODIFIERS=@im=SCIM
+#export GTK_IM_MODULE="scim"
+#export QT_IM_MODULE="scim"
 
 # dalay before autorepeat: 200ms
 # repeat rate: 20 times per second
@@ -48,3 +52,5 @@ fi
 # improve the perfomace of kde4 with nvidia card
 nvidia-settings -a InitialPixmapPlacement=2 -a GlyphCache=1
 
+# take better advantge of touchpad
+syndaemon -k -i 1 -d &
