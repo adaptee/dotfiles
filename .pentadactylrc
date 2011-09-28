@@ -328,13 +328,21 @@ search_in_mp3 = function (args)
 {
     var query_string = make_keywords_usable_in_url(args);
     var prefix       = 'http://mp3.sogou.com/music.so?pf=mp3&as=&st=&ac=1&query=';
-    var suffix       = '&class=1';
     var full_url     = prefix + query_string;
 
     dactyl.execute('tabopen ' + full_url );
 }
 EOF
 
+javascript <<EOF
+open_bugs_kde_org = function (id)
+{
+    var prefix       = 'https://bugs.kde.org/';
+    var full_url     = prefix + id;
+
+    dactyl.execute('tabopen ' + full_url );
+}
+EOF
 
 javascript <<EOF
 search_in_netyi = function (args)
@@ -504,6 +512,8 @@ noremap c :Dict<Space>
 " Search in douban.com
 command! -nargs=* Douban :javascript search_in_douban("<args>")
 noremap <Leader>d :Douban<Space>
+
+command! -nargs=1 K :javascript open_bugs_kde_org("<args>")
 
 command! -nargs=* Music :javascript search_in_mp3("<args>")
 noremap m :Music<Space>
