@@ -8,8 +8,9 @@ Command=zsh
 Environment=TERM=xterm-256color
 Icon=utilities-terminal
 LocalTabTitleFormat=%d
-MenuIndex=3
+MenuIndex=0
 Name=Zsh
+NewTabBehavior=1
 Parent=FALLBACK/
 RemoteTabTitleFormat=%u@%h
 ShowMenuBar=false
@@ -25,3 +26,6 @@ KeyBindings=default
 [Scrolling]
 HistoryMode=2
 ScrollBarPosition=2
+
+[Terminal Features]
+BidiRenderingEnabled=true
