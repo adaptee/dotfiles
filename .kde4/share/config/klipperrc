@@ -3,8 +3,11 @@ update_info=klipper-kconfigxt.upd:KlipperNoSpacesInKeyNames
 
 [General]
 AutoStart=true
-MaxClipItems=15
+IgnoreImages=false
+IgnoreSelection=true
+MaxClipItems=20
 Number of Actions=0
+TimeoutForActionPopups=5
 Version=v0.9.7
 
 [Notification Messages]
