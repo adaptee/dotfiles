@@ -1,26 +1,15 @@
 <?xml version='1.0'?>
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui version="52" name="gwenview">
+<kpartgui version="54" name="gwenview">
  <MenuBar>
   <Menu name="file">
    <Action name="file_save"/>
    <Action name="file_save_as"/>
    <Separator/>
    <Action name="reload"/>
-   <Separator/>
    <Action name="file_print"/>
    <Separator/>
-   <Action name="file_rename"/>
-   <Action name="file_trash"/>
-   <Action name="file_delete"/>
-   <Separator/>
-   <Action name="file_copy_to"/>
-   <Action name="file_move_to"/>
-   <Action name="file_link_to"/>
-   <Separator/>
-   <Action name="file_show_properties"/>
-   <Action name="file_create_folder"/>
-   <Action name="file_open_with"/>
+   <ActionList name="file_action_list"/>
    <Separator/>
    <Action name="add_folder_to_places"/>
    <Separator/>
@@ -86,9 +75,9 @@
   <Menu noMerge="1" name="settings">
    <text>&amp;Settings</text>
    <!--
-		Disable merging because we do not want the "fullscreen" action to appear
-		here, since it is already in the "view" menu.
-		-->
+        Disable merging because we do not want the "fullscreen" action to appear
+        here, since it is already in the "view" menu.
+        -->
    <Action name="options_show_menubar"/>
    <Action name="options_configure_keybinding"/>
    <Action name="options_configure_toolbars"/>
@@ -123,5 +112,14 @@
   <Action shortcut="F5; R" name="reload"/>
   <Action shortcut="S" name="toggle_slideshow"/>
   <Action shortcut="V" name="view"/>
+  <Action shortcut="" name="file_print"/>
+  <Action shortcut="" name="help_contents"/>
+  <Action shortcut="" name="help_whats_this"/>
+  <Action shortcut="Z" name="view_zoom_to_fit"/>
+  <Action shortcut="F1" name="toggle_sidebar"/>
+  <Action shortcut="/" name="view_actual_size"/>
+  <Action shortcut="F3" name="edit_location"/>
+  <Action shortcut="F4" name="toggle_thumbnailbar"/>
+  <Action shortcut="O" name="file_open_with"/>
  </ActionProperties>
 </kpartgui>
