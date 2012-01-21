@@ -2,7 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-
+ENV=$HOME/.shrc
+export ENV
 #------------------------------------------------------------------------------
 #                              basic setting                                  #
 #------------------------------------------------------------------------------
