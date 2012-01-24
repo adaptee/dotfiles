@@ -12,7 +12,7 @@ alias dt='date "+%Y-%m-%d %A    %T %Z"'
 
 alias fl='file'
 alias h='help'
-alias io='iotop -o'
+alias io='sudo iotop -o'
 alias m='man'
 alias ma='man -a'
 alias mf='man -f'
