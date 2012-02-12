@@ -9,9 +9,8 @@ which pacman-color >& /dev/null &&  alias pacman='pacman-color'
 alias yaourt='yaourt --noconfirm'
 
 # -s install depends ;
-# -r remove building dependency installed during building
 # -f overwrite already-built package
-alias makepkg='makepkg -s -r -f --noconfirm'
+alias makepkg='makepkg -s -f --noconfirm'
 
 #---------------------------------------------------------------------------#
 #                                 package management                        #
