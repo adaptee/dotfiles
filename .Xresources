@@ -57,3 +57,5 @@ xterm*color12: #729fcf
 xterm*color13: #ad7fa8
 xterm*color14: #00f5e9
 xterm*color15: #eeeeec
+
+!xterm*visualBell: true
