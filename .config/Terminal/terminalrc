@@ -15,6 +15,6 @@ MiscCycleTabs=TRUE
 MiscTabCloseButtons=FALSE
 MiscTabCloseMiddleClick=FALSE
 MiscTabPosition=GTK_POS_TOP
-MiscHighlightUrls=FALSE
+MiscHighlightUrls=TRUE
 ScrollingOnOutput=FALSE
 
