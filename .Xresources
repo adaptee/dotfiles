@@ -59,3 +59,28 @@ xterm*color14: #00f5e9
 xterm*color15: #eeeeec
 
 !xterm*visualBell: true
+
+!--------------Urxvt---------------------------------
+
+!--[Fonts]--!
+!URxvt*font:            xft:DejaVu Sans YuanTi Mono:pixelsize=14:antialias=true
+!URxvt*italicFont:      xft:DejaVu Sans YuanTi Mono:italic:autohint=true:antialias=true
+!URxvt*boldFont:        xft:DejaVu Sans YuanTi Mono:bold:autohint=true:antialias=true
+!URxvt*boldItalicFont:  xft:DejaVu Sans YuanTi Mono:bold:italic:autohint=true:antialias=true
+URxvt*font:            xft:DejaVu Sans YuanTi Mono:pixelsize=16:antialias=true
+URxvt*italicFont:      xft:DejaVu Sans YuanTi Mono:italic:autohint=true:antialias=true
+URxvt*boldFont:        xft:DejaVu Sans YuanTi Mono:bold:autohint=true:antialias=true
+URxvt*boldItalicFont:  xft:DejaVu Sans YuanTi Mono:bold:italic:autohint=true:antialias=true
+
+URxvt*scrollBar:    false
+
+URxvt*background:   black
+URxvt*foreground:   white
+
+! add tab support
+! Shift+Left/Right for switching, Shift+Down for creating
+URxvt.perl-ext-common: default,tabbed
+
+!URxvt*visualBell:       true
+!URxvt*urgentOnBell:     true
+
