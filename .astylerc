@@ -4,8 +4,8 @@
 --indent-switches
 --indent-preprocessor
 --delete-empty-lines
---pad=oper
---unpad=paren
+--pad-oper
+--unpad-paren
 --convert-tabs
 --suffix=.ast
 
