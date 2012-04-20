@@ -4,18 +4,25 @@ DefaultProfile=Zsh.profile
 [Favorite Profiles]
 Favorites=
 
+[KonsoleWindow]
+ShowWindowTitleOnTitleBar=true
+
+[Locale]
+Language=en_US:zh_CN
+
 [MainWindow]
 Height 800=801
-MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAABQAAAAMFAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAABPwAAALGAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1281
 
 [Notification Messages]
-CloseAllTabs=false
+ApplicationLanguageChangedWarning=false
 
 [ProcessInfo]
-CommonDirNames=""
+CommonDirNames=
 
-[Shortcut Schemes]
-Current Scheme=Default
+[TabBar]
+NewTabBehavior=PutNewTabAfterCurrentTab
+ShowQuickButtons=true
+TabBarPosition=Top
