@@ -1,94 +1,94 @@
 [$Version]
-update_info=mouse_cursor_theme.upd:kde3.4.99, kaccel.upd:kde3.3/r1, kwin.upd:kde3.2Xinerama, kded.upd:kde3.0
+update_info=mouse_cursor_theme.upd:kde3.4.99, kaccel.upd:kde3.3/r1, kwin.upd:kde3.2Xinerama, kded.upd:kde3.0,kaccel.upd:kde3.3/r1,kded.upd:kde3.0
 
 [ColorEffects:Disabled]
-Color=99,96,77
-ColorAmount=0.2
-ColorEffect=1
-ContrastAmount=0.25
-ContrastEffect=2
+Color=197,179,153
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
 IntensityAmount=0.1
-IntensityEffect=3
+IntensityEffect=2
 
 [ColorEffects:Inactive]
-Color=152,152,152
-ColorAmount=0.05
-ColorEffect=-2
-ContrastAmount=0.25
-ContrastEffect=-2
+Color=112,111,110
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
 Enable=false
 IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=139,152,123
-BackgroundNormal=131,144,117
-DecorationFocus=72,120,144
-DecorationHover=177,209,224
-ForegroundActive=240,255,128
-ForegroundInactive=131,144,117
+BackgroundAlternate=224,223,222
+BackgroundNormal=232,231,230
+DecorationFocus=43,116,199
+DecorationHover=119,183,255
+ForegroundActive=255,128,224
+ForegroundInactive=136,135,134
 ForegroundLink=0,87,174
-ForegroundNegative=191,3,97
-ForegroundNeutral=176,132,0
-ForegroundNormal=0,0,0
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=20,19,18
 ForegroundPositive=0,110,40
-ForegroundVisited=125,108,144
+ForegroundVisited=69,40,134
 
 [Colors:Selection]
-BackgroundAlternate=115,157,168
-BackgroundNormal=121,164,176
-DecorationFocus=72,120,144
-DecorationHover=177,209,224
-ForegroundActive=240,255,128
-ForegroundInactive=168,206,224
-ForegroundLink=0,87,174
-ForegroundNegative=191,3,97
-ForegroundNeutral=176,132,0
+BackgroundAlternate=62,138,204
+BackgroundNormal=65,139,212
+DecorationFocus=43,116,199
+DecorationHover=119,183,255
+ForegroundActive=255,128,224
+ForegroundInactive=165,193,228
+ForegroundLink=0,49,110
+ForegroundNegative=156,14,14
+ForegroundNeutral=255,221,0
 ForegroundNormal=255,255,255
-ForegroundPositive=0,110,40
-ForegroundVisited=125,108,144
+ForegroundPositive=128,255,128
+ForegroundVisited=69,40,134
 
 [Colors:Tooltip]
-BackgroundAlternate=156,189,204
-BackgroundNormal=149,180,195
-DecorationFocus=72,120,144
-DecorationHover=177,209,224
-ForegroundActive=240,255,128
-ForegroundInactive=131,144,117
+BackgroundAlternate=196,224,255
+BackgroundNormal=192,218,255
+DecorationFocus=43,116,199
+DecorationHover=119,183,255
+ForegroundActive=255,128,224
+ForegroundInactive=96,112,128
 ForegroundLink=0,87,174
-ForegroundNegative=191,3,97
-ForegroundNeutral=176,132,0
-ForegroundNormal=0,0,0
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=20,19,18
 ForegroundPositive=0,110,40
-ForegroundVisited=125,108,144
+ForegroundVisited=69,40,134
 
 [Colors:View]
-BackgroundAlternate=208,220,194
-BackgroundNormal=200,212,186
-DecorationFocus=72,120,144
-DecorationHover=177,209,224
-ForegroundActive=240,255,128
-ForegroundInactive=131,144,117
+BackgroundAlternate=248,247,246
+BackgroundNormal=255,255,255
+DecorationFocus=43,116,199
+DecorationHover=119,183,255
+ForegroundActive=255,128,224
+ForegroundInactive=136,135,134
 ForegroundLink=0,87,174
-ForegroundNegative=191,3,97
-ForegroundNeutral=176,132,0
-ForegroundNormal=0,0,0
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=20,19,18
 ForegroundPositive=0,110,40
-ForegroundVisited=125,108,144
+ForegroundVisited=69,40,134
 
 [Colors:Window]
-BackgroundAlternate=171,184,156
-BackgroundNormal=162,175,148
-DecorationFocus=72,120,144
-DecorationHover=177,209,224
-ForegroundActive=240,255,128
-ForegroundInactive=131,144,117
+BackgroundAlternate=218,217,216
+BackgroundNormal=224,223,222
+DecorationFocus=43,116,199
+DecorationHover=119,183,255
+ForegroundActive=255,128,224
+ForegroundInactive=136,135,134
 ForegroundLink=0,87,174
-ForegroundNegative=191,3,97
-ForegroundNeutral=176,132,0
-ForegroundNormal=0,0,0
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=20,19,18
 ForegroundPositive=0,110,40
-ForegroundVisited=125,108,144
+ForegroundVisited=69,40,134
 
 [DesktopIcons]
 ActiveColor=169, 156, 255
@@ -111,24 +111,25 @@ Size=48
 
 [DirSelect Dialog]
 DirSelectDialog Size=579,525
-History Items[$e]=file://$HOME/down/Incoming/lijing/win/win7-sdb1,file://$HOME/down/Incoming/lijing/win,file:///mnt/personal/babylon,file:///mnt/personal/stardict/dic,file://$HOME/Desktop,file://$HOME/img/wallpaper,file://$HOME/vbox/iso,file://$HOME/down/Incoming,file://$HOME/down,file://$HOME/vbox,file://$HOME/down/Incoming/new,file://$HOME/down/Incoming/Scorpions,file://$HOME/etc-repo/arch,file:///mnt/personal/whodare/code/google-pinyin/scim-googlepinyin/src/share,file:///mnt/personal/whodare/code/google-pinyin/android-pinyin/jni/share,file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/img/Image,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
+History Items[$e]=file://$HOME/img/Image,file://$HOME/down/Incoming/lijing/win/win7-sdb1,file://$HOME/down/Incoming/lijing/win,file:///mnt/personal/babylon,file:///mnt/personal/stardict/dic,file://$HOME/Desktop,file://$HOME/img/wallpaper,file://$HOME/vbox/iso,file://$HOME/down/Incoming,file://$HOME/down,file://$HOME/vbox,file://$HOME/down/Incoming/new,file://$HOME/down/Incoming/Scorpions,file://$HOME/etc-repo/arch,file:///mnt/personal/whodare/code/google-pinyin/scim-googlepinyin/src/share,file:///mnt/personal/whodare/code/google-pinyin/android-pinyin/jni/share,file:///mnt/personal/whodare,file://$HOME/img/temp_pic,file://$HOME/audio/ACG,file://$HOME/.vim/ftplugin/python/new/pyflakes/,file://$HOME/.vim/ftplugin/python/pyflakes,file://$HOME/.vim
 
 [Emoticons]
 emoticonsTheme=kde4
 
 [General]
 BrowserApplication[$e]=!/usr/bin/firefox
+ColorScheme=Oxygen Cold
 XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
-desktopFont=文泉驿等宽微米黑,10,-1,5,50,0,0,0,0,0
-fixed=DejaVu Sans YuanTi Mono,10,-1,5,50,0,0,0,0,0
-font=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
-menuFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+desktopFont=Adobe Pi Std,11,-1,5,50,0,0,0,0,0
+fixed=DejaVu Sans YuanTi Mono,11,-1,5,50,0,0,0,0,0
+font=DejaVu Sans YuanTi,11,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans YuanTi,11,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
-smallestReadableFont=DejaVu Sans YuanTi,9,-1,5,50,0,0,0,0,0
-taskbarFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
-toolBarFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+taskbarFont=DejaVu Sans YuanTi,11,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans YuanTi,11,-1,5,50,0,0,0,0,0
 widgetStyle=oxygen
 
 [Icons]
@@ -173,6 +174,7 @@ Dialog Size=1272,715
 
 [Locale]
 Country=cn
+Language=en_US:zh_CN
 
 [MainToolbarIcons]
 ActiveColor=169, 156, 255
@@ -262,8 +264,10 @@ DisabledValue=1
 Size=22
 
 [WM]
-activeBackground=128,192,224
-activeFont=DejaVu Sans YuanTi,10,-1,5,50,0,0,0,0,0
+activeBackground=96,148,207
+activeBlend=255,255,255
+activeFont=DejaVu Sans YuanTi,11,-1,5,50,0,0,0,0,0
 activeForeground=255,255,255
-inactiveBackground=111,122,99
-inactiveForeground=255,255,255
+inactiveBackground=224,223,222
+inactiveBlend=75,71,67
+inactiveForeground=20,19,18

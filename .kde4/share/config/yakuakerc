@@ -1,3 +1,6 @@
+[$Version]
+update_info=yakuake.upd:2.9.9-startupnotification
+
 [Animation]
 Frames=0
 
@@ -17,6 +20,9 @@ ShowPopup=false
 
 [Favorite Profiles]
 Favorites=
+
+[ProcessInfo]
+CommonDirNames=""
 
 [Shortcuts]
 close-active-terminal=none
@@ -40,7 +46,3 @@ view-full-screen=none
 DynamicTabTitles=true
 Height=80
 Width=100
-
-[ProcessInfo]
-CommonDirNames=""
-

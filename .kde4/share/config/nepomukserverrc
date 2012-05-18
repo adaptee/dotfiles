@@ -1,11 +1,14 @@
+[$Version]
+update_info=nepomukstrigiservice-migrate.upd:nepomukstrigiservice-migrate
+
 [Basic Settings]
 Configured repositories=main
-Start Nepomuk=false
+Start Nepomuk=true
+
+[Service-nepomukfileindexer]
+autostart=false
 
 [Service-nepomukmigration1]
-autostart=true
-
-[Service-nepomukstrigiservice]
 autostart=true
 
 [main Settings]
