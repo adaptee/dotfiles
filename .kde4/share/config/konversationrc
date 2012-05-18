@@ -1,0 +1,969 @@
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABPwAAAKrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Width 1280=1281
+
+[$Version]
+update_info=konversation.upd:1.1-rememberline,konversation.upd:1.1-markerlines,konversation.upd:0.20-customfonts,konversation.upd:0.20-quickbuttons,konversation.upd:0.19-notifylists,konversation.upd:0.19-appearance,konversation.upd:0.19-browser,konversation.upd:0.19-flags,konversation.upd:0.19-highlightcolors,konversation.upd:0.19-osdcolors,konversation.upd:0.19-sortorder,konversation.upd:0.19-colors,konversation.upd:0.19-generaloptions,konversation.upd:0.19-cleanup-themes,konversation.upd:0.19-cleanup-notifylist,konversation.upd:0.19-cleanup-dcc,konversation.upd:0.19-cleanup-colors,konversation.upd:0.19-cleanup-hilightlist,konversation.upd:0.19-cleanup-notificationmessages,konversation.upd:0.19-cleanup-ledcolors,konversation.upd:0.19-cleanup-kmditaskbar,konversation.upd:0.19-channelsplitter
+
+[Aliases]
+AliasList=bug /exec bug,cmd /exec cmd,mail /exec mail,kdeversion /exec kdeversion,gauge /exec gauge,media /exec media,audio /exec media audio,video /exec media video,sayclip /exec sayclip,tinyurl /exec tinyurl,fortune /exec fortune,sysinfo /exec sysinfo,uptime /exec uptime
+
+[Appearance]
+ChannelSplitterSizes=915,181
+ShowTabBarCloseButton=false
+TopicSplitterSizes=35,614
+TreeSplitterSizes=167,1109
+UseMaxSizedTabs=false
+
+[Autoreplace List]
+Direction0=o
+Direction1=o
+Pattern0=\\[\\[([^\\s]+)\\]\\]#
+Pattern1=(BUG:|bug:)([0-9]+)#
+Regex0=1
+Regex1=1
+Replace0=http://en.wikipedia.org/wiki/Special:Search?go=Go&search=%1#
+Replace1=https://bugs.kde.org/show_bug.cgi?id=%2#
+
+[BanList ViewSettings]
+ColumnSortDescending=false
+ColumnSorted=0
+ColumnWidths=100,100,361
+
+[Button List]
+Button0=Op,/OP %u%n
+Button1=DeOp,/DEOP %u%n
+Button2=WhoIs,/WHOIS %s,%%u%n
+Button3=Version,/CTCP %s,%%u VERSION%n
+Button4=Kick,/KICK %u%n
+Button5=Ban,/BAN %u%n
+Button6=Part,/PART %c Leaving...%n
+Button7=Quit,/QUIT Leaving...%n
+
+[Channel 0]
+Name=#debian-kde
+Password=
+
+[Channel 1]
+Name=#debian
+Password=
+
+[Channel 10]
+EnableNotifications=true
+Name=#debian-ubuntu
+Password=
+
+[Channel 100]
+EnableNotifications=true
+Name=#terminator
+Password=
+
+[Channel 101]
+EnableNotifications=true
+Name=#tmux
+Password=
+
+[Channel 102]
+EnableNotifications=true
+Name=#opendesktops
+Password=
+
+[Channel 103]
+EnableNotifications=true
+Name=#qt
+Password=
+
+[Channel 104]
+EnableNotifications=true
+Name=#okular
+Password=
+
+[Channel 105]
+EnableNotifications=true
+Name=#aur
+Password=
+
+[Channel 106]
+EnableNotifications=true
+Name=#ssh
+Password=
+
+[Channel 107]
+EnableNotifications=true
+Name=#openssh
+Password=
+
+[Channel 108]
+EnableNotifications=true
+Name=#emacs
+Password=
+
+[Channel 109]
+EnableNotifications=true
+Name=#vim
+Password=
+
+[Channel 11]
+EnableNotifications=true
+Name=#debian-worldmap
+Password=
+
+[Channel 110]
+EnableNotifications=true
+Name=#konqueror
+Password=
+
+[Channel 111]
+EnableNotifications=true
+Name=#Mandarin
+Password=
+
+[Channel 112]
+EnableNotifications=true
+Name=#fedora-zh
+Password=
+
+[Channel 113]
+EnableNotifications=true
+Name=##japanese
+Password=
+
+[Channel 114]
+EnableNotifications=true
+Name=#guake
+Password=
+
+[Channel 115]
+EnableNotifications=true
+Name=#gentoo-qt
+Password=
+
+[Channel 116]
+EnableNotifications=true
+Name=#trinity
+Password=
+
+[Channel 117]
+EnableNotifications=true
+Name=#tilda
+Password=
+
+[Channel 118]
+Name=#openSUSE
+Password=
+
+[Channel 119]
+Name=#openSUSE-kde
+Password=
+
+[Channel 12]
+EnableNotifications=true
+Name=#debian-zh
+Password=
+
+[Channel 120]
+EnableNotifications=true
+Name=#suse
+Password=
+
+[Channel 121]
+EnableNotifications=true
+Name=#opensuse-kde
+Password=
+
+[Channel 122]
+EnableNotifications=true
+Name=#openSUSE-cn
+Password=
+
+[Channel 123]
+EnableNotifications=true
+Name=#opensuse-tw
+Password=
+
+[Channel 124]
+EnableNotifications=true
+Name=#opensuse-bugs
+Password=
+
+[Channel 13]
+Name=#ubuntu
+Password=
+
+[Channel 14]
+Name=#ubuntu-cn
+Password=
+
+[Channel 15]
+Name=#kubuntu
+Password=
+
+[Channel 16]
+Name=#kubuntu-devel
+Password=
+
+[Channel 17]
+EnableNotifications=true
+Name=#ubuntu
+Password=
+
+[Channel 18]
+EnableNotifications=true
+Name=#ubuntu-cn
+Password=
+
+[Channel 19]
+EnableNotifications=true
+Name=#kubuntu
+Password=
+
+[Channel 2]
+EnableNotifications=true
+Name=#gentoo-kde
+Password=
+
+[Channel 20]
+EnableNotifications=true
+Name=#kubuntu-devel
+Password=
+
+[Channel 21]
+EnableNotifications=true
+Name=#973224
+Password=
+
+[Channel 22]
+EnableNotifications=true
+Name=#qjson
+Password=
+
+[Channel 23]
+EnableNotifications=true
+Name=#fedora-unregistered
+Password=
+
+[Channel 24]
+EnableNotifications=true
+Name=#gentoo
+Password=
+
+[Channel 25]
+EnableNotifications=true
+Name=#archlinux
+Password=
+
+[Channel 26]
+EnableNotifications=true
+Name=#yakuake
+Password=
+
+[Channel 27]
+Name=#kde
+Password=
+
+[Channel 28]
+Name=#kde-devel
+Password=
+
+[Channel 29]
+Name=#kde-bugs
+Password=
+
+[Channel 3]
+EnableNotifications=true
+Name=#debian-kde
+Password=
+
+[Channel 30]
+Name=#kde-www
+Password=
+
+[Channel 31]
+Name=#plasma
+Password=
+
+[Channel 32]
+Name=#konversation
+Password=
+
+[Channel 33]
+Name=#kwin
+Password=
+
+[Channel 34]
+Name=#kde-cn
+Password=
+
+[Channel 35]
+Name=#hime
+Password=
+
+[Channel 36]
+Name=#chakra
+Password=
+
+[Channel 37]
+Name=#gentoo-kde
+Password=
+
+[Channel 38]
+Name=#rxvt-unicode
+Password=
+
+[Channel 39]
+Name=#tmux
+Password=
+
+[Channel 4]
+EnableNotifications=true
+Name=#debian-kde-commits
+Password=
+
+[Channel 40]
+Name=#mosh
+Password=
+
+[Channel 41]
+Name=#terminator
+Password=
+
+[Channel 42]
+Name=#qt
+Password=
+
+[Channel 43]
+Name=#vim
+Password=
+
+[Channel 44]
+Name=#openssh
+Password=
+
+[Channel 45]
+Name=@mandarin
+Password=
+
+[Channel 46]
+EnableNotifications=true
+Name=#konversation
+Password=
+
+[Channel 47]
+EnableNotifications=true
+Name=#kde
+Password=
+
+[Channel 48]
+EnableNotifications=true
+Name=#ubuntu
+Password=
+
+[Channel 49]
+EnableNotifications=true
+Name=#archlinux
+Password=
+
+[Channel 5]
+EnableNotifications=true
+Name=#debian-gnome
+Password=
+
+[Channel 50]
+EnableNotifications=true
+Name=#kde-sysadmin
+Password=
+
+[Channel 51]
+EnableNotifications=true
+Name=#kde-bugs
+Password=
+
+[Channel 52]
+EnableNotifications=true
+Name=#ubuntu-cn
+Password=
+
+[Channel 53]
+EnableNotifications=true
+Name=#kde-www
+Password=
+
+[Channel 54]
+EnableNotifications=true
+Name=#rxvt-unicode
+Password=
+
+[Channel 55]
+EnableNotifications=true
+Name=#mlterm
+Password=
+
+[Channel 56]
+EnableNotifications=true
+Name=#kde-forum
+Password=
+
+[Channel 57]
+EnableNotifications=true
+Name=#gentoo-ia64
+Password=
+
+[Channel 58]
+EnableNotifications=true
+Name=#gentoo-amd64
+Password=
+
+[Channel 59]
+EnableNotifications=true
+Name=#kde-devel
+Password=
+
+[Channel 6]
+EnableNotifications=true
+Name=#alioth
+Password=
+
+[Channel 60]
+EnableNotifications=true
+Name=#kde-quality
+Password=
+
+[Channel 61]
+EnableNotifications=true
+Name=#plasma
+Password=
+
+[Channel 62]
+EnableNotifications=true
+Name=#kwin
+Password=
+
+[Channel 63]
+EnableNotifications=true
+Name=#arhlinux
+Password=
+
+[Channel 64]
+EnableNotifications=true
+Name=#kde-cn
+Password=
+
+[Channel 65]
+EnableNotifications=true
+Name=#genoo-kde
+Password=
+
+[Channel 66]
+EnableNotifications=true
+Name=#gentoo-kde
+Password=
+
+[Channel 67]
+EnableNotifications=true
+Name=#chakra
+Password=
+
+[Channel 68]
+EnableNotifications=true
+Name=#linuxforums?
+Password=
+
+[Channel 69]
+EnableNotifications=true
+Name=#oxygen
+Password=
+
+[Channel 7]
+EnableNotifications=true
+Name=#bash-completion
+Password=
+
+[Channel 70]
+EnableNotifications=true
+Name=#yakuake
+Password=
+
+[Channel 71]
+EnableNotifications=true
+Name=#nepomuk-kde
+Password=
+
+[Channel 72]
+EnableNotifications=true
+Name=#fedora-kde
+Password=
+
+[Channel 73]
+EnableNotifications=true
+Name=#kde-git
+Password=
+
+[Channel 74]
+EnableNotifications=true
+Name=#kde-i18n
+Password=
+
+[Channel 75]
+EnableNotifications=true
+Name=#cmake
+Password=
+
+[Channel 76]
+EnableNotifications=true
+Name=#g-qt
+Password=
+
+[Channel 77]
+EnableNotifications=true
+Name=#archlinux-bugs
+Password=
+
+[Channel 78]
+EnableNotifications=true
+Name=#hime
+Password=
+
+[Channel 79]
+EnableNotifications=true
+Name=#ubuntu-tw
+Password=
+
+[Channel 8]
+EnableNotifications=true
+Name=#debian
+Password=
+
+[Channel 80]
+EnableNotifications=true
+Name=#fedora
+Password=
+
+[Channel 81]
+EnableNotifications=true
+Name=#debian
+Password=
+
+[Channel 82]
+EnableNotifications=true
+Name=#suse
+Password=
+
+[Channel 83]
+EnableNotifications=true
+Name=#acfun
+Password=
+
+[Channel 84]
+EnableNotifications=true
+Name=#dolphin
+Password=
+
+[Channel 85]
+EnableNotifications=true
+Name=#debian-cn
+Password=
+
+[Channel 86]
+EnableNotifications=true
+Name=#gentoo-zh
+Password=
+
+[Channel 87]
+EnableNotifications=true
+Name=#gentoo-cn
+Password=
+
+[Channel 88]
+EnableNotifications=true
+Name=#gentoo-tw
+Password=
+
+[Channel 89]
+EnableNotifications=true
+Name=#wayland
+Password=
+
+[Channel 9]
+EnableNotifications=true
+Name=#debian-gt
+Password=
+
+[Channel 90]
+EnableNotifications=true
+Name=#kde-release
+Password=
+
+[Channel 91]
+EnableNotifications=true
+Name=#xterm
+Password=
+
+[Channel 92]
+EnableNotifications=true
+Name=#vte
+Password=
+
+[Channel 93]
+EnableNotifications=true
+Name=#roxterm
+Password=
+
+[Channel 94]
+EnableNotifications=true
+Name=#razor-qt
+Password=
+
+[Channel 95]
+EnableNotifications=true
+Name=#terminal
+Password=
+
+[Channel 96]
+EnableNotifications=true
+Name=#UTerminaL
+Password=
+
+[Channel 97]
+EnableNotifications=true
+Name=#shelr
+Password=
+
+[Channel 98]
+EnableNotifications=true
+Name=#ms12-020
+Password=
+
+[Channel 99]
+EnableNotifications=true
+Name=#mosh
+Password=
+
+[ChannelList ViewSettings]
+ColumnSortDescending=true
+ColumnSorted=1
+ColumnWidths=240,75,940
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[DCC Settings]
+IPv4FallbackIface=0
+PanelSplitter=AAAA/wAAAAAAAAACAAAATAAAAO0BAAAAAwEAAAAC
+
+[Desktop Entry]
+DefaultProfile=Zsh.profile
+
+[Favorite Profiles]
+Favorites=
+
+[Flags]
+BringToFront=true
+HideUnimportantEvents=true
+Log=false
+ReconnectCount=10
+ShowServerList=false
+TabPlacement=Left
+
+[General Options]
+HideToTrayOnStartup=true
+RedirectServerAndAppMsgToStatusPane=true
+ScrollbackMax=9999
+ShowTrayIcon=true
+TrayNotify=true
+TrayNotifyOnlyOwnNick=true
+
+[Highlight List]
+HighlightNickColor=69,153,255
+HighlightOwnLines=true
+HighlightOwnLinesColor=18,56,255
+HighlightSoundsEnabled=true
+
+[Highlight0]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=konsole
+RegExp=false
+Sound[$e]=
+
+[Highlight1]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=yakuake
+RegExp=false
+Sound[$e]=
+
+[Highlight2]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=konsolepart
+RegExp=false
+Sound[$e]=
+
+[Highlight3]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=lilyterm
+RegExp=false
+Sound[$e]=
+
+[Highlight4]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=vte
+RegExp=false
+Sound[$e]=
+
+[Highlight5]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=tilda
+RegExp=false
+Sound[$e]=
+
+[Highlight6]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=guake
+RegExp=false
+Sound[$e]=
+
+[Highlight7]
+AutoText=
+ChatWindows=
+Color=255,0,0
+Pattern=terminator
+RegExp=false
+Sound[$e]=
+
+[Identity 0]
+AuthType=nickserv
+AutomaticAway=false
+AutomaticUnaway=false
+AwayInactivity=10
+AwayMessage=
+AwayNick=
+AwayReason=Gone away for now
+Bot=
+Codec=UTF-8
+Ident=whodare
+InsertRememberLineOnAway=true
+KickReason=User terminated!
+Name=Default Identity
+Nicknames=Adaptee,whodare_,whodare__
+NickservCommand=identify
+PartReason=Konversation terminated!
+Password=
+PreShellCommand=
+QuitReason=Konversation terminated!
+Realname=Jekyll Wu
+ReturnMessage=
+SaslAccount=
+ShowAwayMessage=false
+
+[Identity 1]
+AuthType=nickserv
+AutomaticAway=false
+AutomaticUnaway=false
+AwayInactivity=10
+AwayMessage=
+AwayNick=
+AwayReason=Gone away for now
+Bot=nickserv
+Codec=UTF-8
+Ident=whodare
+InsertRememberLineOnAway=false
+KickReason=User terminated!
+Name=Whodare
+Nicknames=whodare,whodare_
+NickservCommand=identify
+PartReason=Konversation terminated!
+Password=touchme
+PreShellCommand=
+QuitReason=Konversation terminated!
+Realname=Jekyll Wu
+ReturnMessage=
+SaslAccount=
+ShowAwayMessage=false
+
+[Identity 2]
+AuthType=nickserv
+AutomaticAway=false
+AutomaticUnaway=false
+AwayInactivity=10
+AwayMessage=
+AwayNick=
+AwayReason=Gone away for now
+Bot=nickserv
+Codec=UTF-8
+Ident=whodare
+InsertRememberLineOnAway=false
+KickReason=User terminated!
+Name=Adaptee
+Nicknames=Adaptee,Adaptee_
+NickservCommand=identify
+PartReason=Konversation terminated!
+Password=touchme
+PreShellCommand=
+QuitReason=Konversation terminated!
+Realname=Jekyll Wu
+ReturnMessage=
+SaslAccount=
+ShowAwayMessage=false
+
+[Identity 3]
+AuthType=nickserv
+AutomaticAway=false
+AutomaticUnaway=false
+AwayInactivity=10
+AwayMessage=
+AwayNick=
+AwayReason=Gone away for now
+Bot=nickserv
+Codec=UTF-8
+Ident=whodare
+InsertRememberLineOnAway=false
+KickReason=User terminated!
+Name=Jekyll
+Nicknames=Jekyll,Jekyll_
+NickservCommand=identify
+PartReason=Konversation terminated!
+Password=touchme
+PreShellCommand=
+QuitReason=Konversation terminated!
+Realname=Jekyll Wu
+ReturnMessage=
+SaslAccount=
+ShowAwayMessage=false
+
+[KFileDialog Settings]
+Height 800=540
+Width 1280=864
+
+[MainWindow]
+Height 800=801
+State=AAAA/wAAAAD9AAAAAAAABPwAAAKrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1281
+
+[Message Text Colors]
+TextViewBackground=218,216,210
+
+[NicksOnline ViewSettings]
+ColumnSortDescending=false
+ColumnSorted=0
+ColumnWidths=290,1170
+
+[Notification Messages]
+ChannelListNoServerSelected=1
+ChannelListWarning=0
+ClearLogfileQuestion=1
+CloseQueryAfterIgnore=1
+HideMenuBarWarning=1
+HideOnCloseInfo=0
+IgnoreNick=1
+Invitation=1
+QuitChannelTab=0
+QuitDCCChatTab=1
+QuitQueryTab=0
+QuitServerTab=1
+QuitWithActiveDccTransfers=1
+ReconnectWithDifferentServer=1
+ReuseExistingConnection=1
+SaveLogfileNote=1
+UnignoreNick=1
+WarnEncodingConflict=1
+systemtrayquitKonversation=0
+
+[Notify List]
+OnStartup=true
+
+[Path Settings]
+LogfilePath=file:///home/whodare/.konvesation
+
+[Server 0]
+Password=
+Port=6669
+SSLEnabled=false
+Server=irc.debian.org
+
+[Server 1]
+Password=
+Port=8001
+SSLEnabled=false
+Server=irc.freenode.net
+
+[Server 2]
+Password=
+Port=8001
+SSLEnabled=false
+Server=chat.freenode.net
+
+[Server 3]
+Password=
+Port=8000
+SSLEnabled=false
+Server=irc.opensuse.org
+
+[ServerGroup 0]
+AutoConnect=true
+AutoJoinChannels=Channel 0,Channel 1
+ChannelHistory=Channel 2,Channel 3,Channel 4,Channel 5,Channel 6,Channel 7,Channel 8,Channel 9,Channel 10,Channel 11,Channel 12
+ConnectCommands=
+EnableNotifications=false
+Expanded=true
+Identity=Jekyll
+Name=Debian
+NotifyList=
+ServerList=Server 0
+
+[ServerGroup 1]
+AutoConnect=true
+AutoJoinChannels=Channel 13,Channel 14,Channel 15,Channel 16
+ChannelHistory=Channel 17,Channel 18,Channel 19,Channel 20,Channel 21,Channel 22,Channel 23,Channel 24,Channel 25,Channel 26
+ConnectCommands=
+EnableNotifications=false
+Expanded=true
+Identity=Jekyll
+Name=Ubuntu
+NotifyList=
+ServerList=Server 1
+
+[ServerGroup 2]
+AutoConnect=true
+AutoJoinChannels=Channel 27,Channel 28,Channel 29,Channel 30,Channel 31,Channel 32,Channel 33,Channel 34,Channel 35,Channel 36,Channel 37,Channel 38,Channel 39,Channel 40,Channel 41,Channel 42,Channel 43,Channel 44,Channel 45
+ChannelHistory=Channel 46,Channel 47,Channel 48,Channel 49,Channel 50,Channel 51,Channel 52,Channel 53,Channel 54,Channel 55,Channel 56,Channel 57,Channel 58,Channel 59,Channel 60,Channel 61,Channel 62,Channel 63,Channel 64,Channel 65,Channel 66,Channel 67,Channel 68,Channel 69,Channel 70,Channel 71,Channel 72,Channel 73,Channel 74,Channel 75,Channel 76,Channel 77,Channel 78,Channel 79,Channel 80,Channel 81,Channel 82,Channel 83,Channel 84,Channel 85,Channel 86,Channel 87,Channel 88,Channel 89,Channel 90,Channel 91,Channel 92,Channel 93,Channel 94,Channel 95,Channel 96,Channel 97,Channel 98,Channel 99,Channel 100,Channel 101,Channel 102,Channel 103,Channel 104,Channel 105,Channel 106,Channel 107,Channel 108,Channel 109,Channel 110,Channel 111,Channel 112,Channel 113,Channel 114,Channel 115,Channel 116,Channel 117
+ConnectCommands=
+EnableNotifications=true
+Expanded=true
+Identity=Adaptee
+Name=KDE
+NotifyList=khindenburg nihui
+ServerList=Server 2
+
+[ServerGroup 3]
+AutoConnect=true
+AutoJoinChannels=Channel 118,Channel 119
+ChannelHistory=Channel 120,Channel 121,Channel 122,Channel 123,Channel 124
+ConnectCommands=
+EnableNotifications=false
+Expanded=true
+Identity=Whodare
+Name=OpenSUSE
+NotifyList=
+ServerList=Server 3
+
+[ServerListDialog]
+ServerListHeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x13\x00\x00\x00\x03\x00\x01\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00»ˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x01;\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x1d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00
+Size=640,320
+
+[UrlCatcher ViewSettings]
+ColumnSortDescending=true
+ColumnSorted=2
+ColumnWidths=100,100,1070
