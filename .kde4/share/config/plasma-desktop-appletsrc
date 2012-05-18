@@ -15,30 +15,17 @@ activity=
 activityId=
 desktop=-1
 formfactor=2
-geometry=0,-42, 1280, 36
+geometry=0,-42,1280,36
 immutability=1
 lastDesktop=-1
 lastScreen=0
 location=3
 plugin=panel
 screen=0
-zvalue=150
+zvalue=0
 
 [Containments][16][ActionPlugins]
 RightButton;NoModifier=contextmenu
-
-[Containments][16][Applets][19]
-geometry=1156,0,32,32
-immutability=1
-plugin=calendar
-zvalue=0
-
-[Containments][16][Applets][19][LayoutInformation]
-Order=5
-
-[Containments][16][Applets][19][PopupApplet]
-DialogHeight=95
-DialogWidth=266
 
 [Containments][16][Applets][20]
 geometry=1192,0,64,32
@@ -66,7 +53,7 @@ DialogHeight=273
 DialogWidth=255
 
 [Containments][16][Applets][23]
-geometry=36,0,210,32
+geometry=36,0,337,32
 immutability=1
 plugin=pager
 zvalue=42
@@ -81,20 +68,30 @@ showWindowIcons=false
 Order=1
 
 [Containments][16][Applets][24]
-geometry=250,0,771,32
+geometry=377,0,511,32
 immutability=1
 plugin=tasks
 zvalue=205
 
 [Containments][16][Applets][24][Configuration]
+Share=false
+forceRows=false
+groupWhenFull=true
+groupingStrategy=2
+highlightWindows=false
+maxRows=2
+showOnlyCurrentActivity=true
 showOnlyCurrentDesktop=true
+showOnlyCurrentScreen=true
 showOnlyMinimized=true
+showTooltip=true
+sortingStrategy=2
 
 [Containments][16][Applets][24][LayoutInformation]
 Order=2
 
 [Containments][16][Applets][28]
-geometry=1025,0,127,32
+geometry=892,0,78,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -111,14 +108,14 @@ alwaysShown=Konversation
 hidden=
 
 [Containments][16][Applets][28][Configuration][Applets][52]
-geometry=4,4,24,24
+geometry=4,32,24,24
 immutability=1
 plugin=notifier
 zvalue=0
 
 [Containments][16][Applets][28][Configuration][Applets][52][PopupApplet]
-DialogHeight=352
-DialogWidth=314
+DialogHeight=354
+DialogWidth=318
 
 [Containments][16][Applets][28][Configuration][Applets][52][Shortcuts]
 global=
@@ -147,7 +144,23 @@ DialogWidth=103
 global=
 
 [Containments][16][Applets][28][Configuration][Applets][60]
+geometry=4,60,24,24
+immutability=1
 plugin=notifications
+zvalue=0
+
+[Containments][16][Applets][28][Configuration][Applets][60][Configuration][ExtenderItems][1]
+extenderIconName=dialog-information
+extenderItemName=jobGroup
+extenderTitle=Jobs
+isCollapsed=true
+isGroup=true
+sourceAppletId=60
+sourceAppletPluginName=notifications
+
+[Containments][16][Applets][28][Configuration][Applets][60][PopupApplet]
+DialogHeight=105
+DialogWidth=220
 
 [Containments][16][Applets][28][Configuration][ExtenderItems][10]
 extenderIconName=dialog-information
@@ -187,8 +200,8 @@ Systemtray-Klipper-28=Ctrl+Alt+V
 Order=3
 
 [Containments][16][Applets][28][PopupApplet]
-DialogHeight=74
-DialogWidth=132
+DialogHeight=102
+DialogWidth=282
 
 [Containments][16][Applets][33]
 geometry=0,0,32,32
@@ -207,9 +220,18 @@ Order=0
 [Containments][16][Applets][33][Shortcuts]
 global=Shift+F1
 
+[Containments][16][Applets][62]
+geometry=974,0,178,32
+immutability=1
+plugin=kimpanel
+zvalue=223
+
+[Containments][16][Applets][62][LayoutInformation]
+Order=4
+
 [Containments][16][Configuration]
-maximumSize=1280, 36
-minimumSize=1280, 36
+maximumSize=1280,36
+minimumSize=1280,36
 
 [Containments][3][Applets][10][Configuration][ExtenderItems][4]
 extenderItemPosition=0
