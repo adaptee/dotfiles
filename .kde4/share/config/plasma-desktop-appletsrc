@@ -53,7 +53,7 @@ DialogHeight=273
 DialogWidth=255
 
 [Containments][16][Applets][23]
-geometry=36,0,337,32
+geometry=36,0,162,32
 immutability=1
 plugin=pager
 zvalue=42
@@ -61,14 +61,14 @@ zvalue=42
 [Containments][16][Applets][23][Configuration]
 Share=false
 currentDesktopSelected=1
-displayedText=1
+displayedText=0
 showWindowIcons=false
 
 [Containments][16][Applets][23][LayoutInformation]
 Order=1
 
 [Containments][16][Applets][24]
-geometry=377,0,511,32
+geometry=202,0,722,32
 immutability=1
 plugin=tasks
 zvalue=205
@@ -91,7 +91,7 @@ sortingStrategy=2
 Order=2
 
 [Containments][16][Applets][28]
-geometry=892,0,78,32
+geometry=928,0,78,32
 immutability=1
 plugin=systemtray
 zvalue=48
@@ -159,8 +159,8 @@ sourceAppletId=60
 sourceAppletPluginName=notifications
 
 [Containments][16][Applets][28][Configuration][Applets][60][PopupApplet]
-DialogHeight=105
-DialogWidth=220
+DialogHeight=162
+DialogWidth=368
 
 [Containments][16][Applets][28][Configuration][ExtenderItems][10]
 extenderIconName=dialog-information
@@ -221,7 +221,7 @@ Order=0
 global=Shift+F1
 
 [Containments][16][Applets][62]
-geometry=974,0,178,32
+geometry=1010,0,178,32
 immutability=1
 plugin=kimpanel
 zvalue=223
@@ -242,13 +242,13 @@ extenderItemPosition=0
 [Containments][3][Applets][8][Configuration][ExtenderItems][2]
 extenderItemPosition=0
 
-[Containments][61]
+[Containments][63]
 ActionPluginsSource=Global
-activity=新活动
-activityId=a8a35cec-2525-4b50-92df-0d0c69682679
+activity=Desktop
+activityId=bc0c1015-0825-4d1f-96e7-0ac6f3fd252a
 desktop=-1
 formfactor=0
-geometry=0,0,1280,800
+geometry=1286,0,1280,800
 immutability=1
 lastDesktop=-1
 lastScreen=0
@@ -259,8 +259,8 @@ wallpaperplugin=image
 wallpaperpluginmode=Slideshow
 zvalue=0
 
-[Containments][61][Wallpaper][image]
-slideTimer=30
+[Containments][63][Wallpaper][image]
+slideTimer=20
 slidepaths=/usr/share/wallpapers/,/home/whodare/img/Image
 userswallpapers=
 wallpaper=/usr/share/wallpapers/Ariya
