@@ -6,7 +6,7 @@ Width 1280=1281
 update_info=konversation.upd:1.1-rememberline,konversation.upd:1.1-markerlines,konversation.upd:0.20-customfonts,konversation.upd:0.20-quickbuttons,konversation.upd:0.19-notifylists,konversation.upd:0.19-appearance,konversation.upd:0.19-browser,konversation.upd:0.19-flags,konversation.upd:0.19-highlightcolors,konversation.upd:0.19-osdcolors,konversation.upd:0.19-sortorder,konversation.upd:0.19-colors,konversation.upd:0.19-generaloptions,konversation.upd:0.19-cleanup-themes,konversation.upd:0.19-cleanup-notifylist,konversation.upd:0.19-cleanup-dcc,konversation.upd:0.19-cleanup-colors,konversation.upd:0.19-cleanup-hilightlist,konversation.upd:0.19-cleanup-notificationmessages,konversation.upd:0.19-cleanup-ledcolors,konversation.upd:0.19-cleanup-kmditaskbar,konversation.upd:0.19-channelsplitter
 
 [Aliases]
-AliasList=bug /exec bug,cmd /exec cmd,mail /exec mail,kdeversion /exec kdeversion,gauge /exec gauge,media /exec media,audio /exec media audio,video /exec media video,sayclip /exec sayclip,tinyurl /exec tinyurl,fortune /exec fortune,sysinfo /exec sysinfo,uptime /exec uptime
+AliasList=uptime /exec uptime,sysinfo /exec sysinfo,fortune /exec fortune,tinyurl /exec tinyurl,sayclip /exec sayclip,video /exec media video,audio /exec media audio,media /exec media,gauge /exec gauge,kdeversion /exec kdeversion,mail /exec mail,cmd /exec cmd,bug /exec bug
 
 [Appearance]
 ChannelSplitterSizes=936,169
@@ -948,7 +948,7 @@ Sound[$e]=
 AutoText=
 ChatWindows=
 Color=255,0,0
-Pattern=konsolepart
+Pattern=lilyterm
 RegExp=false
 Sound[$e]=
 
@@ -956,7 +956,7 @@ Sound[$e]=
 AutoText=
 ChatWindows=
 Color=255,0,0
-Pattern=lilyterm
+Pattern=vte
 RegExp=false
 Sound[$e]=
 
@@ -964,7 +964,7 @@ Sound[$e]=
 AutoText=
 ChatWindows=
 Color=255,0,0
-Pattern=vte
+Pattern=tilda
 RegExp=false
 Sound[$e]=
 
@@ -972,35 +972,11 @@ Sound[$e]=
 AutoText=
 ChatWindows=
 Color=255,0,0
-Pattern=tilda
-RegExp=false
-Sound[$e]=
-
-[Highlight6]
-AutoText=
-ChatWindows=
-Color=255,0,0
-Pattern=guake
-RegExp=false
-Sound[$e]=
-
-[Highlight7]
-AutoText=
-ChatWindows=
-Color=255,0,0
-Pattern=terminator
-RegExp=false
-Sound[$e]=
-
-[Highlight8]
-AutoText=
-ChatWindows=
-Color=255,0,0
 Pattern=pcmanfm
 RegExp=false
 Sound[$e]=
 
-[Highlight9]
+[Highlight6]
 AutoText=
 ChatWindows=
 Color=255,0,0
