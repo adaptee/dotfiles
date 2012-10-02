@@ -116,3 +116,9 @@
 
 [url "ssh://git@git.kde.org/"]
     pushInsteadOf = kde:
+
+[url "git://git.gnome.org/"]
+    insteadOf = gnome:
+
+[url "ssh://adaptee@git.gnome.org/git/"]
+    pushInsteadOf = gnome:
