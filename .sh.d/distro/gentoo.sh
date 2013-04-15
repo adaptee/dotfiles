@@ -31,7 +31,7 @@ function update ()
 function upgrade ()
 {
     #sudo emerge --update --deep --newuse --jobs=2 --keep-going --ask --verbose $@ world
-    sudo emerge --update --deep --reinstall=changed-use --jobs=2 --keep-going --ask --verbose $@ world
+    sudo emerge --update --deep -with-bdeps=y --reinstall=changed-use --jobs=2 --keep-going --ask --verbose $@ world
 }
 
 function clean ()
