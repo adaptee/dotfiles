@@ -42,6 +42,8 @@
     # generate diff3 style conflict file: ours, base, theirs
     conflictstyle = diff3
 
+    defaultToUpstream=true
+
 [push]
     default = matching
 
@@ -112,6 +114,7 @@
     user = adaptee
 
 [url "git://anongit.kde.org/"]
+;[url "ssh://git@git.kde.org/"]
     insteadOf = kde:
 
 [url "ssh://git@git.kde.org/"]
@@ -122,3 +125,9 @@
 
 [url "ssh://adaptee@git.gnome.org/git/"]
     pushInsteadOf = gnome:
+
+[url "git://lxde.git.sourceforge.net/gitroot/lxde/"]
+    instedOf = lxde:
+
+[url "git://git.xfce.org/"]
+    instedOf = xfce:
