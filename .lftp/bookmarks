@@ -1,8 +1,8 @@
-acg	ftp://acg:acg@59.66.140.201:1938/
-arch	ftp://ftp.archlinux.org/
-blfs	ftp://ftp.osuosl.org/pub/blfs/
-debian	ftp://ftp.jaist.ac.jp/pub/Linux/Debian-CD/
-gate	ftp://admin:13054019322@192.168.1.1/
-gnu	http://ftp.gnu.org/gnu/
-kde	ftp://ftp.kde.org/pub/kde/stable/
-kernel	ftp://ftp.kernel.org/pub/
+acg     ftp://acg:acg@59.66.140.201:1938/
+arch    ftp://ftp.archlinux.org/
+blfs    ftp://ftp.osuosl.org/pub/blfs/
+jaist   ftp://ftp.jaist.ac.jp/pub/Linux/
+gate    ftp://admin:13054019322@192.168.1.1/
+gnu     http://ftp.gnu.org/gnu/
+kde     ftp://ftp.kde.org/pub/kde/stable/
+kernel  ftp://ftp.kernel.org/pub/
