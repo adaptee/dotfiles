@@ -1,3 +1,7 @@
+# include user's bin into PATH ,if it exists
+if [ -d "${HOME}/bin" ] ; then
+    export PATH="${PATH}:${HOME}/bin"
+fi
 
 # source specified file in a safe way.
 function Source ()
@@ -23,6 +27,11 @@ function distro-detect()
     elif [ -f /etc/apt/sources.list  ] ; then
         echo "debian"
 
+    elif [ -f /etc/fedora-release  ] ; then
+        echo "fedora"
+
+    elif [ -f /etc/apt/sources.list  ] ; then
+        echo "debian"
     elif [ -f /boot/loader.conf  ] ; then
         echo "freebsd"
 
